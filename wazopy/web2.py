@@ -24,7 +24,7 @@ tbl = tbl.reset_index(drop=True)
 sizes = 480,1200,2400
 
 id = np.array(tbl['ML Catalog Numbers'])[0]
-url1200 = f'https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{id}/1200'
+url1200 = f'https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{id}/480'
 
 
 

@@ -6,7 +6,7 @@ from jinja2 import Environment, PackageLoader, select_autoescape,FileSystemLoade
 import random 
 import etienne_tools as et
 #import cv2
-from drag import drag
+#from drag import drag
 import matplotlib.image as mpimg
 from PIL import Image
 from astropy.io import fits
@@ -16,6 +16,7 @@ from subprocess import PIPE, run
 import glob
 import os
 from astropy.table import Table
+import requests
 
 def os_system(command):
     result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True)
@@ -292,13 +293,7 @@ def get_best_sites(region = 'CA-QC'):
 def rebound_html():
     tbl = master_photo_table()
     
-    l1 = np.array(tbl['FILE_NAME'])
-    for i in range(len(l1)):
-        l1[i] = (l1[i].split('_'))[1]           
-    l2= np.array(tbl['TAG_SPECIES'])
-    
-    
-    
+    l1 = np.array(tbl['ML_CATALOG_NUMBERS'])
     for i in range(len(l1)):
         if i !=0:
             if l1[i] == l1[i-1]:
@@ -324,23 +319,9 @@ def rebound_html():
             f.write(html2)
             f.close()
 
-def get_fichiers_originaux(segment = ''):
-    # get wazo files in originaux
-    files = np.array(glob.glob('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*{}*'.format(segment)))
-    keep = np.zeros_like(files, dtype = bool)
-    suffix = ['.jpg','.mp4']
-    for i in range(len(files)):
-        for s in suffix:
-            if s == files[i][-4:]:
-                keep[i] = True
-    files = files[keep]
-    files = files[np.argsort(files)]
-
-    return files
-
 def xmatch_videos():
 
-    video1 = np.array(glob.glob('/Users/eartigau/oiseaux3/oiseaux_originaux/*mp4'))[1]
+    video1 = np.array(glob.glob('/Users/eartigau/wazo/oiseaux_originaux/*mp4'))[1]
 
     cap = cv2.VideoCapture(video1)
     ret, ref_image = cap.read()
@@ -361,166 +342,6 @@ def xmatch_videos():
         for i in range(cube.shape[0]):
             rms[i] = np.std(cube[i] - ref_image)
         mini_rms[i_movie] = np.min(rms)
-
-def clean_originaux():
-
-    mp4 = np.array(glob.glob('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*mp4'))
-    for i in range(len(mp4)):
-        hdr = exif2csv(mp4[i])
-        print(hdr)
-
-        valid = False
-        for h in hdr:
-            print(h)
-            if 'Comment' in h:
-                valid = True
-        if not valid:
-            os.system('open '+mp4[i])
-            refs = np.array(glob.glob('/Users/eartigau/photo/ref_mov/*.jpg'))
-
-            refs = refs[np.argsort(refs)]
-            for j in range(len(refs)):
-                print('[{0}] \t {1}'.format(j,refs[j]))
-            id_esp = int(input('Quel ID ? '))
-            cmd = 'exiftool -TagsFromFile {0} {1}'.format(refs[id_esp],mp4[i])
-            print(cmd)
-            os.system(cmd)
-
-    #    exiftool - TagsFromFile
-    #fromImage.jpg
-    #toImage.jpg
-
-    fics = get_fichiers_originaux()
-    keep = ['/wazo' not in fic for fic in fics]
-    fics = fics[keep]
-
-    if len(fics) !=0:
-        tbl = Table.read('/Users/eartigau/oiseaux3/nfom.txt',delimiter='#',format='ascii')
-        for i in range(len(tbl)):
-            tbl['NOM_FR'][i] = tbl['NOM_FR'][i].replace('OE', 'Oe')
-
-        ebird = get_ebird()
-
-        for fic in fics:
-            if '/wazo' in fic:
-                continue
-
-            hdr = exif2csv(fic,force = True)
-
-
-            for l in hdr:
-                #print(l)
-                if 'Create Date' in l:
-                    date = (l.split(': '))[1]
-                    date = date.strip(' ')
-                    date = (date.split(' '))[0]
-                    date = date.split(':')
-                    date = date[0].strip(' ')+'-'+date[1].strip(' ')+'-'+date[2].strip(' ')
-                    time =  l.split(' ')[-1].split('\n')[0]
-                    time = time.split('-')[0]
-                    time = time.split('+')[0]
-
-                    #sometimes we have an extra decimal in the seconds, we trim
-                    #it
-                    time0 = time.split(':')
-                    for ii in range(len(time0)):
-                        if len(time0[ii]) >2:
-                            time0[ii] = time0[ii][0:2]
-                    time = ':'.join(time0)
-
-                    print(l)
-                    print(date + 'T' + time)
-                    mjd_photo = Time(date + 'T' + time).mjd
-                    print(mjd_photo)
-                if 'COMMENT' in l:
-                    if '_' in l:
-                        done = True
-                        print(l)
-
-            g = np.where(np.floor(np.array(ebird['MJD'],dtype = 'float')) == np.floor(mjd_photo))[0]
-
-            for esp in range(len(g)):
-                print('[{0}],  {1} ~~~> {2}, {3}'.format(esp+1,ebird['COMMON_NAME'][g[esp]],ebird['LOCATION'][g[esp]],
-                                                       ebird['TIME'][g[esp]]))
-
-            os.system('open '+fic)
-            id_esp = input('Quel ID [-1 == reject] ? ')
-
-            if id_esp == (-1):
-                print('~~~~')
-                stop
-
-            try:
-                val =  tbl['fID'][ tbl['NOM_FR'] == ebird[g[int(id_esp)-1]]['COMMON_NAME']][0]
-            except:
-                'Pas de nom français correspondant à : {}'.format(ebird[g[int(id_esp)-1]]['COMMON_NAME'])
-                stop
-            val = str(val)
-            if val[-1] == '0':
-                val = val[:-1]
-                if len(val) != 4:
-                    val = ''.join((4-len(val))*'0')+val
-
-            tmp = get_fichiers_originaux(segment = val)
-            n = str(len(tmp)+1)
-            n=(3-len(n))*'0'+n
-            new_name = '/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/wazo_'+val+'_'+n+'.'+fic[-3:]
-            if os.path.isfile(new_name) == False:
-
-                os.rename(fic, new_name)
-
-                os.system('exiftool -comment="' + ebird['SUBMISSION_ID'][g[np.int(id_esp)-1]] + '_' + ebird['EBIRD_CODE'][g[np.int(id_esp)-1]] + '" ' + new_name)
-
-                if os.path.isfile(new_name.split('.')[0]+'*csv'):
-                    os.remove(new_name.split('.')[0]+'*csv' )
-
-            else:
-                print('new name already exists : ',new_name)
-
-        if os.path.isfile('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*original'):
-            os.system('rm /Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*original')
-        if os.path.isfile('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*corr*'):
-            os.system('rm /Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*corr*')
-
-    fics = get_fichiers_originaux()
-    for i in range(len(fics)):
-        # directly copy films to output folder
-        if 'mp4' in fics[i]:
-            copy_file = ''.join(fics[i].split('full_resolution/'))
-            if os.path.isfile(copy_file) == False:
-                cmd = 'cp {0} {1}'.format(fics[i], copy_file)
-                print(cmd)
-                os.system(cmd)
-
-    fics = get_fichiers_originaux()
-
-    for i in range(len(fics)):
-        fic = fics[i]
-        'sm_' + fic.split('wazo_')[-1]
-
-        n = len(glob.glob('/Users/eartigau/oiseaux3/qualite/*/sm_'+fic.split('wazo_')[-1][:-4]+'.jpg'))
-
-
-        print(fic)
-        if n ==0:
-            outname = '/Users/eartigau/oiseaux3/qualite/0/sm_'+fic.split('wazo_')[-1][:-4]+'.jpg'
-            print()
-
-            print(outname)
-
-            im = get_image(fic)
-            sz = np.array(im).shape
-
-            im = np.array(im.resize((sz[1]//5, sz[0]//5)))
-            mpimg.imsave(outname,im)
-            print(outname)
-        if n>1:
-            print(glob.glob('/Users/eartigau/oiseaux3/qualite/*/sm_'+fic.split('wazo_')[-1]))
-            stop
-
-    drag()
-
-    return []
 
 def get_image(fic):
 
@@ -558,7 +379,7 @@ def mkjson(tbl,outname = 'full',lang='FR', zoom = 6, latitude_center = 0,longitu
         prefix = 'wazo'
     
     env = Environment(
-        loader=FileSystemLoader( '/Users/eartigau/oiseaux3/templates'),
+        loader=FileSystemLoader( '/Users/eartigau/wazo/templates'),
         autoescape=select_autoescape(['html', 'xml'])
     )
     
@@ -587,13 +408,13 @@ def mkjson(tbl,outname = 'full',lang='FR', zoom = 6, latitude_center = 0,longitu
     out_str.append(']}')
     
     
-    fic = open('/Users/eartigau/oiseaux3/src/'+prefix+'_'+outname+'.json','w')
+    fic = open('/Users/eartigau/wazo/src/'+prefix+'_'+outname+'.json','w')
     for out in out_str:
         fic.write(out+'\n')
     fic.close()
     
     template = env.get_template('template_speed.js')
-    fic = open('/Users/eartigau/oiseaux3/src/src_'+outname+'.js','w')
+    fic = open('/Users/eartigau/wazo/src/src_'+outname+'.js','w')
     
     if (latitude_center == 0) and (longitude_center ==0):
         latitude_center = (np.max(np.array(tbl['LATITUDE'],dtype = float))+np.min(np.array(tbl['LATITUDE'],dtype = float)))/2
@@ -623,7 +444,7 @@ def mk_menu():
 
 def mk_voyage_gal(tbl1):
 
-    voyage = Table.read('/Users/eartigau/oiseaux3/voyages.csv')
+    voyage = Table.read('/Users/eartigau/wazo/voyages.csv')
 
     text = []
     text.append('<div class="container-fluid" data-aos="fade" data-aos-delay="500">')
@@ -691,9 +512,9 @@ def mk_family_gal(tbl1):
                 suffix = 's'
             else:
                 suffix = ''
-            text.append('               <a href="gallerie_{0}.html" class="btn btn-outline-white py-2 px-4">{1} Photo{2}</a>'.format(tbl2['BIN_KEYWORD'][0], np.sum(g),suffix))
+            text.append('               <a href="{0}" class="btn btn-outline-white py-2 px-4">{1} Photo{2}</a>'.format(tbl2['BIN_KEYWORD'][0], np.sum(g),suffix))
             text.append('           </div>')
-            text.append('           <img src="peli/c_square_{0}.jpg" alt="Image" class="img-fluid">'.format(tag))
+            text.append('           <img src="{0}" alt="Image" class="img-fluid">'.format(tag))
             text.append('       </div>')
             text.append('   </div>')
             text.append('')
@@ -766,27 +587,6 @@ def mk_random_intro(tbl = None):
     tbl.append('</SCRIPT>')
     return tbl
 
-def verif_jpgs():
-    files = np.array(glob.glob('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*.jpg'))
-
-    for file in files:
-        outname = ''.join(file.split('full_resolution/'))
-        if os.path.isfile(outname):
-            continue
-
-        im1 = Image.open(file)
-        quality = 95
-        im1.save(outname, "JPEG", quality=quality)
-
-        while (os.path.getsize(outname)>3e6) and (quality>60):
-            im1.save(outname, "JPEG", quality=quality)
-            quality -=5
-            print(quality,os.path.getsize(outname))
-
-        cmd = 'exiftool -TagsFromFile {0} {1}'.format( file,outname)
-        print(cmd)
-        os.system(cmd)
-        os.system('rm {}_original'.format(outname))
 
 def get_apropos():
     from datetime import date
@@ -941,13 +741,15 @@ def mk_web():
     
     #clean_originaux()
     #verif_jpgs()
+    tbl_ini = master_photo_table()
     menu = mk_menu()
 
     env = Environment(
         loader=FileSystemLoader( '/Users/eartigau/wazo/templates'),
         autoescape=select_autoescape(['html', 'xml'])
     )
-    tbl_ini = master_photo_table()
+
+    tbl_ini = get_ebird()
 
 
     mkjson(tbl_ini, outname='full', lang='FR', zoom=2, latitude_center=0, longitude_center=0)
@@ -1248,8 +1050,8 @@ def ini_set_comment(fics=[''],skip=True):
 
 def wazo_params():
     wps = dict()
-    wps['EBIRD_PATH'] = '/Users/eartigau/oiseaux3/ebird/'
-    wps['EBIRD_TAXONOMY_FILE'] = '/Users/eartigau/oiseaux3/ebird/eBird_Taxonomy_v2022.csv'
+    wps['EBIRD_PATH'] = '/Users/eartigau/wazo/ebird/'
+    wps['EBIRD_TAXONOMY_FILE'] = '/Users/eartigau/wazo/ebird/eBird_Taxonomy_v2024.csv'
     wps['KEYS'] = ['FILE_NAME',
              'SUBMISSION_ID',
              'LENS_F_STOPS',
@@ -1518,7 +1320,7 @@ def get_ebird(force=True, csv_file = 'MyEBirdData.csv'):
     english_name_taxo = np.array(taxinomy['PRIMARY_COM_NAME'])
     scientific_name_taxo = np.array(taxinomy['SCI_NAME'])
     scientific_name_report = np.array(ebird_reports['SCIENTIFIC_NAME'])
-    order_taxo = np.array(taxinomy['ORDER1'])
+    order_taxo = np.array(taxinomy['ORDER'])
     family_taxo = np.array(taxinomy['FAMILY'])
 
     for i in tqdm(range(len(family_taxo)), leave=False):
@@ -1591,9 +1393,9 @@ def get_ebird(force=True, csv_file = 'MyEBirdData.csv'):
         if len(u) ==0:
             continue
         url = 'https://species.birds.cornell.edu/bow/api/v1/auxspecies/{}?category=conservation_status'.format(u)
-        if not os.path.isfile('/Users/eartigau/oiseaux3/iucn/'+u):
-            os.system('wget -q -O /Users/eartigau/oiseaux3/iucn/'+u+' '+url)
-        f = open('/Users/eartigau/oiseaux3/iucn/'+u, 'r')
+        if not os.path.isfile('/Users/eartigau/wazo/iucn/'+u):
+            os.system('wget -q -O /Users/eartigau/wazo/iucn/'+u+' '+url)
+        f = open('/Users/eartigau/wazo/iucn/'+u, 'r')
         a = f.read()
         f.close()
         a = a.split(',')
@@ -1628,309 +1430,26 @@ def decdeg2dmstxt(val,sig='NS'):
 
 def check_new_ebird():
     if os.path.isfile('/Users/eartigau/Downloads/MyEBirdData.csv'):
-        os.rename('/Users/eartigau/Downloads/MyEBirdData.csv','/Users/eartigau/oiseaux3/ebird/MyEBirdData.csv')
-        os.remove('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/all_exif.csv')
+        os.rename('/Users/eartigau/Downloads/MyEBirdData.csv','/Users/eartigau/wazo/ebird/MyEBirdData.csv')
     return []
 
-def master_photo_table(all_fic = 'oiseaux_originaux/*jpg',force=True,ebird=''):
+def master_photo_table():
 
-    csv_files = et.file_search('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*.csv')
-    for file in csv_files:
-        remove = True
-        if  os.path.isfile(file.split('.')[0]+'.jpg'):
-            remove = False
-        if os.path.isfile(file.split('.')[0] + '.mp4'):
-            remove = False
-
-        if remove:
-            os.remove(file)
-
-    hdr_files = et.file_search('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*.hdr')
-    for file in hdr_files:
-        remove = True
-        if  os.path.isfile(file.split('.')[0]+'.jpg'):
-            remove = False
-        if os.path.isfile(file.split('.')[0] + '.mp4'):
-            remove = False
-        if remove:
-            os.remove(file)
-
-    check_new_ebird()
-    all_fic = get_fichiers_originaux()
     ebird = get_ebird()
 
-    # just to check that all headers have been read
-    for fic in all_fic:
-        hdr = exif2csv(fic)
+    tbl = Table(ebird)
+    tbl = tbl[np.array(tbl['ML_CATALOG_NUMBERS'],dtype = str) != 'nan']
+    for i in tqdm(range(len(tbl))):
+        keys = tbl['ML_CATALOG_NUMBERS'][i].split(' ')
+        for key in keys:
+            # add line of ebird to the table
+            tbl.add_row(tbl2[i])
+            tbl['ML_CATALOG_NUMBERS'][-1] = key
+    keep = [' ' not in key for key in tbl['ML_CATALOG_NUMBERS']]
+    tbl = tbl[keep]
 
-    for fic in all_fic:
-        outname = (fic.split('.'))[0]+'.sp.csv' 
-        
-        if (os.path.exists(outname) == True):
-            if os.path.getmtime(outname)<os.path.getmtime(fic):
-                print('csv plus vieux que '+fic)
-                os.remove(outname)
-
-                os.system('rm /Users/eartigau/oiseaux_originaux/full_resolution/all_exif.csv')
-        
-        
-        if (os.path.exists(outname) == False):
-            print('does not exist  : '+outname)
-            
-            hdr = exif2csv(fic)
-            
-            # removes 0.0 and replaces with 0
-            for i in range(len(hdr)):
-                hdr[i] = '0'.join(hdr[i].split('0.0'))          
-            
-            hdr_out = dict()
-            date_kwrd=[]
-            for l1 in hdr:
-                if ': ' in l1:
-                    tmp=l1.split(": ")
-                    key = tmp[0]
-                    val = tmp[1]
-                    key = key.strip(" ")
-                    #val = '//'.join( (val.split("/")) )
-                    
-                    for ite in range(2):
-                        val = val.strip(" ")
-                        val = val.strip("'")
-                        val = val.strip("\n")                                
-                    hdr_out[key] = val
-                
-            date_kwrd = ''
-            if date_kwrd =='':
-                if 'Date/Time Original' in hdr_out.keys():
-                    date_kwrd='Date/Time Original'
-            if date_kwrd =='':
-                if 'Create Date' in hdr_out.keys():
-                    date_kwrd='Create Date'
-            if date_kwrd =='':
-                if 'Date/Time Created' in hdr_out.keys():
-                    date_kwrd='Date/Time Created'
-            if date_kwrd =='':
-                if 'Modify Date' in hdr_out.keys():
-                    date_kwrd = 'Modify Date'
-
-        
-            
-            if date_kwrd ==[]:
-                print(hdr_out)
-                stop
-            hdr_out['DATE'] = hdr_out[date_kwrd]
-        
-            day = (hdr_out['DATE'].split(' '))[0]
-            day = day.split(':')
-            day[1] =  (['','janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'])[int(day[1])]
-            if int(day[2])<9:
-                day[2]=day[2].strip('0')
-            if day[2] ==1:
-                day[2] = '1er'
-            day[2]+' '+day[1]+' '+day[0] 
-            
-            hdr_out['DATE_FR'] = day[2]+' '+day[1]+' '+day[0] 
-        
-            day = (hdr_out['DATE'].split(' '))[0]
-            day = day.split(':')
-            day[1] =  (['','January','February','March','April','May','June','July','August','September','Octobre','November','December'])[int(day[1])]
-            if int(day[2])<9:
-                day[2]=day[2].strip('0')
-            if day[2] ==1:
-                day[2] = '1st'
-            
-            hdr_out['DATE_EN'] = day[1]+' '+day[2]+', '+day[0] 
-        
-            yr,mo,da = (hdr_out['DATE'].split(' '))[0].split(':')
-            
-            if len(ebird) ==1:
-                ebird = get_ebird()
-
-            # must be in the same format as in the EXIF, no capital here
-            if ('Comment' in hdr_out.keys()) == False:
-                same_date = (np.where( (ebird['DATE'] == yr+'-'+mo+'-'+da)))[0]
-                os.system('open '+fic)  
-                print('Espèces observées le : '+yr+'-'+da+'-'+mo+'\n')
-                nn=1
-                if len(same_date) !=1:
-                    for i in same_date:
-                        print('['+str(nn)+'] '+np.array(ebird['LOCATION'])[i]+', '+np.array(ebird['COMMON_NAME'])[i])
-                        nn+=1
-                        
-                    val = input('Quelle lieu+espèce attibuer à la photo : ')
-                    val = int(val)
-                else:
-                    val = 1
-                    i=same_date[val-1]
-                    print('Une seule espèce pour cette date')
-                    print(' '+np.array(ebird['LOCATION'])[i]+', '+np.array(ebird['COMMON_NAME'])[i])
-
-                print(ebird['SUBMISSION_ID'][same_date[val - 1]])
-                print(ebird['EBIRD_CODE'][same_date[val - 1]])
-                cmd = 'exiftool -comment="' + ebird['SUBMISSION_ID'][same_date[val - 1]] + '_' + ebird['EBIRD_CODE'][
-                    same_date[val - 1]] + '" ' + fic
-                print(cmd)
-                os.system(cmd)
-                print('il faut rouler la commande à nouveau')
-
-                #return
-                continue
-                
-            else:
-                list_id,ebird_code=hdr_out['Comment'].split('_')
-                gg = (np.where( (list_id == ebird['SUBMISSION_ID']) & (ebird_code == ebird['EBIRD_CODE']))  )[0]
-
-                if len(gg) !=0:
-    
-                    for key in ebird.keys():
-                        hdr_out[key] = (np.array(ebird[key])[gg])[0]
-                else:
-                    print('exiftool -comment="" '+fic)
-                    os.system('exiftool -comment="" '+fic)
-                    
-            tbl=Table() 
-            for key in hdr_out.keys(): 
-                tmp=hdr_out[key]
-                if type(tmp) == str:
-                    tmp = ''.join(tmp.split('"'))
-                tbl[key]=[tmp]  
-            #tbl['KEY'] = keys
-            #tbl['VAL'] = vals
-            
-            tbl = clean_table(tbl)
-            
-            wps = wazo_params()           
-            
-            tbl2 = Table()
-            for key in wps['KEYS']:
-                if key in tbl.keys():
-                    tbl2[key] = tbl[key]
-                else:
-                    tbl2[key] = ''
-                    
-                    
-            # we make FOCAL_LENGTH a FLOAT
-            tmp = str(tbl2['FOCAL_LENGTH'][0])
-            tmp = (tmp.split(' '))[0]
-            del tbl2['FOCAL_LENGTH']
-            
-            #print(len(tmp))
-            if len(tmp) <=1:
-                tmp = '0.0'                
-            tbl2['FOCAL_LENGTH'] = np.array(tmp,dtype = float)
-
-            tbl = tbl2
-
-            esp = np.zeros(len(tbl),dtype = 'U99')
-            for i in range(len(esp)):
-                esp[i] = (tbl['FILE_NAME'][i].split('_') )[1]
-                
-            tag = np.zeros(len(tbl),dtype = 'U99')
-            for i in range(len(esp)):
-                tmp = (tbl['FILE_NAME'][i].split('_') )[2]
-                tag[i] = (tmp.split('.'))[0]
-                
-            tag_full = np.zeros(len(tbl),dtype = 'U99')
-            for i in range(len(esp)):
-                tag_full[i] = esp[i]+'_'+tag[i]
-        
-            url = np.zeros(len(tbl),dtype = 'U99')
-            for i in range(len(esp)):
-                url[i] = 'wazo/wazo_'+esp[i]+'_'+tag[i]+'.html'
-        
-            png = np.zeros(len(tbl),dtype = 'U99')
-            index = np.zeros(len(tbl),dtype = 'U99')
-            SMALL_PIC = np.zeros(len(tbl),dtype = 'U99')
-
-            rand = []
-            for i in range(len(esp)):
-                png[i] = 'peli/c_circle_'+esp[i]+'_'+tag[i]+'.png'
-                SMALL_PIC[i] = 'peli/c_wazo_'+esp[i]+'_'+tag[i]+'.jpg'
-                index[i] = str(i)
-                rand.append(random.random())
-            tbl['TAG_SPECIES'] = np.array(tbl['EBIRD_CODE'])
-            tbl['TAG_NUM'] = tag
-            tbl['TAG_FULL'] = tag_full
-            tbl['URL'] = url
-            tbl['PNG'] = png
-            tbl['SMALL_PIC'] = SMALL_PIC
-            tbl['INDEX'] = index
-            tbl['RANDOM_INDEX'] = np.argsort(rand)
-        
-            tbl['VOYAGE_FR'] = np.zeros(len(tbl),dtype = '<U999')
-            tbl['VOYAGE_EN'] = np.zeros(len(tbl),dtype = '<U999')
-            tbl['VOYAGE_URL'] = np.zeros(len(tbl),dtype = '<U999')
-            tbl['VOYAGE_TAG'] = np.zeros(len(tbl),dtype = '<U999')
-
-            voyages = Table.read('/Users/eartigau/oiseaux3/voyages.csv')
-            
-            for i in range(len(voyages)):
-                g = ((tbl['DATE']>voyages['DATE1'][i]) & (tbl['DATE']<voyages['DATE2'][i]))
-                tbl['VOYAGE_FR'][g] = voyages['VOYAGE_FR'][i]
-                tbl['VOYAGE_EN'][g] = voyages['VOYAGE_EN'][i]
-                tbl['VOYAGE_TAG'][g] = voyages['VOYAGE_TAG'][i]
-                tbl['VOYAGE_URL'][g] = 'wazo/wazo_'+''.join(((voyages['DATE1'][i]).split('-')))+'.html'
-        
-            tbl['DATE_FR'] = np.zeros(len(tbl),dtype = '<U999')
-            tbl['DATE_EN'] = np.zeros(len(tbl),dtype = '<U999')
-        
-            tbl['PHOTO_LABEL_FR'] = np.zeros(len(tbl),dtype = '<U999')
-            tbl['PHOTO_LABEL_EN'] = np.zeros(len(tbl),dtype = '<U999')
-            
-            
-            tbl['NOM_FR'] = tbl['COMMON_NAME']
-            tbl['NOM_EN'] = tbl['ENGLISH_NAME']
-            
-            tbl['BGND'] = np.zeros(len(tbl),dtype = '<U99')
-            tbl['BGND'][:] = 'bgnd_others.png'
-            tbl['FORMAT'] = fic[-3:].upper()
-
-            for i in range(len(tbl)):
-                #print(i)
-                bgnd_name =  'oiseaux_originaux/bgnd/bgnd_'+tbl['TAG_SPECIES'][i]+'.jpg'
-                if os.path.isfile(bgnd_name):
-                    tbl['BGND'][i] = 'bgnd_'+tbl['TAG_SPECIES'][i]+'.jpg'
-
-
-            print(tbl)
-            try:
-                SORT_MJD_ESP = np.array(tbl['MJD'],dtype = float)+np.array(tbl['SORT'],dtype = float)/1e9
-            except:
-                print('no SORT')
-                continue
-            tbl['SORT_MJD_ESP'] = SORT_MJD_ESP
-            
-            
-            date = np.array(tbl['DATE']) 
-            for i in range(len(tbl)):
-                tmp = date[i].split('-')
-            
-                if len(tmp) == 3:
-                    mois = (['','janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'])[int(tmp[1])]
-                    month = (['','January','February','March','April','May','June','July','August','Septembre','Octobre','Novembre','Decembre'])[int(tmp[1])]
-                    tbl['DATE_FR'][i] = tmp[2]+' '+mois+' '+tmp[0]
-                    tbl['DATE_EN'][i] = month+' '+ tmp[2]+', '+tmp[0]
-                    
-                    #
-                    #tbl['PHOTO_LABEL_FR'][i] = '<A  STYLE="text-decoration:none" HREF="wazo/wazo_'+tbl['TAG_SPECIES'][i]+'.html">'+tbl['COMMON_NAME'][i]+'</a>, '+'<A  STYLE="text-decoration:none" HREF="wazo/wazo_l.'+tbl['LOCSTR'][i]+'.html">'+tbl['LOCATION'][i]+', '+tbl['PROVINCE_FR'][i]+'</a> - '+tbl['DATE_FR'][i]+', <A  STYLE="text-decoration:none" HREF="https://ebird.org/view/checklist?subID='+tbl['SUBMISSION_ID'][i]+'">ebird<a/>'
-                    #tbl['PHOTO_LABEL_EN'][i] = '<A  STYLE="text-decoration:none" HREF="wazo/wazo_'+tbl['TAG_SPECIES'][i]+'.html">'+tbl['ENGLISH_NAME'][i]+'</a> - '+tbl['DATE_EN'][i]
-                    
-                    
-                    # tbl['Common Name'][i] +', '++'; '++', '+tbl['COUNTRY_FR'][i]
-                    #tbl['PHOTO_LABEL_EN'][i] = tbl['English name'][i]+', '+tbl['DATE_EN'][i]+'; '+tbl['Location'][i]+', '+tbl['PROVINCE_EN'][i]+', '+tbl['COUNTRY_EN'][i]
-        
-        
-            
-            tbl.write(outname,overwrite=True,format='csv')
-            
-    print(os.system('cat /Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/*sp.csv  > /Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/all_exif.csv'))
-    tbl = Table.read('/Users/eartigau/oiseaux3/oiseaux_originaux/full_resolution/all_exif.csv')
-    tbl = tbl[tbl['FAMILY'] != 'FAMILY']
-    
-    # now defined as a float
-    SORT_MJD_ESP = np.array(tbl['SORT_MJD_ESP'],dtype = float)        
-    del tbl['SORT_MJD_ESP'] 
-    tbl['SORT_MJD_ESP']  = SORT_MJD_ESP
+    tbl['NOM_FR'] = tbl['COMMON_NAME']
+    tbl['NOM_EN'] = tbl['ENGLISH_NAME']
 
     tbl['RANDOM_INDEX'] = np.argsort(np.random.rand(len(tbl)))          
 
@@ -2033,16 +1552,18 @@ def master_photo_table(all_fic = 'oiseaux_originaux/*jpg',force=True,ebird=''):
         tbl['MENU_EN'][g] = str_out_en
 
     tbl['TAXONOMIC_ORDER'] = np.array(tbl['TAXONOMIC_ORDER'], dtype = float)
-    tbl['SORT'] = np.array(tbl['SORT'], dtype = float)
+    tbl['SORT'] = np.array(tbl['TAXONOMIC_ORDER'], dtype = float)
     tbl = tbl[np.argsort(tbl['SORT'])]
 
     tbl['IUCN'] = np.zeros_like(tbl, dtype = 'U99')
     ucode =  np.unique(tbl['EBIRD_CODE'])
     for u in tqdm(ucode):
+        if u =='':
+            continue
         url = 'https://species.birds.cornell.edu/bow/api/v1/auxspecies/{}?category=conservation_status'.format(u)
-        if not os.path.isfile('/Users/eartigau/oiseaux3/iucn/'+u):
-            os.system('wget -q -O /Users/eartigau/oiseaux3/iucn/'+u+' '+url)
-        f = open('/Users/eartigau/oiseaux3/iucn/'+u, 'r')
+        if not os.path.isfile('/Users/eartigau/wazo/iucn/'+u):
+            os.system('wget -q -O /Users/eartigau/wazo/iucn/'+u+' '+url)
+        f = open('/Users/eartigau/wazo/iucn/'+u, 'r')
         a = f.read()
         f.close()
         a = a.split(',')
@@ -2078,44 +1599,44 @@ def master_photo_table(all_fic = 'oiseaux_originaux/*jpg',force=True,ebird=''):
 
     tbl['QUALITE'] = 0
 
-    files_quality = np.array(glob.glob('/Users/eartigau/oiseaux3/qualite/*/*'))
-    files_quality = files_quality[np.argsort(files_quality)]
-
-    files_quality_str = []
-    quality = []
-    for i in range(len(files_quality)):
-        quality.append( files_quality[i].split('/')[-2])
-        files_quality_str.append('_'.join(files_quality[i].split('/')[-1].split('.')[0].split('_')[-2:]))
-        print(quality[-1],files_quality_str[-1])
-    quality = np.array(quality,dtype = int)
-    files_quality_str = np.array(files_quality_str)
-
-    for i in tqdm(range(len(tbl))):
-        tmp = '_'.join(tbl['FILE_NAME'][i].split('_')[1:3]).split('.')[0]
-        tbl['QUALITE'][i] =  np.max(quality[np.where(files_quality_str == tmp)])
-
-    tbl['INTRO'] = False
     tbl['SP_ID'] = np.zeros_like(tbl,dtype = 'U99')
     tbl['NTH_ID'] = np.zeros_like(tbl,dtype = 'U99')
 
+    val, index = np.unique(tbl['ML_CATALOG_NUMBERS'],return_index=True)
+    tbl = tbl[index]
+
+
+
+    tbl['DATA_TYPE'] = 'photo'
+
+    tbl_data_type = Table.read('/Users/eartigau/wazo/data_type.csv')
+
     for i in tqdm(range(len(tbl))):
-        sp =  tbl['FILE_NAME'][i].split('_')[1]
-        ext = tbl['FILE_NAME'][i].split('_')[2].split('.')[0]
-        tbl['SP_ID'][i] = sp
-        tbl['NTH_ID'][i] = ext
-        tbl['INTRO'][i] = os.path.isfile('/Users/eartigau/oiseaux3/peli/intro/c_circle_{0}_{1}.png'.format(sp,ext))
+        id_ml = int(tbl['ML_CATALOG_NUMBERS'][i])
+        if id_ml in tbl_data_type['ML_CATALOG_NUMBERS']:
+            g = (np.where(tbl_data_type['ML_CATALOG_NUMBERS'] == id_ml))[0]
+            if len(g) > 0:
+                tbl['DATA_TYPE'][i] = tbl_data_type['DATA_TYPE'][g[0]]
+                continue
+        else:
+            url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{id_ml}/480"
+
+            response = requests.head(url)
+
+            if response.status_code == 200:
+                tbl['DATA_TYPE'][i] = 'photo'
+            else:
+                tbl['DATA_TYPE'][i] = 'audio'
+        
+        tbl_data_type.add_row()
+        tbl_data_type['ML_CATALOG_NUMBERS'][-1] = id_ml
+        tbl_data_type['DATA_TYPE'][-1] = tbl['DATA_TYPE'][i]
+
+    tbl_data_type.write('/Users/eartigau/wazo/data_type.csv',overwrite=True,format='csv')
+
 
     return tbl
 
-def master_photo_table_old(force=False):
-    
-    print(os.system('cat /Users/eartigau/oiseaux_originaux/full_resolution/*sp.csv  > /Users/eartigau/oiseaux_originaux/full_resolution/all_exif.csv'))
-    tbl = Table.read('/Users/eartigau/oiseaux_originaux/full_resolution/all_exif.csv')
-    tbl = tbl[tbl['FAMILY'] != 'FAMILY']
-    
-    ebird = get_ebird() 
-
-    return tbl
 
 def exifhdr(fic):
     import exifread
@@ -2155,56 +1676,6 @@ def get_hdr(fic):
     hdr.close()
     return hdr_out
 
-def jophoto():
-    dirs = ['oiseaux','mammiferes','plantes']
-
-    all_files = []
-    all_dates = []
-    all_folders = []
-    all_jds = []
-    for dir in dirs:
-        files = glob.glob('/Users/eartigau/oiseaux3/jophoto/{}/*jpg'.format(dir))
-        for file in files:
-            hdr = exif2csv(file,force = True)
-
-            date = ''
-            for li in hdr:
-                if 'Date/Time Original' in li:
-                    date_full = li.split(' : ')[-1].split('\n')[0]
-                    date_full = date_full.split(' ')
-                    date_full[0] = '-'.join(date_full[0].split(':'))
-
-                    date_full = date_full[0]+'T'+date_full[1]
-                    jd = Time(date_full, format='isot', scale='utc').jd
-
-                    date = li.split(' : ')[-1].split(' ')[0]
-                    print(date)
-
-                    tmp = date.split(':')
-                    yr = tmp[0]
-                    mois = ['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août',
-                            'Septembre','Octobre','Novembre','Décembre'][int(tmp[1])-1]
-                    day = tmp[2]
-                    date = day+' '+mois+' '+yr
-
-            all_files.append(file.split('/')[-1])
-            all_folders.append(dir)
-            all_dates.append(date)
-            all_jds.append(jd)
-
-            ico = '/Users/eartigau/oiseaux3/peli/'+file.split('/')[-1]
-            if not os.path.isfile(ico):
-                print(ico)
-                drag([file])
-
-    tbl = Table()
-    tbl['FILE'] = all_files
-    tbl['GALLERY'] = all_folders
-    tbl['DATE'] = all_dates
-    tbl['JD'] = all_jds
-    tbl = tbl[np.argsort(tbl['JD'])]
-
-    return tbl
 
 #mk_web()
 
