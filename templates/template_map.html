@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+  <title>{{ NAME }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="favicon.ico" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/lightgallery.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+  <link rel="stylesheet" href="css/swiper.css">
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+<style type="text/css">
+#map-container {
+margin-left: 00px;
+}
+#map {
+height: 600px;
+}
+table, td, th {
+border: 0px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  height: 70%;
+  width: 99%;
+}
+
+body{
+
+background: url( "oiseaux_originaux/bgnd/bgnd_old.png" ) no-repeat left bottom fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-color: #191919;
+
+
+}
+
+</style>
+
+<script src="src/jsapi"></script>
+<script src="src/wazo_full.json" type="text/javascript"></script>
+
+<script type="text/javascript">
+  var script = '<script type="text/javascript" src="src/markerclusterer';
+  if (document.location.search.indexOf('compiled') !== -1) {
+    script += '_compiled';
+  }
+  script += '.js"><' + '/script>';
+  document.write(script);
+</script>
+
+<script type="text/javascript" src="src/src_full.js"></script>
+
+<script type="text/javascript">
+  google.load('maps', '3', {
+    other_params: 'sensor=false'
+  });
+  google.setOnLoadCallback(speedTest.init);
+</script>
+
+
+</head>
+
+<body>
+
+    <div align="center">
+     <br>
+      <hmenu>
+    {{ MENU }}
+      </hmenu>
+    </div>
+
+
+
+
+    <table>
+        <tr>
+            <td >
+                <div id="panel" >
+                    <span id="timetaken"></span>
+                    <div id="markerlist"></div>
+                </div>
+                <div id="map-container" style="width:99%">
+                    <div id="map" ></div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA5LIDZofQjNc4nxnLFNAU2apmXX3wseA&callback=initMap&">
+    </script>
+
+</body>
+</html>

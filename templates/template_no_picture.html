@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>{{ NAME }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+  <link rel="stylesheet" href="css/lightgallery.min.css">
+
+  <link rel="stylesheet" href="css/bootstrap-datepicker.css">
+
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/swiper.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+
+  <link rel="stylesheet" href="css/style.css">
+
+
+
+</head>
+<body>
+
+<style>
+  .newspaper
+  {
+    -moz-column-count:6; /* Firefox */
+    -webkit-column-count:6; /* Safari and Chrome */
+    column-count:6;
+    -moz-column-gap:20px; /* Firefox */
+    -webkit-column-gap:20px; /* Safari and Chrome */
+    column-gap:20px;
+    -moz-column-rule:1px outset #FFFFFF; /* Firefox */
+    -webkit-column-rule:1px outset #FFFFFF; /* Safari and Chrome */
+    column-rule:1px outset #FFFFFF;
+  }
+</style>
+
+  <div class="site-wrap">
+
+
+    <header class="site-navbar py-3" role="banner">
+      <div class="container-fluid">
+        <div class="row align-items-center">
+
+          <div class="col-6 col-xl-2" data-aos="fade-down">
+            <h1 class="mb-0"><a href="index.html" class="text-white h2 mb-0">Photosen</a></h1>
+          </div>
+          <div class="col-10 col-md-8 d-none d-xl-block" data-aos="fade-down">
+            <nav class="site-navigation position-relative text-right text-lg-center" role="navigation">
+
+              <ul class="site-menu js-clone-nav mx-auto d-none d-lg-block">
+
+                {% for item in MENU %}
+                  {{ item }}
+                {% endfor %}
+
+              </ul>
+            </nav>
+          </div>
+
+
+        </div>
+      </div>
+      
+    </header>
+
+    {{ TEXTE_NO_PICTURE }}
+
+    <div class="footer py-4">
+      <div class="container-fluid text-center">
+        <p>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+          Copyright &copy;<script>document.write(new Date().getFullYear());</script> Tous drois réservés | Template par <a href="https://colorlib.com" target="_blank" >Colorlib</a>
+          <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+        </p>
+      </div>
+    </div>
+
+
+
+
+
+  </div>
+
+  
+  <script>
+    $(document).ready(function(){
+      $('#lightgallery').lightGallery();
+    });
+  </script>
+
+</body>
+</html>

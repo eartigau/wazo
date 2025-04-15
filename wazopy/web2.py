@@ -2,7 +2,7 @@ from astropy.table import Table
 import numpy as np
 import pandas as pd
 
-csv_file = 'MyEBirdData.csv'
+csv_file = '/Users/eartigau/wazo/ebird/MyEBirdData.csv'
 # read as a Pandas DataFrame
 tbl = pd.read_csv(csv_file)
 # remove lines that do not have a value in 'ML Catalog Numbers'

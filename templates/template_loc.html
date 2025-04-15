@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../css/global.css" type="text/css" media="all">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="../css/styles_menu.css">
+<link href="../css/global.css" rel="stylesheet" type="text/css" >
+
+   <script src="../css/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="../css/script_menu.js"></script>
+
+
+<style>
+
+
+body{
+
+        /* <!-- INPUT90_start --> */
+     background: url("../bgnd2.png") no-repeat left bottom fixed; 
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+    background-color: #050505;
+
+        /* <!-- INPUT90_end --> */
+
+}
+
+
+
+	h9 {color:#000000;letter-spacing:-6px}
+
+      #panel {
+        float: left;
+        width: 0px;
+        height: 00px;
+      }
+
+      #map-container {
+        margin-left: 00px;
+      }
+
+      #map {
+        width: 900px;
+        height: 700px;
+      }
+
+      #markerlist {
+        height: 400px;
+        margin: 10px 5px 0 10px;
+        overflow: auto;
+      }
+
+
+
+      .title:hover {
+        background: #000000;
+      }
+
+      #timetaken {
+        color: #f00;
+      }
+
+      .info {
+        width: 400px;
+      }
+
+      .info img {
+        border: 0;
+      }
+
+      .info-body {
+        width: 300px;
+        height: 200px;
+        line-height: 200px;
+        margin: 2px 0;
+        text-align: center;
+        overflow: hidden;
+      }
+
+      .info-img {
+        height: 220px;
+        width: 200px;
+      }
+
+
+          /* Demo styles */
+	body{border-top:0px}
+	
+	
+	p{margin:0 0 0px}
+	a {color:#F4A460;text-decoration:none;}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    background-color: rgb(250,250,250);
+    background-color: rgba(250,250,250, 0.95);
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+
+.overlay-content {
+    position: relative;
+    z-index: 10;
+    top: 12%;
+    width: 100%;
+    <!-- text-align: center; --!>
+    <!-- margin-top: 30px; --!>
+     line-height: 0px;  --!>
+}
+
+
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+  
+	 .cred{margin-top:0px;font-size:10px;}
+	  /* This rule is read by Galleria to define the gallery height: */
+	 #galleria{height:600px}
+	   .newspaper
+	{
+	-moz-column-count:6; /* Firefox */
+	-webkit-column-count:6; /* Safari and Chrome */
+	column-count:6;
+	-moz-column-gap:20px; /* Firefox */
+	-webkit-column-gap:20px; /* Safari and Chrome */
+	column-gap:20px;
+	-moz-column-rule:1px outset #FFFFFF; /* Firefox */
+	-webkit-column-rule:1px outset #FFFFFF; /* Safari and Chrome */
+	column-rule:1px outset #FFFFFF;
+	}
+
+
+            /* Gallery measures that will be applied */
+
+            .galleria {
+                height:600px;    /* defines a static gallery height */
+                max-width:920px; /* defines a responsive width */
+            }
+
+
+
+
+
+        </style>
+  
+  
+
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js?key=AIzaSyDA5LIDZofQjNc4nxnLFNAU2apmXX3wseA"></script>
+        <script src="../galleria/galleria-1.3.3.min.js"></script>
+
+	    <meta charset="utf-8">
+<!-- INPUT2_start -->
+<title>Canals du Rhône à Sète</title>
+<!-- INPUT2_end -->
+
+     <script src="../src/jsapi"></script>
+
+<!-- INPUT9_start -->
+    <script src="../src/data.N433410E041122.e.json" type="text/javascript"></script>
+<script type="text/javascript" src="../src/speed_test.N433410E041122.e.js"></script>
+<!-- INPUT9_end -->
+
+
+    <script type="text/javascript">
+      var script = '<script type="text/javascript" src="../src/markerclusterer';
+      if (document.location.search.indexOf('compiled') !== -1) {
+        script += '_compiled';
+      }
+      script += '.js"><' + '/script>';
+      document.write(script);
+    </script>
+
+
+
+
+
+    <script type="text/javascript">
+      google.load('maps', '3', {
+      	other_params: 'sensor=false'
+      });
+      
+      google.setOnLoadCallback(speedTest.init);
+    </script>
+
+
+<meta charset="utf-8">
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-102877327-1', 'auto');   ga('send', 'pageview');  
+</script>
+
+
+
+    </head>
+<body>
+
+
+
+<div id="myNav" class="overlay" style="width: 0%; height: 100%">
+
+<a href="javascript:void(0)" class="closebtn" onclick="closeNav()" STYLE="font-size: 60px;">&#10006;</a>
+
+<div class="overlay-content">
+<div class="newspaper">
+
+
+<!-- INPUT101_start -->
+<br><h3>Rheidae</h3><h4><a href = "bird_0003.html" STYLE="color: #BB5511">Lesser Rhea</a></h4>
+<br><h3>Tinamidae</h3><h4><a href = "bird_0055.html" STYLE="color: #BB5511">Spotted Nothura</a></h4>
+<h4><a href = "bird_0051.html" STYLE="color: #BB5511">Chilean Tinamou</a></h4>
+<br><h3>Podicipedidae</h3><h4><a href = "bird_0070.html" STYLE="color: #BB5511">Pied-billed Grebe</a></h4>
+<h4><a href = "bird_0074.html" STYLE="color: #BB5511">Great Grebe</a></h4>
+<h4><a href = "bird_0075.html" STYLE="color: #BB5511">Red-necked Grebe</a></h4>
+<h4><a href = "bird_0076.html" STYLE="color: #BB5511">Great Crested Grebe</a></h4>
+<h4><a href = "bird_0077.html" STYLE="color: #BB5511">Horned Grebe</a></h4>
+<h4><a href = "bird_0080.html" STYLE="color: #BB5511">Silvery Grebe</a></h4>
+<h4><a href = "bird_0063.html" STYLE="color: #BB5511">White-tufted Grebe</a></h4>
+
+<br><h3>Spheniscidae</h3><h4><a href = "bird_0101.html" STYLE="color: #BB5511">Magellanic Penguin</a></h4>
+<h4><a href = "bird_0100.html" STYLE="color: #BB5511">Humboldt Penguin</a></h4>
+
+<br><h3>Gaviidae</h3><h4><a href = "bird_0103.html" STYLE="color: #BB5511">Red-throated Loon</a></h4>
+<h4><a href = "bird_0106.html" STYLE="color: #BB5511">Common Loon</a></h4>
+
+<h4><a href = "bird_0105.html" STYLE="color: #BB5511">Pacific Loon</a></h4>
+
+<br><h3>Diomedeidae</h3><h4><a href = "bird_0115.html" STYLE="color: #BB5511">Black-browed Albatross</a></h4>
+<h4><a href = "bird_0117.html" STYLE="color: #BB5511">Salvin's Albatross</a></h4>
+<h4><a href = "bird_0121.html" STYLE="color: #BB5511">Buller's Albatross</a></h4>
+<h4><a href = "bird_0110.html" STYLE="color: #BB5511">Royal Albatross</a></h4>
+<h4><a href = "bird_0114.html" STYLE="color: #BB5511">Laysan Albatross</a></h4>
+
+<br><h3>Procellariidae</h3><h4><a href = "bird_0190.html" STYLE="color: #BB5511">Manx Shearwater</a></h4>
+<h4><a href = "bird_0124.html" STYLE="color: #BB5511">Antarctic Giant-Petrel</a></h4>
+<h4><a href = "bird_0125.html" STYLE="color: #BB5511">Hall's Giant-Petrel</a></h4>
+<h4><a href = "bird_0126.html" STYLE="color: #BB5511">Northern Fulmar</a></h4>
+<h4><a href = "bird_0127.html" STYLE="color: #BB5511">Southern Fulmar</a></h4>
+<h4><a href = "bird_0129.html" STYLE="color: #BB5511">Cape Petrel</a></h4>
+<h4><a href = "bird_0146.html" STYLE="color: #BB5511">Defillipi's Petrel</a></h4>
+<h4><a href = "bird_0176.html" STYLE="color: #BB5511">White-chinned Petrel</a></h4>
+<h4><a href = "bird_0178.html" STYLE="color: #BB5511">Westland Petrel</a></h4>
+<h4><a href = "bird_0182.html" STYLE="color: #BB5511">Wedge-tailed Shearwater</a></h4>
+<h4><a href = "bird_0185.html" STYLE="color: #BB5511">Pink-footed Shearwater</a></h4>
+<h4><a href = "bird_0186.html" STYLE="color: #BB5511">Great Shearwater</a></h4>
+<h4><a href = "bird_0187.html" STYLE="color: #BB5511">Sooty Shearwater</a></h4>
+
+<h4><a href = "bird_0224.html" STYLE="color: #BB5511">Peruvian Diving-Petrel</a></h4>
+<h4><a href = "bird_0225.html" STYLE="color: #BB5511">Magellanic Diving-Petrel</a></h4>
+<br><h3>Hydrobatidae</h3><h4><a href = "bird_0203.html" STYLE="color: #BB5511">Wilson's Storm-Petrel</a></h4>
+<br><h3>Fregatidae</h3><h4><a href = "bird_0230.html" STYLE="color: #BB5511">Great Frigatebird</a></h4>
+<h4><a href = "bird_0228.html" STYLE="color: #BB5511">Magnificent Frigatebird</a></h4>
+<br><h3>Phaethontidae</h3><h4><a href = "bird_0234.html" STYLE="color: #BB5511">Red-tailed Tropicbird</a></h4>
+<h4><a href = "bird_0235.html" STYLE="color: #BB5511">White-tailed Tropicbird</a></h4>
+
+
+
+<br><h3>Sulidae</h3><h4><a href = "bird_0237.html" STYLE="color: #BB5511">Northern Gannet</a></h4>
+<h4><a href = "bird_0241.html" STYLE="color: #BB5511">Peruvian Booby</a></h4>
+<h4><a href = "bird_0243.html" STYLE="color: #BB5511">Red-footed Booby</a></h4>
+
+
+
+<br><h3>Phalacrocoracidae</h3><h4><a href = "bird_0282.html" STYLE="color: #BB5511">Red-legged Cormorant</a></h4>
+<h4><a href = "bird_0248.html" STYLE="color: #BB5511">Little Cormorant</a></h4>
+<h4><a href = "bird_0255.html" STYLE="color: #BB5511">Neotropic Cormorant</a></h4>
+<h4><a href = "bird_0256.html" STYLE="color: #BB5511">Double-crested Cormorant</a></h4>
+<h4><a href = "bird_0257.html" STYLE="color: #BB5511">Indian Cormorant</a></h4>
+<h4><a href = "bird_0260.html" STYLE="color: #BB5511">Great Cormorant</a></h4>
+<h4><a href = "bird_0265.html" STYLE="color: #BB5511">Guanay Cormorant</a></h4>
+<h4><a href = "bird_0266.html" STYLE="color: #BB5511">Imperial Shag</a></h4>
+<h4><a href = "bird_0277.html" STYLE="color: #BB5511">Rock Shag</a></h4>
+<h4><a href = "bird_0280.html" STYLE="color: #BB5511">Pelagic Cormorant</a></h4>
+<h4><a href = "bird_0281.html" STYLE="color: #BB5511">European Shag</a></h4>
+
+<br><h3>Anhingidae</h3><h4><a href = "bird_0285.html" STYLE="color: #BB5511">Anhinga</a></h4>
+<h4><a href = "bird_0287.html" STYLE="color: #BB5511">Oriental Darter</a></h4>
+
+
+
+<br><h3>Pelecanidae</h3><h4><a href = "bird_0295.html" STYLE="color: #BB5511">Brown Pelican</a></h4>
+<h4><a href = "bird_0296.html" STYLE="color: #BB5511">Peruvian Pelican</a></h4>
+<h4><a href = "bird_0292.html" STYLE="color: #BB5511">Spot-billed Pelican</a></h4>
+<h4><a href = "bird_0294.html" STYLE="color: #BB5511">American White Pelican</a></h4>
+<br><h3>Ardeidae</h3><h4><a href = "bird_0315.html" STYLE="color: #BB5511">Cocoi Heron</a></h4>
+<h4><a href = "bird_0322.html" STYLE="color: #BB5511">Purple Heron</a></h4>
+<h4><a href = "bird_0325.html" STYLE="color: #BB5511">Great Egret</a></h4>
+<h4><a href = "bird_0327.html" STYLE="color: #BB5511">Cattle Egret</a></h4>
+<h4><a href = "bird_0329.html" STYLE="color: #BB5511">Indian Pond-Heron</a></h4>
+<h4><a href = "bird_0335.html" STYLE="color: #BB5511">Green Heron</a></h4>
+<h4><a href = "bird_0338.html" STYLE="color: #BB5511">Yellow-crowned Night-Heron</a></h4>
+<h4><a href = "bird_0339.html" STYLE="color: #BB5511">Black-crowned Night-Heron</a></h4>
+<h4><a href = "bird_0361.html" STYLE="color: #BB5511">American Bittern</a></h4>
+<h4><a href = "bird_0314.html" STYLE="color: #BB5511">Great Blue Heron</a></h4>
+<h4><a href = "bird_0299.html" STYLE="color: #BB5511">Reddish Egret</a></h4>
+<h4><a href = "bird_0302.html" STYLE="color: #BB5511">Tricolored Heron</a></h4>
+<h4><a href = "bird_0304.html" STYLE="color: #BB5511">Little Blue Heron</a></h4>
+<h4><a href = "bird_0305.html" STYLE="color: #BB5511">Little Egret</a></h4>
+<h4><a href = "bird_0308.html" STYLE="color: #BB5511">Snowy Egret</a></h4>
+<h4><a href = "bird_0312.html" STYLE="color: #BB5511">Grey Heron</a></h4>
+
+<br><h3>Threskiornithidae</h3><h4><a href = "bird_0366.html" STYLE="color: #BB5511">White Ibis</a></h4>
+<h4><a href = "bird_0382.html" STYLE="color: #BB5511">Northern Bald Ibis</a></h4>
+<h4><a href = "bird_0385.html" STYLE="color: #BB5511">Sacred Ibis</a></h4>
+
+
+<h4><a href = "bird_0387.html" STYLE="color: #BB5511">Black-headed Ibis</a></h4>
+<h4><a href = "bird_0390.html" STYLE="color: #BB5511">Red-naped Ibis</a></h4>
+<h4><a href = "bird_0399.html" STYLE="color: #BB5511">Roseate Spoonbill</a></h4>
+
+<h4><a href = "bird_0369.html" STYLE="color: #BB5511">Glossy Ibis</a></h4>
+<h4><a href = "bird_0376.html" STYLE="color: #BB5511">Black-faced Ibis</a></h4>
+<br><h3>Ciconiidae</h3><h4><a href = "bird_0403.html" STYLE="color: #BB5511">Painted Stork</a></h4>
+<h4><a href = "bird_0410.html" STYLE="color: #BB5511">Maguari Stork</a></h4>
+<h4><a href = "bird_0411.html" STYLE="color: #BB5511">White Stork</a></h4>
+<br><h3>Cathartidae</h3><h4><a href = "bird_0419.html" STYLE="color: #BB5511">Black Vulture</a></h4>
+<h4><a href = "bird_0420.html" STYLE="color: #BB5511">Turkey Vulture</a></h4>
+<h4><a href = "bird_0424.html" STYLE="color: #BB5511">Andean Condor</a></h4>
+
+<br><h3>Phoenicopteridae</h3><h4><a href = "bird_0430.html" STYLE="color: #BB5511">Puna Flamingo</a></h4>
+<h4><a href = "bird_0429.html" STYLE="color: #BB5511">Andean Flamingo</a></h4>
+<h4><a href = "bird_04265.html" STYLE="color: #BB5511">American Flamingo</a></h4>
+<h4><a href = "bird_0426.html" STYLE="color: #BB5511">Greater Flamingo</a></h4>
+<h4><a href = "bird_0427.html" STYLE="color: #BB5511">Chilean Flamingo</a></h4>
+
+
+<br><h3>Anhimidae</h3><h4><a href = "bird_0433.html" STYLE="color: #BB5511">Southern Screamer</a></h4>
+<br><h3>Anatidae</h3><h4><a href = "bird_0472.html" STYLE="color: #BB5511">Canada Goose</a></h4>
+<h4><a href = "bird_0442.html" STYLE="color: #BB5511">Black-bellied Whistling-Duck</a></h4>
+<h4><a href = "bird_0445.html" STYLE="color: #BB5511">Ruddy Duck</a></h4>
+<h4><a href = "bird_0449.html" STYLE="color: #BB5511">Lake Duck</a></h4>
+<h4><a href = "bird_0453.html" STYLE="color: #BB5511">Mute Swan</a></h4>
+<h4><a href = "bird_0455.html" STYLE="color: #BB5511">Black-necked Swan</a></h4>
+<h4><a href = "bird_0460.html" STYLE="color: #BB5511">Coscoroba Swan</a></h4>
+<h4><a href = "bird_0466.html" STYLE="color: #BB5511">Greylag Goose</a></h4>
+<h4><a href = "bird_0467.html" STYLE="color: #BB5511">Bar-headed Goose</a></h4>
+<h4><a href = "bird_04685.html" STYLE="color: #BB5511">Ross's Goose</a></h4>
+<h4><a href = "bird_0468.html" STYLE="color: #BB5511">Snow Goose</a></h4>
+<h4><a href = "bird_0469.html" STYLE="color: #BB5511">Ross's Goose</a></h4>
+<h4><a href = "bird_0471.html" STYLE="color: #BB5511">Hawaiian Goose</a></h4>
+
+<h4><a href = "bird_0474.html" STYLE="color: #BB5511">Brent Goose</a></h4>
+<h4><a href = "bird_0478.html" STYLE="color: #BB5511">Andean Goose</a></h4>
+<h4><a href = "bird_0479.html" STYLE="color: #BB5511">Upland Goose</a></h4>
+<h4><a href = "bird_0480.html" STYLE="color: #BB5511">Kelp Goose</a></h4>
+<h4><a href = "bird_0481.html" STYLE="color: #BB5511">Ashy-headed Goose</a></h4>
+<h4><a href = "bird_0482.html" STYLE="color: #BB5511">Ruddy-headed Goose</a></h4>
+<h4><a href = "bird_0484.html" STYLE="color: #BB5511">Egyptian Goose</a></h4>
+<h4><a href = "bird_0485.html" STYLE="color: #BB5511">Ruddy Shelduck</a></h4>
+<h4><a href = "bird_0490.html" STYLE="color: #BB5511">Common Shelduck</a></h4>
+<h4><a href = "bird_0492.html" STYLE="color: #BB5511">Flightless Steamerduck</a></h4>
+<h4><a href = "bird_0505.html" STYLE="color: #BB5511">Wood Duck</a></h4>
+<h4><a href = "bird_0506.html" STYLE="color: #BB5511">Mandarin Duck</a></h4>
+<h4><a href = "bird_0513.html" STYLE="color: #BB5511">American Wigeon</a></h4>
+<h4><a href = "bird_0514.html" STYLE="color: #BB5511">Chiloe Wigeon</a></h4>
+<h4><a href = "bird_0516.html" STYLE="color: #BB5511">Gadwall</a></h4>
+<h4><a href = "bird_0519.html" STYLE="color: #BB5511">Common Teal</a></h4>
+<h4><a href = "bird_0521.html" STYLE="color: #BB5511">Speckled Teal</a></h4>
+<h4><a href = "bird_05305.html" STYLE="color: #BB5511">Common Mallard x Black Duck</a></h4>
+<h4><a href = "bird_05307.html" STYLE="color: #BB5511">Common x Mexican Mallard</a></h4>
+<h4><a href = "bird_0530.html" STYLE="color: #BB5511">Common Mallard</a></h4>
+<h4><a href = "bird_0533.html" STYLE="color: #BB5511">Hawaiian Duck</a></h4>
+<h4><a href = "bird_0534.html" STYLE="color: #BB5511">Mottled Duck</a></h4>
+<h4><a href = "bird_0535.html" STYLE="color: #BB5511">American Black Duck</a></h4>
+<h4><a href = "bird_0538.html" STYLE="color: #BB5511">Indian Spot-billed Duck</a></h4>
+<h4><a href = "bird_0543.html" STYLE="color: #BB5511">Crested Duck</a></h4>
+<h4><a href = "bird_0545.html" STYLE="color: #BB5511">Northern Pintail</a></h4>
+<h4><a href = "bird_0547.html" STYLE="color: #BB5511">Yellow-billed Pintail</a></h4>
+<h4><a href = "bird_0548.html" STYLE="color: #BB5511">White-cheeked Pintail</a></h4>
+<h4><a href = "bird_0550.html" STYLE="color: #BB5511">Puna Teal</a></h4>
+<h4><a href = "bird_0553.html" STYLE="color: #BB5511">Garganey</a></h4>
+<h4><a href = "bird_0554.html" STYLE="color: #BB5511">Blue-winged Teal</a></h4>
+<h4><a href = "bird_0555.html" STYLE="color: #BB5511">Cinnamon Teal</a></h4>
+<h4><a href = "bird_0556.html" STYLE="color: #BB5511">Red Shoveler</a></h4>
+<h4><a href = "bird_0559.html" STYLE="color: #BB5511">Northern Shoveler</a></h4>
+<h4><a href = "bird_0563.html" STYLE="color: #BB5511">Red-crested Pochard</a></h4>
+<h4><a href = "bird_05665.html" STYLE="color: #BB5511">Common Pochard x Ferruginous Duck</a></h4>
+<h4><a href = "bird_0566.html" STYLE="color: #BB5511">Common Pochard</a></h4>
+<h4><a href = "bird_0567.html" STYLE="color: #BB5511">Canvasback</a></h4>
+<h4><a href = "bird_0569.html" STYLE="color: #BB5511">Ring-necked Duck</a></h4>
+<h4><a href = "bird_0574.html" STYLE="color: #BB5511">Tufted Duck</a></h4>
+<h4><a href = "bird_0576.html" STYLE="color: #BB5511">Greater Scaup</a></h4>
+<h4><a href = "bird_0577.html" STYLE="color: #BB5511">Lesser Scaup</a></h4>
+<h4><a href = "bird_0578.html" STYLE="color: #BB5511">Common Eider</a></h4>
+<h4><a href = "bird_0583.html" STYLE="color: #BB5511">Harlequin Duck</a></h4>
+<h4><a href = "bird_0584.html" STYLE="color: #BB5511">Long-tailed Duck</a></h4>
+<h4><a href = "bird_0587.html" STYLE="color: #BB5511">Surf Scoter</a></h4>
+<h4><a href = "bird_0590.html" STYLE="color: #BB5511">Common Goldeneye</a></h4>
+<h4><a href = "bird_0591.html" STYLE="color: #BB5511">Barrow's Goldeneye</a></h4>
+<h4><a href = "bird_0592.html" STYLE="color: #BB5511">Bufflehead</a></h4>
+<h4><a href = "bird_0594.html" STYLE="color: #BB5511">Hooded Merganser</a></h4>
+<h4><a href = "bird_0596.html" STYLE="color: #BB5511">Red-breasted Merganser</a></h4>
+<h4><a href = "bird_0598.html" STYLE="color: #BB5511">Common Merganser</a></h4>
+<br><h3>Pandionidae</h3><h4><a href = "bird_0601.html" STYLE="color: #BB5511">Osprey</a></h4>
+<br><h3>Accipitridae</h3><h4><a href = "bird_0636.html" STYLE="color: #BB5511">Brahminy Kite</a></h4>
+<h4><a href = "bird_0643.html" STYLE="color: #BB5511">Bald Eagle</a></h4>
+<h4><a href = "bird_0662.html" STYLE="color: #BB5511">Short-toed Snake-Eagle</a></h4>
+<h4><a href = "bird_0688.html" STYLE="color: #BB5511">Cinereous Harrier</a></h4>
+<h4><a href = "bird_0705.html" STYLE="color: #BB5511">Shikra</a></h4>
+<h4><a href = "bird_0737.html" STYLE="color: #BB5511">Sharp-shinned Hawk</a></h4>
+<h4><a href = "bird_0741.html" STYLE="color: #BB5511">Cooper's Hawk</a></h4>
+<h4><a href = "bird_0746.html" STYLE="color: #BB5511">Northern Goshawk</a></h4>
+<h4><a href = "bird_07685.html" STYLE="color: #BB5511">Cuban Black Hawk</a></h4>
+<h4><a href = "bird_0772.html" STYLE="color: #BB5511">Harris's Hawk</a></h4>
+<h4><a href = "bird_0774.html" STYLE="color: #BB5511">Black-chested Buzzard-Eagle</a></h4>
+<h4><a href = "bird_0789.html" STYLE="color: #BB5511">Red-backed Hawk</a></h4>
+<h4><a href = "bird_0792.html" STYLE="color: #BB5511">Hawaiian Hawk</a></h4>
+<h4><a href = "bird_0793.html" STYLE="color: #BB5511">Red-tailed Hawk</a></h4>
+<h4><a href = "bird_0795.html" STYLE="color: #BB5511">Common Buzzard</a></h4>
+<h4><a href = "bird_0801.html" STYLE="color: #BB5511">Rough-legged Hawk</a></h4>
+<h4><a href = "bird_0825.html" STYLE="color: #BB5511">Booted Eagle</a></h4>
+<h4><a href = "bird_0623.html" STYLE="color: #BB5511">White-tailed Kite</a></h4>
+<h4><a href = "bird_0633.html" STYLE="color: #BB5511">Black Kite</a></h4>
+<br><h3>Falconidae</h3><h4><a href = "bird_0854.html" STYLE="color: #BB5511">Chimango Caracara</a></h4>
+<h4><a href = "bird_0848.html" STYLE="color: #BB5511">Mountain Caracara</a></h4>
+<h4><a href = "bird_08505.html" STYLE="color: #BB5511">Crested Caracara</a></h4>
+<h4><a href = "bird_0852.html" STYLE="color: #BB5511">Southern Caracara</a></h4>
+
+<h4><a href = "bird_0872.html" STYLE="color: #BB5511">Common Kestrel</a></h4>
+<h4><a href = "bird_0878.html" STYLE="color: #BB5511">American Kestrel</a></h4>
+<h4><a href = "bird_0887.html" STYLE="color: #BB5511">Eleonora's Falcon</a></h4>
+<h4><a href = "bird_0889.html" STYLE="color: #BB5511">Aplomado Falcon</a></h4>
+<h4><a href = "bird_0892.html" STYLE="color: #BB5511">Eurasian Hobby</a></h4>
+<h4><a href = "bird_0905.html" STYLE="color: #BB5511">Peregrine Falcon</a></h4>
+<br><h3>Odontophoridae</h3><h4><a href = "bird_0985.html" STYLE="color: #BB5511">Gambel's Quail</a></h4>
+<h4><a href = "bird_0984.html" STYLE="color: #BB5511">California Quail</a></h4>
+
+
+
+<br><h3>Phasianidae</h3><h4><a href = "bird_1026.html" STYLE="color: #BB5511">Ruffed Grouse</a></h4>
+<h4><a href = "bird_1042.html" STYLE="color: #BB5511">Chukar</a></h4>
+<h4><a href = "bird_1048.html" STYLE="color: #BB5511">Grey Francolin</a></h4>
+<h4><a href = "bird_1080.html" STYLE="color: #BB5511">Erckel's Francolin</a></h4>
+<h4><a href = "bird_1095.html" STYLE="color: #BB5511">Common Quail</a></h4>
+<h4><a href = "bird_1148.html" STYLE="color: #BB5511">Red Junglefowl</a></h4>
+<h4><a href = "bird_1152.html" STYLE="color: #BB5511">Kalij Pheasant</a></h4>
+<h4><a href = "bird_1174.html" STYLE="color: #BB5511">Common Pheasant</a></h4>
+<h4><a href = "bird_1189.html" STYLE="color: #BB5511">Indian Peafowl</a></h4>
+
+<h4><a href = "bird_1010.html" STYLE="color: #BB5511">Wild Turkey</a></h4>
+<br><h3>Numididae</h3><h4><a href = "bird_1193.html" STYLE="color: #BB5511">Helmeted Guineafowl</a></h4>
+<br><h3>Rallidae</h3><h4><a href = "bird_13455.html" STYLE="color: #BB5511">Common Gallinule</a></h4>
+<h4><a href = "bird_1275.html" STYLE="color: #BB5511">Virginia Rail</a></h4>
+<h4><a href = "bird_1304.html" STYLE="color: #BB5511">White-breasted Waterhen</a></h4>
+<h4><a href = "bird_1313.html" STYLE="color: #BB5511">Sora</a></h4>
+<h4><a href = "bird_1330.html" STYLE="color: #BB5511">Plumbeous Rail</a></h4>
+<h4><a href = "bird_13355.html" STYLE="color: #BB5511">Grey-headed swamphen</a></h4>
+<h4><a href = "bird_1337.html" STYLE="color: #BB5511">South Island Takahe</a></h4>
+
+<h4><a href = "bird_13457.html" STYLE="color: #BB5511">Common Gallinule</a></h4>
+<h4><a href = "bird_1345.html" STYLE="color: #BB5511">Common Moorhen</a></h4>
+<h4><a href = "bird_1348.html" STYLE="color: #BB5511">Spot-flanked Gallinule</a></h4>
+<h4><a href = "bird_1351.html" STYLE="color: #BB5511">Red-knobbed Coot</a></h4>
+<h4><a href = "bird_1352.html" STYLE="color: #BB5511">Eurasian Coot</a></h4>
+<h4><a href = "bird_1353.html" STYLE="color: #BB5511">Hawaiian Coot</a></h4>
+<h4><a href = "bird_1354.html" STYLE="color: #BB5511">American Coot</a></h4>
+<h4><a href = "bird_1356.html" STYLE="color: #BB5511">White-winged Coot</a></h4>
+<h4><a href = "bird_1357.html" STYLE="color: #BB5511">Slate-colored Coot</a></h4>
+<h4><a href = "bird_1358.html" STYLE="color: #BB5511">Red-gartered Coot</a></h4>
+<h4><a href = "bird_1359.html" STYLE="color: #BB5511">Red-fronted Coot</a></h4>
+<h4><a href = "bird_1360.html" STYLE="color: #BB5511">Giant Coot</a></h4>
+<h4><a href = "bird_1361.html" STYLE="color: #BB5511">Horned Coot</a></h4>
+<br><h3>Gruidae</h3><h4><a href = "bird_1375.html" STYLE="color: #BB5511">Sandhill Crane</a></h4>
+<br><h3>Aramidae</h3><h4><a href = "bird_1384.html" STYLE="color: #BB5511">Limpkin</a></h4>
+<br><h3>Scolopacidae</h3><h4><a href = "bird_1449.html" STYLE="color: #BB5511">Hudsonian Godwit</a></h4>
+<h4><a href = "bird_1451.html" STYLE="color: #BB5511">Marbled Godwit</a></h4>
+<h4><a href = "bird_1454.html" STYLE="color: #BB5511">Whimbrel</a></h4>
+<h4><a href = "bird_1457.html" STYLE="color: #BB5511">Eurasian Curlew</a></h4>
+<h4><a href = "bird_1462.html" STYLE="color: #BB5511">Common Redshank</a></h4>
+<h4><a href = "bird_1466.html" STYLE="color: #BB5511">Greater Yellowlegs</a></h4>
+<h4><a href = "bird_1467.html" STYLE="color: #BB5511">Lesser Yellowlegs</a></h4>
+<h4><a href = "bird_1473.html" STYLE="color: #BB5511">Spotted Sandpiper</a></h4>
+<h4><a href = "bird_1475.html" STYLE="color: #BB5511">Wandering Tattler</a></h4>
+<h4><a href = "bird_1476.html" STYLE="color: #BB5511">Willet</a></h4>
+<h4><a href = "bird_1479.html" STYLE="color: #BB5511">Ruddy Turnstone</a></h4>
+<h4><a href = "bird_1481.html" STYLE="color: #BB5511">Short-billed Dowitcher</a></h4>
+<h4><a href = "bird_1487.html" STYLE="color: #BB5511">Sanderling</a></h4>
+<h4><a href = "bird_1488.html" STYLE="color: #BB5511">Semipalmated Sandpiper</a></h4>
+<h4><a href = "bird_1489.html" STYLE="color: #BB5511">Western Sandpiper</a></h4>
+<h4><a href = "bird_1494.html" STYLE="color: #BB5511">Least Sandpiper</a></h4>
+<h4><a href = "bird_1495.html" STYLE="color: #BB5511">White-rumped Sandpiper</a></h4>
+<h4><a href = "bird_1496.html" STYLE="color: #BB5511">Baird's Sandpiper</a></h4>
+<h4><a href = "bird_1497.html" STYLE="color: #BB5511">Pectoral Sandpiper</a></h4>
+<h4><a href = "bird_1501.html" STYLE="color: #BB5511">Dunlin</a></h4>
+<h4><a href = "bird_1508.html" STYLE="color: #BB5511">Wilson's Phalarope</a></h4>
+<h4><a href = "bird_1509.html" STYLE="color: #BB5511">Red-necked Phalarope</a></h4>
+<h4><a href = "bird_1510.html" STYLE="color: #BB5511">Red Phalarope</a></h4>
+
+<h4><a href = "bird_1438.html" STYLE="color: #BB5511">South American Snipe</a></h4>
+
+<br><h3>Charadriidae</h3><h4><a href = "bird_1593.html" STYLE="color: #BB5511">Southern Lapwing</a></h4>
+<h4><a href = "bird_1529.html" STYLE="color: #BB5511">Pacific Golden-Plover</a></h4>
+<h4><a href = "bird_1530.html" STYLE="color: #BB5511">American Golden-Plover</a></h4>
+<h4><a href = "bird_1531.html" STYLE="color: #BB5511">Black-bellied Plover</a></h4>
+<h4><a href = "bird_1533.html" STYLE="color: #BB5511">Common Ringed Plover</a></h4>
+<h4><a href = "bird_1534.html" STYLE="color: #BB5511">Semipalmated Plover</a></h4>
+<h4><a href = "bird_1538.html" STYLE="color: #BB5511">Killdeer</a></h4>
+<h4><a href = "bird_1544.html" STYLE="color: #BB5511">Piping Plover</a></h4>
+<h4><a href = "bird_1547.html" STYLE="color: #BB5511">Snowy Plover</a></h4>
+<h4><a href = "bird_1552.html" STYLE="color: #BB5511">Collared Plover</a></h4>
+<h4><a href = "bird_1554.html" STYLE="color: #BB5511">Puna Plover</a></h4>
+<h4><a href = "bird_1555.html" STYLE="color: #BB5511">Two-banded Plover</a></h4>
+<h4><a href = "bird_1561.html" STYLE="color: #BB5511">Rufous-chested Plover</a></h4>
+<h4><a href = "bird_1571.html" STYLE="color: #BB5511">Northern Lapwing</a></h4>
+<h4><a href = "bird_1583.html" STYLE="color: #BB5511">Red-wattled Lapwing</a></h4>
+
+
+<br><h3>Haematopodidae</h3><h4><a href = "bird_1600.html" STYLE="color: #BB5511">American Oystercatcher</a></h4>
+<h4><a href = "bird_1595.html" STYLE="color: #BB5511">Eurasian Oystercatcher</a></h4>
+<h4><a href = "bird_1599.html" STYLE="color: #BB5511">Black Oystercatcher</a></h4>
+
+<h4><a href = "bird_1605.html" STYLE="color: #BB5511">Blackish Oystercatcher</a></h4>
+<h4><a href = "bird_1606.html" STYLE="color: #BB5511">Magellanic Oystercatcher</a></h4>
+<br><h3>Recurvirostridae</h3><h4><a href = "bird_1608.html" STYLE="color: #BB5511">Black-winged Stilt</a></h4>
+<h4><a href = "bird_1614.html" STYLE="color: #BB5511">White-backed Stilt</a></h4>
+<h4><a href = "bird_1616.html" STYLE="color: #BB5511">Pied Avocet</a></h4>
+<h4><a href = "bird_1619.html" STYLE="color: #BB5511">Andean Avocet</a></h4>
+<h4><a href = "bird_1613.html" STYLE="color: #BB5511">Black-necked Stilt (Hawaiian)</a></h4>
+
+
+<h4><a href = "bird_1612.html" STYLE="color: #BB5511">Black-necked Stilt</a></h4>
+
+<br><h3>Stercorariidae</h3><h4><a href = "bird_1641.html" STYLE="color: #BB5511">Chilean Skua</a></h4>
+<br><h3>Laridae</h3><h4><a href = "bird_1656.html" STYLE="color: #BB5511">Audouin's Gull</a></h4>
+<h4><a href = "bird_1657.html" STYLE="color: #BB5511">Ring-billed Gull</a></h4>
+<h4><a href = "bird_1658.html" STYLE="color: #BB5511">California Gull</a></h4>
+<h4><a href = "bird_1659.html" STYLE="color: #BB5511">Great Black-backed Gull</a></h4>
+<h4><a href = "bird_1660.html" STYLE="color: #BB5511">Kelp Gull</a></h4>
+<h4><a href = "bird_1661.html" STYLE="color: #BB5511">Glaucous-winged Gull</a></h4>
+<h4><a href = "bird_1662.html" STYLE="color: #BB5511">Western Gull</a></h4>
+<h4><a href = "bird_1664.html" STYLE="color: #BB5511">Glaucous Gull</a></h4>
+<h4><a href = "bird_1665.html" STYLE="color: #BB5511">Iceland Gull</a></h4>
+<h4><a href = "bird_1666.html" STYLE="color: #BB5511">Iceland Gull (Thayer's)</a></h4>
+<h4><a href = "bird_1667.html" STYLE="color: #BB5511">Herring Gull</a></h4>
+<h4><a href = "bird_1668.html" STYLE="color: #BB5511">Yellow-legged Gull</a></h4>
+<h4><a href = "bird_1671.html" STYLE="color: #BB5511">Lesser Black-backed Gull</a></h4>
+<h4><a href = "bird_1679.html" STYLE="color: #BB5511">Brown-hooded Gull</a></h4>
+<h4><a href = "bird_1680.html" STYLE="color: #BB5511">Black-headed Gull</a></h4>
+<h4><a href = "bird_1682.html" STYLE="color: #BB5511">Bonaparte's Gull</a></h4>
+<h4><a href = "bird_1684.html" STYLE="color: #BB5511">Andean Gull</a></h4>
+<h4><a href = "bird_1685.html" STYLE="color: #BB5511">Mediterranean Gull</a></h4>
+<h4><a href = "bird_1688.html" STYLE="color: #BB5511">Laughing Gull</a></h4>
+<h4><a href = "bird_1689.html" STYLE="color: #BB5511">Franklin's Gull</a></h4>
+<h4><a href = "bird_1690.html" STYLE="color: #BB5511">Little Gull</a></h4>
+<h4><a href = "bird_1693.html" STYLE="color: #BB5511">Sabine's Gull</a></h4>
+<h4><a href = "bird_1695.html" STYLE="color: #BB5511">Black-legged Kittiwake</a></h4>
+<h4><a href = "bird_1697.html" STYLE="color: #BB5511">Gull-billed Tern</a></h4>
+<h4><a href = "bird_1698.html" STYLE="color: #BB5511">Caspian Tern</a></h4>
+<h4><a href = "bird_1700.html" STYLE="color: #BB5511">Royal Tern</a></h4>
+<h4><a href = "bird_1701.html" STYLE="color: #BB5511">Elegant Tern</a></h4>
+<h4><a href = "bird_1705.html" STYLE="color: #BB5511">Sandwich Tern</a></h4>
+<h4><a href = "bird_1710.html" STYLE="color: #BB5511">South American Tern</a></h4>
+<h4><a href = "bird_1711.html" STYLE="color: #BB5511">Common Tern</a></h4>
+<h4><a href = "bird_1712.html" STYLE="color: #BB5511">Arctic Tern</a></h4>
+<h4><a href = "bird_1716.html" STYLE="color: #BB5511">Snowy-crowned Tern</a></h4>
+<h4><a href = "bird_1717.html" STYLE="color: #BB5511">Little Tern</a></h4>
+<h4><a href = "bird_1719.html" STYLE="color: #BB5511">Least Tern</a></h4>
+<h4><a href = "bird_1733.html" STYLE="color: #BB5511">Black Tern</a></h4>
+<h4><a href = "bird_1734.html" STYLE="color: #BB5511">Large-billed Tern</a></h4>
+<h4><a href = "bird_1736.html" STYLE="color: #BB5511">Black Noddy</a></h4>
+<h4><a href = "bird_1740.html" STYLE="color: #BB5511">Common White-Tern</a></h4>
+<h4><a href = "bird_1742.html" STYLE="color: #BB5511">Inca Tern</a></h4>
+<h4><a href = "bird_1743.html" STYLE="color: #BB5511">Black Skimmer</a></h4>
+
+<h4><a href = "bird_1646.html" STYLE="color: #BB5511">Dolphin Gull</a></h4>
+<h4><a href = "bird_1648.html" STYLE="color: #BB5511">Band-tailed Gull</a></h4>
+<h4><a href = "bird_1651.html" STYLE="color: #BB5511">Grey Gull</a></h4>
+<h4><a href = "bird_1652.html" STYLE="color: #BB5511">Heermann's Gull</a></h4>
+<h4><a href = "bird_1655.html" STYLE="color: #BB5511">Common Gull</a></h4>
+<br><h3>Alcidae</h3><h4><a href = "bird_1767.html" STYLE="color: #BB5511">Atlantic Puffin</a></h4>
+<h4><a href = "bird_1747.html" STYLE="color: #BB5511">Common Murre</a></h4>
+<h4><a href = "bird_1749.html" STYLE="color: #BB5511">Razorbill</a></h4>
+<h4><a href = "bird_1751.html" STYLE="color: #BB5511">Black Guillemot</a></h4>
+
+
+<h4><a href = "bird_1752.html" STYLE="color: #BB5511">Pigeon Guillemot</a></h4>
+<h4><a href = "bird_1754.html" STYLE="color: #BB5511">Marbled Murrelet</a></h4>
+<h4><a href = "bird_1766.html" STYLE="color: #BB5511">Rhinoceros Auklet</a></h4>
+
+<br><h3>Columbidae</h3><h4><a href = "bird_1899.html" STYLE="color: #BB5511">Mourning Dove</a></h4>
+<h4><a href = "bird_1901.html" STYLE="color: #BB5511">Eared Dove</a></h4>
+<h4><a href = "bird_19035.html" STYLE="color: #BB5511">Pacific Dove</a></h4>
+<h4><a href = "bird_1903.html" STYLE="color: #BB5511">White-winged Dove</a></h4>
+<h4><a href = "bird_1907.html" STYLE="color: #BB5511">Common Ground-Dove</a></h4>
+<h4><a href = "bird_1909.html" STYLE="color: #BB5511">Ruddy Ground-Dove</a></h4>
+<h4><a href = "bird_1911.html" STYLE="color: #BB5511">Picui Ground-Dove</a></h4>
+<h4><a href = "bird_1912.html" STYLE="color: #BB5511">Croaking Ground-Dove</a></h4>
+<h4><a href = "bird_1919.html" STYLE="color: #BB5511">Black-winged Ground-Dove</a></h4>
+
+<h4><a href = "bird_1789.html" STYLE="color: #BB5511">Rock Dove</a></h4>
+<h4><a href = "bird_1797.html" STYLE="color: #BB5511">Common Wood-Pigeon</a></h4>
+<h4><a href = "bird_1820.html" STYLE="color: #BB5511">White-crowned Pigeon</a></h4>
+<h4><a href = "bird_1824.html" STYLE="color: #BB5511">Picazuro Pigeon</a></h4>
+<h4><a href = "bird_1826.html" STYLE="color: #BB5511">Band-tailed Pigeon</a></h4>
+<h4><a href = "bird_1843.html" STYLE="color: #BB5511">European Turtle-Dove</a></h4>
+<h4><a href = "bird_1848.html" STYLE="color: #BB5511">Spotted Dove</a></h4>
+<h4><a href = "bird_1854.html" STYLE="color: #BB5511">Eurasian Collared-Dove</a></h4>
+<h4><a href = "bird_1893.html" STYLE="color: #BB5511">Zebra Dove</a></h4>
+
+<br><h3>Strigopidae</h3><h4><a href = "bird_2175.html" STYLE="color: #BB5511">Kea</a></h4>
+<h4><a href = "bird_2177.html" STYLE="color: #BB5511">New Zealand Kaka</a></h4>
+<br><h3>Psittaculidae</h3><h4><a href = "bird_2276.html" STYLE="color: #BB5511">Rosy-faced Lovebird</a></h4>
+<h4><a href = "bird_2293.html" STYLE="color: #BB5511">Alexandrine Parakeet</a></h4>
+<h4><a href = "bird_2295.html" STYLE="color: #BB5511">Rose-ringed Parakeet</a></h4>
+
+
+
+<br><h3>Psittacidae</h3><h4><a href = "bird_2378.html" STYLE="color: #BB5511">Monk Parakeet</a></h4>
+<h4><a href = "bird_2350.html" STYLE="color: #BB5511">Nanday Parakeet</a></h4>
+<h4><a href = "bird_2336.html" STYLE="color: #BB5511">Red-masked Parakeet</a></h4>
+<h4><a href = "bird_2356.html" STYLE="color: #BB5511">Burrowing Parakeet</a></h4>
+<br><h3>Cuculidae</h3><h4><a href = "bird_2628.html" STYLE="color: #BB5511">Greater Roadrunner</a></h4>
+<h4><a href = "bird_2542.html" STYLE="color: #BB5511">Common Koel</a></h4>
+<h4><a href = "bird_2583.html" STYLE="color: #BB5511">Greater Coucal</a></h4>
+<h4><a href = "bird_2604.html" STYLE="color: #BB5511">Black-billed Cuckoo</a></h4>
+<h4><a href = "bird_2605.html" STYLE="color: #BB5511">Yellow-billed Cuckoo</a></h4>
+<h4><a href = "bird_2613.html" STYLE="color: #BB5511">Squirrel Cuckoo</a></h4>
+<h4><a href = "bird_2621.html" STYLE="color: #BB5511">Smooth-billed Ani</a></h4>
+<h4><a href = "bird_2623.html" STYLE="color: #BB5511">Guira Cuckoo</a></h4>
+<br><h3>Strigidae</h3><h4><a href = "bird_2691.html" STYLE="color: #BB5511">Eastern Screech-Owl</a></h4>
+<h4><a href = "bird_2716.html" STYLE="color: #BB5511">Great Horned Owl</a></h4>
+<h4><a href = "bird_2738.html" STYLE="color: #BB5511">Snowy Owl</a></h4>
+<h4><a href = "bird_2745.html" STYLE="color: #BB5511">Barred Owl</a></h4>
+<h4><a href = "bird_2751.html" STYLE="color: #BB5511">Great Grey Owl</a></h4>
+<h4><a href = "bird_2762.html" STYLE="color: #BB5511">Northern Hawk Owl</a></h4>
+<h4><a href = "bird_2788.html" STYLE="color: #BB5511">Little Owl</a></h4>
+<h4><a href = "bird_2791.html" STYLE="color: #BB5511">Burrowing Owl</a></h4>
+<h4><a href = "bird_2792.html" STYLE="color: #BB5511">Boreal Owl</a></h4>
+<h4><a href = "bird_2793.html" STYLE="color: #BB5511">Saw-whet Owl</a></h4>
+<h4><a href = "bird_2818.html" STYLE="color: #BB5511">Long-eared Owl</a></h4>
+<h4><a href = "bird_2822.html" STYLE="color: #BB5511">Short-eared Owl</a></h4>
+<br><h3>Apodidae</h3><h4><a href = "bird_2946.html" STYLE="color: #BB5511">Black Swift</a></h4>
+<h4><a href = "bird_3031.html" STYLE="color: #BB5511">Common Swift</a></h4>
+<h4><a href = "bird_3013.html" STYLE="color: #BB5511">Chimney Swift</a></h4>
+
+<h4><a href = "bird_3034.html" STYLE="color: #BB5511">Pallid Swift</a></h4>
+<h4><a href = "bird_3028.html" STYLE="color: #BB5511">Alpine Swift</a></h4>
+
+
+<br><h3>Trochilidae</h3><h4><a href = "bird_3147.html" STYLE="color: #BB5511">Broad-billed Hummingbird</a></h4>
+<h4><a href = "bird_3154.html" STYLE="color: #BB5511">Violet-capped Woodnymph</a></h4>
+<h4><a href = "bird_3166.html" STYLE="color: #BB5511">Gilded Hummingbird</a></h4>
+<h4><a href = "bird_3172.html" STYLE="color: #BB5511">White-throated Hummingbird</a></h4>
+<h4><a href = "bird_3185.html" STYLE="color: #BB5511">Versicolored Emerald</a></h4>
+<h4><a href = "bird_3244.html" STYLE="color: #BB5511">Magnificent Hummingbird</a></h4>
+<h4><a href = "bird_3255.html" STYLE="color: #BB5511">Giant Hummingbird</a></h4>
+<h4><a href = "bird_3274.html" STYLE="color: #BB5511">Green-backed Firecrown</a></h4>
+<h4><a href = "bird_3337.html" STYLE="color: #BB5511">Blue-tufted Starthroat</a></h4>
+<h4><a href = "bird_3338.html" STYLE="color: #BB5511">Oasis Hummingbird</a></h4>
+<h4><a href = "bird_3348.html" STYLE="color: #BB5511">Ruby-throated Hummingbird</a></h4>
+<h4><a href = "bird_3349.html" STYLE="color: #BB5511">Black-chinned Hummingbird</a></h4>
+<h4><a href = "bird_3350.html" STYLE="color: #BB5511">Anna's Hummingbird</a></h4>
+<h4><a href = "bird_3356.html" STYLE="color: #BB5511">Calliope Hummingbird</a></h4>
+<h4><a href = "bird_3368.html" STYLE="color: #BB5511">Broad-tailed Hummingbird</a></h4>
+<h4><a href = "bird_3369.html" STYLE="color: #BB5511">Rufous Hummingbird</a></h4>
+
+<h4><a href = "bird_3068.html" STYLE="color: #BB5511">Planalto Hermit</a></h4>
+<h4><a href = "bird_3098.html" STYLE="color: #BB5511">Black Jacobin</a></h4>
+<h4><a href = "bird_3105.html" STYLE="color: #BB5511">Black-throated Mango</a></h4>
+<h4><a href = "bird_3137.html" STYLE="color: #BB5511">Cuban Emerald</a></h4>
+
+<br><h3>Alcedinidae</h3><h4><a href = "bird_3503.html" STYLE="color: #BB5511">Belted Kingfisher</a></h4>
+<h4><a href = "bird_3504.html" STYLE="color: #BB5511">Ringed Kingfisher</a></h4>
+<h4><a href = "bird_3450.html" STYLE="color: #BB5511">White-throated Kingfisher</a></h4>
+
+
+<br><h3>Meropidae</h3><h4><a href = "bird_3550.html" STYLE="color: #BB5511">European Bee-eater</a></h4>
+<h4><a href = "bird_3543.html" STYLE="color: #BB5511">Green Bee-eater</a></h4>
+<h4><a href = "bird_3548.html" STYLE="color: #BB5511">Blue-tailed Bee-eater</a></h4>
+<br><h3>Coraciidae</h3><h4><a href = "bird_3555.html" STYLE="color: #BB5511">European Roller</a></h4>
+<br><h3>Bucerotidae</h3><h4><a href = "bird_3590.html" STYLE="color: #BB5511">Indian Grey-Hornbill</a></h4>
+<br><h3>Upupidae</h3><h4><a href = "bird_3630.html" STYLE="color: #BB5511">Eurasian Hoopoe</a></h4>
+<br><h3>Ramphastidae</h3><h4><a href = "bird_3809.html" STYLE="color: #BB5511">Spot-billed Toucanet</a></h4>
+<h4><a href = "bird_3822.html" STYLE="color: #BB5511">Toco Toucan</a></h4>
+<br><h3>Picidae</h3><h4><a href = "bird_3895.html" STYLE="color: #BB5511">Yellow-bellied Sapsucker</a></h4>
+<h4><a href = "bird_3899.html" STYLE="color: #BB5511">Cuban Green Woodpecker</a></h4>
+<h4><a href = "bird_3947.html" STYLE="color: #BB5511">Great Spotted Woodpecker</a></h4>
+<h4><a href = "bird_3954.html" STYLE="color: #BB5511">Nuttall's Woodpecker</a></h4>
+<h4><a href = "bird_3956.html" STYLE="color: #BB5511">Downy Woodpecker</a></h4>
+<h4><a href = "bird_3958.html" STYLE="color: #BB5511">Arizona Woodpecker</a></h4>
+<h4><a href = "bird_3959.html" STYLE="color: #BB5511">Hairy Woodpecker</a></h4>
+<h4><a href = "bird_3962.html" STYLE="color: #BB5511">Black-backed Woodpecker</a></h4>
+<h4><a href = "bird_3989.html" STYLE="color: #BB5511">Green-barred Woodpecker</a></h4>
+<h4><a href = "bird_3991.html" STYLE="color: #BB5511">Northern Flicker</a></h4>
+<h4><a href = "bird_3994.html" STYLE="color: #BB5511">Chilean Flicker</a></h4>
+<h4><a href = "bird_3996.html" STYLE="color: #BB5511">Campo Flicker</a></h4>
+<h4><a href = "bird_4010.html" STYLE="color: #BB5511">Pileated Woodpecker</a></h4>
+<h4><a href = "bird_4011.html" STYLE="color: #BB5511">Lineated Woodpecker</a></h4>
+<h4><a href = "bird_3872.html" STYLE="color: #BB5511">White Woodpecker</a></h4>
+<h4><a href = "bird_3876.html" STYLE="color: #BB5511">Red-headed Woodpecker</a></h4>
+<h4><a href = "bird_3877.html" STYLE="color: #BB5511">Acorn Woodpecker</a></h4>
+<h4><a href = "bird_3890.html" STYLE="color: #BB5511">Gila Woodpecker</a></h4>
+<h4><a href = "bird_3891.html" STYLE="color: #BB5511">Red-bellied Woodpecker</a></h4>
+
+<br><h3>Tyrannidae</h3><h4><a href = "bird_4406.html" STYLE="color: #BB5511">Spot-billed Ground-Tyrant</a></h4>
+<h4><a href = "bird_4160.html" STYLE="color: #BB5511">White-crested Elaenia</a></h4>
+<h4><a href = "bird_4198.html" STYLE="color: #BB5511">Tufted Tit-Tyrant</a></h4>
+<h4><a href = "bird_4199.html" STYLE="color: #BB5511">Many-colored Rush-Tyrant</a></h4>
+<h4><a href = "bird_4345.html" STYLE="color: #BB5511">Western Wood-Pewee</a></h4>
+<h4><a href = "bird_4346.html" STYLE="color: #BB5511">Eastern Wood-Pewee</a></h4>
+<h4><a href = "bird_4355.html" STYLE="color: #BB5511">Alder Flycatcher</a></h4>
+<h4><a href = "bird_4359.html" STYLE="color: #BB5511">Hammond's Flycatcher</a></h4>
+<h4><a href = "bird_4363.html" STYLE="color: #BB5511">Pacific-slope Flycatcher</a></h4>
+<h4><a href = "bird_4366.html" STYLE="color: #BB5511">Buff-breasted Flycatcher</a></h4>
+<h4><a href = "bird_4368.html" STYLE="color: #BB5511">Eastern Phoebe</a></h4>
+<h4><a href = "bird_4369.html" STYLE="color: #BB5511">Say's Phoebe</a></h4>
+<h4><a href = "bird_4370.html" STYLE="color: #BB5511">Black Phoebe</a></h4>
+<h4><a href = "bird_4384.html" STYLE="color: #BB5511">Patagonian Tyrant</a></h4>
+<h4><a href = "bird_4392.html" STYLE="color: #BB5511">Fire-eyed Diucon</a></h4>
+<h4><a href = "bird_4393.html" STYLE="color: #BB5511">Grey Monjita</a></h4>
+<h4><a href = "bird_4396.html" STYLE="color: #BB5511">White Monjita</a></h4>
+<h4><a href = "bird_4401.html" STYLE="color: #BB5511">Black-billed Shrike-Tyrant</a></h4>
+<h4><a href = "bird_4403.html" STYLE="color: #BB5511">Great Shrike-Tyrant</a></h4>
+
+<h4><a href = "bird_4408.html" STYLE="color: #BB5511">Dark-faced Ground-Tyrant</a></h4>
+<h4><a href = "bird_4410.html" STYLE="color: #BB5511">Rufous-naped Ground-Tyrant</a></h4>
+<h4><a href = "bird_4416.html" STYLE="color: #BB5511">Ochre-naped Ground-Tyrant</a></h4>
+<h4><a href = "bird_4419.html" STYLE="color: #BB5511">Andean Negrito</a></h4>
+<h4><a href = "bird_4420.html" STYLE="color: #BB5511">Austral Negrito</a></h4>
+<h4><a href = "bird_4426.html" STYLE="color: #BB5511">Blue-billed Black-Tyrant</a></h4>
+<h4><a href = "bird_4432.html" STYLE="color: #BB5511">Spectacled Tyrant</a></h4>
+<h4><a href = "bird_4442.html" STYLE="color: #BB5511">Cattle Tyrant</a></h4>
+<h4><a href = "bird_4461.html" STYLE="color: #BB5511">Dusky-capped Flycatcher</a></h4>
+<h4><a href = "bird_4463.html" STYLE="color: #BB5511">Swainson's Flycatcher</a></h4>
+<h4><a href = "bird_4470.html" STYLE="color: #BB5511">Ash-throated Flycatcher</a></h4>
+<h4><a href = "bird_4472.html" STYLE="color: #BB5511">Great Crested Flycatcher</a></h4>
+<h4><a href = "bird_4477.html" STYLE="color: #BB5511">La Sagra's Flycatcher</a></h4>
+<h4><a href = "bird_4484.html" STYLE="color: #BB5511">Tropical Kingbird</a></h4>
+<h4><a href = "bird_4486.html" STYLE="color: #BB5511">Cassin's Kingbird</a></h4>
+<h4><a href = "bird_4488.html" STYLE="color: #BB5511">Western Kingbird</a></h4>
+<h4><a href = "bird_4490.html" STYLE="color: #BB5511">Fork-tailed Flycatcher</a></h4>
+<h4><a href = "bird_4491.html" STYLE="color: #BB5511">Eastern Kingbird</a></h4>
+<h4><a href = "bird_4492.html" STYLE="color: #BB5511">Grey Kingbird</a></h4>
+<h4><a href = "bird_4493.html" STYLE="color: #BB5511">Loggerhead Kingbird</a></h4>
+<h4><a href = "bird_4514.html" STYLE="color: #BB5511">Great Kiskadee</a></h4>
+<br><h3>Cotingidae</h3><h4><a href = "bird_4604.html" STYLE="color: #BB5511">Rufous-tailed Plantcutter</a></h4>
+<br><h3>Pipridae</h3><h4><a href = "bird_4646.html" STYLE="color: #BB5511">Swallow-tailed Manakin</a></h4>
+<br><h3>Thamnophilidae</h3><h4><a href = "bird_4710.html" STYLE="color: #BB5511">Plain Antvireo</a></h4>
+<br><h3>Furnariidae</h3><h4><a href = "bird_4868.html" STYLE="color: #BB5511">Creamy-rumped Miner</a></h4>
+<h4><a href = "bird_4870.html" STYLE="color: #BB5511">Rufous-banded Miner</a></h4>
+<h4><a href = "bird_4875.html" STYLE="color: #BB5511">Straight-billed Earthcreeper</a></h4>
+<h4><a href = "bird_4882.html" STYLE="color: #BB5511">Bar-winged Cinclodes</a></h4>
+<h4><a href = "bird_4885.html" STYLE="color: #BB5511">Grey-flanked Cinclodes</a></h4>
+<h4><a href = "bird_4889.html" STYLE="color: #BB5511">Dark-bellied Cinclodes</a></h4>
+<h4><a href = "bird_4891.html" STYLE="color: #BB5511">Seaside Cinclodes</a></h4>
+<h4><a href = "bird_4895.html" STYLE="color: #BB5511">Crag Chilia</a></h4>
+<h4><a href = "bird_4900.html" STYLE="color: #BB5511">Rufous Hornero</a></h4>
+<h4><a href = "bird_4903.html" STYLE="color: #BB5511">Thorn-tailed Rayadito</a></h4>
+<h4><a href = "bird_4908.html" STYLE="color: #BB5511">Plain-mantled Tit-Spinetail</a></h4>
+<h4><a href = "bird_4994.html" STYLE="color: #BB5511">Dusky-tailed Canastero</a></h4>
+<h4><a href = "bird_5022.html" STYLE="color: #BB5511">Wren-like Rushbird</a></h4>
+
+<h4><a href = "bird_4863.html" STYLE="color: #BB5511">Common Miner</a></h4>
+
+<br><h3>Conopophagidae</h3><h4><a href = "bird_5210.html" STYLE="color: #BB5511">Rufous Gnateater</a></h4>
+<br><h3>Rhinocryptidae</h3><h4><a href = "bird_5218.html" STYLE="color: #BB5511">Black-throated Huet-huet</a></h4>
+<h4><a href = "bird_5220.html" STYLE="color: #BB5511">Moustached Turca</a></h4>
+<h4><a href = "bird_5222.html" STYLE="color: #BB5511">Chucao Tapaculo</a></h4>
+<br><h3>Chloropseidae</h3><h4><a href = "bird_56195.html" STYLE="color: #BB5511">Jerdon's Leafbird</a></h4>
+<br><h3>Laniidae</h3><h4><a href = "bird_5654.html" STYLE="color: #BB5511">Woodchat Shrike</a></h4>
+<h4><a href = "bird_5643.html" STYLE="color: #BB5511">Loggerhead Shrike</a></h4>
+<h4><a href = "bird_56445.html" STYLE="color: #BB5511">Southern Grey Shrike</a></h4>
+<h4><a href = "bird_5644.html" STYLE="color: #BB5511">Northern Shrike</a></h4>
+<h4><a href = "bird_5632.html" STYLE="color: #BB5511">Red-backed Shrike</a></h4>
+<br><h3>Vireonidae</h3><h4><a href = "bird_5688.html" STYLE="color: #BB5511">Philadelphia Vireo</a></h4>
+<h4><a href = "bird_5672.html" STYLE="color: #BB5511">White-eyed Vireo</a></h4>
+<h4><a href = "bird_5685.html" STYLE="color: #BB5511">Plumbeous Vireo</a></h4>
+<h4><a href = "bird_5686.html" STYLE="color: #BB5511">Blue-headed Vireo</a></h4>
+<h4><a href = "bird_5689.html" STYLE="color: #BB5511">Red-eyed Vireo</a></h4>
+<h4><a href = "bird_5695.html" STYLE="color: #BB5511">Eastern Warbling-Vireo</a></h4>
+<br><h3>Corvidae</h3><h4><a href = "bird_5833.html" STYLE="color: #BB5511">Grey Jay</a></h4>
+<h4><a href = "bird_5793.html" STYLE="color: #BB5511">Blue Jay</a></h4>
+<h4><a href = "bird_5794.html" STYLE="color: #BB5511">Steller's Jay</a></h4>
+<h4><a href = "bird_5797.html" STYLE="color: #BB5511">Florida Scrub-Jay</a></h4>
+<h4><a href = "bird_5798.html" STYLE="color: #BB5511">Mexican Jay</a></h4>
+<h4><a href = "bird_5821.html" STYLE="color: #BB5511">Plush-crested Jay</a></h4>
+<h4><a href = "bird_5828.html" STYLE="color: #BB5511">Eurasian Jay</a></h4>
+
+
+<h4><a href = "bird_58535.html" STYLE="color: #BB5511">Black-billed Magpie</a></h4>
+<h4><a href = "bird_5853.html" STYLE="color: #BB5511">Eurasian Magpie</a></h4>
+<h4><a href = "bird_5862.html" STYLE="color: #BB5511">Spotted Nutcracker</a></h4>
+<h4><a href = "bird_5866.html" STYLE="color: #BB5511">Eurasian Jackdaw</a></h4>
+<h4><a href = "bird_5868.html" STYLE="color: #BB5511">House Crow</a></h4>
+<h4><a href = "bird_5881.html" STYLE="color: #BB5511">Rook</a></h4>
+<h4><a href = "bird_5882.html" STYLE="color: #BB5511">Northwestern Crow</a></h4>
+<h4><a href = "bird_5883.html" STYLE="color: #BB5511">American Crow</a></h4>
+<h4><a href = "bird_5886.html" STYLE="color: #BB5511">Fish Crow</a></h4>
+<h4><a href = "bird_5891.html" STYLE="color: #BB5511">Carrion Crow</a></h4>
+<h4><a href = "bird_5893.html" STYLE="color: #BB5511">Large-billed Crow</a></h4>
+<h4><a href = "bird_5907.html" STYLE="color: #BB5511">Common Raven</a></h4>
+<br><h3>Campephagidae</h3><h4><a href = "bird_6083.html" STYLE="color: #BB5511">Small Minivet</a></h4>
+<br><h3>Rhipiduridae</h3><h4><a href = "bird_6100.html" STYLE="color: #BB5511">Spot-breasted Fantail</a></h4>
+<br><h3>Dicruridae</h3><h4><a href = "bird_6147.html" STYLE="color: #BB5511">Ashy Drongo</a></h4>
+<h4><a href = "bird_6146.html" STYLE="color: #BB5511">Black Drongo</a></h4>
+<br><h3>Monarchidae</h3><h4><a href = "bird_61885.html" STYLE="color: #BB5511">Kauai Elepaio</a></h4>
+<h4><a href = "bird_6188.html" STYLE="color: #BB5511">Elepaio</a></h4>
+<h4><a href = "bird_61882.html" STYLE="color: #BB5511">Oahu Elepaio</a></h4>
+
+
+<br><h3>Callaeidae</h3><h4><a href = "bird_6375.html" STYLE="color: #BB5511">Saddleback</a></h4>
+<br><h3>Ptiliogonatidae</h3><h4><a href = "bird_6384.html" STYLE="color: #BB5511">Phainopepla</a></h4>
+<br><h3>Bombycillidae</h3><h4><a href = "bird_6388.html" STYLE="color: #BB5511">Cedar Waxwing</a></h4>
+<h4><a href = "bird_6386.html" STYLE="color: #BB5511">Bohemian Waxwing</a></h4>
+
+<br><h3>Turdidae</h3><h4><a href = "bird_6492.html" STYLE="color: #BB5511">Hermit Thrush</a></h4>
+<h4><a href = "bird_6432.html" STYLE="color: #BB5511">Varied Thrush</a></h4>
+<h4><a href = "bird_6462.html" STYLE="color: #BB5511">Eastern Bluebird</a></h4>
+<h4><a href = "bird_6463.html" STYLE="color: #BB5511">Western Bluebird</a></h4>
+<h4><a href = "bird_6464.html" STYLE="color: #BB5511">Mountain Bluebird</a></h4>
+<h4><a href = "bird_6468.html" STYLE="color: #BB5511">Omao</a></h4>
+<h4><a href = "bird_6470.html" STYLE="color: #BB5511">Townsend's Solitaire</a></h4>
+<h4><a href = "bird_6488.html" STYLE="color: #BB5511">Veery</a></h4>
+<h4><a href = "bird_6490.html" STYLE="color: #BB5511">Bicknell's Thrush</a></h4>
+
+<h4><a href = "bird_6493.html" STYLE="color: #BB5511">Wood Thrush</a></h4>
+<h4><a href = "bird_6512.html" STYLE="color: #BB5511">Ring Ouzel</a></h4>
+<h4><a href = "bird_6514.html" STYLE="color: #BB5511">Eurasian Blackbird</a></h4>
+<h4><a href = "bird_6526.html" STYLE="color: #BB5511">Fieldfare</a></h4>
+<h4><a href = "bird_6528.html" STYLE="color: #BB5511">Song Thrush</a></h4>
+<h4><a href = "bird_6530.html" STYLE="color: #BB5511">Mistle Thrush</a></h4>
+<h4><a href = "bird_6534.html" STYLE="color: #BB5511">Chiguanco Thrush</a></h4>
+<h4><a href = "bird_6545.html" STYLE="color: #BB5511">Rufous-bellied Thrush</a></h4>
+<h4><a href = "bird_6546.html" STYLE="color: #BB5511">Austral Thrush</a></h4>
+<h4><a href = "bird_6547.html" STYLE="color: #BB5511">Pale-breasted Thrush</a></h4>
+<h4><a href = "bird_6548.html" STYLE="color: #BB5511">Creamy-bellied Thrush</a></h4>
+<h4><a href = "bird_6565.html" STYLE="color: #BB5511">American Robin</a></h4>
+<br><h3>Muscicapidae</h3><h4><a href = "bird_6763.html" STYLE="color: #BB5511">Oriental Magpie-Robin</a></h4>
+<h4><a href = "bird_6607.html" STYLE="color: #BB5511">Spotted Flycatcher</a></h4>
+<h4><a href = "bird_6691.html" STYLE="color: #BB5511">Tickell's Blue-Flycatcher</a></h4>
+<h4><a href = "bird_6710.html" STYLE="color: #BB5511">European Robin</a></h4>
+<h4><a href = "bird_6715.html" STYLE="color: #BB5511">Common Nightingale</a></h4>
+<h4><a href = "bird_6756.html" STYLE="color: #BB5511">Rufous-tailed Scrub-Robin</a></h4>
+
+
+<h4><a href = "bird_6764.html" STYLE="color: #BB5511">White-rumped Shama</a></h4>
+<h4><a href = "bird_6770.html" STYLE="color: #BB5511">Indian Robin</a></h4>
+<h4><a href = "bird_6774.html" STYLE="color: #BB5511">Black Redstart</a></h4>
+<h4><a href = "bird_6775.html" STYLE="color: #BB5511">Common Redstart</a></h4>
+<h4><a href = "bird_6805.html" STYLE="color: #BB5511">Common Stonechat</a></h4>
+<h4><a href = "bird_6809.html" STYLE="color: #BB5511">Pied Bushchat</a></h4>
+<h4><a href = "bird_6820.html" STYLE="color: #BB5511">Northern Wheatear</a></h4>
+<br><h3>Sturnidae</h3><h4><a href = "bird_6949.html" STYLE="color: #BB5511">Jungle Myna</a></h4>
+<h4><a href = "bird_6939.html" STYLE="color: #BB5511">Common Starling</a></h4>
+<h4><a href = "bird_6947.html" STYLE="color: #BB5511">Common Myna</a></h4>
+
+<br><h3>Mimidae</h3><h4><a href = "bird_6970.html" STYLE="color: #BB5511">Grey Catbird</a></h4>
+<h4><a href = "bird_6974.html" STYLE="color: #BB5511">Northern Mockingbird</a></h4>
+<h4><a href = "bird_6978.html" STYLE="color: #BB5511">Chalk-browed Mockingbird</a></h4>
+<h4><a href = "bird_6983.html" STYLE="color: #BB5511">Chilean Mockingbird</a></h4>
+<h4><a href = "bird_6990.html" STYLE="color: #BB5511">Brown Thrasher</a></h4>
+<h4><a href = "bird_6995.html" STYLE="color: #BB5511">Curve-billed Thrasher</a></h4>
+<br><h3>Sittidae</h3><h4><a href = "bird_7018.html" STYLE="color: #BB5511">Red-breasted Nuthatch</a></h4>
+<h4><a href = "bird_7020.html" STYLE="color: #BB5511">White-breasted Nuthatch</a></h4>
+<h4><a href = "bird_7005.html" STYLE="color: #BB5511">Eurasian Nuthatch</a></h4>
+<h4><a href = "bird_7011.html" STYLE="color: #BB5511">Pygmy Nuthatch</a></h4>
+<h4><a href = "bird_7012.html" STYLE="color: #BB5511">Brown-headed Nuthatch</a></h4>
+
+<br><h3>Tichodromidae</h3><h4><a href = "bird_7029.html" STYLE="color: #BB5511">Wallcreeper</a></h4>
+<br><h3>Certhiidae</h3><h4><a href = "bird_7031.html" STYLE="color: #BB5511">Brown Creeper</a></h4>
+<h4><a href = "bird_7032.html" STYLE="color: #BB5511">Short-toed Treecreeper</a></h4>
+
+<br><h3>Troglodytidae</h3><h4><a href = "bird_7093.html" STYLE="color: #BB5511">Northern House-Wren</a></h4>
+<h4><a href = "bird_70925.html" STYLE="color: #BB5511">Winter Wren</a></h4>
+<h4><a href = "bird_7039.html" STYLE="color: #BB5511">Cactus Wren</a></h4>
+<h4><a href = "bird_7053.html" STYLE="color: #BB5511">Rock Wren</a></h4>
+<h4><a href = "bird_7058.html" STYLE="color: #BB5511">Sedge Wren</a></h4>
+<h4><a href = "bird_7061.html" STYLE="color: #BB5511">Marsh Wren</a></h4>
+<h4><a href = "bird_7062.html" STYLE="color: #BB5511">Bewick's Wren</a></h4>
+<h4><a href = "bird_7082.html" STYLE="color: #BB5511">Carolina Wren</a></h4>
+<h4><a href = "bird_70923.html" STYLE="color: #BB5511">Pacific Wren</a></h4>
+<h4><a href = "bird_7092.html" STYLE="color: #BB5511">Winter Wren</a></h4>
+
+<br><h3>Remizidae</h3><h4><a href = "bird_7117.html" STYLE="color: #BB5511">Verdin</a></h4>
+<br><h3>Polioptilidae</h3><h4><a href = "bird_7121.html" STYLE="color: #BB5511">Blue-grey Gnatcatcher</a></h4>
+<h4><a href = "bird_7123.html" STYLE="color: #BB5511">Black-tailed Gnatcatcher</a></h4>
+
+<br><h3>Paridae</h3><h4><a href = "bird_7149.html" STYLE="color: #BB5511">Black-capped Chickadee</a></h4>
+<h4><a href = "bird_7148.html" STYLE="color: #BB5511">Carolina Chickadee</a></h4>
+
+<h4><a href = "bird_7150.html" STYLE="color: #BB5511">Mountain Chickadee</a></h4>
+<h4><a href = "bird_7155.html" STYLE="color: #BB5511">Boreal Chickadee</a></h4>
+<h4><a href = "bird_7156.html" STYLE="color: #BB5511">Chestnut-backed Chickadee</a></h4>
+<h4><a href = "bird_7164.html" STYLE="color: #BB5511">Crested Tit</a></h4>
+<h4><a href = "bird_71815.html" STYLE="color: #BB5511">Cinereous Tit</a></h4>
+<h4><a href = "bird_7181.html" STYLE="color: #BB5511">Great Tit</a></h4>
+<h4><a href = "bird_7188.html" STYLE="color: #BB5511">European Blue Tit</a></h4>
+<h4><a href = "bird_7193.html" STYLE="color: #BB5511">Bridled Titmouse</a></h4>
+<h4><a href = "bird_7195.html" STYLE="color: #BB5511">Tufted Titmouse</a></h4>
+<br><h3>Aegithalidae</h3><h4><a href = "bird_7205.html" STYLE="color: #BB5511">Common Bushtit</a></h4>
+<h4><a href = "bird_7199.html" STYLE="color: #BB5511">Long-tailed Tit</a></h4>
+<br><h3>Hirundinidae</h3><h4><a href = "bird_7210.html" STYLE="color: #BB5511">Tree Swallow</a></h4>
+<h4><a href = "bird_7214.html" STYLE="color: #BB5511">White-rumped Swallow</a></h4>
+<h4><a href = "bird_7215.html" STYLE="color: #BB5511">Chilean Swallow</a></h4>
+<h4><a href = "bird_7216.html" STYLE="color: #BB5511">Violet-green Swallow</a></h4>
+<h4><a href = "bird_7224.html" STYLE="color: #BB5511">Grey-breasted Martin</a></h4>
+<h4><a href = "bird_7229.html" STYLE="color: #BB5511">Blue-and-white Swallow</a></h4>
+<h4><a href = "bird_7247.html" STYLE="color: #BB5511">Eurasian Crag-Martin</a></h4>
+<h4><a href = "bird_7270.html" STYLE="color: #BB5511">Red-rumped Swallow</a></h4>
+<h4><a href = "bird_7278.html" STYLE="color: #BB5511">Cliff Swallow</a></h4>
+<h4><a href = "bird_7279.html" STYLE="color: #BB5511">Cave Swallow</a></h4>
+<h4><a href = "bird_7285.html" STYLE="color: #BB5511">Northern House-Martin</a></h4>
+<h4><a href = "bird_7251.html" STYLE="color: #BB5511">Barn Swallow</a></h4>
+
+<br><h3>Regulidae</h3><h4><a href = "bird_7301.html" STYLE="color: #BB5511">Ruby-crowned Kinglet</a></h4>
+<h4><a href = "bird_7305.html" STYLE="color: #BB5511">Firecrest</a></h4>
+<h4><a href = "bird_7306.html" STYLE="color: #BB5511">Golden-crowned Kinglet</a></h4>
+
+<br><h3>Pycnonotidae</h3><h4><a href = "bird_7319.html" STYLE="color: #BB5511">Red-whiskered Bulbul</a></h4>
+<h4><a href = "bird_7323.html" STYLE="color: #BB5511">Garden Bulbul</a></h4>
+<h4><a href = "bird_7332.html" STYLE="color: #BB5511">Red-vented Bulbul</a></h4>
+
+<br><h3>Zosteropidae</h3><h4><a href = "bird_7473.html" STYLE="color: #BB5511">Japanese White-eye</a></h4>
+<br><h3>Acrocephalidae</h3><h4><a href = "bird_7645.html" STYLE="color: #BB5511">Eurasian Reed-Warbler</a></h4>
+<h4><a href = "bird_7678.html" STYLE="color: #BB5511">Melodious Warbler</a></h4>
+
+<br><h3>Cisticolidae</h3><h4><a href = "bird_7749.html" STYLE="color: #BB5511">Ashy Prinia</a></h4>
+<h4><a href = "bird_7724.html" STYLE="color: #BB5511">Zitting Cisticola</a></h4>
+
+<h4><a href = "bird_7799.html" STYLE="color: #BB5511">Common Tailorbird</a></h4>
+<br><h3>Phylloscopidae</h3><h4><a href = "bird_7873.html" STYLE="color: #BB5511">Western Bonelli's Warbler</a></h4>
+<h4><a href = "bird_7869.html" STYLE="color: #BB5511">Willow Warbler</a></h4>
+<h4><a href = "bird_7888.html" STYLE="color: #BB5511">Greenish Warbler</a></h4>
+<br><h3>Sylviidae</h3><h4><a href = "bird_7937.html" STYLE="color: #BB5511">Sardinian Warbler</a></h4>
+<h4><a href = "bird_7926.html" STYLE="color: #BB5511">Blackcap</a></h4>
+<br><h3>Timaliidae</h3><h4><a href = "bird_8048.html" STYLE="color: #BB5511">Tawny-bellied Babbler</a></h4>
+<br><h3>Leiothrichidae</h3><h4><a href = "bird_8147.html" STYLE="color: #BB5511">Red-billed Mesia</a></h4>
+<h4><a href = "bird_8074.html" STYLE="color: #BB5511">Yellow-billed Babbler</a></h4>
+<h4><a href = "bird_8125.html" STYLE="color: #BB5511">Hwamei</a></h4>
+
+<br><h3>Alaudidae</h3><h4><a href = "bird_8320.html" STYLE="color: #BB5511">Skylark</a></h4>
+<h4><a href = "bird_8324.html" STYLE="color: #BB5511">Horned Lark</a></h4>
+<br><h3>Dicaeidae</h3><h4><a href = "bird_8352.html" STYLE="color: #BB5511">Pale-billed Flowerpecker</a></h4>
+<br><h3>Nectariniidae</h3><h4><a href = "bird_8416.html" STYLE="color: #BB5511">Purple-rumped Sunbird</a></h4>
+<h4><a href = "bird_8434.html" STYLE="color: #BB5511">Purple Sunbird</a></h4>
+<br><h3>Passeridae</h3><h4><a href = "bird_8511.html" STYLE="color: #BB5511">House Sparrow</a></h4>
+<br><h3>Motacillidae</h3><h4><a href = "bird_8603.html" STYLE="color: #BB5511">Correndera Pipit</a></h4>
+<h4><a href = "bird_85485.html" STYLE="color: #BB5511">White Wagtail</a></h4>
+<h4><a href = "bird_8548.html" STYLE="color: #BB5511">White Wagtail</a></h4>
+<h4><a href = "bird_8551.html" STYLE="color: #BB5511">White-browed Wagtail</a></h4>
+<h4><a href = "bird_8556.html" STYLE="color: #BB5511">Yellow Wagtail</a></h4>
+<h4><a href = "bird_8558.html" STYLE="color: #BB5511">Grey Wagtail</a></h4>
+<h4><a href = "bird_8582.html" STYLE="color: #BB5511">Tawny Pipit</a></h4>
+<h4><a href = "bird_8598.html" STYLE="color: #BB5511">Rock Pipit</a></h4>
+
+
+<br><h3>Prunellidae</h3><h4><a href = "bird_8613.html" STYLE="color: #BB5511">Alpine Accentor</a></h4>
+<h4><a href = "bird_8623.html" STYLE="color: #BB5511">Hedge Accentor</a></h4>
+<br><h3>Estrildidae</h3><h4><a href = "bird_8791.html" STYLE="color: #BB5511">Lavender Waxbill</a></h4>
+<h4><a href = "bird_8803.html" STYLE="color: #BB5511">Common Waxbill</a></h4>
+<h4><a href = "bird_8844.html" STYLE="color: #BB5511">African Silverbill</a></h4>
+<h4><a href = "bird_8845.html" STYLE="color: #BB5511">White-throated Silverbill</a></h4>
+<h4><a href = "bird_8856.html" STYLE="color: #BB5511">Scaly-breasted Munia</a></h4>
+<h4><a href = "bird_88605.html" STYLE="color: #BB5511">Chestnut Munia</a></h4>
+<h4><a href = "bird_8881.html" STYLE="color: #BB5511">Java Sparrow</a></h4>
+<br><h3>Peucedramidae</h3><h4><a href = "bird_8901.html" STYLE="color: #BB5511">Olive Warbler</a></h4>
+<br><h3>Fringillidae</h3><h4><a href = "bird_9023.html" STYLE="color: #BB5511">Pine Grosbeak</a></h4>
+<h4><a href = "bird_8902.html" STYLE="color: #BB5511">Chaffinch</a></h4>
+<h4><a href = "bird_8906.html" STYLE="color: #BB5511">European Serin</a></h4>
+<h4><a href = "bird_8928.html" STYLE="color: #BB5511">Yellow-fronted Canary</a></h4>
+<h4><a href = "bird_8956.html" STYLE="color: #BB5511">European Greenfinch</a></h4>
+<h4><a href = "bird_8961.html" STYLE="color: #BB5511">Eurasian Siskin</a></h4>
+<h4><a href = "bird_8962.html" STYLE="color: #BB5511">Pine Siskin</a></h4>
+<h4><a href = "bird_8968.html" STYLE="color: #BB5511">Hooded Siskin</a></h4>
+<h4><a href = "bird_8973.html" STYLE="color: #BB5511">Black-chinned Siskin</a></h4>
+<h4><a href = "bird_8976.html" STYLE="color: #BB5511">Yellow-rumped Siskin</a></h4>
+<h4><a href = "bird_8977.html" STYLE="color: #BB5511">American Goldfinch</a></h4>
+<h4><a href = "bird_8978.html" STYLE="color: #BB5511">Lesser Goldfinch</a></h4>
+<h4><a href = "bird_8981.html" STYLE="color: #BB5511">European Goldfinch</a></h4>
+<h4><a href = "bird_8982.html" STYLE="color: #BB5511">Hoary Redpoll</a></h4>
+<h4><a href = "bird_8983.html" STYLE="color: #BB5511">Common Redpoll</a></h4>
+<h4><a href = "bird_9003.html" STYLE="color: #BB5511">Purple Finch</a></h4>
+<h4><a href = "bird_9004.html" STYLE="color: #BB5511">Cassin's Finch</a></h4>
+<h4><a href = "bird_9005.html" STYLE="color: #BB5511">House Finch</a></h4>
+
+<h4><a href = "bird_9028.html" STYLE="color: #BB5511">Red Crossbill</a></h4>
+<h4><a href = "bird_9029.html" STYLE="color: #BB5511">White-winged Crossbill</a></h4>
+<h4><a href = "bird_9035.html" STYLE="color: #BB5511">Eurasian Bullfinch</a></h4>
+<h4><a href = "bird_9044.html" STYLE="color: #BB5511">Evening Grosbeak</a></h4>
+<h4><a href = "bird_9051.html" STYLE="color: #BB5511">Palila</a></h4>
+<h4><a href = "bird_9057.html" STYLE="color: #BB5511">Hawaii Amakihi</a></h4>
+<h4><a href = "bird_9065.html" STYLE="color: #BB5511">Hawaii Creeper</a></h4>
+<h4><a href = "bird_9072.html" STYLE="color: #BB5511">Iiwi</a></h4>
+<h4><a href = "bird_9076.html" STYLE="color: #BB5511">Apapane</a></h4>
+<h4><a href = "bird_9528.html" STYLE="color: #BB5511">Blue-naped Chlorophonia</a></h4>
+<h4><a href = "bird_9526.html" STYLE="color: #BB5511">Chestnut-bellied Euphonia</a></h4>
+<br><h3>Passerellidae</h3><h4><a href = "bird_9151.html" STYLE="color: #BB5511">Chipping Sparrow</a></h4>
+<br><h3>Emberizidae</h3><h4><a href = "bird_9154.html" STYLE="color: #BB5511">Brewer's Sparrow</a></h4>
+<h4><a href = "bird_9150.html" STYLE="color: #BB5511">American Tree Sparrow</a></h4>
+<h4><a href = "bird_9127.html" STYLE="color: #BB5511">Fox Sparrow</a></h4>
+<h4><a href = "bird_91425.html" STYLE="color: #BB5511">Nelson's Sparrow</a></h4>
+<h4><a href = "bird_9128.html" STYLE="color: #BB5511">Song Sparrow</a></h4>
+
+<h4><a href = "bird_9146.html" STYLE="color: #BB5511">Grasshopper Sparrow</a></h4>
+<h4><a href = "bird_9130.html" STYLE="color: #BB5511">Swamp Sparrow</a></h4>
+<h4><a href = "bird_9131.html" STYLE="color: #BB5511">Rufous-collared Sparrow</a></h4>
+<h4><a href = "bird_9133.html" STYLE="color: #BB5511">White-crowned Sparrow</a></h4>
+<h4><a href = "bird_9134.html" STYLE="color: #BB5511">White-throated Sparrow</a></h4>
+<h4><a href = "bird_9183.html" STYLE="color: #BB5511">Abert's Towhee</a></h4>
+<h4><a href = "bird_9182.html" STYLE="color: #BB5511">Canyon Towhee</a></h4>
+<h4><a href = "bird_91805.html" STYLE="color: #BB5511">Spotted Towhee</a></h4>
+<h4><a href = "bird_9169.html" STYLE="color: #BB5511">Bachman's Sparrow</a></h4>
+<h4><a href = "bird_9160.html" STYLE="color: #BB5511">Black-throated Sparrow</a></h4>
+<h4><a href = "bird_9137.html" STYLE="color: #BB5511">Dark-eyed Junco</a></h4>
+
+<h4><a href = "bird_9157.html" STYLE="color: #BB5511">Black-chinned Sparrow</a></h4>
+<h4><a href = "bird_9139.html" STYLE="color: #BB5511">Yellow-eyed Junco</a></h4>
+<h4><a href = "bird_9140.html" STYLE="color: #BB5511">Savannah Sparrow</a></h4>
+
+<h4><a href = "bird_90945.html" STYLE="color: #BB5511">House Bunting</a></h4>
+
+
+
+<br><h3>Calcariidae</h3><h4><a href = "bird_9124.html" STYLE="color: #BB5511">Snow Bunting</a></h4>
+<h4><a href = "bird_9121.html" STYLE="color: #BB5511">Lapland Longspur</a></h4>
+
+
+
+
+
+
+
+<br><h3>Passerellidae</h3><h4><a href = "bird_9135.html" STYLE="color: #BB5511">Golden-crowned Sparrow</a></h4>
+
+
+
+
+
+
+<h4><a href = "bird_9152.html" STYLE="color: #BB5511">Clay-colored Sparrow</a></h4>
+
+<br><h3>Thraupidae</h3><h4><a href = "bird_9591.html" STYLE="color: #BB5511">Blue Dacnis</a></h4>
+<h4><a href = "bird_9611.html" STYLE="color: #BB5511">Black-hooded Sierra-Finch</a></h4>
+<h4><a href = "bird_9613.html" STYLE="color: #BB5511">Grey-hooded Sierra-Finch</a></h4>
+<h4><a href = "bird_9614.html" STYLE="color: #BB5511">Patagonian Sierra-Finch</a></h4>
+<h4><a href = "bird_9615.html" STYLE="color: #BB5511">Mourning Sierra-Finch</a></h4>
+<h4><a href = "bird_9616.html" STYLE="color: #BB5511">Plumbeous Sierra-Finch</a></h4>
+<h4><a href = "bird_9617.html" STYLE="color: #BB5511">Red-backed Sierra-Finch</a></h4>
+<h4><a href = "bird_9621.html" STYLE="color: #BB5511">Band-tailed Sierra-Finch</a></h4>
+<h4><a href = "bird_9634.html" STYLE="color: #BB5511">Common Diuca-Finch</a></h4>
+<h4><a href = "bird_9664.html" STYLE="color: #BB5511">Greater Yellow-Finch</a></h4>
+<h4><a href = "bird_9665.html" STYLE="color: #BB5511">Greenish Yellow-Finch</a></h4>
+<h4><a href = "bird_9668.html" STYLE="color: #BB5511">Saffron Finch</a></h4>
+<h4><a href = "bird_9231.html" STYLE="color: #BB5511">Red-crested Cardinal</a></h4>
+<h4><a href = "bird_9235.html" STYLE="color: #BB5511">Yellow-billed Cardinal</a></h4>
+<h4><a href = "bird_9351.html" STYLE="color: #BB5511">Bananaquit</a></h4>
+<h4><a href = "bird_9352.html" STYLE="color: #BB5511">Chestnut-vented Conebill</a></h4>
+<h4><a href = "bird_9440.html" STYLE="color: #BB5511">Black-goggled Tanager</a></h4>
+<h4><a href = "bird_9727.html" STYLE="color: #BB5511">Yellow-faced Grassquit</a></h4>
+<h4><a href = "bird_9676.html" STYLE="color: #BB5511">Great Pampa-Finch</a></h4>
+<h4><a href = "bird_9669.html" STYLE="color: #BB5511">Grassland Yellow-Finch</a></h4>
+
+<h4><a href = "bird_9465.html" STYLE="color: #BB5511">Stripe-headed Tanager</a></h4>
+
+<h4><a href = "bird_9541.html" STYLE="color: #BB5511">Green-headed Tanager</a></h4>
+
+<br><h3>Parulidae</h3><h4><a href = "bird_9265.html" STYLE="color: #BB5511">Pine Warbler</a></h4>
+<h4><a href = "bird_9239.html" STYLE="color: #BB5511">Tennessee Warbler</a></h4>
+<h4><a href = "bird_9240.html" STYLE="color: #BB5511">Orange-crowned Warbler</a></h4>
+<h4><a href = "bird_9241.html" STYLE="color: #BB5511">Nashville Warbler</a></h4>
+<h4><a href = "bird_9245.html" STYLE="color: #BB5511">Northern Parula</a></h4>
+<h4><a href = "bird_9246.html" STYLE="color: #BB5511">Tropical Parula</a></h4>
+<h4><a href = "bird_9249.html" STYLE="color: #BB5511">Yellow Warbler</a></h4>
+<h4><a href = "bird_9250.html" STYLE="color: #BB5511">Chestnut-sided Warbler</a></h4>
+<h4><a href = "bird_9251.html" STYLE="color: #BB5511">Magnolia Warbler</a></h4>
+<h4><a href = "bird_9252.html" STYLE="color: #BB5511">Cape May Warbler</a></h4>
+<h4><a href = "bird_9253.html" STYLE="color: #BB5511">Black-throated Blue Warbler</a></h4>
+<h4><a href = "bird_9254.html" STYLE="color: #BB5511">Yellow-rumped Warbler</a></h4>
+<h4><a href = "bird_9255.html" STYLE="color: #BB5511">Black-throated Grey Warbler</a></h4>
+<h4><a href = "bird_9256.html" STYLE="color: #BB5511">Townsend's Warbler</a></h4>
+<h4><a href = "bird_9258.html" STYLE="color: #BB5511">Black-throated Green Warbler</a></h4>
+<h4><a href = "bird_9261.html" STYLE="color: #BB5511">Yellow-throated Warbler</a></h4>
+
+<h4><a href = "bird_9267.html" STYLE="color: #BB5511">Prairie Warbler</a></h4>
+<h4><a href = "bird_9269.html" STYLE="color: #BB5511">Palm Warbler</a></h4>
+<h4><a href = "bird_9270.html" STYLE="color: #BB5511">Bay-breasted Warbler</a></h4>
+<h4><a href = "bird_9277.html" STYLE="color: #BB5511">Black-and-white Warbler</a></h4>
+<h4><a href = "bird_9278.html" STYLE="color: #BB5511">American Redstart</a></h4>
+<h4><a href = "bird_9282.html" STYLE="color: #BB5511">Ovenbird</a></h4>
+<h4><a href = "bird_9283.html" STYLE="color: #BB5511">Northern Waterthrush</a></h4>
+<h4><a href = "bird_9289.html" STYLE="color: #BB5511">Common Yellowthroat</a></h4>
+<h4><a href = "bird_9303.html" STYLE="color: #BB5511">Wilson's Warbler</a></h4>
+<h4><a href = "bird_9304.html" STYLE="color: #BB5511">Canada Warbler</a></h4>
+<h4><a href = "bird_9305.html" STYLE="color: #BB5511">Red-faced Warbler</a></h4>
+<h4><a href = "bird_9308.html" STYLE="color: #BB5511">Painted Redstart</a></h4>
+<h4><a href = "bird_9332.html" STYLE="color: #BB5511">Golden-crowned Warbler</a></h4>
+<br><h3>Cardinalidae</h3><h4><a href = "bird_9803.html" STYLE="color: #BB5511">Lazuli Bunting</a></h4>
+<h4><a href = "bird_9450.html" STYLE="color: #BB5511">Scarlet Tanager</a></h4>
+<h4><a href = "bird_9768.html" STYLE="color: #BB5511">Dickcissel</a></h4>
+<h4><a href = "bird_9773.html" STYLE="color: #BB5511">Rose-breasted Grosbeak</a></h4>
+<h4><a href = "bird_9774.html" STYLE="color: #BB5511">Black-headed Grosbeak</a></h4>
+<h4><a href = "bird_9775.html" STYLE="color: #BB5511">Northern Cardinal</a></h4>
+<h4><a href = "bird_9777.html" STYLE="color: #BB5511">Pyrrhuloxia</a></h4>
+
+<h4><a href = "bird_9451.html" STYLE="color: #BB5511">Western Tanager</a></h4>
+
+<h4><a href = "bird_9804.html" STYLE="color: #BB5511">Indigo Bunting</a></h4>
+<h4><a href = "bird_9806.html" STYLE="color: #BB5511">Painted Bunting</a></h4>
+
+<br><h3>Icteridae</h3><h4><a href = "bird_9883.html" STYLE="color: #BB5511">Brown-and-yellow Marshbird</a></h4>
+<h4><a href = "bird_9886.html" STYLE="color: #BB5511">Austral Blackbird</a></h4>
+<h4><a href = "bird_9897.html" STYLE="color: #BB5511">Great-tailed Grackle</a></h4>
+<h4><a href = "bird_9898.html" STYLE="color: #BB5511">Boat-tailed Grackle</a></h4>
+<h4><a href = "bird_9901.html" STYLE="color: #BB5511">Common Grackle</a></h4>
+<h4><a href = "bird_9902.html" STYLE="color: #BB5511">Greater Antillean Grackle</a></h4>
+<h4><a href = "bird_9904.html" STYLE="color: #BB5511">Rusty Blackbird</a></h4>
+<h4><a href = "bird_9905.html" STYLE="color: #BB5511">Brewer's Blackbird</a></h4>
+<h4><a href = "bird_9908.html" STYLE="color: #BB5511">Shiny Cowbird</a></h4>
+<h4><a href = "bird_9911.html" STYLE="color: #BB5511">Brown-headed Cowbird</a></h4>
+<h4><a href = "bird_9913.html" STYLE="color: #BB5511">Bobolink</a></h4>
+<h4><a href = "bird_9823.html" STYLE="color: #BB5511">Red-rumped Cacique</a></h4>
+<h4><a href = "bird_9849.html" STYLE="color: #BB5511">Baltimore Oriole</a></h4>
+<h4><a href = "bird_9850.html" STYLE="color: #BB5511">Bullock's Oriole</a></h4>
+<h4><a href = "bird_9852.html" STYLE="color: #BB5511">Orchard Oriole</a></h4>
+<h4><a href = "bird_9860.html" STYLE="color: #BB5511">Scott's Oriole</a></h4>
+<h4><a href = "bird_9866.html" STYLE="color: #BB5511">Yellow-winged Blackbird</a></h4>
+<h4><a href = "bird_9868.html" STYLE="color: #BB5511">Red-winged Blackbird</a></h4>
+<h4><a href = "bird_9878.html" STYLE="color: #BB5511">Long-tailed Meadowlark</a></h4>
+<!-- INPUT101_end -->
+
+</div>
+</div>
+</div>
+
+
+
+
+
+      <!-- INPUT4_start -->
+      <!-- INPUT4_end -->
+
+<!-- INPUT102_start -->
+    <div id="cssmenu"  align="center">
+    <ul>
+         <li><a href="../index.html">Home page</a></li>
+         <li><a href="../apropos.html">About</a></li>
+         <li><a href="../album_species.html">Recent updates</a></li>
+<li><a href="#nogo"><span style="cursor:pointer" onclick="openNav()">&#9776 list</span></a></li>
+         <li ><a href="#nogo">Trips</a>
+    <ul>
+            <li><a href="../wazo/bird_trip_20190621.html"> British Columbia (Summer 2019) </a></li>
+            <li><a href="../wazo/bird_trip_20190408.html"> Geneva (April 2019) </a></li>
+            <li><a href="../wazo/bird_trip_20190225.html"> Cayo Santa Maria (Feb-March 2019) </a></li>
+            <li><a href="../wazo/bird_trip_20181002.html"> Victoria (Octobre 2018) </a></li>
+            <li><a href="../wazo/bird_trip_20180708.html"> Europe (Summer 2018) </a></li>
+            <li><a href="../wazo/bird_trip_20180522.html"> Hawaii (May 2018) </a></li>
+            <li><a href="../wazo/bird_trip_20171102.html"> Mysore (November 2017) </a></li>
+            <li><a href="../wazo/bird_trip_20170424.html"> Tuscon (April 2017) </a></li>
+            <li><a href="../wazo/bird_trip_20170302.html"> Florida (March 2017) </a></li>
+            <li><a href="../wazo/bird_trip_20160625.html"> Europe (Summer 2016) </a></li>
+            <li><a href="../wazo/bird_trip_20160426.html"> Tuscon (April 2016) </a></li>
+            <li><a href="../wazo/bird_trip_20150710.html"> Hawaii (Summer 2015) </a></li>
+            <li><a href="../wazo/bird_trip_20140301.html"> Florida (March 2014) </a></li>
+            <li><a href="../wazo/bird_trip_20120622.html"> Europe (Summer 2012) </a></li>
+            <li><a href="../wazo/bird_trip_20101219.html"> France (Decembre 2010) </a></li>
+            <li><a href="../wazo/bird_trip_20100413.html"> Cayo Santa Maria (April 2010) </a></li>
+            <li><a href="../wazo/bird_trip_20081227.html"> Atacama (January 2009) </a></li>
+            <li><a href="../wazo/bird_trip_20081216.html"> Patagonia (Decembre 2008) </a></li>
+            <li><a href="../wazo/bird_trip_20080502.html"> Chiloe Island (May 2008) </a></li>
+            <li><a href="../wazo/bird_trip_20070603.html"> Iguazú (June 2007) </a></li>
+            <li><a href="../wazo/bird_trip_20070215.html"> Copiapó (February 2007) </a></li>
+            <li><a href="../wazo/bird_trip_20061225.html"> Uruguay (Decembre 2006) </a></li>
+            <li><a href="../wazo/bird_trip_20040701.html"> Morocco (Summer 2004) </a></li>
+    </ul>
+</li>
+         <li><a href="wazo_l.N433410E041122.html">Français</a></li>
+    </ul>
+</div>
+<!-- INPUT102_end -->
+
+<!-- INPUT MENU -->
+<div align="center">
+
+
+      <!-- INPUT3_start -->
+<h2><b>Canals du Rhône à Sète</b>, Languedoc-Roussillon, France  </a></h2>
+      <!-- INPUT3_end -->
+    <div class="content">
+ 
+        <!-- Adding gallery images. We use resized thumbnails here for better performance -->
+
+        <div class="galleria">
+        
+        
+<!-- INPUT1_start -->
+
+<a href="../meds/big_wazo_0563_006.jpg">
+<img 
+ 	src="../sm_wazo/sm_wazo_0563_006.jpg",
+  	data-big="../oiseaux_originaux/wazo_0563_006.jpg"
+   data-title=" "
+   data-description="<b><a href='bird_0563.html'>Red-crested Pochard</a></b>, <b><a href='bird_l.N433410E041122.html'>Canals du Rhône à Sète</a></b>, Languedoc-Roussillon, France, August 1er, 2018, NIKON D90, f/5.6, 500 mm, <b><i><a   target='_frame' href='http://ebird.org/ebird/chile/view/checklist?subID=S47592138 '>ebird</a></i></b>"
+ >
+ </a>
+<a href="../meds/big_wazo_1685_003.jpg">
+<img 
+ 	src="../sm_wazo/sm_wazo_1685_003.jpg",
+  	data-big="../oiseaux_originaux/wazo_1685_003.jpg"
+   data-title=" "
+   data-description="<b><a href='bird_1685.html'>Mediterranean Gull</a></b>, <b><a href='bird_l.N433410E041122.html'>Canals du Rhône à Sète</a></b>, Languedoc-Roussillon, France, August 1er, 2018, NIKON D90, f/5.6, 500 mm, <b><i><a   target='_frame' href='http://ebird.org/ebird/chile/view/checklist?subID=S47592138 '>ebird</a></i></b>"
+ >
+ </a>
+<a href="../meds/big_wazo_0305_004.jpg">
+<img 
+ 	src="../sm_wazo/sm_wazo_0305_004.jpg",
+  	data-big="../oiseaux_originaux/wazo_0305_004.jpg"
+   data-title=" "
+   data-description="<b><a href='bird_0305.html'>Little Egret</a></b>, <b><a href='bird_l.N433410E041122.html'>Canals du Rhône à Sète</a></b>, Languedoc-Roussillon, France, August 1er, 2018, NIKON D90, f/5.6, 410 mm, <b><i><a   target='_frame' href='http://ebird.org/ebird/chile/view/checklist?subID=S47592138 '>ebird</a></i></b>"
+ >
+ </a>
+<a href="../meds/big_wazo_1717_002.jpg">
+<img 
+ 	src="../sm_wazo/sm_wazo_1717_002.jpg",
+  	data-big="../oiseaux_originaux/wazo_1717_002.jpg"
+   data-title=" "
+   data-description="<b><a href='bird_1717.html'>Little Tern</a></b>, <b><a href='bird_l.N433410E041122.html'>Canals du Rhône à Sète</a></b>, Languedoc-Roussillon, France, August 1er, 2018, NIKON D90, f/5.6, 500 mm, <b><i><a   target='_frame' href='http://ebird.org/ebird/chile/view/checklist?subID=S47592138 '>ebird</a></i></b>"
+ >
+ </a>
+<a href="../meds/big_wazo_0260_004.jpg">
+<img 
+ 	src="../sm_wazo/sm_wazo_0260_004.jpg",
+  	data-big="../oiseaux_originaux/wazo_0260_004.jpg"
+   data-title=" "
+   data-description="<b><a href='bird_0260.html'>Great Cormorant</a></b>, <b><a href='bird_l.N433410E041122.html'>Canals du Rhône à Sète</a></b>, Languedoc-Roussillon, France, August 1er, 2018, NIKON D90, f/5.6, 500 mm, <b><i><a   target='_frame' href='http://ebird.org/ebird/chile/view/checklist?subID=S47592138 '>ebird</a></i></b>"
+ >
+ </a>
+<!-- INPUT1_end -->
+
+            
+        </div>
+        
+    </div>
+</div>
+    
+<div align="center">
+<br><br><br>
+
+<hr size="1" align="center" width="90%" >
+<br><br><br>
+<table>
+<tr>
+<td>
+
+    <div id="panel">
+	<span id="timetaken"></span>
+      <div id="markerlist"></div>
+    </div>
+
+    <div id="map-container">
+      <div id="map"></div>
+    </div>
+
+    </td>
+    
+<td style="width:90%">
+
+<!-- INPUT11_start -->
+<!-- INPUT11_end -->
+
+</td>
+</tr>
+</table>
+
+</div>
+<a href="http://s03.flagcounter.com/more/Yf8f" TARGET="_blank"><img src="http://s03.flagcounter.com/count/Yf8f/bg=5F3207/txt=5F3207/border=5F3207/columns=1/maxflags=5/viewers=0/labels=0/" alt="free counters" border="0" width="1" height="1"></a>
+
+<script>
+function openNav() {
+    document.getElementById("myNav").style.width = "100%";
+
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.width = "0%";
+}
+</script>
+
+    <script>
+
+    // Load the Twelve theme
+    Galleria.loadTheme('../galleria/themes/twelve/galleria.twelve.min.js');
+
+    // Initialize Galleria
+    Galleria.run('.galleria');
+
+    </script>
+    
+    
+    
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA5LIDZofQjNc4nxnLFNAU2apmXX3wseA&callback=initMap">
+    </script>    
+    </body>
+</html>
