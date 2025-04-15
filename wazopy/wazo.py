@@ -5,7 +5,7 @@ from tqdm import tqdm
 from jinja2 import Environment, PackageLoader, select_autoescape,FileSystemLoader
 import random 
 import etienne_tools as et
-import cv2
+#import cv2
 from drag import drag
 import matplotlib.image as mpimg
 from PIL import Image
