@@ -517,7 +517,7 @@ def mk_family_gal(tbl1):
                 suffix = 's'
             else:
                 suffix = ''
-            text.append('               <a href="{0}" class="btn btn-outline-white py-2 px-4">{1} Photo{2}</a>'.format(tbl2['BIN_KEYWORD'][0], np.sum(g),suffix))
+            text.append('               <a href="{0}.html" class="btn btn-outline-white py-2 px-4">{1} Photo{2}</a>'.format(tbl2['BIN_KEYWORD'][0], np.sum(g),suffix))
             text.append('           </div>')
             text.append('           <img src="{}" alt="Image" class="img-fluid">'.format(tag))
             text.append('       </div>')
@@ -742,6 +742,22 @@ def mk_web():
     fic.write(html_clean(template.render(TEXT_NO_PICTURE = text, MENU = menu)))
     fic.close()
 
+    print('Table par famille')
+    for BIN_KEYWORD in tqdm(np.unique(tbl_ini['BIN_KEYWORD'])):
+        tbl2 = tbl_ini[tbl_ini['BIN_KEYWORD'] == BIN_KEYWORD]
+        tbl2 = tbl2[np.argsort(-np.array(tbl2['MJD'], dtype=float))]
+
+        template = env.get_template('template_single.html')
+
+        latin = '<div align = "center"><em><h4>{}</h4></em></div>'.format(tbl2['SCIENTIFIC_NAME'][0])
+
+        fic = open('/Users/eartigau/wazo/{}.html'.format(BIN_KEYWORD), 'w')
+        NAME =  tbl2['BIN_KEYWORD'][0]
+        texte = '<a href = "/Users/eartigau/wazo/gallerie_{0}.html">{1}</a>'.format(tbl2['BIN_KEYWORD'][0],tbl2[ 'MENU_FR'][0])+get_lg(tbl2)
+        fic.write(html_clean(template.render(tbl=tbl2, NAME = NAME, TEXT_NO_PICTURE = latin+'<br>'+texte, MENU = menu)))
+        fic.close()
+
+
     # Table des voyages
     template = env.get_template('template_single.html')
     fic = open('/Users/eartigau/wazo/voyages.html', 'w')
@@ -792,9 +808,11 @@ def mk_web():
         fic.write(html_clean(template.render(tbl=tbl2, NAME = NAME, TEXT_NO_PICTURE = latin+'<br>'+texte, MENU = menu)))
         fic.close()
 
-    print('apropos')
+    
+
+    print('/Users/eartigau/wazo/apropos')
     apropos = get_apropos()
-    fic = open('apropos.html', 'w')
+    fic = open('/Users/eartigau/wazo/apropos.html', 'w')
     fic.write(html_clean(template.render(TEXT_NO_PICTURE=apropos, MENU = menu)))
     fic.close()
 
@@ -828,7 +846,7 @@ def mk_web():
                 fic.close()
 
 
-    fic = open('liste.html', 'w')
+    fic = open('/Users/eartigau/wazo/liste.html', 'w')
     template = env.get_template('template_single.html')
 
     current_sp = ''
@@ -859,16 +877,16 @@ def mk_web():
                 text.append('<h7b>'+current_family+'</h7b>')
 
             #<img src="img_girl.jpg" alt="Girl in a jacket" width="500" height="600">
-            im = ' <img src="peli/vide.png" alt="Least concern" width="20" height="20">'
+            im = ''# <img src="pngs/vide.png" alt="Least concern" width="20" height="20">'
 
             if 'CR' in tbl_ini['IUCN'][i]:
-                im = '   <img src="cr.png" alt="Crititally Endangered" width="20" height="20">'
+                im = '   <img src="pngs/cr.png" alt="Crititally Endangered" width="20" height="20">'
             if 'EN' in tbl_ini['IUCN'][i]:
-                im = '   <img src="en.png" alt="Endangered" width="20" height="20">'
+                im = '   <img src="pngs/en.png" alt="Endangered" width="20" height="20">'
             if 'VU' in tbl_ini['IUCN'][i]:
-                im = '   <img src="vu.png" alt="Vulnerable" width="20" height="20">'
+                im = '   <img src="pngs/vu.png" alt="Vulnerable" width="20" height="20">'
             if 'NT' in tbl_ini['IUCN'][i]:
-                im = '   <img src="nt.png" alt="Near threatened" width="20" height="20">'
+                im = '   <img src="pngs/nt.png" alt="Near threatened" width="20" height="20">'
 
             if len(tbl2) ==1:
                 tag2 = '#lg=1&slide=0'
@@ -881,143 +899,12 @@ def mk_web():
     fic.close()
 
 
-    fic = open('map.html', 'w')
+    fic = open('/Users/eartigau/wazo/map.html', 'w')
     template = env.get_template('template_map.html')
     fic.write(html_clean(template.render(MENU = menu)))
     fic.close()
 
-def create_med_pictures():
-    fics = et.file_search('oiseaux_originaux/wazo_*_*.jpg')
 
-    for fic in fics:
-        outname = 'meds/med_'+((fic.split('/'))[1].split('wazo_'))[1]       
-
-        if os.path.exists(outname) == False:
-        
-            im = mpimg.imread(fic)
-            sz = im.shape     
-            
-            ratio = sz[0]/1200
-            dim1 = str(np.round(sz[0]/ratio))
-            dim2 = str(np.round(sz[1]/ratio))
-        
-            print('~~~> '+outname)
-            os.system('convert -resize '+dim1+'x'+dim2+' -bordercolor black '+
-                      '-border 5 -bordercolor white -border 2 -quality 85 '+
-                      '-unsharp 1 '+fic+' tmp.jpg')
-            os.rename('tmp.jpg', outname)
-        #else:
-        #    #print(outname+'~~~> existe')
-    return []
-
-def exif2csv(fic,force=False,outtype = 'csv'):
-
-    if '.jpg' in fic:
-        csv_name = (fic.split('.jpg'))[0]+'.exif.csv'
-    elif '.mp4' in fic:
-        csv_name = (fic.split('.mp4'))[0]+'.exif.csv'
-    else:
-        stop
-    refresh = True
-    
-    if (os.path.exists(csv_name)) and (force == False):
-        
-        if os.path.getmtime(csv_name)>os.path.getmtime(fic):
-            # the csv file is more recent than the jpg file, we can use
-            # it
-            refresh = False
-            #print('reading recent csv file for exif')
-
-    
-    if refresh == True:
-        print('using exiftool as '+csv_name+' needs an update')
-        os.system('exiftool '+fic+' > '+csv_name)
-
-    ff=open(csv_name,'r')
-    hdr = []
-    for l in ff:
-        #print(l)
-        hdr.append(l)
-    ff.close()
-    
-    # replace ".0" with ""
-    for i in range(len(hdr)):
-        hdr[i] = hdr[i].replace('.0','')
-
-    # replace "NIKON" with "Nikon"
-    for i in range(len(hdr)):
-        hdr[i] = hdr[i].replace('NIKON','Nikon')
-
-    return hdr
-
-def ini_set_comment(fics=[''],skip=True):
-
-    if type(fics) == str:
-        fics = [fics]
-
-    if fics[0] == '':
-        fics =et.file_search('oiseaux_originaux/wazo_*_*.jpg')
-
-    tbl = Table.read('/Users/eartigau/oiseaux/nfom.txt',delimiter='#',format='ascii')
-    ebird = get_ebird()
-    ific =0
-    for fic in fics:    
-        print('['+str(ific)+']')
-        ific+=1
-        #fic = 'oiseaux_originaux/wazo_0505_009.jpg'
-        done = False
-     
-        hdr = exif2csv(fic)
-
-
-        for l in hdr:
-            #print(l)
-            if 'Create Date' in l:
-                date = (l.split(': '))[1]
-                date = date.strip(' ')
-                date = (date.split(' '))[0]
-                date = date.split(':')
-                date = date[0].strip(' ')+'-'+date[1].strip(' ')+'-'+date[2].strip(' ')
-            if 'COMMENT' in l:
-                if '_' in l:
-                    done = True
-                    print(l)
-                
-        if done == False:
-            id_wazo = (fic.split('wazo_'))[1].split('_')[0]  +'0'
-            
-            
-            ids = []
-            for i in tbl['ID']:
-                tmp_id = str(i)
-                if len(tmp_id) <5:
-                    tmp_id = ('0'*(5-len(tmp_id)))+tmp_id
-                ids.append(tmp_id)
-            g = (np.where(np.array(ids) == np.array(id_wazo)))[0]
-            
-            if len(g)==1:
-                g=g[0]
-                latin = tbl['NOM_LA'][g] 
-                
-                record = np.where( (ebird['DATE'] == date) & (ebird['SCIENTIFIC_NAME'] == latin) )[0]
-                print(len(record))
-                if len(record) ==0:
-                    print('aucune date+espèce ne correspond au fichier :'+fic)
-                    continue
-
-                if len(record)==1:
-                    comment = (np.array(ebird['SUBMISSION_ID']))[record[0]]+'_'+(np.array(ebird['EBIRD_CODE']))[record[0]]
-                    print(comment)
-                    os.system('exiftool -comment="'+comment+'" '+fic)
-                else:
-                    if skip==False:
-                        get_exif(fic)
-                    print('probleme #2 avec :'+fic)
-                    
-            else:
-                if skip==False:
-                    get_exif(fic)
-                print('probleme #1 avec :'+fic)
 
 def wazo_params():
     wps = dict()
@@ -1622,7 +1509,13 @@ def master_photo_table():
 
     tbl['AXIS_RATIO'] = tbl['XSIZE']/tbl['YSIZE']
     tbl = tbl[tbl['DATA_TYPE'] == 'photo']
+
+    good_ratio = (tbl['AXIS_RATIO'] > 1.48)*(tbl['AXIS_RATIO'] < 1.52)
+    tbl = tbl[good_ratio]
+
     tbl = tbl[np.argsort(tbl['TAXONOMIC_ORDER'])]
+
+
 
     voyages = Table.read('/Users/eartigau/wazo/voyages.csv',delimiter=',',format='csv')
 
