@@ -17,6 +17,9 @@ import glob
 import os
 from astropy.table import Table
 import requests
+import requests
+from PIL import Image
+from io import BytesIO
 
 def os_system(command):
     result = run(command, stdout=PIPE, stderr=PIPE, universal_newlines=True, shell=True)
@@ -464,7 +467,8 @@ def mk_voyage_gal(tbl1):
         tx = '<br>'.join(tx.split(' ('))
         tx = ''.join(tx.split(')'))
 
-        tag = tbl2['TAG_FULL'][np.argmax(tbl2['QUALITE'])]
+
+        tag = tbl2['ML_CATALOG_NUMBERS'][np.argmax(tbl2['QUALITE'])]
 
         text.append('   <div class="col-6 col-md-4 col-lg-3 col-xxl-2">')
         text.append('       <div class="image-wrap-2">')
@@ -472,7 +476,7 @@ def mk_voyage_gal(tbl1):
         text.append('               <h2 class="mb-3">{0}</h2>'.format(tx ))
         text.append('               <a href="voyage_{0}.html" class="btn btn-outline-white py-2 px-4">{1} Photos</a>'.format(voyage['VOYAGE_TAG'][i], len(tbl2)))
         text.append('           </div>')
-        text.append('           <img src="peli/c_square_{0}.jpg" alt="Image" class="img-fluid">'.format(tag))
+        text.append('           <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{}/1200" alt="Image" class="img-fluid">'.format(tag))
         text.append('       </div>')
         text.append('   </div>')
         text.append('')
@@ -502,7 +506,8 @@ def mk_family_gal(tbl1):
 
             tx = '<br>'.join(tbl2['MENU_FR'][0].split(':'))
 
-            tag = tbl2['TAG_FULL'][0]
+            index =  tbl2['ML_CATALOG_NUMBERS'][0]
+            tag = f'https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{index}/1200'
 
             text.append('   <div class="col-6 col-md-4 col-lg-3 col-xxl-2">')
             text.append('       <div class="image-wrap-2">')
@@ -514,7 +519,7 @@ def mk_family_gal(tbl1):
                 suffix = ''
             text.append('               <a href="{0}" class="btn btn-outline-white py-2 px-4">{1} Photo{2}</a>'.format(tbl2['BIN_KEYWORD'][0], np.sum(g),suffix))
             text.append('           </div>')
-            text.append('           <img src="{0}" alt="Image" class="img-fluid">'.format(tag))
+            text.append('           <img src="{}" alt="Image" class="img-fluid">'.format(tag))
             text.append('       </div>')
             text.append('   </div>')
             text.append('')
@@ -690,52 +695,21 @@ def get_intro_table(frac = 6.0):
 
 def get_lg(tbl):
 
-    text_movie_preload = ['']
-    # get the
-    i_movie = 0
-    for i in range(len(tbl)):
-        if tbl['FORMAT'][i] == 'MP4':
-            tmp = """
-                <div style="display:none;" id="video{0}" >
-                    <video class="lg-video-object video-js vjs-default-skin" autoplay loop  controls muted preload="auto">
-                        <source src="oiseaux_originaux/wazo_{1}.mp4" type="video/mp4">
-                         Your browser does not support HTML5 video.
-                    </video>
-                </div>
-            """.format(i_movie,tbl['TAG_FULL'][i])
-            i_movie+=1
-            text_movie_preload = np.append(text_movie_preload,tmp.split('\n'))
-
     text_lg = ['<div class="row" id="lightgallery">']
-    i_movie = 0
     for i in range(len(tbl)):
-        if tbl['FORMAT'][i] == 'MP4':
-            tmp = """
-            <div
-                    class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 item"
-                    data-aos="fade"
-                    data-html="#video{0}"
-                    data-sub-html="<h6>{2}, {3}, {4}, {5}, {6} <a href='https://ebird.org/checklist/{7}' target ='_frame'>ebird</a></h6>">
-                <a href="#"><img src="peli/c_wazo_{1}.jpg" alt="IMage" class="img-fluid"></a>
-            </div>
-            """.format(i_movie,tbl['TAG_FULL'][i],tbl['COMMON_NAME'][i],tbl['DATE_FR'][i], tbl['LOCATION'][i],tbl['PROVINCE_FR'][i],tbl['COUNTRY_FR'][i],tbl['SUBMISSION_ID'][i])
-            i_movie+=1
-            text_lg = np.append(text_lg,tmp.split('\n'))
-
-        if tbl['FORMAT'][i] == 'JPG':
-            tmp = """
-            <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 item" 
-            data-aos="fade" data-src="oiseaux_originaux/wazo_{0}.jpg" 
-            data-sub-html="<h6>{1}, {2}, {3}, {5} <a href='https://ebird.org/checklist/{6}' target ='_frame'>ebird</a></h6></p>">
-              <a href="#"><img src="peli/c_wazo_{0}.jpg" alt="IMage" class="img-fluid"></a>
-            </div>
-            """.format(tbl['TAG_FULL'][i],tbl['COMMON_NAME'][i],tbl['DATE_FR'][i], tbl['LOCATION'][i],tbl['PROVINCE_FR'][i],tbl['COUNTRY_FR'][i],tbl['SUBMISSION_ID'][i])
-            text_lg = np.append(text_lg,tmp.split('\n'))
+        tmp = """
+        <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 item" 
+        data-aos="fade" data-src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{0}/2400" 
+        data-sub-html="<h6>{1}, {2}, {3}, {5} <a href='https://ebird.org/checklist/{6}' target ='_frame'>ebird</a></h6></p>">
+            <a href="#"><img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{0}/480" alt="IMage" class="img-fluid"></a>
+        </div>
+        """.format(tbl['ML_CATALOG_NUMBERS'][i],tbl['COMMON_NAME'][i],tbl['DATE_FR'][i], tbl['LOCATION'][i],tbl['PROVINCE_FR'][i],tbl['COUNTRY_FR'][i],tbl['SUBMISSION_ID'][i])
+        text_lg = np.append(text_lg,tmp.split('\n'))
 
     text_lg = np.append(text_lg,'</div>')
 
 
-    return '\n'.join(np.append(text_movie_preload, text_lg))
+    return '\n'.join( text_lg)
 
 def mk_web():
     
@@ -749,31 +723,28 @@ def mk_web():
         autoescape=select_autoescape(['html', 'xml'])
     )
 
-    tbl_ini = get_ebird()
+    #mkjson(tbl_ini, outname='full', lang='FR', zoom=2, latitude_center=0, longitude_center=0)
 
+    #template = env.get_template('template_index.html')
+    #fic = open('index.html', 'w')
+    #tbl = Table(tbl_ini[tbl_ini['INTRO']])
+    #tbl['RANDOM_INDEX'] = np.arange(len(tbl))[np.argsort(np.random.random(len(tbl)))]
 
-    mkjson(tbl_ini, outname='full', lang='FR', zoom=2, latitude_center=0, longitude_center=0)
-
-    template = env.get_template('template_index.html')
-    fic = open('index.html', 'w')
-    tbl = Table(tbl_ini[tbl_ini['INTRO']])
-    tbl['RANDOM_INDEX'] = np.arange(len(tbl))[np.argsort(np.random.random(len(tbl)))]
-
-    frac = 5.0
-    matrix = get_intro_table(frac = frac)
-    fic.write(html_clean(template.render(tbl = tbl, matrix = matrix, frac =frac)))
-    fic.close()
+    #frac = 5.0
+    #matrix = get_intro_table(frac = frac)
+    #fic.write(html_clean(template.render(tbl = tbl, matrix = matrix, frac =frac)))
+    #fic.close()
 
     # Table des familles
     template = env.get_template('template_single.html')
-    fic = open('familles.html', 'w')
+    fic = open('/Users/eartigau/wazo/familles.html', 'w')
     text = mk_family_gal(tbl_ini)
     fic.write(html_clean(template.render(TEXT_NO_PICTURE = text, MENU = menu)))
     fic.close()
 
     # Table des voyages
     template = env.get_template('template_single.html')
-    fic = open('voyages.html', 'w')
+    fic = open('/Users/eartigau/wazo/voyages.html', 'w')
     text = mk_voyage_gal(tbl_ini)
     fic.write(html_clean(template.render(TEXT_NO_PICTURE = text, MENU = menu)))
     fic.close()
@@ -785,9 +756,9 @@ def mk_web():
 
     # table des récents
     nlines =  20
-    tbl = tbl_ini[np.argsort(-tbl_ini['SORT_MJD_ESP'])][0:nlines*6]
+    tbl = tbl_ini[np.argsort(-tbl_ini['MJD'])][0:nlines*6]
     template = env.get_template('template_single.html')
-    fic = open('recent.html', 'w')
+    fic = open('/Users/eartigau/wazo/recent.html', 'w')
     fic.write(html_clean(template.render(tbl=tbl, TEXT_NO_PICTURE = get_lg(tbl), NAME='Photos récentes', MENU = menu)))
     fic.close()
 
@@ -799,7 +770,7 @@ def mk_web():
 
         template = env.get_template('template_single.html')
 
-        fic = open('voyage_{}.html'.format(voyage['VOYAGE_TAG'][ite]), 'w')
+        fic = open('/Users/eartigau/wazo/voyage_{}.html'.format(voyage['VOYAGE_TAG'][ite]), 'w')
         tmp = voyage['VOYAGE_FR'][ite]
         NAME = tmp.split('(')[0]
         DATE = tmp.split('(')[1].split(')')[0]
@@ -815,7 +786,7 @@ def mk_web():
 
         latin = '<div align = "center"><em><h4>{}</h4></em></div>'.format(tbl2['SCIENTIFIC_NAME'][0])
 
-        fic = open('espece_{}.html'.format(EBIRD_CODE), 'w')
+        fic = open('/Users/eartigau/wazo/espece_{}.html'.format(EBIRD_CODE), 'w')
         NAME =  tbl2['COMMON_NAME'][0]
         texte = '<a href = "gallerie_{0}.html">{1}</a>'.format(tbl2['BIN_KEYWORD'][0],tbl2[ 'MENU_FR'][0])+get_lg(tbl2)
         fic.write(html_clean(template.render(tbl=tbl2, NAME = NAME, TEXT_NO_PICTURE = latin+'<br>'+texte, MENU = menu)))
@@ -1443,7 +1414,7 @@ def master_photo_table():
         keys = tbl['ML_CATALOG_NUMBERS'][i].split(' ')
         for key in keys:
             # add line of ebird to the table
-            tbl.add_row(tbl2[i])
+            tbl.add_row(tbl[i])
             tbl['ML_CATALOG_NUMBERS'][-1] = key
     keep = [' ' not in key for key in tbl['ML_CATALOG_NUMBERS']]
     tbl = tbl[keep]
@@ -1608,6 +1579,8 @@ def master_photo_table():
 
 
     tbl['DATA_TYPE'] = 'photo'
+    tbl['XSIZE'] = 0
+    tbl['YSIZE'] = 0
 
     tbl_data_type = Table.read('/Users/eartigau/wazo/data_type.csv')
 
@@ -1617,41 +1590,53 @@ def master_photo_table():
             g = (np.where(tbl_data_type['ML_CATALOG_NUMBERS'] == id_ml))[0]
             if len(g) > 0:
                 tbl['DATA_TYPE'][i] = tbl_data_type['DATA_TYPE'][g[0]]
+                tbl['XSIZE'][i] = tbl_data_type['XSIZE'][g[0]]
+                tbl['YSIZE'][i] = tbl_data_type['YSIZE'][g[0]]
+                
                 continue
         else:
-            url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{id_ml}/480"
+            url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{id_ml}/1200"
 
-            response = requests.head(url)
+            response = requests.get(url)
 
             if response.status_code == 200:
                 tbl['DATA_TYPE'][i] = 'photo'
+                image = Image.open(BytesIO(response.content))
+                width, height = image.size
+                print(f"Image dimensions: {width} x {height}")
+            
             else:
+                print(f"Failed to download image. Status code: {response.status_code}")
                 tbl['DATA_TYPE'][i] = 'audio'
+                width = 0
+                height = 0
+
         
         tbl_data_type.add_row()
         tbl_data_type['ML_CATALOG_NUMBERS'][-1] = id_ml
         tbl_data_type['DATA_TYPE'][-1] = tbl['DATA_TYPE'][i]
+        tbl_data_type['XSIZE'][-1] = width
+        tbl_data_type['YSIZE'][-1] = height
 
     tbl_data_type.write('/Users/eartigau/wazo/data_type.csv',overwrite=True,format='csv')
 
+    tbl['AXIS_RATIO'] = tbl['XSIZE']/tbl['YSIZE']
+    tbl = tbl[tbl['DATA_TYPE'] == 'photo']
+    tbl = tbl[np.argsort(tbl['TAXONOMIC_ORDER'])]
+
+    voyages = Table.read('/Users/eartigau/wazo/voyages.csv',delimiter=',',format='csv')
+
+    tbl['VOYAGE_FR'] = np.zeros(len(tbl),dtype = 'U999')
+    tbl['VOYAGE_EN'] =  np.zeros(len(tbl),dtype = 'U999')
+    for i_voyage in range(len(voyages)):
+        voyage_fr = voyages['VOYAGE_FR'][i_voyage]
+        voyage_en = voyages['VOYAGE_EN'][i_voyage]
+
+        g = (tbl['DATE'] >= voyages['DATE1'][i_voyage]) * (tbl['DATE'] <= voyages['DATE2'][i_voyage])
+        tbl['VOYAGE_FR'][g] = voyage_fr
+        tbl['VOYAGE_EN'][g] = voyage_en
 
     return tbl
-
-
-def exifhdr(fic):
-    import exifread
-    # Open image file for reading (must be in binary mode)
-    f = open(fic, 'rb')
-
-    # Return Exif tags
-    tags = exifread.process_file(f)
-
-    if 'EXIF ExposureTime' in tags:
-        tags['EXPTIME'] = eval((str(tags['EXIF ExposureTime'])))
-    if 'EXIF FocalLength' in tags:
-        tags['FLENGTH'] = eval((str(tags['EXIF FocalLength'])))
-
-    return tags
 
 def get_hdr(fic):
     # get header from a given wazo file
