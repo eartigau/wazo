@@ -401,7 +401,7 @@ def mkjson(tbl,outname = 'full',lang='FR', zoom = 6, latitude_center = 0,longitu
         for i in range(len(TAG_FULL)):
             bin_group = tbl2[i]['BIN_KEYWORD']
             index = tbl2[i]['INDEX_BIN_KEYWORD']
-            link = 'gallerie_{0}.html#lg=1&slide={1}'.format(bin_group,index)
+            link = '{0}.html#lg=1&slide={1}'.format(bin_group,index)
             long_str+="<a href="+link+"><img height='80' width='80' style='border:5px solid white' src='peli/c_square_"+TAG_FULL[i]+".jpg' >"+'</a>  '
         
         long_str +='", "longitude": '+tbl2['LONGITUDE'][0]+', "latitude": '+tbl2['LATITUDE'][0]+'}'
@@ -700,7 +700,7 @@ def get_lg(tbl):
         tmp = """
         <div class="col-4 col-sm-3 col-md-2 col-lg-2 col-xl-2 item" 
         data-aos="fade" data-src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{0}/2400" 
-        data-sub-html="<h6>{1}, {2}, {3}, {5} <a href='https://ebird.org/checklist/{6}' target ='_frame'>ebird</a></h6></p>">
+        data-sub-html="<h6>{1}, {2}, {3}, {5} <a href='https://ebird.org/checklist/{6}' target ='_frame'>eBird</a></h6></p>">
             <a href="#"><img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{0}/480" alt="IMage" class="img-fluid"></a>
         </div>
         """.format(tbl['ML_CATALOG_NUMBERS'][i],tbl['COMMON_NAME'][i],tbl['DATE_FR'][i], tbl['LOCATION'][i],tbl['PROVINCE_FR'][i],tbl['COUNTRY_FR'][i],tbl['SUBMISSION_ID'][i])
@@ -751,9 +751,11 @@ def mk_web():
 
         latin = '<div align = "center"><em><h4>{}</h4></em></div>'.format(tbl2['SCIENTIFIC_NAME'][0])
 
-        fic = open('/Users/eartigau/wazo/{}.html'.format(BIN_KEYWORD), 'w')
+        outname = '/Users/eartigau/wazo/{}.html'.format(BIN_KEYWORD)
+        print(outname)
+        fic = open(outname, 'w')
         NAME =  tbl2['BIN_KEYWORD'][0]
-        texte = '<a href = "/Users/eartigau/wazo/gallerie_{0}.html">{1}</a>'.format(tbl2['BIN_KEYWORD'][0],tbl2[ 'MENU_FR'][0])+get_lg(tbl2)
+        texte = '<a href = "/Users/eartigau/wazo/{0}.html">{1}</a>'.format(tbl2['BIN_KEYWORD'][0],tbl2[ 'MENU_FR'][0])+get_lg(tbl2)
         fic.write(html_clean(template.render(tbl=tbl2, NAME = NAME, TEXT_NO_PICTURE = latin+'<br>'+texte, MENU = menu)))
         fic.close()
 
@@ -804,7 +806,7 @@ def mk_web():
 
         fic = open('/Users/eartigau/wazo/espece_{}.html'.format(EBIRD_CODE), 'w')
         NAME =  tbl2['COMMON_NAME'][0]
-        texte = '<a href = "gallerie_{0}.html">{1}</a>'.format(tbl2['BIN_KEYWORD'][0],tbl2[ 'MENU_FR'][0])+get_lg(tbl2)
+        texte = '<a href = "{0}.html">{1}</a>'.format(tbl2['BIN_KEYWORD'][0],tbl2[ 'MENU_FR'][0])+get_lg(tbl2)
         fic.write(html_clean(template.render(tbl=tbl2, NAME = NAME, TEXT_NO_PICTURE = latin+'<br>'+texte, MENU = menu)))
         fic.close()
 
@@ -832,13 +834,13 @@ def mk_web():
 
                 if style == 0:
                     suffix = '_date'
-                    text = "<a href='gallerie_{0}{1}.html'>Photos triées par espèces...</a></7><br>".format(ubin[ite],'')
+                    text = "<a href='{0}{1}.html'>Photos triées par espèces...</a></7><br>".format(ubin[ite],'')
                 else:
-                    text = "<a href='gallerie_{0}{1}.html'>Photos triées date...</a></7><br>".format(ubin[ite],'_date')
+                    text = "<a href='{0}{1}.html'>Photos triées date...</a></7><br>".format(ubin[ite],'_date')
                     suffix = ''
                     tbl = tbl[np.argsort(tbl['TAXONOMIC_ORDER'])]
 
-                fic = open('gallerie_{0}{1}.html'.format(ubin[ite],suffix), 'w')
+                fic = open('{0}{1}.html'.format(ubin[ite],suffix), 'w')
 
                 tmp =  tbl['MENU_FR'][0].split(' : ')
                 fic.write(html_clean(template.render(tbl=tbl, NAME =tmp[0], DATE = tmp[1], MENU = menu,
@@ -968,12 +970,13 @@ def wazo_params():
     
     return wps
     
-def get_ebird(force=True, csv_file = 'MyEBirdData.csv'):
+def get_ebird(force=False, csv_file = 'MyEBirdData.csv'):
     wps = wazo_params()
     check_new_ebird()
     
     ebird_reports_file = wps['EBIRD_PATH']+csv_file
-    ebird_reports =clean_table(pd.read_csv(ebird_reports_file,dtype=str))
+    ebird_reports = clean_table(pd.read_csv(ebird_reports_file, dtype=str))
+    
     keys = ebird_reports.keys()
     
     if ('EBIRD_CODE' in keys) and (force == False):
@@ -1137,10 +1140,9 @@ def get_ebird(force=True, csv_file = 'MyEBirdData.csv'):
         if day_fr[0] =="0":
             day_fr=day_fr[1]
     
-    
-    date_fr[i]=day_fr+' '+month_fr+' '+yr
-    date_en[i]=month_en+' '+day_en+', '+yr
-    i+=1
+        date_fr[i]=day_fr+' '+month_fr+' '+yr
+        date_en[i]=month_en+' '+day_en+', '+yr
+        i+=1
     
     ebird_reports["DATE_FR"]=date_fr
     ebird_reports["DATE_EN"]=date_en
