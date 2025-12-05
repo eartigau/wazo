@@ -1,0 +1,2931 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famille des Trochilidaes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_trochilidae_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Famille des Trochilidaes</h1>
+        
+        <div class="gallery-subtitle">Colibris, Arianes, Dryades, etc.</div>
+        
+        <div class="stats">
+            81 photos
+            
+             · 23 espèces
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="22435901"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435901/480"
+                     alt="Colibri demi-deuil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri demi-deuil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="22436151"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436151/480"
+                     alt="Colibri demi-deuil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri demi-deuil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22436161"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436161/480"
+                     alt="Colibri demi-deuil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri demi-deuil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="22434261"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434261/480"
+                     alt="Ermite de Prêtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ermite de Prêtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="22434271"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434271/480"
+                     alt="Ermite de Prêtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ermite de Prêtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="22499741"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22499741/480"
+                     alt="Mango à cravate noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mango à cravate noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="22436471"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436471/480"
+                     alt="Colibri du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="22436481"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436481/480"
+                     alt="Colibri du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="22436491"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436491/480"
+                     alt="Colibri du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="22482671"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22482671/480"
+                     alt="Colibri du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="214040131"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040131/480"
+                     alt="Colibri du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="22374791"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22374791/480"
+                     alt="Colibri géant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri géant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="22436461"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436461/480"
+                     alt="Colibri géant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri géant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="22399461"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22399461/480"
+                     alt="Colibri géant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri géant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="22399481"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22399481/480"
+                     alt="Colibri géant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri géant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22399491"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22399491/480"
+                     alt="Colibri géant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri géant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="22399501"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22399501/480"
+                     alt="Colibri géant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri géant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="56292351"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56292351/480"
+                     alt="Colibri de Rivoli"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri de Rivoli</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="56292361"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56292361/480"
+                     alt="Colibri de Rivoli"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri de Rivoli</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="22499901"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22499901/480"
+                     alt="Colibri d'Angèle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Angèle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="22482701"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22482701/480"
+                     alt="Colibri vesper"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri vesper</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="22482681"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22482681/480"
+                     alt="Colibri vesper"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri vesper</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="34522531"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34522531/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="22534471"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22534471/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="34432991"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34432991/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="34433001"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34433001/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="34433021"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34433021/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="34433031"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34433031/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="64638541"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/64638541/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="64638551"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/64638551/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="242887071"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/242887071/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="243341421"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/243341421/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="342769361"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/342769361/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="618922174"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/618922174/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="618922175"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/618922175/480"
+                     alt="Colibri à gorge rubis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge rubis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="56288861"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56288861/480"
+                     alt="Colibri à gorge noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="56261431"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56261431/480"
+                     alt="Colibri à gorge noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="22586281"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586281/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="22434661"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434661/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="118099621"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/118099621/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="118099661"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/118099661/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="118099711"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/118099711/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="537231121"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537231121/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="537231191"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537231191/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="598290261"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598290261/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="620948244"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948244/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="620948238"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948238/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="537690151"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537690151/480"
+                     alt="Colibri de Costa"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri de Costa</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="537715261"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537715261/480"
+                     alt="Colibri de Costa"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri de Costa</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="538305951"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538305951/480"
+                     alt="Colibri de Costa"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri de Costa</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="167567101"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167567101/480"
+                     alt="Colibri calliope"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri calliope</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="167567931"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167567931/480"
+                     alt="Colibri calliope"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri calliope</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="167567061"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167567061/480"
+                     alt="Colibri roux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri roux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="551447311"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/551447311/480"
+                     alt="Colibri d'Allen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Allen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="596417611"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596417611/480"
+                     alt="Colibri d'Allen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Allen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="597242251"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597242251/480"
+                     alt="Colibri d'Allen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Allen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="597788411"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597788411/480"
+                     alt="Colibri d'Allen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Allen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="620936453"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936453/480"
+                     alt="Colibri d'Allen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Allen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="56292301"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56292301/480"
+                     alt="Colibri à queue large"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à queue large</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="56291701"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56291701/480"
+                     alt="Colibri à queue large"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à queue large</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="22436211"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436211/480"
+                     alt="Émeraude de Ricord"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Émeraude de Ricord</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="22436231"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436231/480"
+                     alt="Émeraude de Ricord"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Émeraude de Ricord</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="21112181"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21112181/480"
+                     alt="Émeraude de Ricord"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Émeraude de Ricord</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="63"
+                 data-ml="22392441"
+                 onclick="openLightbox(63)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22392441/480"
+                     alt="Émeraude de Ricord"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Émeraude de Ricord</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="64"
+                 data-ml="56174911"
+                 onclick="openLightbox(64)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56174911/480"
+                     alt="Colibri circé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri circé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="65"
+                 data-ml="538851891"
+                 onclick="openLightbox(65)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538851891/480"
+                     alt="Colibri circé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri circé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="66"
+                 data-ml="538854171"
+                 onclick="openLightbox(66)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538854171/480"
+                     alt="Colibri circé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri circé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="67"
+                 data-ml="22435841"
+                 onclick="openLightbox(67)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435841/480"
+                     alt="Dryade glaucope"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dryade glaucope</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="68"
+                 data-ml="34522401"
+                 onclick="openLightbox(68)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34522401/480"
+                     alt="Dryade glaucope"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dryade glaucope</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="69"
+                 data-ml="538851671"
+                 onclick="openLightbox(69)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538851671/480"
+                     alt="Ariane à couronne violette"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane à couronne violette</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="70"
+                 data-ml="538851741"
+                 onclick="openLightbox(70)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538851741/480"
+                     alt="Ariane à couronne violette"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane à couronne violette</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="71"
+                 data-ml="22435851"
+                 onclick="openLightbox(71)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435851/480"
+                     alt="Ariane versicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane versicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="72"
+                 data-ml="22435861"
+                 onclick="openLightbox(72)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435861/480"
+                     alt="Ariane versicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane versicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="73"
+                 data-ml="22436041"
+                 onclick="openLightbox(73)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436041/480"
+                     alt="Ariane versicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane versicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="74"
+                 data-ml="22436051"
+                 onclick="openLightbox(74)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436051/480"
+                     alt="Ariane versicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane versicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="75"
+                 data-ml="22436061"
+                 onclick="openLightbox(75)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436061/480"
+                     alt="Ariane versicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane versicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="76"
+                 data-ml="22434171"
+                 onclick="openLightbox(76)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434171/480"
+                     alt="Ariane versicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ariane versicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="77"
+                 data-ml="73504041"
+                 onclick="openLightbox(77)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/73504041/480"
+                     alt="Colibri à gorge blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="78"
+                 data-ml="73504051"
+                 onclick="openLightbox(78)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/73504051/480"
+                     alt="Colibri à gorge blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri à gorge blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="79"
+                 data-ml="22435871"
+                 onclick="openLightbox(79)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435871/480"
+                     alt="Saphir à queue d'or"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Saphir à queue d'or</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="80"
+                 data-ml="22435881"
+                 onclick="openLightbox(80)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435881/480"
+                     alt="Saphir à queue d'or"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Saphir à queue d'or</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "22435901",
+                name_fr: "Colibri demi-deuil",
+                name_en: "Black Jacobin",
+                scientific: "Florisuga fusca",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566285"
+            },
+            
+            {
+                ml: "22436151",
+                name_fr: "Colibri demi-deuil",
+                name_en: "Black Jacobin",
+                scientific: "Florisuga fusca",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "7 juin 2007",
+                date_en: "June 7, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566286"
+            },
+            
+            {
+                ml: "22436161",
+                name_fr: "Colibri demi-deuil",
+                name_en: "Black Jacobin",
+                scientific: "Florisuga fusca",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "7 juin 2007",
+                date_en: "June 7, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566286"
+            },
+            
+            {
+                ml: "22434261",
+                name_fr: "Ermite de Prêtre",
+                name_en: "Planalto Hermit",
+                scientific: "Phaethornis pretrei",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "8 juin 2007",
+                date_en: "June 8, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566226"
+            },
+            
+            {
+                ml: "22434271",
+                name_fr: "Ermite de Prêtre",
+                name_en: "Planalto Hermit",
+                scientific: "Phaethornis pretrei",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "8 juin 2007",
+                date_en: "June 8, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566226"
+            },
+            
+            {
+                ml: "22499741",
+                name_fr: "Mango à cravate noire",
+                name_en: "Black-throated Mango",
+                scientific: "Anthracothorax nigricollis",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "8 juin 2007",
+                date_en: "June 8, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566226"
+            },
+            
+            {
+                ml: "22436471",
+                name_fr: "Colibri du Chili",
+                name_en: "Green-backed Firecrown",
+                scientific: "Sephanoides sephaniodes",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cerro Grande, Coquimbo, Chili",
+                location_en: "Cerro Grande, Coquimbo, Chile",
+                date_fr: "22 octobre 2006",
+                date_en: "October 22, 2006",
+                lat: -29.9434816,
+                lng: -71.2182069,
+                checklist_id: "S5772529"
+            },
+            
+            {
+                ml: "22436481",
+                name_fr: "Colibri du Chili",
+                name_en: "Green-backed Firecrown",
+                scientific: "Sephanoides sephaniodes",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cerro Grande, Coquimbo, Chili",
+                location_en: "Cerro Grande, Coquimbo, Chile",
+                date_fr: "22 octobre 2006",
+                date_en: "October 22, 2006",
+                lat: -29.9434816,
+                lng: -71.2182069,
+                checklist_id: "S5772529"
+            },
+            
+            {
+                ml: "22436491",
+                name_fr: "Colibri du Chili",
+                name_en: "Green-backed Firecrown",
+                scientific: "Sephanoides sephaniodes",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cerro Grande, Coquimbo, Chili",
+                location_en: "Cerro Grande, Coquimbo, Chile",
+                date_fr: "22 octobre 2006",
+                date_en: "October 22, 2006",
+                lat: -29.9434816,
+                lng: -71.2182069,
+                checklist_id: "S5772529"
+            },
+            
+            {
+                ml: "22482671",
+                name_fr: "Colibri du Chili",
+                name_en: "Green-backed Firecrown",
+                scientific: "Sephanoides sephaniodes",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "3 mai 2009",
+                date_en: "May 3, 2009",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772460"
+            },
+            
+            {
+                ml: "214040131",
+                name_fr: "Colibri du Chili",
+                name_en: "Green-backed Firecrown",
+                scientific: "Sephanoides sephaniodes",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "7 mars 2020",
+                date_en: "March 7, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65536390"
+            },
+            
+            {
+                ml: "22374791",
+                name_fr: "Colibri géant",
+                name_en: "Giant Hummingbird",
+                scientific: "Patagona gigas",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "22 décembre 2007",
+                date_en: "December 22, 2007",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772473"
+            },
+            
+            {
+                ml: "22436461",
+                name_fr: "Colibri géant",
+                name_en: "Giant Hummingbird",
+                scientific: "Patagona gigas",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "23 décembre 2007",
+                date_en: "December 23, 2007",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772528"
+            },
+            
+            {
+                ml: "22399461",
+                name_fr: "Colibri géant",
+                name_en: "Giant Hummingbird",
+                scientific: "Patagona gigas",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "25 décembre 2007",
+                date_en: "December 25, 2007",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772483"
+            },
+            
+            {
+                ml: "22399481",
+                name_fr: "Colibri géant",
+                name_en: "Giant Hummingbird",
+                scientific: "Patagona gigas",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "25 décembre 2007",
+                date_en: "December 25, 2007",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772483"
+            },
+            
+            {
+                ml: "22399491",
+                name_fr: "Colibri géant",
+                name_en: "Giant Hummingbird",
+                scientific: "Patagona gigas",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "25 décembre 2007",
+                date_en: "December 25, 2007",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772483"
+            },
+            
+            {
+                ml: "22399501",
+                name_fr: "Colibri géant",
+                name_en: "Giant Hummingbird",
+                scientific: "Patagona gigas",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "25 décembre 2007",
+                date_en: "December 25, 2007",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772483"
+            },
+            
+            {
+                ml: "56292351",
+                name_fr: "Colibri de Rivoli",
+                name_en: "Rivoli\'s Hummingbird",
+                scientific: "Eugenes fulgens",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Mt. Lemmon--Palisades Visitor Center, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Palisades Visitor Center, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27, 2017",
+                lat: 32.4104319,
+                lng: -110.7147995,
+                checklist_id: "S36369235"
+            },
+            
+            {
+                ml: "56292361",
+                name_fr: "Colibri de Rivoli",
+                name_en: "Rivoli\'s Hummingbird",
+                scientific: "Eugenes fulgens",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Mt. Lemmon--Palisades Visitor Center, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Palisades Visitor Center, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27, 2017",
+                lat: 32.4104319,
+                lng: -110.7147995,
+                checklist_id: "S36369235"
+            },
+            
+            {
+                ml: "22499901",
+                name_fr: "Colibri d\'Angèle",
+                name_en: "Blue-tufted Starthroat",
+                scientific: "Heliomaster furcifer",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "8 juin 2007",
+                date_en: "June 8, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566226"
+            },
+            
+            {
+                ml: "22482701",
+                name_fr: "Colibri vesper",
+                name_en: "Oasis Hummingbird",
+                scientific: "Rhodopis vesper",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "24 janvier 2009",
+                date_en: "January 24, 2009",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772459"
+            },
+            
+            {
+                ml: "22482681",
+                name_fr: "Colibri vesper",
+                name_en: "Oasis Hummingbird",
+                scientific: "Rhodopis vesper",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "3 mai 2009",
+                date_en: "May 3, 2009",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772460"
+            },
+            
+            {
+                ml: "34522531",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "RN Gault, Québec, Canada",
+                location_en: "RN Gault, Quebec, Canada",
+                date_fr: "22 mai 2004",
+                date_en: "May 22, 2004",
+                lat: 45.5524924,
+                lng: -73.155374,
+                checklist_id: "S18567125"
+            },
+            
+            {
+                ml: "22534471",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Gatineau, Québec, Canada",
+                location_en: "Gatineau, Quebec, Canada",
+                date_fr: "20 août 2005",
+                date_en: "August 20, 2005",
+                lat: 45.434722,
+                lng: -75.763056,
+                checklist_id: "S18567409"
+            },
+            
+            {
+                ml: "34432991",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Gatineau, Québec, Canada",
+                location_en: "Gatineau, Quebec, Canada",
+                date_fr: "3 septembre 2005",
+                date_en: "September 3, 2005",
+                lat: 45.434722,
+                lng: -75.763056,
+                checklist_id: "S18567126"
+            },
+            
+            {
+                ml: "34433001",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Gatineau, Québec, Canada",
+                location_en: "Gatineau, Quebec, Canada",
+                date_fr: "3 septembre 2005",
+                date_en: "September 3, 2005",
+                lat: 45.434722,
+                lng: -75.763056,
+                checklist_id: "S18567126"
+            },
+            
+            {
+                ml: "34433021",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Gatineau, Québec, Canada",
+                location_en: "Gatineau, Quebec, Canada",
+                date_fr: "3 septembre 2005",
+                date_en: "September 3, 2005",
+                lat: 45.434722,
+                lng: -75.763056,
+                checklist_id: "S18567126"
+            },
+            
+            {
+                ml: "34433031",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Gatineau, Québec, Canada",
+                location_en: "Gatineau, Quebec, Canada",
+                date_fr: "3 septembre 2005",
+                date_en: "September 3, 2005",
+                lat: 45.434722,
+                lng: -75.763056,
+                checklist_id: "S18567126"
+            },
+            
+            {
+                ml: "64638541",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "29 juillet 2017",
+                date_en: "July 29, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S38376014"
+            },
+            
+            {
+                ml: "64638551",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "29 juillet 2017",
+                date_en: "July 29, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S38376014"
+            },
+            
+            {
+                ml: "242887071",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "12 juin 2020",
+                date_en: "June 12, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S70358190"
+            },
+            
+            {
+                ml: "243341421",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "14 juin 2020",
+                date_en: "June 14, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S70432892"
+            },
+            
+            {
+                ml: "342769361",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "27 mai 2021",
+                date_en: "May 27, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S89067660"
+            },
+            
+            {
+                ml: "618922174",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "12 mai 2024",
+                date_en: "May 12, 2024",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S174062737"
+            },
+            
+            {
+                ml: "618922175",
+                name_fr: "Colibri à gorge rubis",
+                name_en: "Ruby-throated Hummingbird",
+                scientific: "Archilochus colubris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "12 mai 2024",
+                date_en: "May 12, 2024",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S174062737"
+            },
+            
+            {
+                ml: "56288861",
+                name_fr: "Colibri à gorge noire",
+                name_en: "Black-chinned Hummingbird",
+                scientific: "Archilochus alexandri",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Sweetwater Wetlands, Arizona, États-Unis",
+                location_en: "Sweetwater Wetlands, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27, 2017",
+                lat: 32.2790144,
+                lng: -111.0216061,
+                checklist_id: "S36371253"
+            },
+            
+            {
+                ml: "56261431",
+                name_fr: "Colibri à gorge noire",
+                name_en: "Black-chinned Hummingbird",
+                scientific: "Archilochus alexandri",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Madera Canyon--Santa Rita Lodge, Arizona, États-Unis",
+                location_en: "Madera Canyon--Santa Rita Lodge, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7251514,
+                lng: -110.8801067,
+                checklist_id: "S36365214"
+            },
+            
+            {
+                ml: "22586281",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Desert Botanical Garden, Arizona, États-Unis",
+                location_en: "Desert Botanical Garden, Arizona, United States",
+                date_fr: "29 décembre 2005",
+                date_en: "December 29, 2005",
+                lat: 33.4618165,
+                lng: -111.9436349,
+                checklist_id: "S18575057"
+            },
+            
+            {
+                ml: "22434661",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Point Loma residential--upper, Californie, États-Unis",
+                location_en: "Point Loma residential--upper, California, United States",
+                date_fr: "1 juillet 2010",
+                date_en: "July 1, 2010",
+                lat: 32.7157812,
+                lng: -117.2457612,
+                checklist_id: "S18574842"
+            },
+            
+            {
+                ml: "118099621",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Victoria--Fisherman\'s Wharf, Colombie-Britannique, Canada",
+                location_en: "Victoria--Fisherman\'s Wharf, British Columbia, Canada",
+                date_fr: "3 octobre 2018",
+                date_en: "October 3, 2018",
+                lat: 48.4224588,
+                lng: -123.383107,
+                checklist_id: "S48918460"
+            },
+            
+            {
+                ml: "118099661",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Victoria--Fisherman\'s Wharf, Colombie-Britannique, Canada",
+                location_en: "Victoria--Fisherman\'s Wharf, British Columbia, Canada",
+                date_fr: "3 octobre 2018",
+                date_en: "October 3, 2018",
+                lat: 48.4224588,
+                lng: -123.383107,
+                checklist_id: "S48918460"
+            },
+            
+            {
+                ml: "118099711",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Victoria--Fisherman\'s Wharf, Colombie-Britannique, Canada",
+                location_en: "Victoria--Fisherman\'s Wharf, British Columbia, Canada",
+                date_fr: "3 octobre 2018",
+                date_en: "October 3, 2018",
+                lat: 48.4224588,
+                lng: -123.383107,
+                checklist_id: "S48918460"
+            },
+            
+            {
+                ml: "537231121",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Harlan Heights, Arizona, États-Unis",
+                location_en: "Harlan Heights, Arizona, United States",
+                date_fr: "19 février 2023",
+                date_en: "February 19, 2023",
+                lat: 32.242269,
+                lng: -110.872666,
+                checklist_id: "S128939014"
+            },
+            
+            {
+                ml: "537231191",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Harlan Heights, Arizona, États-Unis",
+                location_en: "Harlan Heights, Arizona, United States",
+                date_fr: "19 février 2023",
+                date_en: "February 19, 2023",
+                lat: 32.242269,
+                lng: -110.872666,
+                checklist_id: "S128939014"
+            },
+            
+            {
+                ml: "598290261",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Yosemite Valley--Headquarters area, Californie, États-Unis",
+                location_en: "Yosemite Valley--Headquarters area, California, United States",
+                date_fr: "28 juillet 2023",
+                date_en: "July 28, 2023",
+                lat: 37.7454716,
+                lng: -119.5903015,
+                checklist_id: "S145841071"
+            },
+            
+            {
+                ml: "620948244",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), California, United States",
+                date_fr: "26 juin 2024",
+                date_en: "June 26, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183864178"
+            },
+            
+            {
+                ml: "620948238",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "UCSD Park, Californie, États-Unis",
+                location_en: "UCSD Park, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28, 2024",
+                lat: 32.8864337,
+                lng: -117.2361969,
+                checklist_id: "S184179673"
+            },
+            
+            {
+                ml: "537690151",
+                name_fr: "Colibri de Costa",
+                name_en: "Costa\'s Hummingbird",
+                scientific: "Calypte costae",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, États-Unis",
+                location_en: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, United States",
+                date_fr: "20 février 2023",
+                date_en: "February 20, 2023",
+                lat: 32.2437113,
+                lng: -111.168125,
+                checklist_id: "S129232010"
+            },
+            
+            {
+                ml: "537715261",
+                name_fr: "Colibri de Costa",
+                name_en: "Costa\'s Hummingbird",
+                scientific: "Calypte costae",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, États-Unis",
+                location_en: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, United States",
+                date_fr: "20 février 2023",
+                date_en: "February 20, 2023",
+                lat: 32.2437113,
+                lng: -111.168125,
+                checklist_id: "S129232010"
+            },
+            
+            {
+                ml: "538305951",
+                name_fr: "Colibri de Costa",
+                name_en: "Costa\'s Hummingbird",
+                scientific: "Calypte costae",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, États-Unis",
+                location_en: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, United States",
+                date_fr: "20 février 2023",
+                date_en: "February 20, 2023",
+                lat: 32.2437113,
+                lng: -111.168125,
+                checklist_id: "S129232010"
+            },
+            
+            {
+                ml: "167567101",
+                name_fr: "Colibri calliope",
+                name_en: "Calliope Hummingbird",
+                scientific: "Selasphorus calliope",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Osoyoos Desert Centre, Colombie-Britannique, Canada",
+                location_en: "Osoyoos Desert Centre, British Columbia, Canada",
+                date_fr: "7 juillet 2019",
+                date_en: "July 7, 2019",
+                lat: 49.0527778,
+                lng: -119.5177778,
+                checklist_id: "S58002822"
+            },
+            
+            {
+                ml: "167567931",
+                name_fr: "Colibri calliope",
+                name_en: "Calliope Hummingbird",
+                scientific: "Selasphorus calliope",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Osoyoos Desert Centre, Colombie-Britannique, Canada",
+                location_en: "Osoyoos Desert Centre, British Columbia, Canada",
+                date_fr: "7 juillet 2019",
+                date_en: "July 7, 2019",
+                lat: 49.0527778,
+                lng: -119.5177778,
+                checklist_id: "S58011465"
+            },
+            
+            {
+                ml: "167567061",
+                name_fr: "Colibri roux",
+                name_en: "Rufous Hummingbird",
+                scientific: "Selasphorus rufus",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Osoyoos Desert Centre, Colombie-Britannique, Canada",
+                location_en: "Osoyoos Desert Centre, British Columbia, Canada",
+                date_fr: "7 juillet 2019",
+                date_en: "July 7, 2019",
+                lat: 49.0527778,
+                lng: -119.5177778,
+                checklist_id: "S58002822"
+            },
+            
+            {
+                ml: "551447311",
+                name_fr: "Colibri d\'Allen",
+                name_en: "Allen\'s Hummingbird",
+                scientific: "Selasphorus sasin",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, Californie, États-Unis",
+                location_en: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, California, United States",
+                date_fr: "30 mars 2023",
+                date_en: "March 30, 2023",
+                lat: 34.4071359,
+                lng: -119.8783064,
+                checklist_id: "S132213962"
+            },
+            
+            {
+                ml: "596417611",
+                name_fr: "Colibri d\'Allen",
+                name_en: "Allen\'s Hummingbird",
+                scientific: "Selasphorus sasin",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Don Knabe Community Regional Park, Californie, États-Unis",
+                location_en: "Don Knabe Community Regional Park, California, United States",
+                date_fr: "21 juillet 2023",
+                date_en: "July 21, 2023",
+                lat: 33.8501738,
+                lng: -118.0605412,
+                checklist_id: "S145233416"
+            },
+            
+            {
+                ml: "597242251",
+                name_fr: "Colibri d\'Allen",
+                name_en: "Allen\'s Hummingbird",
+                scientific: "Selasphorus sasin",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
+                location_en: "Earvin Magic Johnson Park, California, United States",
+                date_fr: "24 juillet 2023",
+                date_en: "July 24, 2023",
+                lat: 33.9207496,
+                lng: -118.2603121,
+                checklist_id: "S145499922"
+            },
+            
+            {
+                ml: "597788411",
+                name_fr: "Colibri d\'Allen",
+                name_en: "Allen\'s Hummingbird",
+                scientific: "Selasphorus sasin",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "12658 Renville St, Californie, États-Unis",
+                location_en: "12658 Renville St, California, United States",
+                date_fr: "26 juillet 2023",
+                date_en: "July 26, 2023",
+                lat: 33.844483,
+                lng: -118.061955,
+                checklist_id: "S145714369"
+            },
+            
+            {
+                ml: "620936453",
+                name_fr: "Colibri d\'Allen",
+                name_en: "Allen\'s Hummingbird",
+                scientific: "Selasphorus sasin",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), California, United States",
+                date_fr: "25 juin 2024",
+                date_en: "June 25, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183696675"
+            },
+            
+            {
+                ml: "56292301",
+                name_fr: "Colibri à queue large",
+                name_en: "Broad-tailed Hummingbird",
+                scientific: "Selasphorus platycercus",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Mt. Lemmon--Palisades Visitor Center, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Palisades Visitor Center, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27, 2017",
+                lat: 32.4104319,
+                lng: -110.7147995,
+                checklist_id: "S36369235"
+            },
+            
+            {
+                ml: "56291701",
+                name_fr: "Colibri à queue large",
+                name_en: "Broad-tailed Hummingbird",
+                scientific: "Selasphorus platycercus",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Mt. Lemmon--Ski Valley, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Ski Valley, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27, 2017",
+                lat: 32.4484106,
+                lng: -110.7810647,
+                checklist_id: "S36370926"
+            },
+            
+            {
+                ml: "22436211",
+                name_fr: "Émeraude de Ricord",
+                name_en: "Cuban Emerald",
+                scientific: "Riccordia ricordii",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "16 avril 2010",
+                date_en: "April 16, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575036"
+            },
+            
+            {
+                ml: "22436231",
+                name_fr: "Émeraude de Ricord",
+                name_en: "Cuban Emerald",
+                scientific: "Riccordia ricordii",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "16 avril 2010",
+                date_en: "April 16, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575036"
+            },
+            
+            {
+                ml: "21112181",
+                name_fr: "Émeraude de Ricord",
+                name_en: "Cuban Emerald",
+                scientific: "Riccordia ricordii",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "17 avril 2010",
+                date_en: "April 17, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575650"
+            },
+            
+            {
+                ml: "22392441",
+                name_fr: "Émeraude de Ricord",
+                name_en: "Cuban Emerald",
+                scientific: "Riccordia ricordii",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "19 avril 2010",
+                date_en: "April 19, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575653"
+            },
+            
+            {
+                ml: "56174911",
+                name_fr: "Colibri circé",
+                name_en: "Broad-billed Hummingbird",
+                scientific: "Cynanthus latirostris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Madera Canyon--Santa Rita Lodge, Arizona, États-Unis",
+                location_en: "Madera Canyon--Santa Rita Lodge, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7251514,
+                lng: -110.8801067,
+                checklist_id: "S36365214"
+            },
+            
+            {
+                ml: "538851891",
+                name_fr: "Colibri circé",
+                name_en: "Broad-billed Hummingbird",
+                scientific: "Cynanthus latirostris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                date_fr: "23 février 2023",
+                date_en: "February 23, 2023",
+                lat: 31.5390131,
+                lng: -110.7606337,
+                checklist_id: "S129475045"
+            },
+            
+            {
+                ml: "538854171",
+                name_fr: "Colibri circé",
+                name_en: "Broad-billed Hummingbird",
+                scientific: "Cynanthus latirostris",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                date_fr: "23 février 2023",
+                date_en: "February 23, 2023",
+                lat: 31.5390131,
+                lng: -110.7606337,
+                checklist_id: "S129475045"
+            },
+            
+            {
+                ml: "22435841",
+                name_fr: "Dryade glaucope",
+                name_en: "Violet-capped Woodnymph",
+                scientific: "Thalurania glaucopis",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566285"
+            },
+            
+            {
+                ml: "34522401",
+                name_fr: "Dryade glaucope",
+                name_en: "Violet-capped Woodnymph",
+                scientific: "Thalurania glaucopis",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "8 juin 2007",
+                date_en: "June 8, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566226"
+            },
+            
+            {
+                ml: "538851671",
+                name_fr: "Ariane à couronne violette",
+                name_en: "Violet-crowned Hummingbird",
+                scientific: "Ramosomyia violiceps",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                date_fr: "23 février 2023",
+                date_en: "February 23, 2023",
+                lat: 31.5390131,
+                lng: -110.7606337,
+                checklist_id: "S129475045"
+            },
+            
+            {
+                ml: "538851741",
+                name_fr: "Ariane à couronne violette",
+                name_en: "Violet-crowned Hummingbird",
+                scientific: "Ramosomyia violiceps",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                date_fr: "23 février 2023",
+                date_en: "February 23, 2023",
+                lat: 31.5390131,
+                lng: -110.7606337,
+                checklist_id: "S129475045"
+            },
+            
+            {
+                ml: "22435851",
+                name_fr: "Ariane versicolore",
+                name_en: "Versicolored Emerald",
+                scientific: "Chrysuronia versicolor",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566285"
+            },
+            
+            {
+                ml: "22435861",
+                name_fr: "Ariane versicolore",
+                name_en: "Versicolored Emerald",
+                scientific: "Chrysuronia versicolor",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566285"
+            },
+            
+            {
+                ml: "22436041",
+                name_fr: "Ariane versicolore",
+                name_en: "Versicolored Emerald",
+                scientific: "Chrysuronia versicolor",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "7 juin 2007",
+                date_en: "June 7, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566286"
+            },
+            
+            {
+                ml: "22436051",
+                name_fr: "Ariane versicolore",
+                name_en: "Versicolored Emerald",
+                scientific: "Chrysuronia versicolor",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "7 juin 2007",
+                date_en: "June 7, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566286"
+            },
+            
+            {
+                ml: "22436061",
+                name_fr: "Ariane versicolore",
+                name_en: "Versicolored Emerald",
+                scientific: "Chrysuronia versicolor",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "7 juin 2007",
+                date_en: "June 7, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566286"
+            },
+            
+            {
+                ml: "22434171",
+                name_fr: "Ariane versicolore",
+                name_en: "Versicolored Emerald",
+                scientific: "Chrysuronia versicolor",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "8 juin 2007",
+                date_en: "June 8, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566226"
+            },
+            
+            {
+                ml: "73504041",
+                name_fr: "Colibri à gorge blanche",
+                name_en: "White-throated Hummingbird",
+                scientific: "Leucochloris albicollis",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "7 juin 2007",
+                date_en: "June 7, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566286"
+            },
+            
+            {
+                ml: "73504051",
+                name_fr: "Colibri à gorge blanche",
+                name_en: "White-throated Hummingbird",
+                scientific: "Leucochloris albicollis",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "7 juin 2007",
+                date_en: "June 7, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566286"
+            },
+            
+            {
+                ml: "22435871",
+                name_fr: "Saphir à queue d\'or",
+                name_en: "Gilded Hummingbird",
+                scientific: "Hylocharis chrysura",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566285"
+            },
+            
+            {
+                ml: "22435881",
+                name_fr: "Saphir à queue d\'or",
+                name_en: "Gilded Hummingbird",
+                scientific: "Hylocharis chrysura",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Jardín de Picaflores, Argentine",
+                location_en: "Jardín de Picaflores, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.6004,
+                lng: -54.56865,
+                checklist_id: "S18566285"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

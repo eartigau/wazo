@@ -1,0 +1,2580 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famille des Cardinalidaes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_cardinalidae_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Famille des Cardinalidaes</h1>
+        
+        <div class="gallery-subtitle">Cardinals, Passerins, Pirangas et Dickcissels</div>
+        
+        <div class="stats">
+            68 photos
+            
+             · 10 espèces
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="21099921"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21099921/480"
+                     alt="Piranga écarlate"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga écarlate</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="21099931"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21099931/480"
+                     alt="Piranga écarlate"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga écarlate</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="21099941"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21099941/480"
+                     alt="Piranga écarlate"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga écarlate</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="100545101"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/100545101/480"
+                     alt="Piranga écarlate"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga écarlate</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="100545111"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/100545111/480"
+                     alt="Piranga écarlate"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga écarlate</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="483373901"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/483373901/480"
+                     alt="Piranga écarlate"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga écarlate</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="641877501"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/641877501/480"
+                     alt="Piranga écarlate"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga écarlate</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="167070851"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167070851/480"
+                     alt="Piranga à tête rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga à tête rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="628686812"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628686812/480"
+                     alt="Piranga à tête rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga à tête rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="628686813"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628686813/480"
+                     alt="Piranga à tête rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piranga à tête rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="22452851"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22452851/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="22577601"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22577601/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="22586641"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586641/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="29632901"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632901/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="29632911"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632911/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22585631"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22585631/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="21099991"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21099991/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="101934101"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/101934101/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="124110821"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/124110821/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="125277191"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/125277191/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="188503721"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/188503721/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="194210591"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/194210591/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="248252421"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/248252421/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="292507311"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/292507311/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="293729811"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/293729811/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="293729841"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/293729841/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="303083741"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/303083741/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="303184231"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/303184231/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="351676661"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/351676661/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="391463931"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/391463931/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="397285841"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/397285841/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="404455671"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/404455671/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="494749821"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/494749821/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="517231081"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/517231081/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="517232761"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/517232761/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="538162681"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538162681/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="540373141"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540373141/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="618922159"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/618922159/480"
+                     alt="Cardinal rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="21101021"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101021/480"
+                     alt="Cardinal pyrrhuloxia"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal pyrrhuloxia</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="21101041"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101041/480"
+                     alt="Cardinal pyrrhuloxia"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal pyrrhuloxia</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="538147571"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538147571/480"
+                     alt="Cardinal pyrrhuloxia"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal pyrrhuloxia</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="538148401"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538148401/480"
+                     alt="Cardinal pyrrhuloxia"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal pyrrhuloxia</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="538149181"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538149181/480"
+                     alt="Cardinal pyrrhuloxia"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal pyrrhuloxia</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="61372631"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/61372631/480"
+                     alt="Cardinal à poitrine rose"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à poitrine rose</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="61372641"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/61372641/480"
+                     alt="Cardinal à poitrine rose"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à poitrine rose</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="61372651"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/61372651/480"
+                     alt="Cardinal à poitrine rose"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à poitrine rose</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="247861851"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/247861851/480"
+                     alt="Cardinal à poitrine rose"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à poitrine rose</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="339073901"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/339073901/480"
+                     alt="Cardinal à poitrine rose"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à poitrine rose</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="483372981"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/483372981/480"
+                     alt="Cardinal à poitrine rose"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à poitrine rose</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="290141701"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/290141701/480"
+                     alt="Cardinal à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="56261491"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56261491/480"
+                     alt="Cardinal à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cardinal à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="56261511"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56261511/480"
+                     alt="Passerin azuré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin azuré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="166933951"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166933951/480"
+                     alt="Passerin azuré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin azuré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="166933961"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166933961/480"
+                     alt="Passerin azuré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin azuré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="166933971"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166933971/480"
+                     alt="Passerin azuré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin azuré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="166933991"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166933991/480"
+                     alt="Passerin azuré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin azuré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="34522601"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34522601/480"
+                     alt="Passerin indigo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin indigo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="22435311"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435311/480"
+                     alt="Passerin indigo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin indigo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="29683701"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29683701/480"
+                     alt="Passerin indigo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin indigo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="164012681"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/164012681/480"
+                     alt="Passerin indigo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin indigo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="351793661"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/351793661/480"
+                     alt="Passerin indigo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin indigo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="351793671"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/351793671/480"
+                     alt="Passerin indigo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin indigo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="351795171"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/351795171/480"
+                     alt="Passerin indigo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin indigo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="63"
+                 data-ml="51320141"
+                 onclick="openLightbox(63)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51320141/480"
+                     alt="Passerin nonpareil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin nonpareil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="64"
+                 data-ml="51320151"
+                 onclick="openLightbox(64)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51320151/480"
+                     alt="Passerin nonpareil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin nonpareil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="65"
+                 data-ml="143864001"
+                 onclick="openLightbox(65)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/143864001/480"
+                     alt="Passerin nonpareil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Passerin nonpareil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="66"
+                 data-ml="22497441"
+                 onclick="openLightbox(66)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22497441/480"
+                     alt="Dickcissel d'Amérique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dickcissel d'Amérique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="67"
+                 data-ml="22497451"
+                 onclick="openLightbox(67)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22497451/480"
+                     alt="Dickcissel d'Amérique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dickcissel d'Amérique</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "21099921",
+                name_fr: "Piranga écarlate",
+                name_en: "Scarlet Tanager",
+                scientific: "Piranga olivacea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "18 mai 2011",
+                date_en: "May 18, 2011",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18566810"
+            },
+            
+            {
+                ml: "21099931",
+                name_fr: "Piranga écarlate",
+                name_en: "Scarlet Tanager",
+                scientific: "Piranga olivacea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "18 mai 2011",
+                date_en: "May 18, 2011",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18566810"
+            },
+            
+            {
+                ml: "21099941",
+                name_fr: "Piranga écarlate",
+                name_en: "Scarlet Tanager",
+                scientific: "Piranga olivacea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "18 mai 2011",
+                date_en: "May 18, 2011",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18566810"
+            },
+            
+            {
+                ml: "100545101",
+                name_fr: "Piranga écarlate",
+                name_en: "Scarlet Tanager",
+                scientific: "Piranga olivacea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "16 mai 2018",
+                date_en: "May 16, 2018",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S45740987"
+            },
+            
+            {
+                ml: "100545111",
+                name_fr: "Piranga écarlate",
+                name_en: "Scarlet Tanager",
+                scientific: "Piranga olivacea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "16 mai 2018",
+                date_en: "May 16, 2018",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S45740987"
+            },
+            
+            {
+                ml: "483373901",
+                name_fr: "Piranga écarlate",
+                name_en: "Scarlet Tanager",
+                scientific: "Piranga olivacea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
+                location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                date_fr: "8 septembre 2022",
+                date_en: "September 8, 2022",
+                lat: 45.37778,
+                lng: -75.79972,
+                checklist_id: "S118317062"
+            },
+            
+            {
+                ml: "641877501",
+                name_fr: "Piranga écarlate",
+                name_en: "Scarlet Tanager",
+                scientific: "Piranga olivacea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "7 septembre 2025",
+                date_en: "September 7, 2025",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S272105388"
+            },
+            
+            {
+                ml: "167070851",
+                name_fr: "Piranga à tête rouge",
+                name_en: "Western Tanager",
+                scientific: "Piranga ludoviciana",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "N,Kwala Recreation Site, Colombie-Britannique, Canada",
+                location_en: "N,Kwala Recreation Site, British Columbia, Canada",
+                date_fr: "5 juillet 2019",
+                date_en: "July 5, 2019",
+                lat: 50.1594096,
+                lng: -121.0486525,
+                checklist_id: "S57955494"
+            },
+            
+            {
+                ml: "628686812",
+                name_fr: "Piranga à tête rouge",
+                name_en: "Western Tanager",
+                scientific: "Piranga ludoviciana",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "poste d\'observation Piranga à tête rouge, Montréal-Ouest (2025), Québec, Canada",
+                location_en: "poste d\'observation Piranga à tête rouge, Montréal-Ouest (2025), Quebec, Canada",
+                date_fr: "6 janvier 2025",
+                date_en: "January 6, 2025",
+                lat: 45.4496089,
+                lng: -73.6525308,
+                checklist_id: "S208260777"
+            },
+            
+            {
+                ml: "628686813",
+                name_fr: "Piranga à tête rouge",
+                name_en: "Western Tanager",
+                scientific: "Piranga ludoviciana",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "poste d\'observation Piranga à tête rouge, Montréal-Ouest (2025), Québec, Canada",
+                location_en: "poste d\'observation Piranga à tête rouge, Montréal-Ouest (2025), Quebec, Canada",
+                date_fr: "6 janvier 2025",
+                date_en: "January 6, 2025",
+                lat: 45.4496089,
+                lng: -73.6525308,
+                checklist_id: "S208260777"
+            },
+            
+            {
+                ml: "22452851",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Quartier de la Terrasse Lakeview, Québec, Canada",
+                location_en: "Quartier de la Terrasse Lakeview, Quebec, Canada",
+                date_fr: "4 octobre 2003",
+                date_en: "October 4, 2003",
+                lat: 45.3935481,
+                lng: -75.802697,
+                checklist_id: "S18567187"
+            },
+            
+            {
+                ml: "22577601",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "18 décembre 2011",
+                date_en: "December 18, 2011",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567439"
+            },
+            
+            {
+                ml: "22586641",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "26 février 2012",
+                date_en: "February 26, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567234"
+            },
+            
+            {
+                ml: "29632901",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Jardin botanique de Montréal (accès restreint), Québec, Canada",
+                location_en: "Jardin botanique de Montréal (accès restreint), Quebec, Canada",
+                date_fr: "3 janvier 2013",
+                date_en: "January 3, 2013",
+                lat: 45.5596562,
+                lng: -73.5626078,
+                checklist_id: "S18567402"
+            },
+            
+            {
+                ml: "29632911",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Jardin botanique de Montréal (accès restreint), Québec, Canada",
+                location_en: "Jardin botanique de Montréal (accès restreint), Quebec, Canada",
+                date_fr: "3 janvier 2013",
+                date_en: "January 3, 2013",
+                lat: 45.5596562,
+                lng: -73.5626078,
+                checklist_id: "S18567402"
+            },
+            
+            {
+                ml: "22585631",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Jardin botanique de Montréal (accès restreint), Québec, Canada",
+                location_en: "Jardin botanique de Montréal (accès restreint), Quebec, Canada",
+                date_fr: "26 janvier 2014",
+                date_en: "January 26, 2014",
+                lat: 45.5596562,
+                lng: -73.5626078,
+                checklist_id: "S18567218"
+            },
+            
+            {
+                ml: "21099991",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc du Mt-Royal, Québec, Canada",
+                location_en: "Parc du Mt-Royal, Quebec, Canada",
+                date_fr: "18 février 2014",
+                date_en: "February 18, 2014",
+                lat: 45.5055593,
+                lng: -73.5882289,
+                checklist_id: "S18566814"
+            },
+            
+            {
+                ml: "101934101",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Hāpuna Beach State Park, Hawaï, États-Unis",
+                location_en: "Hāpuna Beach State Park, Hawaii, United States",
+                date_fr: "24 mai 2018",
+                date_en: "May 24, 2018",
+                lat: 19.9914163,
+                lng: -155.8255022,
+                checklist_id: "S45992712"
+            },
+            
+            {
+                ml: "124110821",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "18 novembre 2018",
+                date_en: "November 18, 2018",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S50024950"
+            },
+            
+            {
+                ml: "125277191",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "25 novembre 2018",
+                date_en: "November 25, 2018",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S50208271"
+            },
+            
+            {
+                ml: "188503721",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "17 novembre 2019",
+                date_en: "November 17, 2019",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S61525760"
+            },
+            
+            {
+                ml: "194210591",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Technoparc Mtl--Site général, Québec, Canada",
+                location_en: "Technoparc Mtl--Site général, Quebec, Canada",
+                date_fr: "20 décembre 2019",
+                date_en: "December 20, 2019",
+                lat: 45.477466,
+                lng: -73.75534,
+                checklist_id: "S62472059"
+            },
+            
+            {
+                ml: "248252421",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Quartier de la Terrasse Lakeview, Québec, Canada",
+                location_en: "Quartier de la Terrasse Lakeview, Quebec, Canada",
+                date_fr: "7 juillet 2020",
+                date_en: "July 7, 2020",
+                lat: 45.3935481,
+                lng: -75.802697,
+                checklist_id: "S71260385"
+            },
+            
+            {
+                ml: "292507311",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Technoparc Mtl--Éco-Campus, Québec, Canada",
+                location_en: "Technoparc Mtl--Éco-Campus, Quebec, Canada",
+                date_fr: "27 décembre 2020",
+                date_en: "December 27, 2020",
+                lat: 45.477373,
+                lng: -73.758144,
+                checklist_id: "S78075725"
+            },
+            
+            {
+                ml: "293729811",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc écologique des Sources, Québec, Canada",
+                location_en: "Parc écologique des Sources, Quebec, Canada",
+                date_fr: "2 janvier 2021",
+                date_en: "January 2, 2021",
+                lat: 45.474413,
+                lng: -73.763488,
+                checklist_id: "S78486201"
+            },
+            
+            {
+                ml: "293729841",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc écologique des Sources, Québec, Canada",
+                location_en: "Parc écologique des Sources, Quebec, Canada",
+                date_fr: "2 janvier 2021",
+                date_en: "January 2, 2021",
+                lat: 45.474413,
+                lng: -73.763488,
+                checklist_id: "S78486201"
+            },
+            
+            {
+                ml: "303083741",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc écologique des Sources, Québec, Canada",
+                location_en: "Parc écologique des Sources, Quebec, Canada",
+                date_fr: "31 janvier 2021",
+                date_en: "January 31, 2021",
+                lat: 45.474413,
+                lng: -73.763488,
+                checklist_id: "S80197100"
+            },
+            
+            {
+                ml: "303184231",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc écologique des Sources, Québec, Canada",
+                location_en: "Parc écologique des Sources, Quebec, Canada",
+                date_fr: "31 janvier 2021",
+                date_en: "January 31, 2021",
+                lat: 45.474413,
+                lng: -73.763488,
+                checklist_id: "S80197100"
+            },
+            
+            {
+                ml: "351676661",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "1 juillet 2021",
+                date_en: "July 1, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S91082564"
+            },
+            
+            {
+                ml: "391463931",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "27 novembre 2021",
+                date_en: "November 27, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S98141424"
+            },
+            
+            {
+                ml: "397285841",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "19 décembre 2021",
+                date_en: "December 19, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S99127512"
+            },
+            
+            {
+                ml: "404455671",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Technoparc Mtl--Site général, Québec, Canada",
+                location_en: "Technoparc Mtl--Site général, Quebec, Canada",
+                date_fr: "9 janvier 2022",
+                date_en: "January 9, 2022",
+                lat: 45.477466,
+                lng: -73.75534,
+                checklist_id: "S100447700"
+            },
+            
+            {
+                ml: "494749821",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "16 octobre 2022",
+                date_en: "October 16, 2022",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S120769335"
+            },
+            
+            {
+                ml: "517231081",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "26 décembre 2022",
+                date_en: "December 26, 2022",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S124638844"
+            },
+            
+            {
+                ml: "517232761",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "26 décembre 2022",
+                date_en: "December 26, 2022",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S124638844"
+            },
+            
+            {
+                ml: "538162681",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Catalina SP, Arizona, États-Unis",
+                location_en: "Catalina SP, Arizona, United States",
+                date_fr: "21 février 2023",
+                date_en: "February 21, 2023",
+                lat: 32.4244027,
+                lng: -110.9123905,
+                checklist_id: "S129303210"
+            },
+            
+            {
+                ml: "540373141",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Sabino Dam and downstream riparian, Arizona, États-Unis",
+                location_en: "Sabino Dam and downstream riparian, Arizona, United States",
+                date_fr: "27 février 2023",
+                date_en: "February 27, 2023",
+                lat: 32.3131068,
+                lng: -110.8113941,
+                checklist_id: "S129804288"
+            },
+            
+            {
+                ml: "618922159",
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                scientific: "Cardinalis cardinalis",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "12 mai 2024",
+                date_en: "May 12, 2024",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S174062737"
+            },
+            
+            {
+                ml: "21101021",
+                name_fr: "Cardinal pyrrhuloxia",
+                name_en: "Pyrrhuloxia",
+                scientific: "Cardinalis sinuatus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Patagonia Lake State Park, Arizona, États-Unis",
+                location_en: "Patagonia Lake State Park, Arizona, United States",
+                date_fr: "4 janvier 2006",
+                date_en: "January 4, 2006",
+                lat: 31.4951992,
+                lng: -110.8566971,
+                checklist_id: "S18575051"
+            },
+            
+            {
+                ml: "21101041",
+                name_fr: "Cardinal pyrrhuloxia",
+                name_en: "Pyrrhuloxia",
+                scientific: "Cardinalis sinuatus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Patagonia Lake State Park, Arizona, États-Unis",
+                location_en: "Patagonia Lake State Park, Arizona, United States",
+                date_fr: "4 janvier 2006",
+                date_en: "January 4, 2006",
+                lat: 31.4951992,
+                lng: -110.8566971,
+                checklist_id: "S18575051"
+            },
+            
+            {
+                ml: "538147571",
+                name_fr: "Cardinal pyrrhuloxia",
+                name_en: "Pyrrhuloxia",
+                scientific: "Cardinalis sinuatus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Catalina SP, Arizona, États-Unis",
+                location_en: "Catalina SP, Arizona, United States",
+                date_fr: "21 février 2023",
+                date_en: "February 21, 2023",
+                lat: 32.4244027,
+                lng: -110.9123905,
+                checklist_id: "S129303210"
+            },
+            
+            {
+                ml: "538148401",
+                name_fr: "Cardinal pyrrhuloxia",
+                name_en: "Pyrrhuloxia",
+                scientific: "Cardinalis sinuatus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Catalina SP, Arizona, États-Unis",
+                location_en: "Catalina SP, Arizona, United States",
+                date_fr: "21 février 2023",
+                date_en: "February 21, 2023",
+                lat: 32.4244027,
+                lng: -110.9123905,
+                checklist_id: "S129303210"
+            },
+            
+            {
+                ml: "538149181",
+                name_fr: "Cardinal pyrrhuloxia",
+                name_en: "Pyrrhuloxia",
+                scientific: "Cardinalis sinuatus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Catalina SP, Arizona, États-Unis",
+                location_en: "Catalina SP, Arizona, United States",
+                date_fr: "21 février 2023",
+                date_en: "February 21, 2023",
+                lat: 32.4244027,
+                lng: -110.9123905,
+                checklist_id: "S129303210"
+            },
+            
+            {
+                ml: "61372631",
+                name_fr: "Cardinal à poitrine rose",
+                name_en: "Rose-breasted Grosbeak",
+                scientific: "Pheucticus ludovicianus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "17 juin 2017",
+                date_en: "June 17, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S37646681"
+            },
+            
+            {
+                ml: "61372641",
+                name_fr: "Cardinal à poitrine rose",
+                name_en: "Rose-breasted Grosbeak",
+                scientific: "Pheucticus ludovicianus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "17 juin 2017",
+                date_en: "June 17, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S37646681"
+            },
+            
+            {
+                ml: "61372651",
+                name_fr: "Cardinal à poitrine rose",
+                name_en: "Rose-breasted Grosbeak",
+                scientific: "Pheucticus ludovicianus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "17 juin 2017",
+                date_en: "June 17, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S37646681"
+            },
+            
+            {
+                ml: "247861851",
+                name_fr: "Cardinal à poitrine rose",
+                name_en: "Rose-breasted Grosbeak",
+                scientific: "Pheucticus ludovicianus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Chemin Dufresne, Québec, Canada",
+                location_en: "Chemin Dufresne, Quebec, Canada",
+                date_fr: "6 juillet 2020",
+                date_en: "July 6, 2020",
+                lat: 45.5280668,
+                lng: -75.5919547,
+                checklist_id: "S71189274"
+            },
+            
+            {
+                ml: "339073901",
+                name_fr: "Cardinal à poitrine rose",
+                name_en: "Rose-breasted Grosbeak",
+                scientific: "Pheucticus ludovicianus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "15 mai 2021",
+                date_en: "May 15, 2021",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S88228342"
+            },
+            
+            {
+                ml: "483372981",
+                name_fr: "Cardinal à poitrine rose",
+                name_en: "Rose-breasted Grosbeak",
+                scientific: "Pheucticus ludovicianus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Halte routière, Lochaber, Québec, Canada",
+                location_en: "Halte routière, Lochaber, Quebec, Canada",
+                date_fr: "7 septembre 2022",
+                date_en: "September 7, 2022",
+                lat: 45.6012322,
+                lng: -75.193237,
+                checklist_id: "S118294752"
+            },
+            
+            {
+                ml: "290141701",
+                name_fr: "Cardinal à tête noire",
+                name_en: "Black-headed Grosbeak",
+                scientific: "Pheucticus melanocephalus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Madera Canyon--Santa Rita Lodge, Arizona, États-Unis",
+                location_en: "Madera Canyon--Santa Rita Lodge, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7251514,
+                lng: -110.8801067,
+                checklist_id: "S36365214"
+            },
+            
+            {
+                ml: "56261491",
+                name_fr: "Cardinal à tête noire",
+                name_en: "Black-headed Grosbeak",
+                scientific: "Pheucticus melanocephalus",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Madera Canyon--Santa Rita Lodge, Arizona, États-Unis",
+                location_en: "Madera Canyon--Santa Rita Lodge, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7251514,
+                lng: -110.8801067,
+                checklist_id: "S36365214"
+            },
+            
+            {
+                ml: "56261511",
+                name_fr: "Passerin azuré",
+                name_en: "Lazuli Bunting",
+                scientific: "Passerina amoena",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Madera Canyon--Santa Rita Lodge, Arizona, États-Unis",
+                location_en: "Madera Canyon--Santa Rita Lodge, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7251514,
+                lng: -110.8801067,
+                checklist_id: "S36365214"
+            },
+            
+            {
+                ml: "166933951",
+                name_fr: "Passerin azuré",
+                name_en: "Lazuli Bunting",
+                scientific: "Passerina amoena",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Lillooet--Old Bridge , Colombie-Britannique, Canada",
+                location_en: "Lillooet--Old Bridge , British Columbia, Canada",
+                date_fr: "4 juillet 2019",
+                date_en: "July 4, 2019",
+                lat: 50.711648,
+                lng: -121.910525,
+                checklist_id: "S57922083"
+            },
+            
+            {
+                ml: "166933961",
+                name_fr: "Passerin azuré",
+                name_en: "Lazuli Bunting",
+                scientific: "Passerina amoena",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Lillooet--Old Bridge , Colombie-Britannique, Canada",
+                location_en: "Lillooet--Old Bridge , British Columbia, Canada",
+                date_fr: "4 juillet 2019",
+                date_en: "July 4, 2019",
+                lat: 50.711648,
+                lng: -121.910525,
+                checklist_id: "S57922083"
+            },
+            
+            {
+                ml: "166933971",
+                name_fr: "Passerin azuré",
+                name_en: "Lazuli Bunting",
+                scientific: "Passerina amoena",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Lillooet--Old Bridge , Colombie-Britannique, Canada",
+                location_en: "Lillooet--Old Bridge , British Columbia, Canada",
+                date_fr: "4 juillet 2019",
+                date_en: "July 4, 2019",
+                lat: 50.711648,
+                lng: -121.910525,
+                checklist_id: "S57922083"
+            },
+            
+            {
+                ml: "166933991",
+                name_fr: "Passerin azuré",
+                name_en: "Lazuli Bunting",
+                scientific: "Passerina amoena",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Lillooet--Old Bridge , Colombie-Britannique, Canada",
+                location_en: "Lillooet--Old Bridge , British Columbia, Canada",
+                date_fr: "4 juillet 2019",
+                date_en: "July 4, 2019",
+                lat: 50.711648,
+                lng: -121.910525,
+                checklist_id: "S57922083"
+            },
+            
+            {
+                ml: "34522601",
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                scientific: "Passerina cyanea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "RN Gault, Québec, Canada",
+                location_en: "RN Gault, Quebec, Canada",
+                date_fr: "22 mai 2004",
+                date_en: "May 22, 2004",
+                lat: 45.5524924,
+                lng: -73.155374,
+                checklist_id: "S18567125"
+            },
+            
+            {
+                ml: "22435311",
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                scientific: "Passerina cyanea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "20 mai 2012",
+                date_en: "May 20, 2012",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18567428"
+            },
+            
+            {
+                ml: "29683701",
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                scientific: "Passerina cyanea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "23 mai 2014",
+                date_en: "May 23, 2014",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18562215"
+            },
+            
+            {
+                ml: "164012681",
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                scientific: "Passerina cyanea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Plaines d\'Abraham, Québec, Canada",
+                location_en: "Plaines d\'Abraham, Quebec, Canada",
+                date_fr: "13 juin 2019",
+                date_en: "June 13, 2019",
+                lat: 46.7997657,
+                lng: -71.2178421,
+                checklist_id: "S57336100"
+            },
+            
+            {
+                ml: "351793661",
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                scientific: "Passerina cyanea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "2 juillet 2021",
+                date_en: "July 2, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S91131276"
+            },
+            
+            {
+                ml: "351793671",
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                scientific: "Passerina cyanea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "2 juillet 2021",
+                date_en: "July 2, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S91131276"
+            },
+            
+            {
+                ml: "351795171",
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                scientific: "Passerina cyanea",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "2 juillet 2021",
+                date_en: "July 2, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S91131276"
+            },
+            
+            {
+                ml: "51320141",
+                name_fr: "Passerin nonpareil",
+                name_en: "Painted Bunting",
+                scientific: "Passerina ciris",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
+                location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
+                date_fr: "7 mars 2017",
+                date_en: "March 7, 2017",
+                lat: 28.2254954,
+                lng: -80.7144928,
+                checklist_id: "S35031563"
+            },
+            
+            {
+                ml: "51320151",
+                name_fr: "Passerin nonpareil",
+                name_en: "Painted Bunting",
+                scientific: "Passerina ciris",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
+                location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
+                date_fr: "7 mars 2017",
+                date_en: "March 7, 2017",
+                lat: 28.2254954,
+                lng: -80.7144928,
+                checklist_id: "S35031563"
+            },
+            
+            {
+                ml: "143864001",
+                name_fr: "Passerin nonpareil",
+                name_en: "Painted Bunting",
+                scientific: "Passerina ciris",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "1 mars 2019",
+                date_en: "March 1, 2019",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S53455154"
+            },
+            
+            {
+                ml: "22497441",
+                name_fr: "Dickcissel d\'Amérique",
+                name_en: "Dickcissel",
+                scientific: "Spiza americana",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Montée Clinton, Québec, Canada",
+                location_en: "Montée Clinton, Quebec, Canada",
+                date_fr: "20 juin 2014",
+                date_en: "June 20, 2014",
+                lat: 45.0205881,
+                lng: -73.970561,
+                checklist_id: "S18851897"
+            },
+            
+            {
+                ml: "22497451",
+                name_fr: "Dickcissel d\'Amérique",
+                name_en: "Dickcissel",
+                scientific: "Spiza americana",
+                family: "Cardinalidae (Cardinals and Allies)",
+                location_fr: "Montée Clinton, Québec, Canada",
+                location_en: "Montée Clinton, Quebec, Canada",
+                date_fr: "20 juin 2014",
+                date_en: "June 20, 2014",
+                lat: 45.0205881,
+                lng: -73.970561,
+                checklist_id: "S18851897"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

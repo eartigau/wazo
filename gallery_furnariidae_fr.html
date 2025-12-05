@@ -1,0 +1,2877 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famille des Furnariidaes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_furnariidae_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Famille des Furnariidaes</h1>
+        
+        <div class="gallery-subtitle">Cinclodes, Synallaxes, Géosittes, etc.</div>
+        
+        <div class="stats">
+            79 photos
+            
+             · 17 espèces
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="22502791"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502791/480"
+                     alt="Géositte mineuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte mineuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="22575911"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22575911/480"
+                     alt="Géositte mineuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte mineuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22575921"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22575921/480"
+                     alt="Géositte mineuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte mineuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="22369721"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22369721/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="22369731"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22369731/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="22369741"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22369741/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="22451021"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451021/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="22451041"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451041/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="22448891"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448891/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="22451101"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451101/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="22451151"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451151/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="22451161"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451161/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="22451221"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451221/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="22451251"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451251/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="213362381"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362381/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="213654031"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213654031/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="213627481"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627481/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="436362131"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436362131/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="437272671"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437272671/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="437830931"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437830931/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="437664041"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437664041/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="21101391"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101391/480"
+                     alt="Géositte isabelle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte isabelle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="21101401"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101401/480"
+                     alt="Géositte isabelle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte isabelle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="21101411"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101411/480"
+                     alt="Géositte isabelle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte isabelle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="22451371"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451371/480"
+                     alt="Chilia de Meyen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia de Meyen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="22451381"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451381/480"
+                     alt="Chilia de Meyen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia de Meyen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="33890871"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33890871/480"
+                     alt="Chilia de Meyen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia de Meyen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="33890901"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33890901/480"
+                     alt="Chilia de Meyen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia de Meyen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="33890911"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33890911/480"
+                     alt="Chilia de Meyen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia de Meyen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="22451421"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451421/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="22451471"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451471/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="22451891"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451891/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="22434321"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434321/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="22434331"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434331/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="22449641"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449641/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="22451931"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451931/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="22451941"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451941/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="22450071"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450071/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="22450081"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450081/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="213362361"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362361/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="22416871"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416871/480"
+                     alt="Fournier roux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fournier roux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="21111651"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111651/480"
+                     alt="Fournier roux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fournier roux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="22574491"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22574491/480"
+                     alt="Fournier roux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fournier roux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="22452071"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22452071/480"
+                     alt="Junquero troglodyte"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Junquero troglodyte</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="434981131"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981131/480"
+                     alt="Upucerthie de forêt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie de forêt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="434981141"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981141/480"
+                     alt="Upucerthie de forêt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie de forêt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="213362331"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362331/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="213364601"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364601/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="213364641"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364641/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="213654021"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213654021/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="22527411"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22527411/480"
+                     alt="Cinclode brun"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode brun</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="22448921"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448921/480"
+                     alt="Cinclode brun"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode brun</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="22575991"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22575991/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="22576021"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576021/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="22503231"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503231/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="22503251"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503251/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="22503381"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503381/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="22503391"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503391/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="22534171"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22534171/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="515264401"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/515264401/480"
+                     alt="Cinclode d'Oustalet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode d'Oustalet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="22375111"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22375111/480"
+                     alt="Cinclode à ventre sombre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode à ventre sombre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="22361481"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22361481/480"
+                     alt="Cinclode à ventre sombre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode à ventre sombre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="22576221"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576221/480"
+                     alt="Cinclode du ressac"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode du ressac</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="63"
+                 data-ml="22576271"
+                 onclick="openLightbox(63)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576271/480"
+                     alt="Cinclode du ressac"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode du ressac</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="64"
+                 data-ml="22576051"
+                 onclick="openLightbox(64)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576051/480"
+                     alt="Cinclode du ressac"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode du ressac</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="65"
+                 data-ml="22576061"
+                 onclick="openLightbox(65)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576061/480"
+                     alt="Cinclode du ressac"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode du ressac</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="66"
+                 data-ml="22534181"
+                 onclick="openLightbox(66)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22534181/480"
+                     alt="Cinclode du ressac"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cinclode du ressac</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="67"
+                 data-ml="22451951"
+                 onclick="openLightbox(67)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451951/480"
+                     alt="Synallaxe rayadito"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe rayadito</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="68"
+                 data-ml="22369561"
+                 onclick="openLightbox(68)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22369561/480"
+                     alt="Synallaxe mésange"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe mésange</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="69"
+                 data-ml="22451971"
+                 onclick="openLightbox(69)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22451971/480"
+                     alt="Synallaxe mésange"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe mésange</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="70"
+                 data-ml="213627411"
+                 onclick="openLightbox(70)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627411/480"
+                     alt="Synallaxe mésange"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe mésange</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="71"
+                 data-ml="435566741"
+                 onclick="openLightbox(71)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435566741/480"
+                     alt="Synallaxe des rocailles"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe des rocailles</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="72"
+                 data-ml="435568101"
+                 onclick="openLightbox(72)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435568101/480"
+                     alt="Synallaxe des rocailles"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe des rocailles</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="73"
+                 data-ml="435569551"
+                 onclick="openLightbox(73)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435569551/480"
+                     alt="Synallaxe des rocailles"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe des rocailles</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="74"
+                 data-ml="435571411"
+                 onclick="openLightbox(74)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435571411/480"
+                     alt="Synallaxe des rocailles"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe des rocailles</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="75"
+                 data-ml="435660381"
+                 onclick="openLightbox(75)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435660381/480"
+                     alt="Synallaxe des rocailles"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe des rocailles</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="76"
+                 data-ml="515591081"
+                 onclick="openLightbox(76)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/515591081/480"
+                     alt="Synallaxe des rocailles"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe des rocailles</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="77"
+                 data-ml="22452061"
+                 onclick="openLightbox(77)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22452061/480"
+                     alt="Synallaxe à queue noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe à queue noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="78"
+                 data-ml="22448931"
+                 onclick="openLightbox(78)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448931/480"
+                     alt="Synallaxe à queue noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe à queue noire</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "22502791",
+                name_fr: "Géositte mineuse",
+                name_en: "Common Miner",
+                scientific: "Geositta cunicularia",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "PP Laguna de Rocha--Zona Sur y Barra, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha--Zona Sur y Barra, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22575911",
+                name_fr: "Géositte mineuse",
+                name_en: "Common Miner",
+                scientific: "Geositta cunicularia",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "13 juin 2009",
+                date_en: "June 13, 2009",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772549"
+            },
+            
+            {
+                ml: "22575921",
+                name_fr: "Géositte mineuse",
+                name_en: "Common Miner",
+                scientific: "Geositta cunicularia",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "13 juin 2009",
+                date_en: "June 13, 2009",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772549"
+            },
+            
+            {
+                ml: "22369721",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "9 février 2005",
+                date_en: "February 9, 2005",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772462"
+            },
+            
+            {
+                ml: "22369731",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "9 février 2005",
+                date_en: "February 9, 2005",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772462"
+            },
+            
+            {
+                ml: "22369741",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "9 février 2005",
+                date_en: "February 9, 2005",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772462"
+            },
+            
+            {
+                ml: "22451021",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "27 octobre 2006",
+                date_en: "October 27, 2006",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772550"
+            },
+            
+            {
+                ml: "22451041",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "27 octobre 2006",
+                date_en: "October 27, 2006",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772550"
+            },
+            
+            {
+                ml: "22448891",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "MN Valle del Encanto, Coquimbo, Chili",
+                location_en: "MN Valle del Encanto, Coquimbo, Chile",
+                date_fr: "20 mai 2007",
+                date_en: "May 20, 2007",
+                lat: -30.7034242,
+                lng: -71.3748157,
+                checklist_id: "S5772470"
+            },
+            
+            {
+                ml: "22451101",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio Collawara, Coquimbo, Chili",
+                location_en: "Observatorio Collawara, Coquimbo, Chile",
+                date_fr: "2 juillet 2007",
+                date_en: "July 2, 2007",
+                lat: -30.249444,
+                lng: -71.063611,
+                checklist_id: "S5772551"
+            },
+            
+            {
+                ml: "22451151",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "7 décembre 2008",
+                date_en: "December 7, 2008",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772552"
+            },
+            
+            {
+                ml: "22451161",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "7 décembre 2008",
+                date_en: "December 7, 2008",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772552"
+            },
+            
+            {
+                ml: "22451221",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "22 mars 2009",
+                date_en: "March 22, 2009",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772553"
+            },
+            
+            {
+                ml: "22451251",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "22 mars 2009",
+                date_en: "March 22, 2009",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772553"
+            },
+            
+            {
+                ml: "213362381",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213654031",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213627481",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "436362131",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "16 avril 2022",
+                date_en: "April 16, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107232521"
+            },
+            
+            {
+                ml: "437272671",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "18 avril 2022",
+                date_en: "April 18, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107420615"
+            },
+            
+            {
+                ml: "437830931",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "18 avril 2022",
+                date_en: "April 18, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107420615"
+            },
+            
+            {
+                ml: "437664041",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "19 avril 2022",
+                date_en: "April 19, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107493158"
+            },
+            
+            {
+                ml: "21101391",
+                name_fr: "Géositte isabelle",
+                name_en: "Creamy-rumped Miner",
+                scientific: "Geositta isabellina",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436"
+            },
+            
+            {
+                ml: "21101401",
+                name_fr: "Géositte isabelle",
+                name_en: "Creamy-rumped Miner",
+                scientific: "Geositta isabellina",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436"
+            },
+            
+            {
+                ml: "21101411",
+                name_fr: "Géositte isabelle",
+                name_en: "Creamy-rumped Miner",
+                scientific: "Geositta isabellina",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436"
+            },
+            
+            {
+                ml: "22451371",
+                name_fr: "Chilia de Meyen",
+                name_en: "Straight-billed Earthcreeper",
+                scientific: "Ochetorhynchus ruficaudus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Maricunga, Atacama, Chili",
+                location_en: "Cerro Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.953056,
+                lng: -69.215278,
+                checklist_id: "S5772515"
+            },
+            
+            {
+                ml: "22451381",
+                name_fr: "Chilia de Meyen",
+                name_en: "Straight-billed Earthcreeper",
+                scientific: "Ochetorhynchus ruficaudus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Maricunga, Atacama, Chili",
+                location_en: "Cerro Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.953056,
+                lng: -69.215278,
+                checklist_id: "S5772515"
+            },
+            
+            {
+                ml: "33890871",
+                name_fr: "Chilia de Meyen",
+                name_en: "Straight-billed Earthcreeper",
+                scientific: "Ochetorhynchus ruficaudus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Embalse La Laguna, Coquimbo, Chili",
+                location_en: "Embalse La Laguna, Coquimbo, Chile",
+                date_fr: "3 octobre 2007",
+                date_en: "October 3, 2007",
+                lat: -30.2187285,
+                lng: -70.0371552,
+                checklist_id: "S5772452"
+            },
+            
+            {
+                ml: "33890901",
+                name_fr: "Chilia de Meyen",
+                name_en: "Straight-billed Earthcreeper",
+                scientific: "Ochetorhynchus ruficaudus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Embalse La Laguna, Coquimbo, Chili",
+                location_en: "Embalse La Laguna, Coquimbo, Chile",
+                date_fr: "3 octobre 2007",
+                date_en: "October 3, 2007",
+                lat: -30.2187285,
+                lng: -70.0371552,
+                checklist_id: "S5772452"
+            },
+            
+            {
+                ml: "33890911",
+                name_fr: "Chilia de Meyen",
+                name_en: "Straight-billed Earthcreeper",
+                scientific: "Ochetorhynchus ruficaudus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Embalse La Laguna, Coquimbo, Chili",
+                location_en: "Embalse La Laguna, Coquimbo, Chile",
+                date_fr: "3 octobre 2007",
+                date_en: "October 3, 2007",
+                lat: -30.2187285,
+                lng: -70.0371552,
+                checklist_id: "S5772452"
+            },
+            
+            {
+                ml: "22451421",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "13 février 2005",
+                date_en: "February 13, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772554"
+            },
+            
+            {
+                ml: "22451471",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "17 février 2005",
+                date_en: "February 17, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772555"
+            },
+            
+            {
+                ml: "22451891",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "19 février 2005",
+                date_en: "February 19, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772556"
+            },
+            
+            {
+                ml: "22434321",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "21 novembre 2006",
+                date_en: "November 21, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772513"
+            },
+            
+            {
+                ml: "22434331",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "21 novembre 2006",
+                date_en: "November 21, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772513"
+            },
+            
+            {
+                ml: "22449641",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "6 juillet 2007",
+                date_en: "July 6, 2007",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772539"
+            },
+            
+            {
+                ml: "22451931",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "20 septembre 2007",
+                date_en: "September 20, 2007",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772559"
+            },
+            
+            {
+                ml: "22451941",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "20 septembre 2007",
+                date_en: "September 20, 2007",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772559"
+            },
+            
+            {
+                ml: "22450071",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "3 novembre 2007",
+                date_en: "November 3, 2007",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772541"
+            },
+            
+            {
+                ml: "22450081",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "3 novembre 2007",
+                date_en: "November 3, 2007",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772541"
+            },
+            
+            {
+                ml: "213362361",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "22416871",
+                name_fr: "Fournier roux",
+                name_en: "Rufous Hornero",
+                scientific: "Furnarius rufus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "21111651",
+                name_fr: "Fournier roux",
+                name_en: "Rufous Hornero",
+                scientific: "Furnarius rufus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566284"
+            },
+            
+            {
+                ml: "22574491",
+                name_fr: "Fournier roux",
+                name_en: "Rufous Hornero",
+                scientific: "Furnarius rufus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "PN Iguazú--Área Cataratas, Argentine",
+                location_en: "PN Iguazú--Área Cataratas, Argentina",
+                date_fr: "5 juin 2007",
+                date_en: "June 5, 2007",
+                lat: -25.6833032,
+                lng: -54.455452,
+                checklist_id: "S18566287"
+            },
+            
+            {
+                ml: "22452071",
+                name_fr: "Junquero troglodyte",
+                name_en: "Wren-like Rushbird",
+                scientific: "Phleocryptes melanops",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Avenida del Mar, Coquimbo, Chili",
+                location_en: "Avenida del Mar, Coquimbo, Chile",
+                date_fr: "9 décembre 2007",
+                date_en: "December 9, 2007",
+                lat: -29.9252584,
+                lng: -71.2786746,
+                checklist_id: "S5772562"
+            },
+            
+            {
+                ml: "434981131",
+                name_fr: "Upucerthie de forêt",
+                name_en: "Patagonian Forest Earthcreeper",
+                scientific: "Upucerthia saturatior",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Région Métropolitaine, Chili",
+                location_en: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Metropolitan Region, Chile",
+                date_fr: "12 avril 2022",
+                date_en: "April 12, 2022",
+                lat: -33.3980197,
+                lng: -70.6022,
+                checklist_id: "S106897237"
+            },
+            
+            {
+                ml: "434981141",
+                name_fr: "Upucerthie de forêt",
+                name_en: "Patagonian Forest Earthcreeper",
+                scientific: "Upucerthia saturatior",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Région Métropolitaine, Chili",
+                location_en: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Metropolitan Region, Chile",
+                date_fr: "12 avril 2022",
+                date_en: "April 12, 2022",
+                lat: -33.3980197,
+                lng: -70.6022,
+                checklist_id: "S106897237"
+            },
+            
+            {
+                ml: "213362331",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213364601",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213364641",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213654021",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "22527411",
+                name_fr: "Cinclode brun",
+                name_en: "Buff-winged Cinclodes",
+                scientific: "Cinclodes fuscus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "28 avril 2007",
+                date_en: "April 28, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772621"
+            },
+            
+            {
+                ml: "22448921",
+                name_fr: "Cinclode brun",
+                name_en: "Buff-winged Cinclodes",
+                scientific: "Cinclodes fuscus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "MN Valle del Encanto, Coquimbo, Chili",
+                location_en: "MN Valle del Encanto, Coquimbo, Chile",
+                date_fr: "20 mai 2007",
+                date_en: "May 20, 2007",
+                lat: -30.7034242,
+                lng: -71.3748157,
+                checklist_id: "S5772470"
+            },
+            
+            {
+                ml: "22575991",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "19 mai 2007",
+                date_en: "May 19, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772622"
+            },
+            
+            {
+                ml: "22576021",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "19 mai 2007",
+                date_en: "May 19, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772622"
+            },
+            
+            {
+                ml: "22503231",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "17 mars 2008",
+                date_en: "March 17, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772591"
+            },
+            
+            {
+                ml: "22503251",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "17 mars 2008",
+                date_en: "March 17, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772591"
+            },
+            
+            {
+                ml: "22503381",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "22 mars 2008",
+                date_en: "March 22, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772592"
+            },
+            
+            {
+                ml: "22503391",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "22 mars 2008",
+                date_en: "March 22, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772592"
+            },
+            
+            {
+                ml: "22534171",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "26 avril 2009",
+                date_en: "April 26, 2009",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772595"
+            },
+            
+            {
+                ml: "515264401",
+                name_fr: "Cinclode d\'Oustalet",
+                name_en: "Gray-flanked Cinclodes",
+                scientific: "Cinclodes oustaleti",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "26 avril 2009",
+                date_en: "April 26, 2009",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772595"
+            },
+            
+            {
+                ml: "22375111",
+                name_fr: "Cinclode à ventre sombre",
+                name_en: "Dark-bellied Cinclodes",
+                scientific: "Cinclodes patagonicus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Caulín, Los Lagos, Chili",
+                location_en: "Caulín, Los Lagos, Chile",
+                date_fr: "3 mai 2008",
+                date_en: "May 3, 2008",
+                lat: -41.8259378,
+                lng: -73.6275078,
+                checklist_id: "S5772445"
+            },
+            
+            {
+                ml: "22361481",
+                name_fr: "Cinclode à ventre sombre",
+                name_en: "Dark-bellied Cinclodes",
+                scientific: "Cinclodes patagonicus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "MN Islotes de Puñihuil, Los Lagos, Chili",
+                location_en: "MN Islotes de Puñihuil, Los Lagos, Chile",
+                date_fr: "3 mai 2008",
+                date_en: "May 3, 2008",
+                lat: -41.9252706,
+                lng: -74.0392685,
+                checklist_id: "S5772427"
+            },
+            
+            {
+                ml: "22576221",
+                name_fr: "Cinclode du ressac",
+                name_en: "Seaside Cinclodes",
+                scientific: "Cinclodes nigrofumosus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "17 novembre 2006",
+                date_en: "November 17, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772453"
+            },
+            
+            {
+                ml: "22576271",
+                name_fr: "Cinclode du ressac",
+                name_en: "Seaside Cinclodes",
+                scientific: "Cinclodes nigrofumosus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "17 novembre 2006",
+                date_en: "November 17, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772453"
+            },
+            
+            {
+                ml: "22576051",
+                name_fr: "Cinclode du ressac",
+                name_en: "Seaside Cinclodes",
+                scientific: "Cinclodes nigrofumosus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "19 mai 2007",
+                date_en: "May 19, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772622"
+            },
+            
+            {
+                ml: "22576061",
+                name_fr: "Cinclode du ressac",
+                name_en: "Seaside Cinclodes",
+                scientific: "Cinclodes nigrofumosus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "19 mai 2007",
+                date_en: "May 19, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772622"
+            },
+            
+            {
+                ml: "22534181",
+                name_fr: "Cinclode du ressac",
+                name_en: "Seaside Cinclodes",
+                scientific: "Cinclodes nigrofumosus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "26 avril 2009",
+                date_en: "April 26, 2009",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772595"
+            },
+            
+            {
+                ml: "22451951",
+                name_fr: "Synallaxe rayadito",
+                name_en: "Thorn-tailed Rayadito",
+                scientific: "Aphrastura spinicauda",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Sentier de Sierra Dorotea, Magallanes, Chili",
+                location_en: "Sentier de Sierra Dorotea, Magallanes, Chile",
+                date_fr: "20 décembre 2008",
+                date_en: "December 20, 2008",
+                lat: -51.683889,
+                lng: -72.436944,
+                checklist_id: "S5772662"
+            },
+            
+            {
+                ml: "22369561",
+                name_fr: "Synallaxe mésange",
+                name_en: "Plain-mantled Tit-Spinetail",
+                scientific: "Leptasthenura aegithaloides",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "PN Bosque Fray Jorge [usar hotspots específicos], Coquimbo, Chili",
+                location_en: "PN Bosque Fray Jorge [usar hotspots específicos], Coquimbo, Chile",
+                date_fr: "30 septembre 2006",
+                date_en: "September 30, 2006",
+                lat: -30.65257,
+                lng: -71.6820574,
+                checklist_id: "S5772456"
+            },
+            
+            {
+                ml: "22451971",
+                name_fr: "Synallaxe mésange",
+                name_en: "Plain-mantled Tit-Spinetail",
+                scientific: "Leptasthenura aegithaloides",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "7 décembre 2008",
+                date_en: "December 7, 2008",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772561"
+            },
+            
+            {
+                ml: "213627411",
+                name_fr: "Synallaxe mésange",
+                name_en: "Plain-mantled Tit-Spinetail",
+                scientific: "Leptasthenura aegithaloides",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "435566741",
+                name_fr: "Synallaxe des rocailles",
+                name_en: "Cordilleran Canastero",
+                scientific: "Asthenes modesta",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "14 avril 2022",
+                date_en: "April 14, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107048133"
+            },
+            
+            {
+                ml: "435568101",
+                name_fr: "Synallaxe des rocailles",
+                name_en: "Cordilleran Canastero",
+                scientific: "Asthenes modesta",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "14 avril 2022",
+                date_en: "April 14, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107048133"
+            },
+            
+            {
+                ml: "435569551",
+                name_fr: "Synallaxe des rocailles",
+                name_en: "Cordilleran Canastero",
+                scientific: "Asthenes modesta",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "14 avril 2022",
+                date_en: "April 14, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107048133"
+            },
+            
+            {
+                ml: "435571411",
+                name_fr: "Synallaxe des rocailles",
+                name_en: "Cordilleran Canastero",
+                scientific: "Asthenes modesta",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "14 avril 2022",
+                date_en: "April 14, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107048133"
+            },
+            
+            {
+                ml: "435660381",
+                name_fr: "Synallaxe des rocailles",
+                name_en: "Cordilleran Canastero",
+                scientific: "Asthenes modesta",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "14 avril 2022",
+                date_en: "April 14, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107048133"
+            },
+            
+            {
+                ml: "515591081",
+                name_fr: "Synallaxe des rocailles",
+                name_en: "Cordilleran Canastero",
+                scientific: "Asthenes modesta",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "22 avril 2022",
+                date_en: "April 22, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107681572"
+            },
+            
+            {
+                ml: "22452061",
+                name_fr: "Synallaxe à queue noire",
+                name_en: "Dusky-tailed Canastero",
+                scientific: "Pseudasthenes humicola",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Cerro Grande, Coquimbo, Chili",
+                location_en: "Cerro Grande, Coquimbo, Chile",
+                date_fr: "9 février 2007",
+                date_en: "February 9, 2007",
+                lat: -29.9434816,
+                lng: -71.2182069,
+                checklist_id: "S5772510"
+            },
+            
+            {
+                ml: "22448931",
+                name_fr: "Synallaxe à queue noire",
+                name_en: "Dusky-tailed Canastero",
+                scientific: "Pseudasthenes humicola",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "MN Valle del Encanto, Coquimbo, Chili",
+                location_en: "MN Valle del Encanto, Coquimbo, Chile",
+                date_fr: "20 mai 2007",
+                date_en: "May 20, 2007",
+                lat: -30.7034242,
+                lng: -71.3748157,
+                checklist_id: "S5772470"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

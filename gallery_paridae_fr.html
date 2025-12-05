@@ -1,0 +1,2742 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famille des Paridaes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_paridae_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Famille des Paridaes</h1>
+        
+        <div class="gallery-subtitle">Mésanges</div>
+        
+        <div class="stats">
+            74 photos
+            
+             · 11 espèces
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="109937311"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109937311/480"
+                     alt="Mésange huppée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange huppée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="105439941"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/105439941/480"
+                     alt="Mésange de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22416561"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416561/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="34523781"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34523781/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="34523801"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34523801/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="22493331"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493331/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="22534441"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22534441/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="34432561"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34432561/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="22493371"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493371/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="34749201"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749201/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="22577621"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22577621/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="22586681"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586681/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="22578031"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22578031/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="22586711"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586711/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="22499971"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22499971/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22586791"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586791/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="22586801"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586801/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="51364161"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51364161/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="51364171"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51364171/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="22527371"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22527371/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="22587081"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22587081/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="41652641"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/41652641/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="71488381"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/71488381/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="87498741"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/87498741/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="115214161"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/115214161/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="124110621"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/124110621/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="132014381"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/132014381/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="137499321"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/137499321/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="137499341"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/137499341/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="170290691"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/170290691/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="191945481"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/191945481/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="237658841"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/237658841/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="262475501"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/262475501/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="309069711"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/309069711/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="313641531"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/313641531/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="391463841"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/391463841/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="401588341"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/401588341/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="531551011"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/531551011/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="531551121"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/531551121/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="531551171"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/531551171/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="627924409"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/627924409/480"
+                     alt="Mésange à tête noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="29630521"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29630521/480"
+                     alt="Mésange de Gambel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange de Gambel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="22493401"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493401/480"
+                     alt="Mésange à dos marron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à dos marron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="166075751"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166075751/480"
+                     alt="Mésange à dos marron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à dos marron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="166075761"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166075761/480"
+                     alt="Mésange à dos marron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à dos marron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="166075771"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166075771/480"
+                     alt="Mésange à dos marron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à dos marron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="65478141"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/65478141/480"
+                     alt="Mésange à tête brune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête brune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="66387101"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66387101/480"
+                     alt="Mésange à tête brune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête brune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="66387111"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66387111/480"
+                     alt="Mésange à tête brune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange à tête brune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="22367391"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22367391/480"
+                     alt="Mésange bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="108149241"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108149241/480"
+                     alt="Mésange bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="109937481"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109937481/480"
+                     alt="Mésange bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="150711661"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711661/480"
+                     alt="Mésange bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="150711671"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711671/480"
+                     alt="Mésange bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="22448201"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448201/480"
+                     alt="Mésange arlequin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange arlequin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="56261461"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56261461/480"
+                     alt="Mésange arlequin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange arlequin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="550689471"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/550689471/480"
+                     alt="Mésange unicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange unicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="551541441"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/551541441/480"
+                     alt="Mésange unicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange unicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="39830311"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/39830311/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="115214181"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/115214181/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="115214191"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/115214191/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="130728611"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/130728611/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="130728621"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/130728621/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="63"
+                 data-ml="196782891"
+                 onclick="openLightbox(63)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/196782891/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="64"
+                 data-ml="262475561"
+                 onclick="openLightbox(64)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/262475561/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="65"
+                 data-ml="262475681"
+                 onclick="openLightbox(65)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/262475681/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="66"
+                 data-ml="628686789"
+                 onclick="openLightbox(66)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628686789/480"
+                     alt="Mésange bicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="67"
+                 data-ml="22493521"
+                 onclick="openLightbox(67)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493521/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="68"
+                 data-ml="21111821"
+                 onclick="openLightbox(68)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111821/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="69"
+                 data-ml="21111831"
+                 onclick="openLightbox(69)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111831/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="70"
+                 data-ml="22493621"
+                 onclick="openLightbox(70)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493621/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="71"
+                 data-ml="107521511"
+                 onclick="openLightbox(71)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107521511/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="72"
+                 data-ml="149863141"
+                 onclick="openLightbox(72)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/149863141/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="73"
+                 data-ml="467243501"
+                 onclick="openLightbox(73)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/467243501/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "109937311",
+                name_fr: "Mésange huppée",
+                name_en: "Crested Tit",
+                scientific: "Lophophanes cristatus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "6 août 2018",
+                date_en: "August 6, 2018",
+                lat: 43.3459099,
+                lng: 5.5817655,
+                checklist_id: "S47682808"
+            },
+            
+            {
+                ml: "105439941",
+                name_fr: "Mésange de Caroline",
+                name_en: "Carolina Chickadee",
+                scientific: "Poecile carolinensis",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Emma Long Metro Park, Texas, États-Unis",
+                location_en: "Emma Long Metro Park, Texas, United States",
+                date_fr: "10 juin 2018",
+                date_en: "June 10, 2018",
+                lat: 30.3316943,
+                lng: -97.8387451,
+                checklist_id: "S46462541"
+            },
+            
+            {
+                ml: "22416561",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Quartier de la Terrasse Lakeview, Québec, Canada",
+                location_en: "Quartier de la Terrasse Lakeview, Quebec, Canada",
+                date_fr: "21 septembre 2003",
+                date_en: "September 21, 2003",
+                lat: 45.3935481,
+                lng: -75.802697,
+                checklist_id: "S18567423"
+            },
+            
+            {
+                ml: "34523781",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Amherst Island, Ontario, Canada",
+                location_en: "Amherst Island, Ontario, Canada",
+                date_fr: "15 février 2004",
+                date_en: "February 15, 2004",
+                lat: 44.1395559,
+                lng: -76.7227821,
+                checklist_id: "S18567445"
+            },
+            
+            {
+                ml: "34523801",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Amherst Island, Ontario, Canada",
+                location_en: "Amherst Island, Ontario, Canada",
+                date_fr: "15 février 2004",
+                date_en: "February 15, 2004",
+                lat: 44.1395559,
+                lng: -76.7227821,
+                checklist_id: "S18567445"
+            },
+            
+            {
+                ml: "22493331",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Parc du Mt-Royal, Québec, Canada",
+                location_en: "Parc du Mt-Royal, Quebec, Canada",
+                date_fr: "18 août 2004",
+                date_en: "August 18, 2004",
+                lat: 45.5055593,
+                lng: -73.5882289,
+                checklist_id: "S18567446"
+            },
+            
+            {
+                ml: "22534441",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Gatineau, Québec, Canada",
+                location_en: "Gatineau, Quebec, Canada",
+                date_fr: "20 août 2005",
+                date_en: "August 20, 2005",
+                lat: 45.434722,
+                lng: -75.763056,
+                checklist_id: "S18567409"
+            },
+            
+            {
+                ml: "34432561",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Amherst Island, Ontario, Canada",
+                location_en: "Amherst Island, Ontario, Canada",
+                date_fr: "26 février 2006",
+                date_en: "February 26, 2006",
+                lat: 44.1395559,
+                lng: -76.7227821,
+                checklist_id: "S18567436"
+            },
+            
+            {
+                ml: "22493371",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Parc du Mt-Royal, Québec, Canada",
+                location_en: "Parc du Mt-Royal, Quebec, Canada",
+                date_fr: "19 août 2006",
+                date_en: "August 19, 2006",
+                lat: 45.5055593,
+                lng: -73.5882289,
+                checklist_id: "S18567447"
+            },
+            
+            {
+                ml: "34749201",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Forêt Boucher, Québec, Canada",
+                location_en: "Forêt Boucher, Quebec, Canada",
+                date_fr: "17 avril 2008",
+                date_en: "April 17, 2008",
+                lat: 45.4217689,
+                lng: -75.8251476,
+                checklist_id: "S31498383"
+            },
+            
+            {
+                ml: "22577621",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "18 décembre 2011",
+                date_en: "December 18, 2011",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567439"
+            },
+            
+            {
+                ml: "22586681",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "4 mars 2012",
+                date_en: "March 4, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567448"
+            },
+            
+            {
+                ml: "22578031",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "31 mars 2012",
+                date_en: "March 31, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567444"
+            },
+            
+            {
+                ml: "22586711",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Parc Angrignon, Québec, Canada",
+                location_en: "Parc Angrignon, Quebec, Canada",
+                date_fr: "29 septembre 2012",
+                date_en: "September 29, 2012",
+                lat: 45.4445136,
+                lng: -73.6017311,
+                checklist_id: "S18567449"
+            },
+            
+            {
+                ml: "22499971",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Parc du Mt-Royal, Québec, Canada",
+                location_en: "Parc du Mt-Royal, Quebec, Canada",
+                date_fr: "19 octobre 2014",
+                date_en: "October 19, 2014",
+                lat: 45.5055593,
+                lng: -73.5882289,
+                checklist_id: "S20279396"
+            },
+            
+            {
+                ml: "22586791",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "7 février 2015",
+                date_en: "February 7, 2015",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S21719442"
+            },
+            
+            {
+                ml: "22586801",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "7 février 2015",
+                date_en: "February 7, 2015",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S21719442"
+            },
+            
+            {
+                ml: "51364161",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Amherst Island--Owl Woods, Ontario, Canada",
+                location_en: "Amherst Island--Owl Woods, Ontario, Canada",
+                date_fr: "6 mars 2015",
+                date_en: "March 6, 2015",
+                lat: 44.173487,
+                lng: -76.649614,
+                checklist_id: "S22205571"
+            },
+            
+            {
+                ml: "51364171",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Amherst Island--Owl Woods, Ontario, Canada",
+                location_en: "Amherst Island--Owl Woods, Ontario, Canada",
+                date_fr: "6 mars 2015",
+                date_en: "March 6, 2015",
+                lat: 44.173487,
+                lng: -76.649614,
+                checklist_id: "S22205571"
+            },
+            
+            {
+                ml: "22527371",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "8 mai 2015",
+                date_en: "May 8, 2015",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S23305116"
+            },
+            
+            {
+                ml: "22587081",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Britannia CA--Mud Lake, Ontario, Canada",
+                location_en: "Britannia CA--Mud Lake, Ontario, Canada",
+                date_fr: "26 octobre 2015",
+                date_en: "October 26, 2015",
+                lat: 45.3717546,
+                lng: -75.7948728,
+                checklist_id: "S25560459"
+            },
+            
+            {
+                ml: "41652641",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "3 décembre 2016",
+                date_en: "December 3, 2016",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S32839807"
+            },
+            
+            {
+                ml: "71488381",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "10 octobre 2017",
+                date_en: "October 10, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S39811249"
+            },
+            
+            {
+                ml: "87498741",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "24 février 2018",
+                date_en: "February 24, 2018",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S43147051"
+            },
+            
+            {
+                ml: "115214161",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "16 septembre 2018",
+                date_en: "September 16, 2018",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S48551067"
+            },
+            
+            {
+                ml: "124110621",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "18 novembre 2018",
+                date_en: "November 18, 2018",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S50024950"
+            },
+            
+            {
+                ml: "132014381",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Parc de la Gatineau--Relais Healey, Québec, Canada",
+                location_en: "Parc de la Gatineau--Relais Healey, Quebec, Canada",
+                date_fr: "30 décembre 2018",
+                date_en: "December 30, 2018",
+                lat: 45.5720697,
+                lng: -75.9336376,
+                checklist_id: "S51093460"
+            },
+            
+            {
+                ml: "137499321",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Bois de l\'Équerre, Québec, Canada",
+                location_en: "Bois de l\'Équerre, Quebec, Canada",
+                date_fr: "19 janvier 2019",
+                date_en: "January 19, 2019",
+                lat: 45.6080817,
+                lng: -73.7558126,
+                checklist_id: "S51835358"
+            },
+            
+            {
+                ml: "137499341",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Bois de l\'Équerre, Québec, Canada",
+                location_en: "Bois de l\'Équerre, Quebec, Canada",
+                date_fr: "19 janvier 2019",
+                date_en: "January 19, 2019",
+                lat: 45.6080817,
+                lng: -73.7558126,
+                checklist_id: "S51835358"
+            },
+            
+            {
+                ml: "170290691",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "28 juillet 2019",
+                date_en: "July 28, 2019",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S58527730"
+            },
+            
+            {
+                ml: "191945481",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "2 décembre 2019",
+                date_en: "December 2, 2019",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S61931145"
+            },
+            
+            {
+                ml: "237658841",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Parc Angrignon, Québec, Canada",
+                location_en: "Parc Angrignon, Quebec, Canada",
+                date_fr: "22 mai 2020",
+                date_en: "May 22, 2020",
+                lat: 45.4445136,
+                lng: -73.6017311,
+                checklist_id: "S69475957"
+            },
+            
+            {
+                ml: "262475501",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "12 septembre 2020",
+                date_en: "September 12, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S73513263"
+            },
+            
+            {
+                ml: "309069711",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
+                location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                date_fr: "17 février 2021",
+                date_en: "February 17, 2021",
+                lat: 45.37778,
+                lng: -75.79972,
+                checklist_id: "S81819824"
+            },
+            
+            {
+                ml: "313641531",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
+                location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                date_fr: "3 mars 2021",
+                date_en: "March 3, 2021",
+                lat: 45.37778,
+                lng: -75.79972,
+                checklist_id: "S82680611"
+            },
+            
+            {
+                ml: "391463841",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "27 novembre 2021",
+                date_en: "November 27, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S98141424"
+            },
+            
+            {
+                ml: "401588341",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Parc de la Gatineau--Promenade Fortune, Québec, Canada",
+                location_en: "Parc de la Gatineau--Promenade Fortune, Quebec, Canada",
+                date_fr: "31 décembre 2021",
+                date_en: "December 31, 2021",
+                lat: 45.5153529,
+                lng: -75.8609482,
+                checklist_id: "S99761270"
+            },
+            
+            {
+                ml: "531551011",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "4 février 2023",
+                date_en: "February 4, 2023",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S127580072"
+            },
+            
+            {
+                ml: "531551121",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "4 février 2023",
+                date_en: "February 4, 2023",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S127580072"
+            },
+            
+            {
+                ml: "531551171",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "4 février 2023",
+                date_en: "February 4, 2023",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S127580072"
+            },
+            
+            {
+                ml: "627924409",
+                name_fr: "Mésange à tête noire",
+                name_en: "Black-capped Chickadee",
+                scientific: "Poecile atricapillus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Ile Notre-Dame, Québec, Canada",
+                location_en: "Ile Notre-Dame, Quebec, Canada",
+                date_fr: "23 décembre 2024",
+                date_en: "December 23, 2024",
+                lat: 45.5056251,
+                lng: -73.5274601,
+                checklist_id: "S206333189"
+            },
+            
+            {
+                ml: "29630521",
+                name_fr: "Mésange de Gambel",
+                name_en: "Mountain Chickadee",
+                scientific: "Poecile gambeli",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Mt. Lemmon--Incinerator Ridge, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Incinerator Ridge, Arizona, United States",
+                date_fr: "29 avril 2016",
+                date_en: "April 29, 2016",
+                lat: 32.4111248,
+                lng: -110.7064819,
+                checklist_id: "S29292804"
+            },
+            
+            {
+                ml: "22493401",
+                name_fr: "Mésange à dos marron",
+                name_en: "Chestnut-backed Chickadee",
+                scientific: "Poecile rufescens",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Quadra Island--April Point, Colombie-Britannique, Canada",
+                location_en: "Quadra Island--April Point, British Columbia, Canada",
+                date_fr: "7 mai 2013",
+                date_en: "May 7, 2013",
+                lat: 50.0646325,
+                lng: -125.236094,
+                checklist_id: "S18577243"
+            },
+            
+            {
+                ml: "166075751",
+                name_fr: "Mésange à dos marron",
+                name_en: "Chestnut-backed Chickadee",
+                scientific: "Poecile rufescens",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Juan de Fuca Provincial Park--Botanical Beach, Colombie-Britannique, Canada",
+                location_en: "Juan de Fuca Provincial Park--Botanical Beach, British Columbia, Canada",
+                date_fr: "27 juin 2019",
+                date_en: "June 27, 2019",
+                lat: 48.5279344,
+                lng: -124.4476279,
+                checklist_id: "S57746275"
+            },
+            
+            {
+                ml: "166075761",
+                name_fr: "Mésange à dos marron",
+                name_en: "Chestnut-backed Chickadee",
+                scientific: "Poecile rufescens",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Juan de Fuca Provincial Park--Botanical Beach, Colombie-Britannique, Canada",
+                location_en: "Juan de Fuca Provincial Park--Botanical Beach, British Columbia, Canada",
+                date_fr: "27 juin 2019",
+                date_en: "June 27, 2019",
+                lat: 48.5279344,
+                lng: -124.4476279,
+                checklist_id: "S57746275"
+            },
+            
+            {
+                ml: "166075771",
+                name_fr: "Mésange à dos marron",
+                name_en: "Chestnut-backed Chickadee",
+                scientific: "Poecile rufescens",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Juan de Fuca Provincial Park--Botanical Beach, Colombie-Britannique, Canada",
+                location_en: "Juan de Fuca Provincial Park--Botanical Beach, British Columbia, Canada",
+                date_fr: "27 juin 2019",
+                date_en: "June 27, 2019",
+                lat: 48.5279344,
+                lng: -124.4476279,
+                checklist_id: "S57746275"
+            },
+            
+            {
+                ml: "65478141",
+                name_fr: "Mésange à tête brune",
+                name_en: "Boreal Chickadee",
+                scientific: "Poecile hudsonicus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Long Island--Balancing Rock Trail, Nouvelle-Écosse, Canada",
+                location_en: "Long Island--Balancing Rock Trail, Nova Scotia, Canada",
+                date_fr: "7 août 2017",
+                date_en: "August 7, 2017",
+                lat: 44.3656474,
+                lng: -66.2311177,
+                checklist_id: "S38524473"
+            },
+            
+            {
+                ml: "66387101",
+                name_fr: "Mésange à tête brune",
+                name_en: "Boreal Chickadee",
+                scientific: "Poecile hudsonicus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Fortress of Louisbourg National Historic Site--Simon Point Trail, Nouvelle-Écosse, Canada",
+                location_en: "Fortress of Louisbourg National Historic Site--Simon Point Trail, Nova Scotia, Canada",
+                date_fr: "17 août 2017",
+                date_en: "August 17, 2017",
+                lat: 45.8812096,
+                lng: -60.0208406,
+                checklist_id: "S38683605"
+            },
+            
+            {
+                ml: "66387111",
+                name_fr: "Mésange à tête brune",
+                name_en: "Boreal Chickadee",
+                scientific: "Poecile hudsonicus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Fortress of Louisbourg National Historic Site--Simon Point Trail, Nouvelle-Écosse, Canada",
+                location_en: "Fortress of Louisbourg National Historic Site--Simon Point Trail, Nova Scotia, Canada",
+                date_fr: "17 août 2017",
+                date_en: "August 17, 2017",
+                lat: 45.8812096,
+                lng: -60.0208406,
+                checklist_id: "S38683605"
+            },
+            
+            {
+                ml: "22367391",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Camargue--Parc ornithologique du Pont de Gau, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue--Parc ornithologique du Pont de Gau, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "26 décembre 2010",
+                date_en: "December 26, 2010",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S18565226"
+            },
+            
+            {
+                ml: "108149241",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "21 juillet 2018",
+                date_en: "July 21, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47327404"
+            },
+            
+            {
+                ml: "109937481",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "6 août 2018",
+                date_en: "August 6, 2018",
+                lat: 43.3459099,
+                lng: 5.5817655,
+                checklist_id: "S47682808"
+            },
+            
+            {
+                ml: "150711661",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711671",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "22448201",
+                name_fr: "Mésange arlequin",
+                name_en: "Bridled Titmouse",
+                scientific: "Baeolophus wollweberi",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Madera Canyon--Proctor Rd., Arizona, États-Unis",
+                location_en: "Madera Canyon--Proctor Rd., Arizona, United States",
+                date_fr: "1 janvier 2006",
+                date_en: "January 1, 2006",
+                lat: 31.739938,
+                lng: -110.886147,
+                checklist_id: "S18575534"
+            },
+            
+            {
+                ml: "56261461",
+                name_fr: "Mésange arlequin",
+                name_en: "Bridled Titmouse",
+                scientific: "Baeolophus wollweberi",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Madera Canyon--Santa Rita Lodge, Arizona, États-Unis",
+                location_en: "Madera Canyon--Santa Rita Lodge, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7251514,
+                lng: -110.8801067,
+                checklist_id: "S36365214"
+            },
+            
+            {
+                ml: "550689471",
+                name_fr: "Mésange unicolore",
+                name_en: "Oak Titmouse",
+                scientific: "Baeolophus inornatus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Andree Clark Bird Refuge, Californie, États-Unis",
+                location_en: "Andree Clark Bird Refuge, California, United States",
+                date_fr: "28 mars 2023",
+                date_en: "March 28, 2023",
+                lat: 34.4215353,
+                lng: -119.6572856,
+                checklist_id: "S132061756"
+            },
+            
+            {
+                ml: "551541441",
+                name_fr: "Mésange unicolore",
+                name_en: "Oak Titmouse",
+                scientific: "Baeolophus inornatus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Santa Barbara Botanic Garden, Californie, États-Unis",
+                location_en: "Santa Barbara Botanic Garden, California, United States",
+                date_fr: "29 mars 2023",
+                date_en: "March 29, 2023",
+                lat: 34.4567922,
+                lng: -119.710266,
+                checklist_id: "S132183670"
+            },
+            
+            {
+                ml: "39830311",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "13 novembre 2016",
+                date_en: "November 13, 2016",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S32524498"
+            },
+            
+            {
+                ml: "115214181",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "16 septembre 2018",
+                date_en: "September 16, 2018",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S48551067"
+            },
+            
+            {
+                ml: "115214191",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "16 septembre 2018",
+                date_en: "September 16, 2018",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S48551067"
+            },
+            
+            {
+                ml: "130728611",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "23 décembre 2018",
+                date_en: "December 23, 2018",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S50897809"
+            },
+            
+            {
+                ml: "130728621",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "23 décembre 2018",
+                date_en: "December 23, 2018",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S50897809"
+            },
+            
+            {
+                ml: "196782891",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "2 janvier 2020",
+                date_en: "January 2, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S62917729"
+            },
+            
+            {
+                ml: "262475561",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "12 septembre 2020",
+                date_en: "September 12, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S73513263"
+            },
+            
+            {
+                ml: "262475681",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "12 septembre 2020",
+                date_en: "September 12, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S73513263"
+            },
+            
+            {
+                ml: "628686789",
+                name_fr: "Mésange bicolore",
+                name_en: "Tufted Titmouse",
+                scientific: "Baeolophus bicolor",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "poste d\'observation Piranga à tête rouge, Montréal-Ouest (2025), Québec, Canada",
+                location_en: "poste d\'observation Piranga à tête rouge, Montréal-Ouest (2025), Quebec, Canada",
+                date_fr: "6 janvier 2025",
+                date_en: "January 6, 2025",
+                lat: 45.4496089,
+                lng: -73.6525308,
+                checklist_id: "S208260777"
+            },
+            
+            {
+                ml: "22493521",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "31 décembre 2010",
+                date_en: "December 31, 2010",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S18563439"
+            },
+            
+            {
+                ml: "21111821",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Amsterdam -- Beatrixpark, Pays-Bas",
+                location_en: "Amsterdam -- Beatrixpark, Netherlands",
+                date_fr: "3 juillet 2012",
+                date_en: "July 3, 2012",
+                lat: 52.344444,
+                lng: 4.8813889,
+                checklist_id: "S18565313"
+            },
+            
+            {
+                ml: "21111831",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Amsterdam -- Beatrixpark, Pays-Bas",
+                location_en: "Amsterdam -- Beatrixpark, Netherlands",
+                date_fr: "3 juillet 2012",
+                date_en: "July 3, 2012",
+                lat: 52.344444,
+                lng: 4.8813889,
+                checklist_id: "S18565313"
+            },
+            
+            {
+                ml: "22493621",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "31 juillet 2012",
+                date_en: "July 31, 2012",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S18563440"
+            },
+            
+            {
+                ml: "107521511",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "15 juillet 2018",
+                date_en: "July 15, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47203409"
+            },
+            
+            {
+                ml: "149863141",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Bois du Faisan, Genève, Suisse",
+                location_en: "Bois du Faisan, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2779787,
+                lng: 6.1518073,
+                checklist_id: "S54719816"
+            },
+            
+            {
+                ml: "467243501",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2022",
+                date_en: "July 14, 2022",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S115024966"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

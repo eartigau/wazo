@@ -1,0 +1,3629 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genève</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="voyage_geneve_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Genève</h1>
+        
+        <div class="stats">
+            107 photos
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="645225211"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225211/480"
+                     alt="Oie cendrée (forme domestique)"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Oie cendrée (forme domestique)</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="645202618"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645202618/480"
+                     alt="Cygne tuberculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cygne tuberculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="645225223"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225223/480"
+                     alt="Cygne tuberculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cygne tuberculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="645225412"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225412/480"
+                     alt="Nette rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nette rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="645225416"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225416/480"
+                     alt="Nette rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nette rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="645225397"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225397/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="645225203"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225203/480"
+                     alt="sauvagine sp."
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">sauvagine sp.</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="645225204"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225204/480"
+                     alt="sauvagine sp."
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">sauvagine sp.</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="645225206"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225206/480"
+                     alt="sauvagine sp."
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">sauvagine sp.</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="645225209"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225209/480"
+                     alt="sauvagine sp."
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">sauvagine sp.</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="645225321"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225321/480"
+                     alt="Pigeon ramier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pigeon ramier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="645225399"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225399/480"
+                     alt="Foulque macroule"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Foulque macroule</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="645202604"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645202604/480"
+                     alt="Chevalier guignette"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chevalier guignette</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="645202605"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645202605/480"
+                     alt="Chevalier guignette"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chevalier guignette</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="645225342"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225342/480"
+                     alt="Chevalier guignette"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chevalier guignette</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="645225407"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225407/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="645225408"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225408/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="645225409"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225409/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="645225410"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225410/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="645202629"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645202629/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="645225254"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225254/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="645225208"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225208/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="645225274"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225274/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="645225218"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225218/480"
+                     alt="Grand Cormoran"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Cormoran</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="645202621"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645202621/480"
+                     alt="Moineau domestique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moineau domestique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="645202616"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645202616/480"
+                     alt="Bergeronnette des ruisseaux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bergeronnette des ruisseaux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="645225451"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225451/480"
+                     alt="Buse variable"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Buse variable</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="645225437"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645225437/480"
+                     alt="Tarin des aulnes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tarin des aulnes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="621396529"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396529/480"
+                     alt="Pigeon colombin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pigeon colombin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="621396724"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396724/480"
+                     alt="Pigeon colombin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pigeon colombin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="621396499"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396499/480"
+                     alt="Bruant proyer"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bruant proyer</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="621396500"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396500/480"
+                     alt="Bruant proyer"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bruant proyer</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="621374920"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621374920/480"
+                     alt="Buse variable"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Buse variable</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="150711951"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711951/480"
+                     alt="Cygne tuberculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cygne tuberculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="150711451"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711451/480"
+                     alt="Nette rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nette rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="150711461"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711461/480"
+                     alt="Nette rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nette rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="150711811"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711811/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="150711821"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711821/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="150711831"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711831/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="150711841"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711841/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="150711851"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711851/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="150712091"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150712091/480"
+                     alt="Héron cendré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Héron cendré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="150711661"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711661/480"
+                     alt="Mésange bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="150711671"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150711671/480"
+                     alt="Mésange bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="150712111"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150712111/480"
+                     alt="Bergeronnette grise"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bergeronnette grise</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="150594531"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150594531/480"
+                     alt="Cygne tuberculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cygne tuberculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="150594721"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150594721/480"
+                     alt="Cygne tuberculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cygne tuberculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="150594951"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150594951/480"
+                     alt="Canard colvert"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Canard colvert</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="150593931"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150593931/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="150593741"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150593741/480"
+                     alt="Grand Cormoran"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Cormoran</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="150727911"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150727911/480"
+                     alt="Milan noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Milan noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="150408741"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150408741/480"
+                     alt="Grive draine"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grive draine</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="150152861"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152861/480"
+                     alt="Cygne tuberculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cygne tuberculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="150152881"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152881/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="150152891"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152891/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="150152901"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152901/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="150152911"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152911/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="150152921"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152921/480"
+                     alt="Foulque macroule"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Foulque macroule</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="150153101"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150153101/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="150153111"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150153111/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="150153121"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150153121/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="150152941"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152941/480"
+                     alt="Héron cendré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Héron cendré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="150152991"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/150152991/480"
+                     alt="Geai des chênes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Geai des chênes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="63"
+                 data-ml="149863141"
+                 onclick="openLightbox(63)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/149863141/480"
+                     alt="Mésange charbonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mésange charbonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="64"
+                 data-ml="149863221"
+                 onclick="openLightbox(64)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/149863221/480"
+                     alt="Grimpereau des jardins"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grimpereau des jardins</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="65"
+                 data-ml="107355021"
+                 onclick="openLightbox(65)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355021/480"
+                     alt="Héron cendré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Héron cendré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="66"
+                 data-ml="107355481"
+                 onclick="openLightbox(66)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355481/480"
+                     alt="Pic épeiche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pic épeiche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="67"
+                 data-ml="107355061"
+                 onclick="openLightbox(67)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355061/480"
+                     alt="Grand Cormoran"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Cormoran</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="68"
+                 data-ml="107355151"
+                 onclick="openLightbox(68)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355151/480"
+                     alt="Sittelle torchepot"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sittelle torchepot</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="69"
+                 data-ml="34749081"
+                 onclick="openLightbox(69)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749081/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="70"
+                 data-ml="34749091"
+                 onclick="openLightbox(70)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749091/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="71"
+                 data-ml="34749151"
+                 onclick="openLightbox(71)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749151/480"
+                     alt="Grive litorne"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grive litorne</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="72"
+                 data-ml="31149401"
+                 onclick="openLightbox(72)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/31149401/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="73"
+                 data-ml="31149451"
+                 onclick="openLightbox(73)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/31149451/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="74"
+                 data-ml="31149421"
+                 onclick="openLightbox(74)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/31149421/480"
+                     alt="Pinson des arbres"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pinson des arbres</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="75"
+                 data-ml="34749131"
+                 onclick="openLightbox(75)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749131/480"
+                     alt="Grive litorne"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grive litorne</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="76"
+                 data-ml="34749141"
+                 onclick="openLightbox(76)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749141/480"
+                     alt="Grive litorne"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grive litorne</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="77"
+                 data-ml="34749001"
+                 onclick="openLightbox(77)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749001/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="78"
+                 data-ml="34749011"
+                 onclick="openLightbox(78)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749011/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="79"
+                 data-ml="34749031"
+                 onclick="openLightbox(79)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749031/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="80"
+                 data-ml="34749041"
+                 onclick="openLightbox(80)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749041/480"
+                     alt="Cassenoix moucheté"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cassenoix moucheté</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="81"
+                 data-ml="34749021"
+                 onclick="openLightbox(81)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749021/480"
+                     alt="Troglodyte mignon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte mignon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="82"
+                 data-ml="130736371"
+                 onclick="openLightbox(82)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/130736371/480"
+                     alt="Bouvreuil pivoine"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bouvreuil pivoine</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="83"
+                 data-ml="29630971"
+                 onclick="openLightbox(83)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29630971/480"
+                     alt="Cygne tuberculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cygne tuberculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="84"
+                 data-ml="29630991"
+                 onclick="openLightbox(84)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29630991/480"
+                     alt="Nette rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nette rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="85"
+                 data-ml="29631001"
+                 onclick="openLightbox(85)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631001/480"
+                     alt="Nette rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nette rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="86"
+                 data-ml="29631041"
+                 onclick="openLightbox(86)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631041/480"
+                     alt="Fuligule morillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fuligule morillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="87"
+                 data-ml="29631081"
+                 onclick="openLightbox(87)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631081/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="88"
+                 data-ml="29631121"
+                 onclick="openLightbox(88)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631121/480"
+                     alt="Grand Harle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Harle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="89"
+                 data-ml="29631071"
+                 onclick="openLightbox(89)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631071/480"
+                     alt="Harle huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Harle huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="90"
+                 data-ml="29631141"
+                 onclick="openLightbox(90)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631141/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="91"
+                 data-ml="31497341"
+                 onclick="openLightbox(91)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/31497341/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="92"
+                 data-ml="213083201"
+                 onclick="openLightbox(92)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213083201/480"
+                     alt="Merle noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Merle noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="93"
+                 data-ml="213083011"
+                 onclick="openLightbox(93)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213083011/480"
+                     alt="Rougegorge familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rougegorge familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="94"
+                 data-ml="29631161"
+                 onclick="openLightbox(94)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631161/480"
+                     alt="Bergeronnette des ruisseaux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bergeronnette des ruisseaux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="95"
+                 data-ml="21082621"
+                 onclick="openLightbox(95)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082621/480"
+                     alt="Fuligule milouin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fuligule milouin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="96"
+                 data-ml="21082631"
+                 onclick="openLightbox(96)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082631/480"
+                     alt="Fuligule milouin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fuligule milouin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="97"
+                 data-ml="21082641"
+                 onclick="openLightbox(97)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082641/480"
+                     alt="Fuligule morillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fuligule morillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="98"
+                 data-ml="21082651"
+                 onclick="openLightbox(98)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082651/480"
+                     alt="Fuligule morillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fuligule morillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="99"
+                 data-ml="21082661"
+                 onclick="openLightbox(99)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082661/480"
+                     alt="Fuligule morillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fuligule morillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="100"
+                 data-ml="21082691"
+                 onclick="openLightbox(100)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082691/480"
+                     alt="Foulque macroule"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Foulque macroule</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="101"
+                 data-ml="21082701"
+                 onclick="openLightbox(101)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082701/480"
+                     alt="Foulque macroule"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Foulque macroule</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="102"
+                 data-ml="21082711"
+                 onclick="openLightbox(102)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082711/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="103"
+                 data-ml="21082721"
+                 onclick="openLightbox(103)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082721/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="104"
+                 data-ml="21082731"
+                 onclick="openLightbox(104)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082731/480"
+                     alt="Mouette rieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mouette rieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="105"
+                 data-ml="21082671"
+                 onclick="openLightbox(105)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082671/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="106"
+                 data-ml="21082681"
+                 onclick="openLightbox(106)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082681/480"
+                     alt="Grèbe huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe huppé</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "645225211",
+                name_fr: "Oie cendrée (forme domestique)",
+                name_en: "Oie cendrée (forme domestique)",
+                scientific: "Anser anser (Domestic type)",
+                family: "",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645202618",
+                name_fr: "Cygne tuberculé",
+                name_en: "Mute Swan",
+                scientific: "Cygnus olor",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225223",
+                name_fr: "Cygne tuberculé",
+                name_en: "Mute Swan",
+                scientific: "Cygnus olor",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645225412",
+                name_fr: "Nette rousse",
+                name_en: "Red-crested Pochard",
+                scientific: "Netta rufina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645225416",
+                name_fr: "Nette rousse",
+                name_en: "Red-crested Pochard",
+                scientific: "Netta rufina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645225397",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645225203",
+                name_fr: "sauvagine sp.",
+                name_en: "sauvagine sp.",
+                scientific: "Anatidae sp.",
+                family: "",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645225204",
+                name_fr: "sauvagine sp.",
+                name_en: "sauvagine sp.",
+                scientific: "Anatidae sp.",
+                family: "",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645225206",
+                name_fr: "sauvagine sp.",
+                name_en: "sauvagine sp.",
+                scientific: "Anatidae sp.",
+                family: "",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645225209",
+                name_fr: "sauvagine sp.",
+                name_en: "sauvagine sp.",
+                scientific: "Anatidae sp.",
+                family: "",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645225321",
+                name_fr: "Pigeon ramier",
+                name_en: "Common Wood-Pigeon",
+                scientific: "Columba palumbus",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225399",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645202604",
+                name_fr: "Chevalier guignette",
+                name_en: "Common Sandpiper",
+                scientific: "Actitis hypoleucos",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645202605",
+                name_fr: "Chevalier guignette",
+                name_en: "Common Sandpiper",
+                scientific: "Actitis hypoleucos",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225342",
+                name_fr: "Chevalier guignette",
+                name_en: "Common Sandpiper",
+                scientific: "Actitis hypoleucos",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225407",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645225408",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645225409",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645225410",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705"
+            },
+            
+            {
+                ml: "645202629",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225254",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225208",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645225274",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225218",
+                name_fr: "Grand Cormoran",
+                name_en: "Great Cormorant",
+                scientific: "Phalacrocorax carbo",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Île Rousseau, Genève, Suisse",
+                location_en: "Île Rousseau, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2059101,
+                lng: 6.1476767,
+                checklist_id: "S284364130"
+            },
+            
+            {
+                ml: "645202621",
+                name_fr: "Moineau domestique",
+                name_en: "House Sparrow",
+                scientific: "Passer domesticus",
+                family: "Passeridae (Old World Sparrows)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645202616",
+                name_fr: "Bergeronnette des ruisseaux",
+                name_en: "Gray Wagtail",
+                scientific: "Motacilla cinerea",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location_fr: "Quai Wilson, Genève, Suisse",
+                location_en: "Quai Wilson, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14, 2025",
+                lat: 46.2145451,
+                lng: 6.1523707,
+                checklist_id: "S284362377"
+            },
+            
+            {
+                ml: "645225451",
+                name_fr: "Buse variable",
+                name_en: "Common Buzzard",
+                scientific: "Buteo buteo",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "13 novembre 2025",
+                date_en: "November 13, 2025",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S284234385"
+            },
+            
+            {
+                ml: "645225437",
+                name_fr: "Tarin des aulnes",
+                name_en: "Eurasian Siskin",
+                scientific: "Spinus spinus",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "13 novembre 2025",
+                date_en: "November 13, 2025",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S284234385"
+            },
+            
+            {
+                ml: "621396529",
+                name_fr: "Pigeon colombin",
+                name_en: "Stock Dove",
+                scientific: "Columba oenas",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621396724",
+                name_fr: "Pigeon colombin",
+                name_en: "Stock Dove",
+                scientific: "Columba oenas",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621396499",
+                name_fr: "Bruant proyer",
+                name_en: "Corn Bunting",
+                scientific: "Emberiza calandra",
+                family: "Emberizidae (Old World Buntings)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621396500",
+                name_fr: "Bruant proyer",
+                name_en: "Corn Bunting",
+                scientific: "Emberiza calandra",
+                family: "Emberizidae (Old World Buntings)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621374920",
+                name_fr: "Buse variable",
+                name_en: "Common Buzzard",
+                scientific: "Buteo buteo",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "5 juillet 2024",
+                date_en: "July 5, 2024",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S185393822"
+            },
+            
+            {
+                ml: "150711951",
+                name_fr: "Cygne tuberculé",
+                name_en: "Mute Swan",
+                scientific: "Cygnus olor",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711451",
+                name_fr: "Nette rousse",
+                name_en: "Red-crested Pochard",
+                scientific: "Netta rufina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711461",
+                name_fr: "Nette rousse",
+                name_en: "Red-crested Pochard",
+                scientific: "Netta rufina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711811",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711821",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711831",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711841",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711851",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150712091",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711661",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150711671",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150712111",
+                name_fr: "Bergeronnette grise",
+                name_en: "White Wagtail",
+                scientific: "Motacilla alba",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "12 avril 2019",
+                date_en: "April 12, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54874408"
+            },
+            
+            {
+                ml: "150594531",
+                name_fr: "Cygne tuberculé",
+                name_en: "Mute Swan",
+                scientific: "Cygnus olor",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "11 avril 2019",
+                date_en: "April 11, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54831943"
+            },
+            
+            {
+                ml: "150594721",
+                name_fr: "Cygne tuberculé",
+                name_en: "Mute Swan",
+                scientific: "Cygnus olor",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "11 avril 2019",
+                date_en: "April 11, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54831943"
+            },
+            
+            {
+                ml: "150594951",
+                name_fr: "Canard colvert",
+                name_en: "Mallard",
+                scientific: "Anas platyrhynchos",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "11 avril 2019",
+                date_en: "April 11, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54831943"
+            },
+            
+            {
+                ml: "150593931",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "11 avril 2019",
+                date_en: "April 11, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54831943"
+            },
+            
+            {
+                ml: "150593741",
+                name_fr: "Grand Cormoran",
+                name_en: "Great Cormorant",
+                scientific: "Phalacrocorax carbo",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "11 avril 2019",
+                date_en: "April 11, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54831943"
+            },
+            
+            {
+                ml: "150727911",
+                name_fr: "Milan noir",
+                name_en: "Black Kite",
+                scientific: "Milvus migrans",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "11 avril 2019",
+                date_en: "April 11, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54831943"
+            },
+            
+            {
+                ml: "150408741",
+                name_fr: "Grive draine",
+                name_en: "Mistle Thrush",
+                scientific: "Turdus viscivorus",
+                family: "Turdidae (Thrushes and Allies)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "11 avril 2019",
+                date_en: "April 11, 2019",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S54831834"
+            },
+            
+            {
+                ml: "150152861",
+                name_fr: "Cygne tuberculé",
+                name_en: "Mute Swan",
+                scientific: "Cygnus olor",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929"
+            },
+            
+            {
+                ml: "150152881",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929"
+            },
+            
+            {
+                ml: "150152891",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929"
+            },
+            
+            {
+                ml: "150152901",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929"
+            },
+            
+            {
+                ml: "150152911",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929"
+            },
+            
+            {
+                ml: "150152921",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929"
+            },
+            
+            {
+                ml: "150153101",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Port de Versoix et Embouchure de la Versoix, Genève, Suisse",
+                location_en: "Port de Versoix et Embouchure de la Versoix, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2761693,
+                lng: 6.171205,
+                checklist_id: "S54719567"
+            },
+            
+            {
+                ml: "150153111",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Port de Versoix et Embouchure de la Versoix, Genève, Suisse",
+                location_en: "Port de Versoix et Embouchure de la Versoix, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2761693,
+                lng: 6.171205,
+                checklist_id: "S54719567"
+            },
+            
+            {
+                ml: "150153121",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Port de Versoix et Embouchure de la Versoix, Genève, Suisse",
+                location_en: "Port de Versoix et Embouchure de la Versoix, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2761693,
+                lng: 6.171205,
+                checklist_id: "S54719567"
+            },
+            
+            {
+                ml: "150152941",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929"
+            },
+            
+            {
+                ml: "150152991",
+                name_fr: "Geai des chênes",
+                name_en: "Eurasian Jay",
+                scientific: "Garrulus glandarius",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Bois du Faisan, Genève, Suisse",
+                location_en: "Bois du Faisan, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2779787,
+                lng: 6.1518073,
+                checklist_id: "S54719816"
+            },
+            
+            {
+                ml: "149863141",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location_fr: "Bois du Faisan, Genève, Suisse",
+                location_en: "Bois du Faisan, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2779787,
+                lng: 6.1518073,
+                checklist_id: "S54719816"
+            },
+            
+            {
+                ml: "149863221",
+                name_fr: "Grimpereau des jardins",
+                name_en: "Short-toed Treecreeper",
+                scientific: "Certhia brachydactyla",
+                family: "Certhiidae (Treecreepers)",
+                location_fr: "Bois du Faisan, Genève, Suisse",
+                location_en: "Bois du Faisan, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8, 2019",
+                lat: 46.2779787,
+                lng: 6.1518073,
+                checklist_id: "S54719816"
+            },
+            
+            {
+                ml: "107355021",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "12 juillet 2018",
+                date_en: "July 12, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47144658"
+            },
+            
+            {
+                ml: "107355481",
+                name_fr: "Pic épeiche",
+                name_en: "Great Spotted Woodpecker",
+                scientific: "Dendrocopos major",
+                family: "Picidae (Woodpeckers)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "12 juillet 2018",
+                date_en: "July 12, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47144658"
+            },
+            
+            {
+                ml: "107355061",
+                name_fr: "Grand Cormoran",
+                name_en: "Great Cormorant",
+                scientific: "Phalacrocorax carbo",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "11 juillet 2018",
+                date_en: "July 11, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47126858"
+            },
+            
+            {
+                ml: "107355151",
+                name_fr: "Sittelle torchepot",
+                name_en: "Eurasian Nuthatch",
+                scientific: "Sitta europaea",
+                family: "Sittidae (Nuthatches)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "11 juillet 2018",
+                date_en: "July 11, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47126858"
+            },
+            
+            {
+                ml: "34749081",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Davoser See, Grisons, Suisse",
+                location_en: "Davoser See, Graubünden, Switzerland",
+                date_fr: "8 juillet 2016",
+                date_en: "July 8, 2016",
+                lat: 46.8194965,
+                lng: 9.8537976,
+                checklist_id: "S31498334"
+            },
+            
+            {
+                ml: "34749091",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Davoser See, Grisons, Suisse",
+                location_en: "Davoser See, Graubünden, Switzerland",
+                date_fr: "8 juillet 2016",
+                date_en: "July 8, 2016",
+                lat: 46.8194965,
+                lng: 9.8537976,
+                checklist_id: "S31498334"
+            },
+            
+            {
+                ml: "34749151",
+                name_fr: "Grive litorne",
+                name_en: "Fieldfare",
+                scientific: "Turdus pilaris",
+                family: "Turdidae (Thrushes and Allies)",
+                location_fr: "Kurpark, Grisons, Suisse",
+                location_en: "Kurpark, Graubünden, Switzerland",
+                date_fr: "7 juillet 2016",
+                date_en: "July 7, 2016",
+                lat: 46.799722,
+                lng: 9.8288889,
+                checklist_id: "S31498364"
+            },
+            
+            {
+                ml: "31149401",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Davoser See, Grisons, Suisse",
+                location_en: "Davoser See, Graubünden, Switzerland",
+                date_fr: "6 juillet 2016",
+                date_en: "July 6, 2016",
+                lat: 46.8194965,
+                lng: 9.8537976,
+                checklist_id: "S30556688"
+            },
+            
+            {
+                ml: "31149451",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Davoser See, Grisons, Suisse",
+                location_en: "Davoser See, Graubünden, Switzerland",
+                date_fr: "6 juillet 2016",
+                date_en: "July 6, 2016",
+                lat: 46.8194965,
+                lng: 9.8537976,
+                checklist_id: "S30556688"
+            },
+            
+            {
+                ml: "31149421",
+                name_fr: "Pinson des arbres",
+                name_en: "Common Chaffinch",
+                scientific: "Fringilla coelebs",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location_fr: "Davoser See, Grisons, Suisse",
+                location_en: "Davoser See, Graubünden, Switzerland",
+                date_fr: "6 juillet 2016",
+                date_en: "July 6, 2016",
+                lat: 46.8194965,
+                lng: 9.8537976,
+                checklist_id: "S30556688"
+            },
+            
+            {
+                ml: "34749131",
+                name_fr: "Grive litorne",
+                name_en: "Fieldfare",
+                scientific: "Turdus pilaris",
+                family: "Turdidae (Thrushes and Allies)",
+                location_fr: "Kurpark, Grisons, Suisse",
+                location_en: "Kurpark, Graubünden, Switzerland",
+                date_fr: "5 juillet 2016",
+                date_en: "July 5, 2016",
+                lat: 46.799722,
+                lng: 9.8288889,
+                checklist_id: "S31498351"
+            },
+            
+            {
+                ml: "34749141",
+                name_fr: "Grive litorne",
+                name_en: "Fieldfare",
+                scientific: "Turdus pilaris",
+                family: "Turdidae (Thrushes and Allies)",
+                location_fr: "Kurpark, Grisons, Suisse",
+                location_en: "Kurpark, Graubünden, Switzerland",
+                date_fr: "5 juillet 2016",
+                date_en: "July 5, 2016",
+                lat: 46.799722,
+                lng: 9.8288889,
+                checklist_id: "S31498351"
+            },
+            
+            {
+                ml: "34749001",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Schatzalp, Grisons, Suisse",
+                location_en: "Schatzalp, Graubünden, Switzerland",
+                date_fr: "4 juillet 2016",
+                date_en: "July 4, 2016",
+                lat: 46.8035846,
+                lng: 9.8216701,
+                checklist_id: "S31498327"
+            },
+            
+            {
+                ml: "34749011",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Schatzalp, Grisons, Suisse",
+                location_en: "Schatzalp, Graubünden, Switzerland",
+                date_fr: "4 juillet 2016",
+                date_en: "July 4, 2016",
+                lat: 46.8035846,
+                lng: 9.8216701,
+                checklist_id: "S31498327"
+            },
+            
+            {
+                ml: "34749031",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Schatzalp, Grisons, Suisse",
+                location_en: "Schatzalp, Graubünden, Switzerland",
+                date_fr: "4 juillet 2016",
+                date_en: "July 4, 2016",
+                lat: 46.8035846,
+                lng: 9.8216701,
+                checklist_id: "S31498327"
+            },
+            
+            {
+                ml: "34749041",
+                name_fr: "Cassenoix moucheté",
+                name_en: "Northern Nutcracker",
+                scientific: "Nucifraga caryocatactes",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Schatzalp, Grisons, Suisse",
+                location_en: "Schatzalp, Graubünden, Switzerland",
+                date_fr: "4 juillet 2016",
+                date_en: "July 4, 2016",
+                lat: 46.8035846,
+                lng: 9.8216701,
+                checklist_id: "S31498327"
+            },
+            
+            {
+                ml: "34749021",
+                name_fr: "Troglodyte mignon",
+                name_en: "Eurasian Wren",
+                scientific: "Troglodytes troglodytes",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Schatzalp, Grisons, Suisse",
+                location_en: "Schatzalp, Graubünden, Switzerland",
+                date_fr: "4 juillet 2016",
+                date_en: "July 4, 2016",
+                lat: 46.8035846,
+                lng: 9.8216701,
+                checklist_id: "S31498327"
+            },
+            
+            {
+                ml: "130736371",
+                name_fr: "Bouvreuil pivoine",
+                name_en: "Eurasian Bullfinch",
+                scientific: "Pyrrhula pyrrhula",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location_fr: "Schatzalp, Grisons, Suisse",
+                location_en: "Schatzalp, Graubünden, Switzerland",
+                date_fr: "4 juillet 2016",
+                date_en: "July 4, 2016",
+                lat: 46.8035846,
+                lng: 9.8216701,
+                checklist_id: "S31498327"
+            },
+            
+            {
+                ml: "29630971",
+                name_fr: "Cygne tuberculé",
+                name_en: "Mute Swan",
+                scientific: "Cygnus olor",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "29630991",
+                name_fr: "Nette rousse",
+                name_en: "Red-crested Pochard",
+                scientific: "Netta rufina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "29631001",
+                name_fr: "Nette rousse",
+                name_en: "Red-crested Pochard",
+                scientific: "Netta rufina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "29631041",
+                name_fr: "Fuligule morillon",
+                name_en: "Tufted Duck",
+                scientific: "Aythya fuligula",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "29631081",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "29631121",
+                name_fr: "Grand Harle",
+                name_en: "Common Merganser",
+                scientific: "Mergus merganser",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "29631071",
+                name_fr: "Harle huppé",
+                name_en: "Red-breasted Merganser",
+                scientific: "Mergus serrator",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "29631141",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "31497341",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "213083201",
+                name_fr: "Merle noir",
+                name_en: "Eurasian Blackbird",
+                scientific: "Turdus merula",
+                family: "Turdidae (Thrushes and Allies)",
+                location_fr: "Jardin Botanique de Genève, Genève, Suisse",
+                location_en: "Jardin Botanique de Genève, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2258685,
+                lng: 6.1464429,
+                checklist_id: "S65381470"
+            },
+            
+            {
+                ml: "213083011",
+                name_fr: "Rougegorge familier",
+                name_en: "European Robin",
+                scientific: "Erithacus rubecula",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location_fr: "Jardin Botanique de Genève, Genève, Suisse",
+                location_en: "Jardin Botanique de Genève, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2258685,
+                lng: 6.1464429,
+                checklist_id: "S65381470"
+            },
+            
+            {
+                ml: "29631161",
+                name_fr: "Bergeronnette des ruisseaux",
+                name_en: "Gray Wagtail",
+                scientific: "Motacilla cinerea",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "12 janvier 2016",
+                date_en: "January 12, 2016",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S26857246"
+            },
+            
+            {
+                ml: "21082621",
+                name_fr: "Fuligule milouin",
+                name_en: "Common Pochard",
+                scientific: "Aythya ferina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082631",
+                name_fr: "Fuligule milouin",
+                name_en: "Common Pochard",
+                scientific: "Aythya ferina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082641",
+                name_fr: "Fuligule morillon",
+                name_en: "Tufted Duck",
+                scientific: "Aythya fuligula",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082651",
+                name_fr: "Fuligule morillon",
+                name_en: "Tufted Duck",
+                scientific: "Aythya fuligula",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082661",
+                name_fr: "Fuligule morillon",
+                name_en: "Tufted Duck",
+                scientific: "Aythya fuligula",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082691",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082701",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082711",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082721",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082731",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082671",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            },
+            
+            {
+                ml: "21082681",
+                name_fr: "Grèbe huppé",
+                name_en: "Great Crested Grebe",
+                scientific: "Podiceps cristatus",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

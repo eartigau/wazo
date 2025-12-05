@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pycnonotidae Family</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index_en.html" 
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_en.html" 
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Trips</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_en.html">
+                            Chile
+                        </a>
+                        
+                        <a href="voyage_geneve_en.html">
+                            Geneva
+                        </a>
+                        
+                        <a href="voyage_hawaii_en.html">
+                            Hawaii
+                        </a>
+                        
+                        <a href="voyage_floride_en.html">
+                            Florida
+                        </a>
+                        
+                        <a href="voyage_arizona_en.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Families</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_en.html">
+                            Rheidae (Rheas)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_en.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_en.html">
+                            Anhimidae (Screamers)
+                        </a>
+                        
+                        <a href="gallery_anatidae_en.html">
+                            Anatidae (Ducks, Geese, and Waterfowl)
+                        </a>
+                        
+                        <a href="gallery_numididae_en.html">
+                            Numididae (Guineafowl)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_en.html">
+                            Odontophoridae (New World Quail)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_en.html">
+                            Phasianidae (Pheasants, Grouse, and Allies)
+                        </a>
+                        
+                        <a href="gallery_columbidae_en.html">
+                            Columbidae (Pigeons and Doves)
+                        </a>
+                        
+                        <a href="gallery_otididae_en.html">
+                            Otididae (Bustards)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_en.html">
+                            Cuculidae (Cuckoos)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_en.html">
+                            Caprimulgidae (Nightjars and Allies)
+                        </a>
+                        
+                        <a href="gallery_apodidae_en.html">
+                            Apodidae (Swifts)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_en.html">
+                            Trochilidae (Hummingbirds)
+                        </a>
+                        
+                        <a href="gallery_rallidae_en.html">
+                            Rallidae (Rails, Gallinules, and Coots)
+                        </a>
+                        
+                        <a href="gallery_aramidae_en.html">
+                            Aramidae (Limpkin)
+                        </a>
+                        
+                        <a href="gallery_gruidae_en.html">
+                            Gruidae (Cranes)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_en.html">
+                            Burhinidae (Thick-knees)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_en.html">
+                            Recurvirostridae (Stilts and Avocets)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_en.html">
+                            Haematopodidae (Oystercatchers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_en.html">
+                            Charadriidae (Plovers and Lapwings)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_en.html">
+                            Scolopacidae (Sandpipers and Allies)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_en.html">
+                            Stercorariidae (Skuas and Jaegers)
+                        </a>
+                        
+                        <a href="gallery_alcidae_en.html">
+                            Alcidae (Auks, Murres, and Puffins)
+                        </a>
+                        
+                        <a href="gallery_laridae_en.html">
+                            Laridae (Gulls, Terns, and Skimmers)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_en.html">
+                            Phoenicopteridae (Flamingos)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_en.html">
+                            Podicipedidae (Grebes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_en.html">
+                            Phaethontidae (Tropicbirds)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_en.html">
+                            Gaviidae (Loons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_en.html">
+                            Spheniscidae (Penguins)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_en.html">
+                            Diomedeidae (Albatrosses)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_en.html">
+                            Oceanitidae (Southern Storm-Petrels)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_en.html">
+                            Hydrobatidae (Northern Storm-Petrels)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_en.html">
+                            Procellariidae (Shearwaters and Petrels)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_en.html">
+                            Ciconiidae (Storks)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_en.html">
+                            Fregatidae (Frigatebirds)
+                        </a>
+                        
+                        <a href="gallery_sulidae_en.html">
+                            Sulidae (Boobies and Gannets)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_en.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_en.html">
+                            Phalacrocoracidae (Cormorants and Shags)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_en.html">
+                            Threskiornithidae (Ibises and Spoonbills)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_en.html">
+                            Ardeidae (Herons, Egrets, and Bitterns)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_en.html">
+                            Pelecanidae (Pelicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_en.html">
+                            Cathartidae (New World Vultures)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_en.html">
+                            Pandionidae (Osprey)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_en.html">
+                            Accipitridae (Hawks, Eagles, and Kites)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_en.html">
+                            Tytonidae (Barn-Owls)
+                        </a>
+                        
+                        <a href="gallery_strigidae_en.html">
+                            Strigidae (Owls)
+                        </a>
+                        
+                        <a href="gallery_upupidae_en.html">
+                            Upupidae (Hoopoes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_en.html">
+                            Bucerotidae (Hornbills)
+                        </a>
+                        
+                        <a href="gallery_meropidae_en.html">
+                            Meropidae (Bee-eaters)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_en.html">
+                            Alcedinidae (Kingfishers)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_en.html">
+                            Coraciidae (Rollers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_en.html">
+                            Ramphastidae (Toucans)
+                        </a>
+                        
+                        <a href="gallery_picidae_en.html">
+                            Picidae (Woodpeckers)
+                        </a>
+                        
+                        <a href="gallery_falconidae_en.html">
+                            Falconidae (Falcons and Caracaras)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_en.html">
+                            Strigopidae (New Zealand Parrots)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_en.html">
+                            Psittaculidae (Old World Parrots)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_en.html">
+                            Psittacidae (New World and African Parrots)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_en.html">
+                            Thamnophilidae (Typical Antbirds)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_en.html">
+                            Rhinocryptidae (Tapaculos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_en.html">
+                            Furnariidae (Ovenbirds and Woodcreepers)
+                        </a>
+                        
+                        <a href="gallery_pipridae_en.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_en.html">
+                            Cotingidae (Cotingas)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_en.html">
+                            Tyrannidae (Tyrant Flycatchers)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_en.html">
+                            Campephagidae (Cuckooshrikes)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_en.html">
+                            Vireonidae (Vireos, Shrike-Babblers, and Erpornis)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_en.html">
+                            Rhipiduridae (Fantails)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_en.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_en.html">
+                            Monarchidae (Monarch Flycatchers)
+                        </a>
+                        
+                        <a href="gallery_laniidae_en.html">
+                            Laniidae (Shrikes)
+                        </a>
+                        
+                        <a href="gallery_corvidae_en.html">
+                            Corvidae (Crows, Jays, and Magpies)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_en.html">
+                            Callaeidae (Wattlebirds)
+                        </a>
+                        
+                        <a href="gallery_paridae_en.html">
+                            Paridae (Tits, Chickadees, and Titmice)
+                        </a>
+                        
+                        <a href="gallery_remizidae_en.html">
+                            Remizidae (Penduline-Tits)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_en.html">
+                            Alaudidae (Larks)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_en.html">
+                            Cisticolidae (Cisticolas and Allies)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_en.html">
+                            Acrocephalidae (Reed Warblers and Allies)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_en.html">
+                            Hirundinidae (Swallows)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_en.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_en.html">
+                            Phylloscopidae (Leaf Warblers)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_en.html">
+                            Cettiidae (Bush Warblers and Allies)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_en.html">
+                            Aegithalidae (Long-tailed Tits)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_en.html">
+                            Sylviidae (Sylviid Warblers and Allies)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_en.html">
+                            Paradoxornithidae (Parrotbills)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_en.html">
+                            Zosteropidae (White-eyes, Yuhinas, and Allies)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_en.html">
+                            Timaliidae (Tree-Babblers, Scimitar-Babblers, and Allies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_en.html">
+                            Leiothrichidae (Laughingthrushes and Allies)
+                        </a>
+                        
+                        <a href="gallery_regulidae_en.html">
+                            Regulidae (Kinglets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_en.html">
+                            Tichodromidae (Wallcreeper)
+                        </a>
+                        
+                        <a href="gallery_sittidae_en.html">
+                            Sittidae (Nuthatches)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_en.html">
+                            Certhiidae (Treecreepers)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_en.html">
+                            Polioptilidae (Gnatcatchers)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_en.html">
+                            Troglodytidae (Wrens)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_en.html">
+                            Sturnidae (Starlings)
+                        </a>
+                        
+                        <a href="gallery_mimidae_en.html">
+                            Mimidae (Mockingbirds and Thrashers)
+                        </a>
+                        
+                        <a href="gallery_turdidae_en.html">
+                            Turdidae (Thrushes and Allies)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_en.html">
+                            Muscicapidae (Old World Flycatchers)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_en.html">
+                            Bombycillidae (Waxwings)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_en.html">
+                            Ptiliogonatidae (Silky-flycatchers)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_en.html">
+                            Dicaeidae (Flowerpeckers)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_en.html">
+                            Nectariniidae (Sunbirds and Spiderhunters)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_en.html">
+                            Chloropseidae (Leafbirds)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_en.html">
+                            Peucedramidae (Olive Warbler)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_en.html">
+                            Ploceidae (Weavers and Allies)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_en.html">
+                            Estrildidae (Waxbills and Allies)
+                        </a>
+                        
+                        <a href="gallery_viduidae_en.html">
+                            Viduidae (Whydahs and Indigobirds)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_en.html">
+                            Prunellidae (Accentors)
+                        </a>
+                        
+                        <a href="gallery_passeridae_en.html">
+                            Passeridae (Old World Sparrows)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_en.html">
+                            Motacillidae (Wagtails and Pipits)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_en.html">
+                            Fringillidae (Finches, Euphonias, and Allies)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_en.html">
+                            Calcariidae (Longspurs and Snow Buntings)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_en.html">
+                            Emberizidae (Old World Buntings)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_en.html">
+                            Passerellidae (New World Sparrows)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_en.html">
+                            Phaenicophilidae (Greater Antillean Tanagers)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_en.html">
+                            Icteriidae (Yellow-breasted Chat)
+                        </a>
+                        
+                        <a href="gallery_icteridae_en.html">
+                            Icteridae (Troupials and Allies)
+                        </a>
+                        
+                        <a href="gallery_parulidae_en.html">
+                            Parulidae (New World Warblers)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_en.html">
+                            Cardinalidae (Cardinals and Allies)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_en.html">
+                            Thraupidae (Tanagers and Allies)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_pycnonotidae_fr.html" class="lang-btn" title="Français">
+                    
+                    <span class="flag">🇫🇷</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Pycnonotidae Family</h1>
+        
+        <div class="gallery-subtitle">Bulbuls</div>
+        
+        <div class="stats">
+            5 photos
+            
+             · 3 species
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="21099121"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21099121/480"
+                     alt="Common Bulbul"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Bulbul</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="519617561"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/519617561/480"
+                     alt="Common Bulbul"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Bulbul</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22535451"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535451/480"
+                     alt="Red-whiskered Bulbul"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Red-whiskered Bulbul</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="74828651"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/74828651/480"
+                     alt="Red-whiskered Bulbul"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Red-whiskered Bulbul</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="22535631"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535631/480"
+                     alt="Red-vented Bulbul"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Red-vented Bulbul</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    View on eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'en';
+        
+        const photosData = [
+            
+            {
+                ml: "21099121",
+                name_fr: "Bulbul des jardins",
+                name_en: "Common Bulbul",
+                scientific: "Pycnonotus barbatus",
+                family: "Pycnonotidae (Bulbuls)",
+                location_fr: "Dar Kenavo, Essaouira, MA-11, MA",
+                location_en: "Dar Kenavo, Essaouira, MA-11, MA",
+                date_fr: "23 juillet 2004",
+                date_en: "July 23, 2004",
+                lat: 31.428056,
+                lng: -9.6372222,
+                checklist_id: "S18563443"
+            },
+            
+            {
+                ml: "519617561",
+                name_fr: "Bulbul des jardins",
+                name_en: "Common Bulbul",
+                scientific: "Pycnonotus barbatus",
+                family: "Pycnonotidae (Bulbuls)",
+                location_fr: "Dar Kenavo, Essaouira, MA-11, MA",
+                location_en: "Dar Kenavo, Essaouira, MA-11, MA",
+                date_fr: "23 juillet 2004",
+                date_en: "July 23, 2004",
+                lat: 31.428056,
+                lng: -9.6372222,
+                checklist_id: "S18563443"
+            },
+            
+            {
+                ml: "22535451",
+                name_fr: "Bulbul orphée",
+                name_en: "Red-whiskered Bulbul",
+                scientific: "Pycnonotus jocosus",
+                family: "Pycnonotidae (Bulbuls)",
+                location_fr: "Ho\'omaluhia Botanical Garden, Hawaï, États-Unis",
+                location_en: "Ho\'omaluhia Botanical Garden, Hawaii, United States",
+                date_fr: "12 juillet 2015",
+                date_en: "July 12, 2015",
+                lat: 21.3843521,
+                lng: -157.8057075,
+                checklist_id: "S24240495"
+            },
+            
+            {
+                ml: "74828651",
+                name_fr: "Bulbul orphée",
+                name_en: "Red-whiskered Bulbul",
+                scientific: "Pycnonotus jocosus",
+                family: "Pycnonotidae (Bulbuls)",
+                location_fr: "Ranganathittu Bird Sanctuary ರಂಗನತಿಟ್ಟು ಪಕ್ಷಿಧಾಮ, Inde",
+                location_en: "Ranganathittu Bird Sanctuary ರಂಗನತಿಟ್ಟು ಪಕ್ಷಿಧಾಮ, India",
+                date_fr: "5 novembre 2017",
+                date_en: "November 5, 2017",
+                lat: 12.4249565,
+                lng: 76.6570294,
+                checklist_id: "S40315832"
+            },
+            
+            {
+                ml: "22535631",
+                name_fr: "Bulbul à ventre rouge",
+                name_en: "Red-vented Bulbul",
+                scientific: "Pycnonotus cafer",
+                family: "Pycnonotidae (Bulbuls)",
+                location_fr: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaï, États-Unis",
+                location_en: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaii, United States",
+                date_fr: "14 juillet 2015",
+                date_en: "July 14, 2015",
+                lat: 21.3988172,
+                lng: -157.9000568,
+                checklist_id: "S24264664"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

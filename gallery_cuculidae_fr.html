@@ -1,0 +1,1581 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famille des Cuculidaes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_cuculidae_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Famille des Cuculidaes</h1>
+        
+        <div class="gallery-subtitle">Coucous, Coulicous, Anis, etc.</div>
+        
+        <div class="stats">
+            31 photos
+            
+             · 10 espèces
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="22408181"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408181/480"
+                     alt="Guira cantara"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Guira cantara</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="22416751"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416751/480"
+                     alt="Guira cantara"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Guira cantara</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22416781"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416781/480"
+                     alt="Guira cantara"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Guira cantara</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="22434921"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434921/480"
+                     alt="Ani à bec lisse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ani à bec lisse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="22434941"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434941/480"
+                     alt="Ani à bec lisse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ani à bec lisse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="22574391"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22574391/480"
+                     alt="Ani à bec lisse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ani à bec lisse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="22574501"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22574501/480"
+                     alt="Ani à bec lisse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ani à bec lisse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="381156041"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/381156041/480"
+                     alt="Ani à bec lisse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ani à bec lisse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="143856441"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/143856441/480"
+                     alt="Ani à bec lisse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ani à bec lisse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="143856451"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/143856451/480"
+                     alt="Ani à bec lisse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ani à bec lisse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="29631551"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631551/480"
+                     alt="Grand Géocoucou"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Géocoucou</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="29631561"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631561/480"
+                     alt="Grand Géocoucou"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Géocoucou</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="29631571"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29631571/480"
+                     alt="Grand Géocoucou"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Géocoucou</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="74435591"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/74435591/480"
+                     alt="Grand Coucal"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Coucal</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="74435631"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/74435631/480"
+                     alt="Grand Coucal"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Coucal</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22574431"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22574431/480"
+                     alt="Piaye écureuil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Piaye écureuil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="29651651"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29651651/480"
+                     alt="Coulicou à bec jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coulicou à bec jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="29651661"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29651661/480"
+                     alt="Coulicou à bec jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coulicou à bec jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="29651671"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29651671/480"
+                     alt="Coulicou à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coulicou à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="29651681"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29651681/480"
+                     alt="Coulicou à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coulicou à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="29651691"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29651691/480"
+                     alt="Coulicou à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coulicou à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="59973871"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/59973871/480"
+                     alt="Coulicou à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coulicou à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="621398885"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621398885/480"
+                     alt="Coulicou à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coulicou à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="213076541"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213076541/480"
+                     alt="Tacco de Cuba"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tacco de Cuba</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="213076551"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213076551/480"
+                     alt="Tacco de Cuba"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tacco de Cuba</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="213076561"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213076561/480"
+                     alt="Tacco de Cuba"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tacco de Cuba</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="213076601"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213076601/480"
+                     alt="Tacco de Cuba"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tacco de Cuba</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="74435671"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/74435671/480"
+                     alt="Coucou koël"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coucou koël</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="74829131"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/74829131/480"
+                     alt="Coucou koël"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coucou koël</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="74829141"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/74829141/480"
+                     alt="Coucou koël"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coucou koël</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="622062802"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622062802/480"
+                     alt="Coucou gris"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coucou gris</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "22408181",
+                name_fr: "Guira cantara",
+                name_en: "Guira Cuckoo",
+                scientific: "Guira guira",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            },
+            
+            {
+                ml: "22416751",
+                name_fr: "Guira cantara",
+                name_en: "Guira Cuckoo",
+                scientific: "Guira guira",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416781",
+                name_fr: "Guira cantara",
+                name_en: "Guira Cuckoo",
+                scientific: "Guira guira",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22434921",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Puerto Iguazú, Argentine",
+                location_en: "Puerto Iguazú, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.621944,
+                lng: -54.552778,
+                checklist_id: "S18566228"
+            },
+            
+            {
+                ml: "22434941",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Puerto Iguazú, Argentine",
+                location_en: "Puerto Iguazú, Argentina",
+                date_fr: "4 juin 2007",
+                date_en: "June 4, 2007",
+                lat: -25.621944,
+                lng: -54.552778,
+                checklist_id: "S18566228"
+            },
+            
+            {
+                ml: "22574391",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "PN Iguazú--Área Cataratas, Argentine",
+                location_en: "PN Iguazú--Área Cataratas, Argentina",
+                date_fr: "5 juin 2007",
+                date_en: "June 5, 2007",
+                lat: -25.6833032,
+                lng: -54.455452,
+                checklist_id: "S18566287"
+            },
+            
+            {
+                ml: "22574501",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "PN Iguazú--Área Cataratas, Argentine",
+                location_en: "PN Iguazú--Área Cataratas, Argentina",
+                date_fr: "5 juin 2007",
+                date_en: "June 5, 2007",
+                lat: -25.6833032,
+                lng: -54.455452,
+                checklist_id: "S18566287"
+            },
+            
+            {
+                ml: "381156041",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Foz do Iguaçu--Mabu Thermas Grand Resort, Brésil",
+                location_en: "Foz do Iguaçu--Mabu Thermas Grand Resort, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "143856441",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Hotel Playa Cayo Santa Maria, CU-07, CU",
+                location_en: "Hotel Playa Cayo Santa Maria, CU-07, CU",
+                date_fr: "28 février 2019",
+                date_en: "February 28, 2019",
+                lat: 22.6598204,
+                lng: -79.0503514,
+                checklist_id: "S53400337"
+            },
+            
+            {
+                ml: "143856451",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Hotel Playa Cayo Santa Maria, CU-07, CU",
+                location_en: "Hotel Playa Cayo Santa Maria, CU-07, CU",
+                date_fr: "28 février 2019",
+                date_en: "February 28, 2019",
+                lat: 22.6598204,
+                lng: -79.0503514,
+                checklist_id: "S53400337"
+            },
+            
+            {
+                ml: "29631551",
+                name_fr: "Grand Géocoucou",
+                name_en: "Greater Roadrunner",
+                scientific: "Geococcyx californianus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Sweetwater Wetlands, Arizona, États-Unis",
+                location_en: "Sweetwater Wetlands, Arizona, United States",
+                date_fr: "29 avril 2016",
+                date_en: "April 29, 2016",
+                lat: 32.2790144,
+                lng: -111.0216061,
+                checklist_id: "S29292881"
+            },
+            
+            {
+                ml: "29631561",
+                name_fr: "Grand Géocoucou",
+                name_en: "Greater Roadrunner",
+                scientific: "Geococcyx californianus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Sweetwater Wetlands, Arizona, États-Unis",
+                location_en: "Sweetwater Wetlands, Arizona, United States",
+                date_fr: "29 avril 2016",
+                date_en: "April 29, 2016",
+                lat: 32.2790144,
+                lng: -111.0216061,
+                checklist_id: "S29292881"
+            },
+            
+            {
+                ml: "29631571",
+                name_fr: "Grand Géocoucou",
+                name_en: "Greater Roadrunner",
+                scientific: "Geococcyx californianus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Sweetwater Wetlands, Arizona, États-Unis",
+                location_en: "Sweetwater Wetlands, Arizona, United States",
+                date_fr: "29 avril 2016",
+                date_en: "April 29, 2016",
+                lat: 32.2790144,
+                lng: -111.0216061,
+                checklist_id: "S29292881"
+            },
+            
+            {
+                ml: "74435591",
+                name_fr: "Grand Coucal",
+                name_en: "Greater Coucal",
+                scientific: "Centropus sinensis",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
+                location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
+                date_fr: "6 novembre 2017",
+                date_en: "November 6, 2017",
+                lat: 12.3602739,
+                lng: 76.5989477,
+                checklist_id: "S40333737"
+            },
+            
+            {
+                ml: "74435631",
+                name_fr: "Grand Coucal",
+                name_en: "Greater Coucal",
+                scientific: "Centropus sinensis",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
+                location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
+                date_fr: "6 novembre 2017",
+                date_en: "November 6, 2017",
+                lat: 12.3602739,
+                lng: 76.5989477,
+                checklist_id: "S40333737"
+            },
+            
+            {
+                ml: "22574431",
+                name_fr: "Piaye écureuil",
+                name_en: "Common Squirrel-Cuckoo",
+                scientific: "Piaya cayana",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "PN Iguazú--Área Cataratas, Argentine",
+                location_en: "PN Iguazú--Área Cataratas, Argentina",
+                date_fr: "5 juin 2007",
+                date_en: "June 5, 2007",
+                lat: -25.6833032,
+                lng: -54.455452,
+                checklist_id: "S18566287"
+            },
+            
+            {
+                ml: "29651651",
+                name_fr: "Coulicou à bec jaune",
+                name_en: "Yellow-billed Cuckoo",
+                scientific: "Coccyzus americanus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "3 juin 2012",
+                date_en: "June 3, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567096"
+            },
+            
+            {
+                ml: "29651661",
+                name_fr: "Coulicou à bec jaune",
+                name_en: "Yellow-billed Cuckoo",
+                scientific: "Coccyzus americanus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "3 juin 2012",
+                date_en: "June 3, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567096"
+            },
+            
+            {
+                ml: "29651671",
+                name_fr: "Coulicou à bec noir",
+                name_en: "Black-billed Cuckoo",
+                scientific: "Coccyzus erythropthalmus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "3 juin 2012",
+                date_en: "June 3, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567096"
+            },
+            
+            {
+                ml: "29651681",
+                name_fr: "Coulicou à bec noir",
+                name_en: "Black-billed Cuckoo",
+                scientific: "Coccyzus erythropthalmus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "3 juin 2012",
+                date_en: "June 3, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567096"
+            },
+            
+            {
+                ml: "29651691",
+                name_fr: "Coulicou à bec noir",
+                name_en: "Black-billed Cuckoo",
+                scientific: "Coccyzus erythropthalmus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "3 juin 2012",
+                date_en: "June 3, 2012",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S18567096"
+            },
+            
+            {
+                ml: "59973871",
+                name_fr: "Coulicou à bec noir",
+                name_en: "Black-billed Cuckoo",
+                scientific: "Coccyzus erythropthalmus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "1 juin 2017",
+                date_en: "June 1, 2017",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S37311705"
+            },
+            
+            {
+                ml: "621398885",
+                name_fr: "Coulicou à bec noir",
+                name_en: "Black-billed Cuckoo",
+                scientific: "Coccyzus erythropthalmus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Grand sentier de l\'ouest, Québec, Canada",
+                location_en: "Grand sentier de l\'ouest, Quebec, Canada",
+                date_fr: "16 juin 2024",
+                date_en: "June 16, 2024",
+                lat: 45.4583162,
+                lng: -73.9151966,
+                checklist_id: "S181923118"
+            },
+            
+            {
+                ml: "213076541",
+                name_fr: "Tacco de Cuba",
+                name_en: "Great Lizard-Cuckoo",
+                scientific: "Coccyzus merlini",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "213076551",
+                name_fr: "Tacco de Cuba",
+                name_en: "Great Lizard-Cuckoo",
+                scientific: "Coccyzus merlini",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "213076561",
+                name_fr: "Tacco de Cuba",
+                name_en: "Great Lizard-Cuckoo",
+                scientific: "Coccyzus merlini",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "213076601",
+                name_fr: "Tacco de Cuba",
+                name_en: "Great Lizard-Cuckoo",
+                scientific: "Coccyzus merlini",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "74435671",
+                name_fr: "Coucou koël",
+                name_en: "Asian Koel",
+                scientific: "Eudynamys scolopaceus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
+                location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
+                date_fr: "6 novembre 2017",
+                date_en: "November 6, 2017",
+                lat: 12.3602739,
+                lng: 76.5989477,
+                checklist_id: "S40333737"
+            },
+            
+            {
+                ml: "74829131",
+                name_fr: "Coucou koël",
+                name_en: "Asian Koel",
+                scientific: "Eudynamys scolopaceus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
+                location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
+                date_fr: "10 novembre 2017",
+                date_en: "November 10, 2017",
+                lat: 12.3602739,
+                lng: 76.5989477,
+                checklist_id: "S40403564"
+            },
+            
+            {
+                ml: "74829141",
+                name_fr: "Coucou koël",
+                name_en: "Asian Koel",
+                scientific: "Eudynamys scolopaceus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
+                location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
+                date_fr: "10 novembre 2017",
+                date_en: "November 10, 2017",
+                lat: 12.3602739,
+                lng: 76.5989477,
+                checklist_id: "S40403564"
+            },
+            
+            {
+                ml: "622062802",
+                name_fr: "Coucou gris",
+                name_en: "Common Cuckoo",
+                scientific: "Cuculus canorus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Parque de Avioso, Portugal",
+                location_en: "Parque de Avioso, Portugal",
+                date_fr: "1 août 2024",
+                date_en: "August 1, 2024",
+                lat: 41.2886099,
+                lng: -8.6117578,
+                checklist_id: "S189767908"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

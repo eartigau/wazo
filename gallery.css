@@ -1,0 +1,743 @@
+/* ============================================
+   GALERIE eBIRD v2.0 - Thème clair
+   Style inspiré d'eBird
+   ============================================ */
+
+:root {
+    --ebird-green: #4a8b2c;
+    --ebird-green-light: #5da03a;
+    --ebird-green-dark: #3d7424;
+    --ebird-blue: #1a73e8;
+    --bg-light: #f8f9fa;
+    --bg-white: #ffffff;
+    --bg-card: #ffffff;
+    --text-dark: #202124;
+    --text-medium: #5f6368;
+    --text-light: #80868b;
+    --border-color: #dadce0;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.1);
+    --shadow-md: 0 2px 8px rgba(0,0,0,0.12);
+    --shadow-lg: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--ebird-green);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--ebird-green-dark);
+}
+
+/* ============================================
+   NAVIGATION CENTRÉE
+   ============================================ */
+
+nav {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 8px;
+}
+
+.nav-menu > li > a,
+.nav-menu .dropdown-toggle {
+    display: block;
+    padding: 10px 18px;
+    color: var(--text-dark);
+    font-size: 15px;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu .dropdown-toggle:hover {
+    background-color: var(--bg-light);
+    color: var(--ebird-green);
+}
+
+.nav-menu > li > a.active {
+    background-color: var(--ebird-green);
+    color: white;
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: ' ▾';
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 8px 0;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    z-index: 1001;
+}
+
+/* Menu à deux colonnes pour les familles */
+.dropdown-menu.two-columns {
+    min-width: 400px;
+    columns: 2;
+    column-gap: 0;
+}
+
+.dropdown-menu.two-columns a,
+.dropdown-menu.three-columns a,
+.dropdown-menu.four-columns a,
+.dropdown-menu.five-columns a,
+.dropdown-menu.six-columns a {
+    break-inside: avoid;
+    padding: 6px 14px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+/* Menu à trois colonnes */
+.dropdown-menu.three-columns {
+    min-width: 580px;
+    columns: 3;
+    column-gap: 0;
+}
+
+/* Menu à quatre colonnes */
+.dropdown-menu.four-columns {
+    min-width: 760px;
+    columns: 4;
+    column-gap: 0;
+}
+
+/* Menu à cinq colonnes */
+.dropdown-menu.five-columns {
+    min-width: 920px;
+    columns: 5;
+    column-gap: 0;
+}
+
+/* Menu à six colonnes */
+.dropdown-menu.six-columns {
+    min-width: 1080px;
+    columns: 6;
+    column-gap: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--bg-light);
+    color: var(--ebird-green);
+}
+
+/* Sélecteur de langue */
+.lang-switch {
+    position: absolute;
+    right: 20px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--bg-light);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-medium);
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    background: var(--border-color);
+}
+
+.flag {
+    font-size: 18px;
+}
+
+/* ============================================
+   EN-TÊTE GALERIE
+   ============================================ */
+
+.gallery-header {
+    text-align: center;
+    padding: 40px 20px 30px;
+    background: var(--bg-white);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.gallery-header h1 {
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 8px;
+}
+
+.gallery-header .stats {
+    font-size: 15px;
+    color: var(--text-medium);
+}
+
+.gallery-subtitle {
+    font-size: 18px;
+    color: var(--text-medium);
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+/* ============================================
+   GRILLE PHOTOS
+   ============================================ */
+
+.gallery-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 24px 16px;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.photo-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: #e8e8e8;
+    aspect-ratio: 3/2;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s;
+}
+
+.photo-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #f0f0f0;
+    transition: transform 0.3s;
+}
+
+.photo-card:hover img {
+    transform: scale(1.02);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 50px 16px 16px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.photo-card:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-overlay .bird-name {
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(248, 249, 250, 0.98);
+    display: none;
+    z-index: 2000;
+    overflow-y: auto;
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: var(--text-dark);
+    font-size: 40px;
+    cursor: pointer;
+    opacity: 0.7;
+    z-index: 2001;
+    transition: opacity 0.2s;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+}
+
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.08);
+    border: none;
+    color: var(--text-dark);
+    font-size: 28px;
+    padding: 20px 18px;
+    cursor: pointer;
+    opacity: 0.7;
+    z-index: 2001;
+    border-radius: 8px;
+    transition: all 0.2s;
+}
+
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+.lightbox-nav:hover {
+    opacity: 1;
+    background: rgba(0,0,0,0.12);
+}
+
+.lightbox-content {
+    display: flex;
+    max-width: 1400px;
+    max-height: 90vh;
+    margin: 0 100px;
+    gap: 30px;
+}
+
+.lightbox-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.lightbox-image-container img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.lightbox-sidebar {
+    width: 320px;
+    flex-shrink: 0;
+    padding: 20px 0;
+    color: var(--text-dark);
+}
+
+.lightbox-family {
+    font-size: 13px;
+    color: var(--text-medium);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.lightbox-sidebar h2 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: var(--text-dark);
+}
+
+.lightbox-sidebar .scientific-name {
+    font-style: italic;
+    color: var(--text-medium);
+    margin-bottom: 24px;
+}
+
+.lightbox-info {
+    background: rgba(0,0,0,0.05);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+}
+
+/* Carte dans lightbox */
+#lightbox-map {
+    width: 100%;
+    height: 180px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    background: #333;
+}
+
+.grayscale-tiles {
+    filter: grayscale(100%);
+}
+
+.camera-icon {
+    background: transparent;
+}
+
+.camera-marker {
+    background: var(--ebird-blue);
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.4);
+}
+
+/* Lien eBird */
+.ebird-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: var(--ebird-blue);
+    color: white;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.ebird-link:hover {
+    background: var(--ebird-green-dark);
+    color: white;
+}
+
+.ebird-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================
+   LISTE DES ESPÈCES
+   ============================================ */
+
+.species-toc {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.species-toc h2 {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ebird-green);
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 8px;
+}
+
+.toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background: var(--bg-white);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.toc-item:hover {
+    border-color: var(--ebird-green);
+    box-shadow: var(--shadow-sm);
+}
+
+.toc-name {
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.toc-count {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.species-list-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.family-section {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px;
+}
+
+.family-title {
+    font-size: 22px;
+    color: var(--ebird-green-dark);
+    padding: 16px 0;
+    border-bottom: 2px solid var(--ebird-green);
+    margin-bottom: 20px;
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+}
+
+.species-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+}
+
+.species-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.species-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    background: #f5f5f5;
+}
+
+.species-info {
+    padding: 12px;
+}
+
+.species-common {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 2px;
+}
+
+.species-scientific {
+    display: block;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.photo-count {
+    display: block;
+    font-size: 11px;
+    color: var(--ebird-green);
+    margin-top: 4px;
+}
+
+.photo-counter {
+    font-size: 13px;
+    color: var(--text-medium);
+    margin-bottom: 16px;
+    padding: 6px 12px;
+    background: rgba(0,0,0,0.05);
+    border-radius: 4px;
+    display: inline-block;
+}
+
+/* Bouton retour en haut */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--ebird-green);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--ebird-green-dark);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    border-top: 1px solid var(--border-color);
+    background: var(--bg-white);
+    color: var(--text-medium);
+    font-size: 14px;
+}
+
+footer a {
+    color: var(--ebird-green);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1000px) {
+    .lightbox-content {
+        flex-direction: column;
+        margin: 60px 20px;
+        max-height: none;
+    }
+    
+    .lightbox-sidebar {
+        width: 100%;
+    }
+    
+    .lightbox-nav {
+        top: auto;
+        bottom: 30px;
+        transform: none;
+    }
+    
+    .lightbox-prev { left: 30px; }
+    .lightbox-next { right: 30px; }
+}
+
+@media (max-width: 700px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-menu > li > a,
+    .nav-menu .dropdown-toggle {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    
+    .lang-switch {
+        position: static;
+    }
+    
+    .gallery-header h1 {
+        font-size: 24px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+    }
+    
+    .species-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}

@@ -1,0 +1,4605 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famille des Tyrannidaes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_tyrannidae_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Famille des Tyrannidaes</h1>
+        
+        <div class="gallery-subtitle">Tyrans, Moucherolles, Dormilons, etc.</div>
+        
+        <div class="stats">
+            143 photos
+            
+             · 42 espèces
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="22533981"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22533981/480"
+                     alt="Tyranneau omnicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyranneau omnicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="22503371"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503371/480"
+                     alt="Tyranneau omnicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyranneau omnicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22503411"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503411/480"
+                     alt="Tyranneau omnicolore"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyranneau omnicolore</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="22369471"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22369471/480"
+                     alt="Taurillon mésange"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Taurillon mésange</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="22448951"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448951/480"
+                     alt="Taurillon mésange"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Taurillon mésange</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="22375121"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22375121/480"
+                     alt="Taurillon mésange"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Taurillon mésange</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="22448871"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448871/480"
+                     alt="Élénie à cimier blanc"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Élénie à cimier blanc</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="22430561"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22430561/480"
+                     alt="Élénie à cimier blanc"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Élénie à cimier blanc</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="22430571"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22430571/480"
+                     alt="Élénie à cimier blanc"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Élénie à cimier blanc</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="22482691"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22482691/480"
+                     alt="Élénie à cimier blanc"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Élénie à cimier blanc</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="450793811"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/450793811/480"
+                     alt="Moucherolle à côtés olive"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle à côtés olive</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="167225001"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167225001/480"
+                     alt="Pioui de l'Ouest"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Ouest</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="167225011"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167225011/480"
+                     alt="Pioui de l'Ouest"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Ouest</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="167225021"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167225021/480"
+                     alt="Pioui de l'Ouest"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Ouest</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="167225041"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167225041/480"
+                     alt="Pioui de l'Ouest"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Ouest</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22435601"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435601/480"
+                     alt="Pioui de l'Est"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Est</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="22435611"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22435611/480"
+                     alt="Pioui de l'Est"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Est</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="351795021"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/351795021/480"
+                     alt="Pioui de l'Est"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Est</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="482929491"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/482929491/480"
+                     alt="Pioui de l'Est"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pioui de l'Est</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="259030701"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/259030701/480"
+                     alt="Moucherolle à ventre jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle à ventre jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="586881761"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/586881761/480"
+                     alt="Moucherolle à ventre jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle à ventre jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="154551061"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/154551061/480"
+                     alt="Moucherolle des aulnes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle des aulnes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="235355181"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/235355181/480"
+                     alt="Moucherolle tchébec"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle tchébec</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="236256161"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/236256161/480"
+                     alt="Moucherolle tchébec"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle tchébec</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="56174671"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56174671/480"
+                     alt="Moucherolle de Hammond"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle de Hammond</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="34665721"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34665721/480"
+                     alt="Moucherolle beige"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle beige</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="34665731"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34665731/480"
+                     alt="Moucherolle beige"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle beige</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="22568791"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22568791/480"
+                     alt="Moucherolle noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="550900491"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/550900491/480"
+                     alt="Moucherolle noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="596430031"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596430031/480"
+                     alt="Moucherolle noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="34433381"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34433381/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="34434741"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34434741/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="34433121"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34433121/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="177501471"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/177501471/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="177501481"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/177501481/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="264510981"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/264510981/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="365693901"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/365693901/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="365694281"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/365694281/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="622741767"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622741767/480"
+                     alt="Moucherolle phébi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle phébi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="34384381"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34384381/480"
+                     alt="Moucherolle à ventre roux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle à ventre roux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="167515971"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/167515971/480"
+                     alt="Moucherolle à ventre roux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle à ventre roux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="343780191"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/343780191/480"
+                     alt="Moucherolle vermillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle vermillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="343780201"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/343780201/480"
+                     alt="Moucherolle vermillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle vermillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="343780211"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/343780211/480"
+                     alt="Moucherolle vermillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle vermillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="343780221"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/343780221/480"
+                     alt="Moucherolle vermillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle vermillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="343780231"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/343780231/480"
+                     alt="Moucherolle vermillon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moucherolle vermillon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="22482751"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22482751/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="22527491"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22527491/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="22504141"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22504141/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="22573211"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22573211/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="21082591"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21082591/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="22573301"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22573301/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="22573311"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22573311/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="51364231"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51364231/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="51364251"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51364251/480"
+                     alt="Lessonie noire"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie noire</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="21101421"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101421/480"
+                     alt="Lessonie des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="22571251"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571251/480"
+                     alt="Lessonie des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lessonie des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="22408241"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408241/480"
+                     alt="Ada à bec bleu"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ada à bec bleu</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="22397391"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22397391/480"
+                     alt="Ada clignot"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ada clignot</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="22573371"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22573371/480"
+                     alt="Ada clignot"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ada clignot</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="22573451"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22573451/480"
+                     alt="Ada clignot"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ada clignot</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="22574301"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22574301/480"
+                     alt="Ada clignot"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ada clignot</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="22450321"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450321/480"
+                     alt="Ada clignot"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ada clignot</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="63"
+                 data-ml="22434351"
+                 onclick="openLightbox(63)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434351/480"
+                     alt="Dormilon à bec maculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à bec maculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="64"
+                 data-ml="22450031"
+                 onclick="openLightbox(64)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450031/480"
+                     alt="Dormilon à bec maculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à bec maculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="65"
+                 data-ml="22450141"
+                 onclick="openLightbox(65)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450141/480"
+                     alt="Dormilon à bec maculé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à bec maculé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="66"
+                 data-ml="21101431"
+                 onclick="openLightbox(66)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101431/480"
+                     alt="Dormilon à nuque jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à nuque jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="67"
+                 data-ml="21101441"
+                 onclick="openLightbox(67)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101441/480"
+                     alt="Dormilon à nuque jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à nuque jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="68"
+                 data-ml="33890841"
+                 onclick="openLightbox(68)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33890841/480"
+                     alt="Dormilon à nuque jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à nuque jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="69"
+                 data-ml="33890891"
+                 onclick="openLightbox(69)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33890891/480"
+                     alt="Dormilon à nuque jaune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à nuque jaune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="70"
+                 data-ml="22449211"
+                 onclick="openLightbox(70)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449211/480"
+                     alt="Dormilon à calotte rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à calotte rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="71"
+                 data-ml="22450171"
+                 onclick="openLightbox(71)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450171/480"
+                     alt="Dormilon à calotte rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à calotte rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="72"
+                 data-ml="22450231"
+                 onclick="openLightbox(72)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450231/480"
+                     alt="Dormilon à calotte rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à calotte rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="73"
+                 data-ml="22450281"
+                 onclick="openLightbox(73)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450281/480"
+                     alt="Dormilon à calotte rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à calotte rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="74"
+                 data-ml="22450291"
+                 onclick="openLightbox(74)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450291/480"
+                     alt="Dormilon à calotte rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à calotte rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="75"
+                 data-ml="438496191"
+                 onclick="openLightbox(75)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438496191/480"
+                     alt="Dormilon à calotte rousse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon à calotte rousse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="76"
+                 data-ml="22376351"
+                 onclick="openLightbox(76)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22376351/480"
+                     alt="Dormilon bistré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon bistré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="77"
+                 data-ml="22376371"
+                 onclick="openLightbox(77)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22376371/480"
+                     alt="Dormilon bistré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dormilon bistré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="78"
+                 data-ml="22568851"
+                 onclick="openLightbox(78)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22568851/480"
+                     alt="Pépoaza oeil-de-feu"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pépoaza oeil-de-feu</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="79"
+                 data-ml="22568891"
+                 onclick="openLightbox(79)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22568891/480"
+                     alt="Pépoaza oeil-de-feu"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pépoaza oeil-de-feu</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="80"
+                 data-ml="22375461"
+                 onclick="openLightbox(80)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22375461/480"
+                     alt="Pépoaza oeil-de-feu"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pépoaza oeil-de-feu</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="81"
+                 data-ml="22502801"
+                 onclick="openLightbox(81)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502801/480"
+                     alt="Pépoaza irupéro"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pépoaza irupéro</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="82"
+                 data-ml="22571101"
+                 onclick="openLightbox(82)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571101/480"
+                     alt="Pépoaza cendré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pépoaza cendré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="83"
+                 data-ml="22449071"
+                 onclick="openLightbox(83)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449071/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="84"
+                 data-ml="22449081"
+                 onclick="openLightbox(84)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449081/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="85"
+                 data-ml="22449101"
+                 onclick="openLightbox(85)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449101/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="86"
+                 data-ml="22449241"
+                 onclick="openLightbox(86)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449241/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="87"
+                 data-ml="22449251"
+                 onclick="openLightbox(87)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449251/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="88"
+                 data-ml="22449341"
+                 onclick="openLightbox(88)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449341/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="89"
+                 data-ml="22434491"
+                 onclick="openLightbox(89)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434491/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="90"
+                 data-ml="22449471"
+                 onclick="openLightbox(90)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449471/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="91"
+                 data-ml="22449481"
+                 onclick="openLightbox(91)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449481/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="92"
+                 data-ml="22449551"
+                 onclick="openLightbox(92)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449551/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="93"
+                 data-ml="22449571"
+                 onclick="openLightbox(93)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449571/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="94"
+                 data-ml="22449691"
+                 onclick="openLightbox(94)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449691/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="95"
+                 data-ml="22449841"
+                 onclick="openLightbox(95)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449841/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="96"
+                 data-ml="22449851"
+                 onclick="openLightbox(96)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449851/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="97"
+                 data-ml="213627471"
+                 onclick="openLightbox(97)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627471/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="98"
+                 data-ml="436206411"
+                 onclick="openLightbox(98)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436206411/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="99"
+                 data-ml="437271541"
+                 onclick="openLightbox(99)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437271541/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="100"
+                 data-ml="22448971"
+                 onclick="openLightbox(100)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448971/480"
+                     alt="Grand Gaucho"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Gaucho</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="101"
+                 data-ml="22448981"
+                 onclick="openLightbox(101)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22448981/480"
+                     alt="Pitajo de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pitajo de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="102"
+                 data-ml="22449001"
+                 onclick="openLightbox(102)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22449001/480"
+                     alt="Pitajo de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pitajo de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="103"
+                 data-ml="56174701"
+                 onclick="openLightbox(103)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56174701/480"
+                     alt="Tyran olivâtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran olivâtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="104"
+                 data-ml="168565741"
+                 onclick="openLightbox(104)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/168565741/480"
+                     alt="Tyran féroce"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran féroce</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="105"
+                 data-ml="22450361"
+                 onclick="openLightbox(105)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450361/480"
+                     alt="Tyran à gorge cendrée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran à gorge cendrée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="106"
+                 data-ml="56260921"
+                 onclick="openLightbox(106)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56260921/480"
+                     alt="Tyran à gorge cendrée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran à gorge cendrée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="107"
+                 data-ml="22450391"
+                 onclick="openLightbox(107)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450391/480"
+                     alt="Tyran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="108"
+                 data-ml="22450441"
+                 onclick="openLightbox(108)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450441/480"
+                     alt="Tyran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="109"
+                 data-ml="351793621"
+                 onclick="openLightbox(109)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/351793621/480"
+                     alt="Tyran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="110"
+                 data-ml="615594217"
+                 onclick="openLightbox(110)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/615594217/480"
+                     alt="Tyran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="111"
+                 data-ml="615594220"
+                 onclick="openLightbox(111)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/615594220/480"
+                     alt="Tyran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="112"
+                 data-ml="615594436"
+                 onclick="openLightbox(112)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/615594436/480"
+                     alt="Tyran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="113"
+                 data-ml="635598737"
+                 onclick="openLightbox(113)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635598737/480"
+                     alt="Tyran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="114"
+                 data-ml="22450551"
+                 onclick="openLightbox(114)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450551/480"
+                     alt="Tyran de La Sagra"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de La Sagra</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="115"
+                 data-ml="22450561"
+                 onclick="openLightbox(115)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450561/480"
+                     alt="Tyran de La Sagra"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de La Sagra</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="116"
+                 data-ml="143864101"
+                 onclick="openLightbox(116)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/143864101/480"
+                     alt="Tyran de La Sagra"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de La Sagra</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="117"
+                 data-ml="143864111"
+                 onclick="openLightbox(117)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/143864111/480"
+                     alt="Tyran de La Sagra"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de La Sagra</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="118"
+                 data-ml="213076461"
+                 onclick="openLightbox(118)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213076461/480"
+                     alt="Tyran de La Sagra"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de La Sagra</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="119"
+                 data-ml="34522951"
+                 onclick="openLightbox(119)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34522951/480"
+                     alt="Tyran querelleur"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran querelleur</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="120"
+                 data-ml="22574441"
+                 onclick="openLightbox(120)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22574441/480"
+                     alt="Tyran querelleur"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran querelleur</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="121"
+                 data-ml="22416841"
+                 onclick="openLightbox(121)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416841/480"
+                     alt="Tyran quiquivi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran quiquivi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="122"
+                 data-ml="21111661"
+                 onclick="openLightbox(122)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111661/480"
+                     alt="Tyran quiquivi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran quiquivi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="123"
+                 data-ml="22574541"
+                 onclick="openLightbox(123)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22574541/480"
+                     alt="Tyran quiquivi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran quiquivi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="124"
+                 data-ml="56260801"
+                 onclick="openLightbox(124)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56260801/480"
+                     alt="Tyran de Cassin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de Cassin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="125"
+                 data-ml="551450581"
+                 onclick="openLightbox(125)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/551450581/480"
+                     alt="Tyran de Cassin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de Cassin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="126"
+                 data-ml="596428981"
+                 onclick="openLightbox(126)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596428981/480"
+                     alt="Tyran de Cassin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de Cassin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="127"
+                 data-ml="189693561"
+                 onclick="openLightbox(127)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/189693561/480"
+                     alt="Tyran de l'Ouest"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de l'Ouest</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="128"
+                 data-ml="615594783"
+                 onclick="openLightbox(128)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/615594783/480"
+                     alt="Tyran de l'Ouest"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran de l'Ouest</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="129"
+                 data-ml="33891081"
+                 onclick="openLightbox(129)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33891081/480"
+                     alt="Tyran tritri"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tritri</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="130"
+                 data-ml="22503631"
+                 onclick="openLightbox(130)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503631/480"
+                     alt="Tyran tritri"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tritri</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="131"
+                 data-ml="22450741"
+                 onclick="openLightbox(131)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450741/480"
+                     alt="Tyran tritri"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tritri</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="132"
+                 data-ml="22450751"
+                 onclick="openLightbox(132)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450751/480"
+                     alt="Tyran tritri"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tritri</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="133"
+                 data-ml="22450981"
+                 onclick="openLightbox(133)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22450981/480"
+                     alt="Tyran tritri"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tritri</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="134"
+                 data-ml="22436261"
+                 onclick="openLightbox(134)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22436261/480"
+                     alt="Tyran tête-police"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tête-police</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="135"
+                 data-ml="21112231"
+                 onclick="openLightbox(135)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21112231/480"
+                     alt="Tyran tête-police"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tête-police</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="136"
+                 data-ml="213076481"
+                 onclick="openLightbox(136)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213076481/480"
+                     alt="Tyran tête-police"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tête-police</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="137"
+                 data-ml="213076491"
+                 onclick="openLightbox(137)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213076491/480"
+                     alt="Tyran tête-police"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tête-police</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="138"
+                 data-ml="213698131"
+                 onclick="openLightbox(138)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213698131/480"
+                     alt="Tyran tête-police"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran tête-police</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="139"
+                 data-ml="386158351"
+                 onclick="openLightbox(139)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/386158351/480"
+                     alt="Tyran à longue queue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran à longue queue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="140"
+                 data-ml="386158361"
+                 onclick="openLightbox(140)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/386158361/480"
+                     alt="Tyran à longue queue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran à longue queue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="141"
+                 data-ml="615612444"
+                 onclick="openLightbox(141)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/615612444/480"
+                     alt="Tyran à longue queue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran à longue queue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="142"
+                 data-ml="22575801"
+                 onclick="openLightbox(142)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22575801/480"
+                     alt="Tyran des savanes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tyran des savanes</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "22533981",
+                name_fr: "Tyranneau omnicolore",
+                name_en: "Many-colored Rush Tyrant",
+                scientific: "Tachuris rubrigastra",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "17 septembre 2007",
+                date_en: "September 17, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772646"
+            },
+            
+            {
+                ml: "22503371",
+                name_fr: "Tyranneau omnicolore",
+                name_en: "Many-colored Rush Tyrant",
+                scientific: "Tachuris rubrigastra",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "22 mars 2008",
+                date_en: "March 22, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772592"
+            },
+            
+            {
+                ml: "22503411",
+                name_fr: "Tyranneau omnicolore",
+                name_en: "Many-colored Rush Tyrant",
+                scientific: "Tachuris rubrigastra",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "22 mars 2008",
+                date_en: "March 22, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772592"
+            },
+            
+            {
+                ml: "22369471",
+                name_fr: "Taurillon mésange",
+                name_en: "Tufted Tit-Tyrant",
+                scientific: "Anairetes parulus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Grande, Coquimbo, Chili",
+                location_en: "Cerro Grande, Coquimbo, Chile",
+                date_fr: "2 février 2007",
+                date_en: "February 2, 2007",
+                lat: -29.9434816,
+                lng: -71.2182069,
+                checklist_id: "S5772457"
+            },
+            
+            {
+                ml: "22448951",
+                name_fr: "Taurillon mésange",
+                name_en: "Tufted Tit-Tyrant",
+                scientific: "Anairetes parulus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "MN Valle del Encanto, Coquimbo, Chili",
+                location_en: "MN Valle del Encanto, Coquimbo, Chile",
+                date_fr: "20 mai 2007",
+                date_en: "May 20, 2007",
+                lat: -30.7034242,
+                lng: -71.3748157,
+                checklist_id: "S5772470"
+            },
+            
+            {
+                ml: "22375121",
+                name_fr: "Taurillon mésange",
+                name_en: "Tufted Tit-Tyrant",
+                scientific: "Anairetes parulus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Caulín, Los Lagos, Chili",
+                location_en: "Caulín, Los Lagos, Chile",
+                date_fr: "3 mai 2008",
+                date_en: "May 3, 2008",
+                lat: -41.8259378,
+                lng: -73.6275078,
+                checklist_id: "S5772445"
+            },
+            
+            {
+                ml: "22448871",
+                name_fr: "Élénie à cimier blanc",
+                name_en: "White-crested Elaenia",
+                scientific: "Elaenia albiceps",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "22 septembre 2006",
+                date_en: "September 22, 2006",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772531"
+            },
+            
+            {
+                ml: "22430561",
+                name_fr: "Élénie à cimier blanc",
+                name_en: "White-crested Elaenia",
+                scientific: "Elaenia albiceps",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "27 janvier 2008",
+                date_en: "January 27, 2008",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772657"
+            },
+            
+            {
+                ml: "22430571",
+                name_fr: "Élénie à cimier blanc",
+                name_en: "White-crested Elaenia",
+                scientific: "Elaenia albiceps",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "27 janvier 2008",
+                date_en: "January 27, 2008",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772657"
+            },
+            
+            {
+                ml: "22482691",
+                name_fr: "Élénie à cimier blanc",
+                name_en: "White-crested Elaenia",
+                scientific: "Elaenia albiceps",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "24 janvier 2009",
+                date_en: "January 24, 2009",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772459"
+            },
+            
+            {
+                ml: "450793811",
+                name_fr: "Moucherolle à côtés olive",
+                name_en: "Olive-sided Flycatcher",
+                scientific: "Contopus cooperi",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "18 mai 2022",
+                date_en: "May 18, 2022",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S110558570"
+            },
+            
+            {
+                ml: "167225001",
+                name_fr: "Pioui de l\'Ouest",
+                name_en: "Western Wood-Pewee",
+                scientific: "Contopus sordidulus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "sẁiẁs Provincial Park (Haynes Point), Colombie-Britannique, Canada",
+                location_en: "sẁiẁs Provincial Park (Haynes Point), British Columbia, Canada",
+                date_fr: "6 juillet 2019",
+                date_en: "July 6, 2019",
+                lat: 49.0147222,
+                lng: -119.4555556,
+                checklist_id: "S57981281"
+            },
+            
+            {
+                ml: "167225011",
+                name_fr: "Pioui de l\'Ouest",
+                name_en: "Western Wood-Pewee",
+                scientific: "Contopus sordidulus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "sẁiẁs Provincial Park (Haynes Point), Colombie-Britannique, Canada",
+                location_en: "sẁiẁs Provincial Park (Haynes Point), British Columbia, Canada",
+                date_fr: "6 juillet 2019",
+                date_en: "July 6, 2019",
+                lat: 49.0147222,
+                lng: -119.4555556,
+                checklist_id: "S57981281"
+            },
+            
+            {
+                ml: "167225021",
+                name_fr: "Pioui de l\'Ouest",
+                name_en: "Western Wood-Pewee",
+                scientific: "Contopus sordidulus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "sẁiẁs Provincial Park (Haynes Point), Colombie-Britannique, Canada",
+                location_en: "sẁiẁs Provincial Park (Haynes Point), British Columbia, Canada",
+                date_fr: "6 juillet 2019",
+                date_en: "July 6, 2019",
+                lat: 49.0147222,
+                lng: -119.4555556,
+                checklist_id: "S57981281"
+            },
+            
+            {
+                ml: "167225041",
+                name_fr: "Pioui de l\'Ouest",
+                name_en: "Western Wood-Pewee",
+                scientific: "Contopus sordidulus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "sẁiẁs Provincial Park (Haynes Point), Colombie-Britannique, Canada",
+                location_en: "sẁiẁs Provincial Park (Haynes Point), British Columbia, Canada",
+                date_fr: "6 juillet 2019",
+                date_en: "July 6, 2019",
+                lat: 49.0147222,
+                lng: -119.4555556,
+                checklist_id: "S57981281"
+            },
+            
+            {
+                ml: "22435601",
+                name_fr: "Pioui de l\'Est",
+                name_en: "Eastern Wood-Pewee",
+                scientific: "Contopus virens",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "21 mai 2014",
+                date_en: "May 21, 2014",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18567122"
+            },
+            
+            {
+                ml: "22435611",
+                name_fr: "Pioui de l\'Est",
+                name_en: "Eastern Wood-Pewee",
+                scientific: "Contopus virens",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "21 mai 2014",
+                date_en: "May 21, 2014",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18567122"
+            },
+            
+            {
+                ml: "351795021",
+                name_fr: "Pioui de l\'Est",
+                name_en: "Eastern Wood-Pewee",
+                scientific: "Contopus virens",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "1 juillet 2021",
+                date_en: "July 1, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S91082564"
+            },
+            
+            {
+                ml: "482929491",
+                name_fr: "Pioui de l\'Est",
+                name_en: "Eastern Wood-Pewee",
+                scientific: "Contopus virens",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Plage de la Baie Pumpkinseed, Québec, Canada",
+                location_en: "Plage de la Baie Pumpkinseed, Quebec, Canada",
+                date_fr: "7 septembre 2022",
+                date_en: "September 7, 2022",
+                lat: 45.6383774,
+                lng: -74.6835351,
+                checklist_id: "S118291760"
+            },
+            
+            {
+                ml: "259030701",
+                name_fr: "Moucherolle à ventre jaune",
+                name_en: "Yellow-bellied Flycatcher",
+                scientific: "Empidonax flaviventris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "30 août 2020",
+                date_en: "August 30, 2020",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S72984191"
+            },
+            
+            {
+                ml: "586881761",
+                name_fr: "Moucherolle à ventre jaune",
+                name_en: "Yellow-bellied Flycatcher",
+                scientific: "Empidonax flaviventris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN du Mt-Mégantic--sommet du Mt-Mégantic, Québec, Canada",
+                location_en: "PN du Mt-Mégantic--sommet du Mt-Mégantic, Quebec, Canada",
+                date_fr: "21 juin 2023",
+                date_en: "June 21, 2023",
+                lat: 45.4556374,
+                lng: -71.153512,
+                checklist_id: "S142249788"
+            },
+            
+            {
+                ml: "154551061",
+                name_fr: "Moucherolle des aulnes",
+                name_en: "Alder Flycatcher",
+                scientific: "Empidonax alnorum",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc de la Gatineau, Québec, Canada",
+                location_en: "Parc de la Gatineau, Quebec, Canada",
+                date_fr: "7 juin 2003",
+                date_en: "June 7, 2003",
+                lat: 45.56667,
+                lng: -75.95,
+                checklist_id: "S39799107"
+            },
+            
+            {
+                ml: "235355181",
+                name_fr: "Moucherolle tchébec",
+                name_en: "Least Flycatcher",
+                scientific: "Empidonax minimus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Angrignon, Québec, Canada",
+                location_en: "Parc Angrignon, Quebec, Canada",
+                date_fr: "16 mai 2020",
+                date_en: "May 16, 2020",
+                lat: 45.4445136,
+                lng: -73.6017311,
+                checklist_id: "S69150512"
+            },
+            
+            {
+                ml: "236256161",
+                name_fr: "Moucherolle tchébec",
+                name_en: "Least Flycatcher",
+                scientific: "Empidonax minimus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Angrignon, Québec, Canada",
+                location_en: "Parc Angrignon, Quebec, Canada",
+                date_fr: "16 mai 2020",
+                date_en: "May 16, 2020",
+                lat: 45.4445136,
+                lng: -73.6017311,
+                checklist_id: "S69150512"
+            },
+            
+            {
+                ml: "56174671",
+                name_fr: "Moucherolle de Hammond",
+                name_en: "Hammond\'s Flycatcher",
+                scientific: "Empidonax hammondii",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Madera Canyon--Upper Nature Trail from Amphitheater to upper parking area, Arizona, États-Unis",
+                location_en: "Madera Canyon--Upper Nature Trail from Amphitheater to upper parking area, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7194081,
+                lng: -110.8835989,
+                checklist_id: "S36367086"
+            },
+            
+            {
+                ml: "34665721",
+                name_fr: "Moucherolle beige",
+                name_en: "Buff-breasted Flycatcher",
+                scientific: "Empidonax fulvifrons",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Mt. Lemmon--Rose Canyon and Lake, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Rose Canyon and Lake, Arizona, United States",
+                date_fr: "29 avril 2016",
+                date_en: "April 29, 2016",
+                lat: 32.3926274,
+                lng: -110.7024693,
+                checklist_id: "S31498278"
+            },
+            
+            {
+                ml: "34665731",
+                name_fr: "Moucherolle beige",
+                name_en: "Buff-breasted Flycatcher",
+                scientific: "Empidonax fulvifrons",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Mt. Lemmon--Rose Canyon and Lake, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Rose Canyon and Lake, Arizona, United States",
+                date_fr: "29 avril 2016",
+                date_en: "April 29, 2016",
+                lat: 32.3926274,
+                lng: -110.7024693,
+                checklist_id: "S31498278"
+            },
+            
+            {
+                ml: "22568791",
+                name_fr: "Moucherolle noir",
+                name_en: "Black Phoebe",
+                scientific: "Sayornis nigricans",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "San Diego River--estuary (Old Sea World Dr.), Californie, États-Unis",
+                location_en: "San Diego River--estuary (Old Sea World Dr.), California, United States",
+                date_fr: "28 juin 2010",
+                date_en: "June 28, 2010",
+                lat: 32.7597508,
+                lng: -117.2179803,
+                checklist_id: "S18574929"
+            },
+            
+            {
+                ml: "550900491",
+                name_fr: "Moucherolle noir",
+                name_en: "Black Phoebe",
+                scientific: "Sayornis nigricans",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Andree Clark Bird Refuge, Californie, États-Unis",
+                location_en: "Andree Clark Bird Refuge, California, United States",
+                date_fr: "28 mars 2023",
+                date_en: "March 28, 2023",
+                lat: 34.4215353,
+                lng: -119.6572856,
+                checklist_id: "S132061756"
+            },
+            
+            {
+                ml: "596430031",
+                name_fr: "Moucherolle noir",
+                name_en: "Black Phoebe",
+                scientific: "Sayornis nigricans",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "El Dorado Regional Park, Californie, États-Unis",
+                location_en: "El Dorado Regional Park, California, United States",
+                date_fr: "22 juillet 2023",
+                date_en: "July 22, 2023",
+                lat: 33.8148106,
+                lng: -118.088522,
+                checklist_id: "S145306714"
+            },
+            
+            {
+                ml: "34433381",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN de Plaisance (SVP choisir des endroits plus précis), Québec, Canada",
+                location_en: "PN de Plaisance (SVP choisir des endroits plus précis), Quebec, Canada",
+                date_fr: "2 mai 2003",
+                date_en: "May 2, 2003",
+                lat: 45.6006057,
+                lng: -75.0858823,
+                checklist_id: "S18567154"
+            },
+            
+            {
+                ml: "34434741",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN de Plaisance--Sentier la Zizanie-des-Marais, Québec, Canada",
+                location_en: "PN de Plaisance--Sentier la Zizanie-des-Marais, Quebec, Canada",
+                date_fr: "30 mai 2013",
+                date_en: "May 30, 2013",
+                lat: 45.5997135,
+                lng: -75.0820626,
+                checklist_id: "S18567155"
+            },
+            
+            {
+                ml: "34433121",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN de Plaisance (SVP choisir des endroits plus précis), Québec, Canada",
+                location_en: "PN de Plaisance (SVP choisir des endroits plus précis), Quebec, Canada",
+                date_fr: "18 mai 2014",
+                date_en: "May 18, 2014",
+                lat: 45.6006057,
+                lng: -75.0858823,
+                checklist_id: "S18567130"
+            },
+            
+            {
+                ml: "177501471",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Val-Neigette, Québec, Canada",
+                location_en: "Val-Neigette, Quebec, Canada",
+                date_fr: "21 août 2019",
+                date_en: "August 21, 2019",
+                lat: 48.3651418,
+                lng: -68.4838204,
+                checklist_id: "S59147887"
+            },
+            
+            {
+                ml: "177501481",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Val-Neigette, Québec, Canada",
+                location_en: "Val-Neigette, Quebec, Canada",
+                date_fr: "21 août 2019",
+                date_en: "August 21, 2019",
+                lat: 48.3651418,
+                lng: -68.4838204,
+                checklist_id: "S59147887"
+            },
+            
+            {
+                ml: "264510981",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc des Rapides, Québec, Canada",
+                location_en: "Parc des Rapides, Quebec, Canada",
+                date_fr: "20 septembre 2020",
+                date_en: "September 20, 2020",
+                lat: 45.4277985,
+                lng: -73.5921872,
+                checklist_id: "S73841915"
+            },
+            
+            {
+                ml: "365693901",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Brébeuf, Québec, Canada",
+                location_en: "Parc Brébeuf, Quebec, Canada",
+                date_fr: "31 août 2021",
+                date_en: "August 31, 2021",
+                lat: 45.418054,
+                lng: -75.7431577,
+                checklist_id: "S93984717"
+            },
+            
+            {
+                ml: "365694281",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Brébeuf, Québec, Canada",
+                location_en: "Parc Brébeuf, Quebec, Canada",
+                date_fr: "31 août 2021",
+                date_en: "August 31, 2021",
+                lat: 45.418054,
+                lng: -75.7431577,
+                checklist_id: "S93984717"
+            },
+            
+            {
+                ml: "622741767",
+                name_fr: "Moucherolle phébi",
+                name_en: "Eastern Phoebe",
+                scientific: "Sayornis phoebe",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Britannia CA--Mud Lake, Ontario, Canada",
+                location_en: "Britannia CA--Mud Lake, Ontario, Canada",
+                date_fr: "18 août 2024",
+                date_en: "August 18, 2024",
+                lat: 45.3717546,
+                lng: -75.7948728,
+                checklist_id: "S191983735"
+            },
+            
+            {
+                ml: "34384381",
+                name_fr: "Moucherolle à ventre roux",
+                name_en: "Say\'s Phoebe",
+                scientific: "Sayornis saya",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Saguaro NP--West--Red Hills Visitors Center, Arizona, États-Unis",
+                location_en: "Saguaro NP--West--Red Hills Visitors Center, Arizona, United States",
+                date_fr: "31 décembre 2005",
+                date_en: "December 31, 2005",
+                lat: 32.2542072,
+                lng: -111.1972591,
+                checklist_id: "S18575034"
+            },
+            
+            {
+                ml: "167515971",
+                name_fr: "Moucherolle à ventre roux",
+                name_en: "Say\'s Phoebe",
+                scientific: "Sayornis saya",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Osoyoos Desert Centre, Colombie-Britannique, Canada",
+                location_en: "Osoyoos Desert Centre, British Columbia, Canada",
+                date_fr: "7 juillet 2019",
+                date_en: "July 7, 2019",
+                lat: 49.0527778,
+                lng: -119.5177778,
+                checklist_id: "S58002822"
+            },
+            
+            {
+                ml: "343780191",
+                name_fr: "Moucherolle vermillon",
+                name_en: "Vermilion Flycatcher",
+                scientific: "Pyrocephalus rubinus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Boisé Ste-Dorothée, Québec, Canada",
+                location_en: "Boisé Ste-Dorothée, Quebec, Canada",
+                date_fr: "30 mai 2021",
+                date_en: "May 30, 2021",
+                lat: 45.5410443,
+                lng: -73.823061,
+                checklist_id: "S89297551"
+            },
+            
+            {
+                ml: "343780201",
+                name_fr: "Moucherolle vermillon",
+                name_en: "Vermilion Flycatcher",
+                scientific: "Pyrocephalus rubinus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Boisé Ste-Dorothée, Québec, Canada",
+                location_en: "Boisé Ste-Dorothée, Quebec, Canada",
+                date_fr: "30 mai 2021",
+                date_en: "May 30, 2021",
+                lat: 45.5410443,
+                lng: -73.823061,
+                checklist_id: "S89297551"
+            },
+            
+            {
+                ml: "343780211",
+                name_fr: "Moucherolle vermillon",
+                name_en: "Vermilion Flycatcher",
+                scientific: "Pyrocephalus rubinus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Boisé Ste-Dorothée, Québec, Canada",
+                location_en: "Boisé Ste-Dorothée, Quebec, Canada",
+                date_fr: "30 mai 2021",
+                date_en: "May 30, 2021",
+                lat: 45.5410443,
+                lng: -73.823061,
+                checklist_id: "S89297551"
+            },
+            
+            {
+                ml: "343780221",
+                name_fr: "Moucherolle vermillon",
+                name_en: "Vermilion Flycatcher",
+                scientific: "Pyrocephalus rubinus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Boisé Ste-Dorothée, Québec, Canada",
+                location_en: "Boisé Ste-Dorothée, Quebec, Canada",
+                date_fr: "30 mai 2021",
+                date_en: "May 30, 2021",
+                lat: 45.5410443,
+                lng: -73.823061,
+                checklist_id: "S89297551"
+            },
+            
+            {
+                ml: "343780231",
+                name_fr: "Moucherolle vermillon",
+                name_en: "Vermilion Flycatcher",
+                scientific: "Pyrocephalus rubinus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Boisé Ste-Dorothée, Québec, Canada",
+                location_en: "Boisé Ste-Dorothée, Quebec, Canada",
+                date_fr: "30 mai 2021",
+                date_en: "May 30, 2021",
+                lat: 45.5410443,
+                lng: -73.823061,
+                checklist_id: "S89297551"
+            },
+            
+            {
+                ml: "22482751",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "19 février 2005",
+                date_en: "February 19, 2005",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772653"
+            },
+            
+            {
+                ml: "22527491",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "1 octobre 2006",
+                date_en: "October 1, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772443"
+            },
+            
+            {
+                ml: "22504141",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "SN Humedales de Tongoy--Salinas Chicas, Coquimbo, Chili",
+                location_en: "SN Humedales de Tongoy--Salinas Chicas, Coquimbo, Chile",
+                date_fr: "11 février 2007",
+                date_en: "February 11, 2007",
+                lat: -30.2828485,
+                lng: -71.5062434,
+                checklist_id: "S5772597"
+            },
+            
+            {
+                ml: "22573211",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "9 septembre 2007",
+                date_en: "September 9, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772546"
+            },
+            
+            {
+                ml: "21082591",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "SN Humedales de Tongoy--Salinas Chicas, Coquimbo, Chili",
+                location_en: "SN Humedales de Tongoy--Salinas Chicas, Coquimbo, Chile",
+                date_fr: "18 septembre 2007",
+                date_en: "September 18, 2007",
+                lat: -30.2828485,
+                lng: -71.5062434,
+                checklist_id: "S5772603"
+            },
+            
+            {
+                ml: "22573301",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "13 octobre 2008",
+                date_en: "October 13, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772485"
+            },
+            
+            {
+                ml: "22573311",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "13 octobre 2008",
+                date_en: "October 13, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772485"
+            },
+            
+            {
+                ml: "51364231",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "RN Colonia Pingüinos de Magallanes, Magallanes, Chili",
+                location_en: "RN Colonia Pingüinos de Magallanes, Magallanes, Chile",
+                date_fr: "17 décembre 2008",
+                date_en: "December 17, 2008",
+                lat: -52.986348,
+                lng: -71.2378836,
+                checklist_id: "S5772611"
+            },
+            
+            {
+                ml: "51364251",
+                name_fr: "Lessonie noire",
+                name_en: "Austral Negrito",
+                scientific: "Lessonia rufa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "RN Colonia Pingüinos de Magallanes, Magallanes, Chili",
+                location_en: "RN Colonia Pingüinos de Magallanes, Magallanes, Chile",
+                date_fr: "17 décembre 2008",
+                date_en: "December 17, 2008",
+                lat: -52.986348,
+                lng: -71.2378836,
+                checklist_id: "S5772611"
+            },
+            
+            {
+                ml: "21101421",
+                name_fr: "Lessonie des Andes",
+                name_en: "Andean Negrito",
+                scientific: "Lessonia oreas",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436"
+            },
+            
+            {
+                ml: "22571251",
+                name_fr: "Lessonie des Andes",
+                name_en: "Andean Negrito",
+                scientific: "Lessonia oreas",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Vados del Putana, Antofagasta, Chili",
+                location_en: "Vados del Putana, Antofagasta, Chile",
+                date_fr: "2 janvier 2009",
+                date_en: "January 2, 2009",
+                lat: -22.533805,
+                lng: -68.0335236,
+                checklist_id: "S5772442"
+            },
+            
+            {
+                ml: "22408241",
+                name_fr: "Ada à bec bleu",
+                name_en: "Blue-billed Black-Tyrant",
+                scientific: "Knipolegus cyanirostris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            },
+            
+            {
+                ml: "22397391",
+                name_fr: "Ada clignot",
+                name_en: "Spectacled Tyrant",
+                scientific: "Hymenops perspicillatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "El Membrillo (La Serena), Coquimbo, Chili",
+                location_en: "El Membrillo (La Serena), Coquimbo, Chile",
+                date_fr: "7 octobre 2006",
+                date_en: "October 7, 2006",
+                lat: -29.9365228,
+                lng: -71.2844574,
+                checklist_id: "S5772474"
+            },
+            
+            {
+                ml: "22573371",
+                name_fr: "Ada clignot",
+                name_en: "Spectacled Tyrant",
+                scientific: "Hymenops perspicillatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "29 octobre 2006",
+                date_en: "October 29, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772425"
+            },
+            
+            {
+                ml: "22573451",
+                name_fr: "Ada clignot",
+                name_en: "Spectacled Tyrant",
+                scientific: "Hymenops perspicillatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "7 octobre 2007",
+                date_en: "October 7, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772547"
+            },
+            
+            {
+                ml: "22574301",
+                name_fr: "Ada clignot",
+                name_en: "Spectacled Tyrant",
+                scientific: "Hymenops perspicillatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "17 octobre 2007",
+                date_en: "October 17, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772444"
+            },
+            
+            {
+                ml: "22450321",
+                name_fr: "Ada clignot",
+                name_en: "Spectacled Tyrant",
+                scientific: "Hymenops perspicillatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Avenida del Mar, Coquimbo, Chili",
+                location_en: "Avenida del Mar, Coquimbo, Chile",
+                date_fr: "13 décembre 2007",
+                date_en: "December 13, 2007",
+                lat: -29.9252584,
+                lng: -71.2786746,
+                checklist_id: "S5772496"
+            },
+            
+            {
+                ml: "22434351",
+                name_fr: "Dormilon à bec maculé",
+                name_en: "Spot-billed Ground-Tyrant",
+                scientific: "Muscisaxicola maculirostris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "21 novembre 2006",
+                date_en: "November 21, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772513"
+            },
+            
+            {
+                ml: "22450031",
+                name_fr: "Dormilon à bec maculé",
+                name_en: "Spot-billed Ground-Tyrant",
+                scientific: "Muscisaxicola maculirostris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "3 novembre 2007",
+                date_en: "November 3, 2007",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772541"
+            },
+            
+            {
+                ml: "22450141",
+                name_fr: "Dormilon à bec maculé",
+                name_en: "Spot-billed Ground-Tyrant",
+                scientific: "Muscisaxicola maculirostris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "27 novembre 2008",
+                date_en: "November 27, 2008",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772542"
+            },
+            
+            {
+                ml: "21101431",
+                name_fr: "Dormilon à nuque jaune",
+                name_en: "Ochre-naped Ground-Tyrant",
+                scientific: "Muscisaxicola flavinucha",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436"
+            },
+            
+            {
+                ml: "21101441",
+                name_fr: "Dormilon à nuque jaune",
+                name_en: "Ochre-naped Ground-Tyrant",
+                scientific: "Muscisaxicola flavinucha",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces--Salar de Maricunga, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436"
+            },
+            
+            {
+                ml: "33890841",
+                name_fr: "Dormilon à nuque jaune",
+                name_en: "Ochre-naped Ground-Tyrant",
+                scientific: "Muscisaxicola flavinucha",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Embalse La Laguna, Coquimbo, Chili",
+                location_en: "Embalse La Laguna, Coquimbo, Chile",
+                date_fr: "3 octobre 2007",
+                date_en: "October 3, 2007",
+                lat: -30.2187285,
+                lng: -70.0371552,
+                checklist_id: "S5772452"
+            },
+            
+            {
+                ml: "33890891",
+                name_fr: "Dormilon à nuque jaune",
+                name_en: "Ochre-naped Ground-Tyrant",
+                scientific: "Muscisaxicola flavinucha",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Embalse La Laguna, Coquimbo, Chili",
+                location_en: "Embalse La Laguna, Coquimbo, Chile",
+                date_fr: "3 octobre 2007",
+                date_en: "October 3, 2007",
+                lat: -30.2187285,
+                lng: -70.0371552,
+                checklist_id: "S5772452"
+            },
+            
+            {
+                ml: "22449211",
+                name_fr: "Dormilon à calotte rousse",
+                name_en: "Rufous-naped Ground-Tyrant",
+                scientific: "Muscisaxicola rufivertex",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "11 février 2005",
+                date_en: "February 11, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772535"
+            },
+            
+            {
+                ml: "22450171",
+                name_fr: "Dormilon à calotte rousse",
+                name_en: "Rufous-naped Ground-Tyrant",
+                scientific: "Muscisaxicola rufivertex",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "10 octobre 2006",
+                date_en: "October 10, 2006",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772544"
+            },
+            
+            {
+                ml: "22450231",
+                name_fr: "Dormilon à calotte rousse",
+                name_en: "Rufous-naped Ground-Tyrant",
+                scientific: "Muscisaxicola rufivertex",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "12 avril 2009",
+                date_en: "April 12, 2009",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772545"
+            },
+            
+            {
+                ml: "22450281",
+                name_fr: "Dormilon à calotte rousse",
+                name_en: "Rufous-naped Ground-Tyrant",
+                scientific: "Muscisaxicola rufivertex",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "18 juin 2009",
+                date_en: "June 18, 2009",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772543"
+            },
+            
+            {
+                ml: "22450291",
+                name_fr: "Dormilon à calotte rousse",
+                name_en: "Rufous-naped Ground-Tyrant",
+                scientific: "Muscisaxicola rufivertex",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "18 juin 2009",
+                date_en: "June 18, 2009",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772543"
+            },
+            
+            {
+                ml: "438496191",
+                name_fr: "Dormilon à calotte rousse",
+                name_en: "Rufous-naped Ground-Tyrant",
+                scientific: "Muscisaxicola rufivertex",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "21 avril 2022",
+                date_en: "April 21, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107648738"
+            },
+            
+            {
+                ml: "22376351",
+                name_fr: "Dormilon bistré",
+                name_en: "Dark-faced Ground-Tyrant",
+                scientific: "Muscisaxicola maclovianus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Totoralillo, Coquimbo, Chili",
+                location_en: "Totoralillo, Coquimbo, Chile",
+                date_fr: "1 juillet 2007",
+                date_en: "July 1, 2007",
+                lat: -30.072845,
+                lng: -71.3760495,
+                checklist_id: "S5772644"
+            },
+            
+            {
+                ml: "22376371",
+                name_fr: "Dormilon bistré",
+                name_en: "Dark-faced Ground-Tyrant",
+                scientific: "Muscisaxicola maclovianus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Totoralillo, Coquimbo, Chili",
+                location_en: "Totoralillo, Coquimbo, Chile",
+                date_fr: "1 juillet 2007",
+                date_en: "July 1, 2007",
+                lat: -30.072845,
+                lng: -71.3760495,
+                checklist_id: "S5772644"
+            },
+            
+            {
+                ml: "22568851",
+                name_fr: "Pépoaza oeil-de-feu",
+                name_en: "Fire-eyed Diucon",
+                scientific: "Pyrope pyrope",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "3 juillet 2007",
+                date_en: "July 3, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772454"
+            },
+            
+            {
+                ml: "22568891",
+                name_fr: "Pépoaza oeil-de-feu",
+                name_en: "Fire-eyed Diucon",
+                scientific: "Pyrope pyrope",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Punta Teatinos--Laguna Saladita, Coquimbo, Chili",
+                location_en: "Punta Teatinos--Laguna Saladita, Coquimbo, Chile",
+                date_fr: "3 juillet 2007",
+                date_en: "July 3, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772454"
+            },
+            
+            {
+                ml: "22375461",
+                name_fr: "Pépoaza oeil-de-feu",
+                name_en: "Fire-eyed Diucon",
+                scientific: "Pyrope pyrope",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Chiloé--Sendero Playa, Los Lagos, Chili",
+                location_en: "PN Chiloé--Sendero Playa, Los Lagos, Chile",
+                date_fr: "4 mai 2008",
+                date_en: "May 4, 2008",
+                lat: -42.622631,
+                lng: -74.1126859,
+                checklist_id: "S5772599"
+            },
+            
+            {
+                ml: "22502801",
+                name_fr: "Pépoaza irupéro",
+                name_en: "White Monjita",
+                scientific: "Xolmis irupero",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PP Laguna de Rocha--Zona Sur y Barra, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha--Zona Sur y Barra, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22571101",
+                name_fr: "Pépoaza cendré",
+                name_en: "Gray Monjita",
+                scientific: "Nengetus cinereus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "22449071",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "8 février 2005",
+                date_en: "February 8, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772424"
+            },
+            
+            {
+                ml: "22449081",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "8 février 2005",
+                date_en: "February 8, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772424"
+            },
+            
+            {
+                ml: "22449101",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "8 février 2005",
+                date_en: "February 8, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772424"
+            },
+            
+            {
+                ml: "22449241",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "11 février 2005",
+                date_en: "February 11, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772535"
+            },
+            
+            {
+                ml: "22449251",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "11 février 2005",
+                date_en: "February 11, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772535"
+            },
+            
+            {
+                ml: "22449341",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "14 février 2005",
+                date_en: "February 14, 2005",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772536"
+            },
+            
+            {
+                ml: "22434491",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "23 novembre 2006",
+                date_en: "November 23, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772514"
+            },
+            
+            {
+                ml: "22449471",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "19 décembre 2006",
+                date_en: "December 19, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772537"
+            },
+            
+            {
+                ml: "22449481",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "19 décembre 2006",
+                date_en: "December 19, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772537"
+            },
+            
+            {
+                ml: "22449551",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "22 décembre 2006",
+                date_en: "December 22, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772538"
+            },
+            
+            {
+                ml: "22449571",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "22 décembre 2006",
+                date_en: "December 22, 2006",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772538"
+            },
+            
+            {
+                ml: "22449691",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro El Tololo, Coquimbo, Chili",
+                location_en: "Cerro El Tololo, Coquimbo, Chile",
+                date_fr: "6 juillet 2007",
+                date_en: "July 6, 2007",
+                lat: -30.169167,
+                lng: -70.805278,
+                checklist_id: "S5772539"
+            },
+            
+            {
+                ml: "22449841",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "20 juin 2009",
+                date_en: "June 20, 2009",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772534"
+            },
+            
+            {
+                ml: "22449851",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cerro Pachón, Coquimbo, Chili",
+                location_en: "Cerro Pachón, Coquimbo, Chile",
+                date_fr: "20 juin 2009",
+                date_en: "June 20, 2009",
+                lat: -30.24,
+                lng: -70.734444,
+                checklist_id: "S5772534"
+            },
+            
+            {
+                ml: "213627471",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "436206411",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "15 avril 2022",
+                date_en: "April 15, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107131826"
+            },
+            
+            {
+                ml: "437271541",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "18 avril 2022",
+                date_en: "April 18, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S107420615"
+            },
+            
+            {
+                ml: "22448971",
+                name_fr: "Grand Gaucho",
+                name_en: "Great Shrike-Tyrant",
+                scientific: "Agriornis lividus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "MN Valle del Encanto, Coquimbo, Chili",
+                location_en: "MN Valle del Encanto, Coquimbo, Chile",
+                date_fr: "20 mai 2007",
+                date_en: "May 20, 2007",
+                lat: -30.7034242,
+                lng: -71.3748157,
+                checklist_id: "S5772470"
+            },
+            
+            {
+                ml: "22448981",
+                name_fr: "Pitajo de Patagonie",
+                name_en: "Patagonian Tyrant",
+                scientific: "Colorhamphus parvirostris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "MN Valle del Encanto, Coquimbo, Chili",
+                location_en: "MN Valle del Encanto, Coquimbo, Chile",
+                date_fr: "20 mai 2007",
+                date_en: "May 20, 2007",
+                lat: -30.7034242,
+                lng: -71.3748157,
+                checklist_id: "S5772470"
+            },
+            
+            {
+                ml: "22449001",
+                name_fr: "Pitajo de Patagonie",
+                name_en: "Patagonian Tyrant",
+                scientific: "Colorhamphus parvirostris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "MN Valle del Encanto, Coquimbo, Chili",
+                location_en: "MN Valle del Encanto, Coquimbo, Chile",
+                date_fr: "20 mai 2007",
+                date_en: "May 20, 2007",
+                lat: -30.7034242,
+                lng: -71.3748157,
+                checklist_id: "S5772470"
+            },
+            
+            {
+                ml: "56174701",
+                name_fr: "Tyran olivâtre",
+                name_en: "Dusky-capped Flycatcher",
+                scientific: "Myiarchus tuberculifer",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Madera Canyon--Upper Nature Trail from Amphitheater to upper parking area, Arizona, États-Unis",
+                location_en: "Madera Canyon--Upper Nature Trail from Amphitheater to upper parking area, Arizona, United States",
+                date_fr: "28 avril 2017",
+                date_en: "April 28, 2017",
+                lat: 31.7194081,
+                lng: -110.8835989,
+                checklist_id: "S36367086"
+            },
+            
+            {
+                ml: "168565741",
+                name_fr: "Tyran féroce",
+                name_en: "Short-crested Flycatcher",
+                scientific: "Myiarchus ferox",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Iguazú--Área Cataratas, Argentine",
+                location_en: "PN Iguazú--Área Cataratas, Argentina",
+                date_fr: "5 juin 2007",
+                date_en: "June 5, 2007",
+                lat: -25.6833032,
+                lng: -54.455452,
+                checklist_id: "S18566287"
+            },
+            
+            {
+                ml: "22450361",
+                name_fr: "Tyran à gorge cendrée",
+                name_en: "Ash-throated Flycatcher",
+                scientific: "Myiarchus cinerascens",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN du Bois-de-Liesse--Secteurs des Champs, Québec, Canada",
+                location_en: "PN du Bois-de-Liesse--Secteurs des Champs, Quebec, Canada",
+                date_fr: "27 novembre 2004",
+                date_en: "November 27, 2004",
+                lat: 45.502968,
+                lng: -73.7643665,
+                checklist_id: "S18567156"
+            },
+            
+            {
+                ml: "56260921",
+                name_fr: "Tyran à gorge cendrée",
+                name_en: "Ash-throated Flycatcher",
+                scientific: "Myiarchus cinerascens",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Mt. Lemmon--Molino Basin, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Molino Basin, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27, 2017",
+                lat: 32.337101,
+                lng: -110.6921005,
+                checklist_id: "S36369104"
+            },
+            
+            {
+                ml: "22450391",
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                scientific: "Myiarchus crinitus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Quartier de la Terrasse Lakeview, Québec, Canada",
+                location_en: "Quartier de la Terrasse Lakeview, Quebec, Canada",
+                date_fr: "20 mai 2009",
+                date_en: "May 20, 2009",
+                lat: 45.3935481,
+                lng: -75.802697,
+                checklist_id: "S18567157"
+            },
+            
+            {
+                ml: "22450441",
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                scientific: "Myiarchus crinitus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "16 mai 2010",
+                date_en: "May 16, 2010",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18567158"
+            },
+            
+            {
+                ml: "351793621",
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                scientific: "Myiarchus crinitus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "2 juillet 2021",
+                date_en: "July 2, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S91131276"
+            },
+            
+            {
+                ml: "615594217",
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                scientific: "Myiarchus crinitus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Frog Pond WMA--Lucky Hammock, Floride, États-Unis",
+                location_en: "Frog Pond WMA--Lucky Hammock, Florida, United States",
+                date_fr: "3 mars 2024",
+                date_en: "March 3, 2024",
+                lat: 25.396439,
+                lng: -80.566581,
+                checklist_id: "S163563864"
+            },
+            
+            {
+                ml: "615594220",
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                scientific: "Myiarchus crinitus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Frog Pond WMA--Lucky Hammock, Floride, États-Unis",
+                location_en: "Frog Pond WMA--Lucky Hammock, Florida, United States",
+                date_fr: "3 mars 2024",
+                date_en: "March 3, 2024",
+                lat: 25.396439,
+                lng: -80.566581,
+                checklist_id: "S163563864"
+            },
+            
+            {
+                ml: "615594436",
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                scientific: "Myiarchus crinitus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Frog Pond WMA--Lucky Hammock, Floride, États-Unis",
+                location_en: "Frog Pond WMA--Lucky Hammock, Florida, United States",
+                date_fr: "3 mars 2024",
+                date_en: "March 3, 2024",
+                lat: 25.396439,
+                lng: -80.566581,
+                checklist_id: "S163563864"
+            },
+            
+            {
+                ml: "635598737",
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                scientific: "Myiarchus crinitus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc Angrignon, Québec, Canada",
+                location_en: "Parc Angrignon, Quebec, Canada",
+                date_fr: "11 mai 2025",
+                date_en: "May 11, 2025",
+                lat: 45.4445136,
+                lng: -73.6017311,
+                checklist_id: "S236421006"
+            },
+            
+            {
+                ml: "22450551",
+                name_fr: "Tyran de La Sagra",
+                name_en: "La Sagra\'s Flycatcher",
+                scientific: "Myiarchus sagrae",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "18 avril 2010",
+                date_en: "April 18, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575651"
+            },
+            
+            {
+                ml: "22450561",
+                name_fr: "Tyran de La Sagra",
+                name_en: "La Sagra\'s Flycatcher",
+                scientific: "Myiarchus sagrae",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "18 avril 2010",
+                date_en: "April 18, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575651"
+            },
+            
+            {
+                ml: "143864101",
+                name_fr: "Tyran de La Sagra",
+                name_en: "La Sagra\'s Flycatcher",
+                scientific: "Myiarchus sagrae",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "1 mars 2019",
+                date_en: "March 1, 2019",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S53455154"
+            },
+            
+            {
+                ml: "143864111",
+                name_fr: "Tyran de La Sagra",
+                name_en: "La Sagra\'s Flycatcher",
+                scientific: "Myiarchus sagrae",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "1 mars 2019",
+                date_en: "March 1, 2019",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S53455154"
+            },
+            
+            {
+                ml: "213076461",
+                name_fr: "Tyran de La Sagra",
+                name_en: "La Sagra\'s Flycatcher",
+                scientific: "Myiarchus sagrae",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "34522951",
+                name_fr: "Tyran querelleur",
+                name_en: "Cattle Tyrant",
+                scientific: "Machetornis rixosa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Puerto Iguazú, Argentine",
+                location_en: "Puerto Iguazú, Argentina",
+                date_fr: "3 juin 2007",
+                date_en: "June 3, 2007",
+                lat: -25.621944,
+                lng: -54.552778,
+                checklist_id: "S18566227"
+            },
+            
+            {
+                ml: "22574441",
+                name_fr: "Tyran querelleur",
+                name_en: "Cattle Tyrant",
+                scientific: "Machetornis rixosa",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Iguazú--Área Cataratas, Argentine",
+                location_en: "PN Iguazú--Área Cataratas, Argentina",
+                date_fr: "5 juin 2007",
+                date_en: "June 5, 2007",
+                lat: -25.6833032,
+                lng: -54.455452,
+                checklist_id: "S18566287"
+            },
+            
+            {
+                ml: "22416841",
+                name_fr: "Tyran quiquivi",
+                name_en: "Great Kiskadee",
+                scientific: "Pitangus sulphuratus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "21111661",
+                name_fr: "Tyran quiquivi",
+                name_en: "Great Kiskadee",
+                scientific: "Pitangus sulphuratus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566284"
+            },
+            
+            {
+                ml: "22574541",
+                name_fr: "Tyran quiquivi",
+                name_en: "Great Kiskadee",
+                scientific: "Pitangus sulphuratus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN Iguazú--Área Cataratas, Argentine",
+                location_en: "PN Iguazú--Área Cataratas, Argentina",
+                date_fr: "5 juin 2007",
+                date_en: "June 5, 2007",
+                lat: -25.6833032,
+                lng: -54.455452,
+                checklist_id: "S18566287"
+            },
+            
+            {
+                ml: "56260801",
+                name_fr: "Tyran de Cassin",
+                name_en: "Cassin\'s Kingbird",
+                scientific: "Tyrannus vociferans",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Mt. Lemmon--Molino Basin, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Molino Basin, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27, 2017",
+                lat: 32.337101,
+                lng: -110.6921005,
+                checklist_id: "S36369104"
+            },
+            
+            {
+                ml: "551450581",
+                name_fr: "Tyran de Cassin",
+                name_en: "Cassin\'s Kingbird",
+                scientific: "Tyrannus vociferans",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, Californie, États-Unis",
+                location_en: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, California, United States",
+                date_fr: "30 mars 2023",
+                date_en: "March 30, 2023",
+                lat: 34.4071359,
+                lng: -119.8783064,
+                checklist_id: "S132213962"
+            },
+            
+            {
+                ml: "596428981",
+                name_fr: "Tyran de Cassin",
+                name_en: "Cassin\'s Kingbird",
+                scientific: "Tyrannus vociferans",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "El Dorado Regional Park, Californie, États-Unis",
+                location_en: "El Dorado Regional Park, California, United States",
+                date_fr: "22 juillet 2023",
+                date_en: "July 22, 2023",
+                lat: 33.8148106,
+                lng: -118.088522,
+                checklist_id: "S145306714"
+            },
+            
+            {
+                ml: "189693561",
+                name_fr: "Tyran de l\'Ouest",
+                name_en: "Western Kingbird",
+                scientific: "Tyrannus verticalis",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
+                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                date_fr: "12 juin 2018",
+                date_en: "June 12, 2018",
+                lat: 30.2181988,
+                lng: -97.6458054,
+                checklist_id: "S46503858"
+            },
+            
+            {
+                ml: "615594783",
+                name_fr: "Tyran de l\'Ouest",
+                name_en: "Western Kingbird",
+                scientific: "Tyrannus verticalis",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Southern Glades Trail (C111 Canal outside ENP), Floride, États-Unis",
+                location_en: "Southern Glades Trail (C111 Canal outside ENP), Florida, United States",
+                date_fr: "3 mars 2024",
+                date_en: "March 3, 2024",
+                lat: 25.4034735,
+                lng: -80.5586135,
+                checklist_id: "S163572911"
+            },
+            
+            {
+                ml: "33891081",
+                name_fr: "Tyran tritri",
+                name_en: "Eastern Kingbird",
+                scientific: "Tyrannus tyrannus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Marais Sabourin, Québec, Canada",
+                location_en: "Marais Sabourin, Quebec, Canada",
+                date_fr: "13 juin 2004",
+                date_en: "June 13, 2004",
+                lat: 45.4708855,
+                lng: -75.7419716,
+                checklist_id: "S18566917"
+            },
+            
+            {
+                ml: "22503631",
+                name_fr: "Tyran tritri",
+                name_en: "Eastern Kingbird",
+                scientific: "Tyrannus tyrannus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "3 juillet 2005",
+                date_en: "July 3, 2005",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566827"
+            },
+            
+            {
+                ml: "22450741",
+                name_fr: "Tyran tritri",
+                name_en: "Eastern Kingbird",
+                scientific: "Tyrannus tyrannus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc des Rapides, Québec, Canada",
+                location_en: "Parc des Rapides, Quebec, Canada",
+                date_fr: "3 août 2011",
+                date_en: "August 3, 2011",
+                lat: 45.4277985,
+                lng: -73.5921872,
+                checklist_id: "S18567160"
+            },
+            
+            {
+                ml: "22450751",
+                name_fr: "Tyran tritri",
+                name_en: "Eastern Kingbird",
+                scientific: "Tyrannus tyrannus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Parc des Rapides, Québec, Canada",
+                location_en: "Parc des Rapides, Quebec, Canada",
+                date_fr: "3 août 2011",
+                date_en: "August 3, 2011",
+                lat: 45.4277985,
+                lng: -73.5921872,
+                checklist_id: "S18567160"
+            },
+            
+            {
+                ml: "22450981",
+                name_fr: "Tyran tritri",
+                name_en: "Eastern Kingbird",
+                scientific: "Tyrannus tyrannus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Montée Jamieson, Elgin, Québec, Canada",
+                location_en: "Montée Jamieson, Elgin, Quebec, Canada",
+                date_fr: "20 juin 2014",
+                date_en: "June 20, 2014",
+                lat: 44.9985423,
+                lng: -74.1748676,
+                checklist_id: "S18851930"
+            },
+            
+            {
+                ml: "22436261",
+                name_fr: "Tyran tête-police",
+                name_en: "Loggerhead Kingbird",
+                scientific: "Tyrannus caudifasciatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "16 avril 2010",
+                date_en: "April 16, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575036"
+            },
+            
+            {
+                ml: "21112231",
+                name_fr: "Tyran tête-police",
+                name_en: "Loggerhead Kingbird",
+                scientific: "Tyrannus caudifasciatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Cayo Santa María, CU-05, CU",
+                location_en: "Cayo Santa María, CU-05, CU",
+                date_fr: "17 avril 2010",
+                date_en: "April 17, 2010",
+                lat: 22.659722,
+                lng: -79.040278,
+                checklist_id: "S18575650"
+            },
+            
+            {
+                ml: "213076481",
+                name_fr: "Tyran tête-police",
+                name_en: "Loggerhead Kingbird",
+                scientific: "Tyrannus caudifasciatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "213076491",
+                name_fr: "Tyran tête-police",
+                name_en: "Loggerhead Kingbird",
+                scientific: "Tyrannus caudifasciatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "213698131",
+                name_fr: "Tyran tête-police",
+                name_en: "Loggerhead Kingbird",
+                scientific: "Tyrannus caudifasciatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
+                date_fr: "26 février 2020",
+                date_en: "February 26, 2020",
+                lat: 22.6557471,
+                lng: -79.0021384,
+                checklist_id: "S65223601"
+            },
+            
+            {
+                ml: "386158351",
+                name_fr: "Tyran à longue queue",
+                name_en: "Scissor-tailed Flycatcher",
+                scientific: "Tyrannus forficatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Technoparc Mtl--Site général, Québec, Canada",
+                location_en: "Technoparc Mtl--Site général, Quebec, Canada",
+                date_fr: "7 novembre 2021",
+                date_en: "November 7, 2021",
+                lat: 45.477466,
+                lng: -73.75534,
+                checklist_id: "S97262581"
+            },
+            
+            {
+                ml: "386158361",
+                name_fr: "Tyran à longue queue",
+                name_en: "Scissor-tailed Flycatcher",
+                scientific: "Tyrannus forficatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Technoparc Mtl--Site général, Québec, Canada",
+                location_en: "Technoparc Mtl--Site général, Quebec, Canada",
+                date_fr: "7 novembre 2021",
+                date_en: "November 7, 2021",
+                lat: 45.477466,
+                lng: -73.75534,
+                checklist_id: "S97262581"
+            },
+            
+            {
+                ml: "615612444",
+                name_fr: "Tyran à longue queue",
+                name_en: "Scissor-tailed Flycatcher",
+                scientific: "Tyrannus forficatus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Southern Glades Trail (C111 Canal outside ENP), Floride, États-Unis",
+                location_en: "Southern Glades Trail (C111 Canal outside ENP), Florida, United States",
+                date_fr: "3 mars 2024",
+                date_en: "March 3, 2024",
+                lat: 25.4034735,
+                lng: -80.5586135,
+                checklist_id: "S163572911"
+            },
+            
+            {
+                ml: "22575801",
+                name_fr: "Tyran des savanes",
+                name_en: "Fork-tailed Flycatcher",
+                scientific: "Tyrannus savana",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Colonia del Sacramento--Área General, Uruguay",
+                location_en: "Colonia del Sacramento--Área General, Uruguay",
+                date_fr: "31 décembre 2006",
+                date_en: "December 31, 2006",
+                lat: -34.4627413,
+                lng: -57.8384545,
+                checklist_id: "S18566233"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

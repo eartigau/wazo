@@ -1,0 +1,1020 @@
+#!/usr/bin/env python3
+"""
+Générateur de galeries eBird v2.0
+- Support taxonomie eBird (filtrage par famille)
+- Bilingue français/anglais
+- Formatage des dates selon la langue
+- Traduction des pays/régions
+"""
+
+import csv
+import os
+import time
+import re
+from pathlib import Path
+from datetime import datetime
+from urllib.request import urlopen, Request
+from urllib.error import HTTPError, URLError
+from jinja2 import Environment, FileSystemLoader
+
+
+# ============================================================================
+# CONFIGURATION
+# ============================================================================
+
+CACHE_FILE = "media_cache.csv"
+TAXONOMY_FILE = "eBird_taxonomy_v2025.csv"
+TRADUCTIONS_FILE = "traductions_lieux.csv"
+REQUEST_TIMEOUT = 10
+DELAY_BETWEEN_REQUESTS = 0.2
+
+# Mois en français et anglais
+MOIS_FR = ['', 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+           'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre']
+MOIS_EN = ['', 'January', 'February', 'March', 'April', 'May', 'June',
+           'July', 'August', 'September', 'October', 'November', 'December']
+
+# Préfixes à ignorer pour extraire le type d'oiseau
+PREFIXES_A_IGNORER = {'Petit', 'Grand', 'Petite', 'Grande'}
+
+
+# ============================================================================
+# FONCTIONS DE FORMATAGE
+# ============================================================================
+
+def normaliser_nom_scientifique(sci_name: str) -> str:
+    """
+    Normalise le nom scientifique en enlevant la sous-espèce entre parenthèses.
+    Ex: "Tringa semipalmata (semipalmata)" -> "Tringa semipalmata"
+    """
+    if not sci_name:
+        return ''
+    # Enlever tout ce qui est entre parenthèses à la fin
+    return re.sub(r'\s*\([^)]+\)\s*$', '', sci_name).strip()
+
+
+def normaliser_nom_commun(common_name: str) -> str:
+    """
+    Normalise le nom commun en enlevant la sous-espèce entre parenthèses.
+    Ex: "Chevalier semipalmé (semipalmata)" -> "Chevalier semipalmé"
+    """
+    if not common_name:
+        return ''
+    return re.sub(r'\s*\([^)]+\)\s*$', '', common_name).strip()
+
+def extraire_type_oiseau(nom_fr: str) -> str:
+    """
+    Extrait le type d'oiseau du nom français.
+    Ex: "Grand Héron" -> "Héron"
+        "Canard colvert" -> "Canard"
+        "Petite Buse" -> "Buse"
+    """
+    if not nom_fr:
+        return ''
+    
+    mots = nom_fr.split()
+    if not mots:
+        return ''
+    
+    # Si le premier mot est un préfixe à ignorer, prendre le second
+    if mots[0] in PREFIXES_A_IGNORER and len(mots) > 1:
+        return mots[1]
+    
+    return mots[0]
+
+
+def mettre_au_pluriel(mot: str) -> str:
+    """
+    Met un mot français au pluriel.
+    Gère les exceptions courantes pour les noms d'oiseaux.
+    """
+    if not mot:
+        return ''
+    
+    mot_lower = mot.lower()
+    
+    # Déjà au pluriel (termine par s, x, z)
+    if mot_lower.endswith(('s', 'x', 'z')):
+        return mot
+    
+    # Cas spécial: mots composés avec "bleu" (merlebleu -> merlebleus)
+    if mot_lower.endswith('bleu'):
+        return mot + 's'
+    
+    # Exceptions en -ou qui prennent -x
+    mots_ou_x = {'hibou', 'chou', 'bijou', 'caillou', 'genou', 'joujou', 'pou'}
+    if mot_lower in mots_ou_x:
+        return mot + 'x'
+    
+    # Mots en -eau prennent -x (corbeau, moineau, étourneau, etc.)
+    if mot_lower.endswith('eau'):
+        return mot + 'x'
+    
+    # Mots en -eu prennent -x (sauf bleu, pneu, émeu)
+    if mot_lower.endswith('eu') and mot_lower not in {'bleu', 'pneu', 'émeu'}:
+        return mot + 'x'
+    
+    # Mots en -al → -aux (cheval → chevaux) - rare pour oiseaux
+    # Exception: bal, carnaval, festival, etc. gardent -als
+    mots_al_aux = {'cheval', 'animal', 'journal'}  # pas vraiment d'oiseaux
+    if mot_lower.endswith('al') and mot_lower in mots_al_aux:
+        return mot[:-2] + 'ux'
+    
+    # Cas général: ajouter 's'
+    return mot + 's'
+
+
+def generer_description_groupe_fr(noms_fr: list) -> str:
+    """
+    Génère une description de groupe en français à partir des noms d'espèces.
+    Prend les types les plus fréquents et les met au pluriel.
+    Si plus de 5 types: affiche les 3 plus fréquents + "etc."
+    Sinon: affiche jusqu'à 5 types par fréquence décroissante.
+    """
+    if not noms_fr:
+        return ''
+    
+    # Compter les occurrences de chaque type
+    type_counts = {}
+    for nom in noms_fr:
+        type_oiseau = extraire_type_oiseau(nom)
+        if type_oiseau:
+            type_counts[type_oiseau] = type_counts.get(type_oiseau, 0) + 1
+    
+    if not type_counts:
+        return ''
+    
+    # Trier par fréquence décroissante
+    sorted_types = sorted(type_counts.items(), key=lambda x: (-x[1], x[0]))
+    
+    # Mettre au pluriel
+    if len(sorted_types) > 5:
+        # Plus de 5 types: les 3 plus fréquents + etc.
+        top_types = [mettre_au_pluriel(t[0]) for t in sorted_types[:3]]
+        return ', '.join(top_types) + ', etc.'
+    else:
+        # 5 ou moins: tous les types
+        types_list = [mettre_au_pluriel(t[0]) for t in sorted_types]
+        
+        if len(types_list) == 1:
+            return types_list[0]
+        elif len(types_list) == 2:
+            return f"{types_list[0]} et {types_list[1]}"
+        else:
+            return ', '.join(types_list[:-1]) + ' et ' + types_list[-1]
+
+def formater_date(date_str: str, langue: str = 'fr') -> str:
+    """
+    Formate une date YYYY-MM-DD en format lisible
+    FR: 13 janvier 2025
+    EN: January 13, 2025
+    """
+    if not date_str:
+        return ''
+    
+    try:
+        parts = date_str.split('-')
+        if len(parts) != 3:
+            return date_str
+        
+        annee, mois, jour = int(parts[0]), int(parts[1]), int(parts[2])
+        
+        if langue == 'fr':
+            return f"{jour} {MOIS_FR[mois]} {annee}"
+        else:
+            return f"{MOIS_EN[mois]} {jour}, {annee}"
+    except (ValueError, IndexError):
+        return date_str
+
+
+def charger_traductions_lieux(fichier: str = TRADUCTIONS_FILE) -> dict:
+    """Charge les traductions des pays/régions depuis le CSV"""
+    traductions = {'fr': {}, 'en': {}}
+    
+    if not os.path.exists(fichier):
+        print(f"⚠ Fichier de traductions non trouvé: {fichier}")
+        return traductions
+    
+    try:
+        with open(fichier, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                code = (row.get('code') or '').strip()
+                if code and not code.startswith('#'):
+                    traductions['fr'][code] = row.get('fr', code)
+                    traductions['en'][code] = row.get('en', code)
+    except Exception as e:
+        print(f"⚠ Erreur lecture traductions: {e}")
+    
+    return traductions
+
+
+def traduire_lieu(code: str, traductions: dict, langue: str = 'fr') -> str:
+    """Traduit un code de lieu (pays ou région)"""
+    if not code:
+        return ''
+    
+    # Essayer le code complet d'abord
+    if code in traductions.get(langue, {}):
+        return traductions[langue][code]
+    
+    # Essayer juste le code pays (2 premières lettres)
+    code_pays = code.split('-')[0] if '-' in code else code
+    if code_pays in traductions.get(langue, {}):
+        return traductions[langue][code_pays]
+    
+    return code
+
+
+# ============================================================================
+# TAXONOMIE eBird
+# ============================================================================
+
+class EBirdTaxonomy:
+    """Gère la taxonomie eBird pour le filtrage par famille"""
+    
+    def __init__(self, taxonomy_file: str = TAXONOMY_FILE):
+        self.taxonomy_file = taxonomy_file
+        self.species = {}  # sci_name -> {data}
+        self.families = {}  # family_code -> [sci_names]
+        self.family_names = {}  # family_code -> family_full_name
+        self.family_order = {}  # family_code -> min taxon_order (pour tri)
+        
+        self._load_taxonomy()
+    
+    def _extract_family_code(self, family_raw: str) -> str:
+        """Extrait le code famille (ex: 'Anatidae' de 'Anatidae (Ducks...)')"""
+        match = re.match(r'^(\w+)', family_raw)
+        return match.group(1) if match else family_raw
+    
+    def _load_taxonomy(self):
+        """Charge la taxonomie depuis le CSV"""
+        if not os.path.exists(self.taxonomy_file):
+            print(f"⚠ Fichier taxonomie non trouvé: {self.taxonomy_file}")
+            return
+        
+        print(f"📚 Chargement taxonomie: {self.taxonomy_file}...")
+        
+        try:
+            with open(self.taxonomy_file, 'r', encoding='utf-8-sig') as f:
+                reader = csv.DictReader(f)
+                for row in reader:
+                    category = row.get('CATEGORY', '')
+                    if category != 'species':
+                        continue
+                    
+                    sci_name = row.get('SCI_NAME', '').strip()
+                    family_raw = row.get('FAMILY', '').strip()
+                    family_code = self._extract_family_code(family_raw)
+                    taxon_order = int(row.get('TAXON_ORDER', 0) or 0)
+                    
+                    if sci_name:
+                        self.species[sci_name] = {
+                            'taxon_order': taxon_order,
+                            'common_name_en': row.get('PRIMARY_COM_NAME', ''),
+                            'sci_name': sci_name,
+                            'order': row.get('ORDER', ''),
+                            'family': family_code,
+                            'family_full': family_raw,
+                            'species_code': row.get('SPECIES_CODE', '')
+                        }
+                        
+                        # Indexer par famille
+                        if family_code not in self.families:
+                            self.families[family_code] = []
+                            self.family_names[family_code] = family_raw
+                            self.family_order[family_code] = taxon_order
+                        self.families[family_code].append(sci_name)
+                        
+                        # Garder l'ordre le plus petit pour la famille
+                        if taxon_order < self.family_order[family_code]:
+                            self.family_order[family_code] = taxon_order
+            
+            print(f"   ✓ {len(self.species)} espèces, {len(self.families)} familles")
+            
+        except Exception as e:
+            print(f"⚠ Erreur chargement taxonomie: {e}")
+    
+    def get_species_in_family(self, family_code: str) -> list:
+        """Retourne la liste des noms scientifiques d'une famille"""
+        return self.families.get(family_code, [])
+    
+    def get_species_in_families(self, family_codes: list) -> set:
+        """Retourne l'ensemble des noms scientifiques de plusieurs familles"""
+        result = set()
+        for fam in family_codes:
+            result.update(self.families.get(fam, []))
+        return result
+    
+    def get_species_info(self, sci_name: str) -> dict:
+        """Retourne les infos d'une espèce par son nom scientifique"""
+        return self.species.get(sci_name, {})
+    
+    def get_family_name(self, family_code: str) -> str:
+        """Retourne le nom complet d'une famille"""
+        return self.family_names.get(family_code, family_code)
+    
+    def get_english_name(self, sci_name: str) -> str:
+        """Retourne le nom anglais d'une espèce"""
+        info = self.species.get(sci_name, {})
+        return info.get('common_name_en', '')
+    
+    def get_taxon_order(self, sci_name: str) -> int:
+        """Retourne l'ordre taxonomique d'une espèce"""
+        info = self.species.get(sci_name, {})
+        return info.get('taxon_order', 999999)
+    
+    def get_family_order(self, family_code: str) -> int:
+        """Retourne l'ordre taxonomique d'une famille"""
+        return self.family_order.get(family_code, 999999)
+
+
+# ============================================================================
+# VÉRIFICATION DES MÉDIAS
+# ============================================================================
+
+def verifier_image_existe(ml_catalog_number: str) -> bool:
+    """Vérifie si une image existe en taille 480 sur Macaulay Library"""
+    url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{ml_catalog_number}/480"
+    
+    try:
+        request = Request(url, method='HEAD')
+        request.add_header('User-Agent', 'Mozilla/5.0 (compatible; eBird Gallery)')
+        
+        with urlopen(request, timeout=REQUEST_TIMEOUT) as response:
+            content_type = response.headers.get('Content-Type', '')
+            if 'image' in content_type.lower():
+                return True
+            return response.status == 200
+            
+    except HTTPError as e:
+        if e.code == 404:
+            return False
+        return False
+    except:
+        return False
+
+
+def charger_cache(fichier_cache: str = CACHE_FILE) -> dict:
+    """Charge le cache depuis le fichier CSV"""
+    cache = {}
+    
+    if not os.path.exists(fichier_cache):
+        return cache
+    
+    try:
+        with open(fichier_cache, 'r', newline='', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                ml_number = (row.get('ml_number') or '').strip()
+                if ml_number and not ml_number.startswith('#'):
+                    cache[ml_number] = {
+                        'status': row.get('status') or 'inconnu',
+                        'raison': row.get('raison') or '',
+                        'date_verification': row.get('date_verification') or ''
+                    }
+    except Exception as e:
+        print(f"⚠ Erreur lecture cache: {e}")
+    
+    return cache
+
+
+def sauvegarder_cache(cache: dict, fichier_cache: str = CACHE_FILE):
+    """Sauvegarde le cache dans le fichier CSV"""
+    try:
+        with open(fichier_cache, 'w', newline='', encoding='utf-8') as f:
+            fieldnames = ['ml_number', 'status', 'raison', 'date_verification']
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            
+            for ml_number, data in sorted(cache.items()):
+                writer.writerow({
+                    'ml_number': ml_number,
+                    'status': data.get('status', ''),
+                    'raison': data.get('raison', ''),
+                    'date_verification': data.get('date_verification', '')
+                })
+        
+        print(f"✓ Cache sauvegardé: {fichier_cache}")
+    except Exception as e:
+        print(f"⚠ Erreur sauvegarde cache: {e}")
+
+
+def verifier_medias(ml_numbers: list, fichier_cache: str = CACHE_FILE,
+                   forcer_verification: bool = False) -> dict:
+    """Vérifie une liste de numéros ML et retourne leur statut"""
+    cache = charger_cache(fichier_cache)
+    date_now = datetime.now().strftime("%Y-%m-%d %H:%M")
+    
+    images = []
+    exclus = []
+    a_verifier = []
+    
+    for ml_number in ml_numbers:
+        ml_number = str(ml_number).strip()
+        if not ml_number:
+            continue
+            
+        if ml_number in cache and not forcer_verification:
+            status = cache[ml_number]['status']
+            if status == 'image':
+                images.append(ml_number)
+            else:
+                exclus.append(ml_number)
+        else:
+            a_verifier.append(ml_number)
+    
+    if a_verifier:
+        print(f"\n🔍 Vérification de {len(a_verifier)} médias...")
+        
+        for i, ml_number in enumerate(a_verifier, 1):
+            if i % 50 == 0:
+                print(f"  ... {i}/{len(a_verifier)}")
+            
+            est_image = verifier_image_existe(ml_number)
+            
+            if est_image:
+                cache[ml_number] = {
+                    'status': 'image',
+                    'raison': 'vérifié automatiquement',
+                    'date_verification': date_now
+                }
+                images.append(ml_number)
+            else:
+                cache[ml_number] = {
+                    'status': 'son',
+                    'raison': 'pas d\'image 480 disponible',
+                    'date_verification': date_now
+                }
+                exclus.append(ml_number)
+            
+            time.sleep(DELAY_BETWEEN_REQUESTS)
+        
+        sauvegarder_cache(cache, fichier_cache)
+    
+    return {'images': images, 'exclus': exclus, 'cache': cache}
+
+
+# ============================================================================
+# CLASSE PRINCIPALE
+# ============================================================================
+
+class EBirdGalleryGenerator:
+    """Générateur de galeries photo bilingue avec support taxonomie"""
+    
+    def __init__(self, csv_file: str, 
+                 taxonomy_file: str = TAXONOMY_FILE,
+                 media_cache_file: str = CACHE_FILE,
+                 traductions_file: str = TRADUCTIONS_FILE):
+        
+        self.csv_file = csv_file
+        self.media_cache_file = media_cache_file
+        self.observations = []
+        self.media_cache = {}
+        
+        # Charger la taxonomie
+        self.taxonomy = EBirdTaxonomy(taxonomy_file)
+        
+        # Charger les traductions
+        self.traductions = charger_traductions_lieux(traductions_file)
+        
+        self._load_data()
+        self._load_media_cache()
+    
+    def _load_data(self):
+        """Charge les données du fichier CSV eBird"""
+        print(f"📂 Chargement de {self.csv_file}...")
+        
+        with open(self.csv_file, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                ml_numbers = row.get('ML Catalog Numbers') or ''
+                ml_numbers = ml_numbers.strip()
+                if ml_numbers:
+                    self.observations.append(row)
+        
+        print(f"   ✓ {len(self.observations)} observations avec médias")
+    
+    def _load_media_cache(self):
+        """Charge le cache des médias vérifiés"""
+        self.media_cache = charger_cache(self.media_cache_file)
+        if self.media_cache:
+            images = sum(1 for v in self.media_cache.values() if v['status'] == 'image')
+            exclus = len(self.media_cache) - images
+            print(f"   ✓ Cache médias: {images} images, {exclus} exclus")
+    
+    def _parse_coord(self, value) -> float:
+        """Parse une coordonnée en float"""
+        if not value:
+            return None
+        try:
+            return float(value)
+        except (ValueError, TypeError):
+            return None
+    
+    def _build_photo_data(self, obs: dict, ml: str) -> dict:
+        """Construit les données d'une photo avec traductions"""
+        sci_name = obs.get('Scientific Name', '').strip()
+        taxon_info = self.taxonomy.get_species_info(sci_name)
+        
+        # Infos lieu
+        state_code = obs.get('State/Province') or ''
+        location = obs.get('Location') or ''
+        country_code = state_code.split('-')[0] if '-' in state_code else state_code
+        
+        region_fr = traduire_lieu(state_code, self.traductions, 'fr')
+        region_en = traduire_lieu(state_code, self.traductions, 'en')
+        country_fr = traduire_lieu(country_code, self.traductions, 'fr')
+        country_en = traduire_lieu(country_code, self.traductions, 'en')
+        
+        # Construire lieu complet
+        if region_fr and country_fr and region_fr != country_fr:
+            lieu_complet_fr = f"{location}, {region_fr}, {country_fr}" if location else f"{region_fr}, {country_fr}"
+        else:
+            lieu_complet_fr = f"{location}, {country_fr}" if location and country_fr else location or country_fr
+        
+        if region_en and country_en and region_en != country_en:
+            lieu_complet_en = f"{location}, {region_en}, {country_en}" if location else f"{region_en}, {country_en}"
+        else:
+            lieu_complet_en = f"{location}, {country_en}" if location and country_en else location or country_en
+        
+        return {
+            'ml_catalog_number': ml,
+            'common_name_fr': obs.get('Common Name') or 'Inconnu',
+            'common_name_en': taxon_info.get('common_name_en') or obs.get('Common Name') or 'Unknown',
+            'scientific_name': sci_name,
+            'family': taxon_info.get('family', ''),
+            'family_full': taxon_info.get('family_full', ''),
+            'taxon_order': taxon_info.get('taxon_order', 999999),
+            'location': location,
+            'location_full_fr': lieu_complet_fr,
+            'location_full_en': lieu_complet_en,
+            'region_fr': region_fr,
+            'region_en': region_en,
+            'country_fr': country_fr,
+            'country_en': country_en,
+            'state_code': state_code,
+            'date_raw': obs.get('Date') or '',
+            'date_fr': formater_date(obs.get('Date'), 'fr'),
+            'date_en': formater_date(obs.get('Date'), 'en'),
+            'latitude': self._parse_coord(obs.get('Latitude')),
+            'longitude': self._parse_coord(obs.get('Longitude')),
+            'checklist_id': obs.get('Submission ID') or ''
+        }
+    
+    def get_species_list(self) -> list:
+        """
+        Retourne la liste de toutes les espèces photographiées
+        triée par ordre phylogénétique avec infos famille, lieu et coordonnées.
+        Filtre les espèces qui n'ont que des sons (pas d'image valide).
+        Fusionne les sous-espèces avec l'espèce principale.
+        Collecte TOUTES les photos de chaque espèce.
+        """
+        species_data = {}  # sci_name_normalized -> {'info': {...}, 'photos': [...]}
+        
+        for obs in self.observations:
+            sci_name_raw = obs.get('Scientific Name', '').strip()
+            if not sci_name_raw:
+                continue
+            
+            # Normaliser le nom (enlever sous-espèce)
+            sci_name = normaliser_nom_scientifique(sci_name_raw)
+            
+            obs_date = obs.get('Date', '')
+            ml_string = obs.get('ML Catalog Numbers') or ''
+            ml_numbers = [n.strip() for n in ml_string.replace(',', ' ').split() if n.strip()]
+            
+            # Collecter TOUTES les images valides de cette observation
+            for ml in ml_numbers:
+                if ml not in self.media_cache or self.media_cache[ml]['status'] != 'image':
+                    continue
+                
+                # Infos lieu
+                state_code = obs.get('State/Province') or ''
+                location = obs.get('Location') or ''
+                country_code = state_code.split('-')[0] if '-' in state_code else state_code
+                
+                region_fr = traduire_lieu(state_code, self.traductions, 'fr')
+                region_en = traduire_lieu(state_code, self.traductions, 'en')
+                country_fr = traduire_lieu(country_code, self.traductions, 'fr')
+                country_en = traduire_lieu(country_code, self.traductions, 'en')
+                
+                # Lieu complet
+                if region_fr and country_fr and region_fr != country_fr:
+                    lieu_complet_fr = f"{location}, {region_fr}, {country_fr}" if location else f"{region_fr}, {country_fr}"
+                else:
+                    lieu_complet_fr = f"{location}, {country_fr}" if location and country_fr else location or country_fr
+                
+                if region_en and country_en and region_en != country_en:
+                    lieu_complet_en = f"{location}, {region_en}, {country_en}" if location else f"{region_en}, {country_en}"
+                else:
+                    lieu_complet_en = f"{location}, {country_en}" if location and country_en else location or country_en
+                
+                photo_data = {
+                    'ml_catalog_number': ml,
+                    'date_raw': obs_date,
+                    'date_fr': formater_date(obs_date, 'fr'),
+                    'date_en': formater_date(obs_date, 'en'),
+                    'location_full_fr': lieu_complet_fr,
+                    'location_full_en': lieu_complet_en,
+                    'latitude': self._parse_coord(obs.get('Latitude')),
+                    'longitude': self._parse_coord(obs.get('Longitude')),
+                    'checklist_id': obs.get('Submission ID') or ''
+                }
+                
+                if sci_name not in species_data:
+                    taxon_info = self.taxonomy.get_species_info(sci_name)
+                    # Normaliser aussi le nom commun
+                    common_name_fr = normaliser_nom_commun(obs.get('Common Name', ''))
+                    common_name_en = normaliser_nom_commun(taxon_info.get('common_name_en') or obs.get('Common Name', ''))
+                    
+                    species_data[sci_name] = {
+                        'info': {
+                            'sci_name': sci_name,
+                            'common_name_fr': common_name_fr,
+                            'common_name_en': common_name_en,
+                            'taxon_order': taxon_info.get('taxon_order', 999999),
+                            'family': taxon_info.get('family', ''),
+                            'family_full': taxon_info.get('family_full', '')
+                        },
+                        'photos': []
+                    }
+                
+                species_data[sci_name]['photos'].append(photo_data)
+        
+        # Construire la liste finale
+        species_list = []
+        for sci_name, data in species_data.items():
+            info = data['info']
+            photos = data['photos']
+            
+            # Trier les photos par date décroissante
+            photos.sort(key=lambda x: x['date_raw'], reverse=True)
+            
+            # La photo représentative est la plus récente
+            most_recent = photos[0]
+            
+            species_list.append({
+                'sci_name': info['sci_name'],
+                'common_name_fr': info['common_name_fr'],
+                'common_name_en': info['common_name_en'],
+                'taxon_order': info['taxon_order'],
+                'family': info['family'],
+                'family_full': info['family_full'],
+                # Photo représentative (plus récente)
+                'ml_catalog_number': most_recent['ml_catalog_number'],
+                'date_raw': most_recent['date_raw'],
+                'date_fr': most_recent['date_fr'],
+                'date_en': most_recent['date_en'],
+                'location_full_fr': most_recent['location_full_fr'],
+                'location_full_en': most_recent['location_full_en'],
+                'latitude': most_recent['latitude'],
+                'longitude': most_recent['longitude'],
+                'checklist_id': most_recent['checklist_id'],
+                # Toutes les photos
+                'all_photos': photos,
+                'photo_count': len(photos)
+            })
+        
+        # Trier par ordre phylogénétique
+        species_list.sort(key=lambda x: x['taxon_order'])
+        
+        return species_list
+    
+    def get_families_with_photos(self) -> list:
+        """Retourne la liste des familles qui ont des photos, triées par ordre phylogénétique"""
+        species_list = self.get_species_list()
+        families = {}
+        
+        for sp in species_list:
+            fam = sp['family']
+            if fam and fam not in families:
+                families[fam] = {
+                    'code': fam,
+                    'name': sp['family_full'],
+                    'order': self.taxonomy.get_family_order(fam)
+                }
+        
+        return sorted(families.values(), key=lambda x: x['order'])
+    
+    def filter_observations(self, 
+                           limit: int = None,
+                           species: list = None,
+                           family: str = None,
+                           families_list: list = None,
+                           countries: list = None,
+                           regions: list = None,
+                           date_start: str = None,
+                           date_end: str = None,
+                           verifier_medias_en_ligne: bool = False,
+                           sort_by: str = 'date') -> list:
+        """
+        Filtre les observations selon les critères
+        
+        Args:
+            limit: Nombre maximum de photos
+            species: Liste de noms d'espèces
+            family: Code famille taxonomique (ex: 'Anatidae')
+            families_list: Liste de codes familles
+            countries: Liste de codes pays (ex: ['CA-QC', 'US-FL'])
+            regions: Liste de codes région
+            date_start: Date de début (YYYY-MM-DD)
+            date_end: Date de fin (YYYY-MM-DD)
+            verifier_medias_en_ligne: Si True, vérifie les médias non-cachés
+            sort_by: 'date' (chronologique inverse) ou 'taxonomy' (ordre taxonomique)
+        """
+        photos = []
+        ml_a_verifier = []
+        
+        # Si famille spécifiée, obtenir la liste des espèces
+        family_species = set()
+        if family:
+            family_species = set(self.taxonomy.get_species_in_family(family))
+        if families_list:
+            family_species = self.taxonomy.get_species_in_families(families_list)
+        
+        for obs in self.observations:
+            sci_name = obs.get('Scientific Name', '').strip()
+            
+            # Filtre par espèce
+            if species and obs.get('Common Name') not in species:
+                continue
+            
+            # Filtre par famille (via taxonomie)
+            if family_species and sci_name not in family_species:
+                continue
+            
+            # Filtre par pays/région
+            if countries:
+                state_code = obs.get('State/Province') or ''
+                if not any(c in state_code for c in countries):
+                    continue
+            
+            if regions:
+                region = obs.get('State/Province') or ''
+                if region not in regions:
+                    continue
+            
+            # Filtre par date
+            if date_start or date_end:
+                obs_date = obs.get('Date') or ''
+                if date_start and obs_date < date_start:
+                    continue
+                if date_end and obs_date > date_end:
+                    continue
+            
+            # Extraire les numéros ML
+            ml_string = obs.get('ML Catalog Numbers') or ''
+            ml_numbers = [n.strip() for n in ml_string.replace(',', ' ').split() if n.strip()]
+            
+            for ml in ml_numbers:
+                # Vérifier le cache
+                if ml in self.media_cache:
+                    if self.media_cache[ml]['status'] != 'image':
+                        continue
+                else:
+                    ml_a_verifier.append(ml)
+                
+                photo = self._build_photo_data(obs, ml)
+                photos.append(photo)
+        
+        # Vérifier les médias non-cachés
+        if verifier_medias_en_ligne and ml_a_verifier:
+            print(f"\n🔍 Vérification de {len(ml_a_verifier)} nouveaux médias...")
+            resultats = verifier_medias(ml_a_verifier, self.media_cache_file)
+            self.media_cache = charger_cache(self.media_cache_file)
+            
+            photos = [p for p in photos 
+                     if p['ml_catalog_number'] in resultats['images'] 
+                     or (p['ml_catalog_number'] in self.media_cache 
+                         and self.media_cache[p['ml_catalog_number']]['status'] == 'image')]
+        
+        # Supprimer les doublons
+        seen = set()
+        unique_photos = []
+        for photo in photos:
+            if photo['ml_catalog_number'] not in seen:
+                seen.add(photo['ml_catalog_number'])
+                unique_photos.append(photo)
+        
+        # Trier selon le mode choisi
+        if sort_by == 'taxonomy':
+            # Tri par ordre taxonomique (taxon_order)
+            unique_photos.sort(key=lambda x: (x.get('taxon_order', 999999), x.get('date_raw', '')))
+        else:
+            # Tri par date décroissante (défaut)
+            unique_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+        
+        if limit:
+            unique_photos = unique_photos[:limit]
+        
+        return unique_photos
+    
+    def generate_gallery(self,
+                        output_base: str,
+                        title_fr: str,
+                        title_en: str,
+                        photos: list,
+                        template_file: str = 'gallery_template.html',
+                        menu: list = None,
+                        gallery_id: str = None,
+                        subtitle_fr: str = None,
+                        subtitle_en: str = None,
+                        species_count: int = None):
+        """
+        Génère les pages HTML de galerie en français et anglais
+        
+        Args:
+            output_base: Nom de base sans extension (ex: 'gallery_anatidae')
+            title_fr: Titre en français
+            title_en: Titre en anglais
+            photos: Liste de photos
+            template_file: Fichier template Jinja2
+            menu: Structure du menu
+            gallery_id: ID unique pour cette galerie (pour liens depuis liste espèces)
+            subtitle_fr: Sous-titre en français (optionnel)
+            subtitle_en: Sous-titre en anglais (optionnel)
+            species_count: Nombre d'espèces (optionnel, pour affichage)
+        """
+        output_fr = f"{output_base}_fr.html"
+        output_en = f"{output_base}_en.html"
+        
+        env = Environment(loader=FileSystemLoader('.'))
+        template = env.get_template(template_file)
+        
+        if gallery_id is None:
+            gallery_id = output_base
+        
+        # Version française
+        html_fr = template.render(
+            lang='fr',
+            gallery_title=title_fr,
+            gallery_subtitle=subtitle_fr,
+            gallery_id=gallery_id,
+            photos=photos,
+            menu=menu or [],
+            current_page=output_fr,
+            other_lang_page=output_en,
+            species_count=species_count
+        )
+        
+        with open(output_fr, 'w', encoding='utf-8') as f:
+            f.write(html_fr)
+        
+        # Version anglaise
+        html_en = template.render(
+            lang='en',
+            gallery_title=title_en,
+            gallery_subtitle=subtitle_en,
+            gallery_id=gallery_id,
+            photos=photos,
+            menu=menu or [],
+            current_page=output_en,
+            other_lang_page=output_fr,
+            species_count=species_count
+        )
+        
+        with open(output_en, 'w', encoding='utf-8') as f:
+            f.write(html_en)
+        
+        print(f"   ✓ {output_fr} / {output_en} ({len(photos)} photos)")
+        return output_fr, output_en
+    
+    def generate_species_list(self,
+                             output_base: str = 'species_list',
+                             template_file: str = 'species_list_template.html',
+                             menu: list = None):
+        """Génère la page liste des espèces par famille"""
+        
+        output_fr = f"{output_base}_fr.html"
+        output_en = f"{output_base}_en.html"
+        
+        species_list = self.get_species_list()
+        
+        # Grouper par famille
+        families = {}
+        for sp in species_list:
+            fam = sp['family'] or 'Unknown'
+            if fam not in families:
+                # Extraire le nom anglais entre parenthèses
+                family_full = sp['family_full'] or fam
+                name_en_match = re.search(r'\(([^)]+)\)', family_full)
+                name_en = name_en_match.group(1) if name_en_match else ''
+                
+                # Gérer le cas "Unknown"
+                if fam == 'Unknown':
+                    code_display = 'Autres'  # Sera adapté selon la langue dans le template
+                    name_en = 'Others'
+                else:
+                    code_display = fam
+                
+                families[fam] = {
+                    'code': fam,
+                    'code_display_fr': 'Autres' if fam == 'Unknown' else fam,
+                    'code_display_en': 'Others' if fam == 'Unknown' else fam,
+                    'name_en': name_en,
+                    'name_fr': '',  # Sera généré après
+                    'order': self.taxonomy.get_family_order(fam) if fam != 'Unknown' else 999999,
+                    'species': []
+                }
+            families[fam]['species'].append(sp)
+        
+        # Générer les descriptions françaises à partir des noms d'espèces
+        for fam_data in families.values():
+            if fam_data['code'] != 'Unknown':
+                noms_fr = [sp['common_name_fr'] for sp in fam_data['species']]
+                fam_data['name_fr'] = generer_description_groupe_fr(noms_fr)
+            else:
+                fam_data['name_fr'] = ''
+        
+        # Trier les familles par ordre phylogénétique
+        sorted_families = sorted(families.values(), key=lambda x: x['order'])
+        
+        env = Environment(loader=FileSystemLoader('.'))
+        template = env.get_template(template_file)
+        
+        # Version française
+        html_fr = template.render(
+            lang='fr',
+            families=sorted_families,
+            total_species=len(species_list),
+            total_families=len(sorted_families),
+            menu=menu or [],
+            current_page=output_fr,
+            other_lang_page=output_en
+        )
+        
+        with open(output_fr, 'w', encoding='utf-8') as f:
+            f.write(html_fr)
+        
+        # Version anglaise
+        html_en = template.render(
+            lang='en',
+            families=sorted_families,
+            total_species=len(species_list),
+            total_families=len(sorted_families),
+            menu=menu or [],
+            current_page=output_en,
+            other_lang_page=output_fr
+        )
+        
+        with open(output_en, 'w', encoding='utf-8') as f:
+            f.write(html_en)
+        
+        print(f"   ✓ {output_fr} / {output_en} ({len(species_list)} espèces, {len(sorted_families)} familles)")
+        return output_fr, output_en
+
+
+def verifier_tous_les_medias(csv_file: str, cache_file: str = CACHE_FILE):
+    """Vérifie tous les médias du fichier CSV"""
+    print("=" * 60)
+    print("🔍 VÉRIFICATION COMPLÈTE DES MÉDIAS")
+    print("=" * 60)
+    
+    all_ml_numbers = []
+    with open(csv_file, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            ml_string = row.get('ML Catalog Numbers') or ''
+            ml_string = ml_string.strip()
+            if ml_string:
+                for ml in ml_string.replace(',', ' ').split():
+                    ml = ml.strip()
+                    if ml:
+                        all_ml_numbers.append(ml)
+    
+    all_ml_numbers = list(set(all_ml_numbers))
+    print(f"\nTotal de médias uniques: {len(all_ml_numbers)}")
+    
+    resultats = verifier_medias(all_ml_numbers, cache_file)
+    
+    print("\n" + "=" * 60)
+    print("✅ VÉRIFICATION TERMINÉE")
+    print("=" * 60)
+    
+    return resultats
+
+
+if __name__ == "__main__":
+    import sys
+    
+    print("=" * 60)
+    print("🐦 GÉNÉRATEUR DE GALERIES eBird v2.0")
+    print("=" * 60)
+    
+    if len(sys.argv) > 1:
+        cmd = sys.argv[1].lower()
+        csv_file = sys.argv[2] if len(sys.argv) > 2 else "MyEBirdData.csv"
+        
+        if cmd == "verifier":
+            verifier_tous_les_medias(csv_file)
+        else:
+            print(f"Commande inconnue: {cmd}")
+    else:
+        print("""
+Usage:
+    python generate_gallery.py verifier [fichier.csv]
+        → Vérifie tous les médias et met à jour le cache
+    
+Pour générer des galeries, utilisez generer_tout.py
+""")

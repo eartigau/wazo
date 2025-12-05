@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Famille des Troglodytidaes</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Voyages</span>
+                    <div class="dropdown-menu">
+                        
+                        <a href="voyage_chili_fr.html">
+                            Chili
+                        </a>
+                        
+                        <a href="voyage_geneve_fr.html">
+                            Genève
+                        </a>
+                        
+                        <a href="voyage_hawaii_fr.html">
+                            Hawaï
+                        </a>
+                        
+                        <a href="voyage_floride_fr.html">
+                            Floride
+                        </a>
+                        
+                        <a href="voyage_arizona_fr.html">
+                            Arizona
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+                
+                <li class="dropdown">
+                    <span class="dropdown-toggle">Familles</span>
+                    <div class="dropdown-menu six-columns">
+                        
+                        <a href="gallery_rheidae_fr.html">
+                            Rheidae (Nandous)
+                        </a>
+                        
+                        <a href="gallery_tinamidae_fr.html">
+                            Tinamidae (Tinamous)
+                        </a>
+                        
+                        <a href="gallery_anhimidae_fr.html">
+                            Anhimidae (Kamichis)
+                        </a>
+                        
+                        <a href="gallery_anatidae_fr.html">
+                            Anatidae (Canards, Fuligules, Oies, etc.)
+                        </a>
+                        
+                        <a href="gallery_numididae_fr.html">
+                            Numididae (Pintades)
+                        </a>
+                        
+                        <a href="gallery_odontophoridae_fr.html">
+                            Odontophoridae (Colins)
+                        </a>
+                        
+                        <a href="gallery_phasianidae_fr.html">
+                            Phasianidae (Faisans, Francolins, Cailles, etc.)
+                        </a>
+                        
+                        <a href="gallery_columbidae_fr.html">
+                            Columbidae (Tourterelles, Pigeons, Colombes et Géopélies)
+                        </a>
+                        
+                        <a href="gallery_otididae_fr.html">
+                            Otididae (Outardes)
+                        </a>
+                        
+                        <a href="gallery_cuculidae_fr.html">
+                            Cuculidae (Coucous, Coulicous, Anis, etc.)
+                        </a>
+                        
+                        <a href="gallery_caprimulgidae_fr.html">
+                            Caprimulgidae (Engoulevents)
+                        </a>
+                        
+                        <a href="gallery_apodidae_fr.html">
+                            Apodidae (Martinets)
+                        </a>
+                        
+                        <a href="gallery_trochilidae_fr.html">
+                            Trochilidae (Colibris, Arianes, Dryades, etc.)
+                        </a>
+                        
+                        <a href="gallery_rallidae_fr.html">
+                            Rallidae (Foulques, Râles, Talèves, Gallinules et Marouettes)
+                        </a>
+                        
+                        <a href="gallery_aramidae_fr.html">
+                            Aramidae (Courlans)
+                        </a>
+                        
+                        <a href="gallery_gruidae_fr.html">
+                            Gruidae (Grues)
+                        </a>
+                        
+                        <a href="gallery_burhinidae_fr.html">
+                            Burhinidae (Oedicnèmes)
+                        </a>
+                        
+                        <a href="gallery_recurvirostridae_fr.html">
+                            Recurvirostridae (Avocettes et Échasses)
+                        </a>
+                        
+                        <a href="gallery_haematopodidae_fr.html">
+                            Haematopodidae (Huîtriers)
+                        </a>
+                        
+                        <a href="gallery_charadriidae_fr.html">
+                            Charadriidae (Pluviers et Vanneaux)
+                        </a>
+                        
+                        <a href="gallery_scolopacidae_fr.html">
+                            Scolopacidae (Bécasseaux, Chevaliers, Courlis, etc.)
+                        </a>
+                        
+                        <a href="gallery_stercorariidae_fr.html">
+                            Stercorariidae (Labbes)
+                        </a>
+                        
+                        <a href="gallery_alcidae_fr.html">
+                            Alcidae (Guillemots, Macareux et Pingouins)
+                        </a>
+                        
+                        <a href="gallery_laridae_fr.html">
+                            Laridae (Goélands, Sternes, Mouettes, etc.)
+                        </a>
+                        
+                        <a href="gallery_phoenicopteridae_fr.html">
+                            Phoenicopteridae (Flamants)
+                        </a>
+                        
+                        <a href="gallery_podicipedidae_fr.html">
+                            Podicipedidae (Grèbes)
+                        </a>
+                        
+                        <a href="gallery_phaethontidae_fr.html">
+                            Phaethontidae (Phaétons)
+                        </a>
+                        
+                        <a href="gallery_gaviidae_fr.html">
+                            Gaviidae (Plongeons)
+                        </a>
+                        
+                        <a href="gallery_spheniscidae_fr.html">
+                            Spheniscidae (Manchots)
+                        </a>
+                        
+                        <a href="gallery_diomedeidae_fr.html">
+                            Diomedeidae (Albatros)
+                        </a>
+                        
+                        <a href="gallery_oceanitidae_fr.html">
+                            Oceanitidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_hydrobatidae_fr.html">
+                            Hydrobatidae (Océanites)
+                        </a>
+                        
+                        <a href="gallery_procellariidae_fr.html">
+                            Procellariidae (Puffins, Fulmars, Puffinures, Pétrels et Damiers)
+                        </a>
+                        
+                        <a href="gallery_ciconiidae_fr.html">
+                            Ciconiidae (Cigognes et Tantales)
+                        </a>
+                        
+                        <a href="gallery_fregatidae_fr.html">
+                            Fregatidae (Frégates)
+                        </a>
+                        
+                        <a href="gallery_sulidae_fr.html">
+                            Sulidae (Fous)
+                        </a>
+                        
+                        <a href="gallery_anhingidae_fr.html">
+                            Anhingidae (Anhingas)
+                        </a>
+                        
+                        <a href="gallery_phalacrocoracidae_fr.html">
+                            Phalacrocoracidae (Cormorans)
+                        </a>
+                        
+                        <a href="gallery_threskiornithidae_fr.html">
+                            Threskiornithidae (Ibis et Spatules)
+                        </a>
+                        
+                        <a href="gallery_ardeidae_fr.html">
+                            Ardeidae (Hérons, Aigrettes, Bihoreaux, Butors et Crabiers)
+                        </a>
+                        
+                        <a href="gallery_pelecanidae_fr.html">
+                            Pelecanidae (Pélicans)
+                        </a>
+                        
+                        <a href="gallery_cathartidae_fr.html">
+                            Cathartidae (Condors et Urubus)
+                        </a>
+                        
+                        <a href="gallery_pandionidae_fr.html">
+                            Pandionidae (Balbuzards)
+                        </a>
+                        
+                        <a href="gallery_accipitridae_fr.html">
+                            Accipitridae (Buses, Éperviers, Aigles, etc.)
+                        </a>
+                        
+                        <a href="gallery_tytonidae_fr.html">
+                            Tytonidae (Effraies)
+                        </a>
+                        
+                        <a href="gallery_strigidae_fr.html">
+                            Strigidae (Chouettes, Chevêches, Hiboux, etc.)
+                        </a>
+                        
+                        <a href="gallery_upupidae_fr.html">
+                            Upupidae (Huppes)
+                        </a>
+                        
+                        <a href="gallery_bucerotidae_fr.html">
+                            Bucerotidae (Calaos)
+                        </a>
+                        
+                        <a href="gallery_meropidae_fr.html">
+                            Meropidae (Guêpiers)
+                        </a>
+                        
+                        <a href="gallery_alcedinidae_fr.html">
+                            Alcedinidae (Martin-pêcheurs et Martin-chasseurs)
+                        </a>
+                        
+                        <a href="gallery_coraciidae_fr.html">
+                            Coraciidae (Rolliers)
+                        </a>
+                        
+                        <a href="gallery_ramphastidae_fr.html">
+                            Ramphastidae (Toucans et Toucanets)
+                        </a>
+                        
+                        <a href="gallery_picidae_fr.html">
+                            Picidae (Pics)
+                        </a>
+                        
+                        <a href="gallery_falconidae_fr.html">
+                            Falconidae (Faucons, Caracaras et Crécerelles)
+                        </a>
+                        
+                        <a href="gallery_strigopidae_fr.html">
+                            Strigopidae (Nestors)
+                        </a>
+                        
+                        <a href="gallery_psittaculidae_fr.html">
+                            Psittaculidae (Perruches et Inséparables)
+                        </a>
+                        
+                        <a href="gallery_psittacidae_fr.html">
+                            Psittacidae (Conures)
+                        </a>
+                        
+                        <a href="gallery_thamnophilidae_fr.html">
+                            Thamnophilidae (Alapis et Bataras)
+                        </a>
+                        
+                        <a href="gallery_rhinocryptidae_fr.html">
+                            Rhinocryptidae (Tourcos)
+                        </a>
+                        
+                        <a href="gallery_furnariidae_fr.html">
+                            Furnariidae (Cinclodes, Synallaxes, Géosittes, etc.)
+                        </a>
+                        
+                        <a href="gallery_pipridae_fr.html">
+                            Pipridae (Manakins)
+                        </a>
+                        
+                        <a href="gallery_cotingidae_fr.html">
+                            Cotingidae (Raras)
+                        </a>
+                        
+                        <a href="gallery_tyrannidae_fr.html">
+                            Tyrannidae (Tyrans, Moucherolles, Dormilons, etc.)
+                        </a>
+                        
+                        <a href="gallery_campephagidae_fr.html">
+                            Campephagidae (Minivets)
+                        </a>
+                        
+                        <a href="gallery_vireonidae_fr.html">
+                            Vireonidae (Viréos)
+                        </a>
+                        
+                        <a href="gallery_rhipiduridae_fr.html">
+                            Rhipiduridae (Rhipidures)
+                        </a>
+                        
+                        <a href="gallery_dicruridae_fr.html">
+                            Dicruridae (Drongos)
+                        </a>
+                        
+                        <a href="gallery_monarchidae_fr.html">
+                            Monarchidae (Monarques)
+                        </a>
+                        
+                        <a href="gallery_laniidae_fr.html">
+                            Laniidae (Pie-grièches)
+                        </a>
+                        
+                        <a href="gallery_corvidae_fr.html">
+                            Corvidae (Geais, Corbeaux, Corneilles, etc.)
+                        </a>
+                        
+                        <a href="gallery_callaeidae_fr.html">
+                            Callaeidae (Créadions)
+                        </a>
+                        
+                        <a href="gallery_paridae_fr.html">
+                            Paridae (Mésanges)
+                        </a>
+                        
+                        <a href="gallery_remizidae_fr.html">
+                            Remizidae (Auripares)
+                        </a>
+                        
+                        <a href="gallery_alaudidae_fr.html">
+                            Alaudidae (Alouettes et Cochevis)
+                        </a>
+                        
+                        <a href="gallery_cisticolidae_fr.html">
+                            Cisticolidae (Cisticoles, Couturières et Prinias)
+                        </a>
+                        
+                        <a href="gallery_acrocephalidae_fr.html">
+                            Acrocephalidae (Hypolaïs et Rousserolles)
+                        </a>
+                        
+                        <a href="gallery_hirundinidae_fr.html">
+                            Hirundinidae (Hirondelles)
+                        </a>
+                        
+                        <a href="gallery_pycnonotidae_fr.html">
+                            Pycnonotidae (Bulbuls)
+                        </a>
+                        
+                        <a href="gallery_phylloscopidae_fr.html">
+                            Phylloscopidae (Pouillots)
+                        </a>
+                        
+                        <a href="gallery_cettiidae_fr.html">
+                            Cettiidae (Bouscarles)
+                        </a>
+                        
+                        <a href="gallery_aegithalidae_fr.html">
+                            Aegithalidae (Orites)
+                        </a>
+                        
+                        <a href="gallery_sylviidae_fr.html">
+                            Sylviidae (Fauvettes)
+                        </a>
+                        
+                        <a href="gallery_paradoxornithidae_fr.html">
+                            Paradoxornithidae (Camas)
+                        </a>
+                        
+                        <a href="gallery_zosteropidae_fr.html">
+                            Zosteropidae (Zostérops)
+                        </a>
+                        
+                        <a href="gallery_timaliidae_fr.html">
+                            Timaliidae (Timalies)
+                        </a>
+                        
+                        <a href="gallery_leiothrichidae_fr.html">
+                            Leiothrichidae (Cratéropes, Garrulaxes et Léiothrix)
+                        </a>
+                        
+                        <a href="gallery_regulidae_fr.html">
+                            Regulidae (Roitelets)
+                        </a>
+                        
+                        <a href="gallery_tichodromidae_fr.html">
+                            Tichodromidae (Tichodromes)
+                        </a>
+                        
+                        <a href="gallery_sittidae_fr.html">
+                            Sittidae (Sittelles)
+                        </a>
+                        
+                        <a href="gallery_certhiidae_fr.html">
+                            Certhiidae (Grimpereaux)
+                        </a>
+                        
+                        <a href="gallery_polioptilidae_fr.html">
+                            Polioptilidae (Gobemoucherons)
+                        </a>
+                        
+                        <a href="gallery_troglodytidae_fr.html">
+                            Troglodytidae (Troglodytes)
+                        </a>
+                        
+                        <a href="gallery_sturnidae_fr.html">
+                            Sturnidae (Martins et Étourneaux)
+                        </a>
+                        
+                        <a href="gallery_mimidae_fr.html">
+                            Mimidae (Moqueurs)
+                        </a>
+                        
+                        <a href="gallery_turdidae_fr.html">
+                            Turdidae (Grives, Merles, Merlebleus et Solitaires)
+                        </a>
+                        
+                        <a href="gallery_muscicapidae_fr.html">
+                            Muscicapidae (Shamas, Gobemouches, Rougequeues, etc.)
+                        </a>
+                        
+                        <a href="gallery_bombycillidae_fr.html">
+                            Bombycillidae (Jaseurs)
+                        </a>
+                        
+                        <a href="gallery_ptiliogonatidae_fr.html">
+                            Ptiliogonatidae (Phénopèples)
+                        </a>
+                        
+                        <a href="gallery_dicaeidae_fr.html">
+                            Dicaeidae (Dicées)
+                        </a>
+                        
+                        <a href="gallery_nectariniidae_fr.html">
+                            Nectariniidae (Souimangas)
+                        </a>
+                        
+                        <a href="gallery_chloropseidae_fr.html">
+                            Chloropseidae (Verdins)
+                        </a>
+                        
+                        <a href="gallery_peucedramidae_fr.html">
+                            Peucedramidae (Fauvines)
+                        </a>
+                        
+                        <a href="gallery_ploceidae_fr.html">
+                            Ploceidae (Tisserins)
+                        </a>
+                        
+                        <a href="gallery_estrildidae_fr.html">
+                            Estrildidae (Capucins, Astrilds et Paddas)
+                        </a>
+                        
+                        <a href="gallery_viduidae_fr.html">
+                            Viduidae (Veuves)
+                        </a>
+                        
+                        <a href="gallery_prunellidae_fr.html">
+                            Prunellidae (Accenteurs)
+                        </a>
+                        
+                        <a href="gallery_passeridae_fr.html">
+                            Passeridae (Moineaux et Niverolles)
+                        </a>
+                        
+                        <a href="gallery_motacillidae_fr.html">
+                            Motacillidae (Pipits et Bergeronnettes)
+                        </a>
+                        
+                        <a href="gallery_fringillidae_fr.html">
+                            Fringillidae (Tarins, Chardonnerets, Roselins, etc.)
+                        </a>
+                        
+                        <a href="gallery_calcariidae_fr.html">
+                            Calcariidae (Plectrophanes)
+                        </a>
+                        
+                        <a href="gallery_emberizidae_fr.html">
+                            Emberizidae (Bruants)
+                        </a>
+                        
+                        <a href="gallery_passerellidae_fr.html">
+                            Passerellidae (Bruants, Tohis et Juncos)
+                        </a>
+                        
+                        <a href="gallery_phaenicophilidae_fr.html">
+                            Phaenicophilidae (Zénas)
+                        </a>
+                        
+                        <a href="gallery_icteriidae_fr.html">
+                            Icteriidae (Ictéries)
+                        </a>
+                        
+                        <a href="gallery_icteridae_fr.html">
+                            Icteridae (Quiscales, Orioles, Carouges, etc.)
+                        </a>
+                        
+                        <a href="gallery_parulidae_fr.html">
+                            Parulidae (Parulines)
+                        </a>
+                        
+                        <a href="gallery_cardinalidae_fr.html">
+                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                        </a>
+                        
+                        <a href="gallery_thraupidae_fr.html">
+                            Thraupidae (Sicales, Phrygiles, Incaspizes, etc.)
+                        </a>
+                        
+                    </div>
+                </li>
+                
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="gallery_troglodytidae_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Famille des Troglodytidaes</h1>
+        
+        <div class="gallery-subtitle">Troglodytes</div>
+        
+        <div class="stats">
+            48 photos
+            
+             · 11 espèces
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="34929091"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34929091/480"
+                     alt="Troglodyte des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="34434771"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34434771/480"
+                     alt="Troglodyte familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="34434781"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34434781/480"
+                     alt="Troglodyte familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="34434791"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34434791/480"
+                     alt="Troglodyte familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="170290661"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/170290661/480"
+                     alt="Troglodyte familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="234518651"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/234518651/480"
+                     alt="Troglodyte familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="339465171"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/339465171/480"
+                     alt="Troglodyte familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="592886881"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/592886881/480"
+                     alt="Troglodyte familier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte familier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="22493291"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493291/480"
+                     alt="Troglodyte austral"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte austral</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="22493301"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493301/480"
+                     alt="Troglodyte austral"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte austral</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="22502821"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502821/480"
+                     alt="Troglodyte austral"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte austral</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="22399551"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22399551/480"
+                     alt="Troglodyte austral"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte austral</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="213362461"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362461/480"
+                     alt="Troglodyte austral"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte austral</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="435253081"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435253081/480"
+                     alt="Troglodyte austral"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte austral</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="34749021"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749021/480"
+                     alt="Troglodyte mignon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte mignon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22369091"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22369091/480"
+                     alt="Troglodyte de Baird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Baird</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="22453001"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22453001/480"
+                     alt="Troglodyte des forêts"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des forêts</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="22493281"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493281/480"
+                     alt="Troglodyte des forêts"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des forêts</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="22586661"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586661/480"
+                     alt="Troglodyte des forêts"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des forêts</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="234518641"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/234518641/480"
+                     alt="Troglodyte des forêts"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des forêts</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="487486761"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/487486761/480"
+                     alt="Troglodyte des forêts"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des forêts</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="34506471"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34506471/480"
+                     alt="Troglodyte de Latham"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Latham</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="22503471"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503471/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="22503481"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503481/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="22503681"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22503681/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="33891781"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33891781/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="34383881"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34383881/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="34383891"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34383891/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="34383901"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34383901/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="34523561"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34523561/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="34384071"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34384071/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="34384081"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34384081/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="34523661"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34523661/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="34523671"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34523671/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="34523681"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34523681/480"
+                     alt="Troglodyte des marais"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des marais</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="39830321"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/39830321/480"
+                     alt="Troglodyte de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="41652621"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/41652621/480"
+                     alt="Troglodyte de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="51320121"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51320121/480"
+                     alt="Troglodyte de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="51320131"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51320131/480"
+                     alt="Troglodyte de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="71488401"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/71488401/480"
+                     alt="Troglodyte de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="71488601"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/71488601/480"
+                     alt="Troglodyte de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="105332801"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/105332801/480"
+                     alt="Troglodyte de Caroline"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Caroline</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="118100011"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/118100011/480"
+                     alt="Troglodyte de Bewick"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte de Bewick</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="34384421"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34384421/480"
+                     alt="Troglodyte des cactus"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des cactus</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="34384501"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34384501/480"
+                     alt="Troglodyte des cactus"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des cactus</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="537716681"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537716681/480"
+                     alt="Troglodyte des cactus"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des cactus</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="537717891"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/537717891/480"
+                     alt="Troglodyte des cactus"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des cactus</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="538169391"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538169391/480"
+                     alt="Troglodyte des cactus"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte des cactus</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "34929091",
+                name_fr: "Troglodyte des rochers",
+                name_en: "Rock Wren",
+                scientific: "Salpinctes obsoletus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Tucson Mountain Park--Gates Pass, Arizona, États-Unis",
+                location_en: "Tucson Mountain Park--Gates Pass, Arizona, United States",
+                date_fr: "30 décembre 2005",
+                date_en: "December 30, 2005",
+                lat: 32.2227528,
+                lng: -111.1004416,
+                checklist_id: "S18574920"
+            },
+            
+            {
+                ml: "34434771",
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                scientific: "Troglodytes aedon",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN de Plaisance--Sentier la Zizanie-des-Marais, Québec, Canada",
+                location_en: "PN de Plaisance--Sentier la Zizanie-des-Marais, Quebec, Canada",
+                date_fr: "30 mai 2013",
+                date_en: "May 30, 2013",
+                lat: 45.5997135,
+                lng: -75.0820626,
+                checklist_id: "S18567155"
+            },
+            
+            {
+                ml: "34434781",
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                scientific: "Troglodytes aedon",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN de Plaisance--Sentier la Zizanie-des-Marais, Québec, Canada",
+                location_en: "PN de Plaisance--Sentier la Zizanie-des-Marais, Quebec, Canada",
+                date_fr: "30 mai 2013",
+                date_en: "May 30, 2013",
+                lat: 45.5997135,
+                lng: -75.0820626,
+                checklist_id: "S18567155"
+            },
+            
+            {
+                ml: "34434791",
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                scientific: "Troglodytes aedon",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN de Plaisance--Sentier la Zizanie-des-Marais, Québec, Canada",
+                location_en: "PN de Plaisance--Sentier la Zizanie-des-Marais, Quebec, Canada",
+                date_fr: "30 mai 2013",
+                date_en: "May 30, 2013",
+                lat: 45.5997135,
+                lng: -75.0820626,
+                checklist_id: "S18567155"
+            },
+            
+            {
+                ml: "170290661",
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                scientific: "Troglodytes aedon",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "28 juillet 2019",
+                date_en: "July 28, 2019",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S58527730"
+            },
+            
+            {
+                ml: "234518651",
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                scientific: "Troglodytes aedon",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Domaine St-Paul, Québec, Canada",
+                location_en: "Domaine St-Paul, Quebec, Canada",
+                date_fr: "14 mai 2020",
+                date_en: "May 14, 2020",
+                lat: 45.4546332,
+                lng: -73.5529532,
+                checklist_id: "S69022405"
+            },
+            
+            {
+                ml: "339465171",
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                scientific: "Troglodytes aedon",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "17 mai 2021",
+                date_en: "May 17, 2021",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S88375447"
+            },
+            
+            {
+                ml: "592886881",
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                scientific: "Troglodytes aedon",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "1 juillet 2023",
+                date_en: "July 1, 2023",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S143261206"
+            },
+            
+            {
+                ml: "22493291",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Avenida del Mar, Coquimbo, Chili",
+                location_en: "Avenida del Mar, Coquimbo, Chile",
+                date_fr: "27 septembre 2006",
+                date_en: "September 27, 2006",
+                lat: -29.9252584,
+                lng: -71.2786746,
+                checklist_id: "S5772571"
+            },
+            
+            {
+                ml: "22493301",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Avenida del Mar, Coquimbo, Chili",
+                location_en: "Avenida del Mar, Coquimbo, Chile",
+                date_fr: "27 septembre 2006",
+                date_en: "September 27, 2006",
+                lat: -29.9252584,
+                lng: -71.2786746,
+                checklist_id: "S5772571"
+            },
+            
+            {
+                ml: "22502821",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PP Laguna de Rocha--Zona Sur y Barra, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha--Zona Sur y Barra, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22399551",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "El Recinto de AURA, Coquimbo, Chili",
+                location_en: "El Recinto de AURA, Coquimbo, Chile",
+                date_fr: "31 octobre 2008",
+                date_en: "October 31, 2008",
+                lat: -29.916389,
+                lng: -71.241389,
+                checklist_id: "S5772484"
+            },
+            
+            {
+                ml: "213362461",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "435253081",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "13 avril 2022",
+                date_en: "April 13, 2022",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S106971627"
+            },
+            
+            {
+                ml: "34749021",
+                name_fr: "Troglodyte mignon",
+                name_en: "Eurasian Wren",
+                scientific: "Troglodytes troglodytes",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Schatzalp, Grisons, Suisse",
+                location_en: "Schatzalp, Graubünden, Switzerland",
+                date_fr: "4 juillet 2016",
+                date_en: "July 4, 2016",
+                lat: 46.8035846,
+                lng: 9.8216701,
+                checklist_id: "S31498327"
+            },
+            
+            {
+                ml: "22369091",
+                name_fr: "Troglodyte de Baird",
+                name_en: "Pacific Wren",
+                scientific: "Troglodytes pacificus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Quadra Island--April Point, Colombie-Britannique, Canada",
+                location_en: "Quadra Island--April Point, British Columbia, Canada",
+                date_fr: "8 mai 2013",
+                date_en: "May 8, 2013",
+                lat: 50.0646325,
+                lng: -125.236094,
+                checklist_id: "S18566968"
+            },
+            
+            {
+                ml: "22453001",
+                name_fr: "Troglodyte des forêts",
+                name_en: "Winter Wren",
+                scientific: "Troglodytes hiemalis",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "13 mai 2010",
+                date_en: "May 13, 2010",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18567188"
+            },
+            
+            {
+                ml: "22493281",
+                name_fr: "Troglodyte des forêts",
+                name_en: "Winter Wren",
+                scientific: "Troglodytes hiemalis",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Parc Summit, Québec, Canada",
+                location_en: "Parc Summit, Quebec, Canada",
+                date_fr: "8 octobre 2012",
+                date_en: "October 8, 2012",
+                lat: 45.4917128,
+                lng: -73.6071465,
+                checklist_id: "S18567246"
+            },
+            
+            {
+                ml: "22586661",
+                name_fr: "Troglodyte des forêts",
+                name_en: "Winter Wren",
+                scientific: "Troglodytes hiemalis",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "3 octobre 2014",
+                date_en: "October 3, 2014",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S20017743"
+            },
+            
+            {
+                ml: "234518641",
+                name_fr: "Troglodyte des forêts",
+                name_en: "Winter Wren",
+                scientific: "Troglodytes hiemalis",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Domaine St-Paul, Québec, Canada",
+                location_en: "Domaine St-Paul, Quebec, Canada",
+                date_fr: "14 mai 2020",
+                date_en: "May 14, 2020",
+                lat: 45.4546332,
+                lng: -73.5529532,
+                checklist_id: "S69022405"
+            },
+            
+            {
+                ml: "487486761",
+                name_fr: "Troglodyte des forêts",
+                name_en: "Winter Wren",
+                scientific: "Troglodytes hiemalis",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                date_fr: "25 septembre 2022",
+                date_en: "September 25, 2022",
+                lat: 45.5049279,
+                lng: -73.6039953,
+                checklist_id: "S119392148"
+            },
+            
+            {
+                ml: "34506471",
+                name_fr: "Troglodyte de Latham",
+                name_en: "Grass Wren",
+                scientific: "Cistothorus platensis",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "RN Colonia Pingüinos de Magallanes, Magallanes, Chili",
+                location_en: "RN Colonia Pingüinos de Magallanes, Magallanes, Chile",
+                date_fr: "17 décembre 2008",
+                date_en: "December 17, 2008",
+                lat: -52.986348,
+                lng: -71.2378836,
+                checklist_id: "S5772611"
+            },
+            
+            {
+                ml: "22503471",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "19 juin 2005",
+                date_en: "June 19, 2005",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566826"
+            },
+            
+            {
+                ml: "22503481",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "19 juin 2005",
+                date_en: "June 19, 2005",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566826"
+            },
+            
+            {
+                ml: "22503681",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "3 juillet 2005",
+                date_en: "July 3, 2005",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566827"
+            },
+            
+            {
+                ml: "33891781",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "17 mai 2006",
+                date_en: "May 17, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566956"
+            },
+            
+            {
+                ml: "34383881",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "24 juin 2006",
+                date_en: "June 24, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566981"
+            },
+            
+            {
+                ml: "34383891",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "24 juin 2006",
+                date_en: "June 24, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566981"
+            },
+            
+            {
+                ml: "34383901",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "24 juin 2006",
+                date_en: "June 24, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566981"
+            },
+            
+            {
+                ml: "34523561",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "15 mai 2010",
+                date_en: "May 15, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567242"
+            },
+            
+            {
+                ml: "34384071",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "22 mai 2010",
+                date_en: "May 22, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567005"
+            },
+            
+            {
+                ml: "34384081",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "22 mai 2010",
+                date_en: "May 22, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567005"
+            },
+            
+            {
+                ml: "34523661",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "12 mai 2012",
+                date_en: "May 12, 2012",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567243"
+            },
+            
+            {
+                ml: "34523671",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "12 mai 2012",
+                date_en: "May 12, 2012",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567243"
+            },
+            
+            {
+                ml: "34523681",
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                scientific: "Cistothorus palustris",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "12 mai 2012",
+                date_en: "May 12, 2012",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567243"
+            },
+            
+            {
+                ml: "39830321",
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                scientific: "Thryothorus ludovicianus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "13 novembre 2016",
+                date_en: "November 13, 2016",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S32524498"
+            },
+            
+            {
+                ml: "41652621",
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                scientific: "Thryothorus ludovicianus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "3 décembre 2016",
+                date_en: "December 3, 2016",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S32839807"
+            },
+            
+            {
+                ml: "51320121",
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                scientific: "Thryothorus ludovicianus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
+                location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
+                date_fr: "7 mars 2017",
+                date_en: "March 7, 2017",
+                lat: 28.2254954,
+                lng: -80.7144928,
+                checklist_id: "S35031563"
+            },
+            
+            {
+                ml: "51320131",
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                scientific: "Thryothorus ludovicianus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
+                location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
+                date_fr: "7 mars 2017",
+                date_en: "March 7, 2017",
+                lat: 28.2254954,
+                lng: -80.7144928,
+                checklist_id: "S35031563"
+            },
+            
+            {
+                ml: "71488401",
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                scientific: "Thryothorus ludovicianus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "10 octobre 2017",
+                date_en: "October 10, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S39811249"
+            },
+            
+            {
+                ml: "71488601",
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                scientific: "Thryothorus ludovicianus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "10 octobre 2017",
+                date_en: "October 10, 2017",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S39811249"
+            },
+            
+            {
+                ml: "105332801",
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                scientific: "Thryothorus ludovicianus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Emma Long Metro Park, Texas, États-Unis",
+                location_en: "Emma Long Metro Park, Texas, United States",
+                date_fr: "10 juin 2018",
+                date_en: "June 10, 2018",
+                lat: 30.3316943,
+                lng: -97.8387451,
+                checklist_id: "S46462541"
+            },
+            
+            {
+                ml: "118100011",
+                name_fr: "Troglodyte de Bewick",
+                name_en: "Bewick\'s Wren",
+                scientific: "Thryomanes bewickii",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Victoria--Fisherman\'s Wharf, Colombie-Britannique, Canada",
+                location_en: "Victoria--Fisherman\'s Wharf, British Columbia, Canada",
+                date_fr: "3 octobre 2018",
+                date_en: "October 3, 2018",
+                lat: 48.4224588,
+                lng: -123.383107,
+                checklist_id: "S48918460"
+            },
+            
+            {
+                ml: "34384421",
+                name_fr: "Troglodyte des cactus",
+                name_en: "Cactus Wren",
+                scientific: "Campylorhynchus brunneicapillus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Saguaro NP--West--Red Hills Visitors Center, Arizona, États-Unis",
+                location_en: "Saguaro NP--West--Red Hills Visitors Center, Arizona, United States",
+                date_fr: "31 décembre 2005",
+                date_en: "December 31, 2005",
+                lat: 32.2542072,
+                lng: -111.1972591,
+                checklist_id: "S18575034"
+            },
+            
+            {
+                ml: "34384501",
+                name_fr: "Troglodyte des cactus",
+                name_en: "Cactus Wren",
+                scientific: "Campylorhynchus brunneicapillus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Tucson Mountains--Sweetwater Preserve, Arizona, États-Unis",
+                location_en: "Tucson Mountains--Sweetwater Preserve, Arizona, United States",
+                date_fr: "28 avril 2016",
+                date_en: "April 28, 2016",
+                lat: 32.2790785,
+                lng: -111.0819349,
+                checklist_id: "S29273428"
+            },
+            
+            {
+                ml: "537716681",
+                name_fr: "Troglodyte des cactus",
+                name_en: "Cactus Wren",
+                scientific: "Campylorhynchus brunneicapillus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, États-Unis",
+                location_en: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, United States",
+                date_fr: "20 février 2023",
+                date_en: "February 20, 2023",
+                lat: 32.2437113,
+                lng: -111.168125,
+                checklist_id: "S129232010"
+            },
+            
+            {
+                ml: "537717891",
+                name_fr: "Troglodyte des cactus",
+                name_en: "Cactus Wren",
+                scientific: "Campylorhynchus brunneicapillus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, États-Unis",
+                location_en: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, United States",
+                date_fr: "20 février 2023",
+                date_en: "February 20, 2023",
+                lat: 32.2437113,
+                lng: -111.168125,
+                checklist_id: "S129232010"
+            },
+            
+            {
+                ml: "538169391",
+                name_fr: "Troglodyte des cactus",
+                name_en: "Cactus Wren",
+                scientific: "Campylorhynchus brunneicapillus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Saguaro NP--West--King Canyon Trail, Arizona, États-Unis",
+                location_en: "Saguaro NP--West--King Canyon Trail, Arizona, United States",
+                date_fr: "21 février 2023",
+                date_en: "February 21, 2023",
+                lat: 32.2479964,
+                lng: -111.1668992,
+                checklist_id: "S129325190"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').textContent = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>
