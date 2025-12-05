@@ -44,13 +44,49 @@ PREFIXES_A_IGNORER = {'Petit', 'Grand', 'Petite', 'Grande'}
 
 def normaliser_nom_scientifique(sci_name: str) -> str:
     """
-    Normalise le nom scientifique en enlevant la sous-espèce entre parenthèses.
+    Normalise le nom scientifique en enlevant la sous-espèce.
     Ex: "Tringa semipalmata (semipalmata)" -> "Tringa semipalmata"
+        "Tringa semipalmata inornata" -> "Tringa semipalmata"
     """
     if not sci_name:
         return ''
     # Enlever tout ce qui est entre parenthèses à la fin
-    return re.sub(r'\s*\([^)]+\)\s*$', '', sci_name).strip()
+    result = re.sub(r'\s*\([^)]+\)\s*$', '', sci_name).strip()
+    # Enlever tout ce qui est entre crochets à la fin
+    result = re.sub(r'\s*\[[^\]]+\]\s*$', '', result).strip()
+    # Si plus de 2 mots, ne garder que les 2 premiers (genre + espèce)
+    words = result.split()
+    if len(words) > 2:
+        result = ' '.join(words[:2])
+    return result
+
+
+def est_taxon_non_identifiable(sci_name: str, common_name: str = '') -> bool:
+    """
+    Vérifie si le taxon n'est pas identifiable au niveau de l'espèce.
+    Ex: "duck sp.", "Anas platyrhynchos x rubripes", "Larus argentatus/glaucoides"
+    """
+    sci_lower = (sci_name or '').lower()
+    common_lower = (common_name or '').lower()
+    
+    # Patterns indiquant un taxon non identifiable
+    patterns = [
+        ' sp.',           # spuh: "duck sp."
+        ' sp$',           # fin en "sp"
+        ' x ',            # hybrid: "Mallard x Black Duck"
+        '/',              # slash: "Herring/Iceland Gull"
+        'hybrid',         # hybrid
+        ' or ',           # "X or Y"
+        'undescribed',    # forme non décrite
+        '(domestic',      # domestic form
+        'domestic)',
+    ]
+    
+    for pattern in patterns:
+        if pattern in sci_lower or pattern in common_lower:
+            return True
+    
+    return False
 
 
 def normaliser_nom_commun(common_name: str) -> str:
@@ -260,7 +296,8 @@ class EBirdTaxonomy:
                 reader = csv.DictReader(f)
                 for row in reader:
                     category = row.get('CATEGORY', '')
-                    if category != 'species':
+                    # Charger les espèces et sous-espèces identifiables
+                    if category not in ('species', 'issf'):
                         continue
                     
                     sci_name = row.get('SCI_NAME', '').strip()
@@ -269,28 +306,40 @@ class EBirdTaxonomy:
                     taxon_order = int(row.get('TAXON_ORDER', 0) or 0)
                     
                     if sci_name:
+                        # Pour les sous-espèces, normaliser le nom pour le lookup
+                        sci_name_normalized = normaliser_nom_scientifique(sci_name)
+                        
+                        # Stocker avec le nom original
                         self.species[sci_name] = {
                             'taxon_order': taxon_order,
                             'common_name_en': row.get('PRIMARY_COM_NAME', ''),
                             'sci_name': sci_name,
+                            'sci_name_normalized': sci_name_normalized,
                             'order': row.get('ORDER', ''),
                             'family': family_code,
                             'family_full': family_raw,
-                            'species_code': row.get('SPECIES_CODE', '')
+                            'species_code': row.get('SPECIES_CODE', ''),
+                            'category': category
                         }
                         
-                        # Indexer par famille
-                        if family_code not in self.families:
-                            self.families[family_code] = []
-                            self.family_names[family_code] = family_raw
-                            self.family_order[family_code] = taxon_order
-                        self.families[family_code].append(sci_name)
+                        # Stocker aussi avec le nom normalisé (si différent et pas déjà présent)
+                        if sci_name_normalized != sci_name and sci_name_normalized not in self.species:
+                            self.species[sci_name_normalized] = self.species[sci_name]
                         
-                        # Garder l'ordre le plus petit pour la famille
-                        if taxon_order < self.family_order[family_code]:
-                            self.family_order[family_code] = taxon_order
+                        # Indexer par famille (seulement pour les espèces, pas les sous-espèces)
+                        if category == 'species':
+                            if family_code not in self.families:
+                                self.families[family_code] = []
+                                self.family_names[family_code] = family_raw
+                                self.family_order[family_code] = taxon_order
+                            self.families[family_code].append(sci_name)
+                            
+                            # Garder l'ordre le plus petit pour la famille
+                            if taxon_order < self.family_order[family_code]:
+                                self.family_order[family_code] = taxon_order
             
-            print(f"   ✓ {len(self.species)} espèces, {len(self.families)} familles")
+            num_species = sum(1 for v in self.species.values() if v.get('category') == 'species')
+            print(f"   ✓ {num_species} espèces, {len(self.families)} familles")
             
         except Exception as e:
             print(f"⚠ Erreur chargement taxonomie: {e}")
@@ -308,7 +357,14 @@ class EBirdTaxonomy:
     
     def get_species_info(self, sci_name: str) -> dict:
         """Retourne les infos d'une espèce par son nom scientifique"""
-        return self.species.get(sci_name, {})
+        # Essayer le nom direct
+        if sci_name in self.species:
+            return self.species[sci_name]
+        # Essayer le nom normalisé
+        normalized = normaliser_nom_scientifique(sci_name)
+        if normalized in self.species:
+            return self.species[normalized]
+        return {}
     
     def get_family_name(self, family_code: str) -> str:
         """Retourne le nom complet d'une famille"""
@@ -568,13 +624,19 @@ class EBirdGalleryGenerator:
         triée par ordre phylogénétique avec infos famille, lieu et coordonnées.
         Filtre les espèces qui n'ont que des sons (pas d'image valide).
         Fusionne les sous-espèces avec l'espèce principale.
+        Exclut les taxons non identifiables (sp., slash, hybrid).
         Collecte TOUTES les photos de chaque espèce.
         """
         species_data = {}  # sci_name_normalized -> {'info': {...}, 'photos': [...]}
         
         for obs in self.observations:
             sci_name_raw = obs.get('Scientific Name', '').strip()
+            common_name_raw = obs.get('Common Name', '').strip()
             if not sci_name_raw:
+                continue
+            
+            # Exclure les taxons non identifiables au niveau espèce
+            if est_taxon_non_identifiable(sci_name_raw, common_name_raw):
                 continue
             
             # Normaliser le nom (enlever sous-espèce)
@@ -735,13 +797,19 @@ class EBirdGalleryGenerator:
         
         for obs in self.observations:
             sci_name = obs.get('Scientific Name', '').strip()
+            common_name = obs.get('Common Name', '').strip()
             
-            # Filtre par espèce
-            if species and obs.get('Common Name') not in species:
+            # Exclure les taxons non identifiables au niveau espèce
+            if est_taxon_non_identifiable(sci_name, common_name):
                 continue
             
-            # Filtre par famille (via taxonomie)
-            if family_species and sci_name not in family_species:
+            # Filtre par espèce
+            if species and common_name not in species:
+                continue
+            
+            # Filtre par famille (via taxonomie) - utiliser le nom normalisé
+            sci_name_normalized = normaliser_nom_scientifique(sci_name)
+            if family_species and sci_name_normalized not in family_species:
                 continue
             
             # Filtre par pays/région
@@ -799,8 +867,11 @@ class EBirdGalleryGenerator:
         
         # Trier selon le mode choisi
         if sort_by == 'taxonomy':
-            # Tri par ordre taxonomique (taxon_order)
-            unique_photos.sort(key=lambda x: (x.get('taxon_order', 999999), x.get('date_raw', '')))
+            # Tri par ordre taxonomique, avec date décroissante à l'intérieur de chaque espèce
+            # D'abord trier par date décroissante
+            unique_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+            # Puis tri stable par taxon_order (préserve l'ordre date dans chaque groupe)
+            unique_photos.sort(key=lambda x: x.get('taxon_order', 999999))
         else:
             # Tri par date décroissante (défaut)
             unique_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
@@ -820,7 +891,8 @@ class EBirdGalleryGenerator:
                         gallery_id: str = None,
                         subtitle_fr: str = None,
                         subtitle_en: str = None,
-                        species_count: int = None):
+                        species_count: int = None,
+                        show_date_in_overlay: bool = False):
         """
         Génère les pages HTML de galerie en français et anglais
         
@@ -835,6 +907,7 @@ class EBirdGalleryGenerator:
             subtitle_fr: Sous-titre en français (optionnel)
             subtitle_en: Sous-titre en anglais (optionnel)
             species_count: Nombre d'espèces (optionnel, pour affichage)
+            show_date_in_overlay: Afficher la date dans l'overlay (défaut: False)
         """
         output_fr = f"{output_base}_fr.html"
         output_en = f"{output_base}_en.html"
@@ -844,6 +917,11 @@ class EBirdGalleryGenerator:
         
         if gallery_id is None:
             gallery_id = output_base
+        
+        # Date de mise à jour (aujourd'hui)
+        today = datetime.now()
+        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
+        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
         
         # Version française
         html_fr = template.render(
@@ -855,7 +933,11 @@ class EBirdGalleryGenerator:
             menu=menu or [],
             current_page=output_fr,
             other_lang_page=output_en,
-            species_count=species_count
+            species_count=species_count,
+            show_date_in_overlay=show_date_in_overlay,
+            update_date=True,
+            update_date_fr=update_date_fr,
+            update_date_en=update_date_en
         )
         
         with open(output_fr, 'w', encoding='utf-8') as f:
@@ -871,7 +953,11 @@ class EBirdGalleryGenerator:
             menu=menu or [],
             current_page=output_en,
             other_lang_page=output_fr,
-            species_count=species_count
+            species_count=species_count,
+            show_date_in_overlay=show_date_in_overlay,
+            update_date=True,
+            update_date_fr=update_date_fr,
+            update_date_en=update_date_en
         )
         
         with open(output_en, 'w', encoding='utf-8') as f:
@@ -933,6 +1019,11 @@ class EBirdGalleryGenerator:
         env = Environment(loader=FileSystemLoader('.'))
         template = env.get_template(template_file)
         
+        # Date de mise à jour (aujourd'hui)
+        today = datetime.now()
+        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
+        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+        
         # Version française
         html_fr = template.render(
             lang='fr',
@@ -941,7 +1032,10 @@ class EBirdGalleryGenerator:
             total_families=len(sorted_families),
             menu=menu or [],
             current_page=output_fr,
-            other_lang_page=output_en
+            other_lang_page=output_en,
+            update_date=True,
+            update_date_fr=update_date_fr,
+            update_date_en=update_date_en
         )
         
         with open(output_fr, 'w', encoding='utf-8') as f:
@@ -955,7 +1049,10 @@ class EBirdGalleryGenerator:
             total_families=len(sorted_families),
             menu=menu or [],
             current_page=output_en,
-            other_lang_page=output_fr
+            other_lang_page=output_fr,
+            update_date=True,
+            update_date_fr=update_date_fr,
+            update_date_en=update_date_en
         )
         
         with open(output_en, 'w', encoding='utf-8') as f:

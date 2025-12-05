@@ -7,6 +7,7 @@ Bilingue français/anglais avec support taxonomie
 import sys
 import re
 from pathlib import Path
+from datetime import datetime, timedelta
 
 try:
     from jinja2 import Environment, FileSystemLoader
@@ -57,6 +58,12 @@ def construire_menu(generator):
             'name_en': 'Species',
             'file_fr': 'species_list_fr.html',
             'file_en': 'species_list_en.html'
+        },
+        {
+            'name_fr': 'Ajouts récents',
+            'name_en': 'Recent Updates',
+            'file_fr': 'gallery_recent_fr.html',
+            'file_en': 'gallery_recent_en.html'
         }
     ]
     
@@ -193,6 +200,52 @@ def generer_toutes_galeries():
         template_file=SPECIES_LIST_TEMPLATE,
         menu=menu
     )
+    
+    # ========================================
+    # AJOUTS RÉCENTS
+    # ========================================
+    print(f"\n🆕 Galerie ajouts récents...")
+    
+    # Calculer la date d'il y a 3 mois
+    trois_mois = (datetime.now() - timedelta(days=90)).strftime('%Y-%m-%d')
+    
+    # D'abord, obtenir les photos des 3 derniers mois (sans limite)
+    photos_3_mois = generator.filter_observations(
+        limit=9999,  # Pas de limite réelle
+        date_start=trois_mois,
+        verifier_medias_en_ligne=VERIFIER_MEDIAS_EN_LIGNE,
+        sort_by='date'  # Tri chronologique inverse (plus récent d'abord)
+    )
+    
+    # Si moins de 50 photos dans les 3 derniers mois, prendre les 50 dernières
+    if len(photos_3_mois) < 50:
+        photos_recent = generator.filter_observations(
+            limit=50,
+            verifier_medias_en_ligne=VERIFIER_MEDIAS_EN_LIGNE,
+            sort_by='date'
+        )
+        print(f"   (moins de 50 photos en 3 mois, affichage des 50 dernières)")
+    else:
+        photos_recent = photos_3_mois
+        print(f"   ({len(photos_recent)} photos des 3 derniers mois)")
+    
+    if photos_recent:
+        # Compter les espèces
+        species_set = set(p.get('scientific_name', '') for p in photos_recent)
+        species_count = len(species_set)
+        
+        generator.generate_gallery(
+            output_base='gallery_recent',
+            title_fr='Ajouts récents',
+            title_en='Recent Updates',
+            photos=photos_recent,
+            template_file=GALLERY_TEMPLATE,
+            menu=menu,
+            gallery_id='gallery_recent',
+            species_count=species_count,
+            show_date_in_overlay=True  # Afficher la date au survol
+        )
+        total_galeries += 1
     
     # ========================================
     # GALERIES GÉNÉRALES

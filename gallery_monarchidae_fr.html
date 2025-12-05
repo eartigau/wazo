@@ -32,6 +32,15 @@
                 
                 
                 
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                
+                
                 <li class="dropdown">
                     <span class="dropdown-toggle">Voyages</span>
                     <div class="dropdown-menu">
@@ -44,8 +53,12 @@
                             Genève
                         </a>
                         
-                        <a href="voyage_hawaii_fr.html">
-                            Hawaï
+                        <a href="voyage_hawaii_2015_fr.html">
+                            Hawaï 2015
+                        </a>
+                        
+                        <a href="voyage_hawaii_2018_fr.html">
+                            Hawaï 2018
                         </a>
                         
                         <a href="voyage_floride_fr.html">
@@ -239,10 +252,6 @@
                         
                         <a href="gallery_accipitridae_fr.html">
                             Accipitridae (Buses, Éperviers, Aigles, etc.)
-                        </a>
-                        
-                        <a href="gallery_tytonidae_fr.html">
-                            Tytonidae (Effraies)
                         </a>
                         
                         <a href="gallery_strigidae_fr.html">
@@ -561,9 +570,9 @@
         <div class="gallery-subtitle">Monarques</div>
         
         <div class="stats">
-            7 photos
+            8 photos
             
-             · 3 espèces
+             · 4 espèces
             
         </div>
     </div>
@@ -574,20 +583,8 @@
             
             <div class="photo-card" 
                  data-index="0"
-                 data-ml="33890281"
-                 onclick="openLightbox(0)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33890281/480"
-                     alt="Monarque d'Hawaï"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Monarque d'Hawaï</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="1"
                  data-ml="102747771"
-                 onclick="openLightbox(1)">
+                 onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/102747771/480"
                      alt="Monarque d'Hawaï"
                      loading="lazy">
@@ -597,9 +594,33 @@
             </div>
             
             <div class="photo-card" 
+                 data-index="1"
+                 data-ml="33890281"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33890281/480"
+                     alt="Monarque d'Hawaï"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Monarque d'Hawaï</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
                  data-index="2"
-                 data-ml="34435011"
+                 data-ml="22535941"
                  onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535941/480"
+                     alt="Monarque d'Hawaï (bryani)"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Monarque d'Hawaï (bryani)</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="34435011"
+                 onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435011/480"
                      alt="Monarque de Kauai"
                      loading="lazy">
@@ -609,9 +630,9 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="3"
+                 data-index="4"
                  data-ml="34435021"
-                 onclick="openLightbox(3)">
+                 onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435021/480"
                      alt="Monarque de Kauai"
                      loading="lazy">
@@ -621,9 +642,9 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="4"
+                 data-index="5"
                  data-ml="34435031"
-                 onclick="openLightbox(4)">
+                 onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435031/480"
                      alt="Monarque de Kauai"
                      loading="lazy">
@@ -633,9 +654,9 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="5"
+                 data-index="6"
                  data-ml="34435041"
-                 onclick="openLightbox(5)">
+                 onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435041/480"
                      alt="Monarque de Kauai"
                      loading="lazy">
@@ -645,9 +666,9 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="6"
+                 data-index="7"
                  data-ml="22536101"
-                 onclick="openLightbox(6)">
+                 onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536101/480"
                      alt="Monarque d'Oahu"
                      loading="lazy">
@@ -705,7 +726,8 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>© Étienne Artigau</p>
     </footer>
 
     <!-- SCRIPTS -->
@@ -714,6 +736,21 @@
         const currentLang = 'fr';
         
         const photosData = [
+            
+            {
+                ml: "102747771",
+                name_fr: "Monarque d\'Hawaï",
+                name_en: "Hawaii Elepaio",
+                scientific: "Chasiempis sandwichensis",
+                family: "Monarchidae (Monarch Flycatchers)",
+                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
+                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
+                date_fr: "27 mai 2018",
+                date_en: "May 27, 2018",
+                lat: 19.6714434,
+                lng: -155.3849602,
+                checklist_id: "S46086383"
+            },
             
             {
                 ml: "33890281",
@@ -731,18 +768,18 @@
             },
             
             {
-                ml: "102747771",
-                name_fr: "Monarque d\'Hawaï",
-                name_en: "Hawaii Elepaio",
-                scientific: "Chasiempis sandwichensis",
+                ml: "22535941",
+                name_fr: "Monarque d\'Hawaï (bryani)",
+                name_en: "Hawaii Elepaio (Mauna Kea)",
+                scientific: "Chasiempis sandwichensis bryani",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
-                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
-                date_fr: "27 mai 2018",
-                date_en: "May 27, 2018",
-                lat: 19.6714434,
-                lng: -155.3849602,
-                checklist_id: "S46086383"
+                location_fr: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaï, États-Unis",
+                location_en: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaii, United States",
+                date_fr: "1 août 2015",
+                date_en: "August 1, 2015",
+                lat: 19.8319137,
+                lng: -155.5947653,
+                checklist_id: "S24475556"
             },
             
             {

@@ -32,6 +32,15 @@
                 
                 
                 
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                
+                
                 <li class="dropdown">
                     <span class="dropdown-toggle">Voyages</span>
                     <div class="dropdown-menu">
@@ -44,8 +53,12 @@
                             Genève
                         </a>
                         
-                        <a href="voyage_hawaii_fr.html">
-                            Hawaï
+                        <a href="voyage_hawaii_2015_fr.html">
+                            Hawaï 2015
+                        </a>
+                        
+                        <a href="voyage_hawaii_2018_fr.html">
+                            Hawaï 2018
                         </a>
                         
                         <a href="voyage_floride_fr.html">
@@ -239,10 +252,6 @@
                         
                         <a href="gallery_accipitridae_fr.html">
                             Accipitridae (Buses, Éperviers, Aigles, etc.)
-                        </a>
-                        
-                        <a href="gallery_tytonidae_fr.html">
-                            Tytonidae (Effraies)
                         </a>
                         
                         <a href="gallery_strigidae_fr.html">
@@ -561,9 +570,9 @@
         <div class="gallery-subtitle">Orites</div>
         
         <div class="stats">
-            4 photos
+            5 photos
             
-             · 2 espèces
+             · 3 espèces
             
         </div>
     </div>
@@ -574,20 +583,8 @@
             
             <div class="photo-card" 
                  data-index="0"
-                 data-ml="22576701"
-                 onclick="openLightbox(0)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576701/480"
-                     alt="Orite à longue queue"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Orite à longue queue</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="1"
                  data-ml="467243141"
-                 onclick="openLightbox(1)">
+                 onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/467243141/480"
                      alt="Orite à longue queue"
                      loading="lazy">
@@ -597,10 +594,22 @@
             </div>
             
             <div class="photo-card" 
+                 data-index="1"
+                 data-ml="22576701"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576701/480"
+                     alt="Orite à longue queue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Orite à longue queue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
                  data-index="2"
-                 data-ml="550901511"
+                 data-ml="620936271"
                  onclick="openLightbox(2)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/550901511/480"
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936271/480"
                      alt="Orite buissonnière"
                      loading="lazy">
                 <div class="photo-overlay">
@@ -610,13 +619,25 @@
             
             <div class="photo-card" 
                  data-index="3"
-                 data-ml="620936271"
+                 data-ml="550901511"
                  onclick="openLightbox(3)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936271/480"
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/550901511/480"
                      alt="Orite buissonnière"
                      loading="lazy">
                 <div class="photo-overlay">
                     <div class="bird-name">Orite buissonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="29630801"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29630801/480"
+                     alt="Orite buissonnière (plumbeus)"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Orite buissonnière (plumbeus)</div>
                 </div>
             </div>
             
@@ -669,7 +690,8 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>© Étienne Artigau</p>
     </footer>
 
     <!-- SCRIPTS -->
@@ -678,6 +700,21 @@
         const currentLang = 'fr';
         
         const photosData = [
+            
+            {
+                ml: "467243141",
+                name_fr: "Orite à longue queue",
+                name_en: "Long-tailed Tit",
+                scientific: "Aegithalos caudatus",
+                family: "Aegithalidae (Long-tailed Tits)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2022",
+                date_en: "July 14, 2022",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S115024966"
+            },
             
             {
                 ml: "22576701",
@@ -695,18 +732,18 @@
             },
             
             {
-                ml: "467243141",
-                name_fr: "Orite à longue queue",
-                name_en: "Long-tailed Tit",
-                scientific: "Aegithalos caudatus",
+                ml: "620936271",
+                name_fr: "Orite buissonnière",
+                name_en: "Bushtit",
+                scientific: "Psaltriparus minimus",
                 family: "Aegithalidae (Long-tailed Tits)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                date_fr: "14 juillet 2022",
-                date_en: "July 14, 2022",
-                lat: 45.1742263,
-                lng: 5.216454,
-                checklist_id: "S115024966"
+                location_fr: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), California, United States",
+                date_fr: "25 juin 2024",
+                date_en: "June 25, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183696675"
             },
             
             {
@@ -725,18 +762,18 @@
             },
             
             {
-                ml: "620936271",
-                name_fr: "Orite buissonnière",
-                name_en: "Bushtit",
-                scientific: "Psaltriparus minimus",
+                ml: "29630801",
+                name_fr: "Orite buissonnière (plumbeus)",
+                name_en: "Bushtit (Interior)",
+                scientific: "Psaltriparus minimus plumbeus",
                 family: "Aegithalidae (Long-tailed Tits)",
-                location_fr: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), Californie, États-Unis",
-                location_en: "Scripps Coastal Reserve--Interpretive Trail (only open 1st Saturdays, 9–11a), California, United States",
-                date_fr: "25 juin 2024",
-                date_en: "June 25, 2024",
-                lat: 32.8758738,
-                lng: -117.2470005,
-                checklist_id: "S183696675"
+                location_fr: "Mt. Lemmon--Incinerator Ridge, Arizona, États-Unis",
+                location_en: "Mt. Lemmon--Incinerator Ridge, Arizona, United States",
+                date_fr: "29 avril 2016",
+                date_en: "April 29, 2016",
+                lat: 32.4111248,
+                lng: -110.7064819,
+                checklist_id: "S29292804"
             }
             
         ];

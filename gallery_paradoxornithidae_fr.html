@@ -32,6 +32,15 @@
                 
                 
                 
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                
+                
                 <li class="dropdown">
                     <span class="dropdown-toggle">Voyages</span>
                     <div class="dropdown-menu">
@@ -44,8 +53,12 @@
                             Genève
                         </a>
                         
-                        <a href="voyage_hawaii_fr.html">
-                            Hawaï
+                        <a href="voyage_hawaii_2015_fr.html">
+                            Hawaï 2015
+                        </a>
+                        
+                        <a href="voyage_hawaii_2018_fr.html">
+                            Hawaï 2018
                         </a>
                         
                         <a href="voyage_floride_fr.html">
@@ -239,10 +252,6 @@
                         
                         <a href="gallery_accipitridae_fr.html">
                             Accipitridae (Buses, Éperviers, Aigles, etc.)
-                        </a>
-                        
-                        <a href="gallery_tytonidae_fr.html">
-                            Tytonidae (Effraies)
                         </a>
                         
                         <a href="gallery_strigidae_fr.html">
@@ -574,20 +583,8 @@
             
             <div class="photo-card" 
                  data-index="0"
-                 data-ml="551448481"
-                 onclick="openLightbox(0)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/551448481/480"
-                     alt="Cama brune"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Cama brune</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="1"
                  data-ml="599886571"
-                 onclick="openLightbox(1)">
+                 onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599886571/480"
                      alt="Cama brune"
                      loading="lazy">
@@ -597,10 +594,22 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="2"
+                 data-index="1"
                  data-ml="599887001"
-                 onclick="openLightbox(2)">
+                 onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599887001/480"
+                     alt="Cama brune"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cama brune</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="551448481"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/551448481/480"
                      alt="Cama brune"
                      loading="lazy">
                 <div class="photo-overlay">
@@ -657,7 +666,8 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>© Étienne Artigau</p>
     </footer>
 
     <!-- SCRIPTS -->
@@ -666,21 +676,6 @@
         const currentLang = 'fr';
         
         const photosData = [
-            
-            {
-                ml: "551448481",
-                name_fr: "Cama brune",
-                name_en: "Wrentit",
-                scientific: "Chamaea fasciata",
-                family: "Paradoxornithidae (Parrotbills)",
-                location_fr: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, Californie, États-Unis",
-                location_en: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, California, United States",
-                date_fr: "30 mars 2023",
-                date_en: "March 30, 2023",
-                lat: 34.4071359,
-                lng: -119.8783064,
-                checklist_id: "S132213962"
-            },
             
             {
                 ml: "599886571",
@@ -710,6 +705,21 @@
                 lat: 37.8277685,
                 lng: -122.4816799,
                 checklist_id: "S146295741"
+            },
+            
+            {
+                ml: "551448481",
+                name_fr: "Cama brune",
+                name_en: "Wrentit",
+                scientific: "Chamaea fasciata",
+                family: "Paradoxornithidae (Parrotbills)",
+                location_fr: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, Californie, États-Unis",
+                location_en: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, California, United States",
+                date_fr: "30 mars 2023",
+                date_en: "March 30, 2023",
+                lat: 34.4071359,
+                lng: -119.8783064,
+                checklist_id: "S132213962"
             }
             
         ];

@@ -2,6 +2,10 @@
 
 Générateur de galeries photo bilingues (français/anglais) à partir des données eBird.
 
+# Pour exclure une image donnée
+python verifier_medias.py exclure ML252403531 "pas propriétaire"
+
+
 ## Fonctionnalités
 
 - **Bilingue** : Galeries en français et anglais avec switch de langue (drapeaux 🇫🇷 🇬🇧)
@@ -11,11 +15,16 @@ Générateur de galeries photo bilingues (français/anglais) à partir des donn�
   - Une photo par espèce dans la grille
   - Toutes les photos de l'espèce dans la lightbox (navigation ←→)
   - Fusion des sous-espèces avec l'espèce principale
+- **Ajouts récents** : Galerie automatique des photos récentes
+  - Affiche les photos des 3 derniers mois (ou les 50 dernières si moins de 50)
+  - Tri chronologique inverse (plus récent d'abord)
+  - Espèce + date affichées au survol
 - **Galeries par famille** : Générées automatiquement pour toutes les familles observées
   - Tri taxonomique (pas chronologique)
   - Titre "Famille des Anatidaes" avec description
   - Affiche le nombre de photos et d'espèces
 - **Galeries voyages** : Tri chronologique
+  - Support des filtres par date (ex: Hawaii 2015, Hawaii 2018)
 - **Menu dynamique** : 
   - Toutes les familles avec photos
   - Format "Latin (descriptions au pluriel)"
@@ -79,10 +88,32 @@ VOYAGES = [
         'pays': ['CL'],
         'limite': 500
     },
+    # Exemple: filtrer par année pour le même lieu
+    {
+        'id': 'voyage_hawaii_2015',
+        'nom_fr': 'Hawaï 2015',
+        'nom_en': 'Hawaii 2015',
+        'pays': ['US-HI'],
+        'date_debut': '2015-01-01',
+        'date_fin': '2015-12-31',
+        'limite': 300
+    },
+    {
+        'id': 'voyage_hawaii_2018',
+        'nom_fr': 'Hawaï 2018',
+        'nom_en': 'Hawaii 2018',
+        'pays': ['US-HI'],
+        'date_debut': '2018-01-01',
+        'date_fin': '2018-12-31',
+        'limite': 300
+    },
 ]
 
 # Note: Les galeries par famille sont générées automatiquement
 # pour toutes les familles observées (plus besoin de les définir)
+
+# Note: La galerie "Ajouts récents" est générée automatiquement
+# avec les 50 dernières photos ou celles des 3 derniers mois
 ```
 
 ### traductions_lieux.csv
@@ -98,6 +129,7 @@ CH-GE,Genève,Geneva
 ## Fichiers générés
 
 - `species_list_fr.html` / `species_list_en.html` - Liste des espèces
+- `gallery_recent_fr.html` / `gallery_recent_en.html` - Ajouts récents (auto)
 - `gallery_all_fr.html` / `gallery_all_en.html` - Toutes les photos
 - `gallery_[famille]_fr.html` / `gallery_[famille]_en.html` - Par famille (auto)
 - `voyage_[lieu]_fr.html` / `voyage_[lieu]_en.html` - Par voyage
@@ -142,3 +174,4 @@ ebird_gallery/
 - Les drapeaux permettent de basculer entre FR et EN
 - Les galeries par famille sont triées par ordre taxonomique
 - Les galeries de voyage sont triées par date (plus récent d'abord)
+- La galerie "Ajouts récents" montre l'espèce + date au survol

@@ -1,4 +1,6 @@
 ml_number,status,raison,date_verification
+0,son,pas d'image 480 disponible,2025-12-05 13:08
+1,son,pas d'image 480 disponible,2025-12-05 13:08
 100328301,image,vérifié automatiquement,2025-12-04 15:50
 100328321,image,vérifié automatiquement,2025-12-04 15:50
 100328351,image,vérifié automatiquement,2025-12-04 15:50
@@ -460,6 +462,7 @@ ml_number,status,raison,date_verification
 194210621,image,vérifié automatiquement,2025-12-04 15:50
 196782891,image,vérifié automatiquement,2025-12-04 15:50
 196782901,image,vérifié automatiquement,2025-12-04 15:50
+2,son,pas d'image 480 disponible,2025-12-05 13:09
 203091371,image,vérifié automatiquement,2025-12-04 15:50
 20473761,image,vérifié automatiquement,2025-12-04 15:50
 20474041,image,vérifié automatiquement,2025-12-04 15:50
@@ -2357,7 +2360,7 @@ ml_number,status,raison,date_verification
 251312961,image,vérifié automatiquement,2025-12-04 15:50
 251312971,image,vérifié automatiquement,2025-12-04 15:50
 251313021,image,vérifié automatiquement,2025-12-04 15:50
-252403531,image,vérifié automatiquement,2025-12-04 15:50
+252403531,exclu_manuel,pas propriétaire,2025-12-05 13:11
 254555221,image,vérifié automatiquement,2025-12-04 15:50
 254555231,image,vérifié automatiquement,2025-12-04 15:50
 256642601,image,vérifié automatiquement,2025-12-04 15:50
@@ -2607,6 +2610,7 @@ ml_number,status,raison,date_verification
 29683971,image,vérifié automatiquement,2025-12-04 15:50
 29683981,image,vérifié automatiquement,2025-12-04 15:50
 29683991,image,vérifié automatiquement,2025-12-04 15:50
+3,son,pas d'image 480 disponible,2025-12-05 13:09
 30140421,image,vérifié automatiquement,2025-12-04 15:50
 30140431,image,vérifié automatiquement,2025-12-04 15:50
 30140441,image,vérifié automatiquement,2025-12-04 15:50
@@ -3120,6 +3124,7 @@ ml_number,status,raison,date_verification
 399120821,image,vérifié automatiquement,2025-12-04 15:50
 399125401,image,vérifié automatiquement,2025-12-04 15:50
 399126531,image,vérifié automatiquement,2025-12-04 15:50
+4,son,pas d'image 480 disponible,2025-12-05 13:09
 401588341,image,vérifié automatiquement,2025-12-04 15:50
 401588511,image,vérifié automatiquement,2025-12-04 15:50
 401588651,image,vérifié automatiquement,2025-12-04 15:50
@@ -3416,6 +3421,7 @@ ml_number,status,raison,date_verification
 497736851,image,vérifié automatiquement,2025-12-04 15:50
 497738601,image,vérifié automatiquement,2025-12-04 15:50
 498018661,son,pas d'image 480 disponible,2025-12-04 15:50
+5,son,pas d'image 480 disponible,2025-12-05 13:09
 505587101,image,vérifié automatiquement,2025-12-04 15:50
 505587191,image,vérifié automatiquement,2025-12-04 15:50
 505588871,image,vérifié automatiquement,2025-12-04 15:50

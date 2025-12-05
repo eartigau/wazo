@@ -131,7 +131,8 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr }}{% else %}Updated: {{ update_date_en }}{% endif %}{% endif %}</p>
+        <p>© Étienne Artigau</p>
     </footer>
 
     <!-- Bouton retour en haut -->

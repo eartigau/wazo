@@ -7,6 +7,7 @@ Modifiez ce fichier pour personnaliser vos galeries
 # ============================================================================
 # VOYAGES
 # Utilisez les codes pays/régions eBird (ex: CA-QC, US-FL, CL, CH)
+# Ajoutez date_debut et date_fin pour filtrer par année
 # ============================================================================
 
 VOYAGES = [
@@ -24,11 +25,23 @@ VOYAGES = [
         'pays': ['CH'],
         'limite': 300
     },
+    # Exemple: deux voyages distincts à Hawaii par année
     {
-        'id': 'voyage_hawaii',
-        'nom_fr': 'Hawaï',
-        'nom_en': 'Hawaii',
+        'id': 'voyage_hawaii_2015',
+        'nom_fr': 'Hawaï 2015',
+        'nom_en': 'Hawaii 2015',
         'pays': ['US-HI'],
+        'date_debut': '2015-01-01',
+        'date_fin': '2015-12-31',
+        'limite': 300
+    },
+    {
+        'id': 'voyage_hawaii_2018',
+        'nom_fr': 'Hawaï 2018',
+        'nom_en': 'Hawaii 2018',
+        'pays': ['US-HI'],
+        'date_debut': '2018-01-01',
+        'date_fin': '2018-12-31',
         'limite': 300
     },
     {
@@ -162,13 +175,8 @@ GALERIES_GENERALES = [
         'pays': ['CA-QC'],
         'limite': 500
     },
-    {
-        'id': 'gallery_recent',
-        'nom_fr': 'Photos récentes',
-        'nom_en': 'Recent Photos',
-        'date_debut': '2024-01-01',
-        'limite': 300
-    },
+    # Note: La galerie "Ajouts récents" est générée automatiquement
+    # avec les photos des 3 derniers mois ou les 50 dernières
 ]
 
 

@@ -8,6 +8,7 @@
     --ebird-green-light: #5da03a;
     --ebird-green-dark: #3d7424;
     --ebird-blue: #1a73e8;
+    --ebird-blue-light: #e8f0fe;
     --bg-light: #f8f9fa;
     --bg-white: #ffffff;
     --bg-card: #ffffff;
@@ -483,17 +484,18 @@ nav {
     align-items: center;
     gap: 8px;
     padding: 12px 20px;
-    background: var(--ebird-blue);
-    color: white;
+    background: var(--bg-light);
+    color: var(--text-dark);
     border-radius: 8px;
     font-size: 14px;
     font-weight: 500;
     transition: background 0.2s;
+    border: 1px solid var(--border-color);
 }
 
 .ebird-link:hover {
-    background: var(--ebird-green-dark);
-    color: white;
+    background: var(--border-color);
+    color: var(--text-dark);
 }
 
 .ebird-icon {
@@ -674,6 +676,10 @@ footer {
     background: var(--bg-white);
     color: var(--text-medium);
     font-size: 14px;
+}
+
+footer p {
+    margin: 5px 0;
 }
 
 footer a {
