@@ -13,25 +13,12 @@
         <div class="nav-container">
             <ul class="nav-menu">
                 {% for item in menu %}
-                {% if item.dropdown %}
-                <li class="dropdown">
-                    <span class="dropdown-toggle">{% if lang == 'fr' %}{{ item.name_fr }}{% else %}{{ item.name_en }}{% endif %}</span>
-                    <div class="dropdown-menu{% if item.two_columns %} two-columns{% endif %}{% if item.three_columns %} three-columns{% endif %}{% if item.four_columns %} four-columns{% endif %}{% if item.five_columns %} five-columns{% endif %}{% if item.six_columns %} six-columns{% endif %}">
-                        {% for subitem in item.dropdown %}
-                        <a href="{% if lang == 'fr' %}{{ subitem.file_fr }}{% else %}{{ subitem.file_en }}{% endif %}">
-                            {% if lang == 'fr' %}{{ subitem.name_fr }}{% else %}{{ subitem.name_en }}{% endif %}
-                        </a>
-                        {% endfor %}
-                    </div>
-                </li>
-                {% else %}
                 <li>
                     <a href="{% if lang == 'fr' %}{{ item.file_fr }}{% else %}{{ item.file_en }}{% endif %}" 
                        {% if current_page == item.file_fr or current_page == item.file_en %}class="active"{% endif %}>
                         {% if lang == 'fr' %}{{ item.name_fr }}{% else %}{{ item.name_en }}{% endif %}
                     </a>
                 </li>
-                {% endif %}
                 {% endfor %}
             </ul>
             

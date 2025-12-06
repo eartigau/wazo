@@ -8,6 +8,10 @@ Modifiez ce fichier pour personnaliser vos galeries
 # VOYAGES
 # Utilisez les codes pays/régions eBird (ex: CA-QC, US-FL, CL, CH)
 # Ajoutez date_debut et date_fin pour filtrer par année
+# Le paramètre 'frontispice' définit l'image de couverture:
+#   - 'last' (défaut): utilise la photo la plus récente
+#   - 'first': utilise la photo la plus ancienne
+#   - Un numéro ML (ex: '305223451'): utilise cette photo spécifique
 # ============================================================================
 
 VOYAGES = [
@@ -16,14 +20,16 @@ VOYAGES = [
         'nom_fr': 'Chili',
         'nom_en': 'Chile',
         'pays': ['CL'],
-        'limite': 500
+        'limite': 500,
+        'frontispice': 'last'  # ou un numéro ML spécifique
     },
     {
         'id': 'voyage_geneve',
         'nom_fr': 'Genève',
         'nom_en': 'Geneva',
         'pays': ['CH'],
-        'limite': 300
+        'limite': 300,
+        'frontispice': 'last'
     },
     # Exemple: deux voyages distincts à Hawaii par année
     {
@@ -33,7 +39,8 @@ VOYAGES = [
         'pays': ['US-HI'],
         'date_debut': '2015-01-01',
         'date_fin': '2015-12-31',
-        'limite': 300
+        'limite': 300,
+        'frontispice': 'last'
     },
     {
         'id': 'voyage_hawaii_2018',
@@ -42,21 +49,24 @@ VOYAGES = [
         'pays': ['US-HI'],
         'date_debut': '2018-01-01',
         'date_fin': '2018-12-31',
-        'limite': 300
+        'limite': 300,
+        'frontispice': 'last'
     },
     {
         'id': 'voyage_floride',
         'nom_fr': 'Floride',
         'nom_en': 'Florida',
         'pays': ['US-FL'],
-        'limite': 300
+        'limite': 300,
+        'frontispice': 'last'
     },
     {
         'id': 'voyage_arizona',
         'nom_fr': 'Arizona',
         'nom_en': 'Arizona',
         'pays': ['US-AZ'],
-        'limite': 200
+        'limite': 200,
+        'frontispice': 'last'
     },
 ]
 

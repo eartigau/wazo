@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'fr' %}Familles{% else %}Families{% endif %}</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                {% for item in menu %}
+                <li>
+                    <a href="{% if lang == 'fr' %}{{ item.file_fr }}{% else %}{{ item.file_en }}{% endif %}" 
+                       {% if current_page == item.file_fr or current_page == item.file_en %}class="active"{% endif %}>
+                        {% if lang == 'fr' %}{{ item.name_fr }}{% else %}{{ item.name_en }}{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="{{ other_lang_page }}" class="lang-btn" title="{% if lang == 'fr' %}English{% else %}Français{% endif %}">
+                    {% if lang == 'fr' %}
+                    <span class="flag">🇬🇧</span>
+                    {% else %}
+                    <span class="flag">🇫🇷</span>
+                    {% endif %}
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>{% if lang == 'fr' %}Familles{% else %}Families{% endif %}</h1>
+        <div class="stats">
+            {{ familles|length }} {% if lang == 'fr' %}famille{% if familles|length > 1 %}s{% endif %}{% else %}famil{% if familles|length > 1 %}ies{% else %}y{% endif %}{% endif %} · 
+            {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} · 
+            {{ total_photos }} photos
+        </div>
+    </div>
+
+    <!-- LISTE DES FAMILLES -->
+    <div class="families-index-container">
+        <div class="families-index-grid">
+            {% for famille in familles %}
+            <a href="{% if lang == 'fr' %}{{ famille.file_fr }}{% else %}{{ famille.file_en }}{% endif %}" class="family-index-card">
+                <div class="family-index-icon">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ famille.icone_ml }}/320" 
+                         alt="{{ famille.code }}"
+                         loading="lazy">
+                </div>
+                <div class="family-index-info">
+                    <div class="family-index-name">
+                        <span class="family-code">{{ famille.code }}</span>
+                        <span class="family-description">{% if lang == 'fr' %}{{ famille.name_fr }}{% else %}{{ famille.name_en }}{% endif %}</span>
+                    </div>
+                    <div class="family-index-stats">
+                        {{ famille.species_count }} {% if lang == 'fr' %}esp.{% else %}sp.{% endif %} · {{ famille.photo_count }} photos
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr|safe }}{% else %}Updated: {{ update_date_en|safe }}{% endif %}{% endif %}</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+</body>
+</html>

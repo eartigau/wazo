@@ -1,173 +1,134 @@
-# Galerie eBird v2.0
+# Galerie Photos eBird v2.0
 
-Générateur de galeries photo bilingues (français/anglais) à partir des données eBird.
+Générateur de galeries photos bilingues (français/anglais) à partir de vos données eBird.
 
 ## Fonctionnalités
 
-- **Bilingue** : Galeries en français et anglais avec switch de langue (drapeaux 🇫🇷 🇬🇧)
-- **Taxonomie** : Filtrage par famille taxonomique (Anatidae, Accipitridae, etc.)
-- **Thème clair** : Style inspiré d'eBird avec fond blanc/gris pâle
-- **Liste des espèces** : Ordre phylogénétique, groupé par famille
-  - Une photo par espèce dans la grille
-  - Toutes les photos de l'espèce dans la lightbox (navigation ←→)
-  - Fusion des sous-espèces avec l'espèce principale
-- **Ajouts récents** : Galerie automatique des photos récentes
-  - Affiche les photos des 3 derniers mois (ou les 50 dernières si moins de 50)
-  - Tri chronologique inverse (plus récent d'abord)
-  - Espèce + date affichées au survol
-- **Galeries par famille** : Générées automatiquement pour toutes les familles observées
-  - Tri taxonomique (pas chronologique)
-  - Titre "Famille des Anatidaes" avec description
-  - Affiche le nombre de photos et d'espèces
-- **Galeries voyages** : Tri chronologique
-  - Support des filtres par date (ex: Hawaii 2015, Hawaii 2018)
-- **Menu dynamique** : 
-  - Toutes les familles avec photos
-  - Format "Latin (descriptions au pluriel)"
-  - 2-6 colonnes selon le nombre de familles (max 20/colonne)
-- **Lightbox claire** : Fond gris pâle, compteur de photos, carte et lieu
-- **Letterboxing** : Images affichées en entier sans recadrage
-- **Dates formatées** : "13 janvier 2025" (FR) / "January 13, 2025" (EN)
-- **Lieux traduits** : Pays et régions selon la langue
-- **Descriptions au pluriel** : 
-  - FR: Générées automatiquement (Canards, Oies, Hiboux, Merlebleus, etc.)
-  - EN: Depuis la taxonomie eBird
+- **Liste des espèces** avec recherche instantanée
+- **Galeries par voyage** avec dates et images de couverture personnalisables
+- **Galeries par famille taxonomique** avec icônes
+- **Ajouts récents** (3 derniers mois ou 50 dernières photos)
+- **Lightbox** avec carte de localisation et navigation
+- **Bilingue** français/anglais avec basculement facile
 
 ## Installation
 
-```bash
-pip install jinja2
-```
-
-## Fichiers requis
-
-1. `MyEBirdData.csv` - Vos données eBird
-   → Télécharger depuis https://ebird.org/downloadMyData
-
-2. `eBird_taxonomy_v2025.csv` - Taxonomie eBird
-   → Télécharger depuis https://ebird.org/science/use-ebird-data/the-ebird-taxonomy
-
-## Utilisation
-
-### Première exécution (vérifier les médias)
+### Prérequis
 
 ```bash
-python generer_tout.py verifier
+pip install jinja2 pyyaml
 ```
 
-Ceci vérifie chaque média pour distinguer les images des sons. Le résultat est sauvegardé dans `media_cache.csv`.
+### Fichiers requis
 
-### Générer les galeries
+1. **MyEBirdData.csv** - Vos données eBird
+   - Télécharger depuis: https://ebird.org/downloadMyData
+   
+2. **eBird_taxonomy_v2025.csv** - Taxonomie officielle
+   - Télécharger depuis: https://ebird.org/science/use-ebird-data/the-ebird-taxonomy
+   - Mettre à jour annuellement
 
-```bash
-python generer_tout.py
-```
-
-### Aide
-
-```bash
-python generer_tout.py help
-```
+3. **config.yaml** - Configuration (inclus, à personnaliser)
 
 ## Configuration
 
-### config_galeries.py
+Tous les paramètres sont dans `config.yaml`:
 
-Définissez vos voyages et galeries générales :
+```yaml
+# Fichiers source
+fichiers:
+  donnees_ebird: "MyEBirdData.csv"
+  taxonomie: "eBird_taxonomy_v2025.csv"
 
-```python
-VOYAGES = [
-    {
-        'id': 'voyage_chili',
-        'nom_fr': 'Chili',
-        'nom_en': 'Chile',
-        'pays': ['CL'],
-        'limite': 500
-    },
-    # Exemple: filtrer par année pour le même lieu
-    {
-        'id': 'voyage_hawaii_2015',
-        'nom_fr': 'Hawaï 2015',
-        'nom_en': 'Hawaii 2015',
-        'pays': ['US-HI'],
-        'date_debut': '2015-01-01',
-        'date_fin': '2015-12-31',
-        'limite': 300
-    },
-    {
-        'id': 'voyage_hawaii_2018',
-        'nom_fr': 'Hawaï 2018',
-        'nom_en': 'Hawaii 2018',
-        'pays': ['US-HI'],
-        'date_debut': '2018-01-01',
-        'date_fin': '2018-12-31',
-        'limite': 300
-    },
-]
+# Site web
+site:
+  index: "index.html"
+  auteur: "Votre Nom"
 
-# Note: Les galeries par famille sont générées automatiquement
-# pour toutes les familles observées (plus besoin de les définir)
+# Options
+generation:
+  verifier_medias_en_ligne: false
+  limite_photos_defaut: 300
 
-# Note: La galerie "Ajouts récents" est générée automatiquement
-# avec les 50 dernières photos ou celles des 3 derniers mois
+# Voyages (avec image de couverture personnalisable)
+voyages:
+  - id: voyage_floride
+    nom_fr: "Floride"
+    nom_en: "Florida"
+    pays: ["US-FL"]
+    frontispice: "last"  # ou "first" ou numéro ML
+
+# Icônes des familles (override optionnel)
+familles_icones:
+  Anatidae: "305223451"  # Numéro ML spécifique
 ```
 
-### traductions_lieux.csv
+## Utilisation
 
-Ajoutez vos traductions de pays/régions :
+### Première utilisation
 
-```csv
-code,fr,en
-CA-QC,Québec,Quebec
-CH-GE,Genève,Geneva
+```bash
+# 1. Vérifier les médias (crée le cache)
+python generer_tout.py verifier
+
+# 2. Générer toutes les galeries
+python generer_tout.py
+```
+
+### Mises à jour
+
+```bash
+# Régénérer après mise à jour des données
+python generer_tout.py
 ```
 
 ## Fichiers générés
 
 - `species_list_fr.html` / `species_list_en.html` - Liste des espèces
-- `gallery_recent_fr.html` / `gallery_recent_en.html` - Ajouts récents (auto)
-- `gallery_all_fr.html` / `gallery_all_en.html` - Toutes les photos
-- `gallery_[famille]_fr.html` / `gallery_[famille]_en.html` - Par famille (auto)
-- `voyage_[lieu]_fr.html` / `voyage_[lieu]_en.html` - Par voyage
+- `gallery_recent_fr.html` / `gallery_recent_en.html` - Ajouts récents
+- `voyages_index_fr.html` / `voyages_index_en.html` - Index des voyages
+- `familles_index_fr.html` / `familles_index_en.html` - Index des familles
+- `voyage_*_fr.html` / `voyage_*_en.html` - Galeries par voyage
+- `gallery_*_fr.html` / `gallery_*_en.html` - Galeries par famille
 
 ## Structure des fichiers
 
 ```
-ebird_gallery/
-├── generate_gallery.py      # Classe principale
-├── generer_tout.py          # Script de génération
-├── config_galeries.py       # Configuration
-├── verifier_medias.py       # Outil vérification médias
-├── gallery_template.html    # Template galerie
-├── species_list_template.html  # Template liste espèces
+├── config.yaml              # Configuration centralisée
+├── generer_tout.py          # Script principal
+├── generate_gallery.py      # Moteur de génération
 ├── gallery.css              # Styles
-├── traductions_lieux.csv    # Traductions
-├── media_cache.csv          # Cache médias (généré)
-├── MyEBirdData.csv          # Vos données
-└── eBird_taxonomy_v2025.csv # Taxonomie
+├── gallery_template.html    # Template galeries
+├── species_list_template.html
+├── voyages_index_template.html
+├── familles_index_template.html
+├── traductions_lieux.csv    # Traductions pays/régions
+├── MyEBirdData.csv          # Vos données (à ajouter)
+├── eBird_taxonomy_v2025.csv # Taxonomie (à ajouter)
+└── media_cache.csv          # Cache médias (généré)
 ```
 
-## Noms de familles courantes
+## Personnalisation
 
-| Code | Français | English |
-|------|----------|---------|
-| Anatidae | Anatidés | Ducks, Geese, Swans |
-| Accipitridae | Accipitridés | Hawks, Eagles |
-| Falconidae | Falconidés | Falcons |
-| Strigidae | Strigidés | Typical Owls |
-| Ardeidae | Ardéidés | Herons, Egrets |
-| Picidae | Picidés | Woodpeckers |
-| Trochilidae | Trochilidés | Hummingbirds |
-| Parulidae | Parulidés | New World Warblers |
-| Laridae | Laridés | Gulls, Terns |
-| Scolopacidae | Scolopacidés | Sandpipers |
+### Images de couverture (Voyages)
 
-## Notes
+Dans `config.yaml`:
+```yaml
+voyages:
+  - id: voyage_floride
+    frontispice: "305223451"  # Numéro ML spécifique
+```
 
-- La page d'accueil (`index.html`) n'est pas générée automatiquement
-- Le menu est centré, sans titre de site
-- Les images gardent leurs proportions (letterboxing)
-- Les drapeaux permettent de basculer entre FR et EN
-- Les galeries par famille sont triées par ordre taxonomique
-- Les galeries de voyage sont triées par date (plus récent d'abord)
-- La galerie "Ajouts récents" montre l'espèce + date au survol
+### Icônes des familles
+
+Dans `config.yaml`:
+```yaml
+familles_icones:
+  Anatidae: "305223451"
+  Accipitridae: "first"
+  Trochilidae: "last"
+```
+
+## Licence
+
+© Étienne Artigau

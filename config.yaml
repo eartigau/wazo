@@ -1,0 +1,170 @@
+# ==============================================================================
+# CONFIGURATION GALERIE eBIRD v2.0
+# ==============================================================================
+# Ce fichier contient tous les paramètres configurables de la galerie.
+# Modifiez-le selon vos besoins.
+# ==============================================================================
+
+
+# ------------------------------------------------------------------------------
+# FICHIERS SOURCE
+# ------------------------------------------------------------------------------
+fichiers:
+  # Données eBird exportées (télécharger depuis https://ebird.org/downloadMyData)
+  donnees_ebird: "MyEBirdData.csv"
+  
+  # Taxonomie eBird (télécharger depuis https://ebird.org/science/use-ebird-data/the-ebird-taxonomy)
+  # Mettre à jour annuellement (ex: eBird_taxonomy_v2026.csv)
+  taxonomie: "eBird_taxonomy_v2025.csv"
+  
+  # Cache des vérifications de médias (généré automatiquement)
+  cache_medias: "media_cache.csv"
+  
+  # Traductions des noms de lieux
+  traductions_lieux: "traductions_lieux.csv"
+
+
+# ------------------------------------------------------------------------------
+# SITE WEB
+# ------------------------------------------------------------------------------
+site:
+  # Page d'accueil (sera ajoutée au menu)
+  index: "index.html"
+  
+  # Titre du site (utilisé dans les métadonnées)
+  titre_fr: "Galerie Photos d'Oiseaux"
+  titre_en: "Bird Photo Gallery"
+  
+  # Auteur/Copyright
+  auteur: "Étienne Artigau"
+
+
+# ------------------------------------------------------------------------------
+# OPTIONS DE GÉNÉRATION
+# ------------------------------------------------------------------------------
+generation:
+  # Vérifier les médias en ligne (plus lent mais plus précis)
+  # Mettre à false pour accélérer la génération si le cache est à jour
+  verifier_medias_en_ligne: false
+  
+  # Limite par défaut de photos par galerie
+  limite_photos_defaut: 300
+  
+  # Nombre de photos pour "Ajouts récents" (minimum ou période de 3 mois)
+  ajouts_recents_minimum: 50
+  
+  # Limite de photos pour les galeries par famille
+  limite_photos_famille: 500
+
+
+# ------------------------------------------------------------------------------
+# VOYAGES
+# ------------------------------------------------------------------------------
+# Chaque voyage génère une galerie avec les photos des lieux spécifiés.
+#
+# Paramètres:
+#   id: Identifiant unique (utilisé pour les noms de fichiers)
+#   nom_fr/nom_en: Nom affiché
+#   pays: Liste de codes pays/régions eBird (ex: CA-QC, US-FL, CL, CH)
+#   regions: (optionnel) Liste de régions spécifiques
+#   date_debut/date_fin: (optionnel) Filtrer par période (format YYYY-MM-DD)
+#   limite: (optionnel) Nombre max de photos (défaut: limite_photos_defaut)
+#   frontispice: (optionnel) Image de couverture
+#     - "last": photo la plus récente (défaut)
+#     - "first": photo la plus ancienne
+#     - "123456789": numéro ML spécifique
+# ------------------------------------------------------------------------------
+
+voyages:
+  - id: voyage_chili
+    nom_fr: "Chili"
+    nom_en: "Chile"
+    pays: ["CL"]
+    limite: 500
+    frontispice: "last"
+  
+  - id: voyage_geneve
+    nom_fr: "Genève"
+    nom_en: "Geneva"
+    pays: ["CH"]
+    limite: 300
+    frontispice: "last"
+  
+  - id: voyage_hawaii_2015
+    nom_fr: "Hawaï 2015"
+    nom_en: "Hawaii 2015"
+    pays: ["US-HI"]
+    date_debut: "2015-01-01"
+    date_fin: "2015-12-31"
+    limite: 300
+    frontispice: "last"
+  
+  - id: voyage_hawaii_2018
+    nom_fr: "Hawaï 2018"
+    nom_en: "Hawaii 2018"
+    pays: ["US-HI"]
+    date_debut: "2018-01-01"
+    date_fin: "2018-12-31"
+    limite: 300
+    frontispice: "last"
+  
+  - id: voyage_floride
+    nom_fr: "Floride"
+    nom_en: "Florida"
+    pays: ["US-FL"]
+    limite: 300
+    frontispice: "last"
+  
+  - id: voyage_arizona
+    nom_fr: "Arizona"
+    nom_en: "Arizona"
+    pays: ["US-AZ"]
+    limite: 200
+    frontispice: "last"
+
+
+# ------------------------------------------------------------------------------
+# FAMILLES - OVERRIDE DES ICÔNES
+# ------------------------------------------------------------------------------
+# Par défaut, l'icône de chaque famille est la photo la plus récente.
+# Vous pouvez spécifier une photo différente pour chaque famille.
+#
+# Format:
+#   CodeFamille: "numero_ML" ou "last" ou "first"
+#
+# Exemples:
+#   Anatidae: "305223451"    # Numéro ML spécifique
+#   Accipitridae: "first"    # Photo la plus ancienne
+#   Trochilidae: "last"      # Photo la plus récente (défaut)
+# ------------------------------------------------------------------------------
+
+familles_icones:
+  # Décommentez et modifiez selon vos préférences
+  # Accipitridae: "first"
+  # Trochilidae: "last"
+  Rheidae: "20473761"
+
+
+# ------------------------------------------------------------------------------
+# GALERIES GÉNÉRALES (optionnel)
+# ------------------------------------------------------------------------------
+# Galeries supplémentaires avec des filtres personnalisés.
+# Laissez vide [] si vous n'en voulez pas.
+#
+# Paramètres identiques aux voyages, plus:
+#   dans_menu: true/false - Afficher dans le menu principal
+# ------------------------------------------------------------------------------
+
+galeries_generales:
+  - id: gallery_all
+    nom_fr: "Toutes les photos"
+    nom_en: "All Photos"
+    limite: 1000
+    dans_menu: false
+  
+  - id: gallery_quebec
+    nom_fr: "Québec"
+    nom_en: "Quebec"
+    pays: ["CA-QC"]
+    limite: 500
+    dans_menu: false

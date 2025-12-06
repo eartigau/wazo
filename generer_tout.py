@@ -2,6 +2,8 @@
 """
 Script principal pour générer toutes les galeries eBird v2.0
 Bilingue français/anglais avec support taxonomie
+
+Configuration: config.yaml
 """
 
 import sys
@@ -10,48 +12,61 @@ from pathlib import Path
 from datetime import datetime, timedelta
 
 try:
+    import yaml
+except ImportError:
+    print("❌ PyYAML non installé. Exécutez: pip install pyyaml")
+    sys.exit(1)
+
+try:
     from jinja2 import Environment, FileSystemLoader
 except ImportError:
     print("❌ Jinja2 non installé. Exécutez: pip install jinja2")
     sys.exit(1)
 
-from generate_gallery import EBirdGalleryGenerator, verifier_tous_les_medias, generer_description_groupe_fr, mettre_au_pluriel, formater_plage_dates
-from config_galeries import VOYAGES, GALERIES_GENERALES
+from generate_gallery import (
+    EBirdGalleryGenerator, 
+    verifier_tous_les_medias, 
+    generer_description_groupe_fr, 
+    mettre_au_pluriel, 
+    formater_plage_dates,
+    formater_date
+)
 
 
 # ============================================================================
-# CONFIGURATION
+# CHARGEMENT CONFIGURATION
 # ============================================================================
 
-CSV_FILE = "MyEBirdData.csv"
-TAXONOMY_FILE = "eBird_taxonomy_v2025.csv"
-MEDIA_CACHE = "media_cache.csv"
-TRADUCTIONS_FILE = "traductions_lieux.csv"
+CONFIG_FILE = "config.yaml"
 
-# Templates
-GALLERY_TEMPLATE = "gallery_template.html"
-SPECIES_LIST_TEMPLATE = "species_list_template.html"
-
-# Vérifier les médias en ligne (True = plus lent mais plus précis)
-VERIFIER_MEDIAS_EN_LIGNE = False  # Mettre True pour la première exécution
+def charger_config():
+    """Charge la configuration depuis le fichier YAML"""
+    if not Path(CONFIG_FILE).exists():
+        print(f"❌ Fichier de configuration non trouvé: {CONFIG_FILE}")
+        sys.exit(1)
+    
+    with open(CONFIG_FILE, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
+    
+    return config
 
 
 # ============================================================================
 # CONSTRUCTION DU MENU
 # ============================================================================
 
-def construire_menu(generator):
-    """Construit la structure du menu bilingue"""
+def construire_menu(config, generator):
+    """Construit la structure du menu de navigation"""
     
-    # Récupérer les familles qui ont des photos
+    # Récupérer les familles avec photos
     familles_avec_photos = generator.get_families_with_photos()
     
     menu = [
         {
             'name_fr': 'Accueil',
             'name_en': 'Home',
-            'file_fr': 'index.html',
-            'file_en': 'index_en.html'
+            'file_fr': config['site'].get('index', 'index.html'),
+            'file_en': config['site'].get('index', 'index.html')
         },
         {
             'name_fr': 'Espèces',
@@ -67,28 +82,29 @@ def construire_menu(generator):
         }
     ]
     
-    # Dropdown Voyages
-    voyages_dropdown = []
-    for v in VOYAGES:
-        voyages_dropdown.append({
-            'name_fr': v['nom_fr'],
-            'name_en': v['nom_en'],
-            'file_fr': f"{v['id']}_fr.html",
-            'file_en': f"{v['id']}_en.html"
-        })
-    
-    if voyages_dropdown:
+    # Lien Voyages (si configurés)
+    voyages = config.get('voyages', [])
+    if voyages:
         menu.append({
             'name_fr': 'Voyages',
             'name_en': 'Trips',
-            'dropdown': voyages_dropdown
+            'file_fr': 'voyages_index_fr.html',
+            'file_en': 'voyages_index_en.html'
         })
     
-    # Dropdown Familles - TOUTES les familles avec photos
-    # Générer les descriptions pour chaque famille
+    # Lien Familles (si des familles ont des photos)
+    if familles_avec_photos:
+        menu.append({
+            'name_fr': 'Familles',
+            'name_en': 'Families',
+            'file_fr': 'familles_index_fr.html',
+            'file_en': 'familles_index_en.html'
+        })
+    
+    # Construire les données des familles pour la génération
     species_list = generator.get_species_list()
     
-    # Grouper les espèces par famille pour générer les descriptions
+    # Grouper les espèces par famille pour les descriptions
     familles_especes = {}
     for sp in species_list:
         fam = sp['family'] or 'Unknown'
@@ -96,11 +112,10 @@ def construire_menu(generator):
             familles_especes[fam] = []
         familles_especes[fam].append(sp['common_name_fr'])
     
-    familles_dropdown = []
+    familles_data = []
     for fam_info in familles_avec_photos:
         fam_code = fam_info['code']
         
-        # Ignorer Unknown pour le menu
         if fam_code == 'Unknown':
             continue
         
@@ -108,50 +123,21 @@ def construire_menu(generator):
         noms_fr = familles_especes.get(fam_code, [])
         desc_fr = generer_description_groupe_fr(noms_fr)
         
-        # Extraire description anglaise du family_full
+        # Extraire description anglaise
         name_en_match = re.search(r'\(([^)]+)\)', fam_info['name'])
         desc_en = name_en_match.group(1) if name_en_match else ''
         
-        # Format: "Anatidae (Canards, Oies, etc.)"
-        name_fr = f"{fam_code} ({desc_fr})" if desc_fr else fam_code
-        name_en = f"{fam_code} ({desc_en})" if desc_en else fam_code
-        
-        # ID de fichier basé sur le code famille (en minuscules, sans caractères spéciaux)
         file_id = f"gallery_{fam_code.lower()}"
         
-        familles_dropdown.append({
-            'name_fr': name_fr,
-            'name_en': name_en,
-            'desc_fr': desc_fr,  # Description seule pour sous-titre
-            'desc_en': desc_en,  # Description seule pour sous-titre
+        familles_data.append({
+            'family_code': fam_code,
+            'desc_fr': desc_fr,
+            'desc_en': desc_en,
             'file_fr': f"{file_id}_fr.html",
-            'file_en': f"{file_id}_en.html",
-            'family_code': fam_code  # Pour la génération
+            'file_en': f"{file_id}_en.html"
         })
     
-    if familles_dropdown:
-        # Calculer le nombre de colonnes (max 20 familles par colonne)
-        num_familles = len(familles_dropdown)
-        import math
-        num_columns = math.ceil(num_familles / 20)
-        num_columns = max(2, min(6, num_columns))  # Entre 2 et 6 colonnes
-        
-        column_class = {
-            2: 'two_columns',
-            3: 'three_columns', 
-            4: 'four_columns',
-            5: 'five_columns',
-            6: 'six_columns'
-        }
-        
-        menu.append({
-            'name_fr': 'Familles',
-            'name_en': 'Families',
-            'dropdown': familles_dropdown,
-            column_class[num_columns]: True
-        })
-    
-    return menu, familles_dropdown
+    return menu, familles_data
 
 
 # ============================================================================
@@ -164,6 +150,27 @@ def generer_toutes_galeries():
     print("=" * 60)
     print("🐦 GÉNÉRATION DES GALERIES eBird v2.0")
     print("=" * 60)
+    
+    # Charger la configuration
+    config = charger_config()
+    
+    # Extraire les chemins des fichiers
+    fichiers = config.get('fichiers', {})
+    CSV_FILE = fichiers.get('donnees_ebird', 'MyEBirdData.csv')
+    TAXONOMY_FILE = fichiers.get('taxonomie', 'eBird_taxonomy_v2025.csv')
+    MEDIA_CACHE = fichiers.get('cache_medias', 'media_cache.csv')
+    TRADUCTIONS_FILE = fichiers.get('traductions_lieux', 'traductions_lieux.csv')
+    
+    # Options de génération
+    generation = config.get('generation', {})
+    VERIFIER_MEDIAS = generation.get('verifier_medias_en_ligne', False)
+    LIMITE_DEFAUT = generation.get('limite_photos_defaut', 300)
+    AJOUTS_RECENTS_MIN = generation.get('ajouts_recents_minimum', 50)
+    LIMITE_FAMILLE = generation.get('limite_photos_famille', 500)
+    
+    # Templates
+    GALLERY_TEMPLATE = 'gallery_template.html'
+    SPECIES_LIST_TEMPLATE = 'species_list_template.html'
     
     # Vérifier les fichiers
     if not Path(CSV_FILE).exists():
@@ -185,10 +192,9 @@ def generer_toutes_galeries():
         traductions_file=TRADUCTIONS_FILE
     )
     
-    # Construire le menu (retourne aussi la liste des familles)
-    menu, familles_dropdown = construire_menu(generator)
+    # Construire le menu
+    menu, familles_data = construire_menu(config, generator)
     
-    # Compteurs
     total_galeries = 0
     
     # ========================================
@@ -206,31 +212,27 @@ def generer_toutes_galeries():
     # ========================================
     print(f"\n🆕 Galerie ajouts récents...")
     
-    # Calculer la date d'il y a 3 mois
     trois_mois = (datetime.now() - timedelta(days=90)).strftime('%Y-%m-%d')
     
-    # D'abord, obtenir les photos des 3 derniers mois (sans limite)
     photos_3_mois = generator.filter_observations(
-        limit=9999,  # Pas de limite réelle
+        limit=9999,
         date_start=trois_mois,
-        verifier_medias_en_ligne=VERIFIER_MEDIAS_EN_LIGNE,
-        sort_by='date'  # Tri chronologique inverse (plus récent d'abord)
+        verifier_medias_en_ligne=VERIFIER_MEDIAS,
+        sort_by='date'
     )
     
-    # Si moins de 50 photos dans les 3 derniers mois, prendre les 50 dernières
-    if len(photos_3_mois) < 50:
+    if len(photos_3_mois) < AJOUTS_RECENTS_MIN:
         photos_recent = generator.filter_observations(
-            limit=50,
-            verifier_medias_en_ligne=VERIFIER_MEDIAS_EN_LIGNE,
+            limit=AJOUTS_RECENTS_MIN,
+            verifier_medias_en_ligne=VERIFIER_MEDIAS,
             sort_by='date'
         )
-        print(f"   (moins de 50 photos en 3 mois, affichage des 50 dernières)")
+        print(f"   (moins de {AJOUTS_RECENTS_MIN} photos en 3 mois, affichage des {AJOUTS_RECENTS_MIN} dernières)")
     else:
         photos_recent = photos_3_mois
         print(f"   ({len(photos_recent)} photos des 3 derniers mois)")
     
     if photos_recent:
-        # Compter les espèces
         species_set = set(p.get('scientific_name', '') for p in photos_recent)
         species_count = len(species_set)
         
@@ -243,54 +245,59 @@ def generer_toutes_galeries():
             menu=menu,
             gallery_id='gallery_recent',
             species_count=species_count,
-            show_date_in_overlay=True  # Afficher la date au survol
+            show_date_in_overlay=True
         )
         total_galeries += 1
     
     # ========================================
     # GALERIES GÉNÉRALES
     # ========================================
-    print(f"\n📸 Galeries générales...")
-    
-    for config in GALERIES_GENERALES:
-        photos = generator.filter_observations(
-            limit=config.get('limite', 300),
-            countries=config.get('pays'),
-            date_start=config.get('date_debut'),
-            date_end=config.get('date_fin'),
-            verifier_medias_en_ligne=VERIFIER_MEDIAS_EN_LIGNE
-        )
+    galeries_generales = config.get('galeries_generales', [])
+    if galeries_generales:
+        print(f"\n📸 Galeries générales...")
         
-        if photos:
-            generator.generate_gallery(
-                output_base=config['id'],
-                title_fr=config['nom_fr'],
-                title_en=config['nom_en'],
-                photos=photos,
-                template_file=GALLERY_TEMPLATE,
-                menu=menu,
-                gallery_id=config['id']
+        for galerie in galeries_generales:
+            photos = generator.filter_observations(
+                limit=galerie.get('limite', LIMITE_DEFAUT),
+                countries=galerie.get('pays'),
+                date_start=galerie.get('date_debut'),
+                date_end=galerie.get('date_fin'),
+                verifier_medias_en_ligne=VERIFIER_MEDIAS
             )
-            total_galeries += 1
+            
+            if photos:
+                generator.generate_gallery(
+                    output_base=galerie['id'],
+                    title_fr=galerie['nom_fr'],
+                    title_en=galerie['nom_en'],
+                    photos=photos,
+                    template_file=GALLERY_TEMPLATE,
+                    menu=menu,
+                    gallery_id=galerie['id']
+                )
+                total_galeries += 1
     
     # ========================================
     # VOYAGES
     # ========================================
-    if VOYAGES:
+    voyages = config.get('voyages', [])
+    if voyages:
         print(f"\n✈️ Galeries voyages...")
         
-        for voyage in VOYAGES:
+        voyages_index_data = []
+        
+        for voyage in voyages:
             photos = generator.filter_observations(
-                limit=voyage.get('limite', 300),
+                limit=voyage.get('limite', LIMITE_DEFAUT),
                 countries=voyage.get('pays'),
                 regions=voyage.get('regions'),
                 date_start=voyage.get('date_debut'),
                 date_end=voyage.get('date_fin'),
-                verifier_medias_en_ligne=VERIFIER_MEDIAS_EN_LIGNE
+                verifier_medias_en_ligne=VERIFIER_MEDIAS
             )
             
             if photos:
-                # Calculer les dates min et max des photos
+                # Dates min/max
                 dates = [p.get('date_raw', '') for p in photos if p.get('date_raw')]
                 if dates:
                     date_min = min(dates)
@@ -298,8 +305,34 @@ def generer_toutes_galeries():
                     subtitle_fr = formater_plage_dates(date_min, date_max, 'fr')
                     subtitle_en = formater_plage_dates(date_min, date_max, 'en')
                 else:
-                    subtitle_fr = None
-                    subtitle_en = None
+                    date_min = date_max = None
+                    subtitle_fr = subtitle_en = None
+                
+                # Frontispice
+                frontispice = voyage.get('frontispice', 'last')
+                if frontispice == 'last':
+                    frontispice_ml = photos[0]['ml_catalog_number']
+                elif frontispice == 'first':
+                    frontispice_ml = photos[-1]['ml_catalog_number']
+                else:
+                    frontispice_ml = frontispice
+                
+                # Espèces
+                species_set = set(p.get('scientific_name', '') for p in photos)
+                species_count = len(species_set)
+                
+                voyages_index_data.append({
+                    'nom_fr': voyage['nom_fr'],
+                    'nom_en': voyage['nom_en'],
+                    'file_fr': f"{voyage['id']}_fr.html",
+                    'file_en': f"{voyage['id']}_en.html",
+                    'frontispice_ml': frontispice_ml,
+                    'dates': True if date_min else False,
+                    'dates_fr': subtitle_fr,
+                    'dates_en': subtitle_en,
+                    'photo_count': len(photos),
+                    'species_count': species_count
+                })
                 
                 generator.generate_gallery(
                     output_base=voyage['id'],
@@ -313,36 +346,89 @@ def generer_toutes_galeries():
                     subtitle_en=subtitle_en
                 )
                 total_galeries += 1
+        
+        # Page index des voyages
+        if voyages_index_data:
+            print(f"\n📑 Page index des voyages...")
+            today = datetime.now()
+            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
+            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+            
+            env = Environment(loader=FileSystemLoader('.'))
+            template = env.get_template('voyages_index_template.html')
+            
+            for lang in ['fr', 'en']:
+                html = template.render(
+                    lang=lang,
+                    voyages=voyages_index_data,
+                    menu=menu,
+                    current_page=f'voyages_index_{lang}.html',
+                    other_lang_page=f'voyages_index_{"en" if lang == "fr" else "fr"}.html',
+                    update_date=True,
+                    update_date_fr=update_date_fr,
+                    update_date_en=update_date_en
+                )
+                with open(f'voyages_index_{lang}.html', 'w', encoding='utf-8') as f:
+                    f.write(html)
+            
+            print(f"   ✓ voyages_index_fr.html / voyages_index_en.html ({len(voyages_index_data)} voyages)")
     
     # ========================================
-    # FAMILLES (TOUTES LES FAMILLES OBSERVÉES)
+    # FAMILLES
     # ========================================
-    if familles_dropdown:
-        print(f"\n🦅 Galeries par famille ({len(familles_dropdown)} familles)...")
+    familles_icones = config.get('familles_icones', {}) or {}
+    
+    if familles_data:
+        print(f"\n🦅 Galeries par famille ({len(familles_data)} familles)...")
         
-        for famille in familles_dropdown:
+        familles_index_data = []
+        total_species_all = 0
+        total_photos_all = 0
+        
+        for famille in familles_data:
             fam_code = famille['family_code']
             file_id = f"gallery_{fam_code.lower()}"
             
             photos = generator.filter_observations(
-                limit=500,  # Limite généreuse pour les familles
+                limit=LIMITE_FAMILLE,
                 families_list=[fam_code],
-                verifier_medias_en_ligne=VERIFIER_MEDIAS_EN_LIGNE,
-                sort_by='taxonomy'  # Tri taxonomique pour les familles
+                verifier_medias_en_ligne=VERIFIER_MEDIAS,
+                sort_by='taxonomy'
             )
             
             if photos:
-                # Compter les espèces uniques
                 species_set = set(p.get('scientific_name', '') for p in photos)
                 species_count = len(species_set)
                 
-                # Titre: "Famille des Anatidaes" (avec 's')
+                # Icône de la famille
+                icone_override = familles_icones.get(fam_code, 'last')
+                if icone_override == 'last':
+                    photos_by_date = sorted(photos, key=lambda x: x.get('date_raw', ''), reverse=True)
+                    icone_ml = photos_by_date[0]['ml_catalog_number'] if photos_by_date else photos[0]['ml_catalog_number']
+                elif icone_override == 'first':
+                    photos_by_date = sorted(photos, key=lambda x: x.get('date_raw', ''))
+                    icone_ml = photos_by_date[0]['ml_catalog_number'] if photos_by_date else photos[0]['ml_catalog_number']
+                else:
+                    icone_ml = icone_override
+                
                 title_fr = f"Famille des {fam_code}s"
                 title_en = f"{fam_code} Family"
                 
-                # Sous-titre: description (Canards, Oies, etc.)
                 subtitle_fr = famille.get('desc_fr', '')
                 subtitle_en = famille.get('desc_en', '')
+                
+                familles_index_data.append({
+                    'code': fam_code,
+                    'name_fr': subtitle_fr,
+                    'name_en': subtitle_en,
+                    'file_fr': f"{file_id}_fr.html",
+                    'file_en': f"{file_id}_en.html",
+                    'species_count': species_count,
+                    'photo_count': len(photos),
+                    'icone_ml': icone_ml
+                })
+                total_species_all += species_count
+                total_photos_all += len(photos)
                 
                 generator.generate_gallery(
                     output_base=file_id,
@@ -357,53 +443,103 @@ def generer_toutes_galeries():
                     species_count=species_count
                 )
                 total_galeries += 1
+        
+        # Page index des familles
+        if familles_index_data:
+            print(f"\n📑 Page index des familles...")
+            today = datetime.now()
+            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
+            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+            
+            env = Environment(loader=FileSystemLoader('.'))
+            template = env.get_template('familles_index_template.html')
+            
+            for lang in ['fr', 'en']:
+                html = template.render(
+                    lang=lang,
+                    familles=familles_index_data,
+                    total_species=total_species_all,
+                    total_photos=total_photos_all,
+                    menu=menu,
+                    current_page=f'familles_index_{lang}.html',
+                    other_lang_page=f'familles_index_{"en" if lang == "fr" else "fr"}.html',
+                    update_date=True,
+                    update_date_fr=update_date_fr,
+                    update_date_en=update_date_en
+                )
+                with open(f'familles_index_{lang}.html', 'w', encoding='utf-8') as f:
+                    f.write(html)
+            
+            print(f"   ✓ familles_index_fr.html / familles_index_en.html ({len(familles_index_data)} familles)")
     
     # ========================================
     # RÉSUMÉ
     # ========================================
     print("\n" + "=" * 60)
     print("✅ GÉNÉRATION TERMINÉE")
+    print(f"   📊 {total_galeries} galeries générées")
+    print("=" * 60)
+
+
+# ============================================================================
+# VÉRIFICATION DES MÉDIAS
+# ============================================================================
+
+def verifier_medias():
+    """Vérifie tous les médias et met à jour le cache"""
+    config = charger_config()
+    fichiers = config.get('fichiers', {})
+    
+    CSV_FILE = fichiers.get('donnees_ebird', 'MyEBirdData.csv')
+    MEDIA_CACHE = fichiers.get('cache_medias', 'media_cache.csv')
+    
+    print("=" * 60)
+    print("🔍 VÉRIFICATION DES MÉDIAS")
     print("=" * 60)
     
-    species_list = generator.get_species_list()
-    
-    print(f"\n   📊 {total_galeries * 2} fichiers HTML générés ({total_galeries} galeries × 2 langues)")
-    print(f"   🐦 {len(species_list)} espèces photographiées")
-    print(f"   🦅 {len(familles_dropdown)} familles")
-    print(f"   📁 Cache médias: {MEDIA_CACHE}")
-    print(f"\n   → Ouvrez species_list_fr.html ou index.html")
+    verifier_tous_les_medias(CSV_FILE, MEDIA_CACHE)
 
 
 # ============================================================================
 # POINT D'ENTRÉE
 # ============================================================================
 
-if __name__ == "__main__":
-    if len(sys.argv) > 1:
-        cmd = sys.argv[1].lower()
-        
-        if cmd == "verifier":
-            verifier_tous_les_medias(CSV_FILE, MEDIA_CACHE)
-        
-        elif cmd == "help":
-            print("""
-Usage:
-    python generer_tout.py           → Génère toutes les galeries
-    python generer_tout.py verifier  → Vérifie les médias (images vs sons)
-    python generer_tout.py help      → Cette aide
+def afficher_aide():
+    """Affiche l'aide"""
+    print("""
+🐦 Générateur de galeries eBird v2.0
 
-Configuration:
-    1. Placez MyEBirdData.csv et eBird_taxonomy_v2025.csv dans le dossier
-    2. Modifiez config_galeries.py pour vos voyages
-    3. Complétez traductions_lieux.csv avec vos régions
-    4. Lancez: python generer_tout.py verifier (première fois)
-    5. Lancez: python generer_tout.py
+Usage: python generer_tout.py [commande]
 
-Note: Les galeries par famille sont générées automatiquement
-      pour toutes les familles observées.
+Commandes:
+  (aucune)    Génère toutes les galeries
+  verifier    Vérifie tous les médias et met à jour le cache
+  help        Affiche cette aide
+
+Configuration: config.yaml
+
+Fichiers requis:
+  - MyEBirdData.csv (export eBird)
+  - eBird_taxonomy_v2025.csv (taxonomie)
+  - config.yaml (configuration)
+
+Étapes:
+  1. Téléchargez vos données depuis https://ebird.org/downloadMyData
+  2. Modifiez config.yaml selon vos besoins
+  3. Exécutez: python generer_tout.py verifier (première fois)
+  4. Exécutez: python generer_tout.py
 """)
+
+
+if __name__ == '__main__':
+    if len(sys.argv) > 1:
+        commande = sys.argv[1].lower()
+        if commande == 'verifier':
+            verifier_medias()
+        elif commande == 'help' or commande == '--help' or commande == '-h':
+            afficher_aide()
         else:
-            print(f"Commande inconnue: {cmd}")
-            print("Utilisez 'python generer_tout.py help' pour l'aide")
+            print(f"❌ Commande inconnue: {commande}")
+            afficher_aide()
     else:
         generer_toutes_galeries()
