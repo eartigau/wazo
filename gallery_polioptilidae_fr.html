@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -726,7 +726,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -746,7 +746,7 @@
                 location_fr: "UCSD Park, Californie, États-Unis",
                 location_en: "UCSD Park, California, United States",
                 date_fr: "27 juin 2024",
-                date_en: "June 27, 2024",
+                date_en: "June 27<sup>th</sup>, 2024",
                 lat: 32.8864337,
                 lng: -117.2361969,
                 checklist_id: "S184025471"
@@ -761,7 +761,7 @@
                 location_fr: "Mt. Lemmon--Rose Canyon and Lake, Arizona, États-Unis",
                 location_en: "Mt. Lemmon--Rose Canyon and Lake, Arizona, United States",
                 date_fr: "29 avril 2016",
-                date_en: "April 29, 2016",
+                date_en: "April 29<sup>th</sup>, 2016",
                 lat: 32.3926274,
                 lng: -110.7024693,
                 checklist_id: "S31498278"
@@ -776,7 +776,7 @@
                 location_fr: "Kartchner Caverns SP, Arizona, États-Unis",
                 location_en: "Kartchner Caverns SP, Arizona, United States",
                 date_fr: "26 février 2023",
-                date_en: "February 26, 2023",
+                date_en: "February 26<sup>th</sup>, 2023",
                 lat: 31.8360722,
                 lng: -110.3486592,
                 checklist_id: "S129739094"
@@ -791,7 +791,7 @@
                 location_fr: "Kartchner Caverns SP, Arizona, États-Unis",
                 location_en: "Kartchner Caverns SP, Arizona, United States",
                 date_fr: "26 février 2023",
-                date_en: "February 26, 2023",
+                date_en: "February 26<sup>th</sup>, 2023",
                 lat: 31.8360722,
                 lng: -110.3486592,
                 checklist_id: "S129739094"
@@ -806,7 +806,7 @@
                 location_fr: "Kartchner Caverns SP, Arizona, États-Unis",
                 location_en: "Kartchner Caverns SP, Arizona, United States",
                 date_fr: "26 février 2023",
-                date_en: "February 26, 2023",
+                date_en: "February 26<sup>th</sup>, 2023",
                 lat: 31.8360722,
                 lng: -110.3486592,
                 checklist_id: "S129739094"
@@ -821,7 +821,7 @@
                 location_fr: "Desert Botanical Garden, Arizona, États-Unis",
                 location_en: "Desert Botanical Garden, Arizona, United States",
                 date_fr: "29 décembre 2005",
-                date_en: "December 29, 2005",
+                date_en: "December 29<sup>th</sup>, 2005",
                 lat: 33.4618165,
                 lng: -111.9436349,
                 checklist_id: "S18575057"
@@ -836,7 +836,7 @@
                 location_fr: "UCSD Park, Californie, États-Unis",
                 location_en: "UCSD Park, California, United States",
                 date_fr: "28 juin 2024",
-                date_en: "June 28, 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
                 lat: 32.8864337,
                 lng: -117.2361969,
                 checklist_id: "S184179673"
@@ -851,7 +851,7 @@
                 location_fr: "UCSD Park, Californie, États-Unis",
                 location_en: "UCSD Park, California, United States",
                 date_fr: "28 juin 2024",
-                date_en: "June 28, 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
                 lat: 32.8864337,
                 lng: -117.2361969,
                 checklist_id: "S184179673"
@@ -881,7 +881,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

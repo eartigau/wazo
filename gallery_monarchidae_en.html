@@ -726,7 +726,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -746,7 +746,7 @@
                 location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
                 location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
                 date_fr: "27 mai 2018",
-                date_en: "May 27, 2018",
+                date_en: "May 27<sup>th</sup>, 2018",
                 lat: 19.6714434,
                 lng: -155.3849602,
                 checklist_id: "S46086383"
@@ -760,8 +760,8 @@
                 family: "Monarchidae (Monarch Flycatchers)",
                 location_fr: "Hakalau Forest NWR--Maulua Tract (restricted access), Hawaï, États-Unis",
                 location_en: "Hakalau Forest NWR--Maulua Tract (restricted access), Hawaii, United States",
-                date_fr: "1 avril 2007",
-                date_en: "April 1, 2007",
+                date_fr: "1<sup>er</sup> avril 2007",
+                date_en: "April 1<sup>st</sup>, 2007",
                 lat: 19.8770891,
                 lng: -155.3099871,
                 checklist_id: "S18575286"
@@ -775,8 +775,8 @@
                 family: "Monarchidae (Monarch Flycatchers)",
                 location_fr: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaï, États-Unis",
                 location_en: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaii, United States",
-                date_fr: "1 août 2015",
-                date_en: "August 1, 2015",
+                date_fr: "1<sup>er</sup> août 2015",
+                date_en: "August 1<sup>st</sup>, 2015",
                 lat: 19.8319137,
                 lng: -155.5947653,
                 checklist_id: "S24475556"
@@ -791,7 +791,7 @@
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
-                date_en: "July 20, 2015",
+                date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
                 lng: -159.6556377,
                 checklist_id: "S24332841"
@@ -806,7 +806,7 @@
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
-                date_en: "July 20, 2015",
+                date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
                 lng: -159.6556377,
                 checklist_id: "S24332841"
@@ -821,7 +821,7 @@
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
-                date_en: "July 20, 2015",
+                date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
                 lng: -159.6556377,
                 checklist_id: "S24332841"
@@ -836,7 +836,7 @@
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
-                date_en: "July 20, 2015",
+                date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
                 lng: -159.6556377,
                 checklist_id: "S24332841"
@@ -851,7 +851,7 @@
                 location_fr: "Kuli\'ou\'ou Valley Trail, Hawaï, États-Unis",
                 location_en: "Kuli\'ou\'ou Valley Trail, Hawaii, United States",
                 date_fr: "2 août 2015",
-                date_en: "August 2, 2015",
+                date_en: "August 2<sup>nd</sup>, 2015",
                 lat: 21.3108002,
                 lng: -157.7279675,
                 checklist_id: "S24475569"
@@ -881,7 +881,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

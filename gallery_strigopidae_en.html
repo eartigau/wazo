@@ -654,7 +654,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -674,7 +674,7 @@
                 location_fr: "Rainbow Ski Field, St Arnaud, Marlborough, Nouvelle-Zélande",
                 location_en: "Rainbow Ski Field, St Arnaud, Marlborough, New Zealand",
                 date_fr: "23 août 1994",
-                date_en: "August 23, 1994",
+                date_en: "August 23<sup>rd</sup>, 1994",
                 lat: -41.877222,
                 lng: 172.86139,
                 checklist_id: "S18576157"
@@ -689,7 +689,7 @@
                 location_fr: "Kapiti Island--general, Wellington, Nouvelle-Zélande",
                 location_en: "Kapiti Island--general, Wellington, New Zealand",
                 date_fr: "23 juillet 1994",
-                date_en: "July 23, 1994",
+                date_en: "July 23<sup>rd</sup>, 1994",
                 lat: -40.8528473,
                 lng: 174.9291709,
                 checklist_id: "S18576301"
@@ -719,7 +719,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

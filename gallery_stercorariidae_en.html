@@ -666,7 +666,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -686,7 +686,7 @@
                 location_fr: "Valparaíso--Pelágico, Valparaíso, Chili",
                 location_en: "Valparaíso--Pelágico, Valparaíso, Chile",
                 date_fr: "14 décembre 2008",
-                date_en: "December 14, 2008",
+                date_en: "December 14<sup>th</sup>, 2008",
                 lat: -33.0008897,
                 lng: -71.9479179,
                 checklist_id: "S5772609"
@@ -701,7 +701,7 @@
                 location_fr: "Avenida del Mar, Coquimbo, Chili",
                 location_en: "Avenida del Mar, Coquimbo, Chile",
                 date_fr: "26 septembre 2006",
-                date_en: "September 26, 2006",
+                date_en: "September 26<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
                 checklist_id: "S5772618"
@@ -716,7 +716,7 @@
                 location_fr: "Avenida del Mar, Coquimbo, Chili",
                 location_en: "Avenida del Mar, Coquimbo, Chile",
                 date_fr: "26 septembre 2006",
-                date_en: "September 26, 2006",
+                date_en: "September 26<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
                 checklist_id: "S5772618"
@@ -746,7 +746,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

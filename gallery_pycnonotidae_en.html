@@ -690,7 +690,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -710,7 +710,7 @@
                 location_fr: "Dar Kenavo, Essaouira, MA-11, MA",
                 location_en: "Dar Kenavo, Essaouira, MA-11, MA",
                 date_fr: "23 juillet 2004",
-                date_en: "July 23, 2004",
+                date_en: "July 23<sup>rd</sup>, 2004",
                 lat: 31.428056,
                 lng: -9.6372222,
                 checklist_id: "S18563443"
@@ -725,7 +725,7 @@
                 location_fr: "Dar Kenavo, Essaouira, MA-11, MA",
                 location_en: "Dar Kenavo, Essaouira, MA-11, MA",
                 date_fr: "23 juillet 2004",
-                date_en: "July 23, 2004",
+                date_en: "July 23<sup>rd</sup>, 2004",
                 lat: 31.428056,
                 lng: -9.6372222,
                 checklist_id: "S18563443"
@@ -740,7 +740,7 @@
                 location_fr: "Ranganathittu Bird Sanctuary ರಂಗನತಿಟ್ಟು ಪಕ್ಷಿಧಾಮ, Inde",
                 location_en: "Ranganathittu Bird Sanctuary ರಂಗನತಿಟ್ಟು ಪಕ್ಷಿಧಾಮ, India",
                 date_fr: "5 novembre 2017",
-                date_en: "November 5, 2017",
+                date_en: "November 5<sup>th</sup>, 2017",
                 lat: 12.4249565,
                 lng: 76.6570294,
                 checklist_id: "S40315832"
@@ -755,7 +755,7 @@
                 location_fr: "Ho\'omaluhia Botanical Garden, Hawaï, États-Unis",
                 location_en: "Ho\'omaluhia Botanical Garden, Hawaii, United States",
                 date_fr: "12 juillet 2015",
-                date_en: "July 12, 2015",
+                date_en: "July 12<sup>th</sup>, 2015",
                 lat: 21.3843521,
                 lng: -157.8057075,
                 checklist_id: "S24240495"
@@ -770,7 +770,7 @@
                 location_fr: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaï, États-Unis",
                 location_en: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaii, United States",
                 date_fr: "14 juillet 2015",
-                date_en: "July 14, 2015",
+                date_en: "July 14<sup>th</sup>, 2015",
                 lat: 21.3988172,
                 lng: -157.9000568,
                 checklist_id: "S24264664"
@@ -800,7 +800,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

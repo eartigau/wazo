@@ -702,7 +702,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -722,7 +722,7 @@
                 location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
                 location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
                 date_fr: "23 mai 2018",
-                date_en: "May 23, 2018",
+                date_en: "May 23<sup>rd</sup>, 2018",
                 lat: 19.9150848,
                 lng: -155.8867816,
                 checklist_id: "S45973676"
@@ -737,7 +737,7 @@
                 location_fr: "Kawaihae village, Hawaï, États-Unis",
                 location_en: "Kawaihae village, Hawaii, United States",
                 date_fr: "28 juillet 2015",
-                date_en: "July 28, 2015",
+                date_en: "July 28<sup>th</sup>, 2015",
                 lat: 20.0232946,
                 lng: -155.8091676,
                 checklist_id: "S24411523"
@@ -752,7 +752,7 @@
                 location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
                 location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
                 date_fr: "17 octobre 2012",
-                date_en: "October 17, 2012",
+                date_en: "October 17<sup>th</sup>, 2012",
                 lat: 19.9150848,
                 lng: -155.8867816,
                 checklist_id: "S18574896"
@@ -767,7 +767,7 @@
                 location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
                 location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
                 date_fr: "17 octobre 2012",
-                date_en: "October 17, 2012",
+                date_en: "October 17<sup>th</sup>, 2012",
                 lat: 19.9150848,
                 lng: -155.8867816,
                 checklist_id: "S18574896"
@@ -782,7 +782,7 @@
                 location_fr: "Kaloko-Honokōhau NHP--ʻAimakapā Pond, Hawaï, États-Unis",
                 location_en: "Kaloko-Honokōhau NHP--ʻAimakapā Pond, Hawaii, United States",
                 date_fr: "15 avril 2007",
-                date_en: "April 15, 2007",
+                date_en: "April 15<sup>th</sup>, 2007",
                 lat: 19.6771833,
                 lng: -156.0259759,
                 checklist_id: "S18574909"
@@ -797,7 +797,7 @@
                 location_fr: "Kaloko-Honokōhau NHP--ʻAimakapā Pond, Hawaï, États-Unis",
                 location_en: "Kaloko-Honokōhau NHP--ʻAimakapā Pond, Hawaii, United States",
                 date_fr: "31 mars 2007",
-                date_en: "March 31, 2007",
+                date_en: "March 31<sup>st</sup>, 2007",
                 lat: 19.6771833,
                 lng: -156.0259759,
                 checklist_id: "S18574832"
@@ -827,7 +827,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

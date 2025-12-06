@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -690,7 +690,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -710,7 +710,7 @@
                 location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
-                date_en: "April 12, 2022",
+                date_en: "April 12<sup>th</sup>, 2022",
                 lat: -33.3980197,
                 lng: -70.6022,
                 checklist_id: "S106897237"
@@ -725,7 +725,7 @@
                 location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
-                date_en: "April 12, 2022",
+                date_en: "April 12<sup>th</sup>, 2022",
                 lat: -33.3980197,
                 lng: -70.6022,
                 checklist_id: "S106897237"
@@ -740,7 +740,7 @@
                 location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
-                date_en: "April 12, 2022",
+                date_en: "April 12<sup>th</sup>, 2022",
                 lat: -33.3980197,
                 lng: -70.6022,
                 checklist_id: "S106897237"
@@ -755,7 +755,7 @@
                 location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura (no contar cisnes / do not count swans), Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
-                date_en: "April 12, 2022",
+                date_en: "April 12<sup>th</sup>, 2022",
                 lat: -33.3980197,
                 lng: -70.6022,
                 checklist_id: "S106897237"
@@ -770,7 +770,7 @@
                 location_fr: "PN Chiloé--Sendero Playa, Los Lagos, Chili",
                 location_en: "PN Chiloé--Sendero Playa, Los Lagos, Chile",
                 date_fr: "4 mai 2008",
-                date_en: "May 4, 2008",
+                date_en: "May 4<sup>th</sup>, 2008",
                 lat: -42.622631,
                 lng: -74.1126859,
                 checklist_id: "S5772599"
@@ -800,7 +800,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

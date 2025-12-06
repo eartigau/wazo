@@ -750,7 +750,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -770,7 +770,7 @@
                 location_fr: "Everglades NP--Coastal Prairie Trail, Floride, États-Unis",
                 location_en: "Everglades NP--Coastal Prairie Trail, Florida, United States",
                 date_fr: "2 mars 2024",
-                date_en: "March 2, 2024",
+                date_en: "March 2<sup>nd</sup>, 2024",
                 lat: 25.137165,
                 lng: -80.9518576,
                 checklist_id: "S163482056"
@@ -785,7 +785,7 @@
                 location_fr: "Everglades NP--Coastal Prairie Trail, Floride, États-Unis",
                 location_en: "Everglades NP--Coastal Prairie Trail, Florida, United States",
                 date_fr: "2 mars 2024",
-                date_en: "March 2, 2024",
+                date_en: "March 2<sup>nd</sup>, 2024",
                 lat: 25.137165,
                 lng: -80.9518576,
                 checklist_id: "S163482056"
@@ -800,7 +800,7 @@
                 location_fr: "Parc Angrignon, Québec, Canada",
                 location_en: "Parc Angrignon, Quebec, Canada",
                 date_fr: "21 mai 2020",
-                date_en: "May 21, 2020",
+                date_en: "May 21<sup>st</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
                 checklist_id: "S69406659"
@@ -815,7 +815,7 @@
                 location_fr: "Parc Angrignon, Québec, Canada",
                 location_en: "Parc Angrignon, Quebec, Canada",
                 date_fr: "21 mai 2020",
-                date_en: "May 21, 2020",
+                date_en: "May 21<sup>st</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
                 checklist_id: "S69406659"
@@ -830,7 +830,7 @@
                 location_fr: "Lillooet--Old Bridge , Colombie-Britannique, Canada",
                 location_en: "Lillooet--Old Bridge , British Columbia, Canada",
                 date_fr: "4 juillet 2019",
-                date_en: "July 4, 2019",
+                date_en: "July 4<sup>th</sup>, 2019",
                 lat: 50.711648,
                 lng: -121.910525,
                 checklist_id: "S57922083"
@@ -845,7 +845,7 @@
                 location_fr: "Mt. Lemmon--Molino Basin, Arizona, États-Unis",
                 location_en: "Mt. Lemmon--Molino Basin, Arizona, United States",
                 date_fr: "27 avril 2017",
-                date_en: "April 27, 2017",
+                date_en: "April 27<sup>th</sup>, 2017",
                 lat: 32.337101,
                 lng: -110.6921005,
                 checklist_id: "S36369104"
@@ -860,7 +860,7 @@
                 location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
                 location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
                 date_fr: "9 mars 2017",
-                date_en: "March 9, 2017",
+                date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
                 lng: -80.448761,
                 checklist_id: "S35074281"
@@ -875,7 +875,7 @@
                 location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
                 location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
                 date_fr: "9 mars 2017",
-                date_en: "March 9, 2017",
+                date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
                 lng: -80.448761,
                 checklist_id: "S35074281"
@@ -890,7 +890,7 @@
                 location_fr: "Foster Island & Marsh Island, Washington, États-Unis",
                 location_en: "Foster Island & Marsh Island, Washington, United States",
                 date_fr: "31 août 2010",
-                date_en: "August 31, 2010",
+                date_en: "August 31<sup>st</sup>, 2010",
                 lat: 47.646592,
                 lng: -122.2909732,
                 checklist_id: "S18574860"
@@ -905,7 +905,7 @@
                 location_fr: "Shippagan--Boardwalk, Nouveau-Brunswick, Canada",
                 location_en: "Shippagan--Boardwalk, New Brunswick, Canada",
                 date_fr: "26 juillet 2003",
-                date_en: "July 26, 2003",
+                date_en: "July 26<sup>th</sup>, 2003",
                 lat: 47.7453354,
                 lng: -64.7272294,
                 checklist_id: "S18566964"
@@ -935,7 +935,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

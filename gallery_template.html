@@ -52,7 +52,7 @@
     <div class="gallery-header">
         <h1>{{ gallery_title }}</h1>
         {% if gallery_subtitle %}
-        <div class="gallery-subtitle">{{ gallery_subtitle }}</div>
+        <div class="gallery-subtitle">{{ gallery_subtitle|safe }}</div>
         {% endif %}
         <div class="stats">
             {{ photos|length }} photo{% if photos|length > 1 %}s{% endif %}
@@ -74,7 +74,7 @@
                      alt="{% if lang == 'fr' %}{{ photo.common_name_fr }}{% else %}{{ photo.common_name_en }}{% endif %}"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">{% if lang == 'fr' %}{{ photo.common_name_fr }}{% else %}{{ photo.common_name_en }}{% endif %}{% if show_date_in_overlay %} · {% if lang == 'fr' %}{{ photo.date_fr }}{% else %}{{ photo.date_en }}{% endif %}{% endif %}</div>
+                    <div class="bird-name">{% if lang == 'fr' %}{{ photo.common_name_fr }}{% else %}{{ photo.common_name_en }}{% endif %}{% if show_date_in_overlay %} · {% if lang == 'fr' %}{{ photo.date_fr|safe }}{% else %}{{ photo.date_en|safe }}{% endif %}{% endif %}</div>
                 </div>
             </div>
             {% endfor %}
@@ -127,7 +127,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr }}{% else %}Updated: {{ update_date_en }}{% endif %}{% endif %}</p>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr|safe }}{% else %}Updated: {{ update_date_en|safe }}{% endif %}{% endif %}</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -177,7 +177,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

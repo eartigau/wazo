@@ -690,7 +690,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -710,7 +710,7 @@
                 location_fr: "Geysers del Tatio, Antofagasta, Chili",
                 location_en: "Geysers del Tatio, Antofagasta, Chile",
                 date_fr: "2 janvier 2009",
-                date_en: "January 2, 2009",
+                date_en: "January 2<sup>nd</sup>, 2009",
                 lat: -22.3357862,
                 lng: -68.0125809,
                 checklist_id: "S5772585"
@@ -725,7 +725,7 @@
                 location_fr: "Geysers del Tatio, Antofagasta, Chili",
                 location_en: "Geysers del Tatio, Antofagasta, Chile",
                 date_fr: "2 janvier 2009",
-                date_en: "January 2, 2009",
+                date_en: "January 2<sup>nd</sup>, 2009",
                 lat: -22.3357862,
                 lng: -68.0125809,
                 checklist_id: "S5772585"
@@ -740,7 +740,7 @@
                 location_fr: "Villa Tehuelches (sur), Magallanes, Chili",
                 location_en: "Villa Tehuelches (sur), Magallanes, Chile",
                 date_fr: "19 décembre 2008",
-                date_en: "December 19, 2008",
+                date_en: "December 19<sup>th</sup>, 2008",
                 lat: -52.4562448,
                 lng: -71.3375545,
                 checklist_id: "S5772584"
@@ -755,7 +755,7 @@
                 location_fr: "Ruta Y-510--entre Ruta 9 y Seno Otway, Magallanes, Chili",
                 location_en: "Ruta Y-510--entre Ruta 9 y Seno Otway, Magallanes, Chile",
                 date_fr: "17 décembre 2008",
-                date_en: "December 17, 2008",
+                date_en: "December 17<sup>th</sup>, 2008",
                 lat: -52.9097302,
                 lng: -71.0382843,
                 checklist_id: "S5772583"
@@ -770,7 +770,7 @@
                 location_fr: "Ruta Y-510--entre Ruta 9 y Seno Otway, Magallanes, Chili",
                 location_en: "Ruta Y-510--entre Ruta 9 y Seno Otway, Magallanes, Chile",
                 date_fr: "17 décembre 2008",
-                date_en: "December 17, 2008",
+                date_en: "December 17<sup>th</sup>, 2008",
                 lat: -52.9097302,
                 lng: -71.0382843,
                 checklist_id: "S5772583"
@@ -800,7 +800,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

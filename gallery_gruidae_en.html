@@ -690,7 +690,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -710,7 +710,7 @@
                 location_fr: "Babcock-Webb WMA, Floride, États-Unis",
                 location_en: "Babcock-Webb WMA, Florida, United States",
                 date_fr: "27 février 2024",
-                date_en: "February 27, 2024",
+                date_en: "February 27<sup>th</sup>, 2024",
                 lat: 26.8582653,
                 lng: -81.9401121,
                 checklist_id: "S163084754"
@@ -725,7 +725,7 @@
                 location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
                 location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
                 date_fr: "10 mars 2017",
-                date_en: "March 10, 2017",
+                date_en: "March 10<sup>th</sup>, 2017",
                 lat: 28.2254954,
                 lng: -80.7144928,
                 checklist_id: "S35093839"
@@ -740,7 +740,7 @@
                 location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
                 location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
                 date_fr: "10 mars 2017",
-                date_en: "March 10, 2017",
+                date_en: "March 10<sup>th</sup>, 2017",
                 lat: 28.2254954,
                 lng: -80.7144928,
                 checklist_id: "S35093839"
@@ -755,7 +755,7 @@
                 location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
                 location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
                 date_fr: "7 mars 2017",
-                date_en: "March 7, 2017",
+                date_en: "March 7<sup>th</sup>, 2017",
                 lat: 28.2254954,
                 lng: -80.7144928,
                 checklist_id: "S35031563"
@@ -770,7 +770,7 @@
                 location_fr: "Brevard Zoo (do NOT report captive birds), Floride, États-Unis",
                 location_en: "Brevard Zoo (do NOT report captive birds), Florida, United States",
                 date_fr: "7 mars 2017",
-                date_en: "March 7, 2017",
+                date_en: "March 7<sup>th</sup>, 2017",
                 lat: 28.2254954,
                 lng: -80.7144928,
                 checklist_id: "S35031563"
@@ -800,7 +800,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

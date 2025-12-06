@@ -702,7 +702,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -722,7 +722,7 @@
                 location_fr: "Brier Island--Bay of Fundy Whalewatch, Nouvelle-Écosse, Canada",
                 location_en: "Brier Island--Bay of Fundy Whalewatch, Nova Scotia, Canada",
                 date_fr: "7 août 2017",
-                date_en: "August 7, 2017",
+                date_en: "August 7<sup>th</sup>, 2017",
                 lat: 44.3091667,
                 lng: -66.3655556,
                 checklist_id: "S38533017"
@@ -737,7 +737,7 @@
                 location_fr: "Brier Island--Bay of Fundy Whalewatch, Nouvelle-Écosse, Canada",
                 location_en: "Brier Island--Bay of Fundy Whalewatch, Nova Scotia, Canada",
                 date_fr: "7 août 2017",
-                date_en: "August 7, 2017",
+                date_en: "August 7<sup>th</sup>, 2017",
                 lat: 44.3091667,
                 lng: -66.3655556,
                 checklist_id: "S38533017"
@@ -752,7 +752,7 @@
                 location_fr: "Valparaíso--Pelágico, Valparaíso, Chili",
                 location_en: "Valparaíso--Pelágico, Valparaíso, Chile",
                 date_fr: "14 décembre 2008",
-                date_en: "December 14, 2008",
+                date_en: "December 14<sup>th</sup>, 2008",
                 lat: -33.0008897,
                 lng: -71.9479179,
                 checklist_id: "S5772609"
@@ -767,7 +767,7 @@
                 location_fr: "Quintero--Pelágico, Valparaíso, Chili",
                 location_en: "Quintero--Pelágico, Valparaíso, Chile",
                 date_fr: "25 août 2007",
-                date_en: "August 25, 2007",
+                date_en: "August 25<sup>th</sup>, 2007",
                 lat: -32.7693779,
                 lng: -71.5838242,
                 checklist_id: "S5772607"
@@ -782,7 +782,7 @@
                 location_fr: "Quintero--Pelágico, Valparaíso, Chili",
                 location_en: "Quintero--Pelágico, Valparaíso, Chile",
                 date_fr: "25 août 2007",
-                date_en: "August 25, 2007",
+                date_en: "August 25<sup>th</sup>, 2007",
                 lat: -32.7693779,
                 lng: -71.5838242,
                 checklist_id: "S5772607"
@@ -797,7 +797,7 @@
                 location_fr: "Quintero--Pelágico, Valparaíso, Chili",
                 location_en: "Quintero--Pelágico, Valparaíso, Chile",
                 date_fr: "25 août 2007",
-                date_en: "August 25, 2007",
+                date_en: "August 25<sup>th</sup>, 2007",
                 lat: -32.7693779,
                 lng: -71.5838242,
                 checklist_id: "S5772607"
@@ -827,7 +827,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

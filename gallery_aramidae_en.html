@@ -654,7 +654,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -673,8 +673,8 @@
                 family: "Aramidae (Limpkin)",
                 location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
                 location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
-                date_fr: "1 mars 2019",
-                date_en: "March 1, 2019",
+                date_fr: "1<sup>er</sup> mars 2019",
+                date_en: "March 1<sup>st</sup>, 2019",
                 lat: 22.6557471,
                 lng: -79.0021384,
                 checklist_id: "S53455154"
@@ -688,8 +688,8 @@
                 family: "Aramidae (Limpkin)",
                 location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
                 location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
-                date_fr: "1 mars 2019",
-                date_en: "March 1, 2019",
+                date_fr: "1<sup>er</sup> mars 2019",
+                date_en: "March 1<sup>st</sup>, 2019",
                 lat: 22.6557471,
                 lng: -79.0021384,
                 checklist_id: "S53455154"
@@ -719,7 +719,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

@@ -2,10 +2,6 @@
 
 Générateur de galeries photo bilingues (français/anglais) à partir des données eBird.
 
-# Pour exclure une image donnée
-python verifier_medias.py exclure ML252403531 "pas propriétaire"
-
-
 ## Fonctionnalités
 
 - **Bilingue** : Galeries en français et anglais avec switch de langue (drapeaux 🇫🇷 🇬🇧)

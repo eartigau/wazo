@@ -702,7 +702,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -722,7 +722,7 @@
                 location_fr: "Sabino Dam and downstream riparian, Arizona, États-Unis",
                 location_en: "Sabino Dam and downstream riparian, Arizona, United States",
                 date_fr: "27 février 2023",
-                date_en: "February 27, 2023",
+                date_en: "February 27<sup>th</sup>, 2023",
                 lat: 32.3131068,
                 lng: -110.8113941,
                 checklist_id: "S129804288"
@@ -737,7 +737,7 @@
                 location_fr: "Sabino Dam and downstream riparian, Arizona, États-Unis",
                 location_en: "Sabino Dam and downstream riparian, Arizona, United States",
                 date_fr: "27 février 2023",
-                date_en: "February 27, 2023",
+                date_en: "February 27<sup>th</sup>, 2023",
                 lat: 32.3131068,
                 lng: -110.8113941,
                 checklist_id: "S129804288"
@@ -752,7 +752,7 @@
                 location_fr: "Patagonia Lake SP--Birding Trail, Arizona, États-Unis",
                 location_en: "Patagonia Lake SP--Birding Trail, Arizona, United States",
                 date_fr: "23 février 2023",
-                date_en: "February 23, 2023",
+                date_en: "February 23<sup>rd</sup>, 2023",
                 lat: 31.496718,
                 lng: -110.848945,
                 checklist_id: "S129474997"
@@ -767,7 +767,7 @@
                 location_fr: "Sweetwater Wetlands, Arizona, États-Unis",
                 location_en: "Sweetwater Wetlands, Arizona, United States",
                 date_fr: "29 avril 2016",
-                date_en: "April 29, 2016",
+                date_en: "April 29<sup>th</sup>, 2016",
                 lat: 32.2790144,
                 lng: -111.0216061,
                 checklist_id: "S29292881"
@@ -782,7 +782,7 @@
                 location_fr: "Sweetwater Wetlands, Arizona, États-Unis",
                 location_en: "Sweetwater Wetlands, Arizona, United States",
                 date_fr: "29 avril 2016",
-                date_en: "April 29, 2016",
+                date_en: "April 29<sup>th</sup>, 2016",
                 lat: 32.2790144,
                 lng: -111.0216061,
                 checklist_id: "S29292881"
@@ -797,7 +797,7 @@
                 location_fr: "Saguaro NP--West--Red Hills Visitors Center, Arizona, États-Unis",
                 location_en: "Saguaro NP--West--Red Hills Visitors Center, Arizona, United States",
                 date_fr: "31 décembre 2005",
-                date_en: "December 31, 2005",
+                date_en: "December 31<sup>st</sup>, 2005",
                 lat: 32.2542072,
                 lng: -111.1972591,
                 checklist_id: "S18575034"
@@ -827,7 +827,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

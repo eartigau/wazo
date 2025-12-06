@@ -507,6 +507,74 @@ nav {
    LISTE DES ESPÈCES
    ============================================ */
 
+/* Recherche d'espèces */
+.search-container {
+    max-width: 500px;
+    margin: 0 auto 30px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+#species-search {
+    width: 100%;
+    padding: 14px 45px 14px 45px;
+    font-size: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 25px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background: var(--bg-white);
+}
+
+#species-search:focus {
+    border-color: var(--ebird-green);
+    box-shadow: 0 0 0 3px rgba(74, 139, 44, 0.1);
+}
+
+#species-search::placeholder {
+    color: var(--text-light);
+}
+
+.search-icon {
+    position: absolute;
+    left: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
+}
+
+.search-clear {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.search-clear:hover {
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.search-results {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-medium);
+}
+
+/* Highlight des résultats de recherche */
+.species-card.search-highlight {
+    box-shadow: 0 0 0 3px var(--ebird-green);
+}
+
 .species-toc {
     max-width: 1200px;
     margin: 0 auto;
@@ -567,9 +635,9 @@ nav {
 .family-title {
     font-size: 22px;
     color: var(--ebird-green-dark);
-    padding: 16px 0;
+    padding: 10px 0;
     border-bottom: 2px solid var(--ebird-green);
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .species-grid {

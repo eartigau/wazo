@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -690,7 +690,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -710,7 +710,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "10 novembre 2017",
-                date_en: "November 10, 2017",
+                date_en: "November 10<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40403564"
@@ -725,7 +725,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "8 novembre 2017",
-                date_en: "November 8, 2017",
+                date_en: "November 8<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40372997"
@@ -740,7 +740,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "8 novembre 2017",
-                date_en: "November 8, 2017",
+                date_en: "November 8<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40372997"
@@ -755,7 +755,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "8 novembre 2017",
-                date_en: "November 8, 2017",
+                date_en: "November 8<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40372997"
@@ -770,7 +770,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "8 novembre 2017",
-                date_en: "November 8, 2017",
+                date_en: "November 8<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40372997"
@@ -800,7 +800,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

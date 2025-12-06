@@ -666,7 +666,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -686,7 +686,7 @@
                 location_fr: "Golden Gate View Point, Californie, États-Unis",
                 location_en: "Golden Gate View Point, California, United States",
                 date_fr: "2 août 2023",
-                date_en: "August 2, 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
                 lat: 37.8277685,
                 lng: -122.4816799,
                 checklist_id: "S146295741"
@@ -701,7 +701,7 @@
                 location_fr: "Golden Gate View Point, Californie, États-Unis",
                 location_en: "Golden Gate View Point, California, United States",
                 date_fr: "2 août 2023",
-                date_en: "August 2, 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
                 lat: 37.8277685,
                 lng: -122.4816799,
                 checklist_id: "S146295741"
@@ -716,7 +716,7 @@
                 location_fr: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, Californie, États-Unis",
                 location_en: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, California, United States",
                 date_fr: "30 mars 2023",
-                date_en: "March 30, 2023",
+                date_en: "March 30<sup>th</sup>, 2023",
                 lat: 34.4071359,
                 lng: -119.8783064,
                 checklist_id: "S132213962"
@@ -746,7 +746,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

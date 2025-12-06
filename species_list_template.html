@@ -57,14 +57,29 @@
         </div>
     </div>
 
+    <!-- RECHERCHE -->
+    <div class="search-container">
+        <input type="text" id="species-search" 
+               placeholder="{% if lang == 'fr' %}Rechercher une espèce...{% else %}Search species...{% endif %}"
+               autocomplete="off">
+        <span class="search-icon">🔍</span>
+        <span class="search-clear" id="search-clear" style="display: none;">✕</span>
+        <div class="search-results" id="search-results"></div>
+    </div>
+
     <!-- LISTE PAR FAMILLE -->
     <div class="species-list-container">
         {% for family in families %}
-        <div class="family-section" id="{{ family.code }}">
+        <div class="family-section" id="{{ family.code }}" data-family="{{ family.code }}">
             <h2 class="family-title">{% if lang == 'fr' %}{{ family.code_display_fr }}{% else %}{{ family.code_display_en }}{% endif %} {% if lang == 'fr' and family.name_fr %}({{ family.name_fr }}){% elif lang == 'en' and family.name_en %}({{ family.name_en }}){% endif %}</h2>
             <div class="species-grid">
                 {% for sp in family.species %}
-                <div class="species-card" onclick="openSpeciesLightbox('{{ sp.sci_name|replace("'", "\\'") }}')" data-species="{{ sp.sci_name }}">
+                <div class="species-card" 
+                     onclick="openSpeciesLightbox('{{ sp.sci_name|replace("'", "\\'") }}')" 
+                     data-species="{{ sp.sci_name }}"
+                     data-name-fr="{{ sp.common_name_fr|lower }}"
+                     data-name-en="{{ sp.common_name_en|lower }}"
+                     data-sci-name="{{ sp.sci_name|lower }}">
                     <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ sp.ml_catalog_number }}/480" 
                          alt="{% if lang == 'fr' %}{{ sp.common_name_fr }}{% else %}{{ sp.common_name_en }}{% endif %}"
                          loading="lazy">
@@ -131,7 +146,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr }}{% else %}Updated: {{ update_date_en }}{% endif %}{% endif %}</p>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr|safe }}{% else %}Updated: {{ update_date_en|safe }}{% endif %}{% endif %}</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -216,7 +231,7 @@
             // Lieu et date
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             
             // Lien eBird
@@ -299,6 +314,110 @@
                 backToTop.classList.add('visible');
             } else {
                 backToTop.classList.remove('visible');
+            }
+        });
+
+        // ========================================
+        // RECHERCHE D'ESPÈCES
+        // ========================================
+        const searchInput = document.getElementById('species-search');
+        const searchClear = document.getElementById('search-clear');
+        const searchResults = document.getElementById('search-results');
+        const allCards = document.querySelectorAll('.species-card');
+        const allFamilies = document.querySelectorAll('.family-section');
+
+        // Normaliser le texte (enlever accents)
+        function normalizeText(text) {
+            return text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+        }
+
+        // Filtrer les espèces
+        function filterSpecies(query) {
+            const normalizedQuery = normalizeText(query);
+            let visibleCount = 0;
+            let matchedFamilies = new Set();
+
+            if (normalizedQuery.length < 2) {
+                // Réafficher tout
+                allCards.forEach(card => {
+                    card.style.display = '';
+                    card.classList.remove('search-highlight');
+                });
+                allFamilies.forEach(fam => {
+                    fam.style.display = '';
+                });
+                searchResults.style.display = 'none';
+                searchClear.style.display = 'none';
+                return;
+            }
+
+            searchClear.style.display = 'block';
+
+            allCards.forEach(card => {
+                const nameFr = normalizeText(card.dataset.nameFr || '');
+                const nameEn = normalizeText(card.dataset.nameEn || '');
+                const sciName = normalizeText(card.dataset.sciName || '');
+
+                const matches = nameFr.includes(normalizedQuery) || 
+                               nameEn.includes(normalizedQuery) || 
+                               sciName.includes(normalizedQuery);
+
+                if (matches) {
+                    card.style.display = '';
+                    card.classList.add('search-highlight');
+                    visibleCount++;
+                    // Trouver la famille parente
+                    const family = card.closest('.family-section');
+                    if (family) {
+                        matchedFamilies.add(family.dataset.family);
+                    }
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('search-highlight');
+                }
+            });
+
+            // Afficher/masquer les familles
+            allFamilies.forEach(fam => {
+                if (matchedFamilies.has(fam.dataset.family)) {
+                    fam.style.display = '';
+                } else {
+                    fam.style.display = 'none';
+                }
+            });
+
+            // Afficher le compteur de résultats
+            if (visibleCount > 0) {
+                const resultText = currentLang === 'fr' 
+                    ? `${visibleCount} espèce${visibleCount > 1 ? 's' : ''} trouvée${visibleCount > 1 ? 's' : ''}`
+                    : `${visibleCount} species found`;
+                searchResults.textContent = resultText;
+                searchResults.style.display = 'block';
+            } else {
+                const noResultText = currentLang === 'fr' 
+                    ? 'Aucune espèce trouvée'
+                    : 'No species found';
+                searchResults.textContent = noResultText;
+                searchResults.style.display = 'block';
+            }
+        }
+
+        // Événements de recherche
+        searchInput.addEventListener('input', (e) => {
+            filterSpecies(e.target.value);
+        });
+
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            filterSpecies('');
+            searchInput.focus();
+        });
+
+        // Échap pour effacer la recherche
+        searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                searchInput.value = '';
+                filterSpecies('');
             }
         });
     </script>

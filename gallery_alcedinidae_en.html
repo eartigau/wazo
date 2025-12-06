@@ -738,7 +738,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -758,7 +758,7 @@
                 location_fr: "Giardino di Boboli, Italie",
                 location_en: "Giardino di Boboli, Italy",
                 date_fr: "6 septembre 2023",
-                date_en: "September 6, 2023",
+                date_en: "September 6<sup>th</sup>, 2023",
                 lat: 43.7627299,
                 lng: 11.2499652,
                 checklist_id: "S149123375"
@@ -773,7 +773,7 @@
                 location_fr: "Mysore City Bird Atlas 2C, Hebbal kere, ಹೆಬ್ಬಾಳ ಕೆರೆ, Inde",
                 location_en: "Mysore City Bird Atlas 2C, Hebbal kere, ಹೆಬ್ಬಾಳ ಕೆರೆ, India",
                 date_fr: "7 novembre 2017",
-                date_en: "November 7, 2017",
+                date_en: "November 7<sup>th</sup>, 2017",
                 lat: 12.3585768,
                 lng: 76.6104984,
                 checklist_id: "S40354331"
@@ -788,7 +788,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "6 novembre 2017",
-                date_en: "November 6, 2017",
+                date_en: "November 6<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40333737"
@@ -803,7 +803,7 @@
                 location_fr: "PN Chiloé--Sendero Playa, Los Lagos, Chili",
                 location_en: "PN Chiloé--Sendero Playa, Los Lagos, Chile",
                 date_fr: "4 mai 2008",
-                date_en: "May 4, 2008",
+                date_en: "May 4<sup>th</sup>, 2008",
                 lat: -42.622631,
                 lng: -74.1126859,
                 checklist_id: "S5772599"
@@ -818,7 +818,7 @@
                 location_fr: "Puente Calixto, Ancud, Los Lagos, Chili",
                 location_en: "Puente Calixto, Ancud, Los Lagos, Chile",
                 date_fr: "3 mai 2008",
-                date_en: "May 3, 2008",
+                date_en: "May 3<sup>rd</sup>, 2008",
                 lat: -41.886944,
                 lng: -73.960556,
                 checklist_id: "S5772530"
@@ -833,7 +833,7 @@
                 location_fr: "Parc Angrignon, Québec, Canada",
                 location_en: "Parc Angrignon, Quebec, Canada",
                 date_fr: "8 mai 2020",
-                date_en: "May 8, 2020",
+                date_en: "May 8<sup>th</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
                 checklist_id: "S68624058"
@@ -848,7 +848,7 @@
                 location_fr: "Parc des Rapides, Québec, Canada",
                 location_en: "Parc des Rapides, Quebec, Canada",
                 date_fr: "29 septembre 2019",
-                date_en: "September 29, 2019",
+                date_en: "September 29<sup>th</sup>, 2019",
                 lat: 45.4277985,
                 lng: -73.5921872,
                 checklist_id: "S60216421"
@@ -863,7 +863,7 @@
                 location_fr: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
                 location_en: "Laguna de la Jicotea Trail, Cayo Santa Maria Wildlife Refuge, CU-07, CU",
                 date_fr: "2 mars 2019",
-                date_en: "March 2, 2019",
+                date_en: "March 2<sup>nd</sup>, 2019",
                 lat: 22.6557471,
                 lng: -79.0021384,
                 checklist_id: "S53455184"
@@ -878,7 +878,7 @@
                 location_fr: "Victoria--Fisherman\'s Wharf, Colombie-Britannique, Canada",
                 location_en: "Victoria--Fisherman\'s Wharf, British Columbia, Canada",
                 date_fr: "4 octobre 2018",
-                date_en: "October 4, 2018",
+                date_en: "October 4<sup>th</sup>, 2018",
                 lat: 48.4224588,
                 lng: -123.383107,
                 checklist_id: "S48938826"
@@ -908,7 +908,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

@@ -750,7 +750,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -770,7 +770,7 @@
                 location_fr: "Rgs Ste-Marie & Ste-Dominique, Mirabel, Québec, Canada",
                 location_en: "Rgs Ste-Marie & Ste-Dominique, Mirabel, Quebec, Canada",
                 date_fr: "17 février 2021",
-                date_en: "February 17, 2021",
+                date_en: "February 17<sup>th</sup>, 2021",
                 lat: 45.718765,
                 lng: -73.9975548,
                 checklist_id: "S81830923"
@@ -785,7 +785,7 @@
                 location_fr: "Rgs Ste-Marie & Ste-Dominique, Mirabel, Québec, Canada",
                 location_en: "Rgs Ste-Marie & Ste-Dominique, Mirabel, Quebec, Canada",
                 date_fr: "17 février 2021",
-                date_en: "February 17, 2021",
+                date_en: "February 17<sup>th</sup>, 2021",
                 lat: 45.718765,
                 lng: -73.9975548,
                 checklist_id: "S81830923"
@@ -800,7 +800,7 @@
                 location_fr: "Ottawa--Shirley\'s Bay (boat launch), Ontario, Canada",
                 location_en: "Ottawa--Shirley\'s Bay (boat launch), Ontario, Canada",
                 date_fr: "29 octobre 2018",
-                date_en: "October 29, 2018",
+                date_en: "October 29<sup>th</sup>, 2018",
                 lat: 45.3664604,
                 lng: -75.8820574,
                 checklist_id: "S49540227"
@@ -815,7 +815,7 @@
                 location_fr: "Halte marine du Gros-Ruisseau, Québec, Canada",
                 location_en: "Halte marine du Gros-Ruisseau, Quebec, Canada",
                 date_fr: "20 février 2022",
-                date_en: "February 20, 2022",
+                date_en: "February 20<sup>th</sup>, 2022",
                 lat: 48.5868335,
                 lng: -68.2871204,
                 checklist_id: "S103263447"
@@ -830,7 +830,7 @@
                 location_fr: "Quai, Pointe-au-Père, Québec, Canada",
                 location_en: "Quai, Pointe-au-Père, Quebec, Canada",
                 date_fr: "26 octobre 2020",
-                date_en: "October 26, 2020",
+                date_en: "October 26<sup>th</sup>, 2020",
                 lat: 48.5188557,
                 lng: -68.4732342,
                 checklist_id: "S75436743"
@@ -845,7 +845,7 @@
                 location_fr: "Cimetière de Laval/Mt. Pleasant, Québec, Canada",
                 location_en: "Cimetière de Laval/Mt. Pleasant, Quebec, Canada",
                 date_fr: "4 janvier 2016",
-                date_en: "January 4, 2016",
+                date_en: "January 4<sup>th</sup>, 2016",
                 lat: 45.6434272,
                 lng: -73.659186,
                 checklist_id: "S26678632"
@@ -860,7 +860,7 @@
                 location_fr: "Rgs Ste-Marie & Ste-Dominique, Mirabel, Québec, Canada",
                 location_en: "Rgs Ste-Marie & Ste-Dominique, Mirabel, Quebec, Canada",
                 date_fr: "5 mars 2015",
-                date_en: "March 5, 2015",
+                date_en: "March 5<sup>th</sup>, 2015",
                 lat: 45.718765,
                 lng: -73.9975548,
                 checklist_id: "S22187992"
@@ -875,7 +875,7 @@
                 location_fr: "PN du Mt-Mégantic--sommet du Mt-Mégantic, Québec, Canada",
                 location_en: "PN du Mt-Mégantic--sommet du Mt-Mégantic, Quebec, Canada",
                 date_fr: "3 décembre 2004",
-                date_en: "December 3, 2004",
+                date_en: "December 3<sup>rd</sup>, 2004",
                 lat: 45.4556374,
                 lng: -71.153512,
                 checklist_id: "S18567185"
@@ -890,7 +890,7 @@
                 location_fr: "PN du Mt-Mégantic--sommet du Mt-Mégantic, Québec, Canada",
                 location_en: "PN du Mt-Mégantic--sommet du Mt-Mégantic, Quebec, Canada",
                 date_fr: "3 décembre 2004",
-                date_en: "December 3, 2004",
+                date_en: "December 3<sup>rd</sup>, 2004",
                 lat: 45.4556374,
                 lng: -71.153512,
                 checklist_id: "S18567185"
@@ -905,7 +905,7 @@
                 location_fr: "Ben Nevis, Royaume-Uni",
                 location_en: "Ben Nevis, United Kingdom",
                 date_fr: "27 juin 2004",
-                date_en: "June 27, 2004",
+                date_en: "June 27<sup>th</sup>, 2004",
                 lat: 56.7955203,
                 lng: -5.0042725,
                 checklist_id: "S18565304"
@@ -935,7 +935,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

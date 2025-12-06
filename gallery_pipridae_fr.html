@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -642,7 +642,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -662,7 +662,7 @@
                 location_fr: "PN Iguazú--Área Cataratas, Argentine",
                 location_en: "PN Iguazú--Área Cataratas, Argentina",
                 date_fr: "6 juin 2007",
-                date_en: "June 6, 2007",
+                date_en: "June 6<sup>th</sup>, 2007",
                 lat: -25.6833032,
                 lng: -54.455452,
                 checklist_id: "S18566230"
@@ -692,7 +692,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

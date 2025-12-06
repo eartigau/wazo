@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -690,7 +690,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -710,7 +710,7 @@
                 location_fr: "Sabino Dam and downstream riparian, Arizona, États-Unis",
                 location_en: "Sabino Dam and downstream riparian, Arizona, United States",
                 date_fr: "27 février 2023",
-                date_en: "February 27, 2023",
+                date_en: "February 27<sup>th</sup>, 2023",
                 lat: 32.3131068,
                 lng: -110.8113941,
                 checklist_id: "S129804288"
@@ -725,7 +725,7 @@
                 location_fr: "Sabino Dam and downstream riparian, Arizona, États-Unis",
                 location_en: "Sabino Dam and downstream riparian, Arizona, United States",
                 date_fr: "27 février 2023",
-                date_en: "February 27, 2023",
+                date_en: "February 27<sup>th</sup>, 2023",
                 lat: 32.3131068,
                 lng: -110.8113941,
                 checklist_id: "S129804288"
@@ -740,7 +740,7 @@
                 location_fr: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, États-Unis",
                 location_en: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, United States",
                 date_fr: "20 février 2023",
-                date_en: "February 20, 2023",
+                date_en: "February 20<sup>th</sup>, 2023",
                 lat: 32.2437113,
                 lng: -111.168125,
                 checklist_id: "S129232010"
@@ -755,7 +755,7 @@
                 location_fr: "Tucson Mountains--Sweetwater Preserve, Arizona, États-Unis",
                 location_en: "Tucson Mountains--Sweetwater Preserve, Arizona, United States",
                 date_fr: "28 avril 2016",
-                date_en: "April 28, 2016",
+                date_en: "April 28<sup>th</sup>, 2016",
                 lat: 32.2790785,
                 lng: -111.0819349,
                 checklist_id: "S29273428"
@@ -770,7 +770,7 @@
                 location_fr: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, États-Unis",
                 location_en: "Arizona-Sonora Desert Museum (please do not report captive birds), Arizona, United States",
                 date_fr: "30 décembre 2005",
-                date_en: "December 30, 2005",
+                date_en: "December 30<sup>th</sup>, 2005",
                 lat: 32.2437113,
                 lng: -111.168125,
                 checklist_id: "S18575204"
@@ -800,7 +800,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

@@ -690,7 +690,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 5, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -710,7 +710,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "9 novembre 2017",
-                date_en: "November 9, 2017",
+                date_en: "November 9<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40387623"
@@ -725,7 +725,7 @@
                 location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
                 location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
                 date_fr: "5 novembre 2017",
-                date_en: "November 5, 2017",
+                date_en: "November 5<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
                 checklist_id: "S40315666"
@@ -740,7 +740,7 @@
                 location_fr: "Mysore City Bird Atlas 2C, Hebbal kere, ಹೆಬ್ಬಾಳ ಕೆರೆ, Inde",
                 location_en: "Mysore City Bird Atlas 2C, Hebbal kere, ಹೆಬ್ಬಾಳ ಕೆರೆ, India",
                 date_fr: "7 novembre 2017",
-                date_en: "November 7, 2017",
+                date_en: "November 7<sup>th</sup>, 2017",
                 lat: 12.3585768,
                 lng: 76.6104984,
                 checklist_id: "S40354331"
@@ -755,7 +755,7 @@
                 location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
                 location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
                 date_fr: "3 août 2024",
-                date_en: "August 3, 2024",
+                date_en: "August 3<sup>rd</sup>, 2024",
                 lat: 45.1742263,
                 lng: 5.216454,
                 checklist_id: "S190000839"
@@ -770,7 +770,7 @@
                 location_fr: "RNN du Mas Larrieu (RNN70), Occitanie, France",
                 location_en: "RNN du Mas Larrieu (RNN70), Occitanie, France",
                 date_fr: "27 juillet 2012",
-                date_en: "July 27, 2012",
+                date_en: "July 27<sup>th</sup>, 2012",
                 lat: 42.5852087,
                 lng: 3.0413488,
                 checklist_id: "S18563395"
@@ -800,7 +800,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -738,7 +738,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -758,7 +758,7 @@
                 location_fr: "RN Pingüino de Humboldt--Isla Damas, Coquimbo, Chili",
                 location_en: "RN Pingüino de Humboldt--Isla Damas, Coquimbo, Chile",
                 date_fr: "4 mars 2008",
-                date_en: "March 4, 2008",
+                date_en: "March 4<sup>th</sup>, 2008",
                 lat: -29.2340956,
                 lng: -71.5278625,
                 checklist_id: "S5772426"
@@ -773,7 +773,7 @@
                 location_fr: "RN Pingüino de Humboldt--Isla Damas, Coquimbo, Chili",
                 location_en: "RN Pingüino de Humboldt--Isla Damas, Coquimbo, Chile",
                 date_fr: "4 mars 2008",
-                date_en: "March 4, 2008",
+                date_en: "March 4<sup>th</sup>, 2008",
                 lat: -29.2340956,
                 lng: -71.5278625,
                 checklist_id: "S5772426"
@@ -788,7 +788,7 @@
                 location_fr: "RN Pingüino de Humboldt--Isla Damas, Coquimbo, Chili",
                 location_en: "RN Pingüino de Humboldt--Isla Damas, Coquimbo, Chile",
                 date_fr: "3 février 2007",
-                date_en: "February 3, 2007",
+                date_en: "February 3<sup>rd</sup>, 2007",
                 lat: -29.2340956,
                 lng: -71.5278625,
                 checklist_id: "S5772606"
@@ -803,7 +803,7 @@
                 location_fr: "RN Colonia Pingüinos de Magallanes, Magallanes, Chili",
                 location_en: "RN Colonia Pingüinos de Magallanes, Magallanes, Chile",
                 date_fr: "17 décembre 2008",
-                date_en: "December 17, 2008",
+                date_en: "December 17<sup>th</sup>, 2008",
                 lat: -52.986348,
                 lng: -71.2378836,
                 checklist_id: "S5772611"
@@ -818,7 +818,7 @@
                 location_fr: "RN Colonia Pingüinos de Magallanes, Magallanes, Chili",
                 location_en: "RN Colonia Pingüinos de Magallanes, Magallanes, Chile",
                 date_fr: "17 décembre 2008",
-                date_en: "December 17, 2008",
+                date_en: "December 17<sup>th</sup>, 2008",
                 lat: -52.986348,
                 lng: -71.2378836,
                 checklist_id: "S5772611"
@@ -833,7 +833,7 @@
                 location_fr: "RN Colonia Pingüinos de Magallanes, Magallanes, Chili",
                 location_en: "RN Colonia Pingüinos de Magallanes, Magallanes, Chile",
                 date_fr: "17 décembre 2008",
-                date_en: "December 17, 2008",
+                date_en: "December 17<sup>th</sup>, 2008",
                 lat: -52.986348,
                 lng: -71.2378836,
                 checklist_id: "S5772611"
@@ -848,7 +848,7 @@
                 location_fr: "RN Colonia Pingüinos de Magallanes, Magallanes, Chili",
                 location_en: "RN Colonia Pingüinos de Magallanes, Magallanes, Chile",
                 date_fr: "17 décembre 2008",
-                date_en: "December 17, 2008",
+                date_en: "December 17<sup>th</sup>, 2008",
                 lat: -52.986348,
                 lng: -71.2378836,
                 checklist_id: "S5772611"
@@ -863,7 +863,7 @@
                 location_fr: "MN Los Pingüinos--Isla Magdalena, Magallanes, Chili",
                 location_en: "MN Los Pingüinos--Isla Magdalena, Magallanes, Chile",
                 date_fr: "16 décembre 2008",
-                date_en: "December 16, 2008",
+                date_en: "December 16<sup>th</sup>, 2008",
                 lat: -52.9202367,
                 lng: -70.5759573,
                 checklist_id: "S5772610"
@@ -878,7 +878,7 @@
                 location_fr: "MN Los Pingüinos--Isla Magdalena, Magallanes, Chili",
                 location_en: "MN Los Pingüinos--Isla Magdalena, Magallanes, Chile",
                 date_fr: "16 décembre 2008",
-                date_en: "December 16, 2008",
+                date_en: "December 16<sup>th</sup>, 2008",
                 lat: -52.9202367,
                 lng: -70.5759573,
                 checklist_id: "S5772610"
@@ -908,7 +908,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

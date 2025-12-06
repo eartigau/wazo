@@ -15,7 +15,7 @@ except ImportError:
     print("❌ Jinja2 non installé. Exécutez: pip install jinja2")
     sys.exit(1)
 
-from generate_gallery import EBirdGalleryGenerator, verifier_tous_les_medias, generer_description_groupe_fr, mettre_au_pluriel
+from generate_gallery import EBirdGalleryGenerator, verifier_tous_les_medias, generer_description_groupe_fr, mettre_au_pluriel, formater_plage_dates
 from config_galeries import VOYAGES, GALERIES_GENERALES
 
 
@@ -290,6 +290,17 @@ def generer_toutes_galeries():
             )
             
             if photos:
+                # Calculer les dates min et max des photos
+                dates = [p.get('date_raw', '') for p in photos if p.get('date_raw')]
+                if dates:
+                    date_min = min(dates)
+                    date_max = max(dates)
+                    subtitle_fr = formater_plage_dates(date_min, date_max, 'fr')
+                    subtitle_en = formater_plage_dates(date_min, date_max, 'en')
+                else:
+                    subtitle_fr = None
+                    subtitle_en = None
+                
                 generator.generate_gallery(
                     output_base=voyage['id'],
                     title_fr=voyage['nom_fr'],
@@ -297,7 +308,9 @@ def generer_toutes_galeries():
                     photos=photos,
                     template_file=GALLERY_TEMPLATE,
                     menu=menu,
-                    gallery_id=voyage['id']
+                    gallery_id=voyage['id'],
+                    subtitle_fr=subtitle_fr,
+                    subtitle_en=subtitle_en
                 )
                 total_galeries += 1
     

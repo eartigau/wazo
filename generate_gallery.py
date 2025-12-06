@@ -150,11 +150,11 @@ def mettre_au_pluriel(mot: str) -> str:
     if mot_lower.endswith('eu') and mot_lower not in {'bleu', 'pneu', 'émeu'}:
         return mot + 'x'
     
-    # Mots en -al → -aux (cheval → chevaux) - rare pour oiseaux
-    # Exception: bal, carnaval, festival, etc. gardent -als
-    mots_al_aux = {'cheval', 'animal', 'journal'}  # pas vraiment d'oiseaux
-    if mot_lower.endswith('al') and mot_lower in mots_al_aux:
-        return mot[:-2] + 'ux'
+    # Mots en -al → -aux (cardinal → cardinaux, cheval → chevaux)
+    # Exception: bal, carnaval, festival, chacal, etc. gardent -als
+    mots_al_als = {'bal', 'carnaval', 'festival', 'chacal', 'récital', 'régal', 'cal', 'serval'}
+    if mot_lower.endswith('al') and mot_lower not in mots_al_als:
+        return mot[:-2] + 'aux'
     
     # Cas général: ajouter 's'
     return mot + 's'
@@ -199,11 +199,38 @@ def generer_description_groupe_fr(noms_fr: list) -> str:
         else:
             return ', '.join(types_list[:-1]) + ' et ' + types_list[-1]
 
+
+def formater_jour_ordinal(jour: int, langue: str = 'fr') -> str:
+    """
+    Formate un jour avec son suffixe ordinal en superscript HTML.
+    FR: 1 -> "1<sup>er</sup>", autres -> "2", "3", etc.
+    EN: 1 -> "1<sup>st</sup>", 2 -> "2<sup>nd</sup>", 3 -> "3<sup>rd</sup>", autres -> "4<sup>th</sup>"
+    """
+    if langue == 'fr':
+        if jour == 1:
+            return f"1<sup>er</sup>"
+        else:
+            return str(jour)
+    else:
+        # Anglais: 1st, 2nd, 3rd, 4th-20th, 21st, 22nd, 23rd, 24th-30th, 31st
+        if jour in (11, 12, 13):
+            suffix = "th"
+        elif jour % 10 == 1:
+            suffix = "st"
+        elif jour % 10 == 2:
+            suffix = "nd"
+        elif jour % 10 == 3:
+            suffix = "rd"
+        else:
+            suffix = "th"
+        return f"{jour}<sup>{suffix}</sup>"
+
+
 def formater_date(date_str: str, langue: str = 'fr') -> str:
     """
     Formate une date YYYY-MM-DD en format lisible
-    FR: 13 janvier 2025
-    EN: January 13, 2025
+    FR: 1er janvier 2025, 13 janvier 2025
+    EN: January 1st, 2025, January 13th, 2025
     """
     if not date_str:
         return ''
@@ -214,13 +241,59 @@ def formater_date(date_str: str, langue: str = 'fr') -> str:
             return date_str
         
         annee, mois, jour = int(parts[0]), int(parts[1]), int(parts[2])
+        jour_fmt = formater_jour_ordinal(jour, langue)
         
         if langue == 'fr':
-            return f"{jour} {MOIS_FR[mois]} {annee}"
+            return f"{jour_fmt} {MOIS_FR[mois]} {annee}"
         else:
-            return f"{MOIS_EN[mois]} {jour}, {annee}"
+            return f"{MOIS_EN[mois]} {jour_fmt}, {annee}"
     except (ValueError, IndexError):
         return date_str
+
+
+def formater_plage_dates(date_debut: str, date_fin: str, langue: str = 'fr') -> str:
+    """
+    Formate une plage de dates de manière intelligente.
+    FR: "2 au 10 mars 2015" ou "1er mars au 15 avril 2015" ou "30 décembre 2024 au 1er janvier 2025"
+    EN: "March 2nd-10th, 2015" ou "March 1st – April 15th, 2015"
+    """
+    if not date_debut or not date_fin:
+        return ''
+    
+    try:
+        p1 = date_debut.split('-')
+        p2 = date_fin.split('-')
+        if len(p1) != 3 or len(p2) != 3:
+            return ''
+        
+        a1, m1, j1 = int(p1[0]), int(p1[1]), int(p1[2])
+        a2, m2, j2 = int(p2[0]), int(p2[1]), int(p2[2])
+        
+        j1_fmt = formater_jour_ordinal(j1, langue)
+        j2_fmt = formater_jour_ordinal(j2, langue)
+        
+        if langue == 'fr':
+            if a1 == a2 and m1 == m2:
+                # Même mois et année: "2 au 10 mars 2015" ou "1er au 10 mars 2015"
+                return f"{j1_fmt} au {j2_fmt} {MOIS_FR[m2]} {a2}"
+            elif a1 == a2:
+                # Même année, mois différents: "1er mars au 15 avril 2015"
+                return f"{j1_fmt} {MOIS_FR[m1]} au {j2_fmt} {MOIS_FR[m2]} {a2}"
+            else:
+                # Années différentes: "30 décembre 2024 au 1er janvier 2025"
+                return f"{j1_fmt} {MOIS_FR[m1]} {a1} au {j2_fmt} {MOIS_FR[m2]} {a2}"
+        else:
+            if a1 == a2 and m1 == m2:
+                # Same month and year: "March 2nd-10th, 2015"
+                return f"{MOIS_EN[m1]} {j1_fmt}–{j2_fmt}, {a1}"
+            elif a1 == a2:
+                # Same year, different months: "March 1st – April 15th, 2015"
+                return f"{MOIS_EN[m1]} {j1_fmt} – {MOIS_EN[m2]} {j2_fmt}, {a1}"
+            else:
+                # Different years: "December 30th, 2024 – January 1st, 2025"
+                return f"{MOIS_EN[m1]} {j1_fmt}, {a1} – {MOIS_EN[m2]} {j2_fmt}, {a2}"
+    except (ValueError, IndexError):
+        return ''
 
 
 def charger_traductions_lieux(fichier: str = TRADUCTIONS_FILE) -> dict:

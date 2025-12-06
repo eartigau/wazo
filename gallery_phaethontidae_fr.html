@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -666,7 +666,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -686,7 +686,7 @@
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
-                date_en: "July 16, 2015",
+                date_en: "July 16<sup>th</sup>, 2015",
                 lat: 22.2316072,
                 lng: -159.4019778,
                 checklist_id: "S24291525"
@@ -701,7 +701,7 @@
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
-                date_en: "July 16, 2015",
+                date_en: "July 16<sup>th</sup>, 2015",
                 lat: 22.2316072,
                 lng: -159.4019778,
                 checklist_id: "S24291525"
@@ -716,7 +716,7 @@
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
-                date_en: "July 16, 2015",
+                date_en: "July 16<sup>th</sup>, 2015",
                 lat: 22.2316072,
                 lng: -159.4019778,
                 checklist_id: "S24291525"
@@ -746,7 +746,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;

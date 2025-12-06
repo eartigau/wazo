@@ -539,7 +539,7 @@
                         </a>
                         
                         <a href="gallery_cardinalidae_fr.html">
-                            Cardinalidae (Cardinals, Passerins, Pirangas et Dickcissels)
+                            Cardinalidae (Cardinaux, Passerins, Pirangas et Dickcissels)
                         </a>
                         
                         <a href="gallery_thraupidae_fr.html">
@@ -750,7 +750,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 5 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -770,7 +770,7 @@
                 location_fr: "Domaine St-Paul, Québec, Canada",
                 location_en: "Domaine St-Paul, Quebec, Canada",
                 date_fr: "27 mars 2021",
-                date_en: "March 27, 2021",
+                date_en: "March 27<sup>th</sup>, 2021",
                 lat: 45.4546332,
                 lng: -73.5529532,
                 checklist_id: "S84215302"
@@ -785,7 +785,7 @@
                 location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
                 location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
                 date_fr: "23 avril 2019",
-                date_en: "April 23, 2019",
+                date_en: "April 23<sup>rd</sup>, 2019",
                 lat: 45.5049279,
                 lng: -73.6039953,
                 checklist_id: "S55301282"
@@ -800,7 +800,7 @@
                 location_fr: "Parc Jean-Drapeau, Québec, Canada",
                 location_en: "Parc Jean-Drapeau, Quebec, Canada",
                 date_fr: "27 décembre 2018",
-                date_en: "December 27, 2018",
+                date_en: "December 27<sup>th</sup>, 2018",
                 lat: 45.5160946,
                 lng: -73.5340624,
                 checklist_id: "S50993736"
@@ -815,7 +815,7 @@
                 location_fr: "Parc Summit, Québec, Canada",
                 location_en: "Parc Summit, Quebec, Canada",
                 date_fr: "20 avril 2014",
-                date_en: "April 20, 2014",
+                date_en: "April 20<sup>th</sup>, 2014",
                 lat: 45.4917128,
                 lng: -73.6071465,
                 checklist_id: "S18567238"
@@ -830,7 +830,7 @@
                 location_fr: "Natatorium de Verdun, Québec, Canada",
                 location_en: "Natatorium de Verdun, Quebec, Canada",
                 date_fr: "15 décembre 2013",
-                date_en: "December 15, 2013",
+                date_en: "December 15<sup>th</sup>, 2013",
                 lat: 45.4430608,
                 lng: -73.576684,
                 checklist_id: "S18567235"
@@ -845,7 +845,7 @@
                 location_fr: "Natatorium de Verdun, Québec, Canada",
                 location_en: "Natatorium de Verdun, Quebec, Canada",
                 date_fr: "15 décembre 2013",
-                date_en: "December 15, 2013",
+                date_en: "December 15<sup>th</sup>, 2013",
                 lat: 45.4430608,
                 lng: -73.576684,
                 checklist_id: "S18567235"
@@ -860,7 +860,7 @@
                 location_fr: "Quartier de la Terrasse Lakeview, Québec, Canada",
                 location_en: "Quartier de la Terrasse Lakeview, Quebec, Canada",
                 date_fr: "5 avril 2008",
-                date_en: "April 5, 2008",
+                date_en: "April 5<sup>th</sup>, 2008",
                 lat: 45.3935481,
                 lng: -75.802697,
                 checklist_id: "S18567239"
@@ -875,7 +875,7 @@
                 location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
                 location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
                 date_fr: "6 août 2024",
-                date_en: "August 6, 2024",
+                date_en: "August 6<sup>th</sup>, 2024",
                 lat: 45.1742263,
                 lng: 5.216454,
                 checklist_id: "S190453617"
@@ -890,7 +890,7 @@
                 location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
                 location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
                 date_fr: "6 août 2024",
-                date_en: "August 6, 2024",
+                date_en: "August 6<sup>th</sup>, 2024",
                 lat: 45.1742263,
                 lng: 5.216454,
                 checklist_id: "S190453617"
@@ -905,7 +905,7 @@
                 location_fr: "Bois du Faisan, Genève, Suisse",
                 location_en: "Bois du Faisan, Geneva, Switzerland",
                 date_fr: "8 avril 2019",
-                date_en: "April 8, 2019",
+                date_en: "April 8<sup>th</sup>, 2019",
                 lat: 46.2779787,
                 lng: 6.1518073,
                 checklist_id: "S54719816"
@@ -935,7 +935,7 @@
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').textContent = 
+            document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;
