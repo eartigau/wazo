@@ -63,11 +63,26 @@
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
+        {% if trip_locations and trip_locations|length > 0 %}
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                {% if lang == 'fr' %}Afficher tout{% else %}Show all{% endif %} ✕
+            </button>
+        </div>
+        {% endif %}
+        
         <div class="masonry-grid">
             {% for photo in photos %}
             <div class="photo-card" 
                  data-index="{{ loop.index0 }}"
                  data-ml="{{ photo.ml_catalog_number }}"
+                 data-location="{{ photo.location|default('')|replace('"', '&quot;') }}"
                  onclick="openLightbox({{ loop.index0 }})">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ photo.ml_catalog_number }}/480"
                      alt="{% if lang == 'fr' %}{{ photo.common_name_fr }}{% else %}{{ photo.common_name_en }}{% endif %}"
@@ -143,6 +158,7 @@
                 name_en: "{{ photo.common_name_en|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
                 scientific: "{{ photo.scientific_name }}",
                 family: "{{ photo.family_full|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
+                location: "{{ photo.location|default('')|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
                 location_fr: "{{ photo.location_full_fr|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
                 location_en: "{{ photo.location_full_en|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
                 date_fr: "{{ photo.date_fr }}",
@@ -262,12 +278,67 @@
         });
 
         {% if trip_locations and trip_locations|length > 0 %}
-        // Carte du voyage
+        // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             {% for loc in trip_locations %}
             { lat: {{ loc.lat }}, lng: {{ loc.lng }}, name: "{{ loc.location|replace('"', '\\"') }}" },
             {% endfor %}
         ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
 
         if (tripLocations.length > 0) {
             // Créer la carte
@@ -289,13 +360,32 @@
                 popupAnchor: [0, -24]
             });
 
-            // Ajouter les marqueurs
+            // Ajouter les marqueurs avec compte de photos et filtrage
             const markers = [];
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
                 if (loc.name) {
-                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
                 marker.addTo(tripMap);
                 markers.push(marker);
             });

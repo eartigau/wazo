@@ -94,11 +94,26 @@
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Show all ✕
+            </button>
+        </div>
+        
+        
         <div class="masonry-grid">
             
             <div class="photo-card" 
                  data-index="0"
                  data-ml="214757311"
+                 data-location="Bramaderos"
                  onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757311/480"
                      alt="Burrowing Parakeet"
@@ -111,6 +126,7 @@
             <div class="photo-card" 
                  data-index="1"
                  data-ml="214757701"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757701/480"
                      alt="Red-fronted Coot"
@@ -123,6 +139,7 @@
             <div class="photo-card" 
                  data-index="2"
                  data-ml="214840321"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840321/480"
                      alt="Red-fronted Coot"
@@ -135,6 +152,7 @@
             <div class="photo-card" 
                  data-index="3"
                  data-ml="214757851"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757851/480"
                      alt="American Oystercatcher"
@@ -147,6 +165,7 @@
             <div class="photo-card" 
                  data-index="4"
                  data-ml="214757811"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757811/480"
                      alt="Blackish Oystercatcher"
@@ -159,6 +178,7 @@
             <div class="photo-card" 
                  data-index="5"
                  data-ml="214757821"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757821/480"
                      alt="Blackish Oystercatcher"
@@ -171,6 +191,7 @@
             <div class="photo-card" 
                  data-index="6"
                  data-ml="214840351"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840351/480"
                      alt="Blackish Oystercatcher"
@@ -183,6 +204,7 @@
             <div class="photo-card" 
                  data-index="7"
                  data-ml="214840311"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840311/480"
                      alt="Gray Gull"
@@ -195,6 +217,7 @@
             <div class="photo-card" 
                  data-index="8"
                  data-ml="214840341"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840341/480"
                      alt="Kelp Gull"
@@ -207,6 +230,7 @@
             <div class="photo-card" 
                  data-index="9"
                  data-ml="214757781"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(9)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757781/480"
                      alt="Crested Caracara (Southern)"
@@ -219,6 +243,7 @@
             <div class="photo-card" 
                  data-index="10"
                  data-ml="214757321"
+                 data-location="Bramaderos"
                  onclick="openLightbox(10)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757321/480"
                      alt="Burrowing Parakeet"
@@ -231,6 +256,7 @@
             <div class="photo-card" 
                  data-index="11"
                  data-ml="214757331"
+                 data-location="Bramaderos"
                  onclick="openLightbox(11)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757331/480"
                      alt="Burrowing Parakeet"
@@ -243,6 +269,7 @@
             <div class="photo-card" 
                  data-index="12"
                  data-ml="214757341"
+                 data-location="Bramaderos"
                  onclick="openLightbox(12)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757341/480"
                      alt="Burrowing Parakeet"
@@ -255,6 +282,7 @@
             <div class="photo-card" 
                  data-index="13"
                  data-ml="214840281"
+                 data-location="Punta Teatinos"
                  onclick="openLightbox(13)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840281/480"
                      alt="Chilean Swallow"
@@ -267,6 +295,7 @@
             <div class="photo-card" 
                  data-index="14"
                  data-ml="214552701"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(14)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214552701/480"
                      alt="Andean Condor"
@@ -279,6 +308,7 @@
             <div class="photo-card" 
                  data-index="15"
                  data-ml="214552721"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(15)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214552721/480"
                      alt="Andean Condor"
@@ -291,6 +321,7 @@
             <div class="photo-card" 
                  data-index="16"
                  data-ml="214297901"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(16)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297901/480"
                      alt="Andean Condor"
@@ -303,6 +334,7 @@
             <div class="photo-card" 
                  data-index="17"
                  data-ml="214297941"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(17)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297941/480"
                      alt="Andean Condor"
@@ -315,6 +347,7 @@
             <div class="photo-card" 
                  data-index="18"
                  data-ml="214297971"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(18)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297971/480"
                      alt="Andean Condor"
@@ -327,6 +360,7 @@
             <div class="photo-card" 
                  data-index="19"
                  data-ml="214297981"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(19)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297981/480"
                      alt="Andean Condor"
@@ -339,6 +373,7 @@
             <div class="photo-card" 
                  data-index="20"
                  data-ml="214297991"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(20)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297991/480"
                      alt="Andean Condor"
@@ -351,6 +386,7 @@
             <div class="photo-card" 
                  data-index="21"
                  data-ml="214298001"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(21)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298001/480"
                      alt="Andean Condor"
@@ -363,6 +399,7 @@
             <div class="photo-card" 
                  data-index="22"
                  data-ml="214298031"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(22)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298031/480"
                      alt="Andean Condor"
@@ -375,6 +412,7 @@
             <div class="photo-card" 
                  data-index="23"
                  data-ml="214298301"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(23)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298301/480"
                      alt="Andean Condor"
@@ -387,6 +425,7 @@
             <div class="photo-card" 
                  data-index="24"
                  data-ml="214298241"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(24)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298241/480"
                      alt="Black Vulture"
@@ -399,6 +438,7 @@
             <div class="photo-card" 
                  data-index="25"
                  data-ml="214107811"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(25)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214107811/480"
                      alt="Turkey Vulture"
@@ -411,6 +451,7 @@
             <div class="photo-card" 
                  data-index="26"
                  data-ml="214039991"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(26)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214039991/480"
                      alt="West Peruvian Dove"
@@ -423,6 +464,7 @@
             <div class="photo-card" 
                  data-index="27"
                  data-ml="214040131"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(27)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040131/480"
                      alt="Green-backed Firecrown"
@@ -435,6 +477,7 @@
             <div class="photo-card" 
                  data-index="28"
                  data-ml="214040601"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(28)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040601/480"
                      alt="Turkey Vulture"
@@ -447,6 +490,7 @@
             <div class="photo-card" 
                  data-index="29"
                  data-ml="214040141"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(29)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040141/480"
                      alt="Burrowing Parakeet"
@@ -459,6 +503,7 @@
             <div class="photo-card" 
                  data-index="30"
                  data-ml="214040161"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(30)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040161/480"
                      alt="Chilean Mockingbird"
@@ -471,6 +516,7 @@
             <div class="photo-card" 
                  data-index="31"
                  data-ml="214040711"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(31)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040711/480"
                      alt="Rufous-collared Sparrow"
@@ -483,6 +529,7 @@
             <div class="photo-card" 
                  data-index="32"
                  data-ml="213866051"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(32)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213866051/480"
                      alt="Burrowing Parakeet"
@@ -495,6 +542,7 @@
             <div class="photo-card" 
                  data-index="33"
                  data-ml="213866061"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(33)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213866061/480"
                      alt="Burrowing Parakeet"
@@ -507,6 +555,7 @@
             <div class="photo-card" 
                  data-index="34"
                  data-ml="213867441"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(34)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213867441/480"
                      alt="Burrowing Parakeet"
@@ -519,6 +568,7 @@
             <div class="photo-card" 
                  data-index="35"
                  data-ml="213867451"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(35)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213867451/480"
                      alt="Burrowing Parakeet"
@@ -531,6 +581,7 @@
             <div class="photo-card" 
                  data-index="36"
                  data-ml="213867461"
+                 data-location="Quebrada Pelícano"
                  onclick="openLightbox(36)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213867461/480"
                      alt="Burrowing Parakeet"
@@ -543,6 +594,7 @@
             <div class="photo-card" 
                  data-index="37"
                  data-ml="214046071"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(37)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214046071/480"
                      alt="Greater Yellow-Finch"
@@ -555,6 +607,7 @@
             <div class="photo-card" 
                  data-index="38"
                  data-ml="213627371"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(38)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627371/480"
                      alt="Black-winged Ground Dove"
@@ -567,6 +620,7 @@
             <div class="photo-card" 
                  data-index="39"
                  data-ml="213627491"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(39)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627491/480"
                      alt="Mountain Caracara"
@@ -579,6 +633,7 @@
             <div class="photo-card" 
                  data-index="40"
                  data-ml="213627481"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(40)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627481/480"
                      alt="Rufous-banded Miner"
@@ -591,6 +646,7 @@
             <div class="photo-card" 
                  data-index="41"
                  data-ml="213627411"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(41)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627411/480"
                      alt="Plain-mantled Tit-Spinetail"
@@ -603,6 +659,7 @@
             <div class="photo-card" 
                  data-index="42"
                  data-ml="213627471"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(42)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627471/480"
                      alt="Black-billed Shrike-Tyrant"
@@ -615,6 +672,7 @@
             <div class="photo-card" 
                  data-index="43"
                  data-ml="213627431"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(43)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627431/480"
                      alt="Chilean Mockingbird"
@@ -627,6 +685,7 @@
             <div class="photo-card" 
                  data-index="44"
                  data-ml="213362441"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(44)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362441/480"
                      alt="Black-winged Ground Dove"
@@ -639,6 +698,7 @@
             <div class="photo-card" 
                  data-index="45"
                  data-ml="213365241"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(45)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213365241/480"
                      alt="Andean Condor"
@@ -651,6 +711,7 @@
             <div class="photo-card" 
                  data-index="46"
                  data-ml="213365531"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(46)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213365531/480"
                      alt="Turkey Vulture"
@@ -663,6 +724,7 @@
             <div class="photo-card" 
                  data-index="47"
                  data-ml="213362351"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(47)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362351/480"
                      alt="Moustached Turca"
@@ -675,6 +737,7 @@
             <div class="photo-card" 
                  data-index="48"
                  data-ml="213362381"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(48)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362381/480"
                      alt="Rufous-banded Miner"
@@ -687,6 +750,7 @@
             <div class="photo-card" 
                  data-index="49"
                  data-ml="213654031"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(49)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213654031/480"
                      alt="Rufous-banded Miner"
@@ -699,6 +763,7 @@
             <div class="photo-card" 
                  data-index="50"
                  data-ml="213362361"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(50)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362361/480"
                      alt="Crag Chilia"
@@ -711,6 +776,7 @@
             <div class="photo-card" 
                  data-index="51"
                  data-ml="213362331"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(51)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362331/480"
                      alt="Scale-throated Earthcreeper"
@@ -723,6 +789,7 @@
             <div class="photo-card" 
                  data-index="52"
                  data-ml="213364601"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(52)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364601/480"
                      alt="Scale-throated Earthcreeper"
@@ -735,6 +802,7 @@
             <div class="photo-card" 
                  data-index="53"
                  data-ml="213364641"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(53)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364641/480"
                      alt="Scale-throated Earthcreeper"
@@ -747,6 +815,7 @@
             <div class="photo-card" 
                  data-index="54"
                  data-ml="213654021"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(54)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213654021/480"
                      alt="Scale-throated Earthcreeper"
@@ -759,6 +828,7 @@
             <div class="photo-card" 
                  data-index="55"
                  data-ml="213362461"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(55)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362461/480"
                      alt="Southern House Wren"
@@ -771,6 +841,7 @@
             <div class="photo-card" 
                  data-index="56"
                  data-ml="213362481"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(56)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362481/480"
                      alt="Chilean Mockingbird"
@@ -783,6 +854,7 @@
             <div class="photo-card" 
                  data-index="57"
                  data-ml="213363201"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(57)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213363201/480"
                      alt="Rufous-collared Sparrow"
@@ -795,6 +867,7 @@
             <div class="photo-card" 
                  data-index="58"
                  data-ml="213363601"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(58)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213363601/480"
                      alt="Diuca Finch"
@@ -807,6 +880,7 @@
             <div class="photo-card" 
                  data-index="59"
                  data-ml="213366981"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(59)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213366981/480"
                      alt="Diuca Finch"
@@ -819,6 +893,7 @@
             <div class="photo-card" 
                  data-index="60"
                  data-ml="213363991"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(60)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213363991/480"
                      alt="Mourning Sierra Finch"
@@ -831,6 +906,7 @@
             <div class="photo-card" 
                  data-index="61"
                  data-ml="213364031"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(61)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364031/480"
                      alt="Band-tailed Sierra Finch"
@@ -843,6 +919,7 @@
             <div class="photo-card" 
                  data-index="62"
                  data-ml="213366941"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(62)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213366941/480"
                      alt="Greater Yellow-Finch"
@@ -918,6 +995,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Bramaderos",
                 location_fr: "Bramaderos, Coquimbo, Chili",
                 location_en: "Bramaderos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -933,6 +1011,7 @@
                 name_en: "Red-fronted Coot",
                 scientific: "Fulica rufifrons",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -948,6 +1027,7 @@
                 name_en: "Red-fronted Coot",
                 scientific: "Fulica rufifrons",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -963,6 +1043,7 @@
                 name_en: "American Oystercatcher",
                 scientific: "Haematopus palliatus",
                 family: "Haematopodidae (Oystercatchers)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -978,6 +1059,7 @@
                 name_en: "Blackish Oystercatcher",
                 scientific: "Haematopus ater",
                 family: "Haematopodidae (Oystercatchers)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -993,6 +1075,7 @@
                 name_en: "Blackish Oystercatcher",
                 scientific: "Haematopus ater",
                 family: "Haematopodidae (Oystercatchers)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1008,6 +1091,7 @@
                 name_en: "Blackish Oystercatcher",
                 scientific: "Haematopus ater",
                 family: "Haematopodidae (Oystercatchers)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1023,6 +1107,7 @@
                 name_en: "Gray Gull",
                 scientific: "Leucophaeus modestus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1038,6 +1123,7 @@
                 name_en: "Kelp Gull",
                 scientific: "Larus dominicanus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1053,6 +1139,7 @@
                 name_en: "Crested Caracara (Southern)",
                 scientific: "Caracara plancus plancus",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1068,6 +1155,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Bramaderos",
                 location_fr: "Bramaderos, Coquimbo, Chili",
                 location_en: "Bramaderos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1083,6 +1171,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Bramaderos",
                 location_fr: "Bramaderos, Coquimbo, Chili",
                 location_en: "Bramaderos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1098,6 +1187,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Bramaderos",
                 location_fr: "Bramaderos, Coquimbo, Chili",
                 location_en: "Bramaderos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1113,6 +1203,7 @@
                 name_en: "Chilean Swallow",
                 scientific: "Tachycineta leucopyga",
                 family: "Hirundinidae (Swallows)",
+                location: "Punta Teatinos",
                 location_fr: "Punta Teatinos, Coquimbo, Chili",
                 location_en: "Punta Teatinos, Coquimbo, Chile",
                 date_fr: "10 mars 2020",
@@ -1128,6 +1219,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "9 mars 2020",
@@ -1143,6 +1235,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "9 mars 2020",
@@ -1158,6 +1251,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1173,6 +1267,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1188,6 +1283,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1203,6 +1299,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1218,6 +1315,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1233,6 +1331,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1248,6 +1347,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1263,6 +1363,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1278,6 +1379,7 @@
                 name_en: "Black Vulture",
                 scientific: "Coragyps atratus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1293,6 +1395,7 @@
                 name_en: "Turkey Vulture",
                 scientific: "Cathartes aura",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "8 mars 2020",
@@ -1308,6 +1411,7 @@
                 name_en: "West Peruvian Dove",
                 scientific: "Zenaida meloda",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "7 mars 2020",
@@ -1323,6 +1427,7 @@
                 name_en: "Green-backed Firecrown",
                 scientific: "Sephanoides sephaniodes",
                 family: "Trochilidae (Hummingbirds)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "7 mars 2020",
@@ -1338,6 +1443,7 @@
                 name_en: "Turkey Vulture",
                 scientific: "Cathartes aura",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "7 mars 2020",
@@ -1353,6 +1459,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "7 mars 2020",
@@ -1368,6 +1475,7 @@
                 name_en: "Chilean Mockingbird",
                 scientific: "Mimus thenca",
                 family: "Mimidae (Mockingbirds and Thrashers)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "7 mars 2020",
@@ -1383,6 +1491,7 @@
                 name_en: "Rufous-collared Sparrow",
                 scientific: "Zonotrichia capensis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "7 mars 2020",
@@ -1398,6 +1507,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "6 mars 2020",
@@ -1413,6 +1523,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "6 mars 2020",
@@ -1428,6 +1539,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "6 mars 2020",
@@ -1443,6 +1555,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "6 mars 2020",
@@ -1458,6 +1571,7 @@
                 name_en: "Burrowing Parakeet",
                 scientific: "Cyanoliseus patagonus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Quebrada Pelícano",
                 location_fr: "Quebrada Pelícano, Coquimbo, Chili",
                 location_en: "Quebrada Pelícano, Coquimbo, Chile",
                 date_fr: "6 mars 2020",
@@ -1473,6 +1587,7 @@
                 name_en: "Greater Yellow-Finch",
                 scientific: "Sicalis auriventris",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "6 mars 2020",
@@ -1488,6 +1603,7 @@
                 name_en: "Black-winged Ground Dove",
                 scientific: "Metriopelia melanoptera",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "5 mars 2020",
@@ -1503,6 +1619,7 @@
                 name_en: "Mountain Caracara",
                 scientific: "Daptrius megalopterus",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "5 mars 2020",
@@ -1518,6 +1635,7 @@
                 name_en: "Rufous-banded Miner",
                 scientific: "Geositta rufipennis",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "5 mars 2020",
@@ -1533,6 +1651,7 @@
                 name_en: "Plain-mantled Tit-Spinetail",
                 scientific: "Leptasthenura aegithaloides",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "5 mars 2020",
@@ -1548,6 +1667,7 @@
                 name_en: "Black-billed Shrike-Tyrant",
                 scientific: "Agriornis montanus",
                 family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "5 mars 2020",
@@ -1563,6 +1683,7 @@
                 name_en: "Chilean Mockingbird",
                 scientific: "Mimus thenca",
                 family: "Mimidae (Mockingbirds and Thrashers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "5 mars 2020",
@@ -1578,6 +1699,7 @@
                 name_en: "Black-winged Ground Dove",
                 scientific: "Metriopelia melanoptera",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1593,6 +1715,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1608,6 +1731,7 @@
                 name_en: "Turkey Vulture",
                 scientific: "Cathartes aura",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1623,6 +1747,7 @@
                 name_en: "Moustached Turca",
                 scientific: "Pteroptochos megapodius",
                 family: "Rhinocryptidae (Tapaculos)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1638,6 +1763,7 @@
                 name_en: "Rufous-banded Miner",
                 scientific: "Geositta rufipennis",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1653,6 +1779,7 @@
                 name_en: "Rufous-banded Miner",
                 scientific: "Geositta rufipennis",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1668,6 +1795,7 @@
                 name_en: "Crag Chilia",
                 scientific: "Ochetorhynchus melanurus",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1683,6 +1811,7 @@
                 name_en: "Scale-throated Earthcreeper",
                 scientific: "Upucerthia dumetaria",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1698,6 +1827,7 @@
                 name_en: "Scale-throated Earthcreeper",
                 scientific: "Upucerthia dumetaria",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1713,6 +1843,7 @@
                 name_en: "Scale-throated Earthcreeper",
                 scientific: "Upucerthia dumetaria",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1728,6 +1859,7 @@
                 name_en: "Scale-throated Earthcreeper",
                 scientific: "Upucerthia dumetaria",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1743,6 +1875,7 @@
                 name_en: "Southern House Wren",
                 scientific: "Troglodytes musculus",
                 family: "Troglodytidae (Wrens)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1758,6 +1891,7 @@
                 name_en: "Chilean Mockingbird",
                 scientific: "Mimus thenca",
                 family: "Mimidae (Mockingbirds and Thrashers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1773,6 +1907,7 @@
                 name_en: "Rufous-collared Sparrow",
                 scientific: "Zonotrichia capensis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1788,6 +1923,7 @@
                 name_en: "Diuca Finch",
                 scientific: "Diuca diuca",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1803,6 +1939,7 @@
                 name_en: "Diuca Finch",
                 scientific: "Diuca diuca",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1818,6 +1955,7 @@
                 name_en: "Mourning Sierra Finch",
                 scientific: "Rhopospina fruticeti",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1833,6 +1971,7 @@
                 name_en: "Band-tailed Sierra Finch",
                 scientific: "Rhopospina alaudina",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1848,6 +1987,7 @@
                 name_en: "Greater Yellow-Finch",
                 scientific: "Sicalis auriventris",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "4 mars 2020",
@@ -1967,7 +2107,7 @@
         });
 
         
-        // Carte du voyage
+        // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
             { lat: -29.4194182, lng: -70.8453086, name: "Bramaderos" },
@@ -1979,6 +2119,61 @@
             { lat: -29.167514, lng: -70.8184736, name: "Quebrada Pelícano" },
             
         ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
 
         if (tripLocations.length > 0) {
             // Créer la carte
@@ -2000,13 +2195,32 @@
                 popupAnchor: [0, -24]
             });
 
-            // Ajouter les marqueurs
+            // Ajouter les marqueurs avec compte de photos et filtrage
             const markers = [];
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
                 if (loc.name) {
-                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
                 marker.addTo(tripMap);
                 markers.push(marker);
             });

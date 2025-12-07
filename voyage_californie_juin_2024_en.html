@@ -94,11 +94,26 @@
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Show all ✕
+            </button>
+        </div>
+        
+        
         <div class="masonry-grid">
             
             <div class="photo-card" 
                  data-index="0"
                  data-ml="620948238"
+                 data-location="UCSD Park"
                  onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948238/480"
                      alt="Anna's Hummingbird"
@@ -111,6 +126,7 @@
             <div class="photo-card" 
                  data-index="1"
                  data-ml="620966819"
+                 data-location="Point La Jolla"
                  onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620966819/480"
                      alt="Heermann's Gull"
@@ -123,6 +139,7 @@
             <div class="photo-card" 
                  data-index="2"
                  data-ml="620967354"
+                 data-location="Goldfish Point & Coast Walk Trail"
                  onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620967354/480"
                      alt="Western Gull"
@@ -135,6 +152,7 @@
             <div class="photo-card" 
                  data-index="3"
                  data-ml="620966759"
+                 data-location="Point La Jolla"
                  onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620966759/480"
                      alt="Royal Tern"
@@ -147,6 +165,7 @@
             <div class="photo-card" 
                  data-index="4"
                  data-ml="620970310"
+                 data-location="Point La Jolla"
                  onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620970310/480"
                      alt="Royal Tern"
@@ -159,6 +178,7 @@
             <div class="photo-card" 
                  data-index="5"
                  data-ml="620967419"
+                 data-location="Goldfish Point & Coast Walk Trail"
                  onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620967419/480"
                      alt="Brandt's Cormorant"
@@ -171,6 +191,7 @@
             <div class="photo-card" 
                  data-index="6"
                  data-ml="620948214"
+                 data-location="Point La Jolla"
                  onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948214/480"
                      alt="Brandt's Cormorant"
@@ -183,6 +204,7 @@
             <div class="photo-card" 
                  data-index="7"
                  data-ml="620966894"
+                 data-location="Point La Jolla"
                  onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620966894/480"
                      alt="Brandt's Cormorant"
@@ -195,6 +217,7 @@
             <div class="photo-card" 
                  data-index="8"
                  data-ml="620948213"
+                 data-location="Point La Jolla"
                  onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948213/480"
                      alt="Pelagic Cormorant"
@@ -207,6 +230,7 @@
             <div class="photo-card" 
                  data-index="9"
                  data-ml="620967277"
+                 data-location="Goldfish Point & Coast Walk Trail"
                  onclick="openLightbox(9)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620967277/480"
                      alt="Double-crested Cormorant"
@@ -219,6 +243,7 @@
             <div class="photo-card" 
                  data-index="10"
                  data-ml="620962742"
+                 data-location="Goldfish Point & Coast Walk Trail"
                  onclick="openLightbox(10)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620962742/480"
                      alt="Brown Pelican"
@@ -231,6 +256,7 @@
             <div class="photo-card" 
                  data-index="11"
                  data-ml="620935893"
+                 data-location="UCSD Park"
                  onclick="openLightbox(11)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620935893/480"
                      alt="California Gnatcatcher"
@@ -243,6 +269,7 @@
             <div class="photo-card" 
                  data-index="12"
                  data-ml="620935895"
+                 data-location="UCSD Park"
                  onclick="openLightbox(12)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620935895/480"
                      alt="California Gnatcatcher"
@@ -255,6 +282,7 @@
             <div class="photo-card" 
                  data-index="13"
                  data-ml="620936184"
+                 data-location="UCSD Park"
                  onclick="openLightbox(13)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936184/480"
                      alt="Blue-gray Gnatcatcher"
@@ -267,6 +295,7 @@
             <div class="photo-card" 
                  data-index="14"
                  data-ml="620948244"
+                 data-location="Scripps Coastal Reserve"
                  onclick="openLightbox(14)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948244/480"
                      alt="Anna's Hummingbird"
@@ -279,6 +308,7 @@
             <div class="photo-card" 
                  data-index="15"
                  data-ml="620948255"
+                 data-location="Scripps Coastal Reserve"
                  onclick="openLightbox(15)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948255/480"
                      alt="California Towhee"
@@ -291,6 +321,7 @@
             <div class="photo-card" 
                  data-index="16"
                  data-ml="620936453"
+                 data-location="Scripps Coastal Reserve"
                  onclick="openLightbox(16)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936453/480"
                      alt="Allen's Hummingbird"
@@ -303,6 +334,7 @@
             <div class="photo-card" 
                  data-index="17"
                  data-ml="620936530"
+                 data-location="Scripps Coastal Reserve"
                  onclick="openLightbox(17)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936530/480"
                      alt="California Gull"
@@ -315,6 +347,7 @@
             <div class="photo-card" 
                  data-index="18"
                  data-ml="620936427"
+                 data-location="Scripps Coastal Reserve"
                  onclick="openLightbox(18)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936427/480"
                      alt="California Scrub-Jay"
@@ -327,6 +360,7 @@
             <div class="photo-card" 
                  data-index="19"
                  data-ml="620936271"
+                 data-location="Scripps Coastal Reserve"
                  onclick="openLightbox(19)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936271/480"
                      alt="Bushtit"
@@ -339,6 +373,7 @@
             <div class="photo-card" 
                  data-index="20"
                  data-ml="620936330"
+                 data-location="Scripps Coastal Reserve"
                  onclick="openLightbox(20)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936330/480"
                      alt="California Towhee"
@@ -414,6 +449,7 @@
                 name_en: "Anna\'s Hummingbird",
                 scientific: "Calypte anna",
                 family: "Trochilidae (Hummingbirds)",
+                location: "UCSD Park",
                 location_fr: "UCSD Park, Californie, États-Unis",
                 location_en: "UCSD Park, California, United States",
                 date_fr: "28 juin 2024",
@@ -429,6 +465,7 @@
                 name_en: "Heermann\'s Gull",
                 scientific: "Larus heermanni",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Point La Jolla",
                 location_fr: "Point La Jolla, Californie, États-Unis",
                 location_en: "Point La Jolla, California, United States",
                 date_fr: "28 juin 2024",
@@ -444,6 +481,7 @@
                 name_en: "Western Gull",
                 scientific: "Larus occidentalis",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Goldfish Point & Coast Walk Trail",
                 location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
                 location_en: "Goldfish Point & Coast Walk Trail, California, United States",
                 date_fr: "28 juin 2024",
@@ -459,6 +497,7 @@
                 name_en: "Royal Tern",
                 scientific: "Thalasseus maximus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Point La Jolla",
                 location_fr: "Point La Jolla, Californie, États-Unis",
                 location_en: "Point La Jolla, California, United States",
                 date_fr: "28 juin 2024",
@@ -474,6 +513,7 @@
                 name_en: "Royal Tern",
                 scientific: "Thalasseus maximus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Point La Jolla",
                 location_fr: "Point La Jolla, Californie, États-Unis",
                 location_en: "Point La Jolla, California, United States",
                 date_fr: "28 juin 2024",
@@ -489,6 +529,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Goldfish Point & Coast Walk Trail",
                 location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
                 location_en: "Goldfish Point & Coast Walk Trail, California, United States",
                 date_fr: "28 juin 2024",
@@ -504,6 +545,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Point La Jolla",
                 location_fr: "Point La Jolla, Californie, États-Unis",
                 location_en: "Point La Jolla, California, United States",
                 date_fr: "28 juin 2024",
@@ -519,6 +561,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Point La Jolla",
                 location_fr: "Point La Jolla, Californie, États-Unis",
                 location_en: "Point La Jolla, California, United States",
                 date_fr: "28 juin 2024",
@@ -534,6 +577,7 @@
                 name_en: "Pelagic Cormorant",
                 scientific: "Urile pelagicus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Point La Jolla",
                 location_fr: "Point La Jolla, Californie, États-Unis",
                 location_en: "Point La Jolla, California, United States",
                 date_fr: "28 juin 2024",
@@ -549,6 +593,7 @@
                 name_en: "Double-crested Cormorant",
                 scientific: "Nannopterum auritum",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Goldfish Point & Coast Walk Trail",
                 location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
                 location_en: "Goldfish Point & Coast Walk Trail, California, United States",
                 date_fr: "28 juin 2024",
@@ -564,6 +609,7 @@
                 name_en: "Brown Pelican",
                 scientific: "Pelecanus occidentalis",
                 family: "Pelecanidae (Pelicans)",
+                location: "Goldfish Point & Coast Walk Trail",
                 location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
                 location_en: "Goldfish Point & Coast Walk Trail, California, United States",
                 date_fr: "28 juin 2024",
@@ -579,6 +625,7 @@
                 name_en: "California Gnatcatcher",
                 scientific: "Polioptila californica",
                 family: "Polioptilidae (Gnatcatchers)",
+                location: "UCSD Park",
                 location_fr: "UCSD Park, Californie, États-Unis",
                 location_en: "UCSD Park, California, United States",
                 date_fr: "28 juin 2024",
@@ -594,6 +641,7 @@
                 name_en: "California Gnatcatcher",
                 scientific: "Polioptila californica",
                 family: "Polioptilidae (Gnatcatchers)",
+                location: "UCSD Park",
                 location_fr: "UCSD Park, Californie, États-Unis",
                 location_en: "UCSD Park, California, United States",
                 date_fr: "28 juin 2024",
@@ -609,6 +657,7 @@
                 name_en: "Blue-gray Gnatcatcher",
                 scientific: "Polioptila caerulea",
                 family: "Polioptilidae (Gnatcatchers)",
+                location: "UCSD Park",
                 location_fr: "UCSD Park, Californie, États-Unis",
                 location_en: "UCSD Park, California, United States",
                 date_fr: "27 juin 2024",
@@ -624,6 +673,7 @@
                 name_en: "Anna\'s Hummingbird",
                 scientific: "Calypte anna",
                 family: "Trochilidae (Hummingbirds)",
+                location: "Scripps Coastal Reserve",
                 location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
                 location_en: "Scripps Coastal Reserve, California, United States",
                 date_fr: "26 juin 2024",
@@ -639,6 +689,7 @@
                 name_en: "California Towhee",
                 scientific: "Melozone crissalis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Scripps Coastal Reserve",
                 location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
                 location_en: "Scripps Coastal Reserve, California, United States",
                 date_fr: "26 juin 2024",
@@ -654,6 +705,7 @@
                 name_en: "Allen\'s Hummingbird",
                 scientific: "Selasphorus sasin",
                 family: "Trochilidae (Hummingbirds)",
+                location: "Scripps Coastal Reserve",
                 location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
                 location_en: "Scripps Coastal Reserve, California, United States",
                 date_fr: "25 juin 2024",
@@ -669,6 +721,7 @@
                 name_en: "California Gull",
                 scientific: "Larus californicus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Scripps Coastal Reserve",
                 location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
                 location_en: "Scripps Coastal Reserve, California, United States",
                 date_fr: "25 juin 2024",
@@ -684,6 +737,7 @@
                 name_en: "California Scrub-Jay",
                 scientific: "Aphelocoma californica",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Scripps Coastal Reserve",
                 location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
                 location_en: "Scripps Coastal Reserve, California, United States",
                 date_fr: "25 juin 2024",
@@ -699,6 +753,7 @@
                 name_en: "Bushtit",
                 scientific: "Psaltriparus minimus",
                 family: "Aegithalidae (Long-tailed Tits)",
+                location: "Scripps Coastal Reserve",
                 location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
                 location_en: "Scripps Coastal Reserve, California, United States",
                 date_fr: "25 juin 2024",
@@ -714,6 +769,7 @@
                 name_en: "California Towhee",
                 scientific: "Melozone crissalis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Scripps Coastal Reserve",
                 location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
                 location_en: "Scripps Coastal Reserve, California, United States",
                 date_fr: "25 juin 2024",
@@ -833,7 +889,7 @@
         });
 
         
-        // Carte du voyage
+        // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
             { lat: 32.8864337, lng: -117.2361969, name: "UCSD Park" },
@@ -845,6 +901,61 @@
             { lat: 32.8758738, lng: -117.2470005, name: "Scripps Coastal Reserve" },
             
         ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
 
         if (tripLocations.length > 0) {
             // Créer la carte
@@ -866,13 +977,32 @@
                 popupAnchor: [0, -24]
             });
 
-            // Ajouter les marqueurs
+            // Ajouter les marqueurs avec compte de photos et filtrage
             const markers = [];
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
                 if (loc.name) {
-                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
                 marker.addTo(tripMap);
                 markers.push(marker);
             });

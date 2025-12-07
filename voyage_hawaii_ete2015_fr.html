@@ -94,11 +94,26 @@
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Afficher tout ✕
+            </button>
+        </div>
+        
+        
         <div class="masonry-grid">
             
             <div class="photo-card" 
                  data-index="0"
                  data-ml="22553661"
+                 data-location="Ala Moana Park and State Recreation Area"
                  onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22553661/480"
                      alt="Astrild ondulé"
@@ -111,6 +126,7 @@
             <div class="photo-card" 
                  data-index="1"
                  data-ml="22553711"
+                 data-location="Ala Moana Park and State Recreation Area"
                  onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22553711/480"
                      alt="Serin du Mozambique"
@@ -123,6 +139,7 @@
             <div class="photo-card" 
                  data-index="2"
                  data-ml="22553621"
+                 data-location="Ala Moana Park and State Recreation Area"
                  onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22553621/480"
                      alt="Quiscale à longue queue"
@@ -135,6 +152,7 @@
             <div class="photo-card" 
                  data-index="3"
                  data-ml="34743961"
+                 data-location="Turtle Bay Resort, 'O'ahu"
                  onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34743961/480"
                      alt="Tournepierre à collier"
@@ -147,6 +165,7 @@
             <div class="photo-card" 
                  data-index="4"
                  data-ml="22536101"
+                 data-location="Kuli'ou'ou Valley Trail"
                  onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536101/480"
                      alt="Monarque d'Oahu"
@@ -159,6 +178,7 @@
             <div class="photo-card" 
                  data-index="5"
                  data-ml="22536131"
+                 data-location="Kuli'ou'ou Valley Trail"
                  onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536131/480"
                      alt="Léiothrix jaune"
@@ -171,6 +191,7 @@
             <div class="photo-card" 
                  data-index="6"
                  data-ml="22535901"
+                 data-location="Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA"
                  onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535901/480"
                      alt="Hibou des marais (sandwichensis)"
@@ -183,6 +204,7 @@
             <div class="photo-card" 
                  data-index="7"
                  data-ml="22535941"
+                 data-location="Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA"
                  onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535941/480"
                      alt="Monarque d'Hawaï (bryani)"
@@ -195,6 +217,7 @@
             <div class="photo-card" 
                  data-index="8"
                  data-ml="22587201"
+                 data-location="Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA"
                  onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22587201/480"
                      alt="Léiothrix jaune"
@@ -207,6 +230,7 @@
             <div class="photo-card" 
                  data-index="9"
                  data-ml="22535881"
+                 data-location="Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA"
                  onclick="openLightbox(9)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535881/480"
                      alt="Amakihi familier"
@@ -219,6 +243,7 @@
             <div class="photo-card" 
                  data-index="10"
                  data-ml="22535891"
+                 data-location="Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA"
                  onclick="openLightbox(10)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535891/480"
                      alt="Amakihi familier"
@@ -231,6 +256,7 @@
             <div class="photo-card" 
                  data-index="11"
                  data-ml="22493851"
+                 data-location="Kawaihae village"
                  onclick="openLightbox(11)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493851/480"
                      alt="Zostérops du Japon"
@@ -243,6 +269,7 @@
             <div class="photo-card" 
                  data-index="12"
                  data-ml="22488281"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(12)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22488281/480"
                      alt="Martin triste"
@@ -255,6 +282,7 @@
             <div class="photo-card" 
                  data-index="13"
                  data-ml="51364051"
+                 data-location="Koula Street"
                  onclick="openLightbox(13)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51364051/480"
                      alt="Garrulaxe hoamy"
@@ -267,6 +295,7 @@
             <div class="photo-card" 
                  data-index="14"
                  data-ml="34749391"
+                 data-location="Hakalau Forest NWR"
                  onclick="openLightbox(14)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749391/480"
                      alt="Loxopse mana"
@@ -279,6 +308,7 @@
             <div class="photo-card" 
                  data-index="15"
                  data-ml="34749401"
+                 data-location="Hakalau Forest NWR"
                  onclick="openLightbox(15)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749401/480"
                      alt="Loxopse mana"
@@ -291,6 +321,7 @@
             <div class="photo-card" 
                  data-index="16"
                  data-ml="20474801"
+                 data-location="Hawai'i Volcanoes NP"
                  onclick="openLightbox(16)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20474801/480"
                      alt="Noddi noir"
@@ -303,6 +334,7 @@
             <div class="photo-card" 
                  data-index="17"
                  data-ml="20475001"
+                 data-location="Hawai'i Volcanoes NP"
                  onclick="openLightbox(17)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20475001/480"
                      alt="Noddi noir"
@@ -315,6 +347,7 @@
             <div class="photo-card" 
                  data-index="18"
                  data-ml="20475041"
+                 data-location="Hawai'i Volcanoes NP"
                  onclick="openLightbox(18)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20475041/480"
                      alt="Noddi noir"
@@ -327,6 +360,7 @@
             <div class="photo-card" 
                  data-index="19"
                  data-ml="20475051"
+                 data-location="Hawai'i Volcanoes NP"
                  onclick="openLightbox(19)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20475051/480"
                      alt="Noddi noir"
@@ -339,6 +373,7 @@
             <div class="photo-card" 
                  data-index="20"
                  data-ml="20475061"
+                 data-location="Hawai'i Volcanoes NP"
                  onclick="openLightbox(20)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20475061/480"
                      alt="Noddi noir"
@@ -351,6 +386,7 @@
             <div class="photo-card" 
                  data-index="21"
                  data-ml="22496021"
+                 data-location="Hawaiʻi Volcanoes NP"
                  onclick="openLightbox(21)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22496021/480"
                      alt="Amakihi familier"
@@ -363,6 +399,7 @@
             <div class="photo-card" 
                  data-index="22"
                  data-ml="33892241"
+                 data-location="National Tropical Botanical Garden"
                  onclick="openLightbox(22)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33892241/480"
                      alt="Gallinule d'Amérique"
@@ -375,6 +412,7 @@
             <div class="photo-card" 
                  data-index="23"
                  data-ml="33892271"
+                 data-location="National Tropical Botanical Garden"
                  onclick="openLightbox(23)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33892271/480"
                      alt="Gallinule d'Amérique"
@@ -387,6 +425,7 @@
             <div class="photo-card" 
                  data-index="24"
                  data-ml="33892381"
+                 data-location="National Tropical Botanical Garden"
                  onclick="openLightbox(24)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33892381/480"
                      alt="Garrulaxe hoamy"
@@ -399,6 +438,7 @@
             <div class="photo-card" 
                  data-index="25"
                  data-ml="33892321"
+                 data-location="National Tropical Botanical Garden"
                  onclick="openLightbox(25)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33892321/480"
                      alt="Shama à croupion blanc"
@@ -411,6 +451,7 @@
             <div class="photo-card" 
                  data-index="26"
                  data-ml="33892361"
+                 data-location="National Tropical Botanical Garden"
                  onclick="openLightbox(26)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33892361/480"
                      alt="Shama à croupion blanc"
@@ -423,6 +464,7 @@
             <div class="photo-card" 
                  data-index="27"
                  data-ml="33892371"
+                 data-location="National Tropical Botanical Garden"
                  onclick="openLightbox(27)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33892371/480"
                      alt="Shama à croupion blanc"
@@ -435,6 +477,7 @@
             <div class="photo-card" 
                  data-index="28"
                  data-ml="33892391"
+                 data-location="National Tropical Botanical Garden"
                  onclick="openLightbox(28)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/33892391/480"
                      alt="Shama à croupion blanc"
@@ -447,6 +490,7 @@
             <div class="photo-card" 
                  data-index="29"
                  data-ml="34435011"
+                 data-location="Kōkeʻe State Park (general)"
                  onclick="openLightbox(29)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435011/480"
                      alt="Monarque de Kauai"
@@ -459,6 +503,7 @@
             <div class="photo-card" 
                  data-index="30"
                  data-ml="34435021"
+                 data-location="Kōkeʻe State Park (general)"
                  onclick="openLightbox(30)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435021/480"
                      alt="Monarque de Kauai"
@@ -471,6 +516,7 @@
             <div class="photo-card" 
                  data-index="31"
                  data-ml="34435031"
+                 data-location="Kōkeʻe State Park (general)"
                  onclick="openLightbox(31)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435031/480"
                      alt="Monarque de Kauai"
@@ -483,6 +529,7 @@
             <div class="photo-card" 
                  data-index="32"
                  data-ml="34435041"
+                 data-location="Kōkeʻe State Park (general)"
                  onclick="openLightbox(32)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34435041/480"
                      alt="Monarque de Kauai"
@@ -495,6 +542,7 @@
             <div class="photo-card" 
                  data-index="33"
                  data-ml="21112241"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(33)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21112241/480"
                      alt="Bernache néné"
@@ -507,6 +555,7 @@
             <div class="photo-card" 
                  data-index="34"
                  data-ml="21112251"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(34)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21112251/480"
                      alt="Bernache néné"
@@ -519,6 +568,7 @@
             <div class="photo-card" 
                  data-index="35"
                  data-ml="29632631"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(35)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632631/480"
                      alt="Canard des Hawaï"
@@ -531,6 +581,7 @@
             <div class="photo-card" 
                  data-index="36"
                  data-ml="29632641"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(36)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632641/480"
                      alt="Canard des Hawaï"
@@ -543,6 +594,7 @@
             <div class="photo-card" 
                  data-index="37"
                  data-ml="29632651"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(37)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632651/480"
                      alt="Canard des Hawaï"
@@ -555,6 +607,7 @@
             <div class="photo-card" 
                  data-index="38"
                  data-ml="34744251"
+                 data-location="Princeville"
                  onclick="openLightbox(38)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34744251/480"
                      alt="Tourterelle tigrine"
@@ -567,6 +620,7 @@
             <div class="photo-card" 
                  data-index="39"
                  data-ml="29632691"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(39)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632691/480"
                      alt="Gallinule d'Amérique (sandvicensis)"
@@ -579,6 +633,7 @@
             <div class="photo-card" 
                  data-index="40"
                  data-ml="29632701"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(40)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632701/480"
                      alt="Gallinule d'Amérique (sandvicensis)"
@@ -591,6 +646,7 @@
             <div class="photo-card" 
                  data-index="41"
                  data-ml="29632661"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(41)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632661/480"
                      alt="Foulque des Hawaï"
@@ -603,6 +659,7 @@
             <div class="photo-card" 
                  data-index="42"
                  data-ml="29632671"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(42)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632671/480"
                      alt="Foulque des Hawaï"
@@ -615,6 +672,7 @@
             <div class="photo-card" 
                  data-index="43"
                  data-ml="20478481"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(43)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478481/480"
                      alt="Frégate du Pacifique"
@@ -627,6 +685,7 @@
             <div class="photo-card" 
                  data-index="44"
                  data-ml="20478491"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(44)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478491/480"
                      alt="Frégate du Pacifique"
@@ -639,6 +698,7 @@
             <div class="photo-card" 
                  data-index="45"
                  data-ml="20478521"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(45)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478521/480"
                      alt="Fou à pieds rouges"
@@ -651,6 +711,7 @@
             <div class="photo-card" 
                  data-index="46"
                  data-ml="21083301"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(46)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083301/480"
                      alt="Bernache néné"
@@ -663,6 +724,7 @@
             <div class="photo-card" 
                  data-index="47"
                  data-ml="29632541"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(47)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632541/480"
                      alt="Canard des Hawaï"
@@ -675,6 +737,7 @@
             <div class="photo-card" 
                  data-index="48"
                  data-ml="29632551"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(48)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632551/480"
                      alt="Canard des Hawaï"
@@ -687,6 +750,7 @@
             <div class="photo-card" 
                  data-index="49"
                  data-ml="29632571"
+                 data-location="Hanalei NWR"
                  onclick="openLightbox(49)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29632571/480"
                      alt="Gallinule d'Amérique (sandvicensis)"
@@ -699,6 +763,7 @@
             <div class="photo-card" 
                  data-index="50"
                  data-ml="21083381"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(50)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083381/480"
                      alt="Phaéton à bec jaune"
@@ -711,6 +776,7 @@
             <div class="photo-card" 
                  data-index="51"
                  data-ml="21083391"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(51)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083391/480"
                      alt="Phaéton à brins rouges"
@@ -723,6 +789,7 @@
             <div class="photo-card" 
                  data-index="52"
                  data-ml="21083401"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(52)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083401/480"
                      alt="Phaéton à brins rouges"
@@ -735,6 +802,7 @@
             <div class="photo-card" 
                  data-index="53"
                  data-ml="21083311"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(53)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083311/480"
                      alt="Albatros de Laysan"
@@ -747,6 +815,7 @@
             <div class="photo-card" 
                  data-index="54"
                  data-ml="21083321"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(54)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083321/480"
                      alt="Frégate du Pacifique"
@@ -759,6 +828,7 @@
             <div class="photo-card" 
                  data-index="55"
                  data-ml="21083331"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(55)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083331/480"
                      alt="Frégate du Pacifique"
@@ -771,6 +841,7 @@
             <div class="photo-card" 
                  data-index="56"
                  data-ml="21083361"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(56)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083361/480"
                      alt="Fou à pieds rouges"
@@ -783,6 +854,7 @@
             <div class="photo-card" 
                  data-index="57"
                  data-ml="21083371"
+                 data-location="Kilauea Point NWR"
                  onclick="openLightbox(57)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21083371/480"
                      alt="Fou à pieds rouges"
@@ -795,6 +867,7 @@
             <div class="photo-card" 
                  data-index="58"
                  data-ml="21112081"
+                 data-location="Popoia Island"
                  onclick="openLightbox(58)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21112081/480"
                      alt="Géopélie zébrée"
@@ -807,6 +880,7 @@
             <div class="photo-card" 
                  data-index="59"
                  data-ml="21112051"
+                 data-location="Popoia Island"
                  onclick="openLightbox(59)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21112051/480"
                      alt="Puffin fouquet"
@@ -819,6 +893,7 @@
             <div class="photo-card" 
                  data-index="60"
                  data-ml="21112061"
+                 data-location="Popoia Island"
                  onclick="openLightbox(60)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21112061/480"
                      alt="Puffin fouquet"
@@ -831,6 +906,7 @@
             <div class="photo-card" 
                  data-index="61"
                  data-ml="22535631"
+                 data-location="ʻAiea Loop Trail and Keaīwa Heiau SP"
                  onclick="openLightbox(61)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535631/480"
                      alt="Bulbul à ventre rouge"
@@ -843,6 +919,7 @@
             <div class="photo-card" 
                  data-index="62"
                  data-ml="22535701"
+                 data-location="ʻAiea Loop Trail and Keaīwa Heiau SP"
                  onclick="openLightbox(62)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535701/480"
                      alt="Shama à croupion blanc"
@@ -855,6 +932,7 @@
             <div class="photo-card" 
                  data-index="63"
                  data-ml="22535711"
+                 data-location="ʻAiea Loop Trail and Keaīwa Heiau SP"
                  onclick="openLightbox(63)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535711/480"
                      alt="Shama à croupion blanc"
@@ -867,6 +945,7 @@
             <div class="photo-card" 
                  data-index="64"
                  data-ml="62726591"
+                 data-location="Kailua Beach Park"
                  onclick="openLightbox(64)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/62726591/480"
                      alt="Échasse d'Amérique (knudseni)"
@@ -879,6 +958,7 @@
             <div class="photo-card" 
                  data-index="65"
                  data-ml="62726601"
+                 data-location="Kailua Beach Park"
                  onclick="openLightbox(65)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/62726601/480"
                      alt="Échasse d'Amérique (knudseni)"
@@ -891,6 +971,7 @@
             <div class="photo-card" 
                  data-index="66"
                  data-ml="62726611"
+                 data-location="Kailua Beach Park"
                  onclick="openLightbox(66)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/62726611/480"
                      alt="Échasse d'Amérique (knudseni)"
@@ -903,6 +984,7 @@
             <div class="photo-card" 
                  data-index="67"
                  data-ml="22495801"
+                 data-location="Iolani Palace"
                  onclick="openLightbox(67)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22495801/480"
                      alt="Capucin damier"
@@ -915,6 +997,7 @@
             <div class="photo-card" 
                  data-index="68"
                  data-ml="22409161"
+                 data-location="Kailua Beach Park"
                  onclick="openLightbox(68)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22409161/480"
                      alt="Paroare huppé"
@@ -927,6 +1010,7 @@
             <div class="photo-card" 
                  data-index="69"
                  data-ml="22409171"
+                 data-location="Kailua Beach Park"
                  onclick="openLightbox(69)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22409171/480"
                      alt="Paroare huppé"
@@ -939,6 +1023,7 @@
             <div class="photo-card" 
                  data-index="70"
                  data-ml="22535431"
+                 data-location="Ho'omaluhia Botanical Garden"
                  onclick="openLightbox(70)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535431/480"
                      alt="Tourterelle tigrine"
@@ -951,6 +1036,7 @@
             <div class="photo-card" 
                  data-index="71"
                  data-ml="22535451"
+                 data-location="Ho'omaluhia Botanical Garden"
                  onclick="openLightbox(71)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535451/480"
                      alt="Bulbul orphée"
@@ -963,6 +1049,7 @@
             <div class="photo-card" 
                  data-index="72"
                  data-ml="22535581"
+                 data-location="Ho'omaluhia Botanical Garden"
                  onclick="openLightbox(72)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535581/480"
                      alt="Shama à croupion blanc"
@@ -975,6 +1062,7 @@
             <div class="photo-card" 
                  data-index="73"
                  data-ml="22535611"
+                 data-location="Ho'omaluhia Botanical Garden"
                  onclick="openLightbox(73)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535611/480"
                      alt="Shama à croupion blanc"
@@ -987,6 +1075,7 @@
             <div class="photo-card" 
                  data-index="74"
                  data-ml="22535511"
+                 data-location="Ho'omaluhia Botanical Garden"
                  onclick="openLightbox(74)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535511/480"
                      alt="Capucin à tête noire"
@@ -999,6 +1088,7 @@
             <div class="photo-card" 
                  data-index="75"
                  data-ml="20478851"
+                 data-location="Fort Derussy Beach Park"
                  onclick="openLightbox(75)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478851/480"
                      alt="Géopélie zébrée"
@@ -1011,6 +1101,7 @@
             <div class="photo-card" 
                  data-index="76"
                  data-ml="20478801"
+                 data-location="Fort Derussy Beach Park"
                  onclick="openLightbox(76)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478801/480"
                      alt="Gygis du Pacifique"
@@ -1023,6 +1114,7 @@
             <div class="photo-card" 
                  data-index="77"
                  data-ml="20478821"
+                 data-location="Fort Derussy Beach Park"
                  onclick="openLightbox(77)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478821/480"
                      alt="Gygis du Pacifique"
@@ -1035,6 +1127,7 @@
             <div class="photo-card" 
                  data-index="78"
                  data-ml="20478781"
+                 data-location="Fort Derussy Beach Park"
                  onclick="openLightbox(78)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478781/480"
                      alt="Bihoreau gris"
@@ -1047,6 +1140,7 @@
             <div class="photo-card" 
                  data-index="79"
                  data-ml="20478881"
+                 data-location="Fort Derussy Beach Park"
                  onclick="openLightbox(79)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478881/480"
                      alt="Astrild ondulé"
@@ -1059,6 +1153,7 @@
             <div class="photo-card" 
                  data-index="80"
                  data-ml="20478901"
+                 data-location="Fort Derussy Beach Park"
                  onclick="openLightbox(80)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/20478901/480"
                      alt="Astrild ondulé"
@@ -1071,6 +1166,7 @@
             <div class="photo-card" 
                  data-index="81"
                  data-ml="631803857"
+                 data-location="Fort Derussy Beach Park"
                  onclick="openLightbox(81)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/631803857/480"
                      alt="Astrild ondulé"
@@ -1146,6 +1242,7 @@
                 name_en: "Common Waxbill",
                 scientific: "Estrilda astrild",
                 family: "Estrildidae (Waxbills and Allies)",
+                location: "Ala Moana Park and State Recreation Area",
                 location_fr: "Ala Moana Park and State Recreation Area, Hawaï, États-Unis",
                 location_en: "Ala Moana Park and State Recreation Area, Hawaii, United States",
                 date_fr: "4 août 2015",
@@ -1161,6 +1258,7 @@
                 name_en: "Yellow-fronted Canary",
                 scientific: "Crithagra mozambica",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Ala Moana Park and State Recreation Area",
                 location_fr: "Ala Moana Park and State Recreation Area, Hawaï, États-Unis",
                 location_en: "Ala Moana Park and State Recreation Area, Hawaii, United States",
                 date_fr: "4 août 2015",
@@ -1176,6 +1274,7 @@
                 name_en: "Great-tailed Grackle",
                 scientific: "Quiscalus mexicanus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Ala Moana Park and State Recreation Area",
                 location_fr: "Ala Moana Park and State Recreation Area, Hawaï, États-Unis",
                 location_en: "Ala Moana Park and State Recreation Area, Hawaii, United States",
                 date_fr: "4 août 2015",
@@ -1191,6 +1290,7 @@
                 name_en: "Ruddy Turnstone",
                 scientific: "Arenaria interpres",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Turtle Bay Resort, \'O\'ahu",
                 location_fr: "Turtle Bay Resort, \'O\'ahu, Hawaï, États-Unis",
                 location_en: "Turtle Bay Resort, \'O\'ahu, Hawaii, United States",
                 date_fr: "2 août 2015",
@@ -1206,6 +1306,7 @@
                 name_en: "Oahu Elepaio",
                 scientific: "Chasiempis ibidis",
                 family: "Monarchidae (Monarch Flycatchers)",
+                location: "Kuli\'ou\'ou Valley Trail",
                 location_fr: "Kuli\'ou\'ou Valley Trail, Hawaï, États-Unis",
                 location_en: "Kuli\'ou\'ou Valley Trail, Hawaii, United States",
                 date_fr: "2 août 2015",
@@ -1221,6 +1322,7 @@
                 name_en: "Red-billed Leiothrix",
                 scientific: "Leiothrix lutea",
                 family: "Leiothrichidae (Laughingthrushes and Allies)",
+                location: "Kuli\'ou\'ou Valley Trail",
                 location_fr: "Kuli\'ou\'ou Valley Trail, Hawaï, États-Unis",
                 location_en: "Kuli\'ou\'ou Valley Trail, Hawaii, United States",
                 date_fr: "2 août 2015",
@@ -1236,6 +1338,7 @@
                 name_en: "Short-eared Owl (Hawaiian)",
                 scientific: "Asio flammeus sandwichensis",
                 family: "Strigidae (Owls)",
+                location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
                 location_fr: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaï, États-Unis",
                 location_en: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaii, United States",
                 date_fr: "1<sup>er</sup> août 2015",
@@ -1251,6 +1354,7 @@
                 name_en: "Hawaii Elepaio (Mauna Kea)",
                 scientific: "Chasiempis sandwichensis bryani",
                 family: "Monarchidae (Monarch Flycatchers)",
+                location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
                 location_fr: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaï, États-Unis",
                 location_en: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaii, United States",
                 date_fr: "1<sup>er</sup> août 2015",
@@ -1266,6 +1370,7 @@
                 name_en: "Red-billed Leiothrix",
                 scientific: "Leiothrix lutea",
                 family: "Leiothrichidae (Laughingthrushes and Allies)",
+                location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
                 location_fr: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaï, États-Unis",
                 location_en: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaii, United States",
                 date_fr: "1<sup>er</sup> août 2015",
@@ -1281,6 +1386,7 @@
                 name_en: "Hawaii Amakihi",
                 scientific: "Chlorodrepanis virens",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
                 location_fr: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaï, États-Unis",
                 location_en: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaii, United States",
                 date_fr: "1<sup>er</sup> août 2015",
@@ -1296,6 +1402,7 @@
                 name_en: "Hawaii Amakihi",
                 scientific: "Chlorodrepanis virens",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
                 location_fr: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaï, États-Unis",
                 location_en: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA, Hawaii, United States",
                 date_fr: "1<sup>er</sup> août 2015",
@@ -1311,6 +1418,7 @@
                 name_en: "Warbling White-eye",
                 scientific: "Zosterops japonicus",
                 family: "Zosteropidae (White-eyes, Yuhinas, and Allies)",
+                location: "Kawaihae village",
                 location_fr: "Kawaihae village, Hawaï, États-Unis",
                 location_en: "Kawaihae village, Hawaii, United States",
                 date_fr: "28 juillet 2015",
@@ -1326,6 +1434,7 @@
                 name_en: "Common Myna",
                 scientific: "Acridotheres tristis",
                 family: "Sturnidae (Starlings)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "27 juillet 2015",
@@ -1341,6 +1450,7 @@
                 name_en: "Chinese Hwamei",
                 scientific: "Garrulax canorus",
                 family: "Leiothrichidae (Laughingthrushes and Allies)",
+                location: "Koula Street",
                 location_fr: "Koula Street, Hawaï, États-Unis",
                 location_en: "Koula Street, Hawaii, United States",
                 date_fr: "26 juillet 2015",
@@ -1356,6 +1466,7 @@
                 name_en: "Hawaii Creeper",
                 scientific: "Loxops mana",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Hakalau Forest NWR",
                 location_fr: "Hakalau Forest NWR, Hawaï, États-Unis",
                 location_en: "Hakalau Forest NWR, Hawaii, United States",
                 date_fr: "26 juillet 2015",
@@ -1371,6 +1482,7 @@
                 name_en: "Hawaii Creeper",
                 scientific: "Loxops mana",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Hakalau Forest NWR",
                 location_fr: "Hakalau Forest NWR, Hawaï, États-Unis",
                 location_en: "Hakalau Forest NWR, Hawaii, United States",
                 date_fr: "26 juillet 2015",
@@ -1386,6 +1498,7 @@
                 name_en: "Black Noddy",
                 scientific: "Anous minutus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Hawai\'i Volcanoes NP",
                 location_fr: "Hawai\'i Volcanoes NP, Hawaï, États-Unis",
                 location_en: "Hawai\'i Volcanoes NP, Hawaii, United States",
                 date_fr: "25 juillet 2015",
@@ -1401,6 +1514,7 @@
                 name_en: "Black Noddy",
                 scientific: "Anous minutus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Hawai\'i Volcanoes NP",
                 location_fr: "Hawai\'i Volcanoes NP, Hawaï, États-Unis",
                 location_en: "Hawai\'i Volcanoes NP, Hawaii, United States",
                 date_fr: "25 juillet 2015",
@@ -1416,6 +1530,7 @@
                 name_en: "Black Noddy",
                 scientific: "Anous minutus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Hawai\'i Volcanoes NP",
                 location_fr: "Hawai\'i Volcanoes NP, Hawaï, États-Unis",
                 location_en: "Hawai\'i Volcanoes NP, Hawaii, United States",
                 date_fr: "25 juillet 2015",
@@ -1431,6 +1546,7 @@
                 name_en: "Black Noddy",
                 scientific: "Anous minutus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Hawai\'i Volcanoes NP",
                 location_fr: "Hawai\'i Volcanoes NP, Hawaï, États-Unis",
                 location_en: "Hawai\'i Volcanoes NP, Hawaii, United States",
                 date_fr: "25 juillet 2015",
@@ -1446,6 +1562,7 @@
                 name_en: "Black Noddy",
                 scientific: "Anous minutus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Hawai\'i Volcanoes NP",
                 location_fr: "Hawai\'i Volcanoes NP, Hawaï, États-Unis",
                 location_en: "Hawai\'i Volcanoes NP, Hawaii, United States",
                 date_fr: "25 juillet 2015",
@@ -1461,6 +1578,7 @@
                 name_en: "Hawaii Amakihi",
                 scientific: "Chlorodrepanis virens",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Hawaiʻi Volcanoes NP",
                 location_fr: "Hawaiʻi Volcanoes NP, Hawaï, États-Unis",
                 location_en: "Hawaiʻi Volcanoes NP, Hawaii, United States",
                 date_fr: "25 juillet 2015",
@@ -1476,6 +1594,7 @@
                 name_en: "Common Gallinule",
                 scientific: "Gallinula galeata",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "National Tropical Botanical Garden",
                 location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
                 location_en: "National Tropical Botanical Garden, Hawaii, United States",
                 date_fr: "21 juillet 2015",
@@ -1491,6 +1610,7 @@
                 name_en: "Common Gallinule",
                 scientific: "Gallinula galeata",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "National Tropical Botanical Garden",
                 location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
                 location_en: "National Tropical Botanical Garden, Hawaii, United States",
                 date_fr: "21 juillet 2015",
@@ -1506,6 +1626,7 @@
                 name_en: "Chinese Hwamei",
                 scientific: "Garrulax canorus",
                 family: "Leiothrichidae (Laughingthrushes and Allies)",
+                location: "National Tropical Botanical Garden",
                 location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
                 location_en: "National Tropical Botanical Garden, Hawaii, United States",
                 date_fr: "21 juillet 2015",
@@ -1521,6 +1642,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "National Tropical Botanical Garden",
                 location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
                 location_en: "National Tropical Botanical Garden, Hawaii, United States",
                 date_fr: "21 juillet 2015",
@@ -1536,6 +1658,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "National Tropical Botanical Garden",
                 location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
                 location_en: "National Tropical Botanical Garden, Hawaii, United States",
                 date_fr: "21 juillet 2015",
@@ -1551,6 +1674,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "National Tropical Botanical Garden",
                 location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
                 location_en: "National Tropical Botanical Garden, Hawaii, United States",
                 date_fr: "21 juillet 2015",
@@ -1566,6 +1690,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "National Tropical Botanical Garden",
                 location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
                 location_en: "National Tropical Botanical Garden, Hawaii, United States",
                 date_fr: "21 juillet 2015",
@@ -1581,6 +1706,7 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
+                location: "Kōkeʻe State Park (general)",
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
@@ -1596,6 +1722,7 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
+                location: "Kōkeʻe State Park (general)",
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
@@ -1611,6 +1738,7 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
+                location: "Kōkeʻe State Park (general)",
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
@@ -1626,6 +1754,7 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
+                location: "Kōkeʻe State Park (general)",
                 location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
                 location_en: "Kōkeʻe State Park (general), Hawaii, United States",
                 date_fr: "20 juillet 2015",
@@ -1641,6 +1770,7 @@
                 name_en: "Hawaiian Goose",
                 scientific: "Branta sandvicensis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1656,6 +1786,7 @@
                 name_en: "Hawaiian Goose",
                 scientific: "Branta sandvicensis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1671,6 +1802,7 @@
                 name_en: "Hawaiian Duck",
                 scientific: "Anas wyvilliana",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1686,6 +1818,7 @@
                 name_en: "Hawaiian Duck",
                 scientific: "Anas wyvilliana",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1701,6 +1834,7 @@
                 name_en: "Hawaiian Duck",
                 scientific: "Anas wyvilliana",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1716,6 +1850,7 @@
                 name_en: "Spotted Dove",
                 scientific: "Spilopelia chinensis",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Princeville",
                 location_fr: "Princeville, Hawaï, États-Unis",
                 location_en: "Princeville, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1731,6 +1866,7 @@
                 name_en: "Common Gallinule (Hawaiian)",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1746,6 +1882,7 @@
                 name_en: "Common Gallinule (Hawaiian)",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1761,6 +1898,7 @@
                 name_en: "Hawaiian Coot",
                 scientific: "Fulica alai",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1776,6 +1914,7 @@
                 name_en: "Hawaiian Coot",
                 scientific: "Fulica alai",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1791,6 +1930,7 @@
                 name_en: "Great Frigatebird",
                 scientific: "Fregata minor",
                 family: "Fregatidae (Frigatebirds)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1806,6 +1946,7 @@
                 name_en: "Great Frigatebird",
                 scientific: "Fregata minor",
                 family: "Fregatidae (Frigatebirds)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1821,6 +1962,7 @@
                 name_en: "Red-footed Booby",
                 scientific: "Sula sula",
                 family: "Sulidae (Boobies and Gannets)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "17 juillet 2015",
@@ -1836,6 +1978,7 @@
                 name_en: "Hawaiian Goose",
                 scientific: "Branta sandvicensis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1851,6 +1994,7 @@
                 name_en: "Hawaiian Duck",
                 scientific: "Anas wyvilliana",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1866,6 +2010,7 @@
                 name_en: "Hawaiian Duck",
                 scientific: "Anas wyvilliana",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1881,6 +2026,7 @@
                 name_en: "Common Gallinule (Hawaiian)",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
                 location_fr: "Hanalei NWR, Hawaï, États-Unis",
                 location_en: "Hanalei NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1896,6 +2042,7 @@
                 name_en: "White-tailed Tropicbird",
                 scientific: "Phaethon lepturus",
                 family: "Phaethontidae (Tropicbirds)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1911,6 +2058,7 @@
                 name_en: "Red-tailed Tropicbird",
                 scientific: "Phaethon rubricauda",
                 family: "Phaethontidae (Tropicbirds)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1926,6 +2074,7 @@
                 name_en: "Red-tailed Tropicbird",
                 scientific: "Phaethon rubricauda",
                 family: "Phaethontidae (Tropicbirds)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1941,6 +2090,7 @@
                 name_en: "Laysan Albatross",
                 scientific: "Phoebastria immutabilis",
                 family: "Diomedeidae (Albatrosses)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1956,6 +2106,7 @@
                 name_en: "Great Frigatebird",
                 scientific: "Fregata minor",
                 family: "Fregatidae (Frigatebirds)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1971,6 +2122,7 @@
                 name_en: "Great Frigatebird",
                 scientific: "Fregata minor",
                 family: "Fregatidae (Frigatebirds)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -1986,6 +2138,7 @@
                 name_en: "Red-footed Booby",
                 scientific: "Sula sula",
                 family: "Sulidae (Boobies and Gannets)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -2001,6 +2154,7 @@
                 name_en: "Red-footed Booby",
                 scientific: "Sula sula",
                 family: "Sulidae (Boobies and Gannets)",
+                location: "Kilauea Point NWR",
                 location_fr: "Kilauea Point NWR, Hawaï, États-Unis",
                 location_en: "Kilauea Point NWR, Hawaii, United States",
                 date_fr: "16 juillet 2015",
@@ -2016,6 +2170,7 @@
                 name_en: "Zebra Dove",
                 scientific: "Geopelia striata",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Popoia Island",
                 location_fr: "Popoia Island, Hawaï, États-Unis",
                 location_en: "Popoia Island, Hawaii, United States",
                 date_fr: "15 juillet 2015",
@@ -2031,6 +2186,7 @@
                 name_en: "Wedge-tailed Shearwater",
                 scientific: "Ardenna pacifica",
                 family: "Procellariidae (Shearwaters and Petrels)",
+                location: "Popoia Island",
                 location_fr: "Popoia Island, Hawaï, États-Unis",
                 location_en: "Popoia Island, Hawaii, United States",
                 date_fr: "15 juillet 2015",
@@ -2046,6 +2202,7 @@
                 name_en: "Wedge-tailed Shearwater",
                 scientific: "Ardenna pacifica",
                 family: "Procellariidae (Shearwaters and Petrels)",
+                location: "Popoia Island",
                 location_fr: "Popoia Island, Hawaï, États-Unis",
                 location_en: "Popoia Island, Hawaii, United States",
                 date_fr: "15 juillet 2015",
@@ -2061,6 +2218,7 @@
                 name_en: "Red-vented Bulbul",
                 scientific: "Pycnonotus cafer",
                 family: "Pycnonotidae (Bulbuls)",
+                location: "ʻAiea Loop Trail and Keaīwa Heiau SP",
                 location_fr: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaï, États-Unis",
                 location_en: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaii, United States",
                 date_fr: "14 juillet 2015",
@@ -2076,6 +2234,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "ʻAiea Loop Trail and Keaīwa Heiau SP",
                 location_fr: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaï, États-Unis",
                 location_en: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaii, United States",
                 date_fr: "14 juillet 2015",
@@ -2091,6 +2250,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "ʻAiea Loop Trail and Keaīwa Heiau SP",
                 location_fr: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaï, États-Unis",
                 location_en: "ʻAiea Loop Trail and Keaīwa Heiau SP, Hawaii, United States",
                 date_fr: "14 juillet 2015",
@@ -2106,6 +2266,7 @@
                 name_en: "Black-necked Stilt (Hawaiian)",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Kailua Beach Park",
                 location_fr: "Kailua Beach Park, Hawaï, États-Unis",
                 location_en: "Kailua Beach Park, Hawaii, United States",
                 date_fr: "13 juillet 2015",
@@ -2121,6 +2282,7 @@
                 name_en: "Black-necked Stilt (Hawaiian)",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Kailua Beach Park",
                 location_fr: "Kailua Beach Park, Hawaï, États-Unis",
                 location_en: "Kailua Beach Park, Hawaii, United States",
                 date_fr: "13 juillet 2015",
@@ -2136,6 +2298,7 @@
                 name_en: "Black-necked Stilt (Hawaiian)",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Kailua Beach Park",
                 location_fr: "Kailua Beach Park, Hawaï, États-Unis",
                 location_en: "Kailua Beach Park, Hawaii, United States",
                 date_fr: "13 juillet 2015",
@@ -2151,6 +2314,7 @@
                 name_en: "Scaly-breasted Munia",
                 scientific: "Lonchura punctulata",
                 family: "Estrildidae (Waxbills and Allies)",
+                location: "Iolani Palace",
                 location_fr: "Iolani Palace, Hawaï, États-Unis",
                 location_en: "Iolani Palace, Hawaii, United States",
                 date_fr: "13 juillet 2015",
@@ -2166,6 +2330,7 @@
                 name_en: "Red-crested Cardinal",
                 scientific: "Paroaria coronata",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Kailua Beach Park",
                 location_fr: "Kailua Beach Park, Hawaï, États-Unis",
                 location_en: "Kailua Beach Park, Hawaii, United States",
                 date_fr: "13 juillet 2015",
@@ -2181,6 +2346,7 @@
                 name_en: "Red-crested Cardinal",
                 scientific: "Paroaria coronata",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Kailua Beach Park",
                 location_fr: "Kailua Beach Park, Hawaï, États-Unis",
                 location_en: "Kailua Beach Park, Hawaii, United States",
                 date_fr: "13 juillet 2015",
@@ -2196,6 +2362,7 @@
                 name_en: "Spotted Dove",
                 scientific: "Spilopelia chinensis",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Ho\'omaluhia Botanical Garden",
                 location_fr: "Ho\'omaluhia Botanical Garden, Hawaï, États-Unis",
                 location_en: "Ho\'omaluhia Botanical Garden, Hawaii, United States",
                 date_fr: "12 juillet 2015",
@@ -2211,6 +2378,7 @@
                 name_en: "Red-whiskered Bulbul",
                 scientific: "Pycnonotus jocosus",
                 family: "Pycnonotidae (Bulbuls)",
+                location: "Ho\'omaluhia Botanical Garden",
                 location_fr: "Ho\'omaluhia Botanical Garden, Hawaï, États-Unis",
                 location_en: "Ho\'omaluhia Botanical Garden, Hawaii, United States",
                 date_fr: "12 juillet 2015",
@@ -2226,6 +2394,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "Ho\'omaluhia Botanical Garden",
                 location_fr: "Ho\'omaluhia Botanical Garden, Hawaï, États-Unis",
                 location_en: "Ho\'omaluhia Botanical Garden, Hawaii, United States",
                 date_fr: "12 juillet 2015",
@@ -2241,6 +2410,7 @@
                 name_en: "White-rumped Shama",
                 scientific: "Copsychus malabaricus",
                 family: "Muscicapidae (Old World Flycatchers)",
+                location: "Ho\'omaluhia Botanical Garden",
                 location_fr: "Ho\'omaluhia Botanical Garden, Hawaï, États-Unis",
                 location_en: "Ho\'omaluhia Botanical Garden, Hawaii, United States",
                 date_fr: "12 juillet 2015",
@@ -2256,6 +2426,7 @@
                 name_en: "Chestnut Munia",
                 scientific: "Lonchura atricapilla",
                 family: "Estrildidae (Waxbills and Allies)",
+                location: "Ho\'omaluhia Botanical Garden",
                 location_fr: "Ho\'omaluhia Botanical Garden, Hawaï, États-Unis",
                 location_en: "Ho\'omaluhia Botanical Garden, Hawaii, United States",
                 date_fr: "12 juillet 2015",
@@ -2271,6 +2442,7 @@
                 name_en: "Zebra Dove",
                 scientific: "Geopelia striata",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Fort Derussy Beach Park",
                 location_fr: "Fort Derussy Beach Park, Hawaï, États-Unis",
                 location_en: "Fort Derussy Beach Park, Hawaii, United States",
                 date_fr: "11 juillet 2015",
@@ -2286,6 +2458,7 @@
                 name_en: "Blue-billed White-Tern",
                 scientific: "Gygis candida",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Fort Derussy Beach Park",
                 location_fr: "Fort Derussy Beach Park, Hawaï, États-Unis",
                 location_en: "Fort Derussy Beach Park, Hawaii, United States",
                 date_fr: "11 juillet 2015",
@@ -2301,6 +2474,7 @@
                 name_en: "Blue-billed White-Tern",
                 scientific: "Gygis candida",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Fort Derussy Beach Park",
                 location_fr: "Fort Derussy Beach Park, Hawaï, États-Unis",
                 location_en: "Fort Derussy Beach Park, Hawaii, United States",
                 date_fr: "11 juillet 2015",
@@ -2316,6 +2490,7 @@
                 name_en: "Black-crowned Night Heron",
                 scientific: "Nycticorax nycticorax",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Fort Derussy Beach Park",
                 location_fr: "Fort Derussy Beach Park, Hawaï, États-Unis",
                 location_en: "Fort Derussy Beach Park, Hawaii, United States",
                 date_fr: "11 juillet 2015",
@@ -2331,6 +2506,7 @@
                 name_en: "Common Waxbill",
                 scientific: "Estrilda astrild",
                 family: "Estrildidae (Waxbills and Allies)",
+                location: "Fort Derussy Beach Park",
                 location_fr: "Fort Derussy Beach Park, Hawaï, États-Unis",
                 location_en: "Fort Derussy Beach Park, Hawaii, United States",
                 date_fr: "11 juillet 2015",
@@ -2346,6 +2522,7 @@
                 name_en: "Common Waxbill",
                 scientific: "Estrilda astrild",
                 family: "Estrildidae (Waxbills and Allies)",
+                location: "Fort Derussy Beach Park",
                 location_fr: "Fort Derussy Beach Park, Hawaï, États-Unis",
                 location_en: "Fort Derussy Beach Park, Hawaii, United States",
                 date_fr: "11 juillet 2015",
@@ -2361,6 +2538,7 @@
                 name_en: "Common Waxbill",
                 scientific: "Estrilda astrild",
                 family: "Estrildidae (Waxbills and Allies)",
+                location: "Fort Derussy Beach Park",
                 location_fr: "Fort Derussy Beach Park, Hawaï, États-Unis",
                 location_en: "Fort Derussy Beach Park, Hawaii, United States",
                 date_fr: "11 juillet 2015",
@@ -2480,7 +2658,7 @@
         });
 
         
-        // Carte du voyage
+        // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
             { lat: 21.2894543, lng: -157.8464985, name: "Ala Moana Park and State Recreation Area" },
@@ -2526,6 +2704,61 @@
             { lat: 21.2801171, lng: -157.8342676, name: "Fort Derussy Beach Park" },
             
         ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
 
         if (tripLocations.length > 0) {
             // Créer la carte
@@ -2547,13 +2780,32 @@
                 popupAnchor: [0, -24]
             });
 
-            // Ajouter les marqueurs
+            // Ajouter les marqueurs avec compte de photos et filtrage
             const markers = [];
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
                 if (loc.name) {
-                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
                 marker.addTo(tripMap);
                 markers.push(marker);
             });

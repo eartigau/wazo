@@ -94,11 +94,26 @@
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Afficher tout ✕
+            </button>
+        </div>
+        
+        
         <div class="masonry-grid">
             
             <div class="photo-card" 
                  data-index="0"
                  data-ml="34749121"
+                 data-location="Saddle Road - mile 22"
                  onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749121/480"
                      alt="Solitaire d'Hawaï"
@@ -111,6 +126,7 @@
             <div class="photo-card" 
                  data-index="1"
                  data-ml="22404851"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22404851/480"
                      alt="Pluvier fauve"
@@ -123,6 +139,7 @@
             <div class="photo-card" 
                  data-index="2"
                  data-ml="22404881"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22404881/480"
                      alt="Pluvier fauve"
@@ -135,6 +152,7 @@
             <div class="photo-card" 
                  data-index="3"
                  data-ml="22404901"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22404901/480"
                      alt="Pluvier fauve"
@@ -147,6 +165,7 @@
             <div class="photo-card" 
                  data-index="4"
                  data-ml="22404861"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22404861/480"
                      alt="Chevalier errant"
@@ -159,6 +178,7 @@
             <div class="photo-card" 
                  data-index="5"
                  data-ml="22404951"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22404951/480"
                      alt="Chevalier errant"
@@ -171,6 +191,7 @@
             <div class="photo-card" 
                  data-index="6"
                  data-ml="22404941"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22404941/480"
                      alt="Tournepierre à collier"
@@ -183,6 +204,7 @@
             <div class="photo-card" 
                  data-index="7"
                  data-ml="22405061"
+                 data-location="Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo"
                  onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22405061/480"
                      alt="Tournepierre à collier"
@@ -195,6 +217,7 @@
             <div class="photo-card" 
                  data-index="8"
                  data-ml="34743281"
+                 data-location="Kuʻu aliʻi Fishpond"
                  onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34743281/480"
                      alt="Pluvier fauve"
@@ -207,6 +230,7 @@
             <div class="photo-card" 
                  data-index="9"
                  data-ml="34743261"
+                 data-location="Kuʻu aliʻi Fishpond"
                  onclick="openLightbox(9)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34743261/480"
                      alt="Bihoreau gris"
@@ -219,6 +243,7 @@
             <div class="photo-card" 
                  data-index="10"
                  data-ml="34743321"
+                 data-location="Kuʻu aliʻi Fishpond"
                  onclick="openLightbox(10)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34743321/480"
                      alt="Sicale bouton-d'or"
@@ -294,6 +319,7 @@
                 name_en: "Omao",
                 scientific: "Myadestes obscurus",
                 family: "Turdidae (Thrushes and Allies)",
+                location: "Saddle Road - mile 22",
                 location_fr: "Saddle Road - mile 22, Hawaï, États-Unis",
                 location_en: "Saddle Road - mile 22, Hawaii, United States",
                 date_fr: "1<sup>er</sup> octobre 2015",
@@ -309,6 +335,7 @@
                 name_en: "Pacific Golden-Plover",
                 scientific: "Pluvialis fulva",
                 family: "Charadriidae (Plovers and Lapwings)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "30 septembre 2015",
@@ -324,6 +351,7 @@
                 name_en: "Pacific Golden-Plover",
                 scientific: "Pluvialis fulva",
                 family: "Charadriidae (Plovers and Lapwings)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "30 septembre 2015",
@@ -339,6 +367,7 @@
                 name_en: "Pacific Golden-Plover",
                 scientific: "Pluvialis fulva",
                 family: "Charadriidae (Plovers and Lapwings)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "30 septembre 2015",
@@ -354,6 +383,7 @@
                 name_en: "Wandering Tattler",
                 scientific: "Tringa incana",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "30 septembre 2015",
@@ -369,6 +399,7 @@
                 name_en: "Wandering Tattler",
                 scientific: "Tringa incana",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "30 septembre 2015",
@@ -384,6 +415,7 @@
                 name_en: "Ruddy Turnstone",
                 scientific: "Arenaria interpres",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "30 septembre 2015",
@@ -399,6 +431,7 @@
                 name_en: "Ruddy Turnstone",
                 scientific: "Arenaria interpres",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo",
                 location_fr: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaï, États-Unis",
                 location_en: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo, Hawaii, United States",
                 date_fr: "30 septembre 2015",
@@ -414,6 +447,7 @@
                 name_en: "Pacific Golden-Plover",
                 scientific: "Pluvialis fulva",
                 family: "Charadriidae (Plovers and Lapwings)",
+                location: "Kuʻu aliʻi Fishpond",
                 location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
                 location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
                 date_fr: "29 septembre 2015",
@@ -429,6 +463,7 @@
                 name_en: "Black-crowned Night Heron",
                 scientific: "Nycticorax nycticorax",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Kuʻu aliʻi Fishpond",
                 location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
                 location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
                 date_fr: "29 septembre 2015",
@@ -444,6 +479,7 @@
                 name_en: "Saffron Finch",
                 scientific: "Sicalis flaveola",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Kuʻu aliʻi Fishpond",
                 location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
                 location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
                 date_fr: "29 septembre 2015",
@@ -563,7 +599,7 @@
         });
 
         
-        // Carte du voyage
+        // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
             { lat: 19.686944, lng: -155.26833, name: "Saddle Road - mile 22" },
@@ -573,6 +609,61 @@
             { lat: 19.9150848, lng: -155.8867816, name: "Kuʻu aliʻi Fishpond" },
             
         ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
 
         if (tripLocations.length > 0) {
             // Créer la carte
@@ -594,13 +685,32 @@
                 popupAnchor: [0, -24]
             });
 
-            // Ajouter les marqueurs
+            // Ajouter les marqueurs avec compte de photos et filtrage
             const markers = [];
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
                 if (loc.name) {
-                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
                 marker.addTo(tripMap);
                 markers.push(marker);
             });

@@ -94,11 +94,26 @@
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Show all ✕
+            </button>
+        </div>
+        
+        
         <div class="masonry-grid">
             
             <div class="photo-card" 
                  data-index="0"
                  data-ml="434980971"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980971/480"
                      alt="Monk Parakeet"
@@ -111,6 +126,7 @@
             <div class="photo-card" 
                  data-index="1"
                  data-ml="439462841"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462841/480"
                      alt="Yellow-billed Pintail"
@@ -123,6 +139,7 @@
             <div class="photo-card" 
                  data-index="2"
                  data-ml="439462291"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462291/480"
                      alt="Eared Dove"
@@ -135,6 +152,7 @@
             <div class="photo-card" 
                  data-index="3"
                  data-ml="439463021"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463021/480"
                      alt="Spot-flanked Gallinule"
@@ -147,6 +165,7 @@
             <div class="photo-card" 
                  data-index="4"
                  data-ml="439462931"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462931/480"
                      alt="Great Egret"
@@ -159,6 +178,7 @@
             <div class="photo-card" 
                  data-index="5"
                  data-ml="439463381"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463381/480"
                      alt="Monk Parakeet"
@@ -171,6 +191,7 @@
             <div class="photo-card" 
                  data-index="6"
                  data-ml="439463161"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463161/480"
                      alt="Long-tailed Meadowlark"
@@ -183,6 +204,7 @@
             <div class="photo-card" 
                  data-index="7"
                  data-ml="439462321"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462321/480"
                      alt="Yellow-winged Blackbird"
@@ -195,6 +217,7 @@
             <div class="photo-card" 
                  data-index="8"
                  data-ml="439463111"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463111/480"
                      alt="Yellow-winged Blackbird"
@@ -207,6 +230,7 @@
             <div class="photo-card" 
                  data-index="9"
                  data-ml="515591081"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(9)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/515591081/480"
                      alt="Cordilleran Canastero"
@@ -219,6 +243,7 @@
             <div class="photo-card" 
                  data-index="10"
                  data-ml="438269671"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(10)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438269671/480"
                      alt="Andean Condor"
@@ -231,6 +256,7 @@
             <div class="photo-card" 
                  data-index="11"
                  data-ml="438269731"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(11)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438269731/480"
                      alt="Andean Condor"
@@ -243,6 +269,7 @@
             <div class="photo-card" 
                  data-index="12"
                  data-ml="438270041"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(12)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438270041/480"
                      alt="Moustached Turca"
@@ -255,6 +282,7 @@
             <div class="photo-card" 
                  data-index="13"
                  data-ml="438496191"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(13)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438496191/480"
                      alt="Rufous-naped Ground-Tyrant"
@@ -267,6 +295,7 @@
             <div class="photo-card" 
                  data-index="14"
                  data-ml="438270131"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(14)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438270131/480"
                      alt="Band-tailed Sierra Finch"
@@ -279,6 +308,7 @@
             <div class="photo-card" 
                  data-index="15"
                  data-ml="437828671"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(15)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437828671/480"
                      alt="Gray-hooded Sierra Finch"
@@ -291,6 +321,7 @@
             <div class="photo-card" 
                  data-index="16"
                  data-ml="437828851"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(16)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437828851/480"
                      alt="Mourning Sierra Finch"
@@ -303,6 +334,7 @@
             <div class="photo-card" 
                  data-index="17"
                  data-ml="437828701"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(17)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437828701/480"
                      alt="Band-tailed Sierra Finch"
@@ -315,6 +347,7 @@
             <div class="photo-card" 
                  data-index="18"
                  data-ml="437653841"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(18)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437653841/480"
                      alt="Mountain Caracara"
@@ -327,6 +360,7 @@
             <div class="photo-card" 
                  data-index="19"
                  data-ml="437664041"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(19)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437664041/480"
                      alt="Rufous-banded Miner"
@@ -339,6 +373,7 @@
             <div class="photo-card" 
                  data-index="20"
                  data-ml="437653441"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(20)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437653441/480"
                      alt="Diuca Finch"
@@ -351,6 +386,7 @@
             <div class="photo-card" 
                  data-index="21"
                  data-ml="437654381"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(21)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437654381/480"
                      alt="Mourning Sierra Finch"
@@ -363,6 +399,7 @@
             <div class="photo-card" 
                  data-index="22"
                  data-ml="437272671"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(22)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437272671/480"
                      alt="Rufous-banded Miner"
@@ -375,6 +412,7 @@
             <div class="photo-card" 
                  data-index="23"
                  data-ml="437830931"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(23)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437830931/480"
                      alt="Rufous-banded Miner"
@@ -387,6 +425,7 @@
             <div class="photo-card" 
                  data-index="24"
                  data-ml="437271541"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(24)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437271541/480"
                      alt="Black-billed Shrike-Tyrant"
@@ -399,6 +438,7 @@
             <div class="photo-card" 
                  data-index="25"
                  data-ml="438268161"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(25)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438268161/480"
                      alt="Mountain Caracara"
@@ -411,6 +451,7 @@
             <div class="photo-card" 
                  data-index="26"
                  data-ml="438266661"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(26)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438266661/480"
                      alt="Andean Condor"
@@ -423,6 +464,7 @@
             <div class="photo-card" 
                  data-index="27"
                  data-ml="438266741"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(27)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438266741/480"
                      alt="Andean Condor"
@@ -435,6 +477,7 @@
             <div class="photo-card" 
                  data-index="28"
                  data-ml="438266801"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(28)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438266801/480"
                      alt="Andean Condor"
@@ -447,6 +490,7 @@
             <div class="photo-card" 
                  data-index="29"
                  data-ml="436362131"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(29)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436362131/480"
                      alt="Rufous-banded Miner"
@@ -459,6 +503,7 @@
             <div class="photo-card" 
                  data-index="30"
                  data-ml="436162621"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(30)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436162621/480"
                      alt="Andean Condor"
@@ -471,6 +516,7 @@
             <div class="photo-card" 
                  data-index="31"
                  data-ml="436206411"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(31)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436206411/480"
                      alt="Black-billed Shrike-Tyrant"
@@ -483,6 +529,7 @@
             <div class="photo-card" 
                  data-index="32"
                  data-ml="436805121"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(32)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436805121/480"
                      alt="Rufous-collared Sparrow"
@@ -495,6 +542,7 @@
             <div class="photo-card" 
                  data-index="33"
                  data-ml="436806431"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(33)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436806431/480"
                      alt="Rufous-collared Sparrow"
@@ -507,6 +555,7 @@
             <div class="photo-card" 
                  data-index="34"
                  data-ml="436207251"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(34)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436207251/480"
                      alt="Gray-hooded Sierra Finch"
@@ -519,6 +568,7 @@
             <div class="photo-card" 
                  data-index="35"
                  data-ml="435657651"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(35)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435657651/480"
                      alt="Andean Condor"
@@ -531,6 +581,7 @@
             <div class="photo-card" 
                  data-index="36"
                  data-ml="435657901"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(36)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435657901/480"
                      alt="Andean Condor"
@@ -543,6 +594,7 @@
             <div class="photo-card" 
                  data-index="37"
                  data-ml="435658211"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(37)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435658211/480"
                      alt="Andean Condor"
@@ -555,6 +607,7 @@
             <div class="photo-card" 
                  data-index="38"
                  data-ml="435662121"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(38)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435662121/480"
                      alt="Mountain Caracara"
@@ -567,6 +620,7 @@
             <div class="photo-card" 
                  data-index="39"
                  data-ml="436940481"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(39)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436940481/480"
                      alt="Mountain Caracara"
@@ -579,6 +633,7 @@
             <div class="photo-card" 
                  data-index="40"
                  data-ml="435566741"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(40)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435566741/480"
                      alt="Cordilleran Canastero"
@@ -591,6 +646,7 @@
             <div class="photo-card" 
                  data-index="41"
                  data-ml="435568101"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(41)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435568101/480"
                      alt="Cordilleran Canastero"
@@ -603,6 +659,7 @@
             <div class="photo-card" 
                  data-index="42"
                  data-ml="435569551"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(42)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435569551/480"
                      alt="Cordilleran Canastero"
@@ -615,6 +672,7 @@
             <div class="photo-card" 
                  data-index="43"
                  data-ml="435571411"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(43)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435571411/480"
                      alt="Cordilleran Canastero"
@@ -627,6 +685,7 @@
             <div class="photo-card" 
                  data-index="44"
                  data-ml="435660381"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(44)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435660381/480"
                      alt="Cordilleran Canastero"
@@ -639,6 +698,7 @@
             <div class="photo-card" 
                  data-index="45"
                  data-ml="435253031"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(45)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435253031/480"
                      alt="Moustached Turca"
@@ -651,6 +711,7 @@
             <div class="photo-card" 
                  data-index="46"
                  data-ml="435253081"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(46)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435253081/480"
                      alt="Southern House Wren"
@@ -663,6 +724,7 @@
             <div class="photo-card" 
                  data-index="47"
                  data-ml="435252811"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(47)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252811/480"
                      alt="Gray-hooded Sierra Finch"
@@ -675,6 +737,7 @@
             <div class="photo-card" 
                  data-index="48"
                  data-ml="435252871"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(48)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252871/480"
                      alt="Gray-hooded Sierra Finch"
@@ -687,6 +750,7 @@
             <div class="photo-card" 
                  data-index="49"
                  data-ml="435252971"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(49)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252971/480"
                      alt="Diuca Finch"
@@ -699,6 +763,7 @@
             <div class="photo-card" 
                  data-index="50"
                  data-ml="435252881"
+                 data-location="Observatorio de La Silla"
                  onclick="openLightbox(50)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252881/480"
                      alt="Greater Yellow-Finch"
@@ -711,6 +776,7 @@
             <div class="photo-card" 
                  data-index="51"
                  data-ml="434981371"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(51)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981371/480"
                      alt="Yellow-billed Pintail"
@@ -723,6 +789,7 @@
             <div class="photo-card" 
                  data-index="52"
                  data-ml="435156771"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(52)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156771/480"
                      alt="Yellow-billed Pintail"
@@ -735,6 +802,7 @@
             <div class="photo-card" 
                  data-index="53"
                  data-ml="435156781"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(53)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156781/480"
                      alt="Yellow-billed Pintail"
@@ -747,6 +815,7 @@
             <div class="photo-card" 
                  data-index="54"
                  data-ml="435156831"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(54)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156831/480"
                      alt="Yellow-billed Teal"
@@ -759,6 +828,7 @@
             <div class="photo-card" 
                  data-index="55"
                  data-ml="435156841"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(55)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156841/480"
                      alt="Yellow-billed Teal"
@@ -771,6 +841,7 @@
             <div class="photo-card" 
                  data-index="56"
                  data-ml="434981361"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(56)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981361/480"
                      alt="Rock Pigeon"
@@ -783,6 +854,7 @@
             <div class="photo-card" 
                  data-index="57"
                  data-ml="434981221"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(57)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981221/480"
                      alt="Eared Dove"
@@ -795,6 +867,7 @@
             <div class="photo-card" 
                  data-index="58"
                  data-ml="435156961"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(58)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156961/480"
                      alt="Spot-flanked Gallinule"
@@ -807,6 +880,7 @@
             <div class="photo-card" 
                  data-index="59"
                  data-ml="435157081"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(59)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157081/480"
                      alt="Red-gartered Coot"
@@ -819,6 +893,7 @@
             <div class="photo-card" 
                  data-index="60"
                  data-ml="435156041"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(60)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156041/480"
                      alt="Southern Lapwing"
@@ -831,6 +906,7 @@
             <div class="photo-card" 
                  data-index="61"
                  data-ml="435157141"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(61)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157141/480"
                      alt="Snowy Egret"
@@ -843,6 +919,7 @@
             <div class="photo-card" 
                  data-index="62"
                  data-ml="435157131"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(62)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157131/480"
                      alt="Great Egret"
@@ -855,6 +932,7 @@
             <div class="photo-card" 
                  data-index="63"
                  data-ml="434981261"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(63)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981261/480"
                      alt="Variable Hawk"
@@ -867,6 +945,7 @@
             <div class="photo-card" 
                  data-index="64"
                  data-ml="434980911"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(64)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980911/480"
                      alt="Chimango Caracara"
@@ -879,6 +958,7 @@
             <div class="photo-card" 
                  data-index="65"
                  data-ml="435155891"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(65)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435155891/480"
                      alt="Chimango Caracara"
@@ -891,6 +971,7 @@
             <div class="photo-card" 
                  data-index="66"
                  data-ml="434980941"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(66)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980941/480"
                      alt="American Kestrel"
@@ -903,6 +984,7 @@
             <div class="photo-card" 
                  data-index="67"
                  data-ml="434980961"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(67)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980961/480"
                      alt="Monk Parakeet"
@@ -915,6 +997,7 @@
             <div class="photo-card" 
                  data-index="68"
                  data-ml="435155281"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(68)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435155281/480"
                      alt="Monk Parakeet"
@@ -927,6 +1010,7 @@
             <div class="photo-card" 
                  data-index="69"
                  data-ml="434981131"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(69)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981131/480"
                      alt="Patagonian Forest Earthcreeper"
@@ -939,6 +1023,7 @@
             <div class="photo-card" 
                  data-index="70"
                  data-ml="434981141"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(70)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981141/480"
                      alt="Patagonian Forest Earthcreeper"
@@ -951,6 +1036,7 @@
             <div class="photo-card" 
                  data-index="71"
                  data-ml="434981411"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(71)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981411/480"
                      alt="Rufous-tailed Plantcutter"
@@ -963,6 +1049,7 @@
             <div class="photo-card" 
                  data-index="72"
                  data-ml="435156261"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(72)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156261/480"
                      alt="Rufous-tailed Plantcutter"
@@ -975,6 +1062,7 @@
             <div class="photo-card" 
                  data-index="73"
                  data-ml="435156271"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(73)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156271/480"
                      alt="Rufous-tailed Plantcutter"
@@ -987,6 +1075,7 @@
             <div class="photo-card" 
                  data-index="74"
                  data-ml="435156301"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(74)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156301/480"
                      alt="Rufous-tailed Plantcutter"
@@ -999,6 +1088,7 @@
             <div class="photo-card" 
                  data-index="75"
                  data-ml="434981321"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(75)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981321/480"
                      alt="Chilean Mockingbird"
@@ -1011,6 +1101,7 @@
             <div class="photo-card" 
                  data-index="76"
                  data-ml="434980901"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(76)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980901/480"
                      alt="Austral Thrush"
@@ -1023,6 +1114,7 @@
             <div class="photo-card" 
                  data-index="77"
                  data-ml="434981181"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(77)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981181/480"
                      alt="Austral Thrush"
@@ -1035,6 +1127,7 @@
             <div class="photo-card" 
                  data-index="78"
                  data-ml="435156181"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(78)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156181/480"
                      alt="Rufous-collared Sparrow"
@@ -1047,6 +1140,7 @@
             <div class="photo-card" 
                  data-index="79"
                  data-ml="434981271"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(79)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981271/480"
                      alt="Long-tailed Meadowlark"
@@ -1059,6 +1153,7 @@
             <div class="photo-card" 
                  data-index="80"
                  data-ml="434981311"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(80)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981311/480"
                      alt="Long-tailed Meadowlark"
@@ -1071,6 +1166,7 @@
             <div class="photo-card" 
                  data-index="81"
                  data-ml="434981331"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(81)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981331/480"
                      alt="Shiny Cowbird"
@@ -1083,6 +1179,7 @@
             <div class="photo-card" 
                  data-index="82"
                  data-ml="435156561"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(82)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156561/480"
                      alt="Austral Blackbird"
@@ -1095,6 +1192,7 @@
             <div class="photo-card" 
                  data-index="83"
                  data-ml="435156601"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(83)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156601/480"
                      alt="Austral Blackbird"
@@ -1107,6 +1205,7 @@
             <div class="photo-card" 
                  data-index="84"
                  data-ml="435156611"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(84)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156611/480"
                      alt="Austral Blackbird"
@@ -1119,6 +1218,7 @@
             <div class="photo-card" 
                  data-index="85"
                  data-ml="434981011"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(85)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981011/480"
                      alt="Yellow-winged Blackbird"
@@ -1131,6 +1231,7 @@
             <div class="photo-card" 
                  data-index="86"
                  data-ml="435157951"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(86)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157951/480"
                      alt="Yellow-winged Blackbird"
@@ -1143,6 +1244,7 @@
             <div class="photo-card" 
                  data-index="87"
                  data-ml="435157961"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(87)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157961/480"
                      alt="Yellow-winged Blackbird"
@@ -1155,6 +1257,7 @@
             <div class="photo-card" 
                  data-index="88"
                  data-ml="435156631"
+                 data-location="Parque Bicentenario de Vitacura"
                  onclick="openLightbox(88)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156631/480"
                      alt="Diuca Finch"
@@ -1230,6 +1333,7 @@
                 name_en: "Monk Parakeet",
                 scientific: "Myiopsitta monachus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -1245,6 +1349,7 @@
                 name_en: "Yellow-billed Pintail",
                 scientific: "Anas georgica",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1260,6 +1365,7 @@
                 name_en: "Eared Dove",
                 scientific: "Zenaida auriculata",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1275,6 +1381,7 @@
                 name_en: "Spot-flanked Gallinule",
                 scientific: "Porphyriops melanops",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1290,6 +1397,7 @@
                 name_en: "Great Egret",
                 scientific: "Ardea alba",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1305,6 +1413,7 @@
                 name_en: "Monk Parakeet",
                 scientific: "Myiopsitta monachus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1320,6 +1429,7 @@
                 name_en: "Long-tailed Meadowlark",
                 scientific: "Leistes loyca",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1335,6 +1445,7 @@
                 name_en: "Yellow-winged Blackbird",
                 scientific: "Agelasticus thilius",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1350,6 +1461,7 @@
                 name_en: "Yellow-winged Blackbird",
                 scientific: "Agelasticus thilius",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "23 avril 2022",
@@ -1365,6 +1477,7 @@
                 name_en: "Cordilleran Canastero",
                 scientific: "Asthenes modesta",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "22 avril 2022",
@@ -1380,6 +1493,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "21 avril 2022",
@@ -1395,6 +1509,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "21 avril 2022",
@@ -1410,6 +1525,7 @@
                 name_en: "Moustached Turca",
                 scientific: "Pteroptochos megapodius",
                 family: "Rhinocryptidae (Tapaculos)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "21 avril 2022",
@@ -1425,6 +1541,7 @@
                 name_en: "Rufous-naped Ground-Tyrant",
                 scientific: "Muscisaxicola rufivertex",
                 family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "21 avril 2022",
@@ -1440,6 +1557,7 @@
                 name_en: "Band-tailed Sierra Finch",
                 scientific: "Rhopospina alaudina",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "21 avril 2022",
@@ -1455,6 +1573,7 @@
                 name_en: "Gray-hooded Sierra Finch",
                 scientific: "Phrygilus gayi",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "20 avril 2022",
@@ -1470,6 +1589,7 @@
                 name_en: "Mourning Sierra Finch",
                 scientific: "Rhopospina fruticeti",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "20 avril 2022",
@@ -1485,6 +1605,7 @@
                 name_en: "Band-tailed Sierra Finch",
                 scientific: "Rhopospina alaudina",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "20 avril 2022",
@@ -1500,6 +1621,7 @@
                 name_en: "Mountain Caracara",
                 scientific: "Daptrius megalopterus",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "19 avril 2022",
@@ -1515,6 +1637,7 @@
                 name_en: "Rufous-banded Miner",
                 scientific: "Geositta rufipennis",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "19 avril 2022",
@@ -1530,6 +1653,7 @@
                 name_en: "Diuca Finch",
                 scientific: "Diuca diuca",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "19 avril 2022",
@@ -1545,6 +1669,7 @@
                 name_en: "Mourning Sierra Finch",
                 scientific: "Rhopospina fruticeti",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "19 avril 2022",
@@ -1560,6 +1685,7 @@
                 name_en: "Rufous-banded Miner",
                 scientific: "Geositta rufipennis",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "18 avril 2022",
@@ -1575,6 +1701,7 @@
                 name_en: "Rufous-banded Miner",
                 scientific: "Geositta rufipennis",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "18 avril 2022",
@@ -1590,6 +1717,7 @@
                 name_en: "Black-billed Shrike-Tyrant",
                 scientific: "Agriornis montanus",
                 family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "18 avril 2022",
@@ -1605,6 +1733,7 @@
                 name_en: "Mountain Caracara",
                 scientific: "Daptrius megalopterus",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "17 avril 2022",
@@ -1620,6 +1749,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "16 avril 2022",
@@ -1635,6 +1765,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "16 avril 2022",
@@ -1650,6 +1781,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "16 avril 2022",
@@ -1665,6 +1797,7 @@
                 name_en: "Rufous-banded Miner",
                 scientific: "Geositta rufipennis",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "16 avril 2022",
@@ -1680,6 +1813,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "15 avril 2022",
@@ -1695,6 +1829,7 @@
                 name_en: "Black-billed Shrike-Tyrant",
                 scientific: "Agriornis montanus",
                 family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "15 avril 2022",
@@ -1710,6 +1845,7 @@
                 name_en: "Rufous-collared Sparrow",
                 scientific: "Zonotrichia capensis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "15 avril 2022",
@@ -1725,6 +1861,7 @@
                 name_en: "Rufous-collared Sparrow",
                 scientific: "Zonotrichia capensis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "15 avril 2022",
@@ -1740,6 +1877,7 @@
                 name_en: "Gray-hooded Sierra Finch",
                 scientific: "Phrygilus gayi",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "15 avril 2022",
@@ -1755,6 +1893,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1770,6 +1909,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1785,6 +1925,7 @@
                 name_en: "Andean Condor",
                 scientific: "Vultur gryphus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1800,6 +1941,7 @@
                 name_en: "Mountain Caracara",
                 scientific: "Daptrius megalopterus",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1815,6 +1957,7 @@
                 name_en: "Mountain Caracara",
                 scientific: "Daptrius megalopterus",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1830,6 +1973,7 @@
                 name_en: "Cordilleran Canastero",
                 scientific: "Asthenes modesta",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1845,6 +1989,7 @@
                 name_en: "Cordilleran Canastero",
                 scientific: "Asthenes modesta",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1860,6 +2005,7 @@
                 name_en: "Cordilleran Canastero",
                 scientific: "Asthenes modesta",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1875,6 +2021,7 @@
                 name_en: "Cordilleran Canastero",
                 scientific: "Asthenes modesta",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1890,6 +2037,7 @@
                 name_en: "Cordilleran Canastero",
                 scientific: "Asthenes modesta",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "14 avril 2022",
@@ -1905,6 +2053,7 @@
                 name_en: "Moustached Turca",
                 scientific: "Pteroptochos megapodius",
                 family: "Rhinocryptidae (Tapaculos)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "13 avril 2022",
@@ -1920,6 +2069,7 @@
                 name_en: "Southern House Wren",
                 scientific: "Troglodytes musculus",
                 family: "Troglodytidae (Wrens)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "13 avril 2022",
@@ -1935,6 +2085,7 @@
                 name_en: "Gray-hooded Sierra Finch",
                 scientific: "Phrygilus gayi",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "13 avril 2022",
@@ -1950,6 +2101,7 @@
                 name_en: "Gray-hooded Sierra Finch",
                 scientific: "Phrygilus gayi",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "13 avril 2022",
@@ -1965,6 +2117,7 @@
                 name_en: "Diuca Finch",
                 scientific: "Diuca diuca",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "13 avril 2022",
@@ -1980,6 +2133,7 @@
                 name_en: "Greater Yellow-Finch",
                 scientific: "Sicalis auriventris",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Observatorio de La Silla",
                 location_fr: "Observatorio de La Silla, Coquimbo, Chili",
                 location_en: "Observatorio de La Silla, Coquimbo, Chile",
                 date_fr: "13 avril 2022",
@@ -1995,6 +2149,7 @@
                 name_en: "Yellow-billed Pintail",
                 scientific: "Anas georgica",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2010,6 +2165,7 @@
                 name_en: "Yellow-billed Pintail",
                 scientific: "Anas georgica",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2025,6 +2181,7 @@
                 name_en: "Yellow-billed Pintail",
                 scientific: "Anas georgica",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2040,6 +2197,7 @@
                 name_en: "Yellow-billed Teal",
                 scientific: "Anas flavirostris",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2055,6 +2213,7 @@
                 name_en: "Yellow-billed Teal",
                 scientific: "Anas flavirostris",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2070,6 +2229,7 @@
                 name_en: "Rock Pigeon",
                 scientific: "Columba livia (Feral Pigeon)",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2085,6 +2245,7 @@
                 name_en: "Eared Dove",
                 scientific: "Zenaida auriculata",
                 family: "Columbidae (Pigeons and Doves)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2100,6 +2261,7 @@
                 name_en: "Spot-flanked Gallinule",
                 scientific: "Porphyriops melanops",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2115,6 +2277,7 @@
                 name_en: "Red-gartered Coot",
                 scientific: "Fulica armillata",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2130,6 +2293,7 @@
                 name_en: "Southern Lapwing",
                 scientific: "Vanellus chilensis",
                 family: "Charadriidae (Plovers and Lapwings)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2145,6 +2309,7 @@
                 name_en: "Snowy Egret",
                 scientific: "Egretta thula",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2160,6 +2325,7 @@
                 name_en: "Great Egret",
                 scientific: "Ardea alba",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2175,6 +2341,7 @@
                 name_en: "Variable Hawk",
                 scientific: "Geranoaetus polyosoma",
                 family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2190,6 +2357,7 @@
                 name_en: "Chimango Caracara",
                 scientific: "Daptrius chimango",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2205,6 +2373,7 @@
                 name_en: "Chimango Caracara",
                 scientific: "Daptrius chimango",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2220,6 +2389,7 @@
                 name_en: "American Kestrel",
                 scientific: "Falco sparverius",
                 family: "Falconidae (Falcons and Caracaras)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2235,6 +2405,7 @@
                 name_en: "Monk Parakeet",
                 scientific: "Myiopsitta monachus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2250,6 +2421,7 @@
                 name_en: "Monk Parakeet",
                 scientific: "Myiopsitta monachus",
                 family: "Psittacidae (New World and African Parrots)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2265,6 +2437,7 @@
                 name_en: "Patagonian Forest Earthcreeper",
                 scientific: "Upucerthia saturatior",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2280,6 +2453,7 @@
                 name_en: "Patagonian Forest Earthcreeper",
                 scientific: "Upucerthia saturatior",
                 family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2295,6 +2469,7 @@
                 name_en: "Rufous-tailed Plantcutter",
                 scientific: "Phytotoma rara",
                 family: "Cotingidae (Cotingas)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2310,6 +2485,7 @@
                 name_en: "Rufous-tailed Plantcutter",
                 scientific: "Phytotoma rara",
                 family: "Cotingidae (Cotingas)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2325,6 +2501,7 @@
                 name_en: "Rufous-tailed Plantcutter",
                 scientific: "Phytotoma rara",
                 family: "Cotingidae (Cotingas)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2340,6 +2517,7 @@
                 name_en: "Rufous-tailed Plantcutter",
                 scientific: "Phytotoma rara",
                 family: "Cotingidae (Cotingas)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2355,6 +2533,7 @@
                 name_en: "Chilean Mockingbird",
                 scientific: "Mimus thenca",
                 family: "Mimidae (Mockingbirds and Thrashers)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2370,6 +2549,7 @@
                 name_en: "Austral Thrush",
                 scientific: "Turdus falcklandii",
                 family: "Turdidae (Thrushes and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2385,6 +2565,7 @@
                 name_en: "Austral Thrush",
                 scientific: "Turdus falcklandii",
                 family: "Turdidae (Thrushes and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2400,6 +2581,7 @@
                 name_en: "Rufous-collared Sparrow",
                 scientific: "Zonotrichia capensis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2415,6 +2597,7 @@
                 name_en: "Long-tailed Meadowlark",
                 scientific: "Leistes loyca",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2430,6 +2613,7 @@
                 name_en: "Long-tailed Meadowlark",
                 scientific: "Leistes loyca",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2445,6 +2629,7 @@
                 name_en: "Shiny Cowbird",
                 scientific: "Molothrus bonariensis",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2460,6 +2645,7 @@
                 name_en: "Austral Blackbird",
                 scientific: "Curaeus curaeus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2475,6 +2661,7 @@
                 name_en: "Austral Blackbird",
                 scientific: "Curaeus curaeus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2490,6 +2677,7 @@
                 name_en: "Austral Blackbird",
                 scientific: "Curaeus curaeus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2505,6 +2693,7 @@
                 name_en: "Yellow-winged Blackbird",
                 scientific: "Agelasticus thilius",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2520,6 +2709,7 @@
                 name_en: "Yellow-winged Blackbird",
                 scientific: "Agelasticus thilius",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2535,6 +2725,7 @@
                 name_en: "Yellow-winged Blackbird",
                 scientific: "Agelasticus thilius",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2550,6 +2741,7 @@
                 name_en: "Diuca Finch",
                 scientific: "Diuca diuca",
                 family: "Thraupidae (Tanagers and Allies)",
+                location: "Parque Bicentenario de Vitacura",
                 location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
                 location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
@@ -2669,7 +2861,7 @@
         });
 
         
-        // Carte du voyage
+        // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
             { lat: -33.3980197, lng: -70.6022, name: "Parque Bicentenario de Vitacura" },
@@ -2677,6 +2869,61 @@
             { lat: -29.2562225, lng: -70.7383406, name: "Observatorio de La Silla" },
             
         ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
 
         if (tripLocations.length > 0) {
             // Créer la carte
@@ -2698,13 +2945,32 @@
                 popupAnchor: [0, -24]
             });
 
-            // Ajouter les marqueurs
+            // Ajouter les marqueurs avec compte de photos et filtrage
             const markers = [];
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
                 if (loc.name) {
-                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
                 marker.addTo(tripMap);
                 markers.push(marker);
             });

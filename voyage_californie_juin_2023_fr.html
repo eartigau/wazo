@@ -94,11 +94,26 @@
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Afficher tout ✕
+            </button>
+        </div>
+        
+        
         <div class="masonry-grid">
             
             <div class="photo-card" 
                  data-index="0"
                  data-ml="601235391"
+                 data-location="Santa Barbara Harbor"
                  onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601235391/480"
                      alt="Tournepierre noir"
@@ -111,6 +126,7 @@
             <div class="photo-card" 
                  data-index="1"
                  data-ml="599974511"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974511/480"
                      alt="Râle de Californie"
@@ -123,6 +139,7 @@
             <div class="photo-card" 
                  data-index="2"
                  data-ml="601391361"
+                 data-location="Santa Barbara Harbor"
                  onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601391361/480"
                      alt="Chevalier errant"
@@ -135,6 +152,7 @@
             <div class="photo-card" 
                  data-index="3"
                  data-ml="601236091"
+                 data-location="Santa Barbara Harbor"
                  onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601236091/480"
                      alt="Tournepierre noir"
@@ -147,6 +165,7 @@
             <div class="photo-card" 
                  data-index="4"
                  data-ml="601236471"
+                 data-location="Santa Barbara Harbor"
                  onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601236471/480"
                      alt="Tournepierre noir"
@@ -159,6 +178,7 @@
             <div class="photo-card" 
                  data-index="5"
                  data-ml="601237031"
+                 data-location="Santa Barbara Harbor"
                  onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601237031/480"
                      alt="Tournepierre noir"
@@ -171,6 +191,7 @@
             <div class="photo-card" 
                  data-index="6"
                  data-ml="601391321"
+                 data-location="Santa Barbara Harbor"
                  onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601391321/480"
                      alt="Tournepierre noir"
@@ -183,6 +204,7 @@
             <div class="photo-card" 
                  data-index="7"
                  data-ml="601391601"
+                 data-location="Zaca Station Rd."
                  onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601391601/480"
                      alt="Pie à bec jaune"
@@ -195,6 +217,7 @@
             <div class="photo-card" 
                  data-index="8"
                  data-ml="601391621"
+                 data-location="Zaca Station Rd."
                  onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/601391621/480"
                      alt="Pie à bec jaune"
@@ -207,6 +230,7 @@
             <div class="photo-card" 
                  data-index="9"
                  data-ml="600761931"
+                 data-location="Pt. Piedras Blancas"
                  onclick="openLightbox(9)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600761931/480"
                      alt="Tournepierre noir"
@@ -219,6 +243,7 @@
             <div class="photo-card" 
                  data-index="10"
                  data-ml="600762191"
+                 data-location="Pt. Piedras Blancas"
                  onclick="openLightbox(10)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600762191/480"
                      alt="Tournepierre noir"
@@ -231,6 +256,7 @@
             <div class="photo-card" 
                  data-index="11"
                  data-ml="600761791"
+                 data-location="Pt. Piedras Blancas"
                  onclick="openLightbox(11)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600761791/480"
                      alt="Cormoran de Brandt"
@@ -243,6 +269,7 @@
             <div class="photo-card" 
                  data-index="12"
                  data-ml="600762431"
+                 data-location="Pt. Piedras Blancas"
                  onclick="openLightbox(12)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600762431/480"
                      alt="Urubu à tête rouge"
@@ -255,6 +282,7 @@
             <div class="photo-card" 
                  data-index="13"
                  data-ml="600761231"
+                 data-location="Green Valley Road"
                  onclick="openLightbox(13)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600761231/480"
                      alt="Aigle royal"
@@ -267,6 +295,7 @@
             <div class="photo-card" 
                  data-index="14"
                  data-ml="600759791"
+                 data-location="Big Sur coast"
                  onclick="openLightbox(14)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600759791/480"
                      alt="Condor de Californie"
@@ -279,6 +308,7 @@
             <div class="photo-card" 
                  data-index="15"
                  data-ml="600161591"
+                 data-location="San Francisco Maritime NHP"
                  onclick="openLightbox(15)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600161591/480"
                      alt="Goéland de Heermann"
@@ -291,6 +321,7 @@
             <div class="photo-card" 
                  data-index="16"
                  data-ml="600161601"
+                 data-location="San Francisco Maritime NHP"
                  onclick="openLightbox(16)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600161601/480"
                      alt="Goéland de Heermann"
@@ -303,6 +334,7 @@
             <div class="photo-card" 
                  data-index="17"
                  data-ml="600161571"
+                 data-location="San Francisco Maritime NHP"
                  onclick="openLightbox(17)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600161571/480"
                      alt="Goéland de Californie"
@@ -315,6 +347,7 @@
             <div class="photo-card" 
                  data-index="18"
                  data-ml="600161581"
+                 data-location="San Francisco Maritime NHP"
                  onclick="openLightbox(18)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/600161581/480"
                      alt="Grand Héron"
@@ -327,6 +360,7 @@
             <div class="photo-card" 
                  data-index="19"
                  data-ml="599901291"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(19)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599901291/480"
                      alt="Râle de Californie"
@@ -339,6 +373,7 @@
             <div class="photo-card" 
                  data-index="20"
                  data-ml="599901311"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(20)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599901311/480"
                      alt="Râle de Californie"
@@ -351,6 +386,7 @@
             <div class="photo-card" 
                  data-index="21"
                  data-ml="599974461"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(21)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974461/480"
                      alt="Râle de Californie"
@@ -363,6 +399,7 @@
             <div class="photo-card" 
                  data-index="22"
                  data-ml="599974471"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(22)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974471/480"
                      alt="Râle de Californie"
@@ -375,6 +412,7 @@
             <div class="photo-card" 
                  data-index="23"
                  data-ml="599974481"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(23)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974481/480"
                      alt="Râle de Californie"
@@ -387,6 +425,7 @@
             <div class="photo-card" 
                  data-index="24"
                  data-ml="599974491"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(24)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974491/480"
                      alt="Râle de Californie"
@@ -399,6 +438,7 @@
             <div class="photo-card" 
                  data-index="25"
                  data-ml="599974501"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(25)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974501/480"
                      alt="Râle de Californie"
@@ -411,6 +451,7 @@
             <div class="photo-card" 
                  data-index="26"
                  data-ml="599974521"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(26)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974521/480"
                      alt="Râle de Californie"
@@ -423,6 +464,7 @@
             <div class="photo-card" 
                  data-index="27"
                  data-ml="599974551"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(27)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974551/480"
                      alt="Râle de Californie"
@@ -435,6 +477,7 @@
             <div class="photo-card" 
                  data-index="28"
                  data-ml="599901351"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(28)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599901351/480"
                      alt="Courlis à long bec"
@@ -447,6 +490,7 @@
             <div class="photo-card" 
                  data-index="29"
                  data-ml="599900381"
+                 data-location="Rodeo Lagoon (including beach and offshore)"
                  onclick="openLightbox(29)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599900381/480"
                      alt="Goéland de Heermann"
@@ -459,6 +503,7 @@
             <div class="photo-card" 
                  data-index="30"
                  data-ml="599900791"
+                 data-location="Golden Gate View Point"
                  onclick="openLightbox(30)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599900791/480"
                      alt="Buse à queue rousse"
@@ -471,6 +516,7 @@
             <div class="photo-card" 
                  data-index="31"
                  data-ml="599886571"
+                 data-location="Golden Gate View Point"
                  onclick="openLightbox(31)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599886571/480"
                      alt="Cama brune"
@@ -483,6 +529,7 @@
             <div class="photo-card" 
                  data-index="32"
                  data-ml="599887001"
+                 data-location="Golden Gate View Point"
                  onclick="openLightbox(32)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599887001/480"
                      alt="Cama brune"
@@ -495,6 +542,7 @@
             <div class="photo-card" 
                  data-index="33"
                  data-ml="599885991"
+                 data-location="Rodeo Lagoon (including beach and offshore)"
                  onclick="openLightbox(33)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599885991/480"
                      alt="Bruant à couronne blanche"
@@ -507,6 +555,7 @@
             <div class="photo-card" 
                  data-index="34"
                  data-ml="599610061"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(34)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599610061/480"
                      alt="Guillemot colombin"
@@ -519,6 +568,7 @@
             <div class="photo-card" 
                  data-index="35"
                  data-ml="599609791"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(35)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609791/480"
                      alt="Cormoran de Brandt"
@@ -531,6 +581,7 @@
             <div class="photo-card" 
                  data-index="36"
                  data-ml="599609831"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(36)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609831/480"
                      alt="Cormoran de Brandt"
@@ -543,6 +594,7 @@
             <div class="photo-card" 
                  data-index="37"
                  data-ml="599609851"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(37)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609851/480"
                      alt="Cormoran de Brandt"
@@ -555,6 +607,7 @@
             <div class="photo-card" 
                  data-index="38"
                  data-ml="599609871"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(38)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609871/480"
                      alt="Cormoran de Brandt"
@@ -567,6 +620,7 @@
             <div class="photo-card" 
                  data-index="39"
                  data-ml="599609881"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(39)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609881/480"
                      alt="Cormoran de Brandt"
@@ -579,6 +633,7 @@
             <div class="photo-card" 
                  data-index="40"
                  data-ml="599609891"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(40)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609891/480"
                      alt="Cormoran de Brandt"
@@ -591,6 +646,7 @@
             <div class="photo-card" 
                  data-index="41"
                  data-ml="599609911"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(41)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609911/480"
                      alt="Cormoran de Brandt"
@@ -603,6 +659,7 @@
             <div class="photo-card" 
                  data-index="42"
                  data-ml="599609921"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(42)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609921/480"
                      alt="Cormoran de Brandt"
@@ -615,6 +672,7 @@
             <div class="photo-card" 
                  data-index="43"
                  data-ml="599610011"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(43)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599610011/480"
                      alt="Cormoran de Brandt"
@@ -627,6 +685,7 @@
             <div class="photo-card" 
                  data-index="44"
                  data-ml="599609771"
+                 data-location="Alcatraz Island"
                  onclick="openLightbox(44)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599609771/480"
                      alt="Aigrette neigeuse"
@@ -639,6 +698,7 @@
             <div class="photo-card" 
                  data-index="45"
                  data-ml="599618111"
+                 data-location="MLK Jr. Regional Shoreline"
                  onclick="openLightbox(45)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599618111/480"
                      alt="Hirondelle rustique"
@@ -651,6 +711,7 @@
             <div class="photo-card" 
                  data-index="46"
                  data-ml="598290261"
+                 data-location="Yosemite Valley"
                  onclick="openLightbox(46)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598290261/480"
                      alt="Colibri d'Anna"
@@ -663,6 +724,7 @@
             <div class="photo-card" 
                  data-index="47"
                  data-ml="598288891"
+                 data-location="Yosemite Valley"
                  onclick="openLightbox(47)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598288891/480"
                      alt="Viréo de Cassin"
@@ -675,6 +737,7 @@
             <div class="photo-card" 
                  data-index="48"
                  data-ml="598310281"
+                 data-location="Yosemite Valley"
                  onclick="openLightbox(48)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598310281/480"
                      alt="Viréo de Cassin"
@@ -687,6 +750,7 @@
             <div class="photo-card" 
                  data-index="49"
                  data-ml="598309601"
+                 data-location="49672 High School Road, Oakhurst"
                  onclick="openLightbox(49)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598309601/480"
                      alt="Geai buissonnier"
@@ -699,6 +763,7 @@
             <div class="photo-card" 
                  data-index="50"
                  data-ml="598309891"
+                 data-location="49672 High School Road, Oakhurst"
                  onclick="openLightbox(50)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598309891/480"
                      alt="Geai buissonnier"
@@ -711,6 +776,7 @@
             <div class="photo-card" 
                  data-index="51"
                  data-ml="598310941"
+                 data-location="Yosemite Valley"
                  onclick="openLightbox(51)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598310941/480"
                      alt="Grand Corbeau"
@@ -723,6 +789,7 @@
             <div class="photo-card" 
                  data-index="52"
                  data-ml="598284931"
+                 data-location="49672 High School Road, Oakhurst"
                  onclick="openLightbox(52)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598284931/480"
                      alt="Merlebleu de l'Ouest"
@@ -735,6 +802,7 @@
             <div class="photo-card" 
                  data-index="53"
                  data-ml="598036731"
+                 data-location="Yosemite NP"
                  onclick="openLightbox(53)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598036731/480"
                      alt="Pic à tête blanche"
@@ -747,6 +815,7 @@
             <div class="photo-card" 
                  data-index="54"
                  data-ml="598036741"
+                 data-location="Yosemite NP"
                  onclick="openLightbox(54)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598036741/480"
                      alt="Pic à tête blanche"
@@ -759,6 +828,7 @@
             <div class="photo-card" 
                  data-index="55"
                  data-ml="598053721"
+                 data-location="Yosemite NP"
                  onclick="openLightbox(55)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598053721/480"
                      alt="Geai de Steller"
@@ -771,6 +841,7 @@
             <div class="photo-card" 
                  data-index="56"
                  data-ml="598055341"
+                 data-location="Yosemite NP"
                  onclick="openLightbox(56)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598055341/480"
                      alt="Geai de Steller"
@@ -783,6 +854,7 @@
             <div class="photo-card" 
                  data-index="57"
                  data-ml="598052811"
+                 data-location="Yosemite NP"
                  onclick="openLightbox(57)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598052811/480"
                      alt="Grand Corbeau"
@@ -795,6 +867,7 @@
             <div class="photo-card" 
                  data-index="58"
                  data-ml="598053341"
+                 data-location="Yosemite NP"
                  onclick="openLightbox(58)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598053341/480"
                      alt="Grand Corbeau"
@@ -807,6 +880,7 @@
             <div class="photo-card" 
                  data-index="59"
                  data-ml="598053051"
+                 data-location="Yosemite NP"
                  onclick="openLightbox(59)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598053051/480"
                      alt="Quiscale de Brewer"
@@ -819,6 +893,7 @@
             <div class="photo-card" 
                  data-index="60"
                  data-ml="597788411"
+                 data-location="12658 Renville St"
                  onclick="openLightbox(60)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597788411/480"
                      alt="Colibri d'Allen"
@@ -831,6 +906,7 @@
             <div class="photo-card" 
                  data-index="61"
                  data-ml="609974341"
+                 data-location="Woodward Park"
                  onclick="openLightbox(61)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/609974341/480"
                      alt="Hirondelle rustique"
@@ -843,6 +919,7 @@
             <div class="photo-card" 
                  data-index="62"
                  data-ml="597527821"
+                 data-location="Bolsa Chica"
                  onclick="openLightbox(62)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597527821/480"
                      alt="Pluvier kildir"
@@ -855,6 +932,7 @@
             <div class="photo-card" 
                  data-index="63"
                  data-ml="597527811"
+                 data-location="Bolsa Chica"
                  onclick="openLightbox(63)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597527811/480"
                      alt="Bruant des prés"
@@ -867,6 +945,7 @@
             <div class="photo-card" 
                  data-index="64"
                  data-ml="597527841"
+                 data-location="Bolsa Chica"
                  onclick="openLightbox(64)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597527841/480"
                      alt="Bruant des prés"
@@ -879,6 +958,7 @@
             <div class="photo-card" 
                  data-index="65"
                  data-ml="597242761"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(65)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597242761/480"
                      alt="Oie de la toundra"
@@ -891,6 +971,7 @@
             <div class="photo-card" 
                  data-index="66"
                  data-ml="597243021"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(66)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597243021/480"
                      alt="Oie de la toundra"
@@ -903,6 +984,7 @@
             <div class="photo-card" 
                  data-index="67"
                  data-ml="597243671"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(67)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597243671/480"
                      alt="Oie de la toundra"
@@ -915,6 +997,7 @@
             <div class="photo-card" 
                  data-index="68"
                  data-ml="597244251"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(68)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597244251/480"
                      alt="Oie de la toundra"
@@ -927,6 +1010,7 @@
             <div class="photo-card" 
                  data-index="69"
                  data-ml="597244531"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(69)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597244531/480"
                      alt="Oie de la toundra"
@@ -939,6 +1023,7 @@
             <div class="photo-card" 
                  data-index="70"
                  data-ml="597054591"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(70)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597054591/480"
                      alt="Ouette d'Égypte"
@@ -951,6 +1036,7 @@
             <div class="photo-card" 
                  data-index="71"
                  data-ml="597242251"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(71)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597242251/480"
                      alt="Colibri d'Allen"
@@ -963,6 +1049,7 @@
             <div class="photo-card" 
                  data-index="72"
                  data-ml="597250161"
+                 data-location="Earvin Magic Johnson Park"
                  onclick="openLightbox(72)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/597250161/480"
                      alt="Roselin familier"
@@ -975,6 +1062,7 @@
             <div class="photo-card" 
                  data-index="73"
                  data-ml="596429671"
+                 data-location="El Dorado Regional Park"
                  onclick="openLightbox(73)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596429671/480"
                      alt="Pic mineur"
@@ -987,6 +1075,7 @@
             <div class="photo-card" 
                  data-index="74"
                  data-ml="596430031"
+                 data-location="El Dorado Regional Park"
                  onclick="openLightbox(74)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596430031/480"
                      alt="Moucherolle noir"
@@ -999,6 +1088,7 @@
             <div class="photo-card" 
                  data-index="75"
                  data-ml="596428981"
+                 data-location="El Dorado Regional Park"
                  onclick="openLightbox(75)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596428981/480"
                      alt="Tyran de Cassin"
@@ -1011,6 +1101,7 @@
             <div class="photo-card" 
                  data-index="76"
                  data-ml="596419131"
+                 data-location="El Dorado Regional Park"
                  onclick="openLightbox(76)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596419131/480"
                      alt="Merlebleu de l'Ouest"
@@ -1023,6 +1114,7 @@
             <div class="photo-card" 
                  data-index="77"
                  data-ml="596419841"
+                 data-location="El Dorado Regional Park"
                  onclick="openLightbox(77)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596419841/480"
                      alt="Oriole masqué"
@@ -1035,6 +1127,7 @@
             <div class="photo-card" 
                  data-index="78"
                  data-ml="596420341"
+                 data-location="El Dorado Regional Park"
                  onclick="openLightbox(78)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596420341/480"
                      alt="Oriole masqué"
@@ -1047,6 +1140,7 @@
             <div class="photo-card" 
                  data-index="79"
                  data-ml="596423541"
+                 data-location="El Dorado Regional Park"
                  onclick="openLightbox(79)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596423541/480"
                      alt="Oriole masqué"
@@ -1059,6 +1153,7 @@
             <div class="photo-card" 
                  data-index="80"
                  data-ml="596574901"
+                 data-location="Don Knabe Community Regional Park"
                  onclick="openLightbox(80)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596574901/480"
                      alt="Ouette d'Égypte"
@@ -1071,6 +1166,7 @@
             <div class="photo-card" 
                  data-index="81"
                  data-ml="596417611"
+                 data-location="Don Knabe Community Regional Park"
                  onclick="openLightbox(81)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/596417611/480"
                      alt="Colibri d'Allen"
@@ -1146,6 +1242,7 @@
                 name_en: "Black Turnstone",
                 scientific: "Arenaria melanocephala",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Santa Barbara Harbor",
                 location_fr: "Santa Barbara Harbor, Californie, États-Unis",
                 location_en: "Santa Barbara Harbor, California, United States",
                 date_fr: "6 août 2023",
@@ -1161,6 +1258,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1176,6 +1274,7 @@
                 name_en: "Wandering Tattler",
                 scientific: "Tringa incana",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Santa Barbara Harbor",
                 location_fr: "Santa Barbara Harbor, Californie, États-Unis",
                 location_en: "Santa Barbara Harbor, California, United States",
                 date_fr: "6 août 2023",
@@ -1191,6 +1290,7 @@
                 name_en: "Black Turnstone",
                 scientific: "Arenaria melanocephala",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Santa Barbara Harbor",
                 location_fr: "Santa Barbara Harbor, Californie, États-Unis",
                 location_en: "Santa Barbara Harbor, California, United States",
                 date_fr: "6 août 2023",
@@ -1206,6 +1306,7 @@
                 name_en: "Black Turnstone",
                 scientific: "Arenaria melanocephala",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Santa Barbara Harbor",
                 location_fr: "Santa Barbara Harbor, Californie, États-Unis",
                 location_en: "Santa Barbara Harbor, California, United States",
                 date_fr: "6 août 2023",
@@ -1221,6 +1322,7 @@
                 name_en: "Black Turnstone",
                 scientific: "Arenaria melanocephala",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Santa Barbara Harbor",
                 location_fr: "Santa Barbara Harbor, Californie, États-Unis",
                 location_en: "Santa Barbara Harbor, California, United States",
                 date_fr: "6 août 2023",
@@ -1236,6 +1338,7 @@
                 name_en: "Black Turnstone",
                 scientific: "Arenaria melanocephala",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Santa Barbara Harbor",
                 location_fr: "Santa Barbara Harbor, Californie, États-Unis",
                 location_en: "Santa Barbara Harbor, California, United States",
                 date_fr: "6 août 2023",
@@ -1251,6 +1354,7 @@
                 name_en: "Yellow-billed Magpie",
                 scientific: "Pica nuttalli",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Zaca Station Rd.",
                 location_fr: "Zaca Station Rd., Californie, États-Unis",
                 location_en: "Zaca Station Rd., California, United States",
                 date_fr: "6 août 2023",
@@ -1266,6 +1370,7 @@
                 name_en: "Yellow-billed Magpie",
                 scientific: "Pica nuttalli",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Zaca Station Rd.",
                 location_fr: "Zaca Station Rd., Californie, États-Unis",
                 location_en: "Zaca Station Rd., California, United States",
                 date_fr: "6 août 2023",
@@ -1281,6 +1386,7 @@
                 name_en: "Black Turnstone",
                 scientific: "Arenaria melanocephala",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Pt. Piedras Blancas",
                 location_fr: "Pt. Piedras Blancas, Californie, États-Unis",
                 location_en: "Pt. Piedras Blancas, California, United States",
                 date_fr: "5 août 2023",
@@ -1296,6 +1402,7 @@
                 name_en: "Black Turnstone",
                 scientific: "Arenaria melanocephala",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Pt. Piedras Blancas",
                 location_fr: "Pt. Piedras Blancas, Californie, États-Unis",
                 location_en: "Pt. Piedras Blancas, California, United States",
                 date_fr: "5 août 2023",
@@ -1311,6 +1418,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Pt. Piedras Blancas",
                 location_fr: "Pt. Piedras Blancas, Californie, États-Unis",
                 location_en: "Pt. Piedras Blancas, California, United States",
                 date_fr: "5 août 2023",
@@ -1326,6 +1434,7 @@
                 name_en: "Turkey Vulture",
                 scientific: "Cathartes aura",
                 family: "Cathartidae (New World Vultures)",
+                location: "Pt. Piedras Blancas",
                 location_fr: "Pt. Piedras Blancas, Californie, États-Unis",
                 location_en: "Pt. Piedras Blancas, California, United States",
                 date_fr: "5 août 2023",
@@ -1341,6 +1450,7 @@
                 name_en: "Golden Eagle",
                 scientific: "Aquila chrysaetos",
                 family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location: "Green Valley Road",
                 location_fr: "Green Valley Road, Californie, États-Unis",
                 location_en: "Green Valley Road, California, United States",
                 date_fr: "5 août 2023",
@@ -1356,6 +1466,7 @@
                 name_en: "California Condor",
                 scientific: "Gymnogyps californianus",
                 family: "Cathartidae (New World Vultures)",
+                location: "Big Sur coast",
                 location_fr: "Big Sur coast, Californie, États-Unis",
                 location_en: "Big Sur coast, California, United States",
                 date_fr: "4 août 2023",
@@ -1371,6 +1482,7 @@
                 name_en: "Heermann\'s Gull",
                 scientific: "Larus heermanni",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "San Francisco Maritime NHP",
                 location_fr: "San Francisco Maritime NHP, Californie, États-Unis",
                 location_en: "San Francisco Maritime NHP, California, United States",
                 date_fr: "3 août 2023",
@@ -1386,6 +1498,7 @@
                 name_en: "Heermann\'s Gull",
                 scientific: "Larus heermanni",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "San Francisco Maritime NHP",
                 location_fr: "San Francisco Maritime NHP, Californie, États-Unis",
                 location_en: "San Francisco Maritime NHP, California, United States",
                 date_fr: "3 août 2023",
@@ -1401,6 +1514,7 @@
                 name_en: "California Gull",
                 scientific: "Larus californicus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "San Francisco Maritime NHP",
                 location_fr: "San Francisco Maritime NHP, Californie, États-Unis",
                 location_en: "San Francisco Maritime NHP, California, United States",
                 date_fr: "3 août 2023",
@@ -1416,6 +1530,7 @@
                 name_en: "Great Blue Heron",
                 scientific: "Ardea herodias",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "San Francisco Maritime NHP",
                 location_fr: "San Francisco Maritime NHP, Californie, États-Unis",
                 location_en: "San Francisco Maritime NHP, California, United States",
                 date_fr: "3 août 2023",
@@ -1431,6 +1546,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1446,6 +1562,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1461,6 +1578,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1476,6 +1594,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1491,6 +1610,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1506,6 +1626,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1521,6 +1642,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1536,6 +1658,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1551,6 +1674,7 @@
                 name_en: "Ridgway\'s Rail",
                 scientific: "Rallus obsoletus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1566,6 +1690,7 @@
                 name_en: "Long-billed Curlew",
                 scientific: "Numenius americanus",
                 family: "Scolopacidae (Sandpipers and Allies)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "2 août 2023",
@@ -1581,6 +1706,7 @@
                 name_en: "Heermann\'s Gull",
                 scientific: "Larus heermanni",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Rodeo Lagoon (including beach and offshore)",
                 location_fr: "Rodeo Lagoon (including beach and offshore), Californie, États-Unis",
                 location_en: "Rodeo Lagoon (including beach and offshore), California, United States",
                 date_fr: "2 août 2023",
@@ -1596,6 +1722,7 @@
                 name_en: "Red-tailed Hawk",
                 scientific: "Buteo jamaicensis",
                 family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location: "Golden Gate View Point",
                 location_fr: "Golden Gate View Point, Californie, États-Unis",
                 location_en: "Golden Gate View Point, California, United States",
                 date_fr: "2 août 2023",
@@ -1611,6 +1738,7 @@
                 name_en: "Wrentit",
                 scientific: "Chamaea fasciata",
                 family: "Paradoxornithidae (Parrotbills)",
+                location: "Golden Gate View Point",
                 location_fr: "Golden Gate View Point, Californie, États-Unis",
                 location_en: "Golden Gate View Point, California, United States",
                 date_fr: "2 août 2023",
@@ -1626,6 +1754,7 @@
                 name_en: "Wrentit",
                 scientific: "Chamaea fasciata",
                 family: "Paradoxornithidae (Parrotbills)",
+                location: "Golden Gate View Point",
                 location_fr: "Golden Gate View Point, Californie, États-Unis",
                 location_en: "Golden Gate View Point, California, United States",
                 date_fr: "2 août 2023",
@@ -1641,6 +1770,7 @@
                 name_en: "White-crowned Sparrow",
                 scientific: "Zonotrichia leucophrys",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Rodeo Lagoon (including beach and offshore)",
                 location_fr: "Rodeo Lagoon (including beach and offshore), Californie, États-Unis",
                 location_en: "Rodeo Lagoon (including beach and offshore), California, United States",
                 date_fr: "2 août 2023",
@@ -1656,6 +1786,7 @@
                 name_en: "Pigeon Guillemot",
                 scientific: "Cepphus columba",
                 family: "Alcidae (Auks, Murres, and Puffins)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1671,6 +1802,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1686,6 +1818,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1701,6 +1834,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1716,6 +1850,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1731,6 +1866,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1746,6 +1882,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1761,6 +1898,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1776,6 +1914,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1791,6 +1930,7 @@
                 name_en: "Brandt\'s Cormorant",
                 scientific: "Urile penicillatus",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1806,6 +1946,7 @@
                 name_en: "Snowy Egret",
                 scientific: "Egretta thula",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Alcatraz Island",
                 location_fr: "Alcatraz Island, Californie, États-Unis",
                 location_en: "Alcatraz Island, California, United States",
                 date_fr: "1<sup>er</sup> août 2023",
@@ -1821,6 +1962,7 @@
                 name_en: "Barn Swallow",
                 scientific: "Hirundo rustica",
                 family: "Hirundinidae (Swallows)",
+                location: "MLK Jr. Regional Shoreline",
                 location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
                 location_en: "MLK Jr. Regional Shoreline, California, United States",
                 date_fr: "30 juillet 2023",
@@ -1836,6 +1978,7 @@
                 name_en: "Anna\'s Hummingbird",
                 scientific: "Calypte anna",
                 family: "Trochilidae (Hummingbirds)",
+                location: "Yosemite Valley",
                 location_fr: "Yosemite Valley, Californie, États-Unis",
                 location_en: "Yosemite Valley, California, United States",
                 date_fr: "28 juillet 2023",
@@ -1851,6 +1994,7 @@
                 name_en: "Cassin\'s Vireo",
                 scientific: "Vireo cassinii",
                 family: "Vireonidae (Vireos, Shrike-Babblers, and Erpornis)",
+                location: "Yosemite Valley",
                 location_fr: "Yosemite Valley, Californie, États-Unis",
                 location_en: "Yosemite Valley, California, United States",
                 date_fr: "28 juillet 2023",
@@ -1866,6 +2010,7 @@
                 name_en: "Cassin\'s Vireo",
                 scientific: "Vireo cassinii",
                 family: "Vireonidae (Vireos, Shrike-Babblers, and Erpornis)",
+                location: "Yosemite Valley",
                 location_fr: "Yosemite Valley, Californie, États-Unis",
                 location_en: "Yosemite Valley, California, United States",
                 date_fr: "28 juillet 2023",
@@ -1881,6 +2026,7 @@
                 name_en: "California Scrub-Jay",
                 scientific: "Aphelocoma californica",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "49672 High School Road, Oakhurst",
                 location_fr: "49672 High School Road, Oakhurst, Californie, États-Unis",
                 location_en: "49672 High School Road, Oakhurst, California, United States",
                 date_fr: "28 juillet 2023",
@@ -1896,6 +2042,7 @@
                 name_en: "California Scrub-Jay",
                 scientific: "Aphelocoma californica",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "49672 High School Road, Oakhurst",
                 location_fr: "49672 High School Road, Oakhurst, Californie, États-Unis",
                 location_en: "49672 High School Road, Oakhurst, California, United States",
                 date_fr: "28 juillet 2023",
@@ -1911,6 +2058,7 @@
                 name_en: "Common Raven",
                 scientific: "Corvus corax",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Yosemite Valley",
                 location_fr: "Yosemite Valley, Californie, États-Unis",
                 location_en: "Yosemite Valley, California, United States",
                 date_fr: "28 juillet 2023",
@@ -1926,6 +2074,7 @@
                 name_en: "Western Bluebird",
                 scientific: "Sialia mexicana",
                 family: "Turdidae (Thrushes and Allies)",
+                location: "49672 High School Road, Oakhurst",
                 location_fr: "49672 High School Road, Oakhurst, Californie, États-Unis",
                 location_en: "49672 High School Road, Oakhurst, California, United States",
                 date_fr: "28 juillet 2023",
@@ -1941,6 +2090,7 @@
                 name_en: "White-headed Woodpecker",
                 scientific: "Leuconotopicus albolarvatus",
                 family: "Picidae (Woodpeckers)",
+                location: "Yosemite NP",
                 location_fr: "Yosemite NP, Californie, États-Unis",
                 location_en: "Yosemite NP, California, United States",
                 date_fr: "27 juillet 2023",
@@ -1956,6 +2106,7 @@
                 name_en: "White-headed Woodpecker",
                 scientific: "Leuconotopicus albolarvatus",
                 family: "Picidae (Woodpeckers)",
+                location: "Yosemite NP",
                 location_fr: "Yosemite NP, Californie, États-Unis",
                 location_en: "Yosemite NP, California, United States",
                 date_fr: "27 juillet 2023",
@@ -1971,6 +2122,7 @@
                 name_en: "Steller\'s Jay",
                 scientific: "Cyanocitta stelleri",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Yosemite NP",
                 location_fr: "Yosemite NP, Californie, États-Unis",
                 location_en: "Yosemite NP, California, United States",
                 date_fr: "27 juillet 2023",
@@ -1986,6 +2138,7 @@
                 name_en: "Steller\'s Jay",
                 scientific: "Cyanocitta stelleri",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Yosemite NP",
                 location_fr: "Yosemite NP, Californie, États-Unis",
                 location_en: "Yosemite NP, California, United States",
                 date_fr: "27 juillet 2023",
@@ -2001,6 +2154,7 @@
                 name_en: "Common Raven",
                 scientific: "Corvus corax",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Yosemite NP",
                 location_fr: "Yosemite NP, Californie, États-Unis",
                 location_en: "Yosemite NP, California, United States",
                 date_fr: "27 juillet 2023",
@@ -2016,6 +2170,7 @@
                 name_en: "Common Raven",
                 scientific: "Corvus corax",
                 family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Yosemite NP",
                 location_fr: "Yosemite NP, Californie, États-Unis",
                 location_en: "Yosemite NP, California, United States",
                 date_fr: "27 juillet 2023",
@@ -2031,6 +2186,7 @@
                 name_en: "Brewer\'s Blackbird",
                 scientific: "Euphagus cyanocephalus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "Yosemite NP",
                 location_fr: "Yosemite NP, Californie, États-Unis",
                 location_en: "Yosemite NP, California, United States",
                 date_fr: "27 juillet 2023",
@@ -2046,6 +2202,7 @@
                 name_en: "Allen\'s Hummingbird",
                 scientific: "Selasphorus sasin",
                 family: "Trochilidae (Hummingbirds)",
+                location: "12658 Renville St",
                 location_fr: "12658 Renville St, Californie, États-Unis",
                 location_en: "12658 Renville St, California, United States",
                 date_fr: "26 juillet 2023",
@@ -2061,6 +2218,7 @@
                 name_en: "Barn Swallow",
                 scientific: "Hirundo rustica",
                 family: "Hirundinidae (Swallows)",
+                location: "Woodward Park",
                 location_fr: "Woodward Park, Californie, États-Unis",
                 location_en: "Woodward Park, California, United States",
                 date_fr: "26 juillet 2023",
@@ -2076,6 +2234,7 @@
                 name_en: "Killdeer",
                 scientific: "Charadrius vociferus",
                 family: "Charadriidae (Plovers and Lapwings)",
+                location: "Bolsa Chica",
                 location_fr: "Bolsa Chica, Californie, États-Unis",
                 location_en: "Bolsa Chica, California, United States",
                 date_fr: "25 juillet 2023",
@@ -2091,6 +2250,7 @@
                 name_en: "Savannah Sparrow",
                 scientific: "Passerculus sandwichensis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Bolsa Chica",
                 location_fr: "Bolsa Chica, Californie, États-Unis",
                 location_en: "Bolsa Chica, California, United States",
                 date_fr: "25 juillet 2023",
@@ -2106,6 +2266,7 @@
                 name_en: "Savannah Sparrow",
                 scientific: "Passerculus sandwichensis",
                 family: "Passerellidae (New World Sparrows)",
+                location: "Bolsa Chica",
                 location_fr: "Bolsa Chica, Californie, États-Unis",
                 location_en: "Bolsa Chica, California, United States",
                 date_fr: "25 juillet 2023",
@@ -2121,6 +2282,7 @@
                 name_en: "Tundra Bean-Goose",
                 scientific: "Anser serrirostris",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2136,6 +2298,7 @@
                 name_en: "Tundra Bean-Goose",
                 scientific: "Anser serrirostris",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2151,6 +2314,7 @@
                 name_en: "Tundra Bean-Goose",
                 scientific: "Anser serrirostris",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2166,6 +2330,7 @@
                 name_en: "Tundra Bean-Goose",
                 scientific: "Anser serrirostris",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2181,6 +2346,7 @@
                 name_en: "Tundra Bean-Goose",
                 scientific: "Anser serrirostris",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2196,6 +2362,7 @@
                 name_en: "Egyptian Goose",
                 scientific: "Alopochen aegyptiaca",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2211,6 +2378,7 @@
                 name_en: "Allen\'s Hummingbird",
                 scientific: "Selasphorus sasin",
                 family: "Trochilidae (Hummingbirds)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2226,6 +2394,7 @@
                 name_en: "House Finch",
                 scientific: "Haemorhous mexicanus",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Earvin Magic Johnson Park",
                 location_fr: "Earvin Magic Johnson Park, Californie, États-Unis",
                 location_en: "Earvin Magic Johnson Park, California, United States",
                 date_fr: "24 juillet 2023",
@@ -2241,6 +2410,7 @@
                 name_en: "Downy Woodpecker",
                 scientific: "Dryobates pubescens",
                 family: "Picidae (Woodpeckers)",
+                location: "El Dorado Regional Park",
                 location_fr: "El Dorado Regional Park, Californie, États-Unis",
                 location_en: "El Dorado Regional Park, California, United States",
                 date_fr: "22 juillet 2023",
@@ -2256,6 +2426,7 @@
                 name_en: "Black Phoebe",
                 scientific: "Sayornis nigricans",
                 family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "El Dorado Regional Park",
                 location_fr: "El Dorado Regional Park, Californie, États-Unis",
                 location_en: "El Dorado Regional Park, California, United States",
                 date_fr: "22 juillet 2023",
@@ -2271,6 +2442,7 @@
                 name_en: "Cassin\'s Kingbird",
                 scientific: "Tyrannus vociferans",
                 family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "El Dorado Regional Park",
                 location_fr: "El Dorado Regional Park, Californie, États-Unis",
                 location_en: "El Dorado Regional Park, California, United States",
                 date_fr: "22 juillet 2023",
@@ -2286,6 +2458,7 @@
                 name_en: "Western Bluebird",
                 scientific: "Sialia mexicana",
                 family: "Turdidae (Thrushes and Allies)",
+                location: "El Dorado Regional Park",
                 location_fr: "El Dorado Regional Park, Californie, États-Unis",
                 location_en: "El Dorado Regional Park, California, United States",
                 date_fr: "22 juillet 2023",
@@ -2301,6 +2474,7 @@
                 name_en: "Hooded Oriole",
                 scientific: "Icterus cucullatus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "El Dorado Regional Park",
                 location_fr: "El Dorado Regional Park, Californie, États-Unis",
                 location_en: "El Dorado Regional Park, California, United States",
                 date_fr: "22 juillet 2023",
@@ -2316,6 +2490,7 @@
                 name_en: "Hooded Oriole",
                 scientific: "Icterus cucullatus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "El Dorado Regional Park",
                 location_fr: "El Dorado Regional Park, Californie, États-Unis",
                 location_en: "El Dorado Regional Park, California, United States",
                 date_fr: "22 juillet 2023",
@@ -2331,6 +2506,7 @@
                 name_en: "Hooded Oriole",
                 scientific: "Icterus cucullatus",
                 family: "Icteridae (Troupials and Allies)",
+                location: "El Dorado Regional Park",
                 location_fr: "El Dorado Regional Park, Californie, États-Unis",
                 location_en: "El Dorado Regional Park, California, United States",
                 date_fr: "22 juillet 2023",
@@ -2346,6 +2522,7 @@
                 name_en: "Egyptian Goose",
                 scientific: "Alopochen aegyptiaca",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Don Knabe Community Regional Park",
                 location_fr: "Don Knabe Community Regional Park, Californie, États-Unis",
                 location_en: "Don Knabe Community Regional Park, California, United States",
                 date_fr: "21 juillet 2023",
@@ -2361,6 +2538,7 @@
                 name_en: "Allen\'s Hummingbird",
                 scientific: "Selasphorus sasin",
                 family: "Trochilidae (Hummingbirds)",
+                location: "Don Knabe Community Regional Park",
                 location_fr: "Don Knabe Community Regional Park, Californie, États-Unis",
                 location_en: "Don Knabe Community Regional Park, California, United States",
                 date_fr: "21 juillet 2023",
@@ -2480,7 +2658,7 @@
         });
 
         
-        // Carte du voyage
+        // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
             { lat: 34.4062989, lng: -119.6882558, name: "Santa Barbara Harbor" },
@@ -2524,6 +2702,61 @@
             { lat: 33.8501738, lng: -118.0605412, name: "Don Knabe Community Regional Park" },
             
         ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
 
         if (tripLocations.length > 0) {
             // Créer la carte
@@ -2545,13 +2778,32 @@
                 popupAnchor: [0, -24]
             });
 
-            // Ajouter les marqueurs
+            // Ajouter les marqueurs avec compte de photos et filtrage
             const markers = [];
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
                 if (loc.name) {
-                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
                 marker.addTo(tripMap);
                 markers.push(marker);
             });

@@ -1266,3 +1266,108 @@ footer a:hover {
     font-size: 12px;
     color: var(--text-light);
 }
+
+/* ==========================================
+   FILTRE PAR LIEU - CARTE VOYAGE
+   ========================================== */
+
+.location-filter-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--ebird-green-light), #e8f5e9);
+    border: 1px solid var(--ebird-green);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.filter-icon {
+    font-size: 18px;
+}
+
+#filter-location-name {
+    font-weight: 600;
+    color: var(--ebird-green-dark);
+}
+
+#filter-photo-count {
+    color: var(--text-medium);
+}
+
+.filter-reset-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid var(--ebird-green);
+    border-radius: 20px;
+    color: var(--ebird-green-dark);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-reset-btn:hover {
+    background: var(--ebird-green);
+    color: white;
+}
+
+/* Popup amélioré de la carte */
+.trip-popup-content {
+    text-align: center;
+    padding: 4px;
+}
+
+.trip-popup-content strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.popup-photo-count {
+    font-size: 12px;
+    color: var(--text-medium);
+    margin-bottom: 8px;
+}
+
+.popup-filter-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: var(--ebird-green);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.popup-filter-btn:hover {
+    background: var(--ebird-green-dark);
+    transform: scale(1.05);
+}
+
+/* Responsive filtre */
+@media (max-width: 600px) {
+    .location-filter-indicator {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .filter-text {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
