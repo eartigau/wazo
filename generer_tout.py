@@ -57,11 +57,14 @@ def charger_config():
 # CONSTRUCTION DU MENU
 # ============================================================================
 
-def construire_menu(config, generator):
+def construire_menu(config, generator, curation=None):
     """Construit la structure du menu de navigation"""
     
     # Récupérer les familles avec photos
     familles_avec_photos = generator.get_families_with_photos()
+    
+    # Vérifier s'il y a des photos best
+    has_best_photos = curation and any(status == 'best' for status in curation.values())
     
     menu = [
         {
@@ -83,6 +86,15 @@ def construire_menu(config, generator):
             'file_en': 'gallery_recent_en.html'
         }
     ]
+    
+    # Lien Meilleures photos (si des photos best existent)
+    if has_best_photos:
+        menu.append({
+            'name_fr': 'Meilleures photos',
+            'name_en': 'Best of',
+            'file_fr': 'gallery_best_fr.html',
+            'file_en': 'gallery_best_en.html'
+        })
     
     # Lien Voyages (si configurés)
     voyages = config.get('voyages', [])
@@ -275,7 +287,7 @@ def generer_toutes_galeries():
     )
     
     # Construire le menu
-    menu, familles_data = construire_menu(config, generator)
+    menu, familles_data = construire_menu(config, generator, curation)
     
     total_galeries = 0
     
@@ -297,12 +309,14 @@ def generer_toutes_galeries():
     
     trois_mois = (datetime.now() - timedelta(days=90)).strftime('%Y-%m-%d')
     
+    # prioritize_best=False pour que les ajouts soient vraiment par date
     photos_3_mois = generator.filter_observations(
         limit=9999,
         date_start=trois_mois,
         verifier_medias_en_ligne=VERIFIER_MEDIAS,
         sort_by='date',
-        curation=curation
+        curation=curation,
+        prioritize_best=False
     )
     
     if len(photos_3_mois) < AJOUTS_RECENTS_MIN:
@@ -310,7 +324,8 @@ def generer_toutes_galeries():
             limit=AJOUTS_RECENTS_MIN,
             verifier_medias_en_ligne=VERIFIER_MEDIAS,
             sort_by='date',
-            curation=curation
+            curation=curation,
+            prioritize_best=False
         )
         print(f"   (moins de {AJOUTS_RECENTS_MIN} photos en 3 mois, affichage des {AJOUTS_RECENTS_MIN} dernières)")
     else:
@@ -332,6 +347,29 @@ def generer_toutes_galeries():
             species_count=species_count,
             show_date_in_overlay=True
         )
+        total_galeries += 1
+    
+    # ========================================
+    # MEILLEURES PHOTOS (Best of)
+    # ========================================
+    best_photos = generator.get_best_photos(curation=curation)
+    
+    if best_photos:
+        print(f"\n⭐ Galerie meilleures photos...")
+        species_set = set(p.get('scientific_name', '') for p in best_photos)
+        species_count = len(species_set)
+        
+        generator.generate_gallery(
+            output_base='gallery_best',
+            title_fr='Meilleures photos',
+            title_en='Best of',
+            photos=best_photos,
+            template_file=GALLERY_TEMPLATE,
+            menu=menu,
+            gallery_id='gallery_best',
+            species_count=species_count
+        )
+        print(f"   ⭐ {len(best_photos)} photos sélectionnées ({species_count} espèces)")
         total_galeries += 1
     
     # ========================================

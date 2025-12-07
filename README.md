@@ -8,6 +8,7 @@ Générateur de galeries photos bilingues (français/anglais) à partir de vos d
 - **Galeries par voyage** avec dates automatiques
 - **Galeries par famille taxonomique** avec icônes
 - **Ajouts récents** (3 derniers mois ou 50 dernières photos)
+- **Meilleures photos** - galerie des photos marquées "best"
 - **Lightbox** avec carte de localisation et navigation
 - **Bilingue** français/anglais avec basculement facile
 - **Page admin** pour la curation des photos (best/inclus/rejeté)
@@ -50,14 +51,14 @@ La page `admin_photos.html` permet de gérer vos photos :
 1. Générez les galeries une première fois
 2. Ouvrez `admin_photos.html` dans un navigateur
 3. Pour chaque photo, choisissez :
-   - ⭐ **Meilleur** : Photo mise en avant (frontispice des voyages/familles, affichée en premier)
+   - ⭐ **Meilleur** : Photo mise en avant (frontispice des voyages/familles, affichée dans la galerie "Meilleures photos")
    - ✓ **Inclus** : Photo normale (défaut)
    - ✗ **Rejeté** : Photo exclue des galeries
 4. Cliquez sur "Télécharger photo_curation.csv"
 5. Placez le fichier dans le dossier du projet
 6. Régénérez les galeries : `python generer_tout.py`
 
-**Note** : Les photos "best" servent automatiquement de frontispice pour les voyages et les familles. S'il y en a plusieurs, la plus récente est choisie.
+**Note** : Les photos "best" apparaissent automatiquement dans la galerie "Meilleures photos" (triées par ordre taxonomique) et servent de frontispice pour les voyages et les familles.
 
 ### Mises à jour
 
@@ -99,6 +100,7 @@ voyages:
 
 - `species_list_fr.html` / `species_list_en.html` - Liste des espèces
 - `gallery_recent_fr.html` / `gallery_recent_en.html` - Ajouts récents
+- `gallery_best_fr.html` / `gallery_best_en.html` - Meilleures photos
 - `voyages_index_fr.html` / `voyages_index_en.html` - Index des voyages
 - `familles_index_fr.html` / `familles_index_en.html` - Index des familles
 - `voyage_*_fr.html` / `voyage_*_en.html` - Galeries par voyage

@@ -1114,7 +1114,8 @@ class EBirdGalleryGenerator:
                            date_end: str = None,
                            verifier_medias_en_ligne: bool = False,
                            sort_by: str = 'date',
-                           curation: dict = None) -> list:
+                           curation: dict = None,
+                           prioritize_best: bool = True) -> list:
         """
         Filtre les observations selon les critères
         
@@ -1130,6 +1131,7 @@ class EBirdGalleryGenerator:
             verifier_medias_en_ligne: Si True, vérifie les médias non-cachés
             sort_by: 'date' (chronologique inverse) ou 'taxonomy' (ordre taxonomique)
             curation: Dict {ml_number: 'best'|'include'|'reject'} pour filtrer/trier
+            prioritize_best: Si True, met les photos 'best' en premier (défaut: True)
         """
         photos = []
         ml_a_verifier = []
@@ -1225,32 +1227,86 @@ class EBirdGalleryGenerator:
         # Trier selon le mode choisi
         if sort_by == 'taxonomy':
             # Tri par ordre taxonomique, avec date décroissante à l'intérieur de chaque espèce
-            # et les 'best' en premier dans chaque groupe
+            # et les 'best' en premier dans chaque groupe (si prioritize_best)
             
             # D'abord trier par date décroissante
             unique_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
             
-            # Puis par statut best (best=0, autres=1) pour que best soit en premier
-            unique_photos.sort(key=lambda x: 0 if x.get('curation_status') == 'best' else 1)
+            # Puis par statut best (si prioritize_best)
+            if prioritize_best:
+                unique_photos.sort(key=lambda x: 0 if x.get('curation_status') == 'best' else 1)
             
             # Puis tri stable par taxon_order (préserve l'ordre dans chaque groupe)
             unique_photos.sort(key=lambda x: x.get('taxon_order', 999999))
         else:
-            # Tri par date décroissante (défaut), avec best en premier
-            unique_photos.sort(key=lambda x: (
-                0 if x.get('curation_status') == 'best' else 1,  # best d'abord
-                '' if x.get('date_raw') is None else x.get('date_raw', '')  # puis par date desc
-            ), reverse=False)
-            # Re-trier par date desc (le tri précédent ne marche pas bien)
-            # Approche plus simple: séparer best et autres
-            best_photos = [p for p in unique_photos if p.get('curation_status') == 'best']
-            other_photos = [p for p in unique_photos if p.get('curation_status') != 'best']
-            best_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
-            other_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
-            unique_photos = best_photos + other_photos
+            # Tri par date décroissante (défaut)
+            if prioritize_best:
+                # Séparer best et autres, best en premier
+                best_photos = [p for p in unique_photos if p.get('curation_status') == 'best']
+                other_photos = [p for p in unique_photos if p.get('curation_status') != 'best']
+                best_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+                other_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+                unique_photos = best_photos + other_photos
+            else:
+                # Tri simple par date décroissante, sans priorité aux best
+                unique_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
         
         if limit:
             unique_photos = unique_photos[:limit]
+        
+        return unique_photos
+    
+    def get_best_photos(self, curation: dict = None) -> list:
+        """
+        Retourne toutes les photos marquées comme 'best' dans la curation,
+        triées par ordre taxonomique.
+        
+        Args:
+            curation: Dict {ml_number: 'best'|'include'|'reject'}
+        
+        Returns:
+            Liste des photos avec statut 'best'
+        """
+        if not curation:
+            return []
+        
+        # Obtenir les ML numbers des photos best
+        best_ml_numbers = {ml for ml, status in curation.items() if status == 'best'}
+        
+        if not best_ml_numbers:
+            return []
+        
+        photos = []
+        
+        for obs in self.observations:
+            sci_name = obs.get('Scientific Name', '').strip()
+            common_name = obs.get('Common Name', '').strip()
+            
+            # Exclure les taxons non identifiables
+            if est_taxon_non_identifiable(sci_name, common_name):
+                continue
+            
+            ml_string = obs.get('ML Catalog Numbers') or ''
+            ml_numbers = [n.strip() for n in ml_string.replace(',', ' ').split() if n.strip()]
+            
+            for ml in ml_numbers:
+                if ml in best_ml_numbers:
+                    # Vérifier que c'est une image
+                    if ml in self.media_cache and self.media_cache[ml]['status'] == 'image':
+                        photo = self._build_photo_data(obs, ml)
+                        photo['curation_status'] = 'best'
+                        photos.append(photo)
+        
+        # Supprimer les doublons
+        seen = set()
+        unique_photos = []
+        for photo in photos:
+            if photo['ml_catalog_number'] not in seen:
+                seen.add(photo['ml_catalog_number'])
+                unique_photos.append(photo)
+        
+        # Trier par ordre taxonomique
+        unique_photos.sort(key=lambda x: x.get('taxon_order', 999999))
         
         return unique_photos
     
