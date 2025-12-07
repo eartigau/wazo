@@ -1,0 +1,2074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe, Summer 2018</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_en.html" 
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_en.html" 
+                       >
+                        Recent Updates
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_en.html" 
+                       >
+                        Best of
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_en.html" 
+                       >
+                        Trips
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_en.html" 
+                       >
+                        Families
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="voyage_europe_ete_2018_fr.html" class="lang-btn" title="Français">
+                    
+                    <span class="flag">🇫🇷</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Europe, Summer 2018</h1>
+        
+        <div class="gallery-subtitle">July 9<sup>th</sup> – August 16<sup>th</sup>, 2018</div>
+        
+        <div class="stats">
+            57 photos
+            
+        </div>
+    </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(7)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Show all ✕
+            </button>
+        </div>
+        
+        
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="111085521"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/111085521/480"
+                     alt="Short-toed Snake-Eagle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Short-toed Snake-Eagle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="111092651"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/111092651/480"
+                     alt="European Goldfinch"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Goldfinch</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="110707461"
+                 data-location="Vieux-Port de Marseille"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/110707461/480"
+                     alt="Pallid Swift"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pallid Swift</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="110707481"
+                 data-location="Vieux-Port de Marseille"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/110707481/480"
+                     alt="Pallid Swift"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pallid Swift</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="110707501"
+                 data-location="Vieux-Port de Marseille"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/110707501/480"
+                     alt="Pallid Swift"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pallid Swift</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="110707521"
+                 data-location="Vieux-Port de Marseille"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/110707521/480"
+                     alt="Pallid Swift"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pallid Swift</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="109937311"
+                 data-location="Lascours (Roquevaire)"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109937311/480"
+                     alt="Crested Tit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Crested Tit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="109937481"
+                 data-location="Lascours (Roquevaire)"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109937481/480"
+                     alt="Eurasian Blue Tit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Blue Tit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="109947871"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109947871/480"
+                     alt="Willow Warbler"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Willow Warbler</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="619144206"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/619144206/480"
+                     alt="Black Redstart"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black Redstart</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="619144348"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/619144348/480"
+                     alt="European Greenfinch"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Greenfinch</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="109565491"
+                 data-location="Canals du Rhône à Sète (Aigues-Mortes)"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109565491/480"
+                     alt="Red-crested Pochard"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Red-crested Pochard</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="109480911"
+                 data-location="Canals du Rhône à Sète (Aigues-Mortes)"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109480911/480"
+                     alt="Mediterranean Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mediterranean Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="109565591"
+                 data-location="Canals du Rhône à Sète (Aigues-Mortes)"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109565591/480"
+                     alt="Little Tern"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Little Tern</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="109565691"
+                 data-location="Camargue"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109565691/480"
+                     alt="Sandwich Tern"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sandwich Tern</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="109565441"
+                 data-location="Canals du Rhône à Sète (Aigues-Mortes)"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109565441/480"
+                     alt="Great Cormorant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Cormorant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="109481121"
+                 data-location="Canals du Rhône à Sète (Aigues-Mortes)"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109481121/480"
+                     alt="Little Egret"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Little Egret</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="109562361"
+                 data-location="Camargue"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562361/480"
+                     alt="Black-winged Stilt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-winged Stilt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="109562371"
+                 data-location="Camargue"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562371/480"
+                     alt="Black-winged Stilt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-winged Stilt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="109562411"
+                 data-location="Camargue"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562411/480"
+                     alt="Black-winged Stilt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-winged Stilt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="109562291"
+                 data-location="Camargue"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562291/480"
+                     alt="Black-headed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-headed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="109562181"
+                 data-location="Camargue"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562181/480"
+                     alt="Gull-billed Tern"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gull-billed Tern</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="109562661"
+                 data-location="Camargue"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562661/480"
+                     alt="Black-crowned Night Heron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-crowned Night Heron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="109562591"
+                 data-location="Camargue"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562591/480"
+                     alt="Gray Heron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gray Heron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="109562671"
+                 data-location="Camargue"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562671/480"
+                     alt="Gray Heron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gray Heron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="109562681"
+                 data-location="Camargue"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109562681/480"
+                     alt="Gray Heron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gray Heron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="109534951"
+                 data-location="Camargue"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109534951/480"
+                     alt="Eurasian Coot"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Coot</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="109535091"
+                 data-location="Camargue"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109535091/480"
+                     alt="Greater Flamingo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Greater Flamingo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="109535331"
+                 data-location="Camargue"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/109535331/480"
+                     alt="Greater Flamingo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Greater Flamingo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="108805251"
+                 data-location="La Sône (ville)"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108805251/480"
+                     alt="Common Buzzard"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Buzzard</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="108805261"
+                 data-location="La Sône (ville)"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108805261/480"
+                     alt="Common Buzzard"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Buzzard</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="108806201"
+                 data-location="La Sône (ville)"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108806201/480"
+                     alt="Common Firecrest"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Firecrest</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="108435421"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108435421/480"
+                     alt="Mallard"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Mallard</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="108435311"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108435311/480"
+                     alt="Eurasian Moorhen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Moorhen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="108435231"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108435231/480"
+                     alt="Western House-Martin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Western House-Martin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="108149241"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108149241/480"
+                     alt="Eurasian Blue Tit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Blue Tit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="108149261"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/108149261/480"
+                     alt="Black Redstart"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black Redstart</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="107521431"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107521431/480"
+                     alt="Eurasian Kestrel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Kestrel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="107521511"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107521511/480"
+                     alt="Great Tit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Tit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="107521561"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107521561/480"
+                     alt="Eurasian Blackbird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Blackbird</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="107521541"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107521541/480"
+                     alt="Spotted Flycatcher"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Spotted Flycatcher</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="107408191"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408191/480"
+                     alt="Eurasian Collared-Dove"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Collared-Dove</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="107408561"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408561/480"
+                     alt="Common Swift"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Swift</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="107412441"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107412441/480"
+                     alt="Gray Heron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gray Heron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="107408541"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408541/480"
+                     alt="Eurasian Kestrel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Kestrel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="107408531"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408531/480"
+                     alt="Eurasian Hobby"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Hobby</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="107408571"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408571/480"
+                     alt="Eurasian Blackbird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Blackbird</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="107408591"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408591/480"
+                     alt="Eurasian Blackbird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Blackbird</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="107408201"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408201/480"
+                     alt="Spotted Flycatcher"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Spotted Flycatcher</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="107408211"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107408211/480"
+                     alt="Common Redstart"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Redstart</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="107355021"
+                 data-location="Observatoire de Genève"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355021/480"
+                     alt="Gray Heron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gray Heron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="107355481"
+                 data-location="Observatoire de Genève"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355481/480"
+                     alt="Great Spotted Woodpecker"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Spotted Woodpecker</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="107355061"
+                 data-location="Observatoire de Genève"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355061/480"
+                     alt="Great Cormorant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Cormorant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="107355151"
+                 data-location="Observatoire de Genève"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355151/480"
+                     alt="Eurasian Nuthatch"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Nuthatch</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="107355661"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355661/480"
+                     alt="Eurasian Kestrel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Kestrel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="107355801"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355801/480"
+                     alt="Eurasian Blackbird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Blackbird</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="107355721"
+                 data-location="Saint-Antoine l'Abbaye (commune)"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/107355721/480"
+                     alt="Black Redstart"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black Redstart</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    View on eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 7<sup>th</sup>, 2025</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'en';
+        
+        const photosData = [
+            
+            {
+                ml: "111085521",
+                name_fr: "Circaète Jean-le-Blanc",
+                name_en: "Short-toed Snake-Eagle",
+                scientific: "Circaetus gallicus",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "16 août 2018",
+                date_en: "August 16<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47884759"
+            },
+            
+            {
+                ml: "111092651",
+                name_fr: "Chardonneret élégant",
+                name_en: "European Goldfinch",
+                scientific: "Carduelis carduelis",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "13 août 2018",
+                date_en: "August 13<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47823236"
+            },
+            
+            {
+                ml: "110707461",
+                name_fr: "Martinet pâle",
+                name_en: "Pallid Swift",
+                scientific: "Apus pallidus",
+                family: "Apodidae (Swifts)",
+                location: "Vieux-Port de Marseille",
+                location_fr: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "11 août 2018",
+                date_en: "August 11<sup>th</sup>, 2018",
+                lat: 43.2943685,
+                lng: 5.3689027,
+                checklist_id: "S47818528"
+            },
+            
+            {
+                ml: "110707481",
+                name_fr: "Martinet pâle",
+                name_en: "Pallid Swift",
+                scientific: "Apus pallidus",
+                family: "Apodidae (Swifts)",
+                location: "Vieux-Port de Marseille",
+                location_fr: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "11 août 2018",
+                date_en: "August 11<sup>th</sup>, 2018",
+                lat: 43.2943685,
+                lng: 5.3689027,
+                checklist_id: "S47818528"
+            },
+            
+            {
+                ml: "110707501",
+                name_fr: "Martinet pâle",
+                name_en: "Pallid Swift",
+                scientific: "Apus pallidus",
+                family: "Apodidae (Swifts)",
+                location: "Vieux-Port de Marseille",
+                location_fr: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "11 août 2018",
+                date_en: "August 11<sup>th</sup>, 2018",
+                lat: 43.2943685,
+                lng: 5.3689027,
+                checklist_id: "S47818528"
+            },
+            
+            {
+                ml: "110707521",
+                name_fr: "Martinet pâle",
+                name_en: "Pallid Swift",
+                scientific: "Apus pallidus",
+                family: "Apodidae (Swifts)",
+                location: "Vieux-Port de Marseille",
+                location_fr: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Vieux-Port de Marseille, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "11 août 2018",
+                date_en: "August 11<sup>th</sup>, 2018",
+                lat: 43.2943685,
+                lng: 5.3689027,
+                checklist_id: "S47818528"
+            },
+            
+            {
+                ml: "109937311",
+                name_fr: "Mésange huppée",
+                name_en: "Crested Tit",
+                scientific: "Lophophanes cristatus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location: "Lascours (Roquevaire)",
+                location_fr: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "6 août 2018",
+                date_en: "August 6<sup>th</sup>, 2018",
+                lat: 43.3459099,
+                lng: 5.5817655,
+                checklist_id: "S47682808"
+            },
+            
+            {
+                ml: "109937481",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location: "Lascours (Roquevaire)",
+                location_fr: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "6 août 2018",
+                date_en: "August 6<sup>th</sup>, 2018",
+                lat: 43.3459099,
+                lng: 5.5817655,
+                checklist_id: "S47682808"
+            },
+            
+            {
+                ml: "109947871",
+                name_fr: "Pouillot fitis",
+                name_en: "Willow Warbler",
+                scientific: "Phylloscopus trochilus",
+                family: "Phylloscopidae (Leaf Warblers)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "3 août 2018",
+                date_en: "August 3<sup>rd</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47617908"
+            },
+            
+            {
+                ml: "619144206",
+                name_fr: "Rougequeue noir",
+                name_en: "Black Redstart",
+                scientific: "Phoenicurus ochruros",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "3 août 2018",
+                date_en: "August 3<sup>rd</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47617908"
+            },
+            
+            {
+                ml: "619144348",
+                name_fr: "Verdier d\'Europe",
+                name_en: "European Greenfinch",
+                scientific: "Chloris chloris",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "3 août 2018",
+                date_en: "August 3<sup>rd</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47617908"
+            },
+            
+            {
+                ml: "109565491",
+                name_fr: "Nette rousse",
+                name_en: "Red-crested Pochard",
+                scientific: "Netta rufina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Canals du Rhône à Sète (Aigues-Mortes)",
+                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                date_fr: "1<sup>er</sup> août 2018",
+                date_en: "August 1<sup>st</sup>, 2018",
+                lat: 43.5694546,
+                lng: 4.1894174,
+                checklist_id: "S47592138"
+            },
+            
+            {
+                ml: "109480911",
+                name_fr: "Mouette mélanocéphale",
+                name_en: "Mediterranean Gull",
+                scientific: "Ichthyaetus melanocephalus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Canals du Rhône à Sète (Aigues-Mortes)",
+                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                date_fr: "1<sup>er</sup> août 2018",
+                date_en: "August 1<sup>st</sup>, 2018",
+                lat: 43.5694546,
+                lng: 4.1894174,
+                checklist_id: "S47592138"
+            },
+            
+            {
+                ml: "109565591",
+                name_fr: "Sterne naine",
+                name_en: "Little Tern",
+                scientific: "Sternula albifrons",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Canals du Rhône à Sète (Aigues-Mortes)",
+                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                date_fr: "1<sup>er</sup> août 2018",
+                date_en: "August 1<sup>st</sup>, 2018",
+                lat: 43.5694546,
+                lng: 4.1894174,
+                checklist_id: "S47592138"
+            },
+            
+            {
+                ml: "109565691",
+                name_fr: "Sterne caugek",
+                name_en: "Sandwich Tern",
+                scientific: "Thalasseus sandvicensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "1<sup>er</sup> août 2018",
+                date_en: "August 1<sup>st</sup>, 2018",
+                lat: 43.459383,
+                lng: 4.4436479,
+                checklist_id: "S47578750"
+            },
+            
+            {
+                ml: "109565441",
+                name_fr: "Grand Cormoran",
+                name_en: "Great Cormorant",
+                scientific: "Phalacrocorax carbo",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Canals du Rhône à Sète (Aigues-Mortes)",
+                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                date_fr: "1<sup>er</sup> août 2018",
+                date_en: "August 1<sup>st</sup>, 2018",
+                lat: 43.5694546,
+                lng: 4.1894174,
+                checklist_id: "S47592138"
+            },
+            
+            {
+                ml: "109481121",
+                name_fr: "Aigrette garzette",
+                name_en: "Little Egret",
+                scientific: "Egretta garzetta",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Canals du Rhône à Sète (Aigues-Mortes)",
+                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                date_fr: "1<sup>er</sup> août 2018",
+                date_en: "August 1<sup>st</sup>, 2018",
+                lat: 43.5694546,
+                lng: 4.1894174,
+                checklist_id: "S47592138"
+            },
+            
+            {
+                ml: "109562361",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562371",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562411",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562291",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562181",
+                name_fr: "Sterne hansel",
+                name_en: "Gull-billed Tern",
+                scientific: "Gelochelidon nilotica",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562661",
+                name_fr: "Bihoreau gris",
+                name_en: "Black-crowned Night Heron",
+                scientific: "Nycticorax nycticorax",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562591",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562671",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109562681",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748"
+            },
+            
+            {
+                ml: "109534951",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "30 juillet 2018",
+                date_en: "July 30<sup>th</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47545018"
+            },
+            
+            {
+                ml: "109535091",
+                name_fr: "Flamant rose",
+                name_en: "Greater Flamingo",
+                scientific: "Phoenicopterus roseus",
+                family: "Phoenicopteridae (Flamingos)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "30 juillet 2018",
+                date_en: "July 30<sup>th</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47545018"
+            },
+            
+            {
+                ml: "109535331",
+                name_fr: "Flamant rose",
+                name_en: "Greater Flamingo",
+                scientific: "Phoenicopterus roseus",
+                family: "Phoenicopteridae (Flamingos)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "30 juillet 2018",
+                date_en: "July 30<sup>th</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47545018"
+            },
+            
+            {
+                ml: "108805251",
+                name_fr: "Buse variable",
+                name_en: "Common Buzzard",
+                scientific: "Buteo buteo",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location: "La Sône (ville)",
+                location_fr: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                location_en: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                date_fr: "27 juillet 2018",
+                date_en: "July 27<sup>th</sup>, 2018",
+                lat: 45.1113234,
+                lng: 5.2788234,
+                checklist_id: "S47476780"
+            },
+            
+            {
+                ml: "108805261",
+                name_fr: "Buse variable",
+                name_en: "Common Buzzard",
+                scientific: "Buteo buteo",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location: "La Sône (ville)",
+                location_fr: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                location_en: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                date_fr: "27 juillet 2018",
+                date_en: "July 27<sup>th</sup>, 2018",
+                lat: 45.1113234,
+                lng: 5.2788234,
+                checklist_id: "S47476780"
+            },
+            
+            {
+                ml: "108806201",
+                name_fr: "Roitelet triple-bandeau",
+                name_en: "Common Firecrest",
+                scientific: "Regulus ignicapilla",
+                family: "Regulidae (Kinglets)",
+                location: "La Sône (ville)",
+                location_fr: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                location_en: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                date_fr: "27 juillet 2018",
+                date_en: "July 27<sup>th</sup>, 2018",
+                lat: 45.1113234,
+                lng: 5.2788234,
+                checklist_id: "S47476780"
+            },
+            
+            {
+                ml: "108435421",
+                name_fr: "Canard colvert",
+                name_en: "Mallard",
+                scientific: "Anas platyrhynchos",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "23 juillet 2018",
+                date_en: "July 23<sup>rd</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47403882"
+            },
+            
+            {
+                ml: "108435311",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "23 juillet 2018",
+                date_en: "July 23<sup>rd</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47403882"
+            },
+            
+            {
+                ml: "108435231",
+                name_fr: "Hirondelle de fenêtre",
+                name_en: "Western House-Martin",
+                scientific: "Delichon urbicum",
+                family: "Hirundinidae (Swallows)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "23 juillet 2018",
+                date_en: "July 23<sup>rd</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47403882"
+            },
+            
+            {
+                ml: "108149241",
+                name_fr: "Mésange bleue",
+                name_en: "Eurasian Blue Tit",
+                scientific: "Cyanistes caeruleus",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "21 juillet 2018",
+                date_en: "July 21<sup>st</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47327404"
+            },
+            
+            {
+                ml: "108149261",
+                name_fr: "Rougequeue noir",
+                name_en: "Black Redstart",
+                scientific: "Phoenicurus ochruros",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "21 juillet 2018",
+                date_en: "July 21<sup>st</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47327404"
+            },
+            
+            {
+                ml: "107521431",
+                name_fr: "Faucon crécerelle",
+                name_en: "Eurasian Kestrel",
+                scientific: "Falco tinnunculus",
+                family: "Falconidae (Falcons and Caracaras)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "15 juillet 2018",
+                date_en: "July 15<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47203409"
+            },
+            
+            {
+                ml: "107521511",
+                name_fr: "Mésange charbonnière",
+                name_en: "Great Tit",
+                scientific: "Parus major",
+                family: "Paridae (Tits, Chickadees, and Titmice)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "15 juillet 2018",
+                date_en: "July 15<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47203409"
+            },
+            
+            {
+                ml: "107521561",
+                name_fr: "Merle noir",
+                name_en: "Eurasian Blackbird",
+                scientific: "Turdus merula",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "15 juillet 2018",
+                date_en: "July 15<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47203409"
+            },
+            
+            {
+                ml: "107521541",
+                name_fr: "Gobemouche gris",
+                name_en: "Spotted Flycatcher",
+                scientific: "Muscicapa striata",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "15 juillet 2018",
+                date_en: "July 15<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47203409"
+            },
+            
+            {
+                ml: "107408191",
+                name_fr: "Tourterelle turque",
+                name_en: "Eurasian Collared-Dove",
+                scientific: "Streptopelia decaocto",
+                family: "Columbidae (Pigeons and Doves)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107408561",
+                name_fr: "Martinet noir",
+                name_en: "Common Swift",
+                scientific: "Apus apus",
+                family: "Apodidae (Swifts)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107412441",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107408541",
+                name_fr: "Faucon crécerelle",
+                name_en: "Eurasian Kestrel",
+                scientific: "Falco tinnunculus",
+                family: "Falconidae (Falcons and Caracaras)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107408531",
+                name_fr: "Faucon hobereau",
+                name_en: "Eurasian Hobby",
+                scientific: "Falco subbuteo",
+                family: "Falconidae (Falcons and Caracaras)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107408571",
+                name_fr: "Merle noir",
+                name_en: "Eurasian Blackbird",
+                scientific: "Turdus merula",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107408591",
+                name_fr: "Merle noir",
+                name_en: "Eurasian Blackbird",
+                scientific: "Turdus merula",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107408201",
+                name_fr: "Gobemouche gris",
+                name_en: "Spotted Flycatcher",
+                scientific: "Muscicapa striata",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107408211",
+                name_fr: "Rougequeue à front blanc",
+                name_en: "Common Redstart",
+                scientific: "Phoenicurus phoenicurus",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "14 juillet 2018",
+                date_en: "July 14<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47181627"
+            },
+            
+            {
+                ml: "107355021",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Observatoire de Genève",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "12 juillet 2018",
+                date_en: "July 12<sup>th</sup>, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47144658"
+            },
+            
+            {
+                ml: "107355481",
+                name_fr: "Pic épeiche",
+                name_en: "Great Spotted Woodpecker",
+                scientific: "Dendrocopos major",
+                family: "Picidae (Woodpeckers)",
+                location: "Observatoire de Genève",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "12 juillet 2018",
+                date_en: "July 12<sup>th</sup>, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47144658"
+            },
+            
+            {
+                ml: "107355061",
+                name_fr: "Grand Cormoran",
+                name_en: "Great Cormorant",
+                scientific: "Phalacrocorax carbo",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Observatoire de Genève",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "11 juillet 2018",
+                date_en: "July 11<sup>th</sup>, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47126858"
+            },
+            
+            {
+                ml: "107355151",
+                name_fr: "Sittelle torchepot",
+                name_en: "Eurasian Nuthatch",
+                scientific: "Sitta europaea",
+                family: "Sittidae (Nuthatches)",
+                location: "Observatoire de Genève",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "11 juillet 2018",
+                date_en: "July 11<sup>th</sup>, 2018",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S47126858"
+            },
+            
+            {
+                ml: "107355661",
+                name_fr: "Faucon crécerelle",
+                name_en: "Eurasian Kestrel",
+                scientific: "Falco tinnunculus",
+                family: "Falconidae (Falcons and Caracaras)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "9 juillet 2018",
+                date_en: "July 9<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47092829"
+            },
+            
+            {
+                ml: "107355801",
+                name_fr: "Merle noir",
+                name_en: "Eurasian Blackbird",
+                scientific: "Turdus merula",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "9 juillet 2018",
+                date_en: "July 9<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47092829"
+            },
+            
+            {
+                ml: "107355721",
+                name_fr: "Rougequeue noir",
+                name_en: "Black Redstart",
+                scientific: "Phoenicurus ochruros",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "9 juillet 2018",
+                date_en: "July 9<sup>th</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47092829"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+
+        
+        // Carte du voyage avec filtrage par lieu
+        const tripLocations = [
+            
+            { lat: 45.1742263, lng: 5.216454, name: "Saint-Antoine l'Abbaye (commune)" },
+            
+            { lat: 43.2943685, lng: 5.3689027, name: "Vieux-Port de Marseille" },
+            
+            { lat: 43.3459099, lng: 5.5817655, name: "Lascours (Roquevaire)" },
+            
+            { lat: 43.5694546, lng: 4.1894174, name: "Canals du Rhône à Sète (Aigues-Mortes)" },
+            
+            { lat: 43.459383, lng: 4.4436479, name: "Camargue" },
+            
+            { lat: 45.1113234, lng: 5.2788234, name: "La Sône (ville)" },
+            
+            { lat: 46.3082483, lng: 6.1342695, name: "Observatoire de Genève" },
+            
+        ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs avec compte de photos et filtrage
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
+                if (loc.name) {
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
+                }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

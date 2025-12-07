@@ -184,6 +184,31 @@ voyages:
     pays: ["CL"]
     limite: 500
 
+  - id: voyage_cuba_2020
+    nom_fr: "Cuba, février 2020"
+    nom_en: "Cuba, February 2020"
+    date_debut: "2020-02-01"
+    date_fin: "2020-02-29"
+    pays: ["CU"]
+    limite: 500
+
+  - id: voyage_bc_2019
+    nom_fr: "Colombie-Britannique, été 2019"
+    nom_en: "British Columbia, Summer 2019"
+    date_debut: "2019-06-01"
+    date_fin: "2019-08-31"
+    pays: ["CA-BC"]
+    limite: 500
+
+  - id: voyage_cuba_2019
+    nom_fr: "Cuba, hiver 2019"
+    nom_en: "Cuba, winter 2019"
+    date_debut: "2019-02-01"
+    date_fin: "2019-03-15"
+    pays: ["CU"]
+    limite: 500
+
+
   - id: voyage_hawaii_2018
     nom_fr: "Hawaï 2018"
     nom_en: "Hawaii 2018"
@@ -191,6 +216,14 @@ voyages:
     date_debut: "2018-01-01"
     date_fin: "2018-12-31"
     limite: 300
+
+  - id: voyage_europe_ete_2018
+    nom_fr: "Europe, été 2018"
+    nom_en: "Europe, Summer 2018"
+    date_debut: "2018-07-09"
+    date_fin: "2018-08-17"
+    limite: 300
+
 
   - id: voyage_hawaii_automne2015
     nom_fr: "Hawaï automne 2015"
