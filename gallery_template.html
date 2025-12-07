@@ -49,6 +49,18 @@
         </div>
     </div>
 
+    {% if trip_locations and trip_locations|length > 0 %}
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            {% if lang == 'fr' %}Lieux visités{% else %}Locations visited{% endif %}
+            <span class="location-count">({{ trip_locations|length }})</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    {% endif %}
+
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
         <div class="masonry-grid">
@@ -248,6 +260,58 @@
                 openPhotoByML(ml);
             }
         });
+
+        {% if trip_locations and trip_locations|length > 0 %}
+        // Carte du voyage
+        const tripLocations = [
+            {% for loc in trip_locations %}
+            { lat: {{ loc.lat }}, lng: {{ loc.lng }}, name: "{{ loc.location|replace('"', '\\"') }}" },
+            {% endfor %}
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        {% endif %}
     </script>
 </body>
 </html>

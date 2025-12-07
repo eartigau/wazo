@@ -48,6 +48,13 @@
                     </a>
                 </li>
                 
+                <li>
+                    <a href="sounds_gallery_en.html" 
+                       >
+                        Sounds
+                    </a>
+                </li>
+                
             </ul>
             
             <!-- Sélecteur de langue -->
@@ -72,6 +79,18 @@
             
         </div>
     </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(23)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
@@ -1242,7 +1261,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 7<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -2756,6 +2775,102 @@
                 openPhotoByML(ml);
             }
         });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: 19.686944, lng: -155.26833, name: "Saddle Road - mile 22" },
+            
+            { lat: 19.725559, lng: -155.0687814, name: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo" },
+            
+            { lat: 19.9150848, lng: -155.8867816, name: "Kuʻu aliʻi Fishpond" },
+            
+            { lat: 21.2894543, lng: -157.8464985, name: "Ala Moana Park and State Recreation Area" },
+            
+            { lat: 21.7051636, lng: -157.9987192, name: "Turtle Bay Resort, 'O'ahu" },
+            
+            { lat: 21.3108002, lng: -157.7279675, name: "Kuli'ou'ou Valley Trail" },
+            
+            { lat: 19.8319137, lng: -155.5947653, name: "Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA" },
+            
+            { lat: 20.0232946, lng: -155.8091676, name: "Kawaihae village" },
+            
+            { lat: 19.710278, lng: -155.12444, name: "Koula Street" },
+            
+            { lat: 19.8770891, lng: -155.3099871, name: "Hakalau Forest NWR" },
+            
+            { lat: 19.2945372, lng: -155.0979424, name: "Hawai'i Volcanoes NP" },
+            
+            { lat: 19.4070035, lng: -155.252863, name: "Hawaiʻi Volcanoes NP" },
+            
+            { lat: 21.8940159, lng: -159.5025301, name: "National Tropical Botanical Garden" },
+            
+            { lat: 22.1302507, lng: -159.6556377, name: "Kōkeʻe State Park (general)" },
+            
+            { lat: 22.2316072, lng: -159.4019778, name: "Kilauea Point NWR" },
+            
+            { lat: 22.2075046, lng: -159.4748387, name: "Hanalei NWR" },
+            
+            { lat: 22.2169071, lng: -159.4730222, name: "Princeville" },
+            
+            { lat: 21.3998661, lng: -157.7202898, name: "Popoia Island" },
+            
+            { lat: 21.3988172, lng: -157.9000568, name: "ʻAiea Loop Trail and Keaīwa Heiau SP" },
+            
+            { lat: 21.3964198, lng: -157.7246618, name: "Kailua Beach Park" },
+            
+            { lat: 21.3067276, lng: -157.8592014, name: "Iolani Palace" },
+            
+            { lat: 21.3843521, lng: -157.8057075, name: "Ho'omaluhia Botanical Garden" },
+            
+            { lat: 21.2801171, lng: -157.8342676, name: "Fort Derussy Beach Park" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>

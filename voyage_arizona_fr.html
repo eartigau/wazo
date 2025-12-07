@@ -48,6 +48,13 @@
                     </a>
                 </li>
                 
+                <li>
+                    <a href="sounds_gallery_fr.html" 
+                       >
+                        Sons
+                    </a>
+                </li>
+                
             </ul>
             
             <!-- Sélecteur de langue -->
@@ -72,6 +79,18 @@
             
         </div>
     </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(24)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
@@ -2022,7 +2041,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -4511,6 +4530,104 @@
                 openPhotoByML(ml);
             }
         });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: 32.2790144, lng: -111.0216061, name: "Sweetwater Wetlands" },
+            
+            { lat: 32.242269, lng: -110.872666, name: "Harlan Heights" },
+            
+            { lat: 32.3131068, lng: -110.8113941, name: "Sabino Dam and downstream riparian" },
+            
+            { lat: 31.8360722, lng: -110.3486592, name: "Kartchner Caverns SP" },
+            
+            { lat: 31.7251514, lng: -110.8801067, name: "Madera Canyon" },
+            
+            { lat: 31.496718, lng: -110.848945, name: "Patagonia Lake SP" },
+            
+            { lat: 31.5390131, lng: -110.7606337, name: "Paton Center for Hummingbirds (Patons' Yard)" },
+            
+            { lat: 32.4244027, lng: -110.9123905, name: "Catalina SP" },
+            
+            { lat: 32.2479964, lng: -111.1668992, name: "Saguaro NP" },
+            
+            { lat: 32.2437113, lng: -111.168125, name: "Arizona-Sonora Desert Museum" },
+            
+            { lat: 31.7194081, lng: -110.8835989, name: "Madera Canyon" },
+            
+            { lat: 32.4104319, lng: -110.7147995, name: "Mt. Lemmon" },
+            
+            { lat: 32.4484106, lng: -110.7810647, name: "Mt. Lemmon" },
+            
+            { lat: 32.337101, lng: -110.6921005, name: "Mt. Lemmon" },
+            
+            { lat: 32.3926274, lng: -110.7024693, name: "Mt. Lemmon" },
+            
+            { lat: 32.4111248, lng: -110.7064819, name: "Mt. Lemmon" },
+            
+            { lat: 32.2790785, lng: -111.0819349, name: "Tucson Mountains" },
+            
+            { lat: 32.2328508, lng: -110.9385306, name: "Hawthorne Street" },
+            
+            { lat: 31.4951992, lng: -110.8566971, name: "Patagonia Lake State Park" },
+            
+            { lat: 31.739938, lng: -110.886147, name: "Madera Canyon" },
+            
+            { lat: 32.1072006, lng: -111.0074997, name: "San Xavier del Bac Mission" },
+            
+            { lat: 32.2542072, lng: -111.1972591, name: "Saguaro NP" },
+            
+            { lat: 32.2227528, lng: -111.1004416, name: "Tucson Mountain Park" },
+            
+            { lat: 33.4618165, lng: -111.9436349, name: "Desert Botanical Garden" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>

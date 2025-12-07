@@ -48,6 +48,13 @@
                     </a>
                 </li>
                 
+                <li>
+                    <a href="sounds_gallery_fr.html" 
+                       >
+                        Sons
+                    </a>
+                </li>
+                
             </ul>
             
             <!-- Sélecteur de langue -->
@@ -72,6 +79,18 @@
             
         </div>
     </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(8)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
@@ -522,7 +541,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -1136,6 +1155,72 @@
                 openPhotoByML(ml);
             }
         });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: 20.0237542, lng: -155.8225434, name: "Samuel M. Spencer Beach Park and Puukohola Heiau" },
+            
+            { lat: 19.6714434, lng: -155.3849602, name: "Pu'u O'o Trail, Kipuka Ainahou section (first 2 miles)" },
+            
+            { lat: 19.6771833, lng: -156.0259759, name: "Kaloko-Honokōhau NHP" },
+            
+            { lat: 19.9301048, lng: -155.7911539, name: "Waikōloa Village Golf Club and Paniolo Greens" },
+            
+            { lat: 19.8319137, lng: -155.5947653, name: "Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA" },
+            
+            { lat: 20.0727408, lng: -155.8521795, name: "Kohala Kai" },
+            
+            { lat: 19.9914163, lng: -155.8255022, name: "Hāpuna Beach State Park" },
+            
+            { lat: 19.9150848, lng: -155.8867816, name: "Kuʻu aliʻi Fishpond" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>

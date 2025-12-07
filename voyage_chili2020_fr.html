@@ -1,0 +1,1951 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chili 2020</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_fr.html" 
+                       >
+                        Voyages
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_fr.html" 
+                       >
+                        Familles
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="voyage_chili2020_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Chili 2020</h1>
+        
+        <div class="gallery-subtitle">4 au 10 mars 2020</div>
+        
+        <div class="stats">
+            63 photos
+            
+        </div>
+    </div>
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="214757311"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757311/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="214757701"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757701/480"
+                     alt="Foulque à front rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Foulque à front rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="214840321"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840321/480"
+                     alt="Foulque à front rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Foulque à front rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="214757851"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757851/480"
+                     alt="Huîtrier d'Amérique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Huîtrier d'Amérique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="214757811"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757811/480"
+                     alt="Huîtrier noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Huîtrier noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="214757821"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757821/480"
+                     alt="Huîtrier noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Huîtrier noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="214840351"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840351/480"
+                     alt="Huîtrier noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Huîtrier noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="214840311"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840311/480"
+                     alt="Goéland gris"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland gris</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="214840341"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840341/480"
+                     alt="Goéland dominicain"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland dominicain</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="214757781"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757781/480"
+                     alt="Caracara huppé (plancus)"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Caracara huppé (plancus)</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="214757321"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757321/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="214757331"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757331/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="214757341"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757341/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="214840281"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214840281/480"
+                     alt="Hirondelle du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Hirondelle du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="214552701"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214552701/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="214552721"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214552721/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="214297901"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297901/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="214297941"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297941/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="214297971"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297971/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="214297981"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297981/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="214297991"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214297991/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="214298001"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298001/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="214298031"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298031/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="214298301"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298301/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="214298241"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214298241/480"
+                     alt="Urubu noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Urubu noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="214107811"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214107811/480"
+                     alt="Urubu à tête rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Urubu à tête rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="214039991"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214039991/480"
+                     alt="Tourterelle côtière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tourterelle côtière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="214040131"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040131/480"
+                     alt="Colibri du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="214040601"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040601/480"
+                     alt="Urubu à tête rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Urubu à tête rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="214040141"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040141/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="214040161"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040161/480"
+                     alt="Moqueur du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moqueur du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="214040711"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214040711/480"
+                     alt="Bruant chingolo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bruant chingolo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="213866051"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213866051/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="213866061"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213866061/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="213867441"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213867441/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="213867451"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213867451/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="213867461"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213867461/480"
+                     alt="Conure de Patagonie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure de Patagonie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="214046071"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214046071/480"
+                     alt="Grand Sicale"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Sicale</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="213627371"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627371/480"
+                     alt="Colombe à ailes noires"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colombe à ailes noires</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="213627491"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627491/480"
+                     alt="Caracara montagnard"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Caracara montagnard</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="213627481"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627481/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="213627411"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627411/480"
+                     alt="Synallaxe mésange"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Synallaxe mésange</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="213627471"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627471/480"
+                     alt="Gaucho à bec noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gaucho à bec noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="213627431"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213627431/480"
+                     alt="Moqueur du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moqueur du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="213362441"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362441/480"
+                     alt="Colombe à ailes noires"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colombe à ailes noires</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="213365241"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213365241/480"
+                     alt="Condor des Andes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Condor des Andes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="213365531"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213365531/480"
+                     alt="Urubu à tête rouge"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Urubu à tête rouge</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="213362351"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362351/480"
+                     alt="Tourco à moustaches"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tourco à moustaches</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="213362381"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362381/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="213654031"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213654031/480"
+                     alt="Géositte à ailes rousses"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Géositte à ailes rousses</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="213362361"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362361/480"
+                     alt="Chilia des rochers"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chilia des rochers</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="213362331"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362331/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="213364601"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364601/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="213364641"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364641/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="213654021"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213654021/480"
+                     alt="Upucerthie des buissons"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Upucerthie des buissons</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="213362461"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362461/480"
+                     alt="Troglodyte austral"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Troglodyte austral</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="213362481"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213362481/480"
+                     alt="Moqueur du Chili"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Moqueur du Chili</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="213363201"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213363201/480"
+                     alt="Bruant chingolo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bruant chingolo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="213363601"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213363601/480"
+                     alt="Diuca gris"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Diuca gris</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="213366981"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213366981/480"
+                     alt="Diuca gris"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Diuca gris</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="213363991"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213363991/480"
+                     alt="Incaspize petit-deuil"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Incaspize petit-deuil</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="213364031"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213364031/480"
+                     alt="Incaspize à queue barrée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Incaspize à queue barrée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="213366941"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/213366941/480"
+                     alt="Grand Sicale"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grand Sicale</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 décembre 2025</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "214757311",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Bramaderos, Coquimbo, Chili",
+                location_en: "Bramaderos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.4194182,
+                lng: -70.8453086,
+                checklist_id: "S65670077"
+            },
+            
+            {
+                ml: "214757701",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214840321",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214757851",
+                name_fr: "Huîtrier d\'Amérique",
+                name_en: "American Oystercatcher",
+                scientific: "Haematopus palliatus",
+                family: "Haematopodidae (Oystercatchers)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214757811",
+                name_fr: "Huîtrier noir",
+                name_en: "Blackish Oystercatcher",
+                scientific: "Haematopus ater",
+                family: "Haematopodidae (Oystercatchers)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214757821",
+                name_fr: "Huîtrier noir",
+                name_en: "Blackish Oystercatcher",
+                scientific: "Haematopus ater",
+                family: "Haematopodidae (Oystercatchers)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214840351",
+                name_fr: "Huîtrier noir",
+                name_en: "Blackish Oystercatcher",
+                scientific: "Haematopus ater",
+                family: "Haematopodidae (Oystercatchers)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214840311",
+                name_fr: "Goéland gris",
+                name_en: "Gray Gull",
+                scientific: "Leucophaeus modestus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214840341",
+                name_fr: "Goéland dominicain",
+                name_en: "Kelp Gull",
+                scientific: "Larus dominicanus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214757781",
+                name_fr: "Caracara huppé (plancus)",
+                name_en: "Crested Caracara (Southern)",
+                scientific: "Caracara plancus plancus",
+                family: "Falconidae (Falcons and Caracaras)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214757321",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Bramaderos, Coquimbo, Chili",
+                location_en: "Bramaderos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.4194182,
+                lng: -70.8453086,
+                checklist_id: "S65670077"
+            },
+            
+            {
+                ml: "214757331",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Bramaderos, Coquimbo, Chili",
+                location_en: "Bramaderos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.4194182,
+                lng: -70.8453086,
+                checklist_id: "S65670077"
+            },
+            
+            {
+                ml: "214757341",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Bramaderos, Coquimbo, Chili",
+                location_en: "Bramaderos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.4194182,
+                lng: -70.8453086,
+                checklist_id: "S65670077"
+            },
+            
+            {
+                ml: "214840281",
+                name_fr: "Hirondelle du Chili",
+                name_en: "Chilean Swallow",
+                scientific: "Tachycineta leucopyga",
+                family: "Hirundinidae (Swallows)",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392"
+            },
+            
+            {
+                ml: "214552701",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "9 mars 2020",
+                date_en: "March 9<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65623135"
+            },
+            
+            {
+                ml: "214552721",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "9 mars 2020",
+                date_en: "March 9<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65623135"
+            },
+            
+            {
+                ml: "214297901",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214297941",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214297971",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214297981",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214297991",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214298001",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214298031",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214298301",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214298241",
+                name_fr: "Urubu noir",
+                name_en: "Black Vulture",
+                scientific: "Coragyps atratus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65579922"
+            },
+            
+            {
+                ml: "214107811",
+                name_fr: "Urubu à tête rouge",
+                name_en: "Turkey Vulture",
+                scientific: "Cathartes aura",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "8 mars 2020",
+                date_en: "March 8<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65555269"
+            },
+            
+            {
+                ml: "214039991",
+                name_fr: "Tourterelle côtière",
+                name_en: "West Peruvian Dove",
+                scientific: "Zenaida meloda",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "7 mars 2020",
+                date_en: "March 7<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65536390"
+            },
+            
+            {
+                ml: "214040131",
+                name_fr: "Colibri du Chili",
+                name_en: "Green-backed Firecrown",
+                scientific: "Sephanoides sephaniodes",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "7 mars 2020",
+                date_en: "March 7<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65536390"
+            },
+            
+            {
+                ml: "214040601",
+                name_fr: "Urubu à tête rouge",
+                name_en: "Turkey Vulture",
+                scientific: "Cathartes aura",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "7 mars 2020",
+                date_en: "March 7<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65538557"
+            },
+            
+            {
+                ml: "214040141",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "7 mars 2020",
+                date_en: "March 7<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65536390"
+            },
+            
+            {
+                ml: "214040161",
+                name_fr: "Moqueur du Chili",
+                name_en: "Chilean Mockingbird",
+                scientific: "Mimus thenca",
+                family: "Mimidae (Mockingbirds and Thrashers)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "7 mars 2020",
+                date_en: "March 7<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65536390"
+            },
+            
+            {
+                ml: "214040711",
+                name_fr: "Bruant chingolo",
+                name_en: "Rufous-collared Sparrow",
+                scientific: "Zonotrichia capensis",
+                family: "Passerellidae (New World Sparrows)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "7 mars 2020",
+                date_en: "March 7<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65525923"
+            },
+            
+            {
+                ml: "213866051",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "6 mars 2020",
+                date_en: "March 6<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65500108"
+            },
+            
+            {
+                ml: "213866061",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "6 mars 2020",
+                date_en: "March 6<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65500108"
+            },
+            
+            {
+                ml: "213867441",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "6 mars 2020",
+                date_en: "March 6<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65500108"
+            },
+            
+            {
+                ml: "213867451",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "6 mars 2020",
+                date_en: "March 6<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65500108"
+            },
+            
+            {
+                ml: "213867461",
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                scientific: "Cyanoliseus patagonus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                date_fr: "6 mars 2020",
+                date_en: "March 6<sup>th</sup>, 2020",
+                lat: -29.167514,
+                lng: -70.8184736,
+                checklist_id: "S65500108"
+            },
+            
+            {
+                ml: "214046071",
+                name_fr: "Grand Sicale",
+                name_en: "Greater Yellow-Finch",
+                scientific: "Sicalis auriventris",
+                family: "Thraupidae (Tanagers and Allies)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "6 mars 2020",
+                date_en: "March 6<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65548430"
+            },
+            
+            {
+                ml: "213627371",
+                name_fr: "Colombe à ailes noires",
+                name_en: "Black-winged Ground Dove",
+                scientific: "Metriopelia melanoptera",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "213627491",
+                name_fr: "Caracara montagnard",
+                name_en: "Mountain Caracara",
+                scientific: "Daptrius megalopterus",
+                family: "Falconidae (Falcons and Caracaras)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "213627481",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "213627411",
+                name_fr: "Synallaxe mésange",
+                name_en: "Plain-mantled Tit-Spinetail",
+                scientific: "Leptasthenura aegithaloides",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "213627471",
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                scientific: "Agriornis montanus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "213627431",
+                name_fr: "Moqueur du Chili",
+                name_en: "Chilean Mockingbird",
+                scientific: "Mimus thenca",
+                family: "Mimidae (Mockingbirds and Thrashers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "5 mars 2020",
+                date_en: "March 5<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65465172"
+            },
+            
+            {
+                ml: "213362441",
+                name_fr: "Colombe à ailes noires",
+                name_en: "Black-winged Ground Dove",
+                scientific: "Metriopelia melanoptera",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213365241",
+                name_fr: "Condor des Andes",
+                name_en: "Andean Condor",
+                scientific: "Vultur gryphus",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213365531",
+                name_fr: "Urubu à tête rouge",
+                name_en: "Turkey Vulture",
+                scientific: "Cathartes aura",
+                family: "Cathartidae (New World Vultures)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213362351",
+                name_fr: "Tourco à moustaches",
+                name_en: "Moustached Turca",
+                scientific: "Pteroptochos megapodius",
+                family: "Rhinocryptidae (Tapaculos)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213362381",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213654031",
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                scientific: "Geositta rufipennis",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213362361",
+                name_fr: "Chilia des rochers",
+                name_en: "Crag Chilia",
+                scientific: "Ochetorhynchus melanurus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213362331",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213364601",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213364641",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213654021",
+                name_fr: "Upucerthie des buissons",
+                name_en: "Scale-throated Earthcreeper",
+                scientific: "Upucerthia dumetaria",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213362461",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213362481",
+                name_fr: "Moqueur du Chili",
+                name_en: "Chilean Mockingbird",
+                scientific: "Mimus thenca",
+                family: "Mimidae (Mockingbirds and Thrashers)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213363201",
+                name_fr: "Bruant chingolo",
+                name_en: "Rufous-collared Sparrow",
+                scientific: "Zonotrichia capensis",
+                family: "Passerellidae (New World Sparrows)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213363601",
+                name_fr: "Diuca gris",
+                name_en: "Diuca Finch",
+                scientific: "Diuca diuca",
+                family: "Thraupidae (Tanagers and Allies)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213366981",
+                name_fr: "Diuca gris",
+                name_en: "Diuca Finch",
+                scientific: "Diuca diuca",
+                family: "Thraupidae (Tanagers and Allies)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213363991",
+                name_fr: "Incaspize petit-deuil",
+                name_en: "Mourning Sierra Finch",
+                scientific: "Rhopospina fruticeti",
+                family: "Thraupidae (Tanagers and Allies)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213364031",
+                name_fr: "Incaspize à queue barrée",
+                name_en: "Band-tailed Sierra Finch",
+                scientific: "Rhopospina alaudina",
+                family: "Thraupidae (Tanagers and Allies)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            },
+            
+            {
+                ml: "213366941",
+                name_fr: "Grand Sicale",
+                name_en: "Greater Yellow-Finch",
+                scientific: "Sicalis auriventris",
+                family: "Thraupidae (Tanagers and Allies)",
+                location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                date_fr: "4 mars 2020",
+                date_en: "March 4<sup>th</sup>, 2020",
+                lat: -29.2562225,
+                lng: -70.7383406,
+                checklist_id: "S65424874"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+    </script>
+</body>
+</html>

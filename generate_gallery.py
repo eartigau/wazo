@@ -678,8 +678,8 @@ class EBirdGalleryGenerator:
         self.media_cache = charger_cache(self.media_cache_file)
         if self.media_cache:
             images = sum(1 for v in self.media_cache.values() if v['status'] == 'image')
-            exclus = len(self.media_cache) - images
-            print(f"   ✓ Cache médias: {images} images, {exclus} exclus")
+            sons = sum(1 for v in self.media_cache.values() if v['status'] == 'son')
+            print(f"   ✓ Cache médias: {images} photos, {sons} sons")
     
     def _parse_coord(self, value) -> float:
         """Parse une coordonnée en float"""
@@ -907,6 +907,202 @@ class EBirdGalleryGenerator:
         
         return sorted(families.values(), key=lambda x: x['order'])
     
+    def get_sounds_list(self, curation: dict = None) -> list:
+        """
+        Retourne la liste de tous les sons enregistrés,
+        triée par ordre phylogénétique avec infos espèce, lieu et coordonnées.
+        Pour chaque espèce avec des sons, inclut aussi la meilleure photo si disponible.
+        
+        Args:
+            curation: Dict {ml_number: 'best'|'include'|'reject'} pour filtrer
+        """
+        # D'abord, collecter les meilleures photos par espèce
+        species_best_photo = {}  # sci_name -> ml_number de la meilleure photo
+        species_list = self.get_species_list(curation=curation)
+        for sp in species_list:
+            species_best_photo[sp['sci_name']] = sp['ml_catalog_number']
+        
+        # Collecter tous les sons
+        sounds_data = {}  # sci_name_normalized -> {'info': {...}, 'sounds': [...]}
+        
+        for obs in self.observations:
+            sci_name_raw = obs.get('Scientific Name', '').strip()
+            common_name_raw = obs.get('Common Name', '').strip()
+            if not sci_name_raw:
+                continue
+            
+            # Exclure les taxons non identifiables au niveau espèce
+            if est_taxon_non_identifiable(sci_name_raw, common_name_raw):
+                continue
+            
+            # Normaliser le nom (enlever sous-espèce)
+            sci_name = normaliser_nom_scientifique(sci_name_raw)
+            
+            obs_date = obs.get('Date', '')
+            ml_string = obs.get('ML Catalog Numbers') or ''
+            ml_numbers = [n.strip() for n in ml_string.replace(',', ' ').split() if n.strip()]
+            
+            # Collecter les SONS de cette observation
+            for ml in ml_numbers:
+                # Vérifier que c'est un son (pas une image)
+                if ml not in self.media_cache or self.media_cache[ml]['status'] != 'son':
+                    continue
+                
+                # Vérifier la curation (exclure les 'reject')
+                if curation and curation.get(ml) == 'reject':
+                    continue
+                
+                # Infos lieu
+                state_code = obs.get('State/Province') or ''
+                location = nettoyer_nom_lieu(obs.get('Location') or '')
+                country_code = state_code.split('-')[0] if '-' in state_code else state_code
+                
+                region_fr = traduire_lieu(state_code, self.traductions, 'fr')
+                region_en = traduire_lieu(state_code, self.traductions, 'en')
+                country_fr = traduire_lieu(country_code, self.traductions, 'fr')
+                country_en = traduire_lieu(country_code, self.traductions, 'en')
+                
+                # Lieu complet
+                if region_fr and country_fr and region_fr != country_fr:
+                    lieu_complet_fr = f"{location}, {region_fr}, {country_fr}" if location else f"{region_fr}, {country_fr}"
+                else:
+                    lieu_complet_fr = f"{location}, {country_fr}" if location and country_fr else location or country_fr
+                
+                if region_en and country_en and region_en != country_en:
+                    lieu_complet_en = f"{location}, {region_en}, {country_en}" if location else f"{region_en}, {country_en}"
+                else:
+                    lieu_complet_en = f"{location}, {country_en}" if location and country_en else location or country_en
+                
+                # Statut de curation
+                curation_status = curation.get(ml, 'include') if curation else 'include'
+                
+                sound_data = {
+                    'ml_catalog_number': ml,
+                    'date_raw': obs_date,
+                    'date_fr': formater_date(obs_date, 'fr'),
+                    'date_en': formater_date(obs_date, 'en'),
+                    'location': location,
+                    'location_full_fr': lieu_complet_fr,
+                    'location_full_en': lieu_complet_en,
+                    'latitude': self._parse_coord(obs.get('Latitude')),
+                    'longitude': self._parse_coord(obs.get('Longitude')),
+                    'checklist_id': obs.get('Submission ID') or '',
+                    'curation_status': curation_status
+                }
+                
+                if sci_name not in sounds_data:
+                    taxon_info = self.taxonomy.get_species_info(sci_name)
+                    common_name_fr = normaliser_nom_commun(obs.get('Common Name', ''))
+                    common_name_en = normaliser_nom_commun(taxon_info.get('common_name_en') or obs.get('Common Name', ''))
+                    
+                    sounds_data[sci_name] = {
+                        'info': {
+                            'sci_name': sci_name,
+                            'common_name_fr': common_name_fr,
+                            'common_name_en': common_name_en,
+                            'taxon_order': taxon_info.get('taxon_order', 999999),
+                            'family': taxon_info.get('family', ''),
+                            'family_full': taxon_info.get('family_full', ''),
+                            'best_photo_ml': species_best_photo.get(sci_name)  # Photo de l'espèce si disponible
+                        },
+                        'sounds': []
+                    }
+                
+                sounds_data[sci_name]['sounds'].append(sound_data)
+        
+        # Construire la liste finale
+        sounds_list = []
+        for sci_name, data in sounds_data.items():
+            info = data['info']
+            sounds = data['sounds']
+            
+            if not sounds:
+                continue
+            
+            # Trier les sons: best d'abord, puis par date
+            best_sounds = sorted([s for s in sounds if s.get('curation_status') == 'best'], 
+                                key=lambda x: x['date_raw'], reverse=True)
+            other_sounds = sorted([s for s in sounds if s.get('curation_status') != 'best'], 
+                                 key=lambda x: x['date_raw'], reverse=True)
+            all_sounds_sorted = best_sounds + other_sounds
+            
+            sounds_list.append({
+                'sci_name': info['sci_name'],
+                'common_name_fr': info['common_name_fr'],
+                'common_name_en': info['common_name_en'],
+                'taxon_order': info['taxon_order'],
+                'family': info['family'],
+                'family_full': info['family_full'],
+                'best_photo_ml': info['best_photo_ml'],
+                'all_sounds': all_sounds_sorted,
+                'sound_count': len(all_sounds_sorted)
+            })
+        
+        # Trier par ordre phylogénétique
+        sounds_list.sort(key=lambda x: x['taxon_order'])
+        
+        return sounds_list
+    
+    def generate_sounds_gallery(self,
+                               output_base: str = 'sounds_gallery',
+                               template_file: str = 'sounds_template.html',
+                               menu: list = None,
+                               curation: dict = None):
+        """Génère la galerie des sons"""
+        
+        output_fr = f"{output_base}_fr.html"
+        output_en = f"{output_base}_en.html"
+        
+        sounds_list = self.get_sounds_list(curation=curation)
+        
+        # Compter le total de sons
+        total_sounds = sum(sp['sound_count'] for sp in sounds_list)
+        
+        env = Environment(loader=FileSystemLoader('.'))
+        template = env.get_template(template_file)
+        
+        # Date de mise à jour
+        today = datetime.now()
+        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
+        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+        
+        # Version française
+        html_fr = template.render(
+            lang='fr',
+            species_list=sounds_list,
+            total_species=len(sounds_list),
+            total_sounds=total_sounds,
+            menu=menu or [],
+            current_page=output_fr,
+            other_lang_page=output_en,
+            update_date=True,
+            update_date_fr=update_date_fr,
+            update_date_en=update_date_en
+        )
+        
+        with open(output_fr, 'w', encoding='utf-8') as f:
+            f.write(html_fr)
+        
+        # Version anglaise
+        html_en = template.render(
+            lang='en',
+            species_list=sounds_list,
+            total_species=len(sounds_list),
+            total_sounds=total_sounds,
+            menu=menu or [],
+            current_page=output_en,
+            other_lang_page=output_fr,
+            update_date=True,
+            update_date_fr=update_date_fr,
+            update_date_en=update_date_en
+        )
+        
+        with open(output_en, 'w', encoding='utf-8') as f:
+            f.write(html_en)
+        
+        print(f"   ✓ {output_fr} / {output_en} ({total_sounds} sons, {len(sounds_list)} espèces)")
+        return output_fr, output_en
+    
     def filter_observations(self, 
                            limit: int = None,
                            species: list = None,
@@ -1069,7 +1265,8 @@ class EBirdGalleryGenerator:
                         subtitle_fr: str = None,
                         subtitle_en: str = None,
                         species_count: int = None,
-                        show_date_in_overlay: bool = False):
+                        show_date_in_overlay: bool = False,
+                        trip_locations: list = None):
         """
         Génère les pages HTML de galerie en français et anglais
         
@@ -1085,6 +1282,7 @@ class EBirdGalleryGenerator:
             subtitle_en: Sous-titre en anglais (optionnel)
             species_count: Nombre d'espèces (optionnel, pour affichage)
             show_date_in_overlay: Afficher la date dans l'overlay (défaut: False)
+            trip_locations: Liste de lieux pour la carte du voyage (optionnel)
         """
         output_fr = f"{output_base}_fr.html"
         output_en = f"{output_base}_en.html"
@@ -1112,6 +1310,7 @@ class EBirdGalleryGenerator:
             other_lang_page=output_en,
             species_count=species_count,
             show_date_in_overlay=show_date_in_overlay,
+            trip_locations=trip_locations,
             update_date=True,
             update_date_fr=update_date_fr,
             update_date_en=update_date_en
@@ -1132,6 +1331,7 @@ class EBirdGalleryGenerator:
             other_lang_page=output_fr,
             species_count=species_count,
             show_date_in_overlay=show_date_in_overlay,
+            trip_locations=trip_locations,
             update_date=True,
             update_date_fr=update_date_fr,
             update_date_en=update_date_en
@@ -1263,8 +1463,15 @@ def verifier_tous_les_medias(csv_file: str, cache_file: str = CACHE_FILE):
     
     resultats = verifier_medias(all_ml_numbers, cache_file)
     
+    # Afficher les statistiques
+    cache = resultats['cache']
+    images = sum(1 for v in cache.values() if v.get('status') == 'image')
+    sons = sum(1 for v in cache.values() if v.get('status') == 'son')
+    
     print("\n" + "=" * 60)
     print("✅ VÉRIFICATION TERMINÉE")
+    print(f"   📷 {images} photos")
+    print(f"   🎵 {sons} sons")
     print("=" * 60)
     
     return resultats

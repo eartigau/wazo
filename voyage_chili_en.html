@@ -48,6 +48,13 @@
                     </a>
                 </li>
                 
+                <li>
+                    <a href="sounds_gallery_en.html" 
+                       >
+                        Sounds
+                    </a>
+                </li>
+                
             </ul>
             
             <!-- Sélecteur de langue -->
@@ -72,6 +79,18 @@
             
         </div>
     </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(51)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
@@ -6126,7 +6145,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 7<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -13745,6 +13764,158 @@
                 openPhotoByML(ml);
             }
         });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: -33.3980197, lng: -70.6022, name: "Parque Bicentenario de Vitacura" },
+            
+            { lat: -29.4194182, lng: -70.8453086, name: "Bramaderos" },
+            
+            { lat: -22.3357862, lng: -68.0125809, name: "Geysers del Tatio" },
+            
+            { lat: -23.2878293, lng: -68.1775689, name: "RN Los Flamencos" },
+            
+            { lat: -51.0725762, lng: -73.0945301, name: "PN Torres del Paine" },
+            
+            { lat: -52.986348, lng: -71.2378836, name: "RN Colonia Pingüinos de Magallanes" },
+            
+            { lat: -30.1830454, lng: -71.4403968, name: "Guanaqueros" },
+            
+            { lat: -29.8220854, lng: -71.2886524, name: "Punta Teatinos" },
+            
+            { lat: -29.2340956, lng: -71.5278625, name: "RN Pingüino de Humboldt" },
+            
+            { lat: -29.9339241, lng: -71.3358271, name: "Fuerte Lambert" },
+            
+            { lat: -29.9037627, lng: -71.2556934, name: "Parque Jardín del Corazón (Kokoro No Niwa)" },
+            
+            { lat: -30.169167, lng: -70.805278, name: "Cerro El Tololo" },
+            
+            { lat: -30.2187285, lng: -70.0371552, name: "Embalse La Laguna" },
+            
+            { lat: -32.7693779, lng: -71.5838242, name: "Quintero" },
+            
+            { lat: -30.072845, lng: -71.3760495, name: "Totoralillo" },
+            
+            { lat: -29.2562225, lng: -70.7383406, name: "Observatorio de La Silla" },
+            
+            { lat: -29.167514, lng: -70.8184736, name: "Quebrada Pelícano" },
+            
+            { lat: -31.8780678, lng: -71.4966631, name: "SN Laguna Conchalí" },
+            
+            { lat: -30.24, lng: -70.734444, name: "Cerro Pachón" },
+            
+            { lat: -29.916389, lng: -71.241389, name: "El Recinto de AURA" },
+            
+            { lat: -31.9098903, lng: -71.51752, name: "Los Vilos" },
+            
+            { lat: -29.9252584, lng: -71.2786746, name: "Avenida del Mar" },
+            
+            { lat: -22.533805, lng: -68.0335236, name: "Vados del Putana" },
+            
+            { lat: -22.9378632, lng: -68.2180649, name: "Sequitor" },
+            
+            { lat: -23.5906548, lng: -67.8897572, name: "Socaire" },
+            
+            { lat: -23.7673578, lng: -67.7927684, name: "RN Los Flamencos" },
+            
+            { lat: -53.1596637, lng: -70.8985734, name: "Punta Arenas" },
+            
+            { lat: -50.9794573, lng: -72.8003858, name: "PN Torres del Paine" },
+            
+            { lat: -50.9689679, lng: -72.874031, name: "PN Torres del Paine" },
+            
+            { lat: -51.363056, lng: -72.433889, name: "Ruta 9" },
+            
+            { lat: -51.729899, lng: -72.4982, name: "Puerto Natales" },
+            
+            { lat: -51.683889, lng: -72.436944, name: "Sentier de Sierra Dorotea" },
+            
+            { lat: -52.4562448, lng: -71.3375545, name: "Villa Tehuelches (sur)" },
+            
+            { lat: -53.6303509, lng: -70.9171343, name: "Fuerte Bulnes" },
+            
+            { lat: -53.7137775, lng: -70.9670448, name: "San Juan" },
+            
+            { lat: -52.9097302, lng: -71.0382843, name: "Ruta Y-510" },
+            
+            { lat: -52.9202367, lng: -70.5759573, name: "MN Los Pingüinos" },
+            
+            { lat: -53.025, lng: -70.666667, name: "Détroit de Magellan, Punta Arenas" },
+            
+            { lat: -33.0008897, lng: -71.9479179, name: "Valparaíso" },
+            
+            { lat: -30.2828485, lng: -71.5062434, name: "SN Humedales de Tongoy" },
+            
+            { lat: -30.1885379, lng: -71.4033651, name: "Playa de Guanaqueros" },
+            
+            { lat: -41.8259378, lng: -73.6275078, name: "Caulín" },
+            
+            { lat: -41.8143142, lng: -73.4916687, name: "Transbordador Pargua-Chacao" },
+            
+            { lat: -41.868333, lng: -73.799444, name: "Golfo de Quetalmahue, Ancud" },
+            
+            { lat: -42.622631, lng: -74.1126859, name: "PN Chiloé" },
+            
+            { lat: -41.9252706, lng: -74.0392685, name: "MN Islotes de Puñihuil" },
+            
+            { lat: -41.886944, lng: -73.960556, name: "Puente Calixto, Ancud" },
+            
+            { lat: -29.9269942, lng: -71.1730814, name: "Monardez" },
+            
+            { lat: -29.925833, lng: -71.236944, name: "San Joaquin, La Serena" },
+            
+            { lat: -29.9617015, lng: -71.3218206, name: "Estero El Culebrón" },
+            
+            { lat: -29.8746993, lng: -71.2750697, name: "La Serena" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>

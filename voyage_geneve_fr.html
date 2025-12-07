@@ -48,6 +48,13 @@
                     </a>
                 </li>
                 
+                <li>
+                    <a href="sounds_gallery_fr.html" 
+                       >
+                        Sons
+                    </a>
+                </li>
+                
             </ul>
             
             <!-- Sélecteur de langue -->
@@ -72,6 +79,18 @@
             
         </div>
     </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(13)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
@@ -1350,7 +1369,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 décembre 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -2999,6 +3018,82 @@
                 openPhotoByML(ml);
             }
         });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: 46.2145451, lng: 6.1523707, name: "Quai Wilson" },
+            
+            { lat: 46.2102417, lng: 6.1546, name: "Jetée et Port des Pâquis" },
+            
+            { lat: 46.2059101, lng: 6.1476767, name: "Île Rousseau" },
+            
+            { lat: 47.3668696, lng: 8.5433916, name: "Quaibrücke" },
+            
+            { lat: 46.3082483, lng: 6.1342695, name: "Observatoire de Genève" },
+            
+            { lat: 46.2324444, lng: 6.2365007, name: "Marais de Sionnet" },
+            
+            { lat: 46.2879333, lng: 6.1719167, name: "Port Choiseul" },
+            
+            { lat: 46.2761693, lng: 6.171205, name: "Port de Versoix et Embouchure de la Versoix" },
+            
+            { lat: 46.2779787, lng: 6.1518073, name: "Bois du Faisan" },
+            
+            { lat: 46.8194965, lng: 9.8537976, name: "Davoser See" },
+            
+            { lat: 46.799722, lng: 9.8288889, name: "Kurpark" },
+            
+            { lat: 46.8035846, lng: 9.8216701, name: "Schatzalp" },
+            
+            { lat: 46.2258685, lng: 6.1464429, name: "Jardin Botanique de Genève" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>

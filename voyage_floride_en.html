@@ -48,6 +48,13 @@
                     </a>
                 </li>
                 
+                <li>
+                    <a href="sounds_gallery_en.html" 
+                       >
+                        Sounds
+                    </a>
+                </li>
+                
             </ul>
             
             <!-- Sélecteur de langue -->
@@ -72,6 +79,18 @@
             
         </div>
     </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(28)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
@@ -2514,7 +2533,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 6<sup>th</sup>, 2025</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 7<sup>th</sup>, 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -5618,6 +5637,112 @@
                 openPhotoByML(ml);
             }
         });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: 25.3820583, lng: -80.6069362, name: "Everglades NP" },
+            
+            { lat: 25.783585, lng: -80.3782082, name: "Dolphin Mall" },
+            
+            { lat: 25.4034735, lng: -80.5586135, name: "Southern Glades Trail (C111 Canal outside ENP)" },
+            
+            { lat: 25.396439, lng: -80.566581, name: "Frog Pond WMA" },
+            
+            { lat: 25.4021894, lng: -80.6075048, name: "Everglades NP" },
+            
+            { lat: 25.2146141, lng: -80.8503091, name: "Everglades NP" },
+            
+            { lat: 25.137165, lng: -80.9518576, name: "Everglades NP" },
+            
+            { lat: 26.375442, lng: -81.6040206, name: "Audubon Corkscrew Swamp Sanctuary" },
+            
+            { lat: 26.4510559, lng: -82.1234035, name: "J. N. Ding Darling NWR" },
+            
+            { lat: 26.4540529, lng: -82.1155071, name: "J. N. Ding Darling NWR" },
+            
+            { lat: 26.8582653, lng: -81.9401121, name: "Babcock-Webb WMA" },
+            
+            { lat: 26.5093477, lng: -82.0254493, name: "Skimmer Island" },
+            
+            { lat: 26.5436559, lng: -81.950841, name: "Cape Coral Marina" },
+            
+            { lat: 26.6432561, lng: -81.9704747, name: "Saratoga Lake Park" },
+            
+            { lat: 28.2254954, lng: -80.7144928, name: "Brevard Zoo" },
+            
+            { lat: 28.6460579, lng: -80.6774851, name: "Canaveral National Seashore" },
+            
+            { lat: 27.8568345, lng: -80.448761, name: "Sebastian Inlet SP (Indian River co.)" },
+            
+            { lat: 28.486186, lng: -81.1079327, name: "Hal Scott Regional Preserve and Park" },
+            
+            { lat: 28.6575241, lng: -80.7545391, name: "Merritt Island NWR" },
+            
+            { lat: 28.3677641, lng: -80.6017703, name: "Cocoa Beach Pier" },
+            
+            { lat: 28.5223239, lng: -80.6808043, name: "Kennedy Space Center" },
+            
+            { lat: 28.3941865, lng: -80.6183195, name: "Manatee Sanctuary Park" },
+            
+            { lat: 28.4087608, lng: -80.6169288, name: "Port Canaveral" },
+            
+            { lat: 26.5716209, lng: -81.8258929, name: "Six Mile Cypress Slough Preserve" },
+            
+            { lat: 26.4604691, lng: -82.1558154, name: "Bowmans Beach Regional Park" },
+            
+            { lat: 26.4520609, lng: -82.0151281, name: "Point Ybel Lighthouse Beach Park" },
+            
+            { lat: 26.4276, lng: -82.0819, name: "J. N. Ding Darling NWR" },
+            
+            { lat: 28.360278, lng: -81.513056, name: "Orlando" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>

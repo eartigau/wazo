@@ -1,0 +1,3910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound Recordings</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_en.html" 
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_en.html" 
+                       >
+                        Recent Updates
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_en.html" 
+                       >
+                        Trips
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_en.html" 
+                       >
+                        Families
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="sounds_gallery_en.html" 
+                       class="active">
+                        Sounds
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="sounds_gallery_fr.html" class="lang-btn" title="Français">
+                    
+                    <span class="flag">🇫🇷</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>🎵 Sound Recordings</h1>
+        <div class="stats">
+            109 recordings
+             · 87 species
+        </div>
+    </div>
+
+    <!-- GRILLE DES ESPÈCES -->
+    <div class="gallery-container">
+        <div class="sounds-grid">
+            
+            <div class="sound-species-card" data-index="0" onclick="openSoundLightbox(0)">
+                <div class="sound-thumbnail">
+                    
+                    <div class="sound-icon-placeholder">
+                        <span class="sound-icon-large">🔊</span>
+                    </div>
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Water Rail</div>
+                    <div class="sound-sci-name">Rallus aquaticus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="1" onclick="openSoundLightbox(1)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621570147/480"
+                         alt="Black-winged Stilt"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Black-winged Stilt</div>
+                    <div class="sound-sci-name">Himantopus himantopus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="2" onclick="openSoundLightbox(2)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/360394741/480"
+                         alt="Bonaparte's Gull"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Bonaparte's Gull</div>
+                    <div class="sound-sci-name">Chroicocephalus philadelphia</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="3" onclick="openSoundLightbox(3)">
+                <div class="sound-thumbnail">
+                    
+                    <div class="sound-icon-placeholder">
+                        <span class="sound-icon-large">🔊</span>
+                    </div>
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">3</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Least Bittern</div>
+                    <div class="sound-sci-name">Botaurus exilis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="4" onclick="openSoundLightbox(4)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/468713461/480"
+                         alt="Eurasian Sparrowhawk"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Eurasian Sparrowhawk</div>
+                    <div class="sound-sci-name">Accipiter nisus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="5" onclick="openSoundLightbox(5)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/629547904/480"
+                         alt="Cooper's Hawk"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Cooper's Hawk</div>
+                    <div class="sound-sci-name">Astur cooperii</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="6" onclick="openSoundLightbox(6)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/634963168/480"
+                         alt="Barred Owl"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Barred Owl</div>
+                    <div class="sound-sci-name">Strix varia</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="7" onclick="openSoundLightbox(7)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628686776/480"
+                         alt="Yellow-bellied Sapsucker"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Yellow-bellied Sapsucker</div>
+                    <div class="sound-sci-name">Sphyrapicus varius</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="8" onclick="openSoundLightbox(8)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/401588511/480"
+                         alt="Hairy Woodpecker"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Hairy Woodpecker</div>
+                    <div class="sound-sci-name">Leuconotopicus villosus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="9" onclick="openSoundLightbox(9)">
+                <div class="sound-thumbnail">
+                    
+                    <div class="sound-icon-placeholder">
+                        <span class="sound-icon-large">🔊</span>
+                    </div>
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Eurasian Green Woodpecker</div>
+                    <div class="sound-sci-name">Picus viridis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="10" onclick="openSoundLightbox(10)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635778299/480"
+                         alt="Pileated Woodpecker"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Pileated Woodpecker</div>
+                    <div class="sound-sci-name">Dryocopus pileatus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="11" onclick="openSoundLightbox(11)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/615415289/480"
+                         alt="Merlin"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Merlin</div>
+                    <div class="sound-sci-name">Falco columbarius</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="12" onclick="openSoundLightbox(12)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/209876781/480"
+                         alt="Peregrine Falcon"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Peregrine Falcon</div>
+                    <div class="sound-sci-name">Falco peregrinus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="13" onclick="openSoundLightbox(13)">
+                <div class="sound-thumbnail">
+                    
+                    <div class="sound-icon-placeholder">
+                        <span class="sound-icon-large">🔊</span>
+                    </div>
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Cockatiel</div>
+                    <div class="sound-sci-name">Nymphicus hollandicus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="14" onclick="openSoundLightbox(14)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980971/480"
+                         alt="Monk Parakeet"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Monk Parakeet</div>
+                    <div class="sound-sci-name">Myiopsitta monachus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="15" onclick="openSoundLightbox(15)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/214757311/480"
+                         alt="Burrowing Parakeet"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Burrowing Parakeet</div>
+                    <div class="sound-sci-name">Cyanoliseus patagonus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="16" onclick="openSoundLightbox(16)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621818506/480"
+                         alt="Blue-crowned Parakeet"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Blue-crowned Parakeet</div>
+                    <div class="sound-sci-name">Thectocercus acuticaudatus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="17" onclick="openSoundLightbox(17)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437664041/480"
+                         alt="Rufous-banded Miner"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Rufous-banded Miner</div>
+                    <div class="sound-sci-name">Geositta rufipennis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="18" onclick="openSoundLightbox(18)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/482929491/480"
+                         alt="Eastern Wood-Pewee"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Eastern Wood-Pewee</div>
+                    <div class="sound-sci-name">Contopus virens</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="19" onclick="openSoundLightbox(19)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/586881761/480"
+                         alt="Yellow-bellied Flycatcher"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Yellow-bellied Flycatcher</div>
+                    <div class="sound-sci-name">Empidonax flaviventris</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="20" onclick="openSoundLightbox(20)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/165815141/480"
+                         alt="Western Flycatcher"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Western Flycatcher</div>
+                    <div class="sound-sci-name">Empidonax difficilis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="21" onclick="openSoundLightbox(21)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437271541/480"
+                         alt="Black-billed Shrike-Tyrant"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Black-billed Shrike-Tyrant</div>
+                    <div class="sound-sci-name">Agriornis montanus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="22" onclick="openSoundLightbox(22)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635598737/480"
+                         alt="Great Crested Flycatcher"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Great Crested Flycatcher</div>
+                    <div class="sound-sci-name">Myiarchus crinitus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="23" onclick="openSoundLightbox(23)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598288891/480"
+                         alt="Cassin's Vireo"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Cassin's Vireo</div>
+                    <div class="sound-sci-name">Vireo cassinii</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="24" onclick="openSoundLightbox(24)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/586965361/480"
+                         alt="Blue-headed Vireo"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Blue-headed Vireo</div>
+                    <div class="sound-sci-name">Vireo solitarius</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="25" onclick="openSoundLightbox(25)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/164012711/480"
+                         alt="Red-eyed Vireo"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Red-eyed Vireo</div>
+                    <div class="sound-sci-name">Vireo olivaceus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="26" onclick="openSoundLightbox(26)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/429346631/480"
+                         alt="Northern Shrike"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Northern Shrike</div>
+                    <div class="sound-sci-name">Lanius borealis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="27" onclick="openSoundLightbox(27)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/587059801/480"
+                         alt="Canada Jay"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Canada Jay</div>
+                    <div class="sound-sci-name">Perisoreus canadensis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="28" onclick="openSoundLightbox(28)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34748961/480"
+                         alt="Blue Jay"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Blue Jay</div>
+                    <div class="sound-sci-name">Cyanocitta cristata</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="29" onclick="openSoundLightbox(29)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540020891/480"
+                         alt="Woodhouse's Scrub-Jay"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Woodhouse's Scrub-Jay</div>
+                    <div class="sound-sci-name">Aphelocoma woodhouseii</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="30" onclick="openSoundLightbox(30)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622062705/480"
+                         alt="Eurasian Jay"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Eurasian Jay</div>
+                    <div class="sound-sci-name">Garrulus glandarius</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="31" onclick="openSoundLightbox(31)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/615578145/480"
+                         alt="American Crow"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">American Crow</div>
+                    <div class="sound-sci-name">Corvus brachyrhynchos</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="32" onclick="openSoundLightbox(32)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/51320101/480"
+                         alt="Fish Crow"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">4</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Fish Crow</div>
+                    <div class="sound-sci-name">Corvus ossifragus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="33" onclick="openSoundLightbox(33)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639815601/480"
+                         alt="Carrion Crow"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Carrion Crow</div>
+                    <div class="sound-sci-name">Corvus corone</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="34" onclick="openSoundLightbox(34)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/598310941/480"
+                         alt="Common Raven"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Common Raven</div>
+                    <div class="sound-sci-name">Corvus corax</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="35" onclick="openSoundLightbox(35)">
+                <div class="sound-thumbnail">
+                    
+                    <div class="sound-icon-placeholder">
+                        <span class="sound-icon-large">🔊</span>
+                    </div>
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Coal Tit</div>
+                    <div class="sound-sci-name">Periparus ater</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="36" onclick="openSoundLightbox(36)">
+                <div class="sound-thumbnail">
+                    
+                    <div class="sound-icon-placeholder">
+                        <span class="sound-icon-large">🔊</span>
+                    </div>
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Marsh Tit</div>
+                    <div class="sound-sci-name">Poecile palustris</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="37" onclick="openSoundLightbox(37)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/56261461/480"
+                         alt="Bridled Titmouse"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Bridled Titmouse</div>
+                    <div class="sound-sci-name">Baeolophus wollweberi</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="38" onclick="openSoundLightbox(38)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540369241/480"
+                         alt="Verdin"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Verdin</div>
+                    <div class="sound-sci-name">Auriparus flaviceps</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="39" onclick="openSoundLightbox(39)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639209792/480"
+                         alt="Common Chiffchaff"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Common Chiffchaff</div>
+                    <div class="sound-sci-name">Phylloscopus collybita</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="40" onclick="openSoundLightbox(40)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/608680063/480"
+                         alt="Cetti's Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Cetti's Warbler</div>
+                    <div class="sound-sci-name">Cettia cetti</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="41" onclick="openSoundLightbox(41)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22482881/480"
+                         alt="Eurasian Blackcap"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Eurasian Blackcap</div>
+                    <div class="sound-sci-name">Sylvia atricapilla</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="42" onclick="openSoundLightbox(42)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622076838/480"
+                         alt="Sardinian Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Sardinian Warbler</div>
+                    <div class="sound-sci-name">Curruca melanocephala</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="43" onclick="openSoundLightbox(43)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638762131/480"
+                         alt="Western Subalpine Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Western Subalpine Warbler</div>
+                    <div class="sound-sci-name">Curruca iberiae</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="44" onclick="openSoundLightbox(44)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599886571/480"
+                         alt="Wrentit"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Wrentit</div>
+                    <div class="sound-sci-name">Chamaea fasciata</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="45" onclick="openSoundLightbox(45)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/222904191/480"
+                         alt="Golden-crowned Kinglet"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Golden-crowned Kinglet</div>
+                    <div class="sound-sci-name">Regulus satrapa</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="46" onclick="openSoundLightbox(46)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/628099976/480"
+                         alt="White-breasted Nuthatch"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">White-breasted Nuthatch</div>
+                    <div class="sound-sci-name">Sitta carolinensis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="47" onclick="openSoundLightbox(47)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622239692/480"
+                         alt="Short-toed Treecreeper"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">3</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Short-toed Treecreeper</div>
+                    <div class="sound-sci-name">Certhia brachydactyla</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="48" onclick="openSoundLightbox(48)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/540020591/480"
+                         alt="Black-tailed Gnatcatcher"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Black-tailed Gnatcatcher</div>
+                    <div class="sound-sci-name">Polioptila melanura</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="49" onclick="openSoundLightbox(49)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620935893/480"
+                         alt="California Gnatcatcher"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">California Gnatcatcher</div>
+                    <div class="sound-sci-name">Polioptila californica</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="50" onclick="openSoundLightbox(50)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/592886881/480"
+                         alt="Northern House Wren"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Northern House Wren</div>
+                    <div class="sound-sci-name">Troglodytes aedon</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="51" onclick="openSoundLightbox(51)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749021/480"
+                         alt="Eurasian Wren"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Eurasian Wren</div>
+                    <div class="sound-sci-name">Troglodytes troglodytes</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="52" onclick="openSoundLightbox(52)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/487486761/480"
+                         alt="Winter Wren"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Winter Wren</div>
+                    <div class="sound-sci-name">Troglodytes hiemalis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="53" onclick="openSoundLightbox(53)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34523661/480"
+                         alt="Marsh Wren"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Marsh Wren</div>
+                    <div class="sound-sci-name">Cistothorus palustris</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="54" onclick="openSoundLightbox(54)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/105332801/480"
+                         alt="Carolina Wren"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Carolina Wren</div>
+                    <div class="sound-sci-name">Thryothorus ludovicianus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="55" onclick="openSoundLightbox(55)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/627963902/480"
+                         alt="European Starling"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">European Starling</div>
+                    <div class="sound-sci-name">Sturnus vulgaris</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="56" onclick="openSoundLightbox(56)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/629727392/480"
+                         alt="Eastern Bluebird"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Eastern Bluebird</div>
+                    <div class="sound-sci-name">Sialia sialis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="57" onclick="openSoundLightbox(57)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22594111/480"
+                         alt="Bicknell's Thrush"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Bicknell's Thrush</div>
+                    <div class="sound-sci-name">Catharus bicknelli</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="58" onclick="openSoundLightbox(58)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/627963896/480"
+                         alt="Hermit Thrush"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Hermit Thrush</div>
+                    <div class="sound-sci-name">Catharus guttatus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="59" onclick="openSoundLightbox(59)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/619303910/480"
+                         alt="Wood Thrush"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Wood Thrush</div>
+                    <div class="sound-sci-name">Hylocichla mustelina</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="60" onclick="openSoundLightbox(60)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/467459241/480"
+                         alt="Spotted Flycatcher"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Spotted Flycatcher</div>
+                    <div class="sound-sci-name">Muscicapa striata</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="61" onclick="openSoundLightbox(61)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639035501/480"
+                         alt="Common Redstart"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Common Redstart</div>
+                    <div class="sound-sci-name">Phoenicurus phoenicurus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="62" onclick="openSoundLightbox(62)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621374884/480"
+                         alt="Tree Pipit"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Tree Pipit</div>
+                    <div class="sound-sci-name">Anthus trivialis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="63" onclick="openSoundLightbox(63)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/624479092/480"
+                         alt="American Pipit"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">American Pipit</div>
+                    <div class="sound-sci-name">Anthus rubescens</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="64" onclick="openSoundLightbox(64)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/132014461/480"
+                         alt="Evening Grosbeak"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">3</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Evening Grosbeak</div>
+                    <div class="sound-sci-name">Hesperiphona vespertina</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="65" onclick="openSoundLightbox(65)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/630075692/480"
+                         alt="House Finch"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">House Finch</div>
+                    <div class="sound-sci-name">Haemorhous mexicanus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="66" onclick="openSoundLightbox(66)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/111092651/480"
+                         alt="European Goldfinch"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">European Goldfinch</div>
+                    <div class="sound-sci-name">Carduelis carduelis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="67" onclick="openSoundLightbox(67)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/468714461/480"
+                         alt="European Serin"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">European Serin</div>
+                    <div class="sound-sci-name">Serinus serinus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="68" onclick="openSoundLightbox(68)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/166075251/480"
+                         alt="Pine Siskin"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">3</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Pine Siskin</div>
+                    <div class="sound-sci-name">Spinus pinus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="69" onclick="openSoundLightbox(69)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/419403411/480"
+                         alt="Snow Bunting"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Snow Bunting</div>
+                    <div class="sound-sci-name">Plectrophenax nivalis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="70" onclick="openSoundLightbox(70)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622237312/480"
+                         alt="Cirl Bunting"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Cirl Bunting</div>
+                    <div class="sound-sci-name">Emberiza cirlus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="71" onclick="openSoundLightbox(71)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/538114091/480"
+                         alt="Rufous-winged Sparrow"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Rufous-winged Sparrow</div>
+                    <div class="sound-sci-name">Peucaea carpalis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="72" onclick="openSoundLightbox(72)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/635598738/480"
+                         alt="Field Sparrow"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Field Sparrow</div>
+                    <div class="sound-sci-name">Spizella pusilla</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="73" onclick="openSoundLightbox(73)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948255/480"
+                         alt="California Towhee"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">California Towhee</div>
+                    <div class="sound-sci-name">Melozone crissalis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="74" onclick="openSoundLightbox(74)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/237658781/480"
+                         alt="Red-winged Blackbird"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Red-winged Blackbird</div>
+                    <div class="sound-sci-name">Agelaius phoeniceus</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="75" onclick="openSoundLightbox(75)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462321/480"
+                         alt="Yellow-winged Blackbird"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Yellow-winged Blackbird</div>
+                    <div class="sound-sci-name">Agelasticus thilius</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="76" onclick="openSoundLightbox(76)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/234518741/480"
+                         alt="Northern Waterthrush"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Northern Waterthrush</div>
+                    <div class="sound-sci-name">Parkesia noveboracensis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="77" onclick="openSoundLightbox(77)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/450793781/480"
+                         alt="Tennessee Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Tennessee Warbler</div>
+                    <div class="sound-sci-name">Leiothlypis peregrina</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="78" onclick="openSoundLightbox(78)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22493731/480"
+                         alt="Nashville Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Nashville Warbler</div>
+                    <div class="sound-sci-name">Leiothlypis ruficapilla</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="79" onclick="openSoundLightbox(79)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/348688001/480"
+                         alt="Hooded Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Hooded Warbler</div>
+                    <div class="sound-sci-name">Setophaga citrina</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="80" onclick="openSoundLightbox(80)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/487486751/480"
+                         alt="American Redstart"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">American Redstart</div>
+                    <div class="sound-sci-name">Setophaga ruticilla</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="81" onclick="openSoundLightbox(81)">
+                <div class="sound-thumbnail">
+                    
+                    <div class="sound-icon-placeholder">
+                        <span class="sound-icon-large">🔊</span>
+                    </div>
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Blackburnian Warbler</div>
+                    <div class="sound-sci-name">Setophaga fusca</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="82" onclick="openSoundLightbox(82)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/586902591/480"
+                         alt="Blackpoll Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Blackpoll Warbler</div>
+                    <div class="sound-sci-name">Setophaga striata</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="83" onclick="openSoundLightbox(83)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/494732711/480"
+                         alt="Black-throated Green Warbler"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Black-throated Green Warbler</div>
+                    <div class="sound-sci-name">Setophaga virens</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="84" onclick="openSoundLightbox(84)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/618922159/480"
+                         alt="Northern Cardinal"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">2</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Northern Cardinal</div>
+                    <div class="sound-sci-name">Cardinalis cardinalis</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="85" onclick="openSoundLightbox(85)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/351793661/480"
+                         alt="Indigo Bunting"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Indigo Bunting</div>
+                    <div class="sound-sci-name">Passerina cyanea</div>
+                </div>
+            </div>
+            
+            <div class="sound-species-card" data-index="86" onclick="openSoundLightbox(86)">
+                <div class="sound-thumbnail">
+                    
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22491191/480"
+                         alt="Diuca Finch"
+                         loading="lazy">
+                    
+                    <div class="sound-badge">
+                        <span class="sound-icon">🎵</span>
+                        <span class="sound-count">1</span>
+                    </div>
+                </div>
+                <div class="sound-info">
+                    <div class="sound-name">Diuca Finch</div>
+                    <div class="sound-sci-name">Diuca diuca</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX SONS -->
+    <div class="lightbox sound-lightbox" id="soundLightbox">
+        <button class="lightbox-close" onclick="closeSoundLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateSoundLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateSoundLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <!-- Zone principale avec le player -->
+            <div class="sound-player-container">
+                <div id="sound-player"></div>
+                <div class="sound-nav-species">
+                    <button class="sound-nav-btn" onclick="prevSound()">◀</button>
+                    <span id="sound-counter">1 / 1</span>
+                    <button class="sound-nav-btn" onclick="nextSound()">▶</button>
+                </div>
+            </div>
+            
+            <!-- Sidebar avec infos -->
+            <div class="lightbox-sidebar">
+                <h2 id="sound-species-name"></h2>
+                <div class="lightbox-sci-name" id="sound-sci-name"></div>
+                
+                <div class="lightbox-info">
+                    <div class="info-row">
+                        <span class="info-icon">📍</span>
+                        <span id="sound-location"></span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-icon">📅</span>
+                        <span id="sound-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="sound-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="sound-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    View on eBird
+                </a>
+                
+                <!-- Lien Macaulay Library -->
+                <a id="sound-ml" href="#" target="_blank" class="ebird-link ml-link">
+                    🎵 Open in Macaulay Library
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 7<sup>th</sup>, 2025</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'en';
+        
+        // Données des espèces avec sons
+        const speciesData = [
+            
+            {
+                name_fr: "Râle d\'eau",
+                name_en: "Water Rail",
+                sci_name: "Rallus aquaticus",
+                best_photo_ml: null,
+                sounds: [
+                    
+                    {
+                        ml: "639066739",
+                        date_fr: "18 juillet 2025",
+                        date_en: "July 18<sup>th</sup>, 2025",
+                        location_fr: "ENS de la Butte et du Marais de Paloux (St-Pierre-le-Chastel), Auvergne-Rhône-Alpes, France",
+                        location_en: "ENS de la Butte et du Marais de Paloux (St-Pierre-le-Chastel), Auvergne-Rhône-Alpes, France",
+                        lat: 45.8043756,
+                        lng: 2.8428679,
+                        checklist: "S260709046"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                sci_name: "Himantopus himantopus",
+                best_photo_ml: "621570147",
+                sounds: [
+                    
+                    {
+                        ml: "621569008",
+                        date_fr: "17 juillet 2024",
+                        date_en: "July 17<sup>th</sup>, 2024",
+                        location_fr: "Ria de Alvor, Portugal",
+                        location_en: "Ria de Alvor, Portugal",
+                        lat: 37.1475059,
+                        lng: -8.5947418,
+                        checklist: "S187357843"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Mouette de Bonaparte",
+                name_en: "Bonaparte\'s Gull",
+                sci_name: "Chroicocephalus philadelphia",
+                best_photo_ml: "360394741",
+                sounds: [
+                    
+                    {
+                        ml: "366597921",
+                        date_fr: "5 août 2021",
+                        date_en: "August 5<sup>th</sup>, 2021",
+                        location_fr: "Pointe à John (quai & base de plein air), Québec, Canada",
+                        location_en: "Pointe à John (quai & base de plein air), Quebec, Canada",
+                        lat: 48.2316643,
+                        lng: -69.5485501,
+                        checklist: "S92805468"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Petit Blongios",
+                name_en: "Least Bittern",
+                sci_name: "Botaurus exilis",
+                best_photo_ml: null,
+                sounds: [
+                    
+                    {
+                        ml: "619291996",
+                        date_fr: "19 mai 2024",
+                        date_en: "May 19<sup>th</sup>, 2024",
+                        location_fr: "Domaine St-Paul, Québec, Canada",
+                        location_en: "Domaine St-Paul, Quebec, Canada",
+                        lat: 45.4546332,
+                        lng: -73.5529532,
+                        checklist: "S175611058"
+                    },
+                    
+                    {
+                        ml: "452600961",
+                        date_fr: "23 mai 2022",
+                        date_en: "May 23<sup>rd</sup>, 2022",
+                        location_fr: "RF Marguerite-D'Youville, Québec, Canada",
+                        location_en: "RF Marguerite-D'Youville, Quebec, Canada",
+                        lat: 45.3914585,
+                        lng: -73.7611771,
+                        checklist: "S111114391"
+                    },
+                    
+                    {
+                        ml: "452601171",
+                        date_fr: "23 mai 2022",
+                        date_en: "May 23<sup>rd</sup>, 2022",
+                        location_fr: "RF Marguerite-D'Youville, Québec, Canada",
+                        location_en: "RF Marguerite-D'Youville, Quebec, Canada",
+                        lat: 45.3914585,
+                        lng: -73.7611771,
+                        checklist: "S111114391"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Épervier d\'Europe",
+                name_en: "Eurasian Sparrowhawk",
+                sci_name: "Accipiter nisus",
+                best_photo_ml: "468713461",
+                sounds: [
+                    
+                    {
+                        ml: "622196233",
+                        date_fr: "5 août 2024",
+                        date_en: "August 5<sup>th</sup>, 2024",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S190293701"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Épervier de Cooper",
+                name_en: "Cooper\'s Hawk",
+                sci_name: "Astur cooperii",
+                best_photo_ml: "629547904",
+                sounds: [
+                    
+                    {
+                        ml: "548946461",
+                        date_fr: "24 mars 2023",
+                        date_en: "March 24<sup>th</sup>, 2023",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S131663279"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Chouette rayée",
+                name_en: "Barred Owl",
+                sci_name: "Strix varia",
+                best_photo_ml: "634963168",
+                sounds: [
+                    
+                    {
+                        ml: "634960470",
+                        date_fr: "3 mai 2025",
+                        date_en: "May 3<sup>rd</sup>, 2025",
+                        location_fr: "Parc du Mt-Royal, Québec, Canada",
+                        location_en: "Parc du Mt-Royal, Quebec, Canada",
+                        lat: 45.5055593,
+                        lng: -73.5882289,
+                        checklist: "S232669084"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pic maculé",
+                name_en: "Yellow-bellied Sapsucker",
+                sci_name: "Sphyrapicus varius",
+                best_photo_ml: "628686776",
+                sounds: [
+                    
+                    {
+                        ml: "393259391",
+                        date_fr: "4 décembre 2021",
+                        date_en: "December 4<sup>th</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S98453083"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pic chevelu",
+                name_en: "Hairy Woodpecker",
+                sci_name: "Leuconotopicus villosus",
+                best_photo_ml: "401588511",
+                sounds: [
+                    
+                    {
+                        ml: "142444811",
+                        date_fr: "24 février 2019",
+                        date_en: "February 24<sup>th</sup>, 2019",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S53091297"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pic vert",
+                name_en: "Eurasian Green Woodpecker",
+                sci_name: "Picus viridis",
+                best_photo_ml: null,
+                sounds: [
+                    
+                    {
+                        ml: "468711661",
+                        date_fr: "20 juillet 2022",
+                        date_en: "July 20<sup>th</sup>, 2022",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S115414612"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Grand Pic",
+                name_en: "Pileated Woodpecker",
+                sci_name: "Dryocopus pileatus",
+                best_photo_ml: "635778299",
+                sounds: [
+                    
+                    {
+                        ml: "351672811",
+                        date_fr: "1<sup>er</sup> juillet 2021",
+                        date_en: "July 1<sup>st</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S91082564"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Faucon émerillon",
+                name_en: "Merlin",
+                sci_name: "Falco columbarius",
+                best_photo_ml: "615415289",
+                sounds: [
+                    
+                    {
+                        ml: "547556701",
+                        date_fr: "20 mars 2023",
+                        date_en: "March 20<sup>th</sup>, 2023",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S131360910"
+                    },
+                    
+                    {
+                        ml: "547556711",
+                        date_fr: "20 mars 2023",
+                        date_en: "March 20<sup>th</sup>, 2023",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S131360910"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Faucon pèlerin",
+                name_en: "Peregrine Falcon",
+                sci_name: "Falco peregrinus",
+                best_photo_ml: "209876781",
+                sounds: [
+                    
+                    {
+                        ml: "473123901",
+                        date_fr: "6 août 2022",
+                        date_en: "August 6<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S116420974"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Calopsitte élégante",
+                name_en: "Cockatiel",
+                sci_name: "Nymphicus hollandicus",
+                best_photo_ml: null,
+                sounds: [
+                    
+                    {
+                        ml: "478821561",
+                        date_fr: "27 août 2022",
+                        date_en: "August 27<sup>th</sup>, 2022",
+                        location_fr: "Parc de l'Honorable-George-O'Reilly, Québec, Canada",
+                        location_en: "Parc de l'Honorable-George-O'Reilly, Quebec, Canada",
+                        lat: 45.4365716,
+                        lng: -73.583293,
+                        checklist: "S117662107"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Conure veuve",
+                name_en: "Monk Parakeet",
+                sci_name: "Myiopsitta monachus",
+                best_photo_ml: "434980971",
+                sounds: [
+                    
+                    {
+                        ml: "439461251",
+                        date_fr: "23 avril 2022",
+                        date_en: "April 23<sup>rd</sup>, 2022",
+                        location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+                        location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
+                        lat: -33.3980197,
+                        lng: -70.6022,
+                        checklist: "S107795304"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Conure de Patagonie",
+                name_en: "Burrowing Parakeet",
+                sci_name: "Cyanoliseus patagonus",
+                best_photo_ml: "214757311",
+                sounds: [
+                    
+                    {
+                        ml: "214515041",
+                        date_fr: "6 mars 2020",
+                        date_en: "March 6<sup>th</sup>, 2020",
+                        location_fr: "Quebrada Pelícano, Coquimbo, Chili",
+                        location_en: "Quebrada Pelícano, Coquimbo, Chile",
+                        lat: -29.167514,
+                        lng: -70.8184736,
+                        checklist: "S65500108"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Conure à tête bleue",
+                name_en: "Blue-crowned Parakeet",
+                sci_name: "Thectocercus acuticaudatus",
+                best_photo_ml: "621818506",
+                sounds: [
+                    
+                    {
+                        ml: "621818391",
+                        date_fr: "24 juillet 2024",
+                        date_en: "July 24<sup>th</sup>, 2024",
+                        location_fr: "Parque Eduardo VII, Portugal",
+                        location_en: "Parque Eduardo VII, Portugal",
+                        lat: 38.728242,
+                        lng: -9.1540682,
+                        checklist: "S188604228"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Géositte à ailes rousses",
+                name_en: "Rufous-banded Miner",
+                sci_name: "Geositta rufipennis",
+                best_photo_ml: "437664041",
+                sounds: [
+                    
+                    {
+                        ml: "437792601",
+                        date_fr: "20 avril 2022",
+                        date_en: "April 20<sup>th</sup>, 2022",
+                        location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                        location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                        lat: -29.2562225,
+                        lng: -70.7383406,
+                        checklist: "S107531483"
+                    },
+                    
+                    {
+                        ml: "436203321",
+                        date_fr: "16 avril 2022",
+                        date_en: "April 16<sup>th</sup>, 2022",
+                        location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                        location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                        lat: -29.2562225,
+                        lng: -70.7383406,
+                        checklist: "S107163090"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pioui de l\'Est",
+                name_en: "Eastern Wood-Pewee",
+                sci_name: "Contopus virens",
+                best_photo_ml: "482929491",
+                sounds: [
+                    
+                    {
+                        ml: "351671761",
+                        date_fr: "1<sup>er</sup> juillet 2021",
+                        date_en: "July 1<sup>st</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S91082564"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Moucherolle à ventre jaune",
+                name_en: "Yellow-bellied Flycatcher",
+                sci_name: "Empidonax flaviventris",
+                best_photo_ml: "586881761",
+                sounds: [
+                    
+                    {
+                        ml: "640513227",
+                        date_fr: "19 août 2025",
+                        date_en: "August 19<sup>th</sup>, 2025",
+                        location_fr: "Parc du 3e sommet, Québec, Canada",
+                        location_en: "Parc du 3e sommet, Quebec, Canada",
+                        lat: 45.5071289,
+                        lng: -73.6078835,
+                        checklist: "S268220739"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Moucherolle obscur",
+                name_en: "Western Flycatcher",
+                sci_name: "Empidonax difficilis",
+                best_photo_ml: "165815141",
+                sounds: [
+                    
+                    {
+                        ml: "552514411",
+                        date_fr: "29 mars 2023",
+                        date_en: "March 29<sup>th</sup>, 2023",
+                        location_fr: "Santa Barbara Botanic Garden, Californie, États-Unis",
+                        location_en: "Santa Barbara Botanic Garden, California, United States",
+                        lat: 34.4567922,
+                        lng: -119.710266,
+                        checklist: "S132183670"
+                    },
+                    
+                    {
+                        ml: "393298891",
+                        date_fr: "1<sup>er</sup> juillet 2019",
+                        date_en: "July 1<sup>st</sup>, 2019",
+                        location_fr: "Tofino, Colombie-Britannique, Canada",
+                        location_en: "Tofino, British Columbia, Canada",
+                        lat: 49.14675,
+                        lng: -125.9131297,
+                        checklist: "S57848518"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Gaucho à bec noir",
+                name_en: "Black-billed Shrike-Tyrant",
+                sci_name: "Agriornis montanus",
+                best_photo_ml: "437271541",
+                sounds: [
+                    
+                    {
+                        ml: "436100911",
+                        date_fr: "16 avril 2022",
+                        date_en: "April 16<sup>th</sup>, 2022",
+                        location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                        location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                        lat: -29.2562225,
+                        lng: -70.7383406,
+                        checklist: "S107163090"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Tyran huppé",
+                name_en: "Great Crested Flycatcher",
+                sci_name: "Myiarchus crinitus",
+                best_photo_ml: "635598737",
+                sounds: [
+                    
+                    {
+                        ml: "635542607",
+                        date_fr: "11 mai 2025",
+                        date_en: "May 11<sup>th</sup>, 2025",
+                        location_fr: "Parc Angrignon, Québec, Canada",
+                        location_en: "Parc Angrignon, Quebec, Canada",
+                        lat: 45.4445136,
+                        lng: -73.6017311,
+                        checklist: "S236421006"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Viréo de Cassin",
+                name_en: "Cassin\'s Vireo",
+                sci_name: "Vireo cassinii",
+                best_photo_ml: "598288891",
+                sounds: [
+                    
+                    {
+                        ml: "598318091",
+                        date_fr: "28 juillet 2023",
+                        date_en: "July 28<sup>th</sup>, 2023",
+                        location_fr: "Yosemite Valley, Californie, États-Unis",
+                        location_en: "Yosemite Valley, California, United States",
+                        lat: 37.7454716,
+                        lng: -119.5903015,
+                        checklist: "S145841071"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Viréo à tête bleue",
+                name_en: "Blue-headed Vireo",
+                sci_name: "Vireo solitarius",
+                best_photo_ml: "586965361",
+                sounds: [
+                    
+                    {
+                        ml: "586982411",
+                        date_fr: "21 juin 2023",
+                        date_en: "June 21<sup>st</sup>, 2023",
+                        location_fr: "PN du Mt-Mégantic, Québec, Canada",
+                        location_en: "PN du Mt-Mégantic, Quebec, Canada",
+                        lat: 45.4556374,
+                        lng: -71.153512,
+                        checklist: "S142249788"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Viréo aux yeux rouges",
+                name_en: "Red-eyed Vireo",
+                sci_name: "Vireo olivaceus",
+                best_photo_ml: "164012711",
+                sounds: [
+                    
+                    {
+                        ml: "608220561",
+                        date_fr: "29 août 2023",
+                        date_en: "August 29<sup>th</sup>, 2023",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S148365077"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pie-grièche boréale",
+                name_en: "Northern Shrike",
+                sci_name: "Lanius borealis",
+                best_photo_ml: "429346631",
+                sounds: [
+                    
+                    {
+                        ml: "429344771",
+                        date_fr: "27 mars 2022",
+                        date_en: "March 27<sup>th</sup>, 2022",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S105721935"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Mésangeai du Canada",
+                name_en: "Canada Jay",
+                sci_name: "Perisoreus canadensis",
+                best_photo_ml: "587059801",
+                sounds: [
+                    
+                    {
+                        ml: "494746091",
+                        date_fr: "17 octobre 2022",
+                        date_en: "October 17<sup>th</sup>, 2022",
+                        location_fr: "PN du Mt-Mégantic, Québec, Canada",
+                        location_en: "PN du Mt-Mégantic, Quebec, Canada",
+                        lat: 45.4556374,
+                        lng: -71.153512,
+                        checklist: "S120834878"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Geai bleu",
+                name_en: "Blue Jay",
+                sci_name: "Cyanocitta cristata",
+                best_photo_ml: "34748961",
+                sounds: [
+                    
+                    {
+                        ml: "616038955",
+                        date_fr: "3 mars 2024",
+                        date_en: "March 3<sup>rd</sup>, 2024",
+                        location_fr: "Frog Pond WMA, Floride, États-Unis",
+                        location_en: "Frog Pond WMA, Florida, United States",
+                        lat: 25.396439,
+                        lng: -80.566581,
+                        checklist: "S163563864"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Geai de Woodhouse",
+                name_en: "Woodhouse\'s Scrub-Jay",
+                sci_name: "Aphelocoma woodhouseii",
+                best_photo_ml: "540020891",
+                sounds: [
+                    
+                    {
+                        ml: "538019431",
+                        date_fr: "21 février 2023",
+                        date_en: "February 21<sup>st</sup>, 2023",
+                        location_fr: "Catalina SP, Arizona, États-Unis",
+                        location_en: "Catalina SP, Arizona, United States",
+                        lat: 32.4244027,
+                        lng: -110.9123905,
+                        checklist: "S129303210"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Geai des chênes",
+                name_en: "Eurasian Jay",
+                sci_name: "Garrulus glandarius",
+                best_photo_ml: "622062705",
+                sounds: [
+                    
+                    {
+                        ml: "622158973",
+                        date_fr: "4 août 2024",
+                        date_en: "August 4<sup>th</sup>, 2024",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S190144329"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Corneille d\'Amérique",
+                name_en: "American Crow",
+                sci_name: "Corvus brachyrhynchos",
+                best_photo_ml: "615578145",
+                sounds: [
+                    
+                    {
+                        ml: "351672111",
+                        date_fr: "1<sup>er</sup> juillet 2021",
+                        date_en: "July 1<sup>st</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S91082564"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Corneille de rivage",
+                name_en: "Fish Crow",
+                sci_name: "Corvus ossifragus",
+                best_photo_ml: "51320101",
+                sounds: [
+                    
+                    {
+                        ml: "643131317",
+                        date_fr: "8 octobre 2025",
+                        date_en: "October 8<sup>th</sup>, 2025",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S277960771"
+                    },
+                    
+                    {
+                        ml: "643131318",
+                        date_fr: "8 octobre 2025",
+                        date_en: "October 8<sup>th</sup>, 2025",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S277960771"
+                    },
+                    
+                    {
+                        ml: "478164351",
+                        date_fr: "25 août 2022",
+                        date_en: "August 25<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S117532218"
+                    },
+                    
+                    {
+                        ml: "478164361",
+                        date_fr: "25 août 2022",
+                        date_en: "August 25<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S117532218"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Corneille noire",
+                name_en: "Carrion Crow",
+                sci_name: "Corvus corone",
+                best_photo_ml: "639815601",
+                sounds: [
+                    
+                    {
+                        ml: "465526651",
+                        date_fr: "7 juillet 2022",
+                        date_en: "July 7<sup>th</sup>, 2022",
+                        location_fr: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        location_en: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        lat: 43.5233709,
+                        lng: 1.4176226,
+                        checklist: "S114570841"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Grand Corbeau",
+                name_en: "Common Raven",
+                sci_name: "Corvus corax",
+                best_photo_ml: "598310941",
+                sounds: [
+                    
+                    {
+                        ml: "537687041",
+                        date_fr: "20 février 2023",
+                        date_en: "February 20<sup>th</sup>, 2023",
+                        location_fr: "Arizona-Sonora Desert Museum, Arizona, États-Unis",
+                        location_en: "Arizona-Sonora Desert Museum, Arizona, United States",
+                        lat: 32.2437113,
+                        lng: -111.168125,
+                        checklist: "S129232010"
+                    },
+                    
+                    {
+                        ml: "517107171",
+                        date_fr: "27 décembre 2022",
+                        date_en: "December 27<sup>th</sup>, 2022",
+                        location_fr: "Arboretum, Parcs de la Frayère et des Voiles, Québec, Canada",
+                        location_en: "Arboretum, Parcs de la Frayère et des Voiles, Quebec, Canada",
+                        lat: 45.6469012,
+                        lng: -73.4426296,
+                        checklist: "S124693837"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Mésange noire",
+                name_en: "Coal Tit",
+                sci_name: "Periparus ater",
+                best_photo_ml: null,
+                sounds: [
+                    
+                    {
+                        ml: "621786548",
+                        date_fr: "23 juillet 2024",
+                        date_en: "July 23<sup>rd</sup>, 2024",
+                        location_fr: "Assafora, Portugal",
+                        location_en: "Assafora, Portugal",
+                        lat: 38.9100031,
+                        lng: -9.4088459,
+                        checklist: "S188416729"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Mésange nonnette",
+                name_en: "Marsh Tit",
+                sci_name: "Poecile palustris",
+                best_photo_ml: null,
+                sounds: [
+                    
+                    {
+                        ml: "468549411",
+                        date_fr: "19 juillet 2022",
+                        date_en: "July 19<sup>th</sup>, 2022",
+                        location_fr: "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+                        location_en: "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+                        lat: 44.9651319,
+                        lng: 5.7594538,
+                        checklist: "S115379484"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Mésange arlequin",
+                name_en: "Bridled Titmouse",
+                sci_name: "Baeolophus wollweberi",
+                best_photo_ml: "56261461",
+                sounds: [
+                    
+                    {
+                        ml: "539519631",
+                        date_fr: "25 février 2023",
+                        date_en: "February 25<sup>th</sup>, 2023",
+                        location_fr: "Madera Canyon, Arizona, États-Unis",
+                        location_en: "Madera Canyon, Arizona, United States",
+                        lat: 31.7194081,
+                        lng: -110.8835989,
+                        checklist: "S129644243"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Auripare verdin",
+                name_en: "Verdin",
+                sci_name: "Auriparus flaviceps",
+                best_photo_ml: "540369241",
+                sounds: [
+                    
+                    {
+                        ml: "537686371",
+                        date_fr: "20 février 2023",
+                        date_en: "February 20<sup>th</sup>, 2023",
+                        location_fr: "Arizona-Sonora Desert Museum, Arizona, États-Unis",
+                        location_en: "Arizona-Sonora Desert Museum, Arizona, United States",
+                        lat: 32.2437113,
+                        lng: -111.168125,
+                        checklist: "S129232010"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pouillot véloce",
+                name_en: "Common Chiffchaff",
+                sci_name: "Phylloscopus collybita",
+                best_photo_ml: "639209792",
+                sounds: [
+                    
+                    {
+                        ml: "465100651",
+                        date_fr: "5 juillet 2022",
+                        date_en: "July 5<sup>th</sup>, 2022",
+                        location_fr: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        location_en: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        lat: 43.5233709,
+                        lng: 1.4176226,
+                        checklist: "S114472195"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Bouscarle de Cetti",
+                name_en: "Cetti\'s Warbler",
+                sci_name: "Cettia cetti",
+                best_photo_ml: "608680063",
+                sounds: [
+                    
+                    {
+                        ml: "465526581",
+                        date_fr: "7 juillet 2022",
+                        date_en: "July 7<sup>th</sup>, 2022",
+                        location_fr: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        location_en: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        lat: 43.5233709,
+                        lng: 1.4176226,
+                        checklist: "S114570841"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Fauvette à tête noire",
+                name_en: "Eurasian Blackcap",
+                sci_name: "Sylvia atricapilla",
+                best_photo_ml: "22482881",
+                sounds: [
+                    
+                    {
+                        ml: "465101071",
+                        date_fr: "5 juillet 2022",
+                        date_en: "July 5<sup>th</sup>, 2022",
+                        location_fr: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        location_en: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        lat: 43.5233709,
+                        lng: 1.4176226,
+                        checklist: "S114472195"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Fauvette mélanocéphale",
+                name_en: "Sardinian Warbler",
+                sci_name: "Curruca melanocephala",
+                best_photo_ml: "622076838",
+                sounds: [
+                    
+                    {
+                        ml: "621835143",
+                        date_fr: "25 juillet 2024",
+                        date_en: "July 25<sup>th</sup>, 2024",
+                        location_fr: "PN Sintra-Cascais, Portugal",
+                        location_en: "PN Sintra-Cascais, Portugal",
+                        lat: 38.8969115,
+                        lng: -9.4309473,
+                        checklist: "S188666482"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Fauvette passerinette",
+                name_en: "Western Subalpine Warbler",
+                sci_name: "Curruca iberiae",
+                best_photo_ml: "638762131",
+                sounds: [
+                    
+                    {
+                        ml: "638762887",
+                        date_fr: "11 juillet 2025",
+                        date_en: "July 11<sup>th</sup>, 2025",
+                        location_fr: "Plateau Saint-Laurent, Auvergne-Rhône-Alpes, France",
+                        location_en: "Plateau Saint-Laurent, Auvergne-Rhône-Alpes, France",
+                        lat: 44.4185784,
+                        lng: 5.3485394,
+                        checklist: "S258797759"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Cama brune",
+                name_en: "Wrentit",
+                sci_name: "Chamaea fasciata",
+                best_photo_ml: "599886571",
+                sounds: [
+                    
+                    {
+                        ml: "551449281",
+                        date_fr: "30 mars 2023",
+                        date_en: "March 30<sup>th</sup>, 2023",
+                        location_fr: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, Californie, États-Unis",
+                        location_en: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, California, United States",
+                        lat: 34.4071359,
+                        lng: -119.8783064,
+                        checklist: "S132213962"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Roitelet à couronne dorée",
+                name_en: "Golden-crowned Kinglet",
+                sci_name: "Regulus satrapa",
+                best_photo_ml: "222904191",
+                sounds: [
+                    
+                    {
+                        ml: "484868951",
+                        date_fr: "17 septembre 2022",
+                        date_en: "September 17<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S118885436"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Sittelle à poitrine blanche",
+                name_en: "White-breasted Nuthatch",
+                sci_name: "Sitta carolinensis",
+                best_photo_ml: "628099976",
+                sounds: [
+                    
+                    {
+                        ml: "142444801",
+                        date_fr: "24 février 2019",
+                        date_en: "February 24<sup>th</sup>, 2019",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S53091297"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Grimpereau des jardins",
+                name_en: "Short-toed Treecreeper",
+                sci_name: "Certhia brachydactyla",
+                best_photo_ml: "622239692",
+                sounds: [
+                    
+                    {
+                        ml: "468711541",
+                        date_fr: "20 juillet 2022",
+                        date_en: "July 20<sup>th</sup>, 2022",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S115414612"
+                    },
+                    
+                    {
+                        ml: "468711561",
+                        date_fr: "20 juillet 2022",
+                        date_en: "July 20<sup>th</sup>, 2022",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S115414612"
+                    },
+                    
+                    {
+                        ml: "465101381",
+                        date_fr: "5 juillet 2022",
+                        date_en: "July 5<sup>th</sup>, 2022",
+                        location_fr: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        location_en: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        lat: 43.5233709,
+                        lng: 1.4176226,
+                        checklist: "S114472195"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Gobemoucheron à queue noire",
+                name_en: "Black-tailed Gnatcatcher",
+                sci_name: "Polioptila melanura",
+                best_photo_ml: "540020591",
+                sounds: [
+                    
+                    {
+                        ml: "539933971",
+                        date_fr: "26 février 2023",
+                        date_en: "February 26<sup>th</sup>, 2023",
+                        location_fr: "Kartchner Caverns SP, Arizona, États-Unis",
+                        location_en: "Kartchner Caverns SP, Arizona, United States",
+                        lat: 31.8360722,
+                        lng: -110.3486592,
+                        checklist: "S129739094"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Gobemoucheron de Californie",
+                name_en: "California Gnatcatcher",
+                sci_name: "Polioptila californica",
+                best_photo_ml: "620935893",
+                sounds: [
+                    
+                    {
+                        ml: "620935935",
+                        date_fr: "28 juin 2024",
+                        date_en: "June 28<sup>th</sup>, 2024",
+                        location_fr: "UCSD Park, Californie, États-Unis",
+                        location_en: "UCSD Park, California, United States",
+                        lat: 32.8864337,
+                        lng: -117.2361969,
+                        checklist: "S184179673"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Troglodyte familier",
+                name_en: "Northern House Wren",
+                sci_name: "Troglodytes aedon",
+                best_photo_ml: "592886881",
+                sounds: [
+                    
+                    {
+                        ml: "375796821",
+                        date_fr: "4 septembre 2021",
+                        date_en: "September 4<sup>th</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S94184636"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Troglodyte mignon",
+                name_en: "Eurasian Wren",
+                sci_name: "Troglodytes troglodytes",
+                best_photo_ml: "34749021",
+                sounds: [
+                    
+                    {
+                        ml: "467443181",
+                        date_fr: "15 juillet 2022",
+                        date_en: "July 15<sup>th</sup>, 2022",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S115090548"
+                    },
+                    
+                    {
+                        ml: "465526861",
+                        date_fr: "7 juillet 2022",
+                        date_en: "July 7<sup>th</sup>, 2022",
+                        location_fr: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        location_en: "Parc du Confluent Garonne-Ariège, Occitanie, France",
+                        lat: 43.5233709,
+                        lng: 1.4176226,
+                        checklist: "S114570841"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Troglodyte des forêts",
+                name_en: "Winter Wren",
+                sci_name: "Troglodytes hiemalis",
+                best_photo_ml: "487486761",
+                sounds: [
+                    
+                    {
+                        ml: "380495071",
+                        date_fr: "16 octobre 2021",
+                        date_en: "October 16<sup>th</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S96228804"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Troglodyte des marais",
+                name_en: "Marsh Wren",
+                sci_name: "Cistothorus palustris",
+                best_photo_ml: "34523661",
+                sounds: [
+                    
+                    {
+                        ml: "452601141",
+                        date_fr: "23 mai 2022",
+                        date_en: "May 23<sup>rd</sup>, 2022",
+                        location_fr: "RF Marguerite-D'Youville, Québec, Canada",
+                        location_en: "RF Marguerite-D'Youville, Quebec, Canada",
+                        lat: 45.3914585,
+                        lng: -73.7611771,
+                        checklist: "S111114391"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Troglodyte de Caroline",
+                name_en: "Carolina Wren",
+                sci_name: "Thryothorus ludovicianus",
+                best_photo_ml: "105332801",
+                sounds: [
+                    
+                    {
+                        ml: "635542536",
+                        date_fr: "11 mai 2025",
+                        date_en: "May 11<sup>th</sup>, 2025",
+                        location_fr: "Parc Angrignon, Québec, Canada",
+                        location_en: "Parc Angrignon, Quebec, Canada",
+                        lat: 45.4445136,
+                        lng: -73.6017311,
+                        checklist: "S236421006"
+                    },
+                    
+                    {
+                        ml: "634396281",
+                        date_fr: "25 avril 2025",
+                        date_en: "April 25<sup>th</sup>, 2025",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S229138675"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Étourneau sansonnet",
+                name_en: "European Starling",
+                sci_name: "Sturnus vulgaris",
+                best_photo_ml: "627963902",
+                sounds: [
+                    
+                    {
+                        ml: "402654911",
+                        date_fr: "5 janvier 2022",
+                        date_en: "January 5<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S100158188"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Merlebleu de l\'Est",
+                name_en: "Eastern Bluebird",
+                sci_name: "Sialia sialis",
+                best_photo_ml: "629727392",
+                sounds: [
+                    
+                    {
+                        ml: "351592191",
+                        date_fr: "1<sup>er</sup> juillet 2021",
+                        date_en: "July 1<sup>st</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S91082564"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Grive de Bicknell",
+                name_en: "Bicknell\'s Thrush",
+                sci_name: "Catharus bicknelli",
+                best_photo_ml: "22594111",
+                sounds: [
+                    
+                    {
+                        ml: "586982281",
+                        date_fr: "21 juin 2023",
+                        date_en: "June 21<sup>st</sup>, 2023",
+                        location_fr: "PN du Mt-Mégantic, Québec, Canada",
+                        location_en: "PN du Mt-Mégantic, Quebec, Canada",
+                        lat: 45.4556374,
+                        lng: -71.153512,
+                        checklist: "S142249788"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Grive solitaire",
+                name_en: "Hermit Thrush",
+                sci_name: "Catharus guttatus",
+                best_photo_ml: "627963896",
+                sounds: [
+                    
+                    {
+                        ml: "634343176",
+                        date_fr: "24 avril 2025",
+                        date_en: "April 24<sup>th</sup>, 2025",
+                        location_fr: "Parc du 3e sommet, Québec, Canada",
+                        location_en: "Parc du 3e sommet, Quebec, Canada",
+                        lat: 45.5071289,
+                        lng: -73.6078835,
+                        checklist: "S228802224"
+                    },
+                    
+                    {
+                        ml: "397461601",
+                        date_fr: "20 décembre 2021",
+                        date_en: "December 20<sup>th</sup>, 2021",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S99170019"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Grive des bois",
+                name_en: "Wood Thrush",
+                sci_name: "Hylocichla mustelina",
+                best_photo_ml: "619303910",
+                sounds: [
+                    
+                    {
+                        ml: "576031631",
+                        date_fr: "22 mai 2023",
+                        date_en: "May 22<sup>nd</sup>, 2023",
+                        location_fr: "PN du Bois-de-l'île-Bizard, Québec, Canada",
+                        location_en: "PN du Bois-de-l'île-Bizard, Quebec, Canada",
+                        lat: 45.5100537,
+                        lng: -73.8786578,
+                        checklist: "S138890174"
+                    },
+                    
+                    {
+                        ml: "576031641",
+                        date_fr: "22 mai 2023",
+                        date_en: "May 22<sup>nd</sup>, 2023",
+                        location_fr: "PN du Bois-de-l'île-Bizard, Québec, Canada",
+                        location_en: "PN du Bois-de-l'île-Bizard, Quebec, Canada",
+                        lat: 45.5100537,
+                        lng: -73.8786578,
+                        checklist: "S138890174"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Gobemouche gris",
+                name_en: "Spotted Flycatcher",
+                sci_name: "Muscicapa striata",
+                best_photo_ml: "467459241",
+                sounds: [
+                    
+                    {
+                        ml: "464817851",
+                        date_fr: "4 juillet 2022",
+                        date_en: "July 4<sup>th</sup>, 2022",
+                        location_fr: "Cugnaux, Occitanie, France",
+                        location_en: "Cugnaux, Occitanie, France",
+                        lat: 43.5366388,
+                        lng: 1.345137,
+                        checklist: "S114402677"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Rougequeue à front blanc",
+                name_en: "Common Redstart",
+                sci_name: "Phoenicurus phoenicurus",
+                best_photo_ml: "639035501",
+                sounds: [
+                    
+                    {
+                        ml: "468549361",
+                        date_fr: "19 juillet 2022",
+                        date_en: "July 19<sup>th</sup>, 2022",
+                        location_fr: "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+                        location_en: "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+                        lat: 44.9651319,
+                        lng: 5.7594538,
+                        checklist: "S115379484"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pipit des arbres",
+                name_en: "Tree Pipit",
+                sci_name: "Anthus trivialis",
+                best_photo_ml: "621374884",
+                sounds: [
+                    
+                    {
+                        ml: "621207441",
+                        date_fr: "6 juillet 2024",
+                        date_en: "July 6<sup>th</sup>, 2024",
+                        location_fr: "Forêt du Risoux, Bourgogne-Franche-Comté, France",
+                        location_en: "Forêt du Risoux, Bourgogne-Franche-Comté, France",
+                        lat: 46.5455423,
+                        lng: 6.0937643,
+                        checklist: "S185591742"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Pipit d\'Amérique",
+                name_en: "American Pipit",
+                sci_name: "Anthus rubescens",
+                best_photo_ml: "624479092",
+                sounds: [
+                    
+                    {
+                        ml: "624499115",
+                        date_fr: "3 octobre 2024",
+                        date_en: "October 3<sup>rd</sup>, 2024",
+                        location_fr: "Champs agricoles Rg St-Simon, Québec, Canada",
+                        location_en: "Champs agricoles Rg St-Simon, Quebec, Canada",
+                        lat: 45.3168453,
+                        lng: -73.6550045,
+                        checklist: "S197359776"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Gros-bec errant",
+                name_en: "Evening Grosbeak",
+                sci_name: "Hesperiphona vespertina",
+                best_photo_ml: "132014461",
+                sounds: [
+                    
+                    {
+                        ml: "635604549",
+                        date_fr: "12 mai 2025",
+                        date_en: "May 12<sup>th</sup>, 2025",
+                        location_fr: "Parc du 3e sommet, Québec, Canada",
+                        location_en: "Parc du 3e sommet, Quebec, Canada",
+                        lat: 45.5071289,
+                        lng: -73.6078835,
+                        checklist: "S236830581"
+                    },
+                    
+                    {
+                        ml: "498018661",
+                        date_fr: "27 octobre 2022",
+                        date_en: "October 27<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S121383365"
+                    },
+                    
+                    {
+                        ml: "419045721",
+                        date_fr: "22 février 2022",
+                        date_en: "February 22<sup>nd</sup>, 2022",
+                        location_fr: "Sentier Le Draveur, Québec, Canada",
+                        location_en: "Sentier Le Draveur, Quebec, Canada",
+                        lat: 48.4219156,
+                        lng: -68.5497245,
+                        checklist: "S103516568"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Roselin familier",
+                name_en: "House Finch",
+                sci_name: "Haemorhous mexicanus",
+                best_photo_ml: "630075692",
+                sounds: [
+                    
+                    {
+                        ml: "416224651",
+                        date_fr: "14 février 2022",
+                        date_en: "February 14<sup>th</sup>, 2022",
+                        location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
+                        location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                        lat: 45.37778,
+                        lng: -75.79972,
+                        checklist: "S102627707"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Chardonneret élégant",
+                name_en: "European Goldfinch",
+                sci_name: "Carduelis carduelis",
+                best_photo_ml: "111092651",
+                sounds: [
+                    
+                    {
+                        ml: "465580561",
+                        date_fr: "2 juillet 2022",
+                        date_en: "July 2<sup>nd</sup>, 2022",
+                        location_fr: "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d'Azur, France",
+                        location_en: "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d'Azur, France",
+                        lat: 43.5603842,
+                        lng: 4.8294809,
+                        checklist: "S114205836"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Serin cini",
+                name_en: "European Serin",
+                sci_name: "Serinus serinus",
+                best_photo_ml: "468714461",
+                sounds: [
+                    
+                    {
+                        ml: "468714251",
+                        date_fr: "20 juillet 2022",
+                        date_en: "July 20<sup>th</sup>, 2022",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S115414612"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Tarin des pins",
+                name_en: "Pine Siskin",
+                sci_name: "Spinus pinus",
+                best_photo_ml: "166075251",
+                sounds: [
+                    
+                    {
+                        ml: "642655878",
+                        date_fr: "29 septembre 2025",
+                        date_en: "September 29<sup>th</sup>, 2025",
+                        location_fr: "Parc du 3e sommet, Québec, Canada",
+                        location_en: "Parc du 3e sommet, Quebec, Canada",
+                        lat: 45.5071289,
+                        lng: -73.6078835,
+                        checklist: "S276268998"
+                    },
+                    
+                    {
+                        ml: "529944431",
+                        date_fr: "30 janvier 2023",
+                        date_en: "January 30<sup>th</sup>, 2023",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S127256739"
+                    },
+                    
+                    {
+                        ml: "382008241",
+                        date_fr: "23 octobre 2021",
+                        date_en: "October 23<sup>rd</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S96595433"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Plectrophane des neiges",
+                name_en: "Snow Bunting",
+                sci_name: "Plectrophenax nivalis",
+                best_photo_ml: "419403411",
+                sounds: [
+                    
+                    {
+                        ml: "629034237",
+                        date_fr: "13 janvier 2025",
+                        date_en: "January 13<sup>th</sup>, 2025",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S209140705"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Bruant zizi",
+                name_en: "Cirl Bunting",
+                sci_name: "Emberiza cirlus",
+                best_photo_ml: "622237312",
+                sounds: [
+                    
+                    {
+                        ml: "622236794",
+                        date_fr: "6 août 2024",
+                        date_en: "August 6<sup>th</sup>, 2024",
+                        location_fr: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        location_en: "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                        lat: 45.1742263,
+                        lng: 5.216454,
+                        checklist: "S190453617"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Bruant à épaulettes",
+                name_en: "Rufous-winged Sparrow",
+                sci_name: "Peucaea carpalis",
+                best_photo_ml: "538114091",
+                sounds: [
+                    
+                    {
+                        ml: "538314401",
+                        date_fr: "21 février 2023",
+                        date_en: "February 21<sup>st</sup>, 2023",
+                        location_fr: "Catalina SP, Arizona, États-Unis",
+                        location_en: "Catalina SP, Arizona, United States",
+                        lat: 32.4244027,
+                        lng: -110.9123905,
+                        checklist: "S129303210"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Bruant des champs",
+                name_en: "Field Sparrow",
+                sci_name: "Spizella pusilla",
+                best_photo_ml: "635598738",
+                sounds: [
+                    
+                    {
+                        ml: "562835501",
+                        date_fr: "25 avril 2023",
+                        date_en: "April 25<sup>th</sup>, 2023",
+                        location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
+                        location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                        lat: 45.37778,
+                        lng: -75.79972,
+                        checklist: "S135014400"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Tohi de Californie",
+                name_en: "California Towhee",
+                sci_name: "Melozone crissalis",
+                best_photo_ml: "620948255",
+                sounds: [
+                    
+                    {
+                        ml: "551008011",
+                        date_fr: "29 mars 2023",
+                        date_en: "March 29<sup>th</sup>, 2023",
+                        location_fr: "Hilton Santa Barbara, Californie, États-Unis",
+                        location_en: "Hilton Santa Barbara, California, United States",
+                        lat: 34.4161068,
+                        lng: -119.6776592,
+                        checklist: "S132131567"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Carouge à épaulettes",
+                name_en: "Red-winged Blackbird",
+                sci_name: "Agelaius phoeniceus",
+                best_photo_ml: "237658781",
+                sounds: [
+                    
+                    {
+                        ml: "619391197",
+                        date_fr: "21 mai 2024",
+                        date_en: "May 21<sup>st</sup>, 2024",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S176123573"
+                    },
+                    
+                    {
+                        ml: "375694501",
+                        date_fr: "6 octobre 2021",
+                        date_en: "October 6<sup>th</sup>, 2021",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S95666816"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Carouge galonné",
+                name_en: "Yellow-winged Blackbird",
+                sci_name: "Agelasticus thilius",
+                best_photo_ml: "439462321",
+                sounds: [
+                    
+                    {
+                        ml: "435531621",
+                        date_fr: "12 avril 2022",
+                        date_en: "April 12<sup>th</sup>, 2022",
+                        location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+                        location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
+                        lat: -33.3980197,
+                        lng: -70.6022,
+                        checklist: "S106897237"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline des ruisseaux",
+                name_en: "Northern Waterthrush",
+                sci_name: "Parkesia noveboracensis",
+                best_photo_ml: "234518741",
+                sounds: [
+                    
+                    {
+                        ml: "635360544",
+                        date_fr: "8 mai 2025",
+                        date_en: "May 8<sup>th</sup>, 2025",
+                        location_fr: "Sentiers, Auberge du Lac-à-l'Eau-Claire, Québec, Canada",
+                        location_en: "Sentiers, Auberge du Lac-à-l'Eau-Claire, Quebec, Canada",
+                        lat: 46.5429822,
+                        lng: -73.0881786,
+                        checklist: "S234513244"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline obscure",
+                name_en: "Tennessee Warbler",
+                sci_name: "Leiothlypis peregrina",
+                best_photo_ml: "450793781",
+                sounds: [
+                    
+                    {
+                        ml: "636338802",
+                        date_fr: "23 mai 2025",
+                        date_en: "May 23<sup>rd</sup>, 2025",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S241486402"
+                    },
+                    
+                    {
+                        ml: "451496501",
+                        date_fr: "21 mai 2022",
+                        date_en: "May 21<sup>st</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S110826145"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline à joues grises",
+                name_en: "Nashville Warbler",
+                sci_name: "Leiothlypis ruficapilla",
+                best_photo_ml: "22493731",
+                sounds: [
+                    
+                    {
+                        ml: "621062273",
+                        date_fr: "2 juillet 2024",
+                        date_en: "July 2<sup>nd</sup>, 2024",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S184904580"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline à capuchon",
+                name_en: "Hooded Warbler",
+                sci_name: "Setophaga citrina",
+                best_photo_ml: "348688001",
+                sounds: [
+                    
+                    {
+                        ml: "348696581",
+                        date_fr: "18 juin 2021",
+                        date_en: "June 18<sup>th</sup>, 2021",
+                        location_fr: "Parc du Mt-Royal, Québec, Canada",
+                        location_en: "Parc du Mt-Royal, Quebec, Canada",
+                        lat: 45.5055593,
+                        lng: -73.5882289,
+                        checklist: "S90377765"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline flamboyante",
+                name_en: "American Redstart",
+                sci_name: "Setophaga ruticilla",
+                best_photo_ml: "487486751",
+                sounds: [
+                    
+                    {
+                        ml: "457378691",
+                        date_fr: "7 juin 2022",
+                        date_en: "June 7<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S112366894"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline à gorge orangée",
+                name_en: "Blackburnian Warbler",
+                sci_name: "Setophaga fusca",
+                best_photo_ml: null,
+                sounds: [
+                    
+                    {
+                        ml: "447501141",
+                        date_fr: "12 mai 2022",
+                        date_en: "May 12<sup>th</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S109752748"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline rayée",
+                name_en: "Blackpoll Warbler",
+                sci_name: "Setophaga striata",
+                best_photo_ml: "586902591",
+                sounds: [
+                    
+                    {
+                        ml: "619391215",
+                        date_fr: "20 mai 2024",
+                        date_en: "May 20<sup>th</sup>, 2024",
+                        location_fr: "Parc Maynard-Ferguson, Québec, Canada",
+                        location_en: "Parc Maynard-Ferguson, Quebec, Canada",
+                        lat: 45.4464071,
+                        lng: -73.556557,
+                        checklist: "S175994583"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Paruline à gorge noire",
+                name_en: "Black-throated Green Warbler",
+                sci_name: "Setophaga virens",
+                best_photo_ml: "494732711",
+                sounds: [
+                    
+                    {
+                        ml: "634655230",
+                        date_fr: "29 avril 2025",
+                        date_en: "April 29<sup>th</sup>, 2025",
+                        location_fr: "Parc du 3e sommet, Québec, Canada",
+                        location_en: "Parc du 3e sommet, Quebec, Canada",
+                        lat: 45.5071289,
+                        lng: -73.6078835,
+                        checklist: "S230773500"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Cardinal rouge",
+                name_en: "Northern Cardinal",
+                sci_name: "Cardinalis cardinalis",
+                best_photo_ml: "618922159",
+                sounds: [
+                    
+                    {
+                        ml: "427883801",
+                        date_fr: "23 mars 2022",
+                        date_en: "March 23<sup>rd</sup>, 2022",
+                        location_fr: "Côte-des-Neiges, Québec, Canada",
+                        location_en: "Côte-des-Neiges, Quebec, Canada",
+                        lat: 45.4858176,
+                        lng: -73.6294305,
+                        checklist: "S105414656"
+                    },
+                    
+                    {
+                        ml: "375694601",
+                        date_fr: "30 septembre 2021",
+                        date_en: "September 30<sup>th</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S95379283"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Passerin indigo",
+                name_en: "Indigo Bunting",
+                sci_name: "Passerina cyanea",
+                best_photo_ml: "351793661",
+                sounds: [
+                    
+                    {
+                        ml: "351761651",
+                        date_fr: "2 juillet 2021",
+                        date_en: "July 2<sup>nd</sup>, 2021",
+                        location_fr: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Québec, Canada",
+                        location_en: "Cimetières Mt-Royal & Notre-Dame-des-Neiges, Quebec, Canada",
+                        lat: 45.5049279,
+                        lng: -73.6039953,
+                        checklist: "S91131276"
+                    }
+                    
+                ]
+            },
+            
+            {
+                name_fr: "Diuca gris",
+                name_en: "Diuca Finch",
+                sci_name: "Diuca diuca",
+                best_photo_ml: "22491191",
+                sounds: [
+                    
+                    {
+                        ml: "436361121",
+                        date_fr: "16 avril 2022",
+                        date_en: "April 16<sup>th</sup>, 2022",
+                        location_fr: "Observatorio de La Silla, Coquimbo, Chili",
+                        location_en: "Observatorio de La Silla, Coquimbo, Chile",
+                        lat: -29.2562225,
+                        lng: -70.7383406,
+                        checklist: "S107232521"
+                    }
+                    
+                ]
+            }
+            
+        ];
+
+        let currentSpeciesIndex = 0;
+        let currentSoundIndex = 0;
+        let soundMap = null;
+        let soundMarker = null;
+
+        function openSoundLightbox(speciesIndex) {
+            currentSpeciesIndex = speciesIndex;
+            currentSoundIndex = 0;
+            showSound();
+            document.getElementById('soundLightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeSoundLightbox() {
+            document.getElementById('soundLightbox').classList.remove('active');
+            document.body.style.overflow = '';
+            // Vider le player pour arrêter le son
+            document.getElementById('sound-player').innerHTML = '';
+        }
+
+        function navigateSoundLightbox(direction) {
+            currentSpeciesIndex = (currentSpeciesIndex + direction + speciesData.length) % speciesData.length;
+            currentSoundIndex = 0;
+            showSound();
+        }
+
+        function prevSound() {
+            const species = speciesData[currentSpeciesIndex];
+            currentSoundIndex = (currentSoundIndex - 1 + species.sounds.length) % species.sounds.length;
+            showSound();
+        }
+
+        function nextSound() {
+            const species = speciesData[currentSpeciesIndex];
+            currentSoundIndex = (currentSoundIndex + 1) % species.sounds.length;
+            showSound();
+        }
+
+        function showSound() {
+            const species = speciesData[currentSpeciesIndex];
+            const sound = species.sounds[currentSoundIndex];
+
+            // Infos espèce
+            document.getElementById('sound-species-name').textContent = 
+                currentLang === 'fr' ? species.name_fr : species.name_en;
+            document.getElementById('sound-sci-name').textContent = species.sci_name;
+
+            // Compteur
+            document.getElementById('sound-counter').textContent = 
+                `${currentSoundIndex + 1} / ${species.sounds.length}`;
+
+            // Player iframe
+            document.getElementById('sound-player').innerHTML = 
+                `<iframe src="https://macaulaylibrary.org/asset/${sound.ml}/embed" 
+                         height="120" width="100%" frameborder="0" 
+                         allow="autoplay; fullscreen" allowfullscreen></iframe>`;
+
+            // Infos son
+            document.getElementById('sound-location').textContent = 
+                currentLang === 'fr' ? sound.location_fr : sound.location_en;
+            document.getElementById('sound-date').innerHTML = 
+                currentLang === 'fr' ? sound.date_fr : sound.date_en;
+
+            // Liens
+            document.getElementById('sound-ebird').href = 
+                `https://ebird.org/checklist/${sound.checklist}`;
+            document.getElementById('sound-ml').href = 
+                `https://macaulaylibrary.org/asset/${sound.ml}`;
+
+            // Carte
+            const mapDiv = document.getElementById('sound-map');
+            if (sound.lat && sound.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!soundMap) {
+                    soundMap = L.map('sound-map', {
+                        scrollWheelZoom: false,
+                        zoomControl: true
+                    });
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '© OpenStreetMap'
+                    }).addTo(soundMap);
+                }
+                
+                soundMap.setView([sound.lat, sound.lng], 8);
+                
+                // Marqueur
+                const soundIcon = L.divIcon({
+                    html: '<div class="sound-marker">🎵</div>',
+                    className: 'sound-icon',
+                    iconSize: [40, 40],
+                    iconAnchor: [20, 20]
+                });
+                
+                if (soundMarker) {
+                    soundMarker.setLatLng([sound.lat, sound.lng]);
+                } else {
+                    soundMarker = L.marker([sound.lat, sound.lng], { icon: soundIcon }).addTo(soundMap);
+                }
+                
+                setTimeout(() => soundMap.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('soundLightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeSoundLightbox();
+            if (e.key === 'ArrowLeft') navigateSoundLightbox(-1);
+            if (e.key === 'ArrowRight') navigateSoundLightbox(1);
+            if (e.key === 'ArrowUp') prevSound();
+            if (e.key === 'ArrowDown') nextSound();
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('soundLightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'soundLightbox') closeSoundLightbox();
+        });
+    </script>
+</body>
+</html>
