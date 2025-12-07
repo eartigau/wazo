@@ -441,19 +441,20 @@ def generer_toutes_galeries():
                 species_count = len(species_set)
                 
                 # Collecter les lieux uniques pour la carte du voyage
-                locations_seen = {}  # (lat, lng) -> location_info
+                # Regrouper par NOM de lieu (pas par coordonnées) pour éviter les épingles multiples
+                locations_seen = {}  # location_name -> location_info
                 for p in photos:
                     lat = p.get('latitude')
                     lng = p.get('longitude')
-                    if lat and lng and lat != 0 and lng != 0:
-                        key = (round(lat, 4), round(lng, 4))  # Grouper les lieux proches
-                        if key not in locations_seen:
-                            locations_seen[key] = {
+                    location_name = p.get('location', '')
+                    if lat and lng and lat != 0 and lng != 0 and location_name:
+                        if location_name not in locations_seen:
+                            locations_seen[location_name] = {
                                 'lat': lat,
                                 'lng': lng,
                                 'name_fr': p.get('location_fr', ''),
                                 'name_en': p.get('location_en', ''),
-                                'location': p.get('location', '')
+                                'location': location_name
                             }
                 
                 trip_locations = list(locations_seen.values()) if locations_seen else None

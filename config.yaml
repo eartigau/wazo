@@ -111,11 +111,11 @@ voyages:
     pays: ["US-CA"]
     limite: 400
 
-  - id: voyage_californie_juin_2023
-    nom_fr: "Californie, juin 2023"
-    nom_en: "California , June 2023"
-    date_debut: "2023-06-10"
-    date_fin: "2023-09-05"
+  - id: voyage_californie_juin_2024
+    nom_fr: "Californie, juin 2024"
+    nom_en: "California , June 2024"
+    date_debut: "2024-06-10"
+    date_fin: "2024-09-05"
     pays: ["US-CA"]
     limite: 400
 
@@ -126,6 +126,47 @@ voyages:
     date_fin: "2024-03-25"
     pays: ["US-FL"]
     limite: 400
+
+  - id: voyage_florence_2023
+    nom_fr: "Florence, septembre 2023"
+    nom_en: "Florence, September 2023"
+    date_debut: "2023-09-01"
+    date_fin: "2023-09-30"
+    pays: ["IT"]
+    limite: 400
+
+  - id: voyage_californie_ete_2023
+    nom_fr: "Californie, juin 2023"
+    nom_en: "California , June 2023"
+    date_debut: "2023-06-10"
+    date_fin: "2023-09-05"
+    pays: ["US-CA"]
+    limite: 400
+
+  - id: voyage_santa_barbara_mars_2023
+    nom_fr: "Santa Barbara, mars 2023"
+    nom_en: "Santa Barbara, March 2023"
+    date_debut: "2023-03-25"
+    date_fin: "2023-03-31"
+    pays: ["US-CA"]
+    limite: 400
+
+  - id: voyage_arizona_fevrier_2023
+    nom_fr: "Arizona, février 2023"
+    nom_en: "Arizona, February 2023"
+    date_debut: "2023-02-01"
+    date_fin: "2023-02-28"
+    pays: ["US-AZ"]
+    limite: 400
+
+  - id: voyage_europe_ete_2022
+    nom_fr: "Europe, été 2022"
+    nom_en: "Europe, Summer 2022"
+    date_debut: "2022-06-28"
+    date_fin: "2022-07-22"
+    pays: ["CL"]
+    limite: 500
+
 
   - id: voyage_chili_2022
     nom_fr: "Chili 2022"
