@@ -8,6 +8,7 @@ Configuration: config.yaml
 
 import sys
 import re
+import csv
 from pathlib import Path
 from datetime import datetime, timedelta
 
@@ -29,7 +30,8 @@ from generate_gallery import (
     generer_description_groupe_fr, 
     mettre_au_pluriel, 
     formater_plage_dates,
-    formater_date
+    formater_date,
+    charger_cache
 )
 
 
@@ -141,8 +143,67 @@ def construire_menu(config, generator):
 
 
 # ============================================================================
+# HELPERS
+# ============================================================================
+
+def obtenir_frontispice(photos: list, curation: dict = None) -> str:
+    """
+    Obtient le numéro ML du frontispice (image de couverture).
+    Priorité: photo 'best' la plus récente > photo la plus récente
+    """
+    if not photos:
+        return None
+    
+    # Chercher les photos "best"
+    if curation:
+        best_photos = [p for p in photos if curation.get(p['ml_catalog_number']) == 'best']
+        if best_photos:
+            # Trier par date décroissante et prendre la plus récente
+            best_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+            return best_photos[0]['ml_catalog_number']
+    
+    # Sinon, prendre la photo la plus récente
+    photos_sorted = sorted(photos, key=lambda x: x.get('date_raw', ''), reverse=True)
+    return photos_sorted[0]['ml_catalog_number']
+
+
+# ============================================================================
 # GÉNÉRATION
 # ============================================================================
+
+def verifier_curation_downloads(curation_file: str):
+    """
+    Vérifie si le fichier de curation existe dans ~/Downloads et le copie
+    dans le répertoire courant si c'est le cas.
+    """
+    import shutil
+    
+    # Chemin vers ~/Downloads/photo_curation.csv
+    downloads_path = Path.home() / 'Downloads' / Path(curation_file).name
+    local_path = Path(curation_file)
+    
+    if downloads_path.exists():
+        # Vérifier si le fichier local existe et comparer les dates
+        if local_path.exists():
+            downloads_mtime = downloads_path.stat().st_mtime
+            local_mtime = local_path.stat().st_mtime
+            
+            if downloads_mtime > local_mtime:
+                # Le fichier dans Downloads est plus récent
+                shutil.copy2(downloads_path, local_path)
+                print(f"📥 Curation mise à jour depuis ~/Downloads/{downloads_path.name}")
+                return True
+            else:
+                # Le fichier local est déjà à jour
+                return False
+        else:
+            # Pas de fichier local, copier depuis Downloads
+            shutil.copy2(downloads_path, local_path)
+            print(f"📥 Curation copiée depuis ~/Downloads/{downloads_path.name}")
+            return True
+    
+    return False
+
 
 def generer_toutes_galeries():
     """Génère toutes les galeries configurées"""
@@ -160,6 +221,17 @@ def generer_toutes_galeries():
     TAXONOMY_FILE = fichiers.get('taxonomie', 'eBird_taxonomy_v2025.csv')
     MEDIA_CACHE = fichiers.get('cache_medias', 'media_cache.csv')
     TRADUCTIONS_FILE = fichiers.get('traductions_lieux', 'traductions_lieux.csv')
+    CURATION_FILE = fichiers.get('curation', 'photo_curation.csv')
+    
+    # Vérifier si un nouveau fichier de curation est dans Downloads
+    verifier_curation_downloads(CURATION_FILE)
+    
+    # Charger la curation
+    curation = charger_curation(CURATION_FILE)
+    if curation:
+        best_count = sum(1 for v in curation.values() if v == 'best')
+        reject_count = sum(1 for v in curation.values() if v == 'reject')
+        print(f"\n📋 Curation chargée: {len(curation)} photos (⭐{best_count} best, ✗{reject_count} rejetés)")
     
     # Options de génération
     generation = config.get('generation', {})
@@ -204,7 +276,8 @@ def generer_toutes_galeries():
     generator.generate_species_list(
         output_base='species_list',
         template_file=SPECIES_LIST_TEMPLATE,
-        menu=menu
+        menu=menu,
+        curation=curation
     )
     
     # ========================================
@@ -218,14 +291,16 @@ def generer_toutes_galeries():
         limit=9999,
         date_start=trois_mois,
         verifier_medias_en_ligne=VERIFIER_MEDIAS,
-        sort_by='date'
+        sort_by='date',
+        curation=curation
     )
     
     if len(photos_3_mois) < AJOUTS_RECENTS_MIN:
         photos_recent = generator.filter_observations(
             limit=AJOUTS_RECENTS_MIN,
             verifier_medias_en_ligne=VERIFIER_MEDIAS,
-            sort_by='date'
+            sort_by='date',
+            curation=curation
         )
         print(f"   (moins de {AJOUTS_RECENTS_MIN} photos en 3 mois, affichage des {AJOUTS_RECENTS_MIN} dernières)")
     else:
@@ -262,7 +337,8 @@ def generer_toutes_galeries():
                 countries=galerie.get('pays'),
                 date_start=galerie.get('date_debut'),
                 date_end=galerie.get('date_fin'),
-                verifier_medias_en_ligne=VERIFIER_MEDIAS
+                verifier_medias_en_ligne=VERIFIER_MEDIAS,
+                curation=curation
             )
             
             if photos:
@@ -293,7 +369,8 @@ def generer_toutes_galeries():
                 regions=voyage.get('regions'),
                 date_start=voyage.get('date_debut'),
                 date_end=voyage.get('date_fin'),
-                verifier_medias_en_ligne=VERIFIER_MEDIAS
+                verifier_medias_en_ligne=VERIFIER_MEDIAS,
+                curation=curation
             )
             
             if photos:
@@ -308,14 +385,8 @@ def generer_toutes_galeries():
                     date_min = date_max = None
                     subtitle_fr = subtitle_en = None
                 
-                # Frontispice
-                frontispice = voyage.get('frontispice', 'last')
-                if frontispice == 'last':
-                    frontispice_ml = photos[0]['ml_catalog_number']
-                elif frontispice == 'first':
-                    frontispice_ml = photos[-1]['ml_catalog_number']
-                else:
-                    frontispice_ml = frontispice
+                # Frontispice: utiliser la curation (best le plus récent) ou la plus récente
+                frontispice_ml = obtenir_frontispice(photos, curation)
                 
                 # Espèces
                 species_set = set(p.get('scientific_name', '') for p in photos)
@@ -376,8 +447,6 @@ def generer_toutes_galeries():
     # ========================================
     # FAMILLES
     # ========================================
-    familles_icones = config.get('familles_icones', {}) or {}
-    
     if familles_data:
         print(f"\n🦅 Galeries par famille ({len(familles_data)} familles)...")
         
@@ -393,23 +462,16 @@ def generer_toutes_galeries():
                 limit=LIMITE_FAMILLE,
                 families_list=[fam_code],
                 verifier_medias_en_ligne=VERIFIER_MEDIAS,
-                sort_by='taxonomy'
+                sort_by='taxonomy',
+                curation=curation
             )
             
             if photos:
                 species_set = set(p.get('scientific_name', '') for p in photos)
                 species_count = len(species_set)
                 
-                # Icône de la famille
-                icone_override = familles_icones.get(fam_code, 'last')
-                if icone_override == 'last':
-                    photos_by_date = sorted(photos, key=lambda x: x.get('date_raw', ''), reverse=True)
-                    icone_ml = photos_by_date[0]['ml_catalog_number'] if photos_by_date else photos[0]['ml_catalog_number']
-                elif icone_override == 'first':
-                    photos_by_date = sorted(photos, key=lambda x: x.get('date_raw', ''))
-                    icone_ml = photos_by_date[0]['ml_catalog_number'] if photos_by_date else photos[0]['ml_catalog_number']
-                else:
-                    icone_ml = icone_override
+                # Icône de la famille: utiliser la curation (best le plus récent) ou la plus récente
+                icone_ml = obtenir_frontispice(photos, curation)
                 
                 title_fr = f"Famille des {fam_code}s"
                 title_en = f"{fam_code} Family"
@@ -473,12 +535,127 @@ def generer_toutes_galeries():
             print(f"   ✓ familles_index_fr.html / familles_index_en.html ({len(familles_index_data)} familles)")
     
     # ========================================
+    # PAGE ADMIN (numéros ML)
+    # ========================================
+    print(f"\n🔧 Page admin (numéros ML)...")
+    generer_page_admin(config)
+    
+    # ========================================
     # RÉSUMÉ
     # ========================================
     print("\n" + "=" * 60)
     print("✅ GÉNÉRATION TERMINÉE")
     print(f"   📊 {total_galeries} galeries générées")
     print("=" * 60)
+
+
+# ============================================================================
+# PAGE ADMIN
+# ============================================================================
+
+def charger_curation(fichier_curation: str) -> dict:
+    """Charge le fichier de curation des photos"""
+    curation = {}
+    if not Path(fichier_curation).exists():
+        return curation
+    
+    try:
+        with open(fichier_curation, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                ml = row.get('ml_number', '').strip()
+                status = row.get('status', 'include').strip()
+                if ml:
+                    curation[ml] = status
+    except Exception as e:
+        print(f"   ⚠ Erreur lecture curation: {e}")
+    
+    return curation
+
+
+def generer_page_admin(config):
+    """Génère la page admin avec toutes les photos et numéros ML"""
+    fichiers = config.get('fichiers', {})
+    CSV_FILE = fichiers.get('donnees_ebird', 'MyEBirdData.csv')
+    CACHE_FILE = fichiers.get('cache_medias', 'media_cache.csv')
+    TAXONOMY_FILE = fichiers.get('taxonomie', 'eBird_taxonomy_v2025.csv')
+    CURATION_FILE = fichiers.get('curation', 'photo_curation.csv')
+    
+    # Charger le cache des médias
+    media_cache = charger_cache(CACHE_FILE)
+    
+    # Charger la curation existante
+    curation = charger_curation(CURATION_FILE)
+    if curation:
+        print(f"   📋 Curation chargée: {len(curation)} photos")
+    
+    # Charger la taxonomie pour les noms
+    taxonomy = {}
+    if Path(TAXONOMY_FILE).exists():
+        with open(TAXONOMY_FILE, 'r', encoding='utf-8') as f:
+            reader = csv.DictReader(f)
+            for row in reader:
+                sci_name = row.get('SCI_NAME', '')
+                taxonomy[sci_name] = {
+                    'common_name_en': row.get('PRIMARY_COM_NAME', ''),
+                    'taxon_order': int(row.get('TAXON_ORDER', 999999))
+                }
+    
+    # Lire toutes les observations avec médias
+    all_photos = []
+    with open(CSV_FILE, 'r', encoding='utf-8') as f:
+        reader = csv.DictReader(f)
+        for row in reader:
+            ml_string = row.get('ML Catalog Numbers') or ''
+            ml_string = ml_string.strip()
+            if not ml_string:
+                continue
+            
+            scientific_name = row.get('Scientific Name', '')
+            common_name_fr = row.get('Common Name', '')
+            common_name_en = taxonomy.get(scientific_name, {}).get('common_name_en', common_name_fr)
+            date_raw = row.get('Date', '')
+            
+            for ml in ml_string.replace(',', ' ').split():
+                ml = ml.strip()
+                if ml:
+                    # Déterminer le statut
+                    # Priorité: curation CSV > media_cache (pour les non-images)
+                    if ml in curation:
+                        status = curation[ml]
+                    else:
+                        # Par défaut: include si c'est une image, reject sinon
+                        media_status = media_cache.get(ml, {}).get('status', 'unknown')
+                        status = 'include' if media_status == 'image' else 'reject'
+                    
+                    all_photos.append({
+                        'ml_catalog_number': ml,
+                        'scientific_name': scientific_name,
+                        'common_name_fr': common_name_fr,
+                        'common_name_en': common_name_en,
+                        'date_raw': date_raw,
+                        'status': status
+                    })
+    
+    # Trier par date décroissante
+    all_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+    
+    # Générer la page
+    env = Environment(loader=FileSystemLoader('.'))
+    template = env.get_template('admin_template.html')
+    
+    html = template.render(photos=all_photos)
+    
+    with open('admin_photos.html', 'w', encoding='utf-8') as f:
+        f.write(html)
+    
+    # Stats
+    total = len(all_photos)
+    best = sum(1 for p in all_photos if p['status'] == 'best')
+    include = sum(1 for p in all_photos if p['status'] == 'include')
+    reject = sum(1 for p in all_photos if p['status'] == 'reject')
+    
+    print(f"   ✓ admin_photos.html ({total} photos: ⭐{best} best, ✓{include} inclus, ✗{reject} rejetés)")
 
 
 # ============================================================================

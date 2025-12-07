@@ -37,6 +37,55 @@ MOIS_EN = ['', 'January', 'February', 'March', 'April', 'May', 'June',
 # Préfixes à ignorer pour extraire le type d'oiseau
 PREFIXES_A_IGNORER = {'Petit', 'Grand', 'Petite', 'Grande'}
 
+# Commentaires à enlever des noms de lieux
+COMMENTAIRES_LIEUX = [
+    '(restricted access)',
+    '(do not report captive species)',
+    '(captive birds)',
+    '(no public access)',
+    '(private property)',
+    '(permit required)',
+    '(accès restreint)',
+    '(espèces captives)',
+    '-- please bird from road only',
+    '- please bird from road only',
+    '--please bird from road only',
+    '-please bird from road only',
+]
+
+
+def nettoyer_nom_lieu(location: str) -> str:
+    """
+    Nettoie un nom de lieu en enlevant les commentaires eBird.
+    Ex: "Zoo de Granby (do not report captive species)" -> "Zoo de Granby"
+    """
+    if not location:
+        return ''
+    
+    result = location
+    
+    # Enlever les commentaires connus (insensible à la casse)
+    for commentaire in COMMENTAIRES_LIEUX:
+        # Recherche insensible à la casse
+        pattern = re.compile(re.escape(commentaire), re.IGNORECASE)
+        result = pattern.sub('', result)
+    
+    # Enlever les commentaires génériques entre parenthèses à la fin
+    # qui contiennent des mots-clés comme "restricted", "captive", "private", etc.
+    keywords = r'restricted|captive|private|permit|access|restreint|report|do not|please'
+    result = re.sub(rf'\s*\([^)]*(?:{keywords})[^)]*\)\s*', '', result, flags=re.IGNORECASE)
+    
+    # Enlever les commentaires avec double tiret
+    result = re.sub(r'\s*--.*$', '', result)
+    
+    # Nettoyer les espaces multiples et trim
+    result = re.sub(r'\s+', ' ', result).strip()
+    
+    # Enlever les tirets ou virgules en fin de chaîne
+    result = re.sub(r'[\s,\-]+$', '', result).strip()
+    
+    return result
+
 
 # ============================================================================
 # FONCTIONS DE FORMATAGE
@@ -646,9 +695,9 @@ class EBirdGalleryGenerator:
         sci_name = obs.get('Scientific Name', '').strip()
         taxon_info = self.taxonomy.get_species_info(sci_name)
         
-        # Infos lieu
+        # Infos lieu (nettoyer les commentaires eBird)
         state_code = obs.get('State/Province') or ''
-        location = obs.get('Location') or ''
+        location = nettoyer_nom_lieu(obs.get('Location') or '')
         country_code = state_code.split('-')[0] if '-' in state_code else state_code
         
         region_fr = traduire_lieu(state_code, self.traductions, 'fr')
@@ -691,7 +740,7 @@ class EBirdGalleryGenerator:
             'checklist_id': obs.get('Submission ID') or ''
         }
     
-    def get_species_list(self) -> list:
+    def get_species_list(self, curation: dict = None) -> list:
         """
         Retourne la liste de toutes les espèces photographiées
         triée par ordre phylogénétique avec infos famille, lieu et coordonnées.
@@ -699,6 +748,9 @@ class EBirdGalleryGenerator:
         Fusionne les sous-espèces avec l'espèce principale.
         Exclut les taxons non identifiables (sp., slash, hybrid).
         Collecte TOUTES les photos de chaque espèce.
+        
+        Args:
+            curation: Dict {ml_number: 'best'|'include'|'reject'} pour filtrer/sélectionner
         """
         species_data = {}  # sci_name_normalized -> {'info': {...}, 'photos': [...]}
         
@@ -724,9 +776,13 @@ class EBirdGalleryGenerator:
                 if ml not in self.media_cache or self.media_cache[ml]['status'] != 'image':
                     continue
                 
-                # Infos lieu
+                # Vérifier la curation (exclure les 'reject')
+                if curation and curation.get(ml) == 'reject':
+                    continue
+                
+                # Infos lieu (nettoyer les commentaires eBird)
                 state_code = obs.get('State/Province') or ''
-                location = obs.get('Location') or ''
+                location = nettoyer_nom_lieu(obs.get('Location') or '')
                 country_code = state_code.split('-')[0] if '-' in state_code else state_code
                 
                 region_fr = traduire_lieu(state_code, self.traductions, 'fr')
@@ -745,6 +801,9 @@ class EBirdGalleryGenerator:
                 else:
                     lieu_complet_en = f"{location}, {country_en}" if location and country_en else location or country_en
                 
+                # Statut de curation
+                curation_status = curation.get(ml, 'include') if curation else 'include'
+                
                 photo_data = {
                     'ml_catalog_number': ml,
                     'date_raw': obs_date,
@@ -754,7 +813,8 @@ class EBirdGalleryGenerator:
                     'location_full_en': lieu_complet_en,
                     'latitude': self._parse_coord(obs.get('Latitude')),
                     'longitude': self._parse_coord(obs.get('Longitude')),
-                    'checklist_id': obs.get('Submission ID') or ''
+                    'checklist_id': obs.get('Submission ID') or '',
+                    'curation_status': curation_status
                 }
                 
                 if sci_name not in species_data:
@@ -783,11 +843,26 @@ class EBirdGalleryGenerator:
             info = data['info']
             photos = data['photos']
             
-            # Trier les photos par date décroissante
-            photos.sort(key=lambda x: x['date_raw'], reverse=True)
+            if not photos:
+                continue
             
-            # La photo représentative est la plus récente
-            most_recent = photos[0]
+            # Sélectionner la photo représentative:
+            # 1. Photo 'best' la plus récente
+            # 2. Sinon, photo la plus récente
+            best_photos = [p for p in photos if p.get('curation_status') == 'best']
+            if best_photos:
+                best_photos.sort(key=lambda x: x['date_raw'], reverse=True)
+                representative = best_photos[0]
+            else:
+                photos.sort(key=lambda x: x['date_raw'], reverse=True)
+                representative = photos[0]
+            
+            # Trier toutes les photos: best d'abord (par date desc), puis autres (par date desc)
+            best_sorted = sorted([p for p in photos if p.get('curation_status') == 'best'], 
+                                key=lambda x: x['date_raw'], reverse=True)
+            other_sorted = sorted([p for p in photos if p.get('curation_status') != 'best'], 
+                                 key=lambda x: x['date_raw'], reverse=True)
+            all_photos_sorted = best_sorted + other_sorted
             
             species_list.append({
                 'sci_name': info['sci_name'],
@@ -796,19 +871,19 @@ class EBirdGalleryGenerator:
                 'taxon_order': info['taxon_order'],
                 'family': info['family'],
                 'family_full': info['family_full'],
-                # Photo représentative (plus récente)
-                'ml_catalog_number': most_recent['ml_catalog_number'],
-                'date_raw': most_recent['date_raw'],
-                'date_fr': most_recent['date_fr'],
-                'date_en': most_recent['date_en'],
-                'location_full_fr': most_recent['location_full_fr'],
-                'location_full_en': most_recent['location_full_en'],
-                'latitude': most_recent['latitude'],
-                'longitude': most_recent['longitude'],
-                'checklist_id': most_recent['checklist_id'],
-                # Toutes les photos
-                'all_photos': photos,
-                'photo_count': len(photos)
+                # Photo représentative (best ou plus récente)
+                'ml_catalog_number': representative['ml_catalog_number'],
+                'date_raw': representative['date_raw'],
+                'date_fr': representative['date_fr'],
+                'date_en': representative['date_en'],
+                'location_full_fr': representative['location_full_fr'],
+                'location_full_en': representative['location_full_en'],
+                'latitude': representative['latitude'],
+                'longitude': representative['longitude'],
+                'checklist_id': representative['checklist_id'],
+                # Toutes les photos (triées: best d'abord)
+                'all_photos': all_photos_sorted,
+                'photo_count': len(all_photos_sorted)
             })
         
         # Trier par ordre phylogénétique
@@ -842,7 +917,8 @@ class EBirdGalleryGenerator:
                            date_start: str = None,
                            date_end: str = None,
                            verifier_medias_en_ligne: bool = False,
-                           sort_by: str = 'date') -> list:
+                           sort_by: str = 'date',
+                           curation: dict = None) -> list:
         """
         Filtre les observations selon les critères
         
@@ -857,6 +933,7 @@ class EBirdGalleryGenerator:
             date_end: Date de fin (YYYY-MM-DD)
             verifier_medias_en_ligne: Si True, vérifie les médias non-cachés
             sort_by: 'date' (chronologique inverse) ou 'taxonomy' (ordre taxonomique)
+            curation: Dict {ml_number: 'best'|'include'|'reject'} pour filtrer/trier
         """
         photos = []
         ml_a_verifier = []
@@ -917,6 +994,13 @@ class EBirdGalleryGenerator:
                     ml_a_verifier.append(ml)
                 
                 photo = self._build_photo_data(obs, ml)
+                
+                # Ajouter le statut de curation
+                if curation:
+                    photo['curation_status'] = curation.get(ml, 'include')
+                else:
+                    photo['curation_status'] = 'include'
+                
                 photos.append(photo)
         
         # Vérifier les médias non-cachés
@@ -930,6 +1014,10 @@ class EBirdGalleryGenerator:
                      or (p['ml_catalog_number'] in self.media_cache 
                          and self.media_cache[p['ml_catalog_number']]['status'] == 'image')]
         
+        # Filtrer les photos rejetées par curation
+        if curation:
+            photos = [p for p in photos if p.get('curation_status') != 'reject']
+        
         # Supprimer les doublons
         seen = set()
         unique_photos = []
@@ -941,13 +1029,29 @@ class EBirdGalleryGenerator:
         # Trier selon le mode choisi
         if sort_by == 'taxonomy':
             # Tri par ordre taxonomique, avec date décroissante à l'intérieur de chaque espèce
+            # et les 'best' en premier dans chaque groupe
+            
             # D'abord trier par date décroissante
             unique_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
-            # Puis tri stable par taxon_order (préserve l'ordre date dans chaque groupe)
+            
+            # Puis par statut best (best=0, autres=1) pour que best soit en premier
+            unique_photos.sort(key=lambda x: 0 if x.get('curation_status') == 'best' else 1)
+            
+            # Puis tri stable par taxon_order (préserve l'ordre dans chaque groupe)
             unique_photos.sort(key=lambda x: x.get('taxon_order', 999999))
         else:
-            # Tri par date décroissante (défaut)
-            unique_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+            # Tri par date décroissante (défaut), avec best en premier
+            unique_photos.sort(key=lambda x: (
+                0 if x.get('curation_status') == 'best' else 1,  # best d'abord
+                '' if x.get('date_raw') is None else x.get('date_raw', '')  # puis par date desc
+            ), reverse=False)
+            # Re-trier par date desc (le tri précédent ne marche pas bien)
+            # Approche plus simple: séparer best et autres
+            best_photos = [p for p in unique_photos if p.get('curation_status') == 'best']
+            other_photos = [p for p in unique_photos if p.get('curation_status') != 'best']
+            best_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+            other_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+            unique_photos = best_photos + other_photos
         
         if limit:
             unique_photos = unique_photos[:limit]
@@ -1042,13 +1146,14 @@ class EBirdGalleryGenerator:
     def generate_species_list(self,
                              output_base: str = 'species_list',
                              template_file: str = 'species_list_template.html',
-                             menu: list = None):
+                             menu: list = None,
+                             curation: dict = None):
         """Génère la page liste des espèces par famille"""
         
         output_fr = f"{output_base}_fr.html"
         output_en = f"{output_base}_en.html"
         
-        species_list = self.get_species_list()
+        species_list = self.get_species_list(curation=curation)
         
         # Grouper par famille
         families = {}

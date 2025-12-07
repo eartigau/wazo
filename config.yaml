@@ -22,6 +22,10 @@ fichiers:
   
   # Traductions des noms de lieux
   traductions_lieux: "traductions_lieux.csv"
+  
+  # Curation des photos (généré via la page admin)
+  # Contient les statuts: best, include, reject
+  curation: "photo_curation.csv"
 
 
 # ------------------------------------------------------------------------------
@@ -69,10 +73,9 @@ generation:
 #   regions: (optionnel) Liste de régions spécifiques
 #   date_debut/date_fin: (optionnel) Filtrer par période (format YYYY-MM-DD)
 #   limite: (optionnel) Nombre max de photos (défaut: limite_photos_defaut)
-#   frontispice: (optionnel) Image de couverture
-#     - "last": photo la plus récente (défaut)
-#     - "first": photo la plus ancienne
-#     - "123456789": numéro ML spécifique
+#
+# NOTE: L'image de couverture (frontispice) est déterminée automatiquement
+# par la curation. Utilisez la page admin pour marquer une photo comme "best".
 # ------------------------------------------------------------------------------
 
 voyages:
@@ -81,14 +84,12 @@ voyages:
     nom_en: "Chile"
     pays: ["CL"]
     limite: 500
-    frontispice: "last"
   
   - id: voyage_geneve
     nom_fr: "Genève"
     nom_en: "Geneva"
     pays: ["CH"]
     limite: 300
-    frontispice: "last"
   
   - id: voyage_hawaii_2015
     nom_fr: "Hawaï 2015"
@@ -97,7 +98,6 @@ voyages:
     date_debut: "2015-01-01"
     date_fin: "2015-12-31"
     limite: 300
-    frontispice: "last"
   
   - id: voyage_hawaii_2018
     nom_fr: "Hawaï 2018"
@@ -106,43 +106,18 @@ voyages:
     date_debut: "2018-01-01"
     date_fin: "2018-12-31"
     limite: 300
-    frontispice: "last"
   
   - id: voyage_floride
     nom_fr: "Floride"
     nom_en: "Florida"
     pays: ["US-FL"]
     limite: 300
-    frontispice: "last"
   
   - id: voyage_arizona
     nom_fr: "Arizona"
     nom_en: "Arizona"
     pays: ["US-AZ"]
     limite: 200
-    frontispice: "last"
-
-
-# ------------------------------------------------------------------------------
-# FAMILLES - OVERRIDE DES ICÔNES
-# ------------------------------------------------------------------------------
-# Par défaut, l'icône de chaque famille est la photo la plus récente.
-# Vous pouvez spécifier une photo différente pour chaque famille.
-#
-# Format:
-#   CodeFamille: "numero_ML" ou "last" ou "first"
-#
-# Exemples:
-#   Anatidae: "305223451"    # Numéro ML spécifique
-#   Accipitridae: "first"    # Photo la plus ancienne
-#   Trochilidae: "last"      # Photo la plus récente (défaut)
-# ------------------------------------------------------------------------------
-
-familles_icones:
-  # Décommentez et modifiez selon vos préférences
-  # Accipitridae: "first"
-  # Trochilidae: "last"
-  Rheidae: "20473761"
 
 
 # ------------------------------------------------------------------------------
@@ -150,9 +125,6 @@ familles_icones:
 # ------------------------------------------------------------------------------
 # Galeries supplémentaires avec des filtres personnalisés.
 # Laissez vide [] si vous n'en voulez pas.
-#
-# Paramètres identiques aux voyages, plus:
-#   dans_menu: true/false - Afficher dans le menu principal
 # ------------------------------------------------------------------------------
 
 galeries_generales:

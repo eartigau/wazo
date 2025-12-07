@@ -5,11 +5,12 @@ Générateur de galeries photos bilingues (français/anglais) à partir de vos d
 ## Fonctionnalités
 
 - **Liste des espèces** avec recherche instantanée
-- **Galeries par voyage** avec dates et images de couverture personnalisables
+- **Galeries par voyage** avec dates automatiques
 - **Galeries par famille taxonomique** avec icônes
 - **Ajouts récents** (3 derniers mois ou 50 dernières photos)
 - **Lightbox** avec carte de localisation et navigation
 - **Bilingue** français/anglais avec basculement facile
+- **Page admin** pour la curation des photos (best/inclus/rejeté)
 
 ## Installation
 
@@ -30,39 +31,6 @@ pip install jinja2 pyyaml
 
 3. **config.yaml** - Configuration (inclus, à personnaliser)
 
-## Configuration
-
-Tous les paramètres sont dans `config.yaml`:
-
-```yaml
-# Fichiers source
-fichiers:
-  donnees_ebird: "MyEBirdData.csv"
-  taxonomie: "eBird_taxonomy_v2025.csv"
-
-# Site web
-site:
-  index: "index.html"
-  auteur: "Votre Nom"
-
-# Options
-generation:
-  verifier_medias_en_ligne: false
-  limite_photos_defaut: 300
-
-# Voyages (avec image de couverture personnalisable)
-voyages:
-  - id: voyage_floride
-    nom_fr: "Floride"
-    nom_en: "Florida"
-    pays: ["US-FL"]
-    frontispice: "last"  # ou "first" ou numéro ML
-
-# Icônes des familles (override optionnel)
-familles_icones:
-  Anatidae: "305223451"  # Numéro ML spécifique
-```
-
 ## Utilisation
 
 ### Première utilisation
@@ -75,11 +43,56 @@ python generer_tout.py verifier
 python generer_tout.py
 ```
 
+### Curation des photos
+
+La page `admin_photos.html` permet de gérer vos photos :
+
+1. Générez les galeries une première fois
+2. Ouvrez `admin_photos.html` dans un navigateur
+3. Pour chaque photo, choisissez :
+   - ⭐ **Meilleur** : Photo mise en avant (frontispice des voyages/familles, affichée en premier)
+   - ✓ **Inclus** : Photo normale (défaut)
+   - ✗ **Rejeté** : Photo exclue des galeries
+4. Cliquez sur "Télécharger photo_curation.csv"
+5. Placez le fichier dans le dossier du projet
+6. Régénérez les galeries : `python generer_tout.py`
+
+**Note** : Les photos "best" servent automatiquement de frontispice pour les voyages et les familles. S'il y en a plusieurs, la plus récente est choisie.
+
 ### Mises à jour
 
 ```bash
 # Régénérer après mise à jour des données
 python generer_tout.py
+```
+
+## Configuration
+
+Tous les paramètres sont dans `config.yaml`:
+
+```yaml
+# Fichiers source
+fichiers:
+  donnees_ebird: "MyEBirdData.csv"
+  taxonomie: "eBird_taxonomy_v2025.csv"
+  curation: "photo_curation.csv"
+
+# Site web
+site:
+  index: "index.html"
+  auteur: "Votre Nom"
+
+# Options
+generation:
+  verifier_medias_en_ligne: false
+  limite_photos_defaut: 300
+
+# Voyages
+voyages:
+  - id: voyage_floride
+    nom_fr: "Floride"
+    nom_en: "Florida"
+    pays: ["US-FL"]
 ```
 
 ## Fichiers générés
@@ -90,6 +103,7 @@ python generer_tout.py
 - `familles_index_fr.html` / `familles_index_en.html` - Index des familles
 - `voyage_*_fr.html` / `voyage_*_en.html` - Galeries par voyage
 - `gallery_*_fr.html` / `gallery_*_en.html` - Galeries par famille
+- `admin_photos.html` - Page admin (non liée dans le menu)
 
 ## Structure des fichiers
 
@@ -97,36 +111,17 @@ python generer_tout.py
 ├── config.yaml              # Configuration centralisée
 ├── generer_tout.py          # Script principal
 ├── generate_gallery.py      # Moteur de génération
-├── gallery.css              # Styles
+├── gallery.css              # Styles (thème nature)
 ├── gallery_template.html    # Template galeries
 ├── species_list_template.html
 ├── voyages_index_template.html
 ├── familles_index_template.html
+├── admin_template.html      # Template page admin
 ├── traductions_lieux.csv    # Traductions pays/régions
 ├── MyEBirdData.csv          # Vos données (à ajouter)
 ├── eBird_taxonomy_v2025.csv # Taxonomie (à ajouter)
-└── media_cache.csv          # Cache médias (généré)
-```
-
-## Personnalisation
-
-### Images de couverture (Voyages)
-
-Dans `config.yaml`:
-```yaml
-voyages:
-  - id: voyage_floride
-    frontispice: "305223451"  # Numéro ML spécifique
-```
-
-### Icônes des familles
-
-Dans `config.yaml`:
-```yaml
-familles_icones:
-  Anatidae: "305223451"
-  Accipitridae: "first"
-  Trochilidae: "last"
+├── media_cache.csv          # Cache médias (généré)
+└── photo_curation.csv       # Curation (généré via admin)
 ```
 
 ## Licence
