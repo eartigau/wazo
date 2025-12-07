@@ -1,0 +1,2350 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Europe, été 2024</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_fr.html" 
+                       >
+                        Voyages
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_fr.html" 
+                       >
+                        Familles
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="voyage_europe_ete_2024_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Europe, été 2024</h1>
+        
+        <div class="gallery-subtitle">5 juillet au 8 août 2024</div>
+        
+        <div class="stats">
+            74 photos
+            
+        </div>
+    </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(20)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="622076847"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622076847/480"
+                     alt="Tarier pâtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tarier pâtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="621907859"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621907859/480"
+                     alt="Goéland leucophée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland leucophée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="621570147"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621570147/480"
+                     alt="Échasse blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Échasse blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="622401982"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622401982/480"
+                     alt="Hypolaïs polyglotte"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Hypolaïs polyglotte</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="622239692"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622239692/480"
+                     alt="Grimpereau des jardins"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grimpereau des jardins</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="622239806"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622239806/480"
+                     alt="Grimpereau des jardins"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grimpereau des jardins</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="622237312"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622237312/480"
+                     alt="Bruant zizi"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bruant zizi</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="622133537"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622133537/480"
+                     alt="Guêpier d'Europe"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Guêpier d'Europe</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="622133358"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622133358/480"
+                     alt="Pie-grièche écorcheur"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pie-grièche écorcheur</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="622133429"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622133429/480"
+                     alt="Pie-grièche écorcheur"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pie-grièche écorcheur</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="622062802"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622062802/480"
+                     alt="Coucou gris"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coucou gris</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="622076809"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622076809/480"
+                     alt="Buse variable"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Buse variable</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="622062705"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622062705/480"
+                     alt="Geai des chênes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Geai des chênes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="622076846"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622076846/480"
+                     alt="Chevalier guignette"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Chevalier guignette</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="622076834"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622076834/480"
+                     alt="Bécasseau sanderling"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bécasseau sanderling</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="622076838"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622076838/480"
+                     alt="Fauvette mélanocéphale"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fauvette mélanocéphale</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="622046605"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622046605/480"
+                     alt="Tarier pâtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tarier pâtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="622076849"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622076849/480"
+                     alt="Tarier pâtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tarier pâtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="622046260"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/622046260/480"
+                     alt="Bergeronnette printanière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bergeronnette printanière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="621907864"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621907864/480"
+                     alt="Goéland leucophée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland leucophée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="621907867"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621907867/480"
+                     alt="Goéland leucophée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland leucophée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="621907875"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621907875/480"
+                     alt="Goéland leucophée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland leucophée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="621907884"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621907884/480"
+                     alt="Goéland leucophée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland leucophée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="621908472"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621908472/480"
+                     alt="Goéland leucophée"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland leucophée</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="621907872"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621907872/480"
+                     alt="Goéland brun"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland brun</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="621907839"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621907839/480"
+                     alt="Puffin cendré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Puffin cendré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="621908371"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621908371/480"
+                     alt="Cormoran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="621908070"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621908070/480"
+                     alt="Faucon crécerelle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Faucon crécerelle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="621835123"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621835123/480"
+                     alt="Bécasseau variable"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bécasseau variable</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="621837748"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621837748/480"
+                     alt="Bécasseau variable"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bécasseau variable</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="621835200"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621835200/480"
+                     alt="Astrild ondulé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Astrild ondulé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="621819927"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621819927/480"
+                     alt="Perruche à collier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Perruche à collier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="621818506"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621818506/480"
+                     alt="Conure à tête bleue"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Conure à tête bleue</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="621755434"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621755434/480"
+                     alt="Fuligule milouin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fuligule milouin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="621754364"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621754364/480"
+                     alt="Talève sultane"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Talève sultane</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="621754497"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621754497/480"
+                     alt="Échasse blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Échasse blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="621754696"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621754696/480"
+                     alt="Échasse blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Échasse blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="621755346"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621755346/480"
+                     alt="Échasse blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Échasse blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="621759519"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621759519/480"
+                     alt="Courlis corlieu"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Courlis corlieu</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="621739926"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621739926/480"
+                     alt="Cigogne blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cigogne blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="621673415"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621673415/480"
+                     alt="Talève sultane"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Talève sultane</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="621673422"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621673422/480"
+                     alt="Talève sultane"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Talève sultane</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="621675350"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621675350/480"
+                     alt="Pie-bleue ibérique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pie-bleue ibérique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="621675473"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621675473/480"
+                     alt="Pie-bleue ibérique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pie-bleue ibérique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="621676714"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621676714/480"
+                     alt="Pie-bleue ibérique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pie-bleue ibérique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="621647408"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621647408/480"
+                     alt="Martinet pâle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Martinet pâle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="621647409"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621647409/480"
+                     alt="Martinet pâle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Martinet pâle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="621647161"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621647161/480"
+                     alt="Puffin cendré"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Puffin cendré</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="621914936"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621914936/480"
+                     alt="Cormoran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="621641064"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621641064/480"
+                     alt="Pie-bleue ibérique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pie-bleue ibérique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="621679614"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621679614/480"
+                     alt="Cochevis de Thékla"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cochevis de Thékla</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="621680308"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621680308/480"
+                     alt="Cochevis de Thékla"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cochevis de Thékla</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="621679535"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621679535/480"
+                     alt="Rougequeue noir"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rougequeue noir</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="621680506"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621680506/480"
+                     alt="Pigeon biset"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pigeon biset</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="621680450"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621680450/480"
+                     alt="Cormoran huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="621739786"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621739786/480"
+                     alt="Ibis falcinelle"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ibis falcinelle</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="621739798"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621739798/480"
+                     alt="Héron garde-boeufs"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Héron garde-boeufs</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="621739790"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621739790/480"
+                     alt="Cisticole des joncs"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cisticole des joncs</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="621704073"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621704073/480"
+                     alt="Échasse blanche"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Échasse blanche</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="621703277"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621703277/480"
+                     alt="Cochevis huppé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cochevis huppé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="621569105"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621569105/480"
+                     alt="Cisticole des joncs"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cisticole des joncs</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="621569131"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621569131/480"
+                     alt="Cisticole des joncs"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cisticole des joncs</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="62"
+                 data-ml="621569083"
+                 onclick="openLightbox(62)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621569083/480"
+                     alt="Tarier pâtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tarier pâtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="63"
+                 data-ml="621703359"
+                 onclick="openLightbox(63)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621703359/480"
+                     alt="Tarier pâtre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tarier pâtre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="64"
+                 data-ml="621703311"
+                 onclick="openLightbox(64)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621703311/480"
+                     alt="Linotte mélodieuse"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Linotte mélodieuse</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="65"
+                 data-ml="621569735"
+                 onclick="openLightbox(65)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621569735/480"
+                     alt="Grèbe castagneux"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grèbe castagneux</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="66"
+                 data-ml="621396529"
+                 onclick="openLightbox(66)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396529/480"
+                     alt="Pigeon colombin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pigeon colombin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="67"
+                 data-ml="621396724"
+                 onclick="openLightbox(67)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396724/480"
+                     alt="Pigeon colombin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pigeon colombin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="68"
+                 data-ml="621396499"
+                 onclick="openLightbox(68)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396499/480"
+                     alt="Bruant proyer"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bruant proyer</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="69"
+                 data-ml="621396500"
+                 onclick="openLightbox(69)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396500/480"
+                     alt="Bruant proyer"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bruant proyer</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="70"
+                 data-ml="621374843"
+                 onclick="openLightbox(70)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621374843/480"
+                     alt="Vautour fauve"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Vautour fauve</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="71"
+                 data-ml="621396405"
+                 onclick="openLightbox(71)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621396405/480"
+                     alt="Grive draine"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Grive draine</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="72"
+                 data-ml="621374884"
+                 onclick="openLightbox(72)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621374884/480"
+                     alt="Pipit des arbres"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pipit des arbres</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="73"
+                 data-ml="621374920"
+                 onclick="openLightbox(73)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621374920/480"
+                     alt="Buse variable"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Buse variable</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 décembre 2025</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "622076847",
+                name_fr: "Tarier pâtre",
+                name_en: "European Stonechat",
+                scientific: "Saxicola rubicola",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location_fr: "RNL Estuário do Douro, Portugal",
+                location_en: "RNL Estuário do Douro, Portugal",
+                date_fr: "31 juillet 2024",
+                date_en: "July 31<sup>st</sup>, 2024",
+                lat: 41.1367384,
+                lng: -8.6624771,
+                checklist_id: "S189651043"
+            },
+            
+            {
+                ml: "621907859",
+                name_fr: "Goéland leucophée",
+                name_en: "Yellow-legged Gull",
+                scientific: "Larus michahellis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "RN Berlengas, Portugal",
+                location_en: "RN Berlengas, Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.4155075,
+                lng: -9.5121002,
+                checklist_id: "S188896152"
+            },
+            
+            {
+                ml: "621570147",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1475059,
+                lng: -8.5947418,
+                checklist_id: "S187357843"
+            },
+            
+            {
+                ml: "622401982",
+                name_fr: "Hypolaïs polyglotte",
+                name_en: "Melodious Warbler",
+                scientific: "Hippolais polyglotta",
+                family: "Acrocephalidae (Reed Warblers and Allies)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "8 août 2024",
+                date_en: "August 8<sup>th</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S190663642"
+            },
+            
+            {
+                ml: "622239692",
+                name_fr: "Grimpereau des jardins",
+                name_en: "Short-toed Treecreeper",
+                scientific: "Certhia brachydactyla",
+                family: "Certhiidae (Treecreepers)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "6 août 2024",
+                date_en: "August 6<sup>th</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S190453617"
+            },
+            
+            {
+                ml: "622239806",
+                name_fr: "Grimpereau des jardins",
+                name_en: "Short-toed Treecreeper",
+                scientific: "Certhia brachydactyla",
+                family: "Certhiidae (Treecreepers)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "6 août 2024",
+                date_en: "August 6<sup>th</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S190453617"
+            },
+            
+            {
+                ml: "622237312",
+                name_fr: "Bruant zizi",
+                name_en: "Cirl Bunting",
+                scientific: "Emberiza cirlus",
+                family: "Emberizidae (Old World Buntings)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "6 août 2024",
+                date_en: "August 6<sup>th</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S190453617"
+            },
+            
+            {
+                ml: "622133537",
+                name_fr: "Guêpier d\'Europe",
+                name_en: "European Bee-eater",
+                scientific: "Merops apiaster",
+                family: "Meropidae (Bee-eaters)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "3 août 2024",
+                date_en: "August 3<sup>rd</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S190000839"
+            },
+            
+            {
+                ml: "622133358",
+                name_fr: "Pie-grièche écorcheur",
+                name_en: "Red-backed Shrike",
+                scientific: "Lanius collurio",
+                family: "Laniidae (Shrikes)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "3 août 2024",
+                date_en: "August 3<sup>rd</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S190000839"
+            },
+            
+            {
+                ml: "622133429",
+                name_fr: "Pie-grièche écorcheur",
+                name_en: "Red-backed Shrike",
+                scientific: "Lanius collurio",
+                family: "Laniidae (Shrikes)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "3 août 2024",
+                date_en: "August 3<sup>rd</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S190000839"
+            },
+            
+            {
+                ml: "622062802",
+                name_fr: "Coucou gris",
+                name_en: "Common Cuckoo",
+                scientific: "Cuculus canorus",
+                family: "Cuculidae (Cuckoos)",
+                location_fr: "Parque de Avioso, Portugal",
+                location_en: "Parque de Avioso, Portugal",
+                date_fr: "1<sup>er</sup> août 2024",
+                date_en: "August 1<sup>st</sup>, 2024",
+                lat: 41.2886099,
+                lng: -8.6117578,
+                checklist_id: "S189767908"
+            },
+            
+            {
+                ml: "622076809",
+                name_fr: "Buse variable",
+                name_en: "Common Buzzard",
+                scientific: "Buteo buteo",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location_fr: "Parque de Avioso, Portugal",
+                location_en: "Parque de Avioso, Portugal",
+                date_fr: "1<sup>er</sup> août 2024",
+                date_en: "August 1<sup>st</sup>, 2024",
+                lat: 41.2886099,
+                lng: -8.6117578,
+                checklist_id: "S189767908"
+            },
+            
+            {
+                ml: "622062705",
+                name_fr: "Geai des chênes",
+                name_en: "Eurasian Jay",
+                scientific: "Garrulus glandarius",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Parque de Avioso, Portugal",
+                location_en: "Parque de Avioso, Portugal",
+                date_fr: "1<sup>er</sup> août 2024",
+                date_en: "August 1<sup>st</sup>, 2024",
+                lat: 41.2886099,
+                lng: -8.6117578,
+                checklist_id: "S189767908"
+            },
+            
+            {
+                ml: "622076846",
+                name_fr: "Chevalier guignette",
+                name_en: "Common Sandpiper",
+                scientific: "Actitis hypoleucos",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "RNL Estuário do Douro, Portugal",
+                location_en: "RNL Estuário do Douro, Portugal",
+                date_fr: "31 juillet 2024",
+                date_en: "July 31<sup>st</sup>, 2024",
+                lat: 41.1367384,
+                lng: -8.6624771,
+                checklist_id: "S189651043"
+            },
+            
+            {
+                ml: "622076834",
+                name_fr: "Bécasseau sanderling",
+                name_en: "Sanderling",
+                scientific: "Calidris alba",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "RNL Estuário do Douro, Portugal",
+                location_en: "RNL Estuário do Douro, Portugal",
+                date_fr: "31 juillet 2024",
+                date_en: "July 31<sup>st</sup>, 2024",
+                lat: 41.1367384,
+                lng: -8.6624771,
+                checklist_id: "S189651043"
+            },
+            
+            {
+                ml: "622076838",
+                name_fr: "Fauvette mélanocéphale",
+                name_en: "Sardinian Warbler",
+                scientific: "Curruca melanocephala",
+                family: "Sylviidae (Sylviid Warblers and Allies)",
+                location_fr: "RNL Estuário do Douro, Portugal",
+                location_en: "RNL Estuário do Douro, Portugal",
+                date_fr: "31 juillet 2024",
+                date_en: "July 31<sup>st</sup>, 2024",
+                lat: 41.1367384,
+                lng: -8.6624771,
+                checklist_id: "S189651043"
+            },
+            
+            {
+                ml: "622046605",
+                name_fr: "Tarier pâtre",
+                name_en: "European Stonechat",
+                scientific: "Saxicola rubicola",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location_fr: "RNL Estuário do Douro, Portugal",
+                location_en: "RNL Estuário do Douro, Portugal",
+                date_fr: "31 juillet 2024",
+                date_en: "July 31<sup>st</sup>, 2024",
+                lat: 41.1367384,
+                lng: -8.6624771,
+                checklist_id: "S189651043"
+            },
+            
+            {
+                ml: "622076849",
+                name_fr: "Tarier pâtre",
+                name_en: "European Stonechat",
+                scientific: "Saxicola rubicola",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location_fr: "RNL Estuário do Douro, Portugal",
+                location_en: "RNL Estuário do Douro, Portugal",
+                date_fr: "31 juillet 2024",
+                date_en: "July 31<sup>st</sup>, 2024",
+                lat: 41.1367384,
+                lng: -8.6624771,
+                checklist_id: "S189651043"
+            },
+            
+            {
+                ml: "622046260",
+                name_fr: "Bergeronnette printanière",
+                name_en: "Western Yellow Wagtail",
+                scientific: "Motacilla flava",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location_fr: "RNL Estuário do Douro, Portugal",
+                location_en: "RNL Estuário do Douro, Portugal",
+                date_fr: "31 juillet 2024",
+                date_en: "July 31<sup>st</sup>, 2024",
+                lat: 41.1367384,
+                lng: -8.6624771,
+                checklist_id: "S189651043"
+            },
+            
+            {
+                ml: "621907864",
+                name_fr: "Goéland leucophée",
+                name_en: "Yellow-legged Gull",
+                scientific: "Larus michahellis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "RN Berlengas, Portugal",
+                location_en: "RN Berlengas, Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.4155075,
+                lng: -9.5121002,
+                checklist_id: "S188896152"
+            },
+            
+            {
+                ml: "621907867",
+                name_fr: "Goéland leucophée",
+                name_en: "Yellow-legged Gull",
+                scientific: "Larus michahellis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "RN Berlengas, Portugal",
+                location_en: "RN Berlengas, Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.4155075,
+                lng: -9.5121002,
+                checklist_id: "S188896152"
+            },
+            
+            {
+                ml: "621907875",
+                name_fr: "Goéland leucophée",
+                name_en: "Yellow-legged Gull",
+                scientific: "Larus michahellis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "RN Berlengas, Portugal",
+                location_en: "RN Berlengas, Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.4155075,
+                lng: -9.5121002,
+                checklist_id: "S188896152"
+            },
+            
+            {
+                ml: "621907884",
+                name_fr: "Goéland leucophée",
+                name_en: "Yellow-legged Gull",
+                scientific: "Larus michahellis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "RN Berlengas, Portugal",
+                location_en: "RN Berlengas, Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.4155075,
+                lng: -9.5121002,
+                checklist_id: "S188896152"
+            },
+            
+            {
+                ml: "621908472",
+                name_fr: "Goéland leucophée",
+                name_en: "Yellow-legged Gull",
+                scientific: "Larus michahellis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Travessia marítima entre Peniche e as Berlengas (saídas pelágicas), Portugal",
+                location_en: "Travessia marítima entre Peniche e as Berlengas (saídas pelágicas), Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.3903053,
+                lng: -9.46558,
+                checklist_id: "S188902195"
+            },
+            
+            {
+                ml: "621907872",
+                name_fr: "Goéland brun",
+                name_en: "Lesser Black-backed Gull",
+                scientific: "Larus fuscus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "RN Berlengas, Portugal",
+                location_en: "RN Berlengas, Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.4155075,
+                lng: -9.5121002,
+                checklist_id: "S188896152"
+            },
+            
+            {
+                ml: "621907839",
+                name_fr: "Puffin cendré",
+                name_en: "Cory\'s Shearwater",
+                scientific: "Calonectris borealis",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location_fr: "Travessia marítima entre Peniche e as Berlengas (saídas pelágicas), Portugal",
+                location_en: "Travessia marítima entre Peniche e as Berlengas (saídas pelágicas), Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.3903053,
+                lng: -9.46558,
+                checklist_id: "S188902195"
+            },
+            
+            {
+                ml: "621908371",
+                name_fr: "Cormoran huppé",
+                name_en: "European Shag",
+                scientific: "Gulosus aristotelis",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Travessia marítima entre Peniche e as Berlengas (saídas pelágicas), Portugal",
+                location_en: "Travessia marítima entre Peniche e as Berlengas (saídas pelágicas), Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.3903053,
+                lng: -9.46558,
+                checklist_id: "S188902195"
+            },
+            
+            {
+                ml: "621908070",
+                name_fr: "Faucon crécerelle",
+                name_en: "Eurasian Kestrel",
+                scientific: "Falco tinnunculus",
+                family: "Falconidae (Falcons and Caracaras)",
+                location_fr: "RN Berlengas, Portugal",
+                location_en: "RN Berlengas, Portugal",
+                date_fr: "26 juillet 2024",
+                date_en: "July 26<sup>th</sup>, 2024",
+                lat: 39.4155075,
+                lng: -9.5121002,
+                checklist_id: "S188896152"
+            },
+            
+            {
+                ml: "621835123",
+                name_fr: "Bécasseau variable",
+                name_en: "Dunlin",
+                scientific: "Calidris alpina",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "PN Sintra-Cascais, Portugal",
+                location_en: "PN Sintra-Cascais, Portugal",
+                date_fr: "25 juillet 2024",
+                date_en: "July 25<sup>th</sup>, 2024",
+                lat: 38.8969115,
+                lng: -9.4309473,
+                checklist_id: "S188666482"
+            },
+            
+            {
+                ml: "621837748",
+                name_fr: "Bécasseau variable",
+                name_en: "Dunlin",
+                scientific: "Calidris alpina",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "PN Sintra-Cascais, Portugal",
+                location_en: "PN Sintra-Cascais, Portugal",
+                date_fr: "25 juillet 2024",
+                date_en: "July 25<sup>th</sup>, 2024",
+                lat: 38.8969115,
+                lng: -9.4309473,
+                checklist_id: "S188666482"
+            },
+            
+            {
+                ml: "621835200",
+                name_fr: "Astrild ondulé",
+                name_en: "Common Waxbill",
+                scientific: "Estrilda astrild",
+                family: "Estrildidae (Waxbills and Allies)",
+                location_fr: "PN Sintra-Cascais, Portugal",
+                location_en: "PN Sintra-Cascais, Portugal",
+                date_fr: "25 juillet 2024",
+                date_en: "July 25<sup>th</sup>, 2024",
+                lat: 38.8969115,
+                lng: -9.4309473,
+                checklist_id: "S188666482"
+            },
+            
+            {
+                ml: "621819927",
+                name_fr: "Perruche à collier",
+                name_en: "Rose-ringed Parakeet",
+                scientific: "Psittacula krameri",
+                family: "Psittaculidae (Old World Parrots)",
+                location_fr: "Parque Eduardo VII, Portugal",
+                location_en: "Parque Eduardo VII, Portugal",
+                date_fr: "24 juillet 2024",
+                date_en: "July 24<sup>th</sup>, 2024",
+                lat: 38.728242,
+                lng: -9.1540682,
+                checklist_id: "S188570980"
+            },
+            
+            {
+                ml: "621818506",
+                name_fr: "Conure à tête bleue",
+                name_en: "Blue-crowned Parakeet",
+                scientific: "Thectocercus acuticaudatus",
+                family: "Psittacidae (New World and African Parrots)",
+                location_fr: "Parque Eduardo VII, Portugal",
+                location_en: "Parque Eduardo VII, Portugal",
+                date_fr: "24 juillet 2024",
+                date_en: "July 24<sup>th</sup>, 2024",
+                lat: 38.728242,
+                lng: -9.1540682,
+                checklist_id: "S188604228"
+            },
+            
+            {
+                ml: "621755434",
+                name_fr: "Fuligule milouin",
+                name_en: "Common Pochard",
+                scientific: "Aythya ferina",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854"
+            },
+            
+            {
+                ml: "621754364",
+                name_fr: "Talève sultane",
+                name_en: "Western Swamphen",
+                scientific: "Porphyrio porphyrio",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854"
+            },
+            
+            {
+                ml: "621754497",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854"
+            },
+            
+            {
+                ml: "621754696",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854"
+            },
+            
+            {
+                ml: "621755346",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854"
+            },
+            
+            {
+                ml: "621759519",
+                name_fr: "Courlis corlieu",
+                name_en: "Eurasian Whimbrel",
+                scientific: "Numenius phaeopus",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "21 juillet 2024",
+                date_en: "July 21<sup>st</sup>, 2024",
+                lat: 37.1370219,
+                lng: -8.5941195,
+                checklist_id: "S188014315"
+            },
+            
+            {
+                ml: "621739926",
+                name_fr: "Cigogne blanche",
+                name_en: "White Stork",
+                scientific: "Ciconia ciconia",
+                family: "Ciconiidae (Storks)",
+                location_fr: "Castelo de Silves, Portugal",
+                location_en: "Castelo de Silves, Portugal",
+                date_fr: "21 juillet 2024",
+                date_en: "July 21<sup>st</sup>, 2024",
+                lat: 37.1887181,
+                lng: -8.4383145,
+                checklist_id: "S188123585"
+            },
+            
+            {
+                ml: "621673415",
+                name_fr: "Talève sultane",
+                name_en: "Western Swamphen",
+                scientific: "Porphyrio porphyrio",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Parque Ambiental de Vilamoura, Portugal",
+                location_en: "Parque Ambiental de Vilamoura, Portugal",
+                date_fr: "20 juillet 2024",
+                date_en: "July 20<sup>th</sup>, 2024",
+                lat: 37.0893497,
+                lng: -8.1423175,
+                checklist_id: "S187916410"
+            },
+            
+            {
+                ml: "621673422",
+                name_fr: "Talève sultane",
+                name_en: "Western Swamphen",
+                scientific: "Porphyrio porphyrio",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location_fr: "Parque Ambiental de Vilamoura, Portugal",
+                location_en: "Parque Ambiental de Vilamoura, Portugal",
+                date_fr: "20 juillet 2024",
+                date_en: "July 20<sup>th</sup>, 2024",
+                lat: 37.0893497,
+                lng: -8.1423175,
+                checklist_id: "S187916410"
+            },
+            
+            {
+                ml: "621675350",
+                name_fr: "Pie-bleue ibérique",
+                name_en: "Iberian Magpie",
+                scientific: "Cyanopica cooki",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Montes de Alvor, Portugal",
+                location_en: "Montes de Alvor, Portugal",
+                date_fr: "20 juillet 2024",
+                date_en: "July 20<sup>th</sup>, 2024",
+                lat: 37.143657,
+                lng: -8.581412,
+                checklist_id: "S187928283"
+            },
+            
+            {
+                ml: "621675473",
+                name_fr: "Pie-bleue ibérique",
+                name_en: "Iberian Magpie",
+                scientific: "Cyanopica cooki",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Montes de Alvor, Portugal",
+                location_en: "Montes de Alvor, Portugal",
+                date_fr: "20 juillet 2024",
+                date_en: "July 20<sup>th</sup>, 2024",
+                lat: 37.143657,
+                lng: -8.581412,
+                checklist_id: "S187928283"
+            },
+            
+            {
+                ml: "621676714",
+                name_fr: "Pie-bleue ibérique",
+                name_en: "Iberian Magpie",
+                scientific: "Cyanopica cooki",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Montes de Alvor, Portugal",
+                location_en: "Montes de Alvor, Portugal",
+                date_fr: "20 juillet 2024",
+                date_en: "July 20<sup>th</sup>, 2024",
+                lat: 37.143657,
+                lng: -8.581412,
+                checklist_id: "S187928283"
+            },
+            
+            {
+                ml: "621647408",
+                name_fr: "Martinet pâle",
+                name_en: "Pallid Swift",
+                scientific: "Apus pallidus",
+                family: "Apodidae (Swifts)",
+                location_fr: "Fortaleza de Sagres, Portugal",
+                location_en: "Fortaleza de Sagres, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 36.9960762,
+                lng: -8.9488766,
+                checklist_id: "S187654776"
+            },
+            
+            {
+                ml: "621647409",
+                name_fr: "Martinet pâle",
+                name_en: "Pallid Swift",
+                scientific: "Apus pallidus",
+                family: "Apodidae (Swifts)",
+                location_fr: "Fortaleza de Sagres, Portugal",
+                location_en: "Fortaleza de Sagres, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 36.9960762,
+                lng: -8.9488766,
+                checklist_id: "S187654776"
+            },
+            
+            {
+                ml: "621647161",
+                name_fr: "Puffin cendré",
+                name_en: "Cory\'s Shearwater",
+                scientific: "Calonectris borealis",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location_fr: "Fortaleza de Sagres, Portugal",
+                location_en: "Fortaleza de Sagres, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 36.9960762,
+                lng: -8.9488766,
+                checklist_id: "S187654776"
+            },
+            
+            {
+                ml: "621914936",
+                name_fr: "Cormoran huppé",
+                name_en: "European Shag",
+                scientific: "Gulosus aristotelis",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Fortaleza de Sagres, Portugal",
+                location_en: "Fortaleza de Sagres, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 36.9960762,
+                lng: -8.9488766,
+                checklist_id: "S187654776"
+            },
+            
+            {
+                ml: "621641064",
+                name_fr: "Pie-bleue ibérique",
+                name_en: "Iberian Magpie",
+                scientific: "Cyanopica cooki",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 37.1249259,
+                lng: -8.6088181,
+                checklist_id: "S187749626"
+            },
+            
+            {
+                ml: "621679614",
+                name_fr: "Cochevis de Thékla",
+                name_en: "Thekla\'s Lark",
+                scientific: "Galerida theklae",
+                family: "Alaudidae (Larks)",
+                location_fr: "Fortaleza de Sagres, Portugal",
+                location_en: "Fortaleza de Sagres, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 36.9960762,
+                lng: -8.9488766,
+                checklist_id: "S187654776"
+            },
+            
+            {
+                ml: "621680308",
+                name_fr: "Cochevis de Thékla",
+                name_en: "Thekla\'s Lark",
+                scientific: "Galerida theklae",
+                family: "Alaudidae (Larks)",
+                location_fr: "Fortaleza de Sagres, Portugal",
+                location_en: "Fortaleza de Sagres, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 36.9960762,
+                lng: -8.9488766,
+                checklist_id: "S187654776"
+            },
+            
+            {
+                ml: "621679535",
+                name_fr: "Rougequeue noir",
+                name_en: "Black Redstart",
+                scientific: "Phoenicurus ochruros",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location_fr: "Fortaleza de Sagres, Portugal",
+                location_en: "Fortaleza de Sagres, Portugal",
+                date_fr: "19 juillet 2024",
+                date_en: "July 19<sup>th</sup>, 2024",
+                lat: 36.9960762,
+                lng: -8.9488766,
+                checklist_id: "S187654776"
+            },
+            
+            {
+                ml: "621680506",
+                name_fr: "Pigeon biset",
+                name_en: "Rock Pigeon",
+                scientific: "Columba livia",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Ponta da Piedade, Portugal",
+                location_en: "Ponta da Piedade, Portugal",
+                date_fr: "18 juillet 2024",
+                date_en: "July 18<sup>th</sup>, 2024",
+                lat: 37.0794899,
+                lng: -8.6686742,
+                checklist_id: "S187562470"
+            },
+            
+            {
+                ml: "621680450",
+                name_fr: "Cormoran huppé",
+                name_en: "European Shag",
+                scientific: "Gulosus aristotelis",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Ponta da Piedade, Portugal",
+                location_en: "Ponta da Piedade, Portugal",
+                date_fr: "18 juillet 2024",
+                date_en: "July 18<sup>th</sup>, 2024",
+                lat: 37.0794899,
+                lng: -8.6686742,
+                checklist_id: "S187562470"
+            },
+            
+            {
+                ml: "621739786",
+                name_fr: "Ibis falcinelle",
+                name_en: "Glossy Ibis",
+                scientific: "Plegadis falcinellus",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "18 juillet 2024",
+                date_en: "July 18<sup>th</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S187496841"
+            },
+            
+            {
+                ml: "621739798",
+                name_fr: "Héron garde-boeufs",
+                name_en: "Western Cattle-Egret",
+                scientific: "Ardea ibis",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "18 juillet 2024",
+                date_en: "July 18<sup>th</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S187496841"
+            },
+            
+            {
+                ml: "621739790",
+                name_fr: "Cisticole des joncs",
+                name_en: "Zitting Cisticola",
+                scientific: "Cisticola juncidis",
+                family: "Cisticolidae (Cisticolas and Allies)",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "18 juillet 2024",
+                date_en: "July 18<sup>th</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S187496841"
+            },
+            
+            {
+                ml: "621704073",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1475059,
+                lng: -8.5947418,
+                checklist_id: "S187357843"
+            },
+            
+            {
+                ml: "621703277",
+                name_fr: "Cochevis huppé",
+                name_en: "Crested Lark",
+                scientific: "Galerida cristata",
+                family: "Alaudidae (Larks)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1249259,
+                lng: -8.6088181,
+                checklist_id: "S187419951"
+            },
+            
+            {
+                ml: "621569105",
+                name_fr: "Cisticole des joncs",
+                name_en: "Zitting Cisticola",
+                scientific: "Cisticola juncidis",
+                family: "Cisticolidae (Cisticolas and Allies)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1475059,
+                lng: -8.5947418,
+                checklist_id: "S187357843"
+            },
+            
+            {
+                ml: "621569131",
+                name_fr: "Cisticole des joncs",
+                name_en: "Zitting Cisticola",
+                scientific: "Cisticola juncidis",
+                family: "Cisticolidae (Cisticolas and Allies)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1475059,
+                lng: -8.5947418,
+                checklist_id: "S187357843"
+            },
+            
+            {
+                ml: "621569083",
+                name_fr: "Tarier pâtre",
+                name_en: "European Stonechat",
+                scientific: "Saxicola rubicola",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1475059,
+                lng: -8.5947418,
+                checklist_id: "S187357843"
+            },
+            
+            {
+                ml: "621703359",
+                name_fr: "Tarier pâtre",
+                name_en: "European Stonechat",
+                scientific: "Saxicola rubicola",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1249259,
+                lng: -8.6088181,
+                checklist_id: "S187419951"
+            },
+            
+            {
+                ml: "621703311",
+                name_fr: "Linotte mélodieuse",
+                name_en: "Eurasian Linnet",
+                scientific: "Linaria cannabina",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1249259,
+                lng: -8.6088181,
+                checklist_id: "S187419951"
+            },
+            
+            {
+                ml: "621569735",
+                name_fr: "Grèbe castagneux",
+                name_en: "Little Grebe",
+                scientific: "Tachybaptus ruficollis",
+                family: "Podicipedidae (Grebes)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "13 juillet 2024",
+                date_en: "July 13<sup>th</sup>, 2024",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S186721818"
+            },
+            
+            {
+                ml: "621396529",
+                name_fr: "Pigeon colombin",
+                name_en: "Stock Dove",
+                scientific: "Columba oenas",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11<sup>th</sup>, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621396724",
+                name_fr: "Pigeon colombin",
+                name_en: "Stock Dove",
+                scientific: "Columba oenas",
+                family: "Columbidae (Pigeons and Doves)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11<sup>th</sup>, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621396499",
+                name_fr: "Bruant proyer",
+                name_en: "Corn Bunting",
+                scientific: "Emberiza calandra",
+                family: "Emberizidae (Old World Buntings)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11<sup>th</sup>, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621396500",
+                name_fr: "Bruant proyer",
+                name_en: "Corn Bunting",
+                scientific: "Emberiza calandra",
+                family: "Emberizidae (Old World Buntings)",
+                location_fr: "Marais de Sionnet, Genève, Suisse",
+                location_en: "Marais de Sionnet, Geneva, Switzerland",
+                date_fr: "11 juillet 2024",
+                date_en: "July 11<sup>th</sup>, 2024",
+                lat: 46.2324444,
+                lng: 6.2365007,
+                checklist_id: "S186423506"
+            },
+            
+            {
+                ml: "621374843",
+                name_fr: "Vautour fauve",
+                name_en: "Eurasian Griffon",
+                scientific: "Gyps fulvus",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location_fr: "Les Ayères (Massif du Giffre), Passy, Auvergne-Rhône-Alpes, France",
+                location_en: "Les Ayères (Massif du Giffre), Passy, Auvergne-Rhône-Alpes, France",
+                date_fr: "7 juillet 2024",
+                date_en: "July 7<sup>th</sup>, 2024",
+                lat: 45.961141,
+                lng: 6.7703139,
+                checklist_id: "S185837068"
+            },
+            
+            {
+                ml: "621396405",
+                name_fr: "Grive draine",
+                name_en: "Mistle Thrush",
+                scientific: "Turdus viscivorus",
+                family: "Turdidae (Thrushes and Allies)",
+                location_fr: "Les Ayères (Massif du Giffre), Passy, Auvergne-Rhône-Alpes, France",
+                location_en: "Les Ayères (Massif du Giffre), Passy, Auvergne-Rhône-Alpes, France",
+                date_fr: "7 juillet 2024",
+                date_en: "July 7<sup>th</sup>, 2024",
+                lat: 45.961141,
+                lng: 6.7703139,
+                checklist_id: "S185837068"
+            },
+            
+            {
+                ml: "621374884",
+                name_fr: "Pipit des arbres",
+                name_en: "Tree Pipit",
+                scientific: "Anthus trivialis",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location_fr: "Forêt du Risoux, Bourgogne-Franche-Comté, France",
+                location_en: "Forêt du Risoux, Bourgogne-Franche-Comté, France",
+                date_fr: "6 juillet 2024",
+                date_en: "July 6<sup>th</sup>, 2024",
+                lat: 46.5455423,
+                lng: 6.0937643,
+                checklist_id: "S185591742"
+            },
+            
+            {
+                ml: "621374920",
+                name_fr: "Buse variable",
+                name_en: "Common Buzzard",
+                scientific: "Buteo buteo",
+                family: "Accipitridae (Hawks, Eagles, and Kites)",
+                location_fr: "Observatoire de Genève, Genève, Suisse",
+                location_en: "Observatoire de Genève, Geneva, Switzerland",
+                date_fr: "5 juillet 2024",
+                date_en: "July 5<sup>th</sup>, 2024",
+                lat: 46.3082483,
+                lng: 6.1342695,
+                checklist_id: "S185393822"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: 41.1367384, lng: -8.6624771, name: "RNL Estuário do Douro" },
+            
+            { lat: 39.4155075, lng: -9.5121002, name: "RN Berlengas" },
+            
+            { lat: 37.1475059, lng: -8.5947418, name: "Ria de Alvor" },
+            
+            { lat: 45.1742263, lng: 5.216454, name: "Saint-Antoine l'Abbaye (commune)" },
+            
+            { lat: 41.2886099, lng: -8.6117578, name: "Parque de Avioso" },
+            
+            { lat: 39.3903053, lng: -9.46558, name: "Travessia marítima entre Peniche e as Berlengas (saídas pelágicas)" },
+            
+            { lat: 38.8969115, lng: -9.4309473, name: "PN Sintra-Cascais" },
+            
+            { lat: 38.728242, lng: -9.1540682, name: "Parque Eduardo VII" },
+            
+            { lat: 37.09469, lng: -8.3313704, name: "Lagoa dos Salgados" },
+            
+            { lat: 37.1370219, lng: -8.5941195, name: "Ria de Alvor" },
+            
+            { lat: 37.1887181, lng: -8.4383145, name: "Castelo de Silves" },
+            
+            { lat: 37.0893497, lng: -8.1423175, name: "Parque Ambiental de Vilamoura" },
+            
+            { lat: 37.143657, lng: -8.581412, name: "Montes de Alvor" },
+            
+            { lat: 36.9960762, lng: -8.9488766, name: "Fortaleza de Sagres" },
+            
+            { lat: 37.1249259, lng: -8.6088181, name: "Ria de Alvor" },
+            
+            { lat: 37.0794899, lng: -8.6686742, name: "Ponta da Piedade" },
+            
+            { lat: 46.2324444, lng: 6.2365007, name: "Marais de Sionnet" },
+            
+            { lat: 45.961141, lng: 6.7703139, name: "Les Ayères (Massif du Giffre), Passy" },
+            
+            { lat: 46.5455423, lng: 6.0937643, name: "Forêt du Risoux" },
+            
+            { lat: 46.3082483, lng: 6.1342695, name: "Observatoire de Genève" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>

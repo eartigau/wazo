@@ -105,13 +105,13 @@ def construire_menu(config, generator):
     
     # Lien Sons (sera activé si des sons existent)
     # On ajoute toujours au menu, sera filtré après si pas de sons
-    menu.append({
-        'name_fr': 'Sons',
-        'name_en': 'Sounds',
-        'file_fr': 'sounds_gallery_fr.html',
-        'file_en': 'sounds_gallery_en.html',
-        '_conditional': 'sounds'  # Marqueur pour filtrage conditionnel
-    })
+    #menu.append({
+    #    'name_fr': 'Sons',
+    #    'name_en': 'Sounds',
+    #    'file_fr': 'sounds_gallery_fr.html',
+    #    'file_en': 'sounds_gallery_en.html',
+    #    '_conditional': 'sounds'  # Marqueur pour filtrage conditionnel
+    #})
     
     # Construire les données des familles pour la génération
     species_list = generator.get_species_list()
@@ -564,56 +564,9 @@ def generer_toutes_galeries():
             print(f"   ✓ familles_index_fr.html / familles_index_en.html ({len(familles_index_data)} familles)")
     
     # ========================================
-    # GALERIE DE SONS
+    # PAGE ADMIN (numéros ML)
     # ========================================
-    print(f"\n🎵 Galerie des sons...")
-    
-    # Compter les sons dans le cache
-    sons_dans_cache = sum(1 for v in generator.media_cache.values() if v.get('status') == 'son')
-    
-    if sons_dans_cache == 0:
-        # Vérifier s'il y a des médias non vérifiés qui pourraient être des sons
-        medias_non_verifies = 0
-        with open(CSV_FILE, 'r', encoding='utf-8') as f:
-            import csv as csv_module
-            reader = csv_module.DictReader(f)
-            for row in reader:
-                ml_string = row.get('ML Catalog Numbers') or ''
-                for ml in ml_string.replace(',', ' ').split():
-                    ml = ml.strip()
-                    if ml and ml not in generator.media_cache:
-                        medias_non_verifies += 1
-        
-        if medias_non_verifies > 0:
-            print(f"   ⚠ {medias_non_verifies} médias non vérifiés.")
-            print(f"   Pour détecter les sons, exécutez: python generer_tout.py verifier")
-            print(f"   Galerie des sons non générée.")
-        else:
-            print("   ⚠ Aucun son trouvé dans vos données.")
-        
-        # Retirer le lien Sons du menu
-        menu[:] = [item for item in menu if item.get('_conditional') != 'sounds']
-    else:
-        # Vérifier s'il y a des sons non rejetés
-        sounds_list = generator.get_sounds_list(curation=curation)
-        total_sounds = sum(sp['sound_count'] for sp in sounds_list) if sounds_list else 0
-        
-        if total_sounds > 0:
-            generator.generate_sounds_gallery(
-                output_base='sounds_gallery',
-                template_file='sounds_template.html',
-                menu=menu,
-                curation=curation
-            )
-            total_galeries += 1
-        else:
-            print("   ⚠ Tous les sons sont rejetés, galerie non générée")
-            menu[:] = [item for item in menu if item.get('_conditional') != 'sounds']
-    
-    # ========================================
-    # PAGE ADMIN (numéros ML + Sons)
-    # ========================================
-    print(f"\n🔧 Page admin (photos + sons)...")
+    print(f"\n🔧 Page admin...")
     generer_page_admin(config)
     
     # ========================================
@@ -650,7 +603,7 @@ def charger_curation(fichier_curation: str) -> dict:
 
 
 def generer_page_admin(config):
-    """Génère la page admin avec toutes les photos/sons et numéros ML"""
+    """Génère la page admin avec toutes les photos et numéros ML"""
     fichiers = config.get('fichiers', {})
     CSV_FILE = fichiers.get('donnees_ebird', 'MyEBirdData.csv')
     CACHE_FILE = fichiers.get('cache_medias', 'media_cache.csv')
@@ -663,7 +616,7 @@ def generer_page_admin(config):
     # Charger la curation existante
     curation = charger_curation(CURATION_FILE)
     if curation:
-        print(f"   📋 Curation chargée: {len(curation)} médias")
+        print(f"   📋 Curation chargée: {len(curation)} photos")
     
     # Charger la taxonomie pour les noms
     taxonomy = {}
@@ -677,43 +630,8 @@ def generer_page_admin(config):
                     'taxon_order': int(row.get('TAXON_ORDER', 999999))
                 }
     
-    # D'abord, collecter les meilleures photos par espèce (pour les sons sans photo)
-    species_photos = {}  # sci_name -> meilleur ml_photo
-    
-    # Lire toutes les observations pour collecter les photos par espèce
-    with open(CSV_FILE, 'r', encoding='utf-8') as f:
-        reader = csv.DictReader(f)
-        for row in reader:
-            ml_string = row.get('ML Catalog Numbers') or ''
-            ml_string = ml_string.strip()
-            if not ml_string:
-                continue
-            
-            scientific_name = row.get('Scientific Name', '')
-            date_raw = row.get('Date', '')
-            
-            for ml in ml_string.replace(',', ' ').split():
-                ml = ml.strip()
-                if ml:
-                    media_status = media_cache.get(ml, {}).get('status', 'unknown')
-                    if media_status == 'image':
-                        curation_status = curation.get(ml, 'include')
-                        if curation_status != 'reject':
-                            # Garder la meilleure photo (best > include, puis plus récente)
-                            if scientific_name not in species_photos:
-                                species_photos[scientific_name] = {'ml': ml, 'date': date_raw, 'is_best': curation_status == 'best'}
-                            else:
-                                existing = species_photos[scientific_name]
-                                # Préférer best
-                                if curation_status == 'best' and not existing['is_best']:
-                                    species_photos[scientific_name] = {'ml': ml, 'date': date_raw, 'is_best': True}
-                                # Sinon préférer plus récent si même statut
-                                elif curation_status == 'best' == existing['is_best'] or (curation_status != 'best' and not existing['is_best']):
-                                    if date_raw > existing['date']:
-                                        species_photos[scientific_name] = {'ml': ml, 'date': date_raw, 'is_best': curation_status == 'best'}
-    
-    # Lire toutes les observations avec médias
-    all_media = []
+    # Lire toutes les observations avec photos
+    all_photos = []
     with open(CSV_FILE, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
         for row in reader:
@@ -730,60 +648,42 @@ def generer_page_admin(config):
             for ml in ml_string.replace(',', ' ').split():
                 ml = ml.strip()
                 if ml:
-                    # Déterminer le type de média
+                    # Ne garder que les images
                     media_status = media_cache.get(ml, {}).get('status', 'unknown')
-                    media_type = 'photo' if media_status == 'image' else 'sound'
+                    if media_status != 'image':
+                        continue
                     
                     # Déterminer le statut de curation
-                    if ml in curation:
-                        status = curation[ml]
-                    else:
-                        # Par défaut: include si c'est une image, include aussi pour les sons
-                        status = 'include'
+                    status = curation.get(ml, 'include')
                     
-                    # Pour les sons, trouver la photo de l'espèce
-                    species_photo_ml = None
-                    if media_type == 'sound' and scientific_name in species_photos:
-                        species_photo_ml = species_photos[scientific_name]['ml']
-                    
-                    all_media.append({
+                    all_photos.append({
                         'ml_catalog_number': ml,
                         'scientific_name': scientific_name,
                         'common_name_fr': common_name_fr,
                         'common_name_en': common_name_en,
                         'date_raw': date_raw,
-                        'status': status,
-                        'media_type': media_type,
-                        'species_photo_ml': species_photo_ml
+                        'status': status
                     })
     
     # Trier par date décroissante
-    all_media.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
+    all_photos.sort(key=lambda x: x.get('date_raw', ''), reverse=True)
     
     # Générer la page
     env = Environment(loader=FileSystemLoader('.'))
     template = env.get_template('admin_template.html')
     
-    html = template.render(photos=all_media)
+    html = template.render(photos=all_photos)
     
     with open('admin_photos.html', 'w', encoding='utf-8') as f:
         f.write(html)
     
     # Stats
-    photos = [p for p in all_media if p['media_type'] == 'photo']
-    sounds = [p for p in all_media if p['media_type'] == 'sound']
-    
-    photo_best = sum(1 for p in photos if p['status'] == 'best')
-    photo_include = sum(1 for p in photos if p['status'] == 'include')
-    photo_reject = sum(1 for p in photos if p['status'] == 'reject')
-    
-    sound_best = sum(1 for p in sounds if p['status'] == 'best')
-    sound_include = sum(1 for p in sounds if p['status'] == 'include')
-    sound_reject = sum(1 for p in sounds if p['status'] == 'reject')
+    photo_best = sum(1 for p in all_photos if p['status'] == 'best')
+    photo_include = sum(1 for p in all_photos if p['status'] == 'include')
+    photo_reject = sum(1 for p in all_photos if p['status'] == 'reject')
     
     print(f"   ✓ admin_photos.html")
-    print(f"     📷 {len(photos)} photos: ⭐{photo_best} best, ✓{photo_include} inclus, ✗{photo_reject} rejetés")
-    print(f"     🎵 {len(sounds)} sons: ⭐{sound_best} best, ✓{sound_include} inclus, ✗{sound_reject} rejetés")
+    print(f"     📷 {len(all_photos)} photos: ⭐{photo_best} best, ✓{photo_include} inclus, ✗{photo_reject} rejetés")
 
 
 # ============================================================================
@@ -819,7 +719,6 @@ Usage: python generer_tout.py [commande]
 Commandes:
   (aucune)    Génère toutes les galeries
   verifier    Vérifie tous les médias et met à jour le cache
-  reset-sons  Remet tous les sons à 'include' (utile après mise à jour)
   help        Affiche cette aide
 
 Configuration: config.yaml
@@ -837,68 +736,11 @@ Fichiers requis:
 """)
 
 
-def reset_sons():
-    """Remet tous les sons à 'include' dans le fichier de curation"""
-    config = charger_config()
-    fichiers = config.get('fichiers', {})
-    
-    CACHE_FILE = fichiers.get('cache_medias', 'media_cache.csv')
-    CURATION_FILE = fichiers.get('curation', 'photo_curation.csv')
-    
-    print("=" * 60)
-    print("🎵 RESET DES SONS À 'INCLUDE'")
-    print("=" * 60)
-    
-    # Charger le cache pour identifier les sons
-    media_cache = charger_cache(CACHE_FILE)
-    sons_ml = {ml for ml, data in media_cache.items() if data.get('status') == 'son'}
-    
-    if not sons_ml:
-        print("❌ Aucun son trouvé dans le cache.")
-        print("   Exécutez d'abord: python generer_tout.py verifier")
-        return
-    
-    print(f"   {len(sons_ml)} sons identifiés dans le cache")
-    
-    # Charger la curation existante
-    curation = charger_curation(CURATION_FILE)
-    
-    if not curation:
-        print("❌ Fichier de curation non trouvé ou vide.")
-        return
-    
-    # Compter les sons rejetés
-    sons_rejetes = sum(1 for ml in sons_ml if curation.get(ml) == 'reject')
-    print(f"   {sons_rejetes} sons actuellement rejetés")
-    
-    if sons_rejetes == 0:
-        print("✓ Aucun son rejeté, rien à faire.")
-        return
-    
-    # Mettre tous les sons rejetés à 'include'
-    for ml in sons_ml:
-        if curation.get(ml) == 'reject':
-            curation[ml] = 'include'
-    
-    # Sauvegarder le fichier de curation
-    with open(CURATION_FILE, 'w', newline='', encoding='utf-8') as f:
-        writer = csv.DictWriter(f, fieldnames=['ml_number', 'status'])
-        writer.writeheader()
-        for ml, status in sorted(curation.items()):
-            writer.writerow({'ml_number': ml, 'status': status})
-    
-    print(f"\n✅ {sons_rejetes} sons remis à 'include'")
-    print(f"   Fichier mis à jour: {CURATION_FILE}")
-    print(f"\n   Exécutez maintenant: python generer_tout.py")
-
-
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         commande = sys.argv[1].lower()
         if commande == 'verifier':
             verifier_medias()
-        elif commande == 'reset-sons':
-            reset_sons()
         elif commande == 'help' or commande == '--help' or commande == '-h':
             afficher_aide()
         else:

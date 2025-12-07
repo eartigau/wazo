@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chile 2022</title>
+    <title>Chili 2022</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="gallery.css">
 </head>
@@ -16,35 +16,35 @@
                 <li>
                     <a href="index.html" 
                        >
-                        Home
+                        Accueil
                     </a>
                 </li>
                 
                 <li>
-                    <a href="species_list_en.html" 
+                    <a href="species_list_fr.html" 
                        >
-                        Species
+                        Espèces
                     </a>
                 </li>
                 
                 <li>
-                    <a href="gallery_recent_en.html" 
+                    <a href="gallery_recent_fr.html" 
                        >
-                        Recent Updates
+                        Ajouts récents
                     </a>
                 </li>
                 
                 <li>
-                    <a href="voyages_index_en.html" 
+                    <a href="voyages_index_fr.html" 
                        >
-                        Trips
+                        Voyages
                     </a>
                 </li>
                 
                 <li>
-                    <a href="familles_index_en.html" 
+                    <a href="familles_index_fr.html" 
                        >
-                        Families
+                        Familles
                     </a>
                 </li>
                 
@@ -52,9 +52,9 @@
             
             <!-- Sélecteur de langue -->
             <div class="lang-switch">
-                <a href="voyage_chili2022_fr.html" class="lang-btn" title="Français">
+                <a href="voyage_chili_2022_en.html" class="lang-btn" title="English">
                     
-                    <span class="flag">🇫🇷</span>
+                    <span class="flag">🇬🇧</span>
                     
                 </a>
             </div>
@@ -63,15 +63,27 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>Chile 2022</h1>
+        <h1>Chili 2022</h1>
         
-        <div class="gallery-subtitle">April 12<sup>th</sup>–23<sup>rd</sup>, 2022</div>
+        <div class="gallery-subtitle">12 au 23 avril 2022</div>
         
         <div class="stats">
             89 photos
             
         </div>
     </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(2)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
 
     <!-- GRILLE PHOTOS -->
     <div class="gallery-container">
@@ -82,10 +94,10 @@
                  data-ml="434980971"
                  onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980971/480"
-                     alt="Monk Parakeet"
+                     alt="Conure veuve"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Monk Parakeet</div>
+                    <div class="bird-name">Conure veuve</div>
                 </div>
             </div>
             
@@ -94,10 +106,10 @@
                  data-ml="439462841"
                  onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462841/480"
-                     alt="Yellow-billed Pintail"
+                     alt="Canard à queue pointue"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-billed Pintail</div>
+                    <div class="bird-name">Canard à queue pointue</div>
                 </div>
             </div>
             
@@ -106,10 +118,10 @@
                  data-ml="439462291"
                  onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462291/480"
-                     alt="Eared Dove"
+                     alt="Tourterelle oreillarde"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Eared Dove</div>
+                    <div class="bird-name">Tourterelle oreillarde</div>
                 </div>
             </div>
             
@@ -118,10 +130,10 @@
                  data-ml="439463021"
                  onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463021/480"
-                     alt="Spot-flanked Gallinule"
+                     alt="Gallinule à face noire"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Spot-flanked Gallinule</div>
+                    <div class="bird-name">Gallinule à face noire</div>
                 </div>
             </div>
             
@@ -130,10 +142,10 @@
                  data-ml="439462931"
                  onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462931/480"
-                     alt="Great Egret"
+                     alt="Grande Aigrette"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Great Egret</div>
+                    <div class="bird-name">Grande Aigrette</div>
                 </div>
             </div>
             
@@ -142,10 +154,10 @@
                  data-ml="439463381"
                  onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463381/480"
-                     alt="Monk Parakeet"
+                     alt="Conure veuve"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Monk Parakeet</div>
+                    <div class="bird-name">Conure veuve</div>
                 </div>
             </div>
             
@@ -154,10 +166,10 @@
                  data-ml="439463161"
                  onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463161/480"
-                     alt="Long-tailed Meadowlark"
+                     alt="Sturnelle australe"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Long-tailed Meadowlark</div>
+                    <div class="bird-name">Sturnelle australe</div>
                 </div>
             </div>
             
@@ -166,10 +178,10 @@
                  data-ml="439462321"
                  onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439462321/480"
-                     alt="Yellow-winged Blackbird"
+                     alt="Carouge galonné"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-winged Blackbird</div>
+                    <div class="bird-name">Carouge galonné</div>
                 </div>
             </div>
             
@@ -178,10 +190,10 @@
                  data-ml="439463111"
                  onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/439463111/480"
-                     alt="Yellow-winged Blackbird"
+                     alt="Carouge galonné"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-winged Blackbird</div>
+                    <div class="bird-name">Carouge galonné</div>
                 </div>
             </div>
             
@@ -190,10 +202,10 @@
                  data-ml="515591081"
                  onclick="openLightbox(9)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/515591081/480"
-                     alt="Cordilleran Canastero"
+                     alt="Synallaxe des rocailles"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Cordilleran Canastero</div>
+                    <div class="bird-name">Synallaxe des rocailles</div>
                 </div>
             </div>
             
@@ -202,10 +214,10 @@
                  data-ml="438269671"
                  onclick="openLightbox(10)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438269671/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -214,10 +226,10 @@
                  data-ml="438269731"
                  onclick="openLightbox(11)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438269731/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -226,10 +238,10 @@
                  data-ml="438270041"
                  onclick="openLightbox(12)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438270041/480"
-                     alt="Moustached Turca"
+                     alt="Tourco à moustaches"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Moustached Turca</div>
+                    <div class="bird-name">Tourco à moustaches</div>
                 </div>
             </div>
             
@@ -238,10 +250,10 @@
                  data-ml="438496191"
                  onclick="openLightbox(13)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438496191/480"
-                     alt="Rufous-naped Ground-Tyrant"
+                     alt="Dormilon à calotte rousse"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-naped Ground-Tyrant</div>
+                    <div class="bird-name">Dormilon à calotte rousse</div>
                 </div>
             </div>
             
@@ -250,10 +262,10 @@
                  data-ml="438270131"
                  onclick="openLightbox(14)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438270131/480"
-                     alt="Band-tailed Sierra Finch"
+                     alt="Incaspize à queue barrée"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Band-tailed Sierra Finch</div>
+                    <div class="bird-name">Incaspize à queue barrée</div>
                 </div>
             </div>
             
@@ -262,10 +274,10 @@
                  data-ml="437828671"
                  onclick="openLightbox(15)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437828671/480"
-                     alt="Gray-hooded Sierra Finch"
+                     alt="Phrygile à tête grise"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Gray-hooded Sierra Finch</div>
+                    <div class="bird-name">Phrygile à tête grise</div>
                 </div>
             </div>
             
@@ -274,10 +286,10 @@
                  data-ml="437828851"
                  onclick="openLightbox(16)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437828851/480"
-                     alt="Mourning Sierra Finch"
+                     alt="Incaspize petit-deuil"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Mourning Sierra Finch</div>
+                    <div class="bird-name">Incaspize petit-deuil</div>
                 </div>
             </div>
             
@@ -286,10 +298,10 @@
                  data-ml="437828701"
                  onclick="openLightbox(17)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437828701/480"
-                     alt="Band-tailed Sierra Finch"
+                     alt="Incaspize à queue barrée"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Band-tailed Sierra Finch</div>
+                    <div class="bird-name">Incaspize à queue barrée</div>
                 </div>
             </div>
             
@@ -298,10 +310,10 @@
                  data-ml="437653841"
                  onclick="openLightbox(18)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437653841/480"
-                     alt="Mountain Caracara"
+                     alt="Caracara montagnard"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Mountain Caracara</div>
+                    <div class="bird-name">Caracara montagnard</div>
                 </div>
             </div>
             
@@ -310,10 +322,10 @@
                  data-ml="437664041"
                  onclick="openLightbox(19)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437664041/480"
-                     alt="Rufous-banded Miner"
+                     alt="Géositte à ailes rousses"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-banded Miner</div>
+                    <div class="bird-name">Géositte à ailes rousses</div>
                 </div>
             </div>
             
@@ -322,10 +334,10 @@
                  data-ml="437653441"
                  onclick="openLightbox(20)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437653441/480"
-                     alt="Diuca Finch"
+                     alt="Diuca gris"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Diuca Finch</div>
+                    <div class="bird-name">Diuca gris</div>
                 </div>
             </div>
             
@@ -334,10 +346,10 @@
                  data-ml="437654381"
                  onclick="openLightbox(21)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437654381/480"
-                     alt="Mourning Sierra Finch"
+                     alt="Incaspize petit-deuil"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Mourning Sierra Finch</div>
+                    <div class="bird-name">Incaspize petit-deuil</div>
                 </div>
             </div>
             
@@ -346,10 +358,10 @@
                  data-ml="437272671"
                  onclick="openLightbox(22)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437272671/480"
-                     alt="Rufous-banded Miner"
+                     alt="Géositte à ailes rousses"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-banded Miner</div>
+                    <div class="bird-name">Géositte à ailes rousses</div>
                 </div>
             </div>
             
@@ -358,10 +370,10 @@
                  data-ml="437830931"
                  onclick="openLightbox(23)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437830931/480"
-                     alt="Rufous-banded Miner"
+                     alt="Géositte à ailes rousses"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-banded Miner</div>
+                    <div class="bird-name">Géositte à ailes rousses</div>
                 </div>
             </div>
             
@@ -370,10 +382,10 @@
                  data-ml="437271541"
                  onclick="openLightbox(24)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/437271541/480"
-                     alt="Black-billed Shrike-Tyrant"
+                     alt="Gaucho à bec noir"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Black-billed Shrike-Tyrant</div>
+                    <div class="bird-name">Gaucho à bec noir</div>
                 </div>
             </div>
             
@@ -382,10 +394,10 @@
                  data-ml="438268161"
                  onclick="openLightbox(25)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438268161/480"
-                     alt="Mountain Caracara"
+                     alt="Caracara montagnard"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Mountain Caracara</div>
+                    <div class="bird-name">Caracara montagnard</div>
                 </div>
             </div>
             
@@ -394,10 +406,10 @@
                  data-ml="438266661"
                  onclick="openLightbox(26)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438266661/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -406,10 +418,10 @@
                  data-ml="438266741"
                  onclick="openLightbox(27)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438266741/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -418,10 +430,10 @@
                  data-ml="438266801"
                  onclick="openLightbox(28)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/438266801/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -430,10 +442,10 @@
                  data-ml="436362131"
                  onclick="openLightbox(29)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436362131/480"
-                     alt="Rufous-banded Miner"
+                     alt="Géositte à ailes rousses"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-banded Miner</div>
+                    <div class="bird-name">Géositte à ailes rousses</div>
                 </div>
             </div>
             
@@ -442,10 +454,10 @@
                  data-ml="436162621"
                  onclick="openLightbox(30)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436162621/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -454,10 +466,10 @@
                  data-ml="436206411"
                  onclick="openLightbox(31)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436206411/480"
-                     alt="Black-billed Shrike-Tyrant"
+                     alt="Gaucho à bec noir"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Black-billed Shrike-Tyrant</div>
+                    <div class="bird-name">Gaucho à bec noir</div>
                 </div>
             </div>
             
@@ -466,10 +478,10 @@
                  data-ml="436805121"
                  onclick="openLightbox(32)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436805121/480"
-                     alt="Rufous-collared Sparrow"
+                     alt="Bruant chingolo"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-collared Sparrow</div>
+                    <div class="bird-name">Bruant chingolo</div>
                 </div>
             </div>
             
@@ -478,10 +490,10 @@
                  data-ml="436806431"
                  onclick="openLightbox(33)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436806431/480"
-                     alt="Rufous-collared Sparrow"
+                     alt="Bruant chingolo"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-collared Sparrow</div>
+                    <div class="bird-name">Bruant chingolo</div>
                 </div>
             </div>
             
@@ -490,10 +502,10 @@
                  data-ml="436207251"
                  onclick="openLightbox(34)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436207251/480"
-                     alt="Gray-hooded Sierra Finch"
+                     alt="Phrygile à tête grise"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Gray-hooded Sierra Finch</div>
+                    <div class="bird-name">Phrygile à tête grise</div>
                 </div>
             </div>
             
@@ -502,10 +514,10 @@
                  data-ml="435657651"
                  onclick="openLightbox(35)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435657651/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -514,10 +526,10 @@
                  data-ml="435657901"
                  onclick="openLightbox(36)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435657901/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -526,10 +538,10 @@
                  data-ml="435658211"
                  onclick="openLightbox(37)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435658211/480"
-                     alt="Andean Condor"
+                     alt="Condor des Andes"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Andean Condor</div>
+                    <div class="bird-name">Condor des Andes</div>
                 </div>
             </div>
             
@@ -538,10 +550,10 @@
                  data-ml="435662121"
                  onclick="openLightbox(38)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435662121/480"
-                     alt="Mountain Caracara"
+                     alt="Caracara montagnard"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Mountain Caracara</div>
+                    <div class="bird-name">Caracara montagnard</div>
                 </div>
             </div>
             
@@ -550,10 +562,10 @@
                  data-ml="436940481"
                  onclick="openLightbox(39)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/436940481/480"
-                     alt="Mountain Caracara"
+                     alt="Caracara montagnard"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Mountain Caracara</div>
+                    <div class="bird-name">Caracara montagnard</div>
                 </div>
             </div>
             
@@ -562,10 +574,10 @@
                  data-ml="435566741"
                  onclick="openLightbox(40)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435566741/480"
-                     alt="Cordilleran Canastero"
+                     alt="Synallaxe des rocailles"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Cordilleran Canastero</div>
+                    <div class="bird-name">Synallaxe des rocailles</div>
                 </div>
             </div>
             
@@ -574,10 +586,10 @@
                  data-ml="435568101"
                  onclick="openLightbox(41)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435568101/480"
-                     alt="Cordilleran Canastero"
+                     alt="Synallaxe des rocailles"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Cordilleran Canastero</div>
+                    <div class="bird-name">Synallaxe des rocailles</div>
                 </div>
             </div>
             
@@ -586,10 +598,10 @@
                  data-ml="435569551"
                  onclick="openLightbox(42)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435569551/480"
-                     alt="Cordilleran Canastero"
+                     alt="Synallaxe des rocailles"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Cordilleran Canastero</div>
+                    <div class="bird-name">Synallaxe des rocailles</div>
                 </div>
             </div>
             
@@ -598,10 +610,10 @@
                  data-ml="435571411"
                  onclick="openLightbox(43)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435571411/480"
-                     alt="Cordilleran Canastero"
+                     alt="Synallaxe des rocailles"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Cordilleran Canastero</div>
+                    <div class="bird-name">Synallaxe des rocailles</div>
                 </div>
             </div>
             
@@ -610,10 +622,10 @@
                  data-ml="435660381"
                  onclick="openLightbox(44)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435660381/480"
-                     alt="Cordilleran Canastero"
+                     alt="Synallaxe des rocailles"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Cordilleran Canastero</div>
+                    <div class="bird-name">Synallaxe des rocailles</div>
                 </div>
             </div>
             
@@ -622,10 +634,10 @@
                  data-ml="435253031"
                  onclick="openLightbox(45)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435253031/480"
-                     alt="Moustached Turca"
+                     alt="Tourco à moustaches"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Moustached Turca</div>
+                    <div class="bird-name">Tourco à moustaches</div>
                 </div>
             </div>
             
@@ -634,10 +646,10 @@
                  data-ml="435253081"
                  onclick="openLightbox(46)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435253081/480"
-                     alt="Southern House Wren"
+                     alt="Troglodyte austral"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Southern House Wren</div>
+                    <div class="bird-name">Troglodyte austral</div>
                 </div>
             </div>
             
@@ -646,10 +658,10 @@
                  data-ml="435252811"
                  onclick="openLightbox(47)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252811/480"
-                     alt="Gray-hooded Sierra Finch"
+                     alt="Phrygile à tête grise"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Gray-hooded Sierra Finch</div>
+                    <div class="bird-name">Phrygile à tête grise</div>
                 </div>
             </div>
             
@@ -658,10 +670,10 @@
                  data-ml="435252871"
                  onclick="openLightbox(48)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252871/480"
-                     alt="Gray-hooded Sierra Finch"
+                     alt="Phrygile à tête grise"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Gray-hooded Sierra Finch</div>
+                    <div class="bird-name">Phrygile à tête grise</div>
                 </div>
             </div>
             
@@ -670,10 +682,10 @@
                  data-ml="435252971"
                  onclick="openLightbox(49)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252971/480"
-                     alt="Diuca Finch"
+                     alt="Diuca gris"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Diuca Finch</div>
+                    <div class="bird-name">Diuca gris</div>
                 </div>
             </div>
             
@@ -682,10 +694,10 @@
                  data-ml="435252881"
                  onclick="openLightbox(50)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435252881/480"
-                     alt="Greater Yellow-Finch"
+                     alt="Grand Sicale"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Greater Yellow-Finch</div>
+                    <div class="bird-name">Grand Sicale</div>
                 </div>
             </div>
             
@@ -694,10 +706,10 @@
                  data-ml="434981371"
                  onclick="openLightbox(51)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981371/480"
-                     alt="Yellow-billed Pintail"
+                     alt="Canard à queue pointue"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-billed Pintail</div>
+                    <div class="bird-name">Canard à queue pointue</div>
                 </div>
             </div>
             
@@ -706,10 +718,10 @@
                  data-ml="435156771"
                  onclick="openLightbox(52)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156771/480"
-                     alt="Yellow-billed Pintail"
+                     alt="Canard à queue pointue"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-billed Pintail</div>
+                    <div class="bird-name">Canard à queue pointue</div>
                 </div>
             </div>
             
@@ -718,10 +730,10 @@
                  data-ml="435156781"
                  onclick="openLightbox(53)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156781/480"
-                     alt="Yellow-billed Pintail"
+                     alt="Canard à queue pointue"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-billed Pintail</div>
+                    <div class="bird-name">Canard à queue pointue</div>
                 </div>
             </div>
             
@@ -730,10 +742,10 @@
                  data-ml="435156831"
                  onclick="openLightbox(54)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156831/480"
-                     alt="Yellow-billed Teal"
+                     alt="Sarcelle tachetée"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-billed Teal</div>
+                    <div class="bird-name">Sarcelle tachetée</div>
                 </div>
             </div>
             
@@ -742,10 +754,10 @@
                  data-ml="435156841"
                  onclick="openLightbox(55)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156841/480"
-                     alt="Yellow-billed Teal"
+                     alt="Sarcelle tachetée"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-billed Teal</div>
+                    <div class="bird-name">Sarcelle tachetée</div>
                 </div>
             </div>
             
@@ -754,10 +766,10 @@
                  data-ml="434981361"
                  onclick="openLightbox(56)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981361/480"
-                     alt="Rock Pigeon"
+                     alt="Pigeon biset (forme domestique)"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rock Pigeon</div>
+                    <div class="bird-name">Pigeon biset (forme domestique)</div>
                 </div>
             </div>
             
@@ -766,10 +778,10 @@
                  data-ml="434981221"
                  onclick="openLightbox(57)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981221/480"
-                     alt="Eared Dove"
+                     alt="Tourterelle oreillarde"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Eared Dove</div>
+                    <div class="bird-name">Tourterelle oreillarde</div>
                 </div>
             </div>
             
@@ -778,10 +790,10 @@
                  data-ml="435156961"
                  onclick="openLightbox(58)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156961/480"
-                     alt="Spot-flanked Gallinule"
+                     alt="Gallinule à face noire"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Spot-flanked Gallinule</div>
+                    <div class="bird-name">Gallinule à face noire</div>
                 </div>
             </div>
             
@@ -790,10 +802,10 @@
                  data-ml="435157081"
                  onclick="openLightbox(59)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157081/480"
-                     alt="Red-gartered Coot"
+                     alt="Foulque à jarretières"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Red-gartered Coot</div>
+                    <div class="bird-name">Foulque à jarretières</div>
                 </div>
             </div>
             
@@ -802,10 +814,10 @@
                  data-ml="435156041"
                  onclick="openLightbox(60)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156041/480"
-                     alt="Southern Lapwing"
+                     alt="Vanneau téro"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Southern Lapwing</div>
+                    <div class="bird-name">Vanneau téro</div>
                 </div>
             </div>
             
@@ -814,10 +826,10 @@
                  data-ml="435157141"
                  onclick="openLightbox(61)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157141/480"
-                     alt="Snowy Egret"
+                     alt="Aigrette neigeuse"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Snowy Egret</div>
+                    <div class="bird-name">Aigrette neigeuse</div>
                 </div>
             </div>
             
@@ -826,10 +838,10 @@
                  data-ml="435157131"
                  onclick="openLightbox(62)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157131/480"
-                     alt="Great Egret"
+                     alt="Grande Aigrette"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Great Egret</div>
+                    <div class="bird-name">Grande Aigrette</div>
                 </div>
             </div>
             
@@ -838,10 +850,10 @@
                  data-ml="434981261"
                  onclick="openLightbox(63)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981261/480"
-                     alt="Variable Hawk"
+                     alt="Buse tricolore"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Variable Hawk</div>
+                    <div class="bird-name">Buse tricolore</div>
                 </div>
             </div>
             
@@ -850,10 +862,10 @@
                  data-ml="434980911"
                  onclick="openLightbox(64)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980911/480"
-                     alt="Chimango Caracara"
+                     alt="Caracara chimango"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Chimango Caracara</div>
+                    <div class="bird-name">Caracara chimango</div>
                 </div>
             </div>
             
@@ -862,10 +874,10 @@
                  data-ml="435155891"
                  onclick="openLightbox(65)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435155891/480"
-                     alt="Chimango Caracara"
+                     alt="Caracara chimango"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Chimango Caracara</div>
+                    <div class="bird-name">Caracara chimango</div>
                 </div>
             </div>
             
@@ -874,10 +886,10 @@
                  data-ml="434980941"
                  onclick="openLightbox(66)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980941/480"
-                     alt="American Kestrel"
+                     alt="Crécerelle d'Amérique"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">American Kestrel</div>
+                    <div class="bird-name">Crécerelle d'Amérique</div>
                 </div>
             </div>
             
@@ -886,10 +898,10 @@
                  data-ml="434980961"
                  onclick="openLightbox(67)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980961/480"
-                     alt="Monk Parakeet"
+                     alt="Conure veuve"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Monk Parakeet</div>
+                    <div class="bird-name">Conure veuve</div>
                 </div>
             </div>
             
@@ -898,10 +910,10 @@
                  data-ml="435155281"
                  onclick="openLightbox(68)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435155281/480"
-                     alt="Monk Parakeet"
+                     alt="Conure veuve"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Monk Parakeet</div>
+                    <div class="bird-name">Conure veuve</div>
                 </div>
             </div>
             
@@ -910,10 +922,10 @@
                  data-ml="434981131"
                  onclick="openLightbox(69)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981131/480"
-                     alt="Patagonian Forest Earthcreeper"
+                     alt="Upucerthie de forêt"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Patagonian Forest Earthcreeper</div>
+                    <div class="bird-name">Upucerthie de forêt</div>
                 </div>
             </div>
             
@@ -922,10 +934,10 @@
                  data-ml="434981141"
                  onclick="openLightbox(70)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981141/480"
-                     alt="Patagonian Forest Earthcreeper"
+                     alt="Upucerthie de forêt"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Patagonian Forest Earthcreeper</div>
+                    <div class="bird-name">Upucerthie de forêt</div>
                 </div>
             </div>
             
@@ -934,10 +946,10 @@
                  data-ml="434981411"
                  onclick="openLightbox(71)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981411/480"
-                     alt="Rufous-tailed Plantcutter"
+                     alt="Rara à queue rousse"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-tailed Plantcutter</div>
+                    <div class="bird-name">Rara à queue rousse</div>
                 </div>
             </div>
             
@@ -946,10 +958,10 @@
                  data-ml="435156261"
                  onclick="openLightbox(72)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156261/480"
-                     alt="Rufous-tailed Plantcutter"
+                     alt="Rara à queue rousse"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-tailed Plantcutter</div>
+                    <div class="bird-name">Rara à queue rousse</div>
                 </div>
             </div>
             
@@ -958,10 +970,10 @@
                  data-ml="435156271"
                  onclick="openLightbox(73)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156271/480"
-                     alt="Rufous-tailed Plantcutter"
+                     alt="Rara à queue rousse"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-tailed Plantcutter</div>
+                    <div class="bird-name">Rara à queue rousse</div>
                 </div>
             </div>
             
@@ -970,10 +982,10 @@
                  data-ml="435156301"
                  onclick="openLightbox(74)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156301/480"
-                     alt="Rufous-tailed Plantcutter"
+                     alt="Rara à queue rousse"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-tailed Plantcutter</div>
+                    <div class="bird-name">Rara à queue rousse</div>
                 </div>
             </div>
             
@@ -982,10 +994,10 @@
                  data-ml="434981321"
                  onclick="openLightbox(75)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981321/480"
-                     alt="Chilean Mockingbird"
+                     alt="Moqueur du Chili"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Chilean Mockingbird</div>
+                    <div class="bird-name">Moqueur du Chili</div>
                 </div>
             </div>
             
@@ -994,10 +1006,10 @@
                  data-ml="434980901"
                  onclick="openLightbox(76)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434980901/480"
-                     alt="Austral Thrush"
+                     alt="Merle austral"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Austral Thrush</div>
+                    <div class="bird-name">Merle austral</div>
                 </div>
             </div>
             
@@ -1006,10 +1018,10 @@
                  data-ml="434981181"
                  onclick="openLightbox(77)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981181/480"
-                     alt="Austral Thrush"
+                     alt="Merle austral"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Austral Thrush</div>
+                    <div class="bird-name">Merle austral</div>
                 </div>
             </div>
             
@@ -1018,10 +1030,10 @@
                  data-ml="435156181"
                  onclick="openLightbox(78)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156181/480"
-                     alt="Rufous-collared Sparrow"
+                     alt="Bruant chingolo"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Rufous-collared Sparrow</div>
+                    <div class="bird-name">Bruant chingolo</div>
                 </div>
             </div>
             
@@ -1030,10 +1042,10 @@
                  data-ml="434981271"
                  onclick="openLightbox(79)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981271/480"
-                     alt="Long-tailed Meadowlark"
+                     alt="Sturnelle australe"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Long-tailed Meadowlark</div>
+                    <div class="bird-name">Sturnelle australe</div>
                 </div>
             </div>
             
@@ -1042,10 +1054,10 @@
                  data-ml="434981311"
                  onclick="openLightbox(80)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981311/480"
-                     alt="Long-tailed Meadowlark"
+                     alt="Sturnelle australe"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Long-tailed Meadowlark</div>
+                    <div class="bird-name">Sturnelle australe</div>
                 </div>
             </div>
             
@@ -1054,10 +1066,10 @@
                  data-ml="434981331"
                  onclick="openLightbox(81)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981331/480"
-                     alt="Shiny Cowbird"
+                     alt="Vacher luisant"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Shiny Cowbird</div>
+                    <div class="bird-name">Vacher luisant</div>
                 </div>
             </div>
             
@@ -1066,10 +1078,10 @@
                  data-ml="435156561"
                  onclick="openLightbox(82)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156561/480"
-                     alt="Austral Blackbird"
+                     alt="Carouge austral"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Austral Blackbird</div>
+                    <div class="bird-name">Carouge austral</div>
                 </div>
             </div>
             
@@ -1078,10 +1090,10 @@
                  data-ml="435156601"
                  onclick="openLightbox(83)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156601/480"
-                     alt="Austral Blackbird"
+                     alt="Carouge austral"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Austral Blackbird</div>
+                    <div class="bird-name">Carouge austral</div>
                 </div>
             </div>
             
@@ -1090,10 +1102,10 @@
                  data-ml="435156611"
                  onclick="openLightbox(84)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156611/480"
-                     alt="Austral Blackbird"
+                     alt="Carouge austral"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Austral Blackbird</div>
+                    <div class="bird-name">Carouge austral</div>
                 </div>
             </div>
             
@@ -1102,10 +1114,10 @@
                  data-ml="434981011"
                  onclick="openLightbox(85)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/434981011/480"
-                     alt="Yellow-winged Blackbird"
+                     alt="Carouge galonné"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-winged Blackbird</div>
+                    <div class="bird-name">Carouge galonné</div>
                 </div>
             </div>
             
@@ -1114,10 +1126,10 @@
                  data-ml="435157951"
                  onclick="openLightbox(86)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157951/480"
-                     alt="Yellow-winged Blackbird"
+                     alt="Carouge galonné"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-winged Blackbird</div>
+                    <div class="bird-name">Carouge galonné</div>
                 </div>
             </div>
             
@@ -1126,10 +1138,10 @@
                  data-ml="435157961"
                  onclick="openLightbox(87)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435157961/480"
-                     alt="Yellow-winged Blackbird"
+                     alt="Carouge galonné"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Yellow-winged Blackbird</div>
+                    <div class="bird-name">Carouge galonné</div>
                 </div>
             </div>
             
@@ -1138,10 +1150,10 @@
                  data-ml="435156631"
                  onclick="openLightbox(88)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/435156631/480"
-                     alt="Diuca Finch"
+                     alt="Diuca gris"
                      loading="lazy">
                 <div class="photo-overlay">
-                    <div class="bird-name">Diuca Finch</div>
+                    <div class="bird-name">Diuca gris</div>
                 </div>
             </div>
             
@@ -1186,7 +1198,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    View on eBird
+                    Voir sur eBird
                 </a>
             </div>
         </div>
@@ -1194,14 +1206,14 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: December 7<sup>th</sup>, 2025</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 décembre 2025</p>
         <p>© Étienne Artigau</p>
     </footer>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        const currentLang = 'en';
+        const currentLang = 'fr';
         
         const photosData = [
             
@@ -2648,6 +2660,60 @@
                 openPhotoByML(ml);
             }
         });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: -33.3980197, lng: -70.6022, name: "Parque Bicentenario de Vitacura" },
+            
+            { lat: -29.2562225, lng: -70.7383406, name: "Observatorio de La Silla" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>

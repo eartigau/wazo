@@ -79,26 +79,70 @@ generation:
 # ------------------------------------------------------------------------------
 
 voyages:
-  - id: voyage_chili
-    nom_fr: "Chili"
-    nom_en: "Chile"
+  - id: voyage_geneve_2025
+    nom_fr: "Genève, novembre 2025"
+    nom_en: "Geneva, Novembre 2025"
+    date_debut: "2025-11-01"
+    date_fin: "2025-11-30"
+    pays: ["CH"]
+    limite: 500
+
+  - id: voyage_europe_ete_2025
+    nom_fr: "Europe, été 2025"
+    nom_en: "Europe, Summer 2025"
+    date_debut: "2025-06-28"
+    date_fin: "2025-08-05"
+    #pays: ["CH"]
+    limite: 500
+
+  - id: voyage_europe_ete_2024
+    nom_fr: "Europe, été 2024"
+    nom_en: "Europe, Summer 2024"
+    date_debut: "2024-07-02"
+    date_fin: "2024-08-10"
+    #pays: ["CH"]
+    limite: 500
+
+  - id: voyage_californie_juin_2024
+    nom_fr: "San Diego, juin 2024"
+    nom_en: "San Diego, June 2024"
+    date_debut: "2024-06-10"
+    date_fin: "2024-07-05"
+    pays: ["US-CA"]
+    limite: 400
+
+  - id: voyage_californie_juin_2023
+    nom_fr: "Californie, juin 2023"
+    nom_en: "California , June 2023"
+    date_debut: "2023-06-10"
+    date_fin: "2023-09-05"
+    pays: ["US-CA"]
+    limite: 400
+
+  - id: voyage_floride_2024
+    nom_fr: "Floride, 2024"
+    nom_en: "Florida, 2024"
+    date_debut: "2024-02-10"
+    date_fin: "2024-03-25"
+    pays: ["US-FL"]
+    limite: 400
+
+  - id: voyage_chili_2022
+    nom_fr: "Chili 2022"
+    nom_en: "Chile 2022"
+    date_debut: "2022-01-01"
+    date_fin: "2022-12-31"
     pays: ["CL"]
     limite: 500
-  
-  - id: voyage_geneve
-    nom_fr: "Genève"
-    nom_en: "Geneva"
-    pays: ["CH"]
-    limite: 300
-  
-  - id: voyage_hawaii_2015
-    nom_fr: "Hawaï 2015"
-    nom_en: "Hawaii 2015"
-    pays: ["US-HI"]
-    date_debut: "2015-01-01"
-    date_fin: "2015-12-31"
-    limite: 300
-  
+
+  - id: voyage_chili_2020
+    nom_fr: "Chili 2020"
+    nom_en: "Chile 2020"
+    date_debut: "2020-01-01"
+    date_fin: "2020-12-31"
+    pays: ["CL"]
+    limite: 500
+
   - id: voyage_hawaii_2018
     nom_fr: "Hawaï 2018"
     nom_en: "Hawaii 2018"
@@ -106,19 +150,23 @@ voyages:
     date_debut: "2018-01-01"
     date_fin: "2018-12-31"
     limite: 300
-  
-  - id: voyage_floride
-    nom_fr: "Floride"
-    nom_en: "Florida"
-    pays: ["US-FL"]
+
+  - id: voyage_hawaii_automne2015
+    nom_fr: "Hawaï automne 2015"
+    nom_en: "Hawaii Autumn 2015"
+    pays: ["US-HI"]
+    date_debut: "2015-09-01"
+    date_fin: "2015-11-30"
+    limite: 300
+
+  - id: voyage_hawaii_ete2015
+    nom_fr: "Hawaï été 2015"
+    nom_en: "Hawaii Summer 2015"
+    pays: ["US-HI"]
+    date_debut: "2015-05-01"
+    date_fin: "2015-08-30"
     limite: 300
   
-  - id: voyage_arizona
-    nom_fr: "Arizona"
-    nom_en: "Arizona"
-    pays: ["US-AZ"]
-    limite: 200
-
 
 # ------------------------------------------------------------------------------
 # GALERIES GÉNÉRALES (optionnel)

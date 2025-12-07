@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Curation des médias</title>
+    <title>Admin - Curation des photos</title>
     <style>
         :root {
             --bg: #1a1a2e;
@@ -12,7 +12,6 @@
             --highlight: #e94560;
             --success: #4ade80;
             --warning: #fbbf24;
-            --sound-color: #8b5cf6;
             --text: #eee;
             --text-dim: #888;
         }
@@ -49,85 +48,61 @@
             flex-wrap: wrap;
         }
         
-        #search {
+        .search-box {
             flex: 1;
             min-width: 200px;
-            padding: 12px 16px;
-            border: 2px solid var(--accent);
+            padding: 10px 16px;
+            border: 1px solid var(--accent);
             border-radius: 8px;
             background: var(--bg-card);
             color: var(--text);
-            font-size: 16px;
+            font-size: 14px;
         }
         
-        #search:focus {
+        .search-box:focus {
             outline: none;
             border-color: var(--highlight);
         }
         
-        .filter-row {
-            display: flex;
-            gap: 16px;
-            flex-wrap: wrap;
-            margin-top: 12px;
-        }
-        
         .filter-group {
             display: flex;
-            gap: 8px;
+            gap: 6px;
             align-items: center;
         }
         
         .filter-label {
             color: var(--text-dim);
-            font-size: 12px;
-            text-transform: uppercase;
-        }
-        
-        .filter-buttons {
-            display: flex;
-            gap: 6px;
+            font-size: 13px;
         }
         
         .filter-btn {
-            background: var(--accent);
-            border: none;
-            color: var(--text);
             padding: 8px 14px;
+            border: 1px solid var(--accent);
             border-radius: 6px;
-            cursor: pointer;
+            background: var(--bg-card);
+            color: var(--text);
             font-size: 13px;
+            cursor: pointer;
             transition: all 0.2s;
         }
         
         .filter-btn:hover {
-            background: #1a4a7a;
+            border-color: var(--highlight);
         }
         
         .filter-btn.active {
             background: var(--highlight);
+            border-color: var(--highlight);
         }
         
-        .stats {
-            color: var(--text-dim);
-            font-size: 13px;
+        .stats-bar {
             display: flex;
             gap: 16px;
-            margin-top: 12px;
-            flex-wrap: wrap;
-        }
-        
-        .stat-group {
-            display: flex;
-            gap: 12px;
-            padding: 8px 12px;
+            padding: 12px 20px;
             background: var(--bg-card);
-            border-radius: 6px;
-        }
-        
-        .stat-group-label {
-            font-weight: 600;
-            margin-right: 4px;
+            border-bottom: 1px solid var(--accent);
+            font-size: 14px;
+            align-items: center;
         }
         
         .stat-item {
@@ -136,30 +111,9 @@
             gap: 4px;
         }
         
-        .stat-best { color: var(--warning); }
-        .stat-include { color: var(--success); }
-        .stat-reject { color: var(--highlight); }
-        
-        .toast {
-            position: fixed;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            background: var(--success);
-            color: #000;
-            padding: 12px 24px;
-            border-radius: 8px;
-            font-weight: 600;
-            opacity: 0;
-            transition: all 0.3s;
-            z-index: 1000;
-            pointer-events: none;
-        }
-        
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
+        .stat-item.stat-best { color: var(--warning); }
+        .stat-item.stat-include { color: var(--success); }
+        .stat-item.stat-reject { color: var(--highlight); }
         
         .grid {
             display: grid;
@@ -172,98 +126,49 @@
             background: var(--bg-card);
             border-radius: 12px;
             overflow: hidden;
-            transition: all 0.2s;
+            transition: transform 0.2s;
         }
         
         .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            transform: translateY(-4px);
+        }
+        
+        .card.status-best {
+            box-shadow: 0 0 0 2px var(--warning);
         }
         
         .card.status-reject {
             opacity: 0.5;
         }
         
-        .card.changed {
-            box-shadow: 0 0 0 2px var(--success);
-        }
-        
         .card-image {
             position: relative;
-            width: 100%;
-            aspect-ratio: 4/3;
-            background: var(--accent);
+            aspect-ratio: 1;
             cursor: pointer;
+            overflow: hidden;
         }
         
         .card-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s;
         }
         
-        .card-image .ml-badge {
+        .card-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        .ml-badge {
             position: absolute;
             bottom: 8px;
-            right: 8px;
+            left: 8px;
             background: rgba(0,0,0,0.8);
-            color: var(--success);
-            padding: 4px 10px;
+            color: var(--warning);
+            padding: 4px 8px;
             border-radius: 4px;
             font-size: 11px;
             font-family: monospace;
-            font-weight: bold;
-        }
-        
-        .card.sound-card .ml-badge {
-            color: var(--sound-color);
-        }
-        
-        .card-image .status-badge {
-            position: absolute;
-            top: 8px;
-            left: 8px;
-            padding: 3px 10px;
-            border-radius: 4px;
-            font-size: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .status-badge.best {
-            background: var(--warning);
-            color: #000;
-        }
-        
-        .status-badge.reject {
-            background: var(--highlight);
-            color: #fff;
-        }
-        
-        .card-image .type-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 14px;
-            background: var(--sound-color);
-        }
-        
-        /* Style pour les sons */
-        .sound-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
-            gap: 8px;
-        }
-        
-        .sound-placeholder .sound-icon {
-            font-size: 48px;
         }
         
         .card-info {
@@ -271,7 +176,7 @@
         }
         
         .card-name {
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 600;
             margin-bottom: 2px;
             white-space: nowrap;
@@ -279,11 +184,11 @@
             text-overflow: ellipsis;
         }
         
-        .card-scientific {
-            font-size: 11px;
+        .card-sci {
+            font-size: 12px;
             color: var(--text-dim);
             font-style: italic;
-            margin-bottom: 2px;
+            margin-bottom: 8px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -292,12 +197,12 @@
         .card-date {
             font-size: 11px;
             color: var(--text-dim);
+            margin-bottom: 10px;
         }
         
-        .curation-buttons {
+        .curation-btns {
             display: flex;
             gap: 6px;
-            margin-top: 10px;
         }
         
         .curation-btn {
@@ -305,559 +210,276 @@
             padding: 8px 4px;
             border: none;
             border-radius: 6px;
-            background: var(--accent);
-            color: var(--text);
-            font-size: 11px;
+            font-size: 16px;
             cursor: pointer;
             transition: all 0.2s;
+            background: var(--accent);
         }
         
         .curation-btn:hover {
-            filter: brightness(1.2);
+            transform: scale(1.1);
         }
         
-        .curation-btn.active-best {
+        .curation-btn.active.best {
             background: var(--warning);
-            color: #000;
         }
         
-        .curation-btn.active-include {
+        .curation-btn.active.include {
             background: var(--success);
-            color: #000;
         }
         
-        .curation-btn.active-reject {
+        .curation-btn.active.reject {
             background: var(--highlight);
-            color: #fff;
         }
         
-        .action-bar {
+        /* Footer fixe */
+        .footer {
             position: fixed;
             bottom: 0;
             left: 0;
             right: 0;
             background: var(--bg-card);
-            border-top: 1px solid var(--accent);
             padding: 16px 20px;
+            border-top: 1px solid var(--accent);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             z-index: 100;
         }
         
-        .action-bar-inner {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
         .changes-count {
-            color: var(--success);
+            color: var(--warning);
             font-weight: 600;
         }
         
-        .btn-apply {
-            background: var(--success);
-            color: #000;
-            border: none;
+        .download-btn {
             padding: 12px 24px;
+            background: var(--highlight);
+            color: white;
+            border: none;
             border-radius: 8px;
+            font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            font-size: 14px;
             transition: all 0.2s;
         }
         
-        .btn-apply:hover:not(:disabled) {
-            filter: brightness(1.1);
-            transform: translateY(-1px);
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
         }
         
-        .btn-apply:disabled {
+        .download-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
+            transform: none;
         }
         
-        /* Modal pour écouter les sons */
-        .sound-modal {
-            display: none;
+        /* Toast notification */
+        .toast {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.9);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .sound-modal.active {
-            display: flex;
-        }
-        
-        .sound-modal-content {
-            background: var(--bg-card);
-            border-radius: 16px;
-            padding: 24px;
-            max-width: 700px;
-            width: 95%;
-        }
-        
-        .sound-modal-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 16px;
-        }
-        
-        .sound-modal-title {
-            font-size: 18px;
-            font-weight: 600;
-        }
-        
-        .sound-modal-sci {
-            font-size: 14px;
-            color: var(--text-dim);
-            font-style: italic;
-        }
-        
-        .sound-modal-close {
-            background: var(--accent);
-            border: none;
-            color: var(--text);
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-        }
-        
-        .sound-modal-player {
-            margin: 16px 0;
-            border-radius: 8px;
-            overflow: hidden;
-            min-height: 120px;
-        }
-        
-        .sound-modal-player iframe {
-            width: 100%;
-            height: 120px;
-            border: none;
-            border-radius: 8px;
-        }
-        
-        .sound-modal-info {
-            font-size: 13px;
-            color: var(--text-dim);
-            margin-bottom: 16px;
-        }
-        
-        .sound-modal-buttons {
-            display: flex;
-            gap: 10px;
-            justify-content: center;
-        }
-        
-        .sound-modal-btn {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s;
-        }
-        
-        .sound-modal-btn.best {
-            background: var(--warning);
-            color: #000;
-        }
-        
-        .sound-modal-btn.include {
+            bottom: 100px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
             background: var(--success);
             color: #000;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.3s;
+            z-index: 1000;
         }
         
-        .sound-modal-btn.reject {
-            background: var(--highlight);
-            color: #fff;
-        }
-        
-        .sound-modal-btn:hover {
-            filter: brightness(1.1);
-            transform: translateY(-1px);
-        }
-        
-        @media (max-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-                gap: 10px;
-                padding: 10px;
-            }
-            
-            .filter-row {
-                flex-direction: column;
-                gap: 8px;
-            }
-            
-            .stat-group {
-                flex-wrap: wrap;
-            }
+        .toast.show {
+            transform: translateX(-50%) translateY(0);
+            opacity: 1;
         }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>🔧 Curation des médias</h1>
+        <h1>📷 Curation des photos</h1>
         <div class="toolbar">
-            <input type="text" id="search" placeholder="Rechercher une espèce ou ML#..." autocomplete="off">
-        </div>
-        <div class="filter-row">
-            <div class="filter-group">
-                <span class="filter-label">Type:</span>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-type="all">Tout</button>
-                    <button class="filter-btn" data-type="photo">📷 Photos</button>
-                    <button class="filter-btn" data-type="sound">🎵 Sons</button>
-                </div>
-            </div>
+            <input type="text" class="search-box" id="searchBox" placeholder="Rechercher (nom, ML#)...">
             <div class="filter-group">
                 <span class="filter-label">Statut:</span>
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">Tout</button>
-                    <button class="filter-btn" data-filter="best">⭐ Meilleur</button>
-                    <button class="filter-btn" data-filter="include">✓ Inclus</button>
-                    <button class="filter-btn" data-filter="reject">✗ Rejeté</button>
-                </div>
-            </div>
-        </div>
-        <div class="stats">
-            <div class="stat-group">
-                <span class="stat-group-label">📷</span>
-                <span class="stat-item"><span id="count-photo-total">0</span></span>
-                <span class="stat-item stat-best">⭐ <span id="count-photo-best">0</span></span>
-                <span class="stat-item stat-include">✓ <span id="count-photo-include">0</span></span>
-                <span class="stat-item stat-reject">✗ <span id="count-photo-reject">0</span></span>
-            </div>
-            <div class="stat-group">
-                <span class="stat-group-label">🎵</span>
-                <span class="stat-item"><span id="count-sound-total">0</span></span>
-                <span class="stat-item stat-best">⭐ <span id="count-sound-best">0</span></span>
-                <span class="stat-item stat-include">✓ <span id="count-sound-include">0</span></span>
-                <span class="stat-item stat-reject">✗ <span id="count-sound-reject">0</span></span>
+                <button class="filter-btn active" data-filter="all">Tout</button>
+                <button class="filter-btn" data-filter="best">⭐ Meilleur</button>
+                <button class="filter-btn" data-filter="include">✓ Inclus</button>
+                <button class="filter-btn" data-filter="reject">✗ Rejeté</button>
             </div>
         </div>
     </div>
     
-    <div class="toast" id="toast">ML# copié!</div>
-    
-    <!-- Modal pour écouter les sons -->
-    <div class="sound-modal" id="soundModal">
-        <div class="sound-modal-content">
-            <div class="sound-modal-header">
-                <div>
-                    <div class="sound-modal-title" id="modalTitle"></div>
-                    <div class="sound-modal-sci" id="modalSci"></div>
-                </div>
-                <button class="sound-modal-close" onclick="closeSoundModal()">&times;</button>
-            </div>
-            <div class="sound-modal-player" id="modalPlayer"></div>
-            <div class="sound-modal-info" id="modalInfo"></div>
-            <div class="sound-modal-buttons">
-                <button class="sound-modal-btn best" onclick="setModalStatus('best')">⭐ Meilleur</button>
-                <button class="sound-modal-btn include" onclick="setModalStatus('include')">✓ Inclus</button>
-                <button class="sound-modal-btn reject" onclick="setModalStatus('reject')">✗ Rejeté</button>
-            </div>
-        </div>
+    <div class="stats-bar">
+        <span class="stat-item">📷 <span id="count-total">0</span></span>
+        <span class="stat-item stat-best">⭐ <span id="count-best">0</span></span>
+        <span class="stat-item stat-include">✓ <span id="count-include">0</span></span>
+        <span class="stat-item stat-reject">✗ <span id="count-reject">0</span></span>
     </div>
     
-    <div class="grid" id="grid">
+    <div class="grid" id="photoGrid">
         {% for photo in photos %}
-        <div class="card {% if photo.media_type == 'sound' %}sound-card{% endif %} status-{{ photo.status }}" 
-             data-ml="{{ photo.ml_catalog_number }}"
-             data-name="{{ photo.common_name_fr|lower }}"
-             data-name-en="{{ photo.common_name_en|lower }}"
-             data-scientific="{{ photo.scientific_name|lower }}"
-             data-status="{{ photo.status }}"
-             data-original-status="{{ photo.status }}"
-             data-type="{{ photo.media_type }}"
-             data-date="{{ photo.date_raw }}">
-            {% if photo.media_type == 'photo' %}
+        <div class="card status-{{ photo.status }}" 
+             data-ml="{{ photo.ml_catalog_number }}" 
+             data-name="{{ photo.common_name_fr|lower }} {{ photo.common_name_en|lower }} {{ photo.scientific_name|lower }}"
+             data-status="{{ photo.status }}">
             <div class="card-image" onclick="copyML('{{ photo.ml_catalog_number }}')">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ photo.ml_catalog_number }}/480" 
-                     alt="{{ photo.common_name_fr }}"
-                     loading="lazy">
+                     alt="{{ photo.common_name_fr }}" loading="lazy">
                 <span class="ml-badge">{{ photo.ml_catalog_number }}</span>
-                {% if photo.status == 'best' %}
-                <span class="status-badge best">⭐ Meilleur</span>
-                {% elif photo.status == 'reject' %}
-                <span class="status-badge reject">Rejeté</span>
-                {% endif %}
             </div>
-            {% else %}
-            <div class="card-image" onclick="openSoundModal('{{ photo.ml_catalog_number }}', '{{ photo.common_name_fr|replace("'", "\\'") }}', '{{ photo.scientific_name }}', '{{ photo.date_raw }}')">
-                {% if photo.species_photo_ml %}
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ photo.species_photo_ml }}/480" 
-                     alt="{{ photo.common_name_fr }}"
-                     loading="lazy"
-                     style="filter: brightness(0.7);">
-                {% else %}
-                <div class="sound-placeholder">
-                    <span class="sound-icon">🔊</span>
-                </div>
-                {% endif %}
-                <span class="type-badge">🎵</span>
-                <span class="ml-badge">{{ photo.ml_catalog_number }}</span>
-                {% if photo.status == 'best' %}
-                <span class="status-badge best">⭐ Meilleur</span>
-                {% elif photo.status == 'reject' %}
-                <span class="status-badge reject">Rejeté</span>
-                {% endif %}
-            </div>
-            {% endif %}
             <div class="card-info">
                 <div class="card-name">{{ photo.common_name_fr }}</div>
-                <div class="card-scientific">{{ photo.scientific_name }}</div>
+                <div class="card-sci">{{ photo.scientific_name }}</div>
                 <div class="card-date">{{ photo.date_raw }}</div>
-                <div class="curation-buttons">
-                    <button class="curation-btn{% if photo.status == 'best' %} active-best{% endif %}" 
-                            onclick="setStatus(this, 'best')">⭐</button>
-                    <button class="curation-btn{% if photo.status == 'include' %} active-include{% endif %}" 
-                            onclick="setStatus(this, 'include')">✓</button>
-                    <button class="curation-btn{% if photo.status == 'reject' %} active-reject{% endif %}" 
-                            onclick="setStatus(this, 'reject')">✗</button>
+                <div class="curation-btns">
+                    <button class="curation-btn {% if photo.status == 'best' %}active best{% endif %}" 
+                            onclick="setStatus(this, 'best')" title="Meilleure photo">⭐</button>
+                    <button class="curation-btn {% if photo.status == 'include' %}active include{% endif %}" 
+                            onclick="setStatus(this, 'include')" title="Inclure">✓</button>
+                    <button class="curation-btn {% if photo.status == 'reject' %}active reject{% endif %}" 
+                            onclick="setStatus(this, 'reject')" title="Rejeter">✗</button>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
     
-    <div class="action-bar">
-        <div class="action-bar-inner">
-            <span class="changes-count"><span id="changes-count">0</span> modification(s)</span>
-            <button class="btn-apply" id="btn-apply" onclick="downloadCSV()" disabled>
-                📥 Télécharger photo_curation.csv
-            </button>
-        </div>
+    <div class="footer">
+        <span class="changes-count"><span id="changesCount">0</span> modification(s)</span>
+        <button class="download-btn" id="downloadBtn" onclick="downloadCSV()">
+            📥 Télécharger CSV
+        </button>
     </div>
     
+    <div class="toast" id="toast">ML# copié!</div>
+
     <script>
-        const grid = document.getElementById('grid');
-        const cards = grid.querySelectorAll('.card');
-        const toast = document.getElementById('toast');
-        const btnApply = document.getElementById('btn-apply');
-        const changesCountEl = document.getElementById('changes-count');
-        const searchInput = document.getElementById('search');
-        const filterButtons = document.querySelectorAll('.filter-btn[data-filter]');
-        const typeButtons = document.querySelectorAll('.filter-btn[data-type]');
-        
+        let curationData = {};
+        let changesCount = 0;
         let currentFilter = 'all';
-        let currentType = 'all';
-        let currentModalML = null;
         
-        // Stats
-        function updateStats() {
-            let photoTotal = 0, photoBest = 0, photoInclude = 0, photoReject = 0;
-            let soundTotal = 0, soundBest = 0, soundInclude = 0, soundReject = 0;
-            let changes = 0;
-            
-            cards.forEach(card => {
-                const status = card.dataset.status;
-                const type = card.dataset.type;
-                
-                if (type === 'photo') {
-                    photoTotal++;
-                    if (status === 'best') photoBest++;
-                    else if (status === 'include') photoInclude++;
-                    else if (status === 'reject') photoReject++;
-                } else {
-                    soundTotal++;
-                    if (status === 'best') soundBest++;
-                    else if (status === 'include') soundInclude++;
-                    else if (status === 'reject') soundReject++;
-                }
-                
-                if (status !== card.dataset.originalStatus) {
-                    changes++;
-                    card.classList.add('changed');
-                } else {
-                    card.classList.remove('changed');
-                }
-            });
-            
-            document.getElementById('count-photo-total').textContent = photoTotal;
-            document.getElementById('count-photo-best').textContent = photoBest;
-            document.getElementById('count-photo-include').textContent = photoInclude;
-            document.getElementById('count-photo-reject').textContent = photoReject;
-            
-            document.getElementById('count-sound-total').textContent = soundTotal;
-            document.getElementById('count-sound-best').textContent = soundBest;
-            document.getElementById('count-sound-include').textContent = soundInclude;
-            document.getElementById('count-sound-reject').textContent = soundReject;
-            
-            changesCountEl.textContent = changes;
-            btnApply.disabled = changes === 0;
-        }
+        // Initialiser les données de curation
+        document.querySelectorAll('.card').forEach(card => {
+            const ml = card.dataset.ml;
+            const status = card.dataset.status;
+            curationData[ml] = status;
+        });
         
-        // Set status
-        function setStatus(btn, status) {
-            const card = btn.closest('.card');
-            const buttons = card.querySelectorAll('.curation-btn');
-            
-            buttons.forEach(b => {
-                b.classList.remove('active-best', 'active-include', 'active-reject');
-            });
-            
-            btn.classList.add('active-' + status);
-            card.dataset.status = status;
-            card.classList.remove('status-best', 'status-include', 'status-reject');
-            card.classList.add('status-' + status);
-            
-            // Update badge
-            const badgeEl = card.querySelector('.status-badge');
-            if (badgeEl) badgeEl.remove();
-            
-            if (status === 'best') {
-                const badge = document.createElement('span');
-                badge.className = 'status-badge best';
-                badge.textContent = '⭐ Meilleur';
-                card.querySelector('.card-image').appendChild(badge);
-            } else if (status === 'reject') {
-                const badge = document.createElement('span');
-                badge.className = 'status-badge reject';
-                badge.textContent = 'Rejeté';
-                card.querySelector('.card-image').appendChild(badge);
-            }
-            
-            updateStats();
-        }
-        
-        // Copy ML number
+        // Copier le numéro ML
         function copyML(ml) {
             navigator.clipboard.writeText(ml).then(() => {
-                toast.textContent = `ML# ${ml} copié!`;
-                toast.classList.add('show');
-                setTimeout(() => toast.classList.remove('show'), 2000);
+                showToast('ML# ' + ml + ' copié!');
             });
         }
         
-        // Sound modal
-        function openSoundModal(ml, name, sci, date) {
-            currentModalML = ml;
-            document.getElementById('modalTitle').textContent = name;
-            document.getElementById('modalSci').textContent = sci;
-            document.getElementById('modalInfo').textContent = `ML# ${ml} · ${date}`;
-            document.getElementById('modalPlayer').innerHTML = 
-                `<iframe src="https://macaulaylibrary.org/asset/${ml}/embed" height="120" width="100%" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>`;
-            document.getElementById('soundModal').classList.add('active');
-        }
-        
-        function closeSoundModal() {
-            document.getElementById('soundModal').classList.remove('active');
-            document.getElementById('modalPlayer').innerHTML = '';
-            currentModalML = null;
-        }
-        
-        function setModalStatus(status) {
-            if (!currentModalML) return;
-            
-            const card = document.querySelector(`.card[data-ml="${currentModalML}"]`);
-            if (card) {
-                const btn = card.querySelector(`.curation-btn:nth-child(${status === 'best' ? 1 : status === 'include' ? 2 : 3})`);
-                setStatus(btn, status);
-            }
-            closeSoundModal();
-        }
-        
-        // Download CSV
-        function downloadCSV() {
-            let csv = 'ml_number,status\n';
-            
-            cards.forEach(card => {
-                const ml = card.dataset.ml;
-                const status = card.dataset.status;
-                csv += `${ml},${status}\n`;
-            });
-            
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = 'photo_curation.csv';
-            link.click();
-            URL.revokeObjectURL(url);
-            
-            cards.forEach(card => {
-                card.dataset.originalStatus = card.dataset.status;
-            });
-            
-            updateStats();
-            toast.textContent = 'CSV téléchargé!';
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            toast.textContent = message;
             toast.classList.add('show');
             setTimeout(() => toast.classList.remove('show'), 2000);
         }
         
-        // Filter
-        function applyFilters() {
-            const search = searchInput.value.toLowerCase();
+        // Changer le statut d'une photo
+        function setStatus(btn, status) {
+            const card = btn.closest('.card');
+            const ml = card.dataset.ml;
+            const oldStatus = card.dataset.status;
             
-            cards.forEach(card => {
-                const name = card.dataset.name || '';
-                const nameEn = card.dataset.nameEn || '';
-                const scientific = card.dataset.scientific || '';
-                const ml = card.dataset.ml || '';
-                const status = card.dataset.status;
-                const type = card.dataset.type;
-                
-                const matchesSearch = !search || 
-                    name.includes(search) || 
-                    nameEn.includes(search) || 
-                    scientific.includes(search) ||
-                    ml.includes(search);
-                
-                const matchesFilter = currentFilter === 'all' || status === currentFilter;
-                const matchesType = currentType === 'all' || type === currentType;
-                
-                card.style.display = (matchesSearch && matchesFilter && matchesType) ? '' : 'none';
+            if (oldStatus !== status) {
+                changesCount++;
+                document.getElementById('changesCount').textContent = changesCount;
+            }
+            
+            // Mettre à jour les données
+            curationData[ml] = status;
+            card.dataset.status = status;
+            
+            // Mettre à jour les classes
+            card.className = 'card status-' + status;
+            
+            // Mettre à jour les boutons
+            card.querySelectorAll('.curation-btn').forEach(b => {
+                b.classList.remove('active', 'best', 'include', 'reject');
             });
+            btn.classList.add('active', status);
+            
+            // Mettre à jour les compteurs
+            updateStats();
+            
+            // Appliquer les filtres
+            applyFilters();
         }
         
-        // Event listeners
-        searchInput.addEventListener('input', applyFilters);
+        // Mettre à jour les statistiques
+        function updateStats() {
+            const cards = document.querySelectorAll('.card');
+            let total = 0, best = 0, include = 0, reject = 0;
+            
+            cards.forEach(card => {
+                total++;
+                const status = card.dataset.status;
+                if (status === 'best') best++;
+                else if (status === 'include') include++;
+                else if (status === 'reject') reject++;
+            });
+            
+            document.getElementById('count-total').textContent = total;
+            document.getElementById('count-best').textContent = best;
+            document.getElementById('count-include').textContent = include;
+            document.getElementById('count-reject').textContent = reject;
+        }
         
-        filterButtons.forEach(btn => {
+        // Recherche
+        document.getElementById('searchBox').addEventListener('input', applyFilters);
+        
+        // Filtres de statut
+        document.querySelectorAll('.filter-btn[data-filter]').forEach(btn => {
             btn.addEventListener('click', () => {
-                filterButtons.forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.filter-btn[data-filter]').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 currentFilter = btn.dataset.filter;
                 applyFilters();
             });
         });
         
-        typeButtons.forEach(btn => {
-            btn.addEventListener('click', () => {
-                typeButtons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-                currentType = btn.dataset.type;
-                applyFilters();
+        function applyFilters() {
+            const search = document.getElementById('searchBox').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+            
+            cards.forEach(card => {
+                const name = card.dataset.name;
+                const ml = card.dataset.ml;
+                const status = card.dataset.status;
+                
+                const matchesSearch = name.includes(search) || ml.includes(search);
+                const matchesFilter = currentFilter === 'all' || status === currentFilter;
+                
+                card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
             });
-        });
+        }
         
-        // Keyboard
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && document.getElementById('soundModal').classList.contains('active')) {
-                closeSoundModal();
+        // Télécharger le CSV
+        function downloadCSV() {
+            let csv = 'ml_number,status\n';
+            for (const [ml, status] of Object.entries(curationData)) {
+                csv += `${ml},${status}\n`;
             }
-        });
+            
+            const blob = new Blob([csv], { type: 'text/csv' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'photo_curation.csv';
+            a.click();
+            URL.revokeObjectURL(url);
+            
+            showToast('CSV téléchargé!');
+        }
         
-        // Click outside modal
-        document.getElementById('soundModal').addEventListener('click', (e) => {
-            if (e.target.id === 'soundModal') {
-                closeSoundModal();
-            }
-        });
-        
-        // Init
+        // Initialiser les stats
         updateStats();
     </script>
 </body>

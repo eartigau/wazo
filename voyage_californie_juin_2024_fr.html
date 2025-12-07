@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Diego, juin 2024</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-menu">
+                
+                <li>
+                    <a href="index.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_fr.html" 
+                       >
+                        Voyages
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_fr.html" 
+                       >
+                        Familles
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                <a href="voyage_californie_juin_2024_en.html" class="lang-btn" title="English">
+                    
+                    <span class="flag">🇬🇧</span>
+                    
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>San Diego, juin 2024</h1>
+        
+        <div class="gallery-subtitle">25 au 28 juin 2024</div>
+        
+        <div class="stats">
+            21 photos
+            
+        </div>
+    </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(4)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="620948238"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948238/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="620966819"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620966819/480"
+                     alt="Goéland de Heermann"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland de Heermann</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="620967354"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620967354/480"
+                     alt="Goéland d'Audubon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland d'Audubon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="620966759"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620966759/480"
+                     alt="Sterne royale"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sterne royale</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="620970310"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620970310/480"
+                     alt="Sterne royale"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sterne royale</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="620967419"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620967419/480"
+                     alt="Cormoran de Brandt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran de Brandt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="620948214"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948214/480"
+                     alt="Cormoran de Brandt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran de Brandt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="620966894"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620966894/480"
+                     alt="Cormoran de Brandt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran de Brandt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="620948213"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948213/480"
+                     alt="Cormoran pélagique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran pélagique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="620967277"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620967277/480"
+                     alt="Cormoran à aigrettes"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Cormoran à aigrettes</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="620962742"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620962742/480"
+                     alt="Pélican brun"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Pélican brun</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="620935893"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620935893/480"
+                     alt="Gobemoucheron de Californie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gobemoucheron de Californie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="620935895"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620935895/480"
+                     alt="Gobemoucheron de Californie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gobemoucheron de Californie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="620936184"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936184/480"
+                     alt="Gobemoucheron gris-bleu"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gobemoucheron gris-bleu</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="620948244"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948244/480"
+                     alt="Colibri d'Anna"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Anna</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="620948255"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620948255/480"
+                     alt="Tohi de Californie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tohi de Californie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="620936453"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936453/480"
+                     alt="Colibri d'Allen"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Colibri d'Allen</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="620936530"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936530/480"
+                     alt="Goéland de Californie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Goéland de Californie</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="620936427"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936427/480"
+                     alt="Geai buissonnier"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Geai buissonnier</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="620936271"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936271/480"
+                     alt="Orite buissonnière"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Orite buissonnière</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="620936330"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/620936330/480"
+                     alt="Tohi de Californie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Tohi de Californie</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 décembre 2025</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "620948238",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "UCSD Park, Californie, États-Unis",
+                location_en: "UCSD Park, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8864337,
+                lng: -117.2361969,
+                checklist_id: "S184179673"
+            },
+            
+            {
+                ml: "620966819",
+                name_fr: "Goéland de Heermann",
+                name_en: "Heermann\'s Gull",
+                scientific: "Larus heermanni",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Point La Jolla, Californie, États-Unis",
+                location_en: "Point La Jolla, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8507576,
+                lng: -117.2735641,
+                checklist_id: "S184255937"
+            },
+            
+            {
+                ml: "620967354",
+                name_fr: "Goéland d\'Audubon",
+                name_en: "Western Gull",
+                scientific: "Larus occidentalis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
+                location_en: "Goldfish Point & Coast Walk Trail, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8495772,
+                lng: -117.2697229,
+                checklist_id: "S184244681"
+            },
+            
+            {
+                ml: "620966759",
+                name_fr: "Sterne royale",
+                name_en: "Royal Tern",
+                scientific: "Thalasseus maximus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Point La Jolla, Californie, États-Unis",
+                location_en: "Point La Jolla, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8507576,
+                lng: -117.2735641,
+                checklist_id: "S184255937"
+            },
+            
+            {
+                ml: "620970310",
+                name_fr: "Sterne royale",
+                name_en: "Royal Tern",
+                scientific: "Thalasseus maximus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Point La Jolla, Californie, États-Unis",
+                location_en: "Point La Jolla, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8507576,
+                lng: -117.2735641,
+                checklist_id: "S184255937"
+            },
+            
+            {
+                ml: "620967419",
+                name_fr: "Cormoran de Brandt",
+                name_en: "Brandt\'s Cormorant",
+                scientific: "Urile penicillatus",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
+                location_en: "Goldfish Point & Coast Walk Trail, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8495772,
+                lng: -117.2697229,
+                checklist_id: "S184244681"
+            },
+            
+            {
+                ml: "620948214",
+                name_fr: "Cormoran de Brandt",
+                name_en: "Brandt\'s Cormorant",
+                scientific: "Urile penicillatus",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Point La Jolla, Californie, États-Unis",
+                location_en: "Point La Jolla, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8507576,
+                lng: -117.2735641,
+                checklist_id: "S184255937"
+            },
+            
+            {
+                ml: "620966894",
+                name_fr: "Cormoran de Brandt",
+                name_en: "Brandt\'s Cormorant",
+                scientific: "Urile penicillatus",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Point La Jolla, Californie, États-Unis",
+                location_en: "Point La Jolla, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8507576,
+                lng: -117.2735641,
+                checklist_id: "S184255937"
+            },
+            
+            {
+                ml: "620948213",
+                name_fr: "Cormoran pélagique",
+                name_en: "Pelagic Cormorant",
+                scientific: "Urile pelagicus",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Point La Jolla, Californie, États-Unis",
+                location_en: "Point La Jolla, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8507576,
+                lng: -117.2735641,
+                checklist_id: "S184255937"
+            },
+            
+            {
+                ml: "620967277",
+                name_fr: "Cormoran à aigrettes",
+                name_en: "Double-crested Cormorant",
+                scientific: "Nannopterum auritum",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
+                location_en: "Goldfish Point & Coast Walk Trail, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8495772,
+                lng: -117.2697229,
+                checklist_id: "S184244681"
+            },
+            
+            {
+                ml: "620962742",
+                name_fr: "Pélican brun",
+                name_en: "Brown Pelican",
+                scientific: "Pelecanus occidentalis",
+                family: "Pelecanidae (Pelicans)",
+                location_fr: "Goldfish Point & Coast Walk Trail, Californie, États-Unis",
+                location_en: "Goldfish Point & Coast Walk Trail, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8495772,
+                lng: -117.2697229,
+                checklist_id: "S184244681"
+            },
+            
+            {
+                ml: "620935893",
+                name_fr: "Gobemoucheron de Californie",
+                name_en: "California Gnatcatcher",
+                scientific: "Polioptila californica",
+                family: "Polioptilidae (Gnatcatchers)",
+                location_fr: "UCSD Park, Californie, États-Unis",
+                location_en: "UCSD Park, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8864337,
+                lng: -117.2361969,
+                checklist_id: "S184179673"
+            },
+            
+            {
+                ml: "620935895",
+                name_fr: "Gobemoucheron de Californie",
+                name_en: "California Gnatcatcher",
+                scientific: "Polioptila californica",
+                family: "Polioptilidae (Gnatcatchers)",
+                location_fr: "UCSD Park, Californie, États-Unis",
+                location_en: "UCSD Park, California, United States",
+                date_fr: "28 juin 2024",
+                date_en: "June 28<sup>th</sup>, 2024",
+                lat: 32.8864337,
+                lng: -117.2361969,
+                checklist_id: "S184179673"
+            },
+            
+            {
+                ml: "620936184",
+                name_fr: "Gobemoucheron gris-bleu",
+                name_en: "Blue-gray Gnatcatcher",
+                scientific: "Polioptila caerulea",
+                family: "Polioptilidae (Gnatcatchers)",
+                location_fr: "UCSD Park, Californie, États-Unis",
+                location_en: "UCSD Park, California, United States",
+                date_fr: "27 juin 2024",
+                date_en: "June 27<sup>th</sup>, 2024",
+                lat: 32.8864337,
+                lng: -117.2361969,
+                checklist_id: "S184025471"
+            },
+            
+            {
+                ml: "620948244",
+                name_fr: "Colibri d\'Anna",
+                name_en: "Anna\'s Hummingbird",
+                scientific: "Calypte anna",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve, California, United States",
+                date_fr: "26 juin 2024",
+                date_en: "June 26<sup>th</sup>, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183864178"
+            },
+            
+            {
+                ml: "620948255",
+                name_fr: "Tohi de Californie",
+                name_en: "California Towhee",
+                scientific: "Melozone crissalis",
+                family: "Passerellidae (New World Sparrows)",
+                location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve, California, United States",
+                date_fr: "26 juin 2024",
+                date_en: "June 26<sup>th</sup>, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183864178"
+            },
+            
+            {
+                ml: "620936453",
+                name_fr: "Colibri d\'Allen",
+                name_en: "Allen\'s Hummingbird",
+                scientific: "Selasphorus sasin",
+                family: "Trochilidae (Hummingbirds)",
+                location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve, California, United States",
+                date_fr: "25 juin 2024",
+                date_en: "June 25<sup>th</sup>, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183696675"
+            },
+            
+            {
+                ml: "620936530",
+                name_fr: "Goéland de Californie",
+                name_en: "California Gull",
+                scientific: "Larus californicus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve, California, United States",
+                date_fr: "25 juin 2024",
+                date_en: "June 25<sup>th</sup>, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183696675"
+            },
+            
+            {
+                ml: "620936427",
+                name_fr: "Geai buissonnier",
+                name_en: "California Scrub-Jay",
+                scientific: "Aphelocoma californica",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve, California, United States",
+                date_fr: "25 juin 2024",
+                date_en: "June 25<sup>th</sup>, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183696675"
+            },
+            
+            {
+                ml: "620936271",
+                name_fr: "Orite buissonnière",
+                name_en: "Bushtit",
+                scientific: "Psaltriparus minimus",
+                family: "Aegithalidae (Long-tailed Tits)",
+                location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve, California, United States",
+                date_fr: "25 juin 2024",
+                date_en: "June 25<sup>th</sup>, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183696675"
+            },
+            
+            {
+                ml: "620936330",
+                name_fr: "Tohi de Californie",
+                name_en: "California Towhee",
+                scientific: "Melozone crissalis",
+                family: "Passerellidae (New World Sparrows)",
+                location_fr: "Scripps Coastal Reserve, Californie, États-Unis",
+                location_en: "Scripps Coastal Reserve, California, United States",
+                date_fr: "25 juin 2024",
+                date_en: "June 25<sup>th</sup>, 2024",
+                lat: 32.8758738,
+                lng: -117.2470005,
+                checklist_id: "S183696675"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte
+            const mapDiv = document.getElementById('lightbox-map');
+            if (photo.lat && photo.lng) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+
+        
+        // Carte du voyage
+        const tripLocations = [
+            
+            { lat: 32.8864337, lng: -117.2361969, name: "UCSD Park" },
+            
+            { lat: 32.8507576, lng: -117.2735641, name: "Point La Jolla" },
+            
+            { lat: 32.8495772, lng: -117.2697229, name: "Goldfish Point & Coast Walk Trail" },
+            
+            { lat: 32.8758738, lng: -117.2470005, name: "Scripps Coastal Reserve" },
+            
+        ];
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                if (loc.name) {
+                    marker.bindPopup(loc.name, { className: 'trip-popup' });
+                }
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
+    </script>
+</body>
+</html>
