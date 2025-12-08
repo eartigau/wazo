@@ -56,7 +56,7 @@
             border-radius: 8px;
             background: var(--bg-card);
             color: var(--text);
-            font-size: 14px;
+            font-size: 16px; /* Empêche zoom iOS */
         }
         
         .search-box:focus {
@@ -68,6 +68,7 @@
             display: flex;
             gap: 6px;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .filter-label {
@@ -84,6 +85,7 @@
             font-size: 13px;
             cursor: pointer;
             transition: all 0.2s;
+            min-height: 44px;
         }
         
         .filter-btn:hover {
@@ -101,40 +103,40 @@
             padding: 12px 20px;
             background: var(--bg-card);
             border-bottom: 1px solid var(--accent);
-            font-size: 14px;
-            align-items: center;
+            flex-wrap: wrap;
         }
         
         .stat-item {
-            display: flex;
-            align-items: center;
-            gap: 4px;
+            font-size: 14px;
+            color: var(--text-dim);
         }
         
-        .stat-item.stat-best { color: var(--warning); }
-        .stat-item.stat-include { color: var(--success); }
-        .stat-item.stat-reject { color: var(--highlight); }
+        .stat-item span {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .stat-best span { color: var(--warning); }
+        .stat-include span { color: var(--success); }
+        .stat-reject span { color: var(--highlight); }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 16px;
             padding: 20px;
         }
         
         .card {
             background: var(--bg-card);
-            border-radius: 12px;
+            border-radius: 10px;
             overflow: hidden;
-            transition: transform 0.2s;
-        }
-        
-        .card:hover {
-            transform: translateY(-4px);
+            border: 2px solid transparent;
+            transition: all 0.2s;
         }
         
         .card.status-best {
-            box-shadow: 0 0 0 2px var(--warning);
+            border-color: var(--warning);
         }
         
         .card.status-reject {
@@ -214,6 +216,7 @@
             cursor: pointer;
             transition: all 0.2s;
             background: var(--accent);
+            min-height: 44px;
         }
         
         .curation-btn:hover {
@@ -245,34 +248,29 @@
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            gap: 12px;
         }
         
         .changes-count {
-            color: var(--warning);
-            font-weight: 600;
+            font-size: 14px;
+            color: var(--text-dim);
         }
         
         .download-btn {
             padding: 12px 24px;
-            background: var(--highlight);
-            color: white;
+            background: var(--success);
+            color: #000;
             border: none;
             border-radius: 8px;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.2s;
+            min-height: 44px;
         }
         
         .download-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 20px rgba(233, 69, 96, 0.4);
-        }
-        
-        .download-btn:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-            transform: none;
         }
         
         /* Toast notification */
@@ -280,12 +278,12 @@
             position: fixed;
             bottom: 100px;
             left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: var(--success);
-            color: #000;
+            transform: translateX(-50%) translateY(20px);
+            background: var(--bg-card);
+            color: var(--text);
             padding: 12px 24px;
             border-radius: 8px;
-            font-weight: 600;
+            border: 1px solid var(--accent);
             opacity: 0;
             transition: all 0.3s;
             z-index: 1000;
@@ -294,6 +292,109 @@
         .toast.show {
             transform: translateX(-50%) translateY(0);
             opacity: 1;
+        }
+        
+        /* Chargement progressif */
+        .loading-indicator {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-dim);
+            font-size: 16px;
+        }
+        
+        .load-more-container {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+        }
+        
+        .load-more-btn {
+            padding: 14px 28px;
+            background: var(--highlight);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            font-size: 15px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 44px;
+        }
+        
+        .load-more-btn:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Mobile responsive */
+        @media (max-width: 600px) {
+            .header {
+                padding: 16px;
+            }
+            
+            .header h1 {
+                font-size: 18px;
+                margin-bottom: 12px;
+            }
+            
+            .toolbar {
+                gap: 10px;
+            }
+            
+            .search-box {
+                min-width: 100%;
+                order: -1;
+            }
+            
+            .filter-group {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            
+            .filter-btn {
+                padding: 8px 10px;
+                font-size: 12px;
+            }
+            
+            .stats-bar {
+                gap: 12px;
+                padding: 10px 16px;
+            }
+            
+            .stat-item {
+                font-size: 13px;
+            }
+            
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+                padding: 12px;
+            }
+            
+            .card-info {
+                padding: 10px;
+            }
+            
+            .card-name {
+                font-size: 13px;
+            }
+            
+            .ml-badge {
+                font-size: 10px;
+                padding: 3px 6px;
+            }
+            
+            .footer {
+                padding: 12px 16px;
+            }
+            
+            .changes-count {
+                font-size: 12px;
+            }
+            
+            .download-btn {
+                padding: 10px 16px;
+                font-size: 13px;
+            }
         }
     </style>
 </head>
@@ -305,9 +406,9 @@
             <div class="filter-group">
                 <span class="filter-label">Statut:</span>
                 <button class="filter-btn active" data-filter="all">Tout</button>
-                <button class="filter-btn" data-filter="best">⭐ Meilleur</button>
-                <button class="filter-btn" data-filter="include">✓ Inclus</button>
-                <button class="filter-btn" data-filter="reject">✗ Rejeté</button>
+                <button class="filter-btn" data-filter="best">⭐</button>
+                <button class="filter-btn" data-filter="include">✓</button>
+                <button class="filter-btn" data-filter="reject">✗</button>
             </div>
         </div>
     </div>
@@ -317,34 +418,17 @@
         <span class="stat-item stat-best">⭐ <span id="count-best">0</span></span>
         <span class="stat-item stat-include">✓ <span id="count-include">0</span></span>
         <span class="stat-item stat-reject">✗ <span id="count-reject">0</span></span>
+        <span class="stat-item" id="displayed-count" style="margin-left: auto;"></span>
     </div>
     
     <div class="grid" id="photoGrid">
-        {% for photo in photos %}
-        <div class="card status-{{ photo.status }}" 
-             data-ml="{{ photo.ml_catalog_number }}" 
-             data-name="{{ photo.common_name_fr|lower }} {{ photo.common_name_en|lower }} {{ photo.scientific_name|lower }}"
-             data-status="{{ photo.status }}">
-            <div class="card-image" onclick="copyML('{{ photo.ml_catalog_number }}')">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ photo.ml_catalog_number }}/480" 
-                     alt="{{ photo.common_name_fr }}" loading="lazy">
-                <span class="ml-badge">{{ photo.ml_catalog_number }}</span>
-            </div>
-            <div class="card-info">
-                <div class="card-name">{{ photo.common_name_fr }}</div>
-                <div class="card-sci">{{ photo.scientific_name }}</div>
-                <div class="card-date">{{ photo.date_raw }}</div>
-                <div class="curation-btns">
-                    <button class="curation-btn {% if photo.status == 'best' %}active best{% endif %}" 
-                            onclick="setStatus(this, 'best')" title="Meilleure photo">⭐</button>
-                    <button class="curation-btn {% if photo.status == 'include' %}active include{% endif %}" 
-                            onclick="setStatus(this, 'include')" title="Inclure">✓</button>
-                    <button class="curation-btn {% if photo.status == 'reject' %}active reject{% endif %}" 
-                            onclick="setStatus(this, 'reject')" title="Rejeter">✗</button>
-                </div>
-            </div>
-        </div>
-        {% endfor %}
+        <div class="loading-indicator" id="loading-indicator">Chargement...</div>
+    </div>
+    
+    <div class="load-more-container" id="load-more-container" style="display: none;">
+        <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
+            Afficher plus <span id="remaining-count"></span>
+        </button>
     </div>
     
     <div class="footer">
@@ -357,16 +441,137 @@
     <div class="toast" id="toast">ML# copié!</div>
 
     <script>
+        const BATCH_SIZE = 80;
+        
+        // Données des photos
+        const allPhotosData = [
+            {% for photo in photos %}
+            {
+                ml: "{{ photo.ml_catalog_number }}",
+                nameFr: "{{ photo.common_name_fr|replace('\\', '\\\\')|replace('"', '\\"') }}",
+                nameEn: "{{ photo.common_name_en|replace('\\', '\\\\')|replace('"', '\\"') }}",
+                sciName: "{{ photo.scientific_name|replace('\\', '\\\\')|replace('"', '\\"') }}",
+                date: "{{ photo.date_raw }}",
+                status: "{{ photo.status }}"
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        ];
+        
+        // État
         let curationData = {};
+        let displayedCount = 0;
+        let filteredPhotos = [...allPhotosData];
         let changesCount = 0;
         let currentFilter = 'all';
+        let currentSearch = '';
         
-        // Initialiser les données de curation
-        document.querySelectorAll('.card').forEach(card => {
-            const ml = card.dataset.ml;
-            const status = card.dataset.status;
-            curationData[ml] = status;
+        // Initialiser curationData
+        allPhotosData.forEach(p => {
+            curationData[p.ml] = p.status;
         });
+        
+        // Créer une carte photo
+        function createPhotoCard(photo) {
+            const card = document.createElement('div');
+            card.className = 'card status-' + curationData[photo.ml];
+            card.dataset.ml = photo.ml;
+            card.dataset.name = (photo.nameFr + ' ' + photo.nameEn + ' ' + photo.sciName).toLowerCase();
+            card.dataset.status = curationData[photo.ml];
+            
+            card.innerHTML = `
+                <div class="card-image" onclick="copyML('${photo.ml}')">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/480" 
+                         alt="${photo.nameFr}" loading="lazy">
+                    <span class="ml-badge">${photo.ml}</span>
+                </div>
+                <div class="card-info">
+                    <div class="card-name">${photo.nameFr}</div>
+                    <div class="card-sci">${photo.sciName}</div>
+                    <div class="card-date">${photo.date}</div>
+                    <div class="curation-btns">
+                        <button class="curation-btn ${curationData[photo.ml] === 'best' ? 'active best' : ''}" 
+                                onclick="setStatus(this, 'best')" title="Meilleure photo">⭐</button>
+                        <button class="curation-btn ${curationData[photo.ml] === 'include' ? 'active include' : ''}" 
+                                onclick="setStatus(this, 'include')" title="Inclure">✓</button>
+                        <button class="curation-btn ${curationData[photo.ml] === 'reject' ? 'active reject' : ''}" 
+                                onclick="setStatus(this, 'reject')" title="Rejeter">✗</button>
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        // Rendre le prochain batch
+        function renderNextBatch() {
+            const grid = document.getElementById('photoGrid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+            
+            const toRender = filteredPhotos.slice(displayedCount, displayedCount + BATCH_SIZE);
+            
+            toRender.forEach(photo => {
+                const card = createPhotoCard(photo);
+                grid.appendChild(card);
+            });
+            
+            displayedCount += toRender.length;
+            updateLoadMoreButton();
+            updateDisplayedCount();
+        }
+        
+        function updateLoadMoreButton() {
+            const container = document.getElementById('load-more-container');
+            const remaining = filteredPhotos.length - displayedCount;
+            
+            if (remaining > 0) {
+                container.style.display = 'flex';
+                document.getElementById('remaining-count').textContent = ` (${remaining} restantes)`;
+            } else {
+                container.style.display = 'none';
+            }
+        }
+        
+        function updateDisplayedCount() {
+            const el = document.getElementById('displayed-count');
+            if (displayedCount < filteredPhotos.length) {
+                el.textContent = `Affiché: ${displayedCount}/${filteredPhotos.length}`;
+            } else {
+                el.textContent = '';
+            }
+        }
+        
+        function clearGrid() {
+            const grid = document.getElementById('photoGrid');
+            const cards = grid.querySelectorAll('.card');
+            cards.forEach(c => c.remove());
+            displayedCount = 0;
+        }
+        
+        // Filtrer et re-rendre
+        function applyFilters() {
+            currentSearch = document.getElementById('searchBox').value.toLowerCase();
+            
+            filteredPhotos = allPhotosData.filter(photo => {
+                const matchesSearch = currentSearch === '' || 
+                    photo.nameFr.toLowerCase().includes(currentSearch) ||
+                    photo.nameEn.toLowerCase().includes(currentSearch) ||
+                    photo.sciName.toLowerCase().includes(currentSearch) ||
+                    photo.ml.includes(currentSearch);
+                
+                const status = curationData[photo.ml];
+                const matchesFilter = currentFilter === 'all' || status === currentFilter;
+                
+                return matchesSearch && matchesFilter;
+            });
+            
+            clearGrid();
+            renderNextBatch();
+            updateStats();
+        }
         
         // Copier le numéro ML
         function copyML(ml) {
@@ -386,7 +591,7 @@
         function setStatus(btn, status) {
             const card = btn.closest('.card');
             const ml = card.dataset.ml;
-            const oldStatus = card.dataset.status;
+            const oldStatus = curationData[ml];
             
             if (oldStatus !== status) {
                 changesCount++;
@@ -409,22 +614,22 @@
             // Mettre à jour les compteurs
             updateStats();
             
-            // Appliquer les filtres
-            applyFilters();
+            // Réappliquer les filtres si nécessaire (cacher si ne correspond plus)
+            if (currentFilter !== 'all' && status !== currentFilter) {
+                card.style.display = 'none';
+            }
         }
         
         // Mettre à jour les statistiques
         function updateStats() {
-            const cards = document.querySelectorAll('.card');
-            let total = 0, best = 0, include = 0, reject = 0;
+            let total = allPhotosData.length;
+            let best = 0, include = 0, reject = 0;
             
-            cards.forEach(card => {
-                total++;
-                const status = card.dataset.status;
+            for (const [ml, status] of Object.entries(curationData)) {
                 if (status === 'best') best++;
                 else if (status === 'include') include++;
                 else if (status === 'reject') reject++;
-            });
+            }
             
             document.getElementById('count-total').textContent = total;
             document.getElementById('count-best').textContent = best;
@@ -445,22 +650,6 @@
             });
         });
         
-        function applyFilters() {
-            const search = document.getElementById('searchBox').value.toLowerCase();
-            const cards = document.querySelectorAll('.card');
-            
-            cards.forEach(card => {
-                const name = card.dataset.name;
-                const ml = card.dataset.ml;
-                const status = card.dataset.status;
-                
-                const matchesSearch = name.includes(search) || ml.includes(search);
-                const matchesFilter = currentFilter === 'all' || status === currentFilter;
-                
-                card.style.display = (matchesSearch && matchesFilter) ? '' : 'none';
-            });
-        }
-        
         // Télécharger le CSV
         function downloadCSV() {
             let csv = 'ml_number,status\n';
@@ -479,8 +668,24 @@
             showToast('CSV téléchargé!');
         }
         
-        // Initialiser les stats
-        updateStats();
+        // Scroll infini
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            if (scrollTimeout) clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(() => {
+                if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 800)) {
+                    if (displayedCount < filteredPhotos.length) {
+                        renderNextBatch();
+                    }
+                }
+            }, 100);
+        });
+        
+        // Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            updateStats();
+            renderNextBatch();
+        });
     </script>
 </body>
 </html>
