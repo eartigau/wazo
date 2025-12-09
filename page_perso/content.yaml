@@ -4,6 +4,9 @@
 # Puis exécuter: python generer_page.py
 # ============================================
 
+# --- CHEMINS ---
+css_path: "gallery/gallery.css"  # Chemin vers le CSS partagé avec la galerie
+
 # --- INFORMATIONS DE BASE ---
 nom: "Étienne Artigau"
 titre:
@@ -102,8 +105,10 @@ publications:
 # --- SECTION OISEAUX / HOBBY ---
 oiseaux:
   titre:
-    fr: "Ornithologie"
+    fr: "Oiseaux"
     en: "Birding"
+  # Identifiant Macaulay Library pour la photo mise en valeur (dans un rond)
+  photo_ml: "645202618"  # Remplacer par ton identifiant ML
   contenu:
     fr: |
       En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai 

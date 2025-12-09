@@ -82,6 +82,7 @@ def build_context(config: dict, lang: str) -> dict:
         'nom': config['nom'],
         'titre': get_text(config, 'titre'),
         'photo': config.get('photo', 'profile.jpg'),
+        'css_path': config.get('css_path', 'gallery.css'),
         
         # Affiliation
         'affiliation_inst': config['affiliation']['institution'],
@@ -121,6 +122,7 @@ def build_context(config: dict, lang: str) -> dict:
         'oiseaux_titre': get_text(config['oiseaux'], 'titre'),
         'oiseaux_contenu': get_text(config['oiseaux'], 'contenu').strip(),
         'oiseaux_bouton': get_text(config['oiseaux'], 'bouton'),
+        'oiseaux_photo_ml': config['oiseaux'].get('photo_ml', ''),
         
         # Parcours
         'parcours_titre': get_text(config['parcours'], 'titre'),
@@ -196,7 +198,9 @@ def generate_pages(config_path: str = 'content.yaml',
     
     print("\n" + "=" * 50)
     print("✅ Génération terminée!")
-    print(f"   Photo attendue: {config.get('photo', 'profile.jpg')}")
+    print(f"   CSS: {config.get('css_path', 'gallery.css')}")
+    print(f"   Photo profil: {config.get('photo', 'profile.jpg')}")
+    print(f"   Photo oiseau ML: {config['oiseaux'].get('photo_ml', 'non défini')}")
     print("=" * 50)
 
 if __name__ == '__main__':

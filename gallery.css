@@ -1,0 +1,1774 @@
+/* ============================================
+   GALERIE eBIRD v2.0 - Thème Nature
+   Design inspiré de la forêt et de l'ornithologie
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    /* Palette nature - Forêt */
+    --forest-green: #2d5a27;
+    --forest-green-light: #3d7a34;
+    --forest-green-dark: #1e3d1a;
+    --moss: #4a7c39;
+    --sage: #87a878;
+    --leaf: #6b8f4a;
+    --fern: #5c8a4d;
+    
+    /* Accents naturels */
+    --sky-blue: #5a9fd4;
+    --dawn-orange: #d68c45;
+    --sunset-gold: #e6a84d;
+    --berry: #8b4a6b;
+    --cardinal-red: #c5453a;
+    --robin-egg: #72b5c9;
+    
+    /* Backgrounds naturels */
+    --bg-cream: #faf8f5;
+    --bg-white: #ffffff;
+    --bg-warm: #f5f2ed;
+    --bg-parchment: #f9f6f1;
+    --bg-card: #ffffff;
+    
+    /* Texte */
+    --text-dark: #2c3e2d;
+    --text-medium: #566356;
+    --text-light: #7a8a7a;
+    --text-muted: #9ca89c;
+    
+    /* Bordures et ombres */
+    --border-color: #d4dbd4;
+    --border-light: #e8ede8;
+    --shadow-soft: 0 2px 12px rgba(45, 90, 39, 0.08);
+    --shadow-md: 0 4px 20px rgba(45, 90, 39, 0.12);
+    --shadow-lg: 0 8px 40px rgba(45, 90, 39, 0.15);
+    --shadow-xl: 0 16px 60px rgba(45, 90, 39, 0.18);
+    --shadow-glow: 0 0 30px rgba(74, 124, 57, 0.25);
+    --shadow-inner: inset 0 2px 4px rgba(45, 90, 39, 0.06);
+    
+    /* Gradients nature */
+    --gradient-forest: linear-gradient(135deg, var(--forest-green) 0%, var(--moss) 100%);
+    --gradient-dawn: linear-gradient(180deg, #fdf8f3 0%, #f5f0e8 100%);
+    --gradient-leaf: linear-gradient(135deg, rgba(107, 143, 74, 0.1) 0%, rgba(135, 168, 120, 0.05) 100%);
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Compatibilité anciens noms */
+    --ebird-green: var(--forest-green);
+    --ebird-green-light: var(--forest-green-light);
+    --ebird-green-dark: var(--forest-green-dark);
+    --bg-light: var(--bg-cream);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: var(--gradient-dawn);
+    background-attachment: fixed;
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Subtle texture overlay */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234a7c39' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: -1;
+}
+
+a {
+    color: var(--forest-green);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--forest-green-light);
+}
+
+/* ============================================
+   NAVIGATION
+   ============================================ */
+
+nav {
+    background: rgba(255, 255, 255, 0.92);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 1px 3px rgba(45, 90, 39, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: relative;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 4px;
+}
+
+.nav-menu > li > a,
+.nav-menu .dropdown-toggle {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.2px;
+    border-radius: 24px;
+    transition: all var(--transition-smooth);
+    cursor: pointer;
+    position: relative;
+}
+
+.nav-menu > li > a:hover,
+.nav-menu .dropdown-toggle:hover {
+    background-color: rgba(45, 90, 39, 0.08);
+    color: var(--forest-green);
+}
+
+.nav-menu > li > a.active {
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss) 100%);
+    color: white;
+    box-shadow: 0 2px 8px rgba(45, 90, 39, 0.3);
+}
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle::after {
+    content: ' ▾';
+    font-size: 10px;
+    opacity: 0.6;
+}
+
+/* Dropdown toggle qui est un lien cliquable */
+a.dropdown-toggle.dropdown-link {
+    text-decoration: none;
+    color: var(--text-dark);
+}
+
+a.dropdown-toggle.dropdown-link:hover {
+    color: var(--ebird-green);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    min-width: 200px;
+    padding: 8px 0;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+    z-index: 1001;
+}
+
+/* Menu à deux colonnes pour les familles */
+.dropdown-menu.two-columns {
+    min-width: 400px;
+    columns: 2;
+    column-gap: 0;
+}
+
+.dropdown-menu.two-columns a,
+.dropdown-menu.three-columns a,
+.dropdown-menu.four-columns a,
+.dropdown-menu.five-columns a,
+.dropdown-menu.six-columns a {
+    break-inside: avoid;
+    padding: 6px 14px;
+    font-size: 13px;
+    line-height: 1.3;
+}
+
+/* Menu à trois colonnes */
+.dropdown-menu.three-columns {
+    min-width: 580px;
+    columns: 3;
+    column-gap: 0;
+}
+
+/* Menu à quatre colonnes */
+.dropdown-menu.four-columns {
+    min-width: 760px;
+    columns: 4;
+    column-gap: 0;
+}
+
+/* Menu à cinq colonnes */
+.dropdown-menu.five-columns {
+    min-width: 920px;
+    columns: 5;
+    column-gap: 0;
+}
+
+/* Menu à six colonnes */
+.dropdown-menu.six-columns {
+    min-width: 1080px;
+    columns: 6;
+    column-gap: 0;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--bg-light);
+    color: var(--ebird-green);
+}
+
+/* Sélecteur de langue */
+.lang-switch {
+    position: absolute;
+    right: 20px;
+}
+
+.lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background: var(--bg-light);
+    border-radius: 20px;
+    font-size: 14px;
+    color: var(--text-medium);
+    transition: all 0.2s;
+}
+
+.lang-btn:hover {
+    background: var(--border-color);
+}
+
+.flag {
+    font-size: 18px;
+}
+
+/* ============================================
+   EN-TÊTE GALERIE
+   ============================================ */
+
+.gallery-header {
+    text-align: center;
+    padding: 56px 20px 44px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(250,248,245,0.9) 100%);
+    border-bottom: 1px solid var(--border-light);
+    position: relative;
+}
+
+.gallery-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--gradient-forest);
+}
+
+.gallery-header::after {
+    content: '🌿';
+    position: absolute;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    background: var(--bg-cream);
+    padding: 0 16px;
+}
+
+.gallery-header h1 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 40px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
+}
+
+.gallery-header .stats {
+    font-size: 15px;
+    color: var(--text-medium);
+    font-weight: 500;
+}
+
+.gallery-subtitle {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20px;
+    color: var(--forest-green);
+    margin-bottom: 12px;
+    font-style: italic;
+}
+
+/* ============================================
+   GRILLE PHOTOS
+   ============================================ */
+
+.gallery-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 48px 24px;
+}
+
+.masonry-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.photo-card {
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    background: var(--bg-white);
+    aspect-ratio: 4/3;
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-smooth);
+    border: 1px solid var(--border-light);
+}
+
+.photo-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-6px);
+    border-color: var(--sage);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f8f9f8 0%, #f0f2f0 100%);
+    transition: transform var(--transition-smooth);
+}
+
+.photo-card:hover img {
+    transform: scale(1.02);
+}
+
+.photo-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 48px 16px 14px;
+    background: linear-gradient(transparent, rgba(30, 61, 26, 0.9));
+    opacity: 0;
+    transition: opacity var(--transition-smooth);
+}
+
+.photo-card:hover .photo-overlay {
+    opacity: 1;
+}
+
+.photo-overlay .bird-name {
+    color: white;
+    font-size: 14px;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.4);
+}
+
+/* ============================================
+   LIGHTBOX
+   ============================================ */
+
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 248, 245, 0.97);
+    display: none;
+    z-index: 2000;
+    overflow-y: auto;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.lightbox.active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 24px;
+    right: 28px;
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-size: 26px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    opacity: 0.95;
+    z-index: 2001;
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+    background: var(--gradient-forest);
+    border-color: transparent;
+    color: white;
+    transform: rotate(90deg) scale(1.05);
+}
+
+.lightbox-nav {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    color: var(--text-dark);
+    font-size: 22px;
+    width: 52px;
+    height: 52px;
+    cursor: pointer;
+    opacity: 0.95;
+    z-index: 2001;
+    border-radius: 50%;
+    transition: all var(--transition-smooth);
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-prev { left: 28px; }
+.lightbox-next { right: 28px; }
+
+.lightbox-nav:hover {
+    opacity: 1;
+    background: var(--gradient-forest);
+    border-color: transparent;
+    color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-content {
+    display: flex;
+    max-width: 1500px;
+    max-height: 90vh;
+    margin: 0 100px;
+    gap: 40px;
+}
+
+.lightbox-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+}
+
+.lightbox-image-container img {
+    max-width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: var(--shadow-xl);
+}
+
+.lightbox-sidebar {
+    width: 360px;
+    flex-shrink: 0;
+    padding: 28px 0;
+    color: var(--text-dark);
+}
+
+.lightbox-family {
+    font-size: 11px;
+    color: var(--forest-green);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lightbox-family::before {
+    content: '';
+    width: 24px;
+    height: 2px;
+    background: var(--gradient-forest);
+    border-radius: 1px;
+}
+
+.lightbox-sidebar h2 {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--text-dark);
+    line-height: 1.2;
+}
+
+.lightbox-sidebar .scientific-name {
+    font-family: 'Lora', Georgia, serif;
+    font-style: italic;
+    color: var(--text-medium);
+    margin-bottom: 28px;
+    font-size: 16px;
+}
+
+.lightbox-info {
+    background: linear-gradient(135deg, rgba(45, 90, 39, 0.06) 0%, rgba(74, 124, 57, 0.04) 100%);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 18px;
+    border: 1px solid var(--border-light);
+}
+
+.info-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--text-dark);
+}
+
+.info-row:last-child {
+    margin-bottom: 0;
+}
+
+.info-icon {
+    font-size: 16px;
+    flex-shrink: 0;
+    opacity: 0.8;
+}
+
+/* Carte dans lightbox */
+#lightbox-map {
+    width: 100%;
+    height: 180px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+    background: var(--forest-green-dark);
+    box-shadow: var(--shadow-soft);
+}
+
+.grayscale-tiles {
+    filter: grayscale(100%);
+}
+
+.camera-icon {
+    background: transparent;
+}
+
+.camera-marker {
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss) 100%);
+    border: 3px solid white;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    box-shadow: 0 3px 12px rgba(45, 90, 39, 0.4);
+}
+
+/* Lien eBird */
+.ebird-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, var(--bg-cream) 0%, var(--bg-warm) 100%);
+    color: var(--text-dark);
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all var(--transition-smooth);
+    border: 1px solid var(--border-color);
+}
+
+.ebird-link:hover {
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss) 100%);
+    color: white;
+    border-color: var(--forest-green);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.ebird-icon {
+    width: 18px;
+    height: 18px;
+}
+
+/* ============================================
+   LISTE DES ESPÈCES
+   ============================================ */
+
+/* Recherche d'espèces */
+.search-container {
+    max-width: 540px;
+    margin: 0 auto 32px auto;
+    padding: 0 20px;
+    position: relative;
+}
+
+#species-search {
+    width: 100%;
+    padding: 16px 50px 16px 50px;
+    font-size: 16px;
+    border: 2px solid var(--border-color);
+    border-radius: 28px;
+    outline: none;
+    transition: all var(--transition-smooth);
+    background: var(--bg-white);
+    box-shadow: var(--shadow-soft);
+}
+
+#species-search:focus {
+    border-color: var(--forest-green);
+    box-shadow: 0 0 0 4px rgba(45, 90, 39, 0.1), var(--shadow-md);
+}
+
+#species-search::placeholder {
+    color: var(--text-muted);
+}
+
+.search-icon {
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    pointer-events: none;
+    color: var(--text-muted);
+}
+
+.search-clear {
+    position: absolute;
+    right: 35px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--text-light);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background 0.2s;
+}
+
+.search-clear:hover {
+    background: var(--bg-light);
+    color: var(--text-dark);
+}
+
+.search-results {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+    color: var(--text-medium);
+}
+
+/* Highlight des résultats de recherche */
+.species-card.search-highlight {
+    box-shadow: 0 0 0 3px var(--ebird-green);
+}
+
+.species-toc {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.species-toc h2 {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--ebird-green);
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 8px;
+}
+
+.toc-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 16px;
+    background: var(--bg-white);
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s;
+}
+
+.toc-item:hover {
+    border-color: var(--ebird-green);
+    box-shadow: var(--shadow-sm);
+}
+
+.toc-name {
+    color: var(--text-dark);
+    font-size: 14px;
+}
+
+.toc-count {
+    color: var(--text-light);
+    font-size: 13px;
+}
+
+.species-list-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.family-section {
+    margin-bottom: 40px;
+    scroll-margin-top: 80px;
+}
+
+.family-title {
+    font-family: 'Lora', Georgia, serif;
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--forest-green-dark);
+    padding: 12px 0;
+    border-bottom: 2px solid var(--forest-green);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.family-title::before {
+    content: '🪶';
+    font-size: 20px;
+}
+
+.species-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.species-card {
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: all var(--transition-smooth);
+    border: 1px solid var(--border-light);
+}
+
+.species-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-5px);
+    border-color: var(--sage);
+}
+
+.species-card img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    background: linear-gradient(135deg, #f8f9f8 0%, #f0f2f0 100%);
+}
+
+.species-info {
+    padding: 14px 16px;
+}
+
+.species-common {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 4px;
+}
+
+.species-scientific {
+    display: block;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+    color: var(--text-light);
+}
+
+.photo-count {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    color: var(--forest-green);
+    font-weight: 500;
+    margin-top: 8px;
+    padding: 3px 8px;
+    background: rgba(45, 90, 39, 0.08);
+    border-radius: 12px;
+}
+
+.photo-counter {
+    font-size: 13px;
+    color: var(--text-medium);
+    margin-bottom: 16px;
+    padding: 10px 16px;
+    background: rgba(45, 90, 39, 0.06);
+    border-radius: 8px;
+    display: inline-block;
+    border: 1px solid var(--border-light);
+}
+
+/* Bouton retour en haut */
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss) 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    box-shadow: var(--shadow-md);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: var(--ebird-green-dark);
+    color: white;
+    transform: translateY(-3px);
+}
+
+/* ============================================
+   CARTE DU VOYAGE
+   ============================================ */
+
+.trip-map-container {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+}
+
+.trip-map-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    font-family: 'Lora', Georgia, serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--forest-green);
+}
+
+.trip-map-header .map-icon {
+    font-size: 24px;
+}
+
+.trip-map-header .location-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-medium);
+    background: var(--bg-parchment);
+    padding: 4px 10px;
+    border-radius: 12px;
+}
+
+#trip-map {
+    width: 100%;
+    height: 300px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--border-light);
+    background: var(--bg-parchment);
+    overflow: hidden;
+}
+
+/* Styles des épingles */
+.trip-pin-container {
+    background: transparent !important;
+    border: none !important;
+}
+
+.trip-pin {
+    font-size: 28px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    transition: transform 0.2s ease;
+}
+
+.trip-pin:hover {
+    transform: scale(1.2);
+}
+
+/* Popup personnalisé */
+.trip-popup .leaflet-popup-content-wrapper {
+    background: var(--bg-white);
+    border-radius: 10px;
+    box-shadow: var(--shadow-md);
+    padding: 0;
+}
+
+.trip-popup .leaflet-popup-content {
+    margin: 10px 14px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--text-dark);
+    line-height: 1.4;
+}
+
+.trip-popup .leaflet-popup-tip {
+    background: var(--bg-white);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .trip-map-container {
+        padding: 0 16px;
+        margin-bottom: 30px;
+    }
+    
+    #trip-map {
+        height: 250px;
+        border-radius: 12px;
+    }
+    
+    .trip-map-header {
+        font-size: 18px;
+    }
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid var(--border-light);
+    background: linear-gradient(180deg, var(--bg-cream) 0%, var(--bg-white) 100%);
+    color: var(--text-medium);
+    font-size: 14px;
+    position: relative;
+}
+
+footer::before {
+    content: '🌿';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 24px;
+    background: var(--bg-cream);
+    padding: 0 12px;
+}
+
+footer p {
+    margin: 6px 0;
+}
+
+footer a {
+    color: var(--forest-green);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+footer a:hover {
+    color: var(--forest-green-light);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 1000px) {
+    .lightbox-content {
+        flex-direction: column;
+        margin: 60px 20px;
+        max-height: none;
+    }
+    
+    .lightbox-sidebar {
+        width: 100%;
+    }
+    
+    .lightbox-nav {
+        top: auto;
+        bottom: 30px;
+        transform: none;
+    }
+    
+    .lightbox-prev { left: 30px; }
+    .lightbox-next { right: 30px; }
+}
+
+@media (max-width: 700px) {
+    .nav-container {
+        flex-direction: column;
+        height: auto;
+        padding: 12px 16px;
+        gap: 12px;
+    }
+    
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .nav-menu > li > a,
+    .nav-menu .dropdown-toggle {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    
+    .lang-switch {
+        position: static;
+    }
+    
+    .gallery-header h1 {
+        font-size: 24px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 10px;
+    }
+    
+    .species-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+    
+    .index-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .families-index-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   PAGE INDEX DES VOYAGES
+   ============================================ */
+
+.index-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 24px;
+}
+
+.index-card {
+    display: block;
+    background: var(--bg-white);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s;
+    text-decoration: none;
+    color: inherit;
+}
+
+.index-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-4px);
+}
+
+.index-card-image {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.index-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.index-card:hover .index-card-image img {
+    transform: scale(1.05);
+}
+
+.index-card-info {
+    padding: 16px 20px;
+}
+
+.index-card-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin: 0 0 6px 0;
+}
+
+.index-card-dates {
+    font-size: 14px;
+    color: var(--text-medium);
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.index-card-stats {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+/* ============================================
+   PAGE INDEX DES FAMILLES
+   ============================================ */
+
+.families-index-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+}
+
+.families-index-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+}
+
+.family-index-card {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px;
+    background: var(--bg-white);
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.2s;
+}
+
+.family-index-card:hover {
+    border-color: var(--ebird-green);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.family-index-icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.family-index-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.family-index-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.family-index-name {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    margin-bottom: 4px;
+}
+
+.family-code {
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.family-description {
+    font-size: 13px;
+    color: var(--text-medium);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.family-index-stats {
+    font-size: 12px;
+    color: var(--text-light);
+}
+
+/* ==========================================
+   FILTRE PAR LIEU - CARTE VOYAGE
+   ========================================== */
+
+.location-filter-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 20px;
+    margin-bottom: 20px;
+    background: linear-gradient(135deg, var(--ebird-green-light), #e8f5e9);
+    border: 1px solid var(--ebird-green);
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-text {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+    color: var(--text-dark);
+}
+
+.filter-icon {
+    font-size: 18px;
+}
+
+#filter-location-name {
+    font-weight: 600;
+    color: var(--ebird-green-dark);
+}
+
+#filter-photo-count {
+    color: var(--text-medium);
+}
+
+.filter-reset-btn {
+    padding: 8px 16px;
+    background: white;
+    border: 1px solid var(--ebird-green);
+    border-radius: 20px;
+    color: var(--ebird-green-dark);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.filter-reset-btn:hover {
+    background: var(--ebird-green);
+    color: white;
+}
+
+/* Popup amélioré de la carte */
+.trip-popup-content {
+    text-align: center;
+    padding: 4px;
+}
+
+.trip-popup-content strong {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.popup-photo-count {
+    font-size: 12px;
+    color: var(--text-medium);
+    margin-bottom: 8px;
+}
+
+.popup-filter-btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background: var(--ebird-green);
+    color: white;
+    border: none;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.popup-filter-btn:hover {
+    background: var(--ebird-green-dark);
+    transform: scale(1.05);
+}
+
+/* Responsive filtre */
+@media (max-width: 600px) {
+    .location-filter-indicator {
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+    }
+    
+    .filter-text {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+/* ==========================================
+   CHARGEMENT PROGRESSIF - LISTE ESPÈCES
+   ========================================== */
+
+.loading-indicator {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-medium);
+    font-size: 16px;
+}
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    padding: 30px 20px 50px;
+}
+
+.load-more-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, var(--ebird-green), var(--ebird-green-dark));
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-sm);
+}
+
+.load-more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.load-more-btn #remaining-count {
+    opacity: 0.85;
+    font-weight: 400;
+}
+
+/* ============================================
+   EXPÉRIENCE MOBILE OPTIMISÉE
+   ============================================ */
+
+/* --- Menu hamburger mobile --- */
+.mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 8px;
+    color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: block;
+    }
+    
+    .nav-container {
+        flex-wrap: wrap;
+        padding: 12px 16px;
+    }
+    
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+        background: var(--bg-white);
+        border-radius: 12px;
+        margin-top: 12px;
+        box-shadow: var(--shadow-md);
+        overflow: hidden;
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .nav-menu > li {
+        border-bottom: 1px solid var(--border-light);
+    }
+    
+    .nav-menu > li:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-menu > li > a {
+        display: block;
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+    
+    .lang-switch {
+        position: absolute;
+        right: 60px;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+/* --- Header mobile --- */
+@media (max-width: 600px) {
+    .gallery-header {
+        padding: 24px 16px;
+    }
+    
+    .gallery-header h1 {
+        font-size: 22px;
+    }
+    
+    .gallery-subtitle {
+        font-size: 14px;
+    }
+    
+    .stats {
+        font-size: 13px;
+    }
+}
+
+/* --- Recherche mobile --- */
+@media (max-width: 600px) {
+    .search-container {
+        padding: 0 16px;
+        margin-bottom: 20px;
+    }
+    
+    #species-search {
+        font-size: 16px; /* Empêche le zoom auto sur iOS */
+        padding: 14px 50px 14px 20px;
+    }
+}
+
+/* --- Grille photos mobile --- */
+@media (max-width: 600px) {
+    .gallery-container {
+        padding: 0 12px;
+    }
+    
+    .masonry-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+    }
+    
+    .photo-card {
+        border-radius: 8px;
+    }
+    
+    .photo-overlay {
+        padding: 8px;
+    }
+    
+    .bird-name {
+        font-size: 12px;
+    }
+}
+
+/* --- Grille espèces mobile --- */
+@media (max-width: 600px) {
+    .species-list-container {
+        padding: 0 12px;
+    }
+    
+    .family-section {
+        padding: 20px 12px;
+    }
+    
+    .family-title {
+        font-size: 16px;
+        padding-left: 0;
+    }
+    
+    .species-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+    
+    .species-card {
+        border-radius: 8px;
+    }
+    
+    .species-info {
+        padding: 10px;
+    }
+    
+    .species-common {
+        font-size: 13px;
+    }
+    
+    .species-scientific {
+        font-size: 11px;
+    }
+}
+
+/* --- Lightbox mobile plein écran --- */
+@media (max-width: 768px) {
+    .lightbox-content {
+        flex-direction: column;
+        margin: 0;
+        max-height: 100vh;
+        height: 100vh;
+        border-radius: 0;
+        background: #000;
+    }
+    
+    .lightbox-image-container {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    #lightbox-img {
+        max-height: 60vh;
+        object-fit: contain;
+    }
+    
+    .lightbox-sidebar {
+        width: 100%;
+        max-height: 40vh;
+        overflow-y: auto;
+        background: var(--bg-white);
+        border-radius: 20px 20px 0 0;
+        padding: 20px 16px;
+    }
+    
+    .lightbox-sidebar h2 {
+        font-size: 18px;
+    }
+    
+    .lightbox-family {
+        font-size: 11px;
+    }
+    
+    .lightbox-info {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    /* Cacher la carte sur mobile */
+    #lightbox-map {
+        display: none !important;
+    }
+    
+    .lightbox-close {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 28px;
+        background: rgba(0,0,0,0.6);
+    }
+    
+    .lightbox-nav {
+        top: auto;
+        bottom: 45vh;
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+        background: rgba(0,0,0,0.5);
+    }
+    
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+}
+
+/* --- Index voyages/familles mobile --- */
+@media (max-width: 600px) {
+    .index-container,
+    .families-index-container {
+        padding: 20px 12px;
+    }
+    
+    .index-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    .index-card-image {
+        height: 180px;
+    }
+    
+    .index-card-info {
+        padding: 14px 16px;
+    }
+    
+    .index-card-title {
+        font-size: 18px;
+    }
+    
+    .families-index-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .family-index-card {
+        padding: 12px;
+    }
+    
+    .family-index-icon {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* --- Carte voyage mobile --- */
+@media (max-width: 600px) {
+    .trip-map-container {
+        padding: 0 12px;
+        margin-bottom: 20px;
+    }
+    
+    #trip-map {
+        height: 200px;
+        border-radius: 10px;
+    }
+    
+    .trip-map-header {
+        font-size: 16px;
+        padding: 10px 14px;
+    }
+}
+
+/* --- Boutons touch-friendly --- */
+@media (max-width: 768px) {
+    .filter-reset-btn,
+    .load-more-btn,
+    .popup-filter-btn {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .ebird-link {
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+    
+    .back-to-top {
+        width: 48px;
+        height: 48px;
+        font-size: 22px;
+        bottom: 20px;
+        right: 16px;
+    }
+}
+
+/* --- Footer mobile --- */
+@media (max-width: 600px) {
+    footer {
+        padding: 30px 16px;
+        font-size: 13px;
+    }
+    
+    footer::before {
+        font-size: 20px;
+    }
+}
+
+/* --- Filtre lieu mobile --- */
+@media (max-width: 600px) {
+    .location-filter-indicator {
+        margin: 0 12px 16px;
+        padding: 10px 14px;
+        font-size: 14px;
+    }
+}
+
+/* --- Touch gestures hint --- */
+@media (max-width: 768px) {
+    .lightbox-content::after {
+        content: '';
+        position: absolute;
+        bottom: 42vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px;
+        height: 4px;
+        background: rgba(255,255,255,0.3);
+        border-radius: 2px;
+    }
+}
+
+/* --- Amélioration accessibilité tactile --- */
+@media (pointer: coarse) {
+    .photo-card,
+    .species-card,
+    .index-card,
+    .family-index-card {
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+    
+    .photo-card:active,
+    .species-card:active {
+        transform: scale(0.98);
+    }
+}
