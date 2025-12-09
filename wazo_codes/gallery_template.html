@@ -198,9 +198,11 @@
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;
 
-            // Carte
+            // Carte - cachée sur mobile
             const mapDiv = document.getElementById('lightbox-map');
-            if (photo.lat && photo.lng) {
+            const isMobile = window.innerWidth <= 768;
+            
+            if (photo.lat && photo.lng && !isMobile) {
                 mapDiv.style.display = 'block';
                 
                 if (!map) {

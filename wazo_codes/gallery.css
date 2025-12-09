@@ -1614,9 +1614,9 @@ footer a:hover {
         gap: 8px;
     }
     
+    /* Cacher la carte sur mobile */
     #lightbox-map {
-        height: 120px;
-        margin: 12px 0;
+        display: none !important;
     }
     
     .lightbox-close {

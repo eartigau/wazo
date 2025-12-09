@@ -104,14 +104,6 @@ voyages:
     limite: 500
 
   - id: voyage_californie_juin_2024
-    nom_fr: "San Diego, juin 2024"
-    nom_en: "San Diego, June 2024"
-    date_debut: "2024-06-10"
-    date_fin: "2024-07-05"
-    pays: ["US-CA"]
-    limite: 400
-
-  - id: voyage_californie_juin_2024
     nom_fr: "Californie, juin 2024"
     nom_en: "California , June 2024"
     date_debut: "2024-06-10"

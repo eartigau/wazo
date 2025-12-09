@@ -1,0 +1,169 @@
+# ============================================
+# PAGE PERSONNELLE - CONFIGURATION
+# Modifier ce fichier pour mettre à jour le contenu
+# Puis exécuter: python generer_page.py
+# ============================================
+
+# --- INFORMATIONS DE BASE ---
+nom: "Étienne Artigau"
+titre:
+  fr: "Astrophysicien"
+  en: "Astrophysicist"
+
+# Photo de profil (mettre le fichier dans le même dossier)
+photo: "profile.jpg"
+
+# --- AFFILIATION ---
+affiliation:
+  institution: "Université de Montréal"
+  departement:
+    fr: "Institut de recherche sur les exoplanètes (iREx)"
+    en: "Trottier Institute for Research on Exoplanets (iREx)"
+  role:
+    fr: "Chercheur"
+    en: "Research Scientist"
+
+# --- LIENS ---
+liens:
+  email: "etienne.artigau@umontreal.ca"
+  publications: "https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0003-3506-5667&sort=date%20desc"
+  orcid: "0000-0003-3506-5667"
+  irex: "https://exoplanetes.umontreal.ca"
+  galerie_oiseaux: "gallery/index_fr.html"  # Lien relatif vers ta galerie
+
+# --- SECTION HERO / INTRODUCTION ---
+intro:
+  fr: |
+    Je suis astrophysicien à l'Université de Montréal, membre de l'Institut de recherche 
+    sur les exoplanètes (iREx). Mes recherches portent sur les naines brunes, les exoplanètes 
+    et l'instrumentation astronomique.
+  en: |
+    I am an astrophysicist at Université de Montréal, member of the Trottier Institute 
+    for Research on Exoplanets (iREx). My research focuses on brown dwarfs, exoplanets, 
+    and astronomical instrumentation.
+
+# --- SECTION RECHERCHE ---
+recherche:
+  titre:
+    fr: "Mes recherches"
+    en: "My Research"
+  contenu:
+    fr: |
+      Je travaille sur la détection et la caractérisation des exoplanètes et des naines brunes 
+      dans le voisinage solaire. Je suis responsable scientifique des spectrographes infrarouges 
+      NIRPS (installé au télescope de 3.6m de l'ESO au Chili) et SPIRou (au télescope Canada-France-Hawaii).
+      
+      J'ai développé des techniques innovantes de vélocimétrie de haute précision permettant de 
+      détecter des planètes de masse terrestre autour d'étoiles de faible masse. Plus récemment, 
+      j'ai mis au point une méthode pour mesurer les variations de température stellaire avec une 
+      précision sans précédent.
+    en: |
+      I work on the detection and characterization of exoplanets and brown dwarfs in the solar 
+      neighborhood. I am the scientific lead for the NIRPS infrared spectrograph (installed at 
+      ESO's 3.6m telescope in Chile) and SPIRou (at the Canada-France-Hawaii Telescope).
+      
+      I have developed innovative high-precision velocimetry techniques that enable the detection 
+      of Earth-mass planets around low-mass stars. More recently, I developed a method to measure 
+      stellar temperature variations with unprecedented precision.
+
+# --- SECTION INSTRUMENTATION ---
+instrumentation:
+  titre:
+    fr: "Instrumentation"
+    en: "Instrumentation"
+  contenu:
+    fr: |
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+    en: |
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
+      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      
+      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
+      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+
+# --- SECTION PUBLICATIONS ---
+publications:
+  titre:
+    fr: "Publications"
+    en: "Publications"
+  description:
+    fr: "Liste complète de mes publications scientifiques sur NASA ADS."
+    en: "Complete list of my scientific publications on NASA ADS."
+  bouton:
+    fr: "Voir mes publications"
+    en: "View my publications"
+
+# --- SECTION OISEAUX / HOBBY ---
+oiseaux:
+  titre:
+    fr: "Ornithologie"
+    en: "Birding"
+  contenu:
+    fr: |
+      En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai 
+      documenté plus de 47 000 observations d'oiseaux à travers le monde, accompagnées de 
+      milliers de photographies.
+      
+      Ma galerie photo présente une sélection de mes meilleures images, organisées par 
+      espèce, famille taxonomique et voyage.
+    en: |
+      Outside of work, I am a passionate amateur birder. Since 1989, I have documented 
+      over 47,000 bird observations around the world, along with thousands of photographs.
+      
+      My photo gallery presents a selection of my best images, organized by species, 
+      taxonomic family, and trip.
+  bouton:
+    fr: "Voir ma galerie photo"
+    en: "View my photo gallery"
+
+# --- SECTION PARCOURS ---
+parcours:
+  titre:
+    fr: "Parcours"
+    en: "Career"
+  items:
+    - periode: "2009 - présent"
+      poste:
+        fr: "Chercheur, Université de Montréal"
+        en: "Research Scientist, Université de Montréal"
+    - periode: "2006 - 2009"
+      poste:
+        fr: "Astronome, Observatoire Gemini Sud, Chili"
+        en: "Astronomer, Gemini South Observatory, Chile"
+    - periode: "2006"
+      poste:
+        fr: "Ph.D. Astrophysique, Université de Montréal"
+        en: "Ph.D. Astrophysics, Université de Montréal"
+
+# --- PROJETS CLÉS ---
+projets:
+  titre:
+    fr: "Projets"
+    en: "Projects"
+  liste:
+    - nom: "NIRPS"
+      description:
+        fr: "Spectrographe infrarouge au télescope ESO 3.6m"
+        en: "Infrared spectrograph at ESO 3.6m telescope"
+      lien: "https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html"
+    - nom: "SPIRou"
+      description:
+        fr: "Spectropolarimètre infrarouge au CFHT"
+        en: "Infrared spectropolarimeter at CFHT"
+      lien: "https://www.cfht.hawaii.edu/Instruments/SPIRou/"
+    - nom: "JWST/NIRISS"
+      description:
+        fr: "Support scientifique pour l'instrument NIRISS"
+        en: "Scientific support for NIRISS instrument"
+      lien: "https://jwst-docs.stsci.edu/jwst-near-infrared-imager-and-slitless-spectrograph"
+
+# --- FOOTER ---
+footer:
+  fr: "© 2025 Étienne Artigau"
+  en: "© 2025 Étienne Artigau"
