@@ -1,0 +1,191 @@
+code,fr,en
+# ============================================
+# PAYS
+# ============================================
+CA,Canada,Canada
+US,États-Unis,United States
+CL,Chili,Chile
+CH,Suisse,Switzerland
+FR,France,France
+NZ,Nouvelle-Zélande,New Zealand
+AU,Australie,Australia
+MX,Mexique,Mexico
+CR,Costa Rica,Costa Rica
+PA,Panama,Panama
+CO,Colombie,Colombia
+PE,Pérou,Peru
+AR,Argentine,Argentina
+BR,Brésil,Brazil
+EC,Équateur,Ecuador
+UY,Uruguay,Uruguay
+GB,Royaume-Uni,United Kingdom
+ES,Espagne,Spain
+PT,Portugal,Portugal
+IT,Italie,Italy
+DE,Allemagne,Germany
+AT,Autriche,Austria
+JP,Japon,Japan
+ZA,Afrique du Sud,South Africa
+KE,Kenya,Kenya
+TZ,Tanzanie,Tanzania
+IS,Islande,Iceland
+NO,Norvège,Norway
+SE,Suède,Sweden
+FI,Finlande,Finland
+DK,Danemark,Denmark
+NL,Pays-Bas,Netherlands
+BE,Belgique,Belgium
+IE,Irlande,Ireland
+GR,Grèce,Greece
+TR,Turquie,Turkey
+IL,Israël,Israel
+IN,Inde,India
+CN,Chine,China
+TH,Thaïlande,Thailand
+VN,Vietnam,Vietnam
+ID,Indonésie,Indonesia
+PH,Philippines,Philippines
+MY,Malaisie,Malaysia
+SG,Singapour,Singapore
+# ============================================
+# PROVINCES/ÉTATS - CANADA
+# ============================================
+CA-QC,Québec,Quebec
+CA-ON,Ontario,Ontario
+CA-BC,Colombie-Britannique,British Columbia
+CA-AB,Alberta,Alberta
+CA-SK,Saskatchewan,Saskatchewan
+CA-MB,Manitoba,Manitoba
+CA-NB,Nouveau-Brunswick,New Brunswick
+CA-NS,Nouvelle-Écosse,Nova Scotia
+CA-PE,Île-du-Prince-Édouard,Prince Edward Island
+CA-NL,Terre-Neuve-et-Labrador,Newfoundland and Labrador
+CA-YT,Yukon,Yukon
+CA-NT,Territoires du Nord-Ouest,Northwest Territories
+CA-NU,Nunavut,Nunavut
+# ============================================
+# ÉTATS - USA
+# ============================================
+US-FL,Floride,Florida
+US-AZ,Arizona,Arizona
+US-CA,Californie,California
+US-TX,Texas,Texas
+US-HI,Hawaï,Hawaii
+US-NY,New York,New York
+US-MA,Massachusetts,Massachusetts
+US-CO,Colorado,Colorado
+US-NM,Nouveau-Mexique,New Mexico
+US-WA,Washington,Washington
+US-OR,Oregon,Oregon
+US-AK,Alaska,Alaska
+US-NV,Nevada,Nevada
+US-UT,Utah,Utah
+US-MT,Montana,Montana
+US-WY,Wyoming,Wyoming
+US-ID,Idaho,Idaho
+US-ME,Maine,Maine
+US-VT,Vermont,Vermont
+US-NH,New Hampshire,New Hampshire
+US-CT,Connecticut,Connecticut
+US-RI,Rhode Island,Rhode Island
+US-NJ,New Jersey,New Jersey
+US-PA,Pennsylvanie,Pennsylvania
+US-OH,Ohio,Ohio
+US-MI,Michigan,Michigan
+US-IL,Illinois,Illinois
+US-WI,Wisconsin,Wisconsin
+US-MN,Minnesota,Minnesota
+US-IA,Iowa,Iowa
+US-MO,Missouri,Missouri
+US-GA,Géorgie,Georgia
+US-NC,Caroline du Nord,North Carolina
+US-SC,Caroline du Sud,South Carolina
+US-VA,Virginie,Virginia
+US-WV,Virginie-Occidentale,West Virginia
+US-MD,Maryland,Maryland
+US-DE,Delaware,Delaware
+US-LA,Louisiane,Louisiana
+US-AR,Arkansas,Arkansas
+US-OK,Oklahoma,Oklahoma
+US-KS,Kansas,Kansas
+US-NE,Nebraska,Nebraska
+US-SD,Dakota du Sud,South Dakota
+US-ND,Dakota du Nord,North Dakota
+# ============================================
+# RÉGIONS - CHILI
+# ============================================
+CL-VS,Valparaíso,Valparaíso
+CL-RM,Région Métropolitaine,Metropolitan Region
+CL-BI,Biobío,Biobío
+CL-AR,Araucanía,Araucanía
+CL-LR,Los Ríos,Los Ríos
+CL-LL,Los Lagos,Los Lagos
+CL-AI,Aisén,Aisén
+CL-MA,Magallanes,Magallanes
+CL-AT,Atacama,Atacama
+CL-CO,Coquimbo,Coquimbo
+CL-AN,Antofagasta,Antofagasta
+CL-TA,Tarapacá,Tarapacá
+CL-AP,Arica y Parinacota,Arica y Parinacota
+CL-ML,Maule,Maule
+CL-NB,Ñuble,Ñuble
+CL-LI,O'Higgins,O'Higgins
+# ============================================
+# CANTONS - SUISSE
+# ============================================
+CH-GE,Genève,Geneva
+CH-VD,Vaud,Vaud
+CH-VS,Valais,Valais
+CH-BE,Berne,Bern
+CH-ZH,Zurich,Zurich
+CH-LU,Lucerne,Lucerne
+CH-BS,Bâle-Ville,Basel-Stadt
+CH-BL,Bâle-Campagne,Basel-Landschaft
+CH-AG,Argovie,Aargau
+CH-SG,Saint-Gall,St. Gallen
+CH-GR,Grisons,Graubünden
+CH-TI,Tessin,Ticino
+CH-FR,Fribourg,Fribourg
+CH-NE,Neuchâtel,Neuchâtel
+CH-JU,Jura,Jura
+# ============================================
+# RÉGIONS - NOUVELLE-ZÉLANDE
+# ============================================
+NZ-WKO,Waikato,Waikato
+NZ-AUK,Auckland,Auckland
+NZ-WGN,Wellington,Wellington
+NZ-CAN,Canterbury,Canterbury
+NZ-OTA,Otago,Otago
+NZ-STL,Southland,Southland
+NZ-WTC,West Coast,West Coast
+NZ-TAS,Tasman,Tasman
+NZ-MBH,Marlborough,Marlborough
+NZ-NSN,Nelson,Nelson
+NZ-HKB,Hawke's Bay,Hawke's Bay
+NZ-BOP,Bay of Plenty,Bay of Plenty
+NZ-GIS,Gisborne,Gisborne
+NZ-TKI,Taranaki,Taranaki
+NZ-MWT,Manawatū-Whanganui,Manawatū-Whanganui
+NZ-NTL,Northland,Northland
+# ============================================
+# URUGUAY
+# ============================================
+UY-RO,Rocha,Rocha
+UY-MO,Montevideo,Montevideo
+UY-MA,Maldonado,Maldonado
+# ============================================
+# FRANCE
+# ============================================
+FR-IDF,Île-de-France,Île-de-France
+FR-PAC,Provence-Alpes-Côte d'Azur,Provence-Alpes-Côte d'Azur
+FR-OCC,Occitanie,Occitanie
+FR-NAQ,Nouvelle-Aquitaine,Nouvelle-Aquitaine
+FR-ARA,Auvergne-Rhône-Alpes,Auvergne-Rhône-Alpes
+FR-BRE,Bretagne,Brittany
+FR-NOR,Normandie,Normandy
+FR-HDF,Hauts-de-France,Hauts-de-France
+FR-GES,Grand Est,Grand Est
+FR-BFC,Bourgogne-Franche-Comté,Bourgogne-Franche-Comté
+FR-PDL,Pays de la Loire,Pays de la Loire
+FR-CVL,Centre-Val de Loire,Centre-Val de Loire
+FR-COR,Corse,Corsica

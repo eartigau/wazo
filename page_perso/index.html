@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; url=index_fr.html">
-    <script>window.location.href = 'index_fr.html';</script>
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        const targetLang = userLang.startsWith('fr') ? 'fr' : 'en';
+        window.location.href = 'index_' + targetLang + '.html';
+    </script>
 </head>
 <body>
-    <p>Redirection vers <a href="index_fr.html">la page française</a>...</p>
+    <p>Redirecting... <a href="index_fr.html">Français</a> | <a href="index_en.html">English</a></p>
 </body>
 </html>

@@ -233,6 +233,12 @@ voyages:
     date_fin: "2015-08-30"
     limite: 300
   
+  - id: voyage_iguazu_2007
+    nom_fr: "Iguazu 2007"
+    nom_en: "Iguazu 2007"
+    date_debut: "2007-06-03"
+    date_fin: "2007-06-17"
+    limite: 300
 
 # ------------------------------------------------------------------------------
 # GALERIES GÉNÉRALES (optionnel)

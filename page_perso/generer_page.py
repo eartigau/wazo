@@ -1,213 +1,324 @@
 #!/usr/bin/env python3
 """
-Générateur de page personnelle bilingue
-Lit content.yaml et génère index_fr.html et index_en.html
+Starlight whispers through
+algorithms parse the dark—
+worlds beyond revealed
+
+Generator for bilingual personal page with Markdown support.
+Converts YAML content to HTML pages (FR/EN).
 """
 
+import re
 import yaml
-import os
 from pathlib import Path
+from typing import Any
 
-def load_config(config_path: str = 'content.yaml') -> dict:
-    """Charge la configuration YAML"""
-    with open(config_path, 'r', encoding='utf-8') as f:
-        return yaml.safe_load(f)
+# =============================================================================
+# MARKDOWN TO HTML CONVERSION
+# =============================================================================
 
-def load_template(template_path: str = 'template.html') -> str:
-    """Charge le template HTML"""
-    with open(template_path, 'r', encoding='utf-8') as f:
-        return f.read()
-
-def render_template(template: str, context: dict) -> str:
+def markdown_to_html(text: str) -> str:
     """
-    Remplace les variables {{ variable }} dans le template
-    Gère aussi les boucles {% for item in items %}...{% endfor %}
-    """
-    import re
+    Convert Markdown-style text to HTML.
+    Supports: links, paragraphs, bullet points (• or -).
     
-    # Traiter les boucles for
-    for_pattern = r'\{%\s*for\s+(\w+)\s+in\s+(\w+)\s*%\}(.*?)\{%\s*endfor\s*%\}'
+    Optimized with compiled regex patterns for faster execution.
+    """
+    if not text:
+        return ""
+    
+    # Pre-compiled patterns for performance
+    link_pattern = re.compile(r'\[([^\]]+)\]\(([^)]+)\)')
+    bullet_pattern = re.compile(r'^[•\-]\s+', re.MULTILINE)
+    
+    # Convert Markdown links [text](url) to <a> tags
+    text = link_pattern.sub(r'<a href="\2" target="_blank">\1</a>', text)
+    
+    # Split into paragraphs
+    paragraphs = text.strip().split('\n\n')
+    html_parts = []
+    
+    for para in paragraphs:
+        para = para.strip()
+        if not para:
+            continue
+        
+        # Check if paragraph contains bullet points
+        lines = para.split('\n')
+        bullet_lines = [l for l in lines if bullet_pattern.match(l.strip())]
+        
+        if bullet_lines and len(bullet_lines) == len(lines):
+            # All lines are bullets -> create <ul>
+            items = [bullet_pattern.sub('', l.strip()) for l in lines]
+            html_parts.append('<ul>' + ''.join(f'<li>{item}</li>' for item in items) + '</ul>')
+        elif bullet_lines:
+            # Mixed content: process line by line
+            result = []
+            in_list = False
+            list_items = []
+            
+            for line in lines:
+                line = line.strip()
+                if bullet_pattern.match(line):
+                    if not in_list:
+                        in_list = True
+                    list_items.append(bullet_pattern.sub('', line))
+                else:
+                    if in_list:
+                        result.append('<ul>' + ''.join(f'<li>{item}</li>' for item in list_items) + '</ul>')
+                        list_items = []
+                        in_list = False
+                    if line:
+                        result.append(f'<p>{line}</p>')
+            
+            if list_items:
+                result.append('<ul>' + ''.join(f'<li>{item}</li>' for item in list_items) + '</ul>')
+            
+            html_parts.append(''.join(result))
+        else:
+            # Regular paragraph
+            # Join lines with <br> for single newlines within paragraph
+            joined = '<br>'.join(l.strip() for l in lines if l.strip())
+            html_parts.append(f'<p>{joined}</p>')
+    
+    return '\n'.join(html_parts)
+
+
+# =============================================================================
+# YOUTUBE ID EXTRACTION
+# =============================================================================
+
+# Pre-compiled pattern for YouTube URL parsing
+YOUTUBE_PATTERN = re.compile(
+    r'(?:youtube\.com/watch\?v=|youtu\.be/|youtube\.com/embed/)([a-zA-Z0-9_-]{11})'
+)
+
+def extract_youtube_id(url: str) -> str:
+    """
+    Extract YouTube video ID from various URL formats.
+    Returns empty string if no valid ID found.
+    """
+    match = YOUTUBE_PATTERN.search(url)
+    return match.group(1) if match else ""
+
+
+# =============================================================================
+# TEMPLATE RENDERING
+# =============================================================================
+
+def render_template(template: str, context: dict[str, Any]) -> str:
+    """
+    Simple template rendering with Jinja2-like syntax.
+    Supports: {{ variable }}, {% for %}, {% if %}, conditionals.
+    """
+    result = template
+    
+    # Process for loops first: {% for item in items %}...{% endfor %}
+    for_pattern = re.compile(
+        r'\{%\s*for\s+(\w+)\s+in\s+(\w+)\s*%\}(.*?)\{%\s*endfor\s*%\}',
+        re.DOTALL
+    )
     
     def replace_for(match):
-        item_name = match.group(1)
+        var_name = match.group(1)
         list_name = match.group(2)
-        block = match.group(3)
+        body = match.group(3)
         
         items = context.get(list_name, [])
-        result = []
+        if not items:
+            return ""
         
+        rendered_items = []
         for item in items:
-            block_rendered = block
-            # Remplacer {{ item.attr }} par les valeurs
+            item_body = body
+            # Replace {{ var.attr }} patterns
             for key, value in item.items():
-                block_rendered = block_rendered.replace(f'{{{{ {item_name}.{key} }}}}', str(value))
-            result.append(block_rendered)
+                item_body = item_body.replace(f'{{{{ {var_name}.{key} }}}}', str(value))
+            rendered_items.append(item_body)
         
-        return ''.join(result)
+        return ''.join(rendered_items)
     
-    template = re.sub(for_pattern, replace_for, template, flags=re.DOTALL)
+    result = for_pattern.sub(replace_for, result)
     
-    # Traiter les conditions simples {{ 'active' if lang == 'fr' else '' }}
-    cond_pattern = r"\{\{\s*'([^']*?)'\s*if\s+(\w+)\s*==\s*'([^']*?)'\s*else\s*'([^']*?)'\s*\}\}"
+    # Process conditionals: {{ 'value1' if condition else 'value2' }}
+    cond_pattern = re.compile(r"\{\{\s*'([^']+)'\s+if\s+(\w+)\s*==\s*'([^']+)'\s+else\s*'([^']*)'\s*\}\}")
     
     def replace_cond(match):
-        true_val = match.group(1)
-        var_name = match.group(2)
-        test_val = match.group(3)
-        false_val = match.group(4)
-        return true_val if context.get(var_name) == test_val else false_val
+        val_true, var, check_val, val_false = match.groups()
+        return val_true if context.get(var) == check_val else val_false
     
-    template = re.sub(cond_pattern, replace_cond, template)
+    result = cond_pattern.sub(replace_cond, result)
     
-    # Remplacer les variables simples {{ variable }}
+    # Replace simple variables: {{ variable }}
     for key, value in context.items():
         if not isinstance(value, (list, dict)):
-            template = template.replace(f'{{{{ {key} }}}}', str(value))
+            result = result.replace(f'{{{{ {key} }}}}', str(value))
     
-    return template
+    return result
 
-def build_context(config: dict, lang: str) -> dict:
-    """Construit le contexte pour le template selon la langue"""
+
+# =============================================================================
+# CONTEXT BUILDER
+# =============================================================================
+
+def get_text(obj: dict, key: str, lang: str) -> str:
+    """
+    Extract text for given language from a bilingual dict.
+    Falls back to 'fr' if lang not found.
+    """
+    value = obj.get(key, {})
+    if isinstance(value, dict):
+        return value.get(lang, value.get('fr', ''))
+    return str(value)
+
+
+def build_context(config: dict, lang: str) -> dict[str, Any]:
+    """
+    Build template context from YAML config for specified language.
+    """
+    # Helper for bilingual fields
+    def t(obj: dict, key: str) -> str:
+        return get_text(obj, key, lang)
     
-    def get_text(obj, key=None):
-        """Récupère le texte dans la bonne langue"""
-        if key:
-            obj = obj.get(key, {})
-        if isinstance(obj, dict):
-            return obj.get(lang, obj.get('fr', ''))
-        return obj
+    # Navigation labels
+    nav_labels = {
+        'fr': {'recherche': 'Recherche', 'medias': 'Médias', 'oiseaux': 'Photos', 
+               'scroll': 'Défiler', 'gallery': 'Voir la galerie'},
+        'en': {'recherche': 'Research', 'medias': 'Media', 'oiseaux': 'Photos',
+               'scroll': 'Scroll', 'gallery': 'View gallery'}
+    }
+    labels = nav_labels.get(lang, nav_labels['fr'])
     
+    # Process videos
+    videos = []
+    for v in config.get('medias', {}).get('videos', []):
+        video_id = extract_youtube_id(v.get('url', ''))
+        if video_id:
+            videos.append({
+                'video_id': video_id,
+                'titre': t(v, 'titre')
+            })
+    
+    # Process discoveries
+    decouvertes = []
+    for d in config.get('medias', {}).get('decouvertes', []):
+        decouvertes.append({
+            'titre': t(d, 'titre'),
+            'annee': d.get('annee', ''),
+            'url': d.get('url', '')
+        })
+    
+    # Build context dict
     context = {
         'lang': lang,
-        'nom': config['nom'],
-        'titre': get_text(config, 'titre'),
-        'photo': config.get('photo', 'profile.jpg'),
-        'css_path': config.get('css_path', 'gallery.css'),
+        'nom': config.get('nom', ''),
+        'titre': t(config, 'titre'),
+        'photo': config.get('photo', ''),
+        'css_path': config.get('css_path', ''),
         
         # Affiliation
-        'affiliation_inst': config['affiliation']['institution'],
-        'affiliation_dept': get_text(config['affiliation'], 'departement'),
-        'affiliation_role': get_text(config['affiliation'], 'role'),
+        'affiliation_inst': config.get('affiliation', {}).get('institution', ''),
+        'affiliation_dept': t(config.get('affiliation', {}), 'departement'),
         
         # Liens
-        'email': config['liens']['email'],
-        'orcid': config['liens']['orcid'],
-        'publications_lien': config['liens']['publications'],
-        'oiseaux_lien': config['liens']['galerie_oiseaux'],
-        
-        # Intro
-        'intro': get_text(config, 'intro').strip(),
+        'email': config.get('liens', {}).get('email', ''),
+        'orcid': config.get('liens', {}).get('orcid', ''),
         
         # Navigation
-        'nav_recherche': 'Recherche' if lang == 'fr' else 'Research',
-        'nav_publications': 'Publications',
-        'nav_projets': 'Projets' if lang == 'fr' else 'Projects',
-        'nav_oiseaux': 'Oiseaux' if lang == 'fr' else 'Birds',
-        'scroll_hint': 'Appuyez sur Espace pour défiler' if lang == 'fr' else 'Press Space to scroll',
+        'nav_recherche': labels['recherche'],
+        'nav_medias': labels['medias'],
+        'nav_oiseaux': labels['oiseaux'],
+        'scroll_hint': labels['scroll'],
+        'oiseaux_bouton': labels['gallery'],
         
-        # Recherche
-        'recherche_titre': get_text(config['recherche'], 'titre'),
-        'recherche_contenu': get_text(config['recherche'], 'contenu').strip(),
+        # Intro
+        'intro': t(config, 'intro').strip(),
         
-        # Instrumentation
-        'instrumentation_titre': get_text(config['instrumentation'], 'titre'),
-        'instrumentation_contenu': get_text(config['instrumentation'], 'contenu').strip(),
+        # Recherche - convert Markdown to HTML
+        'recherche_titre': t(config.get('recherche', {}), 'titre'),
+        'recherche_photo': config.get('recherche', {}).get('photo', ''),
+        'recherche_contenu': markdown_to_html(t(config.get('recherche', {}), 'contenu')),
         
-        # Publications
-        'publications_titre': get_text(config['publications'], 'titre'),
-        'publications_description': get_text(config['publications'], 'description'),
-        'publications_bouton': get_text(config['publications'], 'bouton'),
+        # Médias
+        'medias_titre': t(config.get('medias', {}), 'titre'),
+        'ads_url': config.get('medias', {}).get('ads_url', ''),
+        'ads_texte': t(config.get('medias', {}), 'ads_texte'),
+        'decouvertes_titre': t(config.get('medias', {}), 'decouvertes_titre'),
+        'videos': videos,
+        'decouvertes': decouvertes,
         
-        # Oiseaux
-        'oiseaux_titre': get_text(config['oiseaux'], 'titre'),
-        'oiseaux_contenu': get_text(config['oiseaux'], 'contenu').strip(),
-        'oiseaux_bouton': get_text(config['oiseaux'], 'bouton'),
-        'oiseaux_photo_ml': config['oiseaux'].get('photo_ml', ''),
-        
-        # Parcours
-        'parcours_titre': get_text(config['parcours'], 'titre'),
-        'parcours': [
-            {
-                'periode': item['periode'],
-                'poste': get_text(item, 'poste')
-            }
-            for item in config['parcours']['items']
-        ],
-        
-        # Projets
-        'projets_titre': get_text(config['projets'], 'titre'),
-        'projets': [
-            {
-                'nom': p['nom'],
-                'description': get_text(p, 'description'),
-                'lien': p['lien']
-            }
-            for p in config['projets']['liste']
-        ],
+        # Oiseaux - convert Markdown to HTML
+        'oiseaux_titre': t(config.get('oiseaux', {}), 'titre'),
+        'oiseaux_photo': config.get('oiseaux', {}).get('photo', ''),
+        'oiseaux_contenu': markdown_to_html(t(config.get('oiseaux', {}), 'contenu')),
+        'oiseaux_lien': config.get('liens', {}).get('galerie_oiseaux', '').replace('_fr', f'_{lang}'),
         
         # Footer
-        'footer_text': get_text(config, 'footer'),
+        'footer_text': t(config.get('footer', {'fr': '', 'en': ''}), 'fr' if lang == 'fr' else 'en')
+            if isinstance(config.get('footer'), dict) 
+            else config.get('footer', {}).get(lang, '')
     }
+    
+    # Fix footer for simple dict structure
+    footer = config.get('footer', {})
+    if isinstance(footer, dict):
+        context['footer_text'] = footer.get(lang, footer.get('fr', ''))
     
     return context
 
+
+# =============================================================================
+# MAIN GENERATOR
+# =============================================================================
+
 def generate_pages(config_path: str = 'content.yaml', 
                    template_path: str = 'template.html',
-                   output_dir: str = '.'):
-    """Génère les pages FR et EN"""
+                   output_dir: str = '.') -> None:
+    """
+    Generate bilingual HTML pages from YAML config.
+    Creates: index_fr.html, index_en.html, index.html (redirect)
+    """
+    # Load config
+    with open(config_path, 'r', encoding='utf-8') as f:
+        config = yaml.safe_load(f)
     
-    print("=" * 50)
-    print("GÉNÉRATION DE LA PAGE PERSONNELLE")
-    print("=" * 50)
-    
-    # Charger config et template
-    config = load_config(config_path)
-    template = load_template(template_path)
+    # Load template
+    with open(template_path, 'r', encoding='utf-8') as f:
+        template = f.read()
     
     output_path = Path(output_dir)
-    output_path.mkdir(parents=True, exist_ok=True)
     
-    # Générer les deux versions
+    # Generate for each language
     for lang in ['fr', 'en']:
-        print(f"\n📄 Génération index_{lang}.html...")
-        
         context = build_context(config, lang)
         html = render_template(template, context)
         
-        output_file = output_path / f'index_{lang}.html'
-        with open(output_file, 'w', encoding='utf-8') as f:
+        out_file = output_path / f'index_{lang}.html'
+        with open(out_file, 'w', encoding='utf-8') as f:
             f.write(html)
-        
-        print(f"   ✓ {output_file}")
+        print(f"✓ Generated: {out_file}")
     
-    # Créer un index.html qui redirige vers FR par défaut
+    # Create redirect index.html
     redirect_html = '''<!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <meta http-equiv="refresh" content="0; url=index_fr.html">
-    <script>window.location.href = 'index_fr.html';</script>
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        const targetLang = userLang.startsWith('fr') ? 'fr' : 'en';
+        window.location.href = 'index_' + targetLang + '.html';
+    </script>
 </head>
 <body>
-    <p>Redirection vers <a href="index_fr.html">la page française</a>...</p>
+    <p>Redirecting... <a href="index_fr.html">Français</a> | <a href="index_en.html">English</a></p>
 </body>
 </html>'''
     
     with open(output_path / 'index.html', 'w', encoding='utf-8') as f:
         f.write(redirect_html)
-    print(f"\n   ✓ index.html (redirection)")
-    
-    print("\n" + "=" * 50)
-    print("✅ Génération terminée!")
-    print(f"   CSS: {config.get('css_path', 'gallery.css')}")
-    print(f"   Photo profil: {config.get('photo', 'profile.jpg')}")
-    print(f"   Photo oiseau ML: {config['oiseaux'].get('photo_ml', 'non défini')}")
-    print("=" * 50)
+    print("✓ Generated: index.html (redirect)")
+
 
 if __name__ == '__main__':
-    import sys
-    
-    # Arguments optionnels
-    config_path = sys.argv[1] if len(sys.argv) > 1 else 'content.yaml'
-    output_dir = sys.argv[2] if len(sys.argv) > 2 else '.'
-    
-    generate_pages(config_path=config_path, output_dir=output_dir)
+    generate_pages()

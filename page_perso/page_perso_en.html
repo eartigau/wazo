@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étienne Artigau - Astrophysicist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- CSS partagé avec la galerie d'oiseaux -->
+    <link rel="stylesheet" href="gallery/gallery.css">
+    <!-- Styles spécifiques page perso -->
+    <style>
+        /* Variables page perso - tons doux */
+        :root {
+            --perso-green-soft: #87a878;
+            --perso-green-medium: #6b8f5c;
+            --perso-bg-green: #e8f0e4;
+            --perso-bg-warm: #f5f2ed;
+        }
+        
+        /* Reset pour page perso */
+        body.page-perso {
+            background: var(--bg-cream, #faf8f5);
+            color: var(--text-dark, #2c3e2d);
+        }
+        
+        /* Navigation fixe */
+        .perso-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-light, #e8ede8);
+            z-index: 1000;
+            padding: 0 20px;
+        }
+        
+        .perso-nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 60px;
+        }
+        
+        .perso-nav-brand {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px;
+            font-weight: 600;
+            color: var(--perso-green-medium);
+            text-decoration: none;
+        }
+        
+        .perso-nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+        
+        .perso-nav-links a {
+            color: var(--text-medium, #566356);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        .perso-nav-links a:hover {
+            color: var(--perso-green-medium);
+        }
+        
+        .perso-lang-toggle {
+            display: flex;
+            gap: 8px;
+            padding: 6px 12px;
+            background: var(--bg-cream, #faf8f5);
+            border-radius: 20px;
+        }
+        
+        .perso-lang-btn {
+            background: none;
+            border: none;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-light, #7a8a7a);
+            cursor: pointer;
+            padding: 4px 10px;
+            border-radius: 12px;
+            transition: all 0.2s;
+        }
+        
+        .perso-lang-btn.active {
+            background: var(--perso-green-medium);
+            color: white;
+        }
+        
+        .perso-mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--perso-green-medium);
+        }
+        
+        /* Sections */
+        .perso-section {
+            min-height: 100vh;
+            padding: 100px 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .perso-section-inner {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        /* Hero - vert doux */
+        .perso-hero {
+            background: linear-gradient(135deg, var(--perso-bg-green) 0%, var(--perso-bg-warm) 100%);
+            color: var(--text-dark, #2c3e2d);
+            text-align: center;
+            position: relative;
+        }
+        
+        .perso-hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .perso-profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid rgba(107, 143, 92, 0.3);
+            margin-bottom: 30px;
+            box-shadow: 0 10px 40px rgba(107, 143, 92, 0.2);
+        }
+        
+        .perso-hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--perso-green-medium);
+        }
+        
+        .perso-hero .perso-subtitle {
+            font-size: 20px;
+            color: var(--text-medium, #566356);
+            margin-bottom: 8px;
+        }
+        
+        .perso-hero .perso-affiliation {
+            font-size: 16px;
+            color: var(--text-light, #7a8a7a);
+            margin-bottom: 30px;
+        }
+        
+        .perso-hero-intro {
+            font-size: 18px;
+            line-height: 1.8;
+            color: var(--text-dark, #2c3e2d);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .perso-scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 13px;
+            color: var(--text-light, #7a8a7a);
+            animation: perso-bounce 2s infinite;
+        }
+        
+        @keyframes perso-bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+        
+        /* Section contenu */
+        .perso-content-section {
+            background: white;
+        }
+        
+        .perso-content-section.alt-bg {
+            background: var(--bg-cream, #faf8f5);
+        }
+        
+        .perso-section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            color: var(--perso-green-medium);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .perso-section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--perso-green-soft);
+            border-radius: 2px;
+        }
+        
+        .perso-section-content {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .perso-section-text {
+            flex: 1;
+            font-size: 17px;
+            color: var(--text-dark, #2c3e2d);
+            white-space: pre-line;
+            line-height: 1.8;
+        }
+        
+        .perso-section-photo {
+            flex-shrink: 0;
+        }
+        
+        .perso-content-image {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(107, 143, 92, 0.15);
+            transition: transform 0.3s;
+        }
+        
+        .perso-content-image:hover {
+            transform: scale(1.02);
+        }
+        
+        /* Section Médias */
+        .perso-medias-section {
+            background: var(--bg-cream, #faf8f5);
+        }
+        
+        .perso-ads-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--perso-green-medium);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+        
+        .perso-ads-link:hover {
+            background: var(--perso-green-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(107, 143, 92, 0.3);
+        }
+        
+        .perso-videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .perso-video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+        
+        .perso-video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .perso-video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .perso-video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .perso-video-title {
+            padding: 15px;
+            font-size: 14px;
+            color: var(--text-medium, #566356);
+            text-align: center;
+        }
+        
+        /* Section oiseaux - vert doux */
+        .perso-birds-section {
+            background: linear-gradient(135deg, var(--perso-bg-green) 0%, #d4e4ce 100%);
+            color: var(--text-dark, #2c3e2d);
+        }
+        
+        .perso-birds-section .perso-section-title {
+            color: var(--perso-green-medium);
+        }
+        
+        .perso-birds-section .perso-section-text {
+            color: var(--text-dark, #2c3e2d);
+        }
+        
+        .perso-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 28px;
+            background: var(--perso-green-medium);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s;
+            margin-top: 25px;
+        }
+        
+        .perso-btn:hover {
+            background: var(--perso-green-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(107, 143, 92, 0.3);
+        }
+        
+        /* Footer */
+        .perso-footer {
+            text-align: center;
+            padding: 40px 20px;
+            background: var(--perso-green-medium);
+            color: rgba(255,255,255,0.85);
+            font-size: 14px;
+        }
+        
+        .perso-footer a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .perso-footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .perso-mobile-menu-btn {
+                display: block;
+            }
+            
+            .perso-nav-links {
+                display: none;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                gap: 15px;
+                border-bottom: 1px solid var(--border-light);
+            }
+            
+            .perso-nav-links.active {
+                display: flex;
+            }
+            
+            .perso-section {
+                padding: 80px 20px;
+                min-height: auto;
+            }
+            
+            .perso-hero {
+                min-height: 100vh;
+            }
+            
+            .perso-hero h1 {
+                font-size: 32px;
+            }
+            
+            .perso-hero .perso-subtitle {
+                font-size: 18px;
+            }
+            
+            .perso-profile-photo {
+                width: 140px;
+                height: 140px;
+            }
+            
+            .perso-section-title {
+                font-size: 28px;
+                text-align: center;
+            }
+            
+            .perso-section-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .perso-section-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .perso-section-photo {
+                order: -1;
+            }
+            
+            .perso-content-image {
+                max-width: 250px;
+            }
+            
+            .perso-scroll-hint {
+                display: none;
+            }
+            
+            .perso-videos-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body class="page-perso">
+    <!-- Navigation -->
+    <nav class="perso-nav">
+        <div class="perso-nav-inner">
+            <a href="#" class="perso-nav-brand">Étienne Artigau</a>
+            <button class="perso-mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            <ul class="perso-nav-links" id="navLinks">
+                <li><a href="#recherche">Research</a></li>
+                <li><a href="#medias">Media</a></li>
+                <li><a href="#oiseaux">Photos</a></li>
+                <li>
+                    <div class="perso-lang-toggle">
+                        <button class="perso-lang-btn " onclick="switchLang('fr')">FR</button>
+                        <button class="perso-lang-btn active" onclick="switchLang('en')">EN</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="perso-section perso-hero" id="accueil">
+        <div class="perso-hero-content">
+            <img src="profile.jpg" alt="Étienne Artigau" class="perso-profile-photo" onerror="this.style.display='none'">
+            <h1>Étienne Artigau</h1>
+            <p class="perso-subtitle">Astrophysicist</p>
+            <p class="perso-affiliation">Trottier Institute for Research on Exoplanets (iREx) · Université de Montréal</p>
+            <p class="perso-hero-intro">I am an astrophysicist at Université de Montréal, member of the Trottier Institute 
+for Research on Exoplanets (iREx). My research focuses on brown dwarfs, exoplanets, 
+and astronomical instrumentation.</p>
+        </div>
+        <div class="perso-scroll-hint">Press Space to scroll ↓</div>
+    </section>
+
+    <!-- Recherche -->
+    <section class="perso-section perso-content-section" id="recherche">
+        <div class="perso-section-inner">
+            <h2 class="perso-section-title">Research</h2>
+            <div class="perso-section-content">
+                <div class="perso-section-text">I work on the detection and characterization of exoplanets and brown dwarfs in the solar 
+neighborhood. I am the scientific lead for the NIRPS infrared spectrograph (installed at 
+ESO's 3.6m telescope in Chile) and SPIRou (at the Canada-France-Hawaii Telescope).
+
+I have developed innovative high-precision velocimetry techniques that enable the detection 
+of Earth-mass planets around low-mass stars. More recently, I developed a method to measure 
+stellar temperature variations with unprecedented precision.</div>
+                <div class="perso-section-photo">
+                    <img src="recherche.jpg" alt="Research" class="perso-content-image" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Médias & Publications -->
+    <section class="perso-section perso-medias-section" id="medias">
+        <div class="perso-section-inner">
+            <h2 class="perso-section-title">Media & Publications</h2>
+            
+            <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=%20author%3A%22Artigau%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" class="perso-ads-link">
+                📚 View my publications on NASA ADS
+            </a>
+            
+            <div class="perso-videos-grid">
+                
+                <div class="perso-video-card">
+                    <div class="perso-video-embed">
+                        <iframe src="https://www.youtube.com/embed/U6U7MkIS4MQ" 
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                    <div class="perso-video-title">Video 1 title</div>
+                </div>
+                
+                <div class="perso-video-card">
+                    <div class="perso-video-embed">
+                        <iframe src="https://www.youtube.com/embed/Y4A2LHp6a1o" 
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                    <div class="perso-video-title">Video 2 title</div>
+                </div>
+                
+                <div class="perso-video-card">
+                    <div class="perso-video-embed">
+                        <iframe src="https://www.youtube.com/embed/iGqjRoDgzR8" 
+                                allowfullscreen
+                                loading="lazy"></iframe>
+                    </div>
+                    <div class="perso-video-title">Video 3 title</div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Photographie d'oiseaux -->
+    <section class="perso-section perso-birds-section" id="oiseaux">
+        <div class="perso-section-inner">
+            <h2 class="perso-section-title">Bird Photography</h2>
+            <div class="perso-section-content">
+                <div class="perso-section-text">
+                    Outside of work, I am a passionate amateur birder. Since 1989, I have documented 
+over 47,000 bird observations around the world, along with thousands of photographs.
+
+My photo gallery presents a selection of my best images, organized by species, 
+taxonomic family, and trip.
+                    <a href="gallery/index_fr.html" class="perso-btn">
+                        🐦 View gallery
+                    </a>
+                </div>
+                <div class="perso-section-photo">
+                    <img src="oiseaux.jpg" alt="Bird Photography" class="perso-content-image" onerror="this.style.display='none'">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="perso-footer">
+        <p>© 2025 Étienne Artigau</p>
+        <p style="margin-top: 8px;">
+            <a href="mailto:etienne.artigau@umontreal.ca">etienne.artigau@umontreal.ca</a> · 
+            <a href="https://orcid.org/0000-0003-3506-5667" target="_blank">ORCID</a>
+        </p>
+    </footer>
+
+    <script>
+        // Toggle menu mobile
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('active');
+        }
+        
+        // Changement de langue
+        function switchLang(lang) {
+            const currentPath = window.location.pathname;
+            const baseName = currentPath.replace(/index_(fr|en)\.html$/, '');
+            window.location.href = baseName + 'index_' + lang + '.html';
+        }
+        
+        // Scroll avec barre espace
+        document.addEventListener('keydown', function(e) {
+            if (e.code === 'Space' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
+                e.preventDefault();
+                
+                const sections = document.querySelectorAll('.perso-section');
+                const scrollY = window.scrollY;
+                
+                for (let i = 0; i < sections.length; i++) {
+                    const sectionTop = sections[i].offsetTop - 60;
+                    if (sectionTop > scrollY + 50) {
+                        sections[i].scrollIntoView({ behavior: 'smooth' });
+                        break;
+                    }
+                }
+            }
+        });
+        
+        // Fermer menu au clic sur lien
+        document.querySelectorAll('.perso-nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('active');
+            });
+        });
+        
+        // Effet scroll navigation
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.perso-nav');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

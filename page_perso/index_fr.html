@@ -5,30 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Étienne Artigau - Astrophysicien</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <!-- CSS partagé avec la galerie d'oiseaux -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="gallery/gallery.css">
-    <!-- Styles spécifiques page perso -->
     <style>
-        /* Variables étendues pour la page perso */
         :root {
-            --primary: #1a365d;
-            --primary-light: #2c5282;
-            --accent: var(--forest-green, #2d5a27);
-            --accent-light: var(--forest-green-light, #3d7a34);
-            --bg-page: #f7fafc;
-            --text-page: #2d3748;
-            --text-light-page: #718096;
-            --border-page: #e2e8f0;
+            --perso-green-soft: #87a878;
+            --perso-green-medium: #6b8f5c;
+            --perso-bg-green: #e8f0e4;
+            --perso-bg-warm: #f5f2ed;
         }
         
-        /* Reset pour la page perso */
         body.page-perso {
-            background: var(--bg-page);
-            color: var(--text-page);
+            background: var(--bg-cream, #faf8f5);
+            color: var(--text-dark, #2c3e2d);
         }
         
-        /* Navigation fixe */
+        /* Navigation */
         .perso-nav {
             position: fixed;
             top: 0;
@@ -36,7 +28,7 @@
             right: 0;
             background: rgba(255,255,255,0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-page);
+            border-bottom: 1px solid var(--border-light, #e8ede8);
             z-index: 1000;
             padding: 0 20px;
         }
@@ -54,7 +46,7 @@
             font-family: 'Playfair Display', serif;
             font-size: 20px;
             font-weight: 600;
-            color: var(--primary);
+            color: var(--perso-green-medium);
             text-decoration: none;
         }
         
@@ -66,22 +58,20 @@
         }
         
         .perso-nav-links a {
-            color: var(--text-page);
+            color: var(--text-medium, #566356);
             text-decoration: none;
             font-size: 14px;
             font-weight: 500;
             transition: color 0.2s;
         }
         
-        .perso-nav-links a:hover {
-            color: var(--accent);
-        }
+        .perso-nav-links a:hover { color: var(--perso-green-medium); }
         
         .perso-lang-toggle {
             display: flex;
             gap: 8px;
             padding: 6px 12px;
-            background: var(--bg-page);
+            background: var(--bg-cream, #faf8f5);
             border-radius: 20px;
         }
         
@@ -90,7 +80,7 @@
             border: none;
             font-size: 13px;
             font-weight: 500;
-            color: var(--text-light-page);
+            color: var(--text-light, #7a8a7a);
             cursor: pointer;
             padding: 4px 10px;
             border-radius: 12px;
@@ -98,7 +88,7 @@
         }
         
         .perso-lang-btn.active {
-            background: var(--primary);
+            background: var(--perso-green-medium);
             color: white;
         }
         
@@ -108,6 +98,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
+            color: var(--perso-green-medium);
         }
         
         /* Sections */
@@ -126,25 +117,21 @@
         
         /* Hero */
         .perso-hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-            color: white;
+            background: linear-gradient(135deg, var(--perso-bg-green) 0%, var(--perso-bg-warm) 100%);
             text-align: center;
             position: relative;
         }
         
-        .perso-hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
+        .perso-hero-content { max-width: 800px; margin: 0 auto; }
         
         .perso-profile-photo {
             width: 180px;
             height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(255,255,255,0.3);
+            border: 4px solid rgba(107, 143, 92, 0.3);
             margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 40px rgba(107, 143, 92, 0.2);
         }
         
         .perso-hero h1 {
@@ -152,24 +139,25 @@
             font-size: 48px;
             font-weight: 700;
             margin-bottom: 10px;
+            color: var(--perso-green-medium);
         }
         
         .perso-hero .perso-subtitle {
             font-size: 20px;
-            opacity: 0.9;
+            color: var(--text-medium, #566356);
             margin-bottom: 8px;
         }
         
         .perso-hero .perso-affiliation {
             font-size: 16px;
-            opacity: 0.8;
+            color: var(--text-light, #7a8a7a);
             margin-bottom: 30px;
         }
         
         .perso-hero-intro {
             font-size: 18px;
             line-height: 1.8;
-            opacity: 0.95;
+            color: var(--text-dark, #2c3e2d);
             max-width: 700px;
             margin: 0 auto;
         }
@@ -180,7 +168,7 @@
             left: 50%;
             transform: translateX(-50%);
             font-size: 13px;
-            opacity: 0.7;
+            color: var(--text-light, #7a8a7a);
             animation: perso-bounce 2s infinite;
         }
         
@@ -189,19 +177,14 @@
             50% { transform: translateX(-50%) translateY(8px); }
         }
         
-        /* Section standard */
-        .perso-content-section {
-            background: white;
-        }
-        
-        .perso-content-section:nth-child(odd) {
-            background: var(--bg-page);
-        }
+        /* Content sections */
+        .perso-content-section { background: white; }
+        .perso-content-section.alt-bg { background: var(--bg-cream, #faf8f5); }
         
         .perso-section-title {
             font-family: 'Playfair Display', serif;
             font-size: 36px;
-            color: var(--primary);
+            color: var(--perso-green-medium);
             margin-bottom: 30px;
             position: relative;
             padding-bottom: 15px;
@@ -214,24 +197,229 @@
             left: 0;
             width: 60px;
             height: 3px;
-            background: var(--accent);
+            background: var(--perso-green-soft);
             border-radius: 2px;
         }
         
+        .perso-section-content {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+        
         .perso-section-text {
+            flex: 1;
             font-size: 17px;
-            color: var(--text-page);
-            white-space: pre-line;
+            color: var(--text-dark, #2c3e2d);
             line-height: 1.8;
         }
         
-        /* Boutons */
+        .perso-section-text p { margin-bottom: 1em; }
+        .perso-section-text ul { margin: 1em 0; padding-left: 0; list-style: none; }
+        .perso-section-text li { margin-bottom: 0.8em; padding-left: 1.5em; position: relative; }
+        .perso-section-text li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--perso-green-medium);
+            font-weight: bold;
+        }
+        
+        .perso-section-text a {
+            color: var(--perso-green-medium);
+            text-decoration: none;
+            border-bottom: 1px solid var(--perso-green-soft);
+            transition: all 0.2s;
+        }
+        
+        .perso-section-text a:hover {
+            color: var(--perso-green-soft);
+            border-bottom-color: var(--perso-green-medium);
+        }
+        
+        .perso-section-photo { flex-shrink: 0; }
+        
+        .perso-content-image {
+            max-width: 300px;
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(107, 143, 92, 0.15);
+            transition: transform 0.3s;
+        }
+        
+        .perso-content-image:hover { transform: scale(1.02); }
+        
+        /* Médias section */
+        .perso-medias-section { background: var(--bg-cream, #faf8f5); }
+        
+        .perso-ads-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: var(--perso-green-medium);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.3s;
+            margin-bottom: 40px;
+        }
+        
+        .perso-ads-link:hover {
+            background: var(--perso-green-soft);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(107, 143, 92, 0.3);
+        }
+        
+        /* Découvertes */
+        .perso-decouvertes { margin-bottom: 40px; }
+        
+        .perso-decouvertes h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: var(--perso-green-medium);
+            margin-bottom: 20px;
+        }
+        
+        .perso-decouvertes-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 12px;
+        }
+        
+        .perso-decouverte-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            border: 1px solid var(--border-light, #e8ede8);
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s;
+        }
+        
+        .perso-decouverte-item:hover {
+            border-color: var(--perso-green-soft);
+            box-shadow: 0 2px 8px rgba(107, 143, 92, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        .perso-decouverte-annee {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--perso-green-medium);
+            background: var(--perso-bg-green);
+            padding: 4px 8px;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+        
+        .perso-decouverte-titre {
+            font-size: 14px;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+        
+        /* Videos */
+        .perso-videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+        
+        .perso-video-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .perso-video-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+        
+        .perso-video-thumbnail {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .perso-video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .perso-play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 68px;
+            height: 48px;
+            background: rgba(255,0,0,0.9);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            transition: all 0.3s;
+        }
+        
+        .perso-video-card:hover .perso-play-btn {
+            background: rgba(255,0,0,1);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .perso-video-embed {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .perso-video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .perso-video-title {
+            padding: 15px;
+            font-size: 14px;
+            color: var(--text-medium, #566356);
+            text-align: center;
+        }
+        
+        /* Birds section */
+        .perso-birds-section {
+            background: linear-gradient(135deg, var(--perso-bg-green) 0%, #d4e4ce 100%);
+        }
+        
         .perso-btn {
             display: inline-flex;
             align-items: center;
             gap: 8px;
             padding: 14px 28px;
-            background: var(--accent);
+            background: var(--perso-green-medium);
             color: white;
             text-decoration: none;
             border-radius: 30px;
@@ -242,158 +430,26 @@
         }
         
         .perso-btn:hover {
-            background: var(--accent-light);
+            background: var(--perso-green-soft);
             transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);
-        }
-        
-        .perso-btn-secondary {
-            background: var(--primary);
-        }
-        
-        .perso-btn-secondary:hover {
-            background: var(--primary-light);
-            box-shadow: 0 4px 15px rgba(26, 54, 93, 0.3);
-        }
-        
-        /* Grille projets */
-        .perso-projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-        }
-        
-        .perso-project-card {
-            background: var(--bg-page);
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid var(--border-page);
-            transition: all 0.3s;
-            text-decoration: none;
-            color: inherit;
-        }
-        
-        .perso-project-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-            border-color: var(--accent);
-        }
-        
-        .perso-project-name {
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 8px;
-        }
-        
-        .perso-project-desc {
-            font-size: 14px;
-            color: var(--text-light-page);
-        }
-        
-        /* Timeline parcours */
-        .perso-timeline {
-            margin-top: 30px;
-        }
-        
-        .perso-timeline-item {
-            display: flex;
-            gap: 20px;
-            padding: 20px 0;
-            border-bottom: 1px solid var(--border-page);
-        }
-        
-        .perso-timeline-item:last-child {
-            border-bottom: none;
-        }
-        
-        .perso-timeline-date {
-            min-width: 140px;
-            font-weight: 600;
-            color: var(--accent);
-            font-size: 14px;
-        }
-        
-        .perso-timeline-content {
-            font-size: 16px;
-        }
-        
-        /* Section oiseaux avec photo ML */
-        .perso-birds-section {
-            background: linear-gradient(135deg, var(--forest-green, #2d5a27) 0%, var(--forest-green-dark, #1e3d1a) 100%);
-            color: white;
-            position: relative;
-        }
-        
-        .perso-birds-section .perso-section-title {
-            color: white;
-        }
-        
-        .perso-birds-section .perso-section-title::after {
-            background: var(--accent-light);
-        }
-        
-        .perso-birds-section .perso-section-text {
-            color: rgba(255,255,255,0.9);
-        }
-        
-        .perso-birds-content {
-            display: flex;
-            gap: 50px;
-            align-items: center;
-        }
-        
-        .perso-birds-text {
-            flex: 1;
-        }
-        
-        .perso-birds-photo {
-            flex-shrink: 0;
-        }
-        
-        .perso-bird-image {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid rgba(255,255,255,0.3);
-            box-shadow: 0 15px 50px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-        }
-        
-        .perso-bird-image:hover {
-            transform: scale(1.05);
-        }
-        
-        .perso-birds-section .perso-btn {
-            background: white;
-            color: var(--forest-green, #2d5a27);
-        }
-        
-        .perso-birds-section .perso-btn:hover {
-            background: var(--accent-light);
-            color: white;
+            box-shadow: 0 4px 15px rgba(107, 143, 92, 0.3);
         }
         
         /* Footer */
         .perso-footer {
             text-align: center;
             padding: 40px 20px;
-            background: var(--primary);
-            color: rgba(255,255,255,0.7);
+            background: var(--perso-green-medium);
+            color: rgba(255,255,255,0.85);
             font-size: 14px;
         }
         
-        .perso-footer a {
-            color: var(--accent-light);
-        }
+        .perso-footer a { color: white; text-decoration: none; }
+        .perso-footer a:hover { text-decoration: underline; }
         
         /* Responsive */
         @media (max-width: 768px) {
-            .perso-mobile-menu-btn {
-                display: block;
-            }
+            .perso-mobile-menu-btn { display: block; }
             
             .perso-nav-links {
                 display: none;
@@ -405,64 +461,24 @@
                 flex-direction: column;
                 padding: 20px;
                 gap: 15px;
-                border-bottom: 1px solid var(--border-page);
+                border-bottom: 1px solid var(--border-light);
             }
             
-            .perso-nav-links.active {
-                display: flex;
-            }
+            .perso-nav-links.active { display: flex; }
             
             .perso-section {
                 padding: 80px 20px;
                 min-height: auto;
             }
             
-            .perso-hero {
-                min-height: 100vh;
-            }
-            
-            .perso-hero h1 {
-                font-size: 32px;
-            }
-            
-            .perso-hero .perso-subtitle {
-                font-size: 18px;
-            }
-            
-            .perso-profile-photo {
-                width: 140px;
-                height: 140px;
-            }
+            .perso-hero { min-height: 100vh; }
+            .perso-hero h1 { font-size: 32px; }
+            .perso-hero .perso-subtitle { font-size: 18px; }
+            .perso-profile-photo { width: 140px; height: 140px; }
             
             .perso-section-title {
                 font-size: 28px;
-            }
-            
-            .perso-timeline-item {
-                flex-direction: column;
-                gap: 8px;
-            }
-            
-            .perso-timeline-date {
-                min-width: auto;
-            }
-            
-            .perso-scroll-hint {
-                display: none;
-            }
-            
-            .perso-birds-content {
-                flex-direction: column;
                 text-align: center;
-            }
-            
-            .perso-birds-photo {
-                order: -1;
-            }
-            
-            .perso-bird-image {
-                width: 160px;
-                height: 160px;
             }
             
             .perso-section-title::after {
@@ -470,10 +486,16 @@
                 transform: translateX(-50%);
             }
             
-            .perso-birds-section .perso-section-title::after {
-                left: 50%;
-                transform: translateX(-50%);
+            .perso-section-content {
+                flex-direction: column;
+                text-align: center;
             }
+            
+            .perso-section-photo { order: -1; }
+            .perso-content-image { max-width: 250px; }
+            .perso-scroll-hint { display: none; }
+            .perso-videos-grid { grid-template-columns: 1fr; }
+            .perso-decouvertes-list { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -485,9 +507,8 @@
             <button class="perso-mobile-menu-btn" onclick="toggleMenu()">☰</button>
             <ul class="perso-nav-links" id="navLinks">
                 <li><a href="#recherche">Recherche</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#oiseaux">Oiseaux</a></li>
+                <li><a href="#medias">Médias</a></li>
+                <li><a href="#oiseaux">Photos</a></li>
                 <li>
                     <div class="perso-lang-toggle">
                         <button class="perso-lang-btn active" onclick="switchLang('fr')">FR</button>
@@ -506,122 +527,147 @@
             <p class="perso-subtitle">Astrophysicien</p>
             <p class="perso-affiliation">Institut de recherche sur les exoplanètes (iREx) · Université de Montréal</p>
             <p class="perso-hero-intro">Je suis astrophysicien à l'Université de Montréal, membre de l'Institut de recherche 
-sur les exoplanètes (iREx). Mes recherches portent sur les naines brunes, les exoplanètes 
-et l'instrumentation astronomique.</p>
+sur les exoplanètes (iREx). Mes recherches portent sur les exoplanètes et les naines brunes. 
+De façon plus générale, je m'intéresse aux algorithmes de traitement de données et au 
+développement de nouvelles méthodes numériques pour traiter les données astronomiques.</p>
         </div>
-        <div class="perso-scroll-hint">Appuyez sur Espace pour défiler ↓</div>
+        <div class="perso-scroll-hint">Défiler ↓</div>
     </section>
 
     <!-- Recherche -->
     <section class="perso-section perso-content-section" id="recherche">
         <div class="perso-section-inner">
-            <h2 class="perso-section-title">Mes recherches</h2>
-            <div class="perso-section-text">Je travaille sur la détection et la caractérisation des exoplanètes et des naines brunes 
-dans le voisinage solaire. Je suis responsable scientifique des spectrographes infrarouges 
-NIRPS (installé au télescope de 3.6m de l'ESO au Chili) et SPIRou (au télescope Canada-France-Hawaii).
-
-J'ai développé des techniques innovantes de vélocimétrie de haute précision permettant de 
-détecter des planètes de masse terrestre autour d'étoiles de faible masse. Plus récemment, 
-j'ai mis au point une méthode pour mesurer les variations de température stellaire avec une 
-précision sans précédent.</div>
-        </div>
-    </section>
-
-    <!-- Instrumentation -->
-    <section class="perso-section perso-content-section" id="instrumentation">
-        <div class="perso-section-inner">
-            <h2 class="perso-section-title">Instrumentation</h2>
-            <div class="perso-section-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</div>
-        </div>
-    </section>
-
-    <!-- Projets -->
-    <section class="perso-section perso-content-section" id="projets">
-        <div class="perso-section-inner">
-            <h2 class="perso-section-title">Projets</h2>
-            <div class="perso-projects-grid">
-                
-                <a href="https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html" target="_blank" class="perso-project-card">
-                    <div class="perso-project-name">NIRPS</div>
-                    <div class="perso-project-desc">Spectrographe infrarouge au télescope ESO 3.6m</div>
-                </a>
-                
-                <a href="https://www.cfht.hawaii.edu/Instruments/SPIRou/" target="_blank" class="perso-project-card">
-                    <div class="perso-project-name">SPIRou</div>
-                    <div class="perso-project-desc">Spectropolarimètre infrarouge au CFHT</div>
-                </a>
-                
-                <a href="https://jwst-docs.stsci.edu/jwst-near-infrared-imager-and-slitless-spectrograph" target="_blank" class="perso-project-card">
-                    <div class="perso-project-name">JWST/NIRISS</div>
-                    <div class="perso-project-desc">Support scientifique pour l'instrument NIRISS</div>
-                </a>
-                
+            <h2 class="perso-section-title">Recherche</h2>
+            <div class="perso-section-content">
+                <div class="perso-section-text"><p>Je suis spécialisé dans la recherche sur les exoplanètes. Mes travaux sont intimement liés<br>au développement d'instruments de haute précision en spectroscopie infrarouge, ainsi qu'à<br>la mise au point de techniques avancées de vélocimétrie.</p>
+<p>J'ai participé au développement de plusieurs instruments, dont le spectrographe infrarouge<br><a href="https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html" target="_blank">NIRPS</a> (installé au<br>télescope de 3,6 m de l'ESO au Chili) et <a href="https://spirou.irap.omp.eu/" target="_blank">SPIRou</a> (au télescope<br>Canada-France-Hawaï). Depuis plusieurs années, je suis impliqué dans le support des algorithmes<br>d'analyse utilisés pour l'instrument <a href="https://www.stsci.edu/jwst/instruments/niriss" target="_blank">NIRISS</a><br>à bord du télescope spatial James Webb. Finalement, je suis aussi impliqué dans les algorithmes<br>qui seront utilisés dans le futur instrument <a href="https://www.eso.org/sci/facilities/eelt/instruments/andes.html" target="_blank">ANDES</a><br>du télescope ELT.</p>
+<p>Voici quelques uns de mes travaux récents :</p>
+<ul><li>Mesure ultraprécise des variations de température stellaire. Pour la première fois, il est</li></ul><p>possible de mesurer des variations de <1 Kelvin d'une étoile sur plusieurs mois</p><p>(<a href="https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..60A/abstract" target="_blank">publication</a>)</p>
+<ul><li>Développement du code Line-By-Line pour mesurer les vitesses radiales dans l'infrarouge</li></ul><p>avec une précision de l'ordre du mètre par seconde (<a href="https://lbl.exoplanets.ca" target="_blank">projet LBL</a>)</p>
+<p>Tous ces travaux ne sont possibles que grâce à l'équipe de l'iREx. Visitez la<br><a href="https://exoplanetes.umontreal.ca" target="_blank">page de l'institut</a> pour en savoir plus sur nos activités<br>et abonnez-vous à notre <a href="https://exoplanetes.umontreal.ca/infolettre/" target="_blank">infolettre</a>.</p></div>
+                <div class="perso-section-photo">
+                    <img src="painting.png" alt="Recherche" class="perso-content-image" onerror="this.style.display='none'">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Parcours -->
-    <section class="perso-section perso-content-section" id="parcours">
+    <!-- Médias & Publications -->
+    <section class="perso-section perso-medias-section" id="medias">
         <div class="perso-section-inner">
-            <h2 class="perso-section-title">Parcours</h2>
-            <div class="perso-timeline">
-                
-                <div class="perso-timeline-item">
-                    <div class="perso-timeline-date">2009 - présent</div>
-                    <div class="perso-timeline-content">Chercheur, Université de Montréal</div>
-                </div>
-                
-                <div class="perso-timeline-item">
-                    <div class="perso-timeline-date">2006 - 2009</div>
-                    <div class="perso-timeline-content">Astronome, Observatoire Gemini Sud, Chili</div>
-                </div>
-                
-                <div class="perso-timeline-item">
-                    <div class="perso-timeline-date">2006</div>
-                    <div class="perso-timeline-content">Ph.D. Astrophysique, Université de Montréal</div>
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    <!-- Publications -->
-    <section class="perso-section perso-content-section" id="publications">
-        <div class="perso-section-inner">
-            <h2 class="perso-section-title">Publications</h2>
-            <p class="perso-section-text">Liste complète de mes publications scientifiques sur NASA ADS.</p>
-            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0003-3506-5667&sort=date%20desc" target="_blank" class="perso-btn perso-btn-secondary">
-                📚 Voir mes publications
+            <h2 class="perso-section-title">Médias & Publications</h2>
+            
+            <a href="https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=%20author%3A%22Artigau%22&sort=date%20desc%2C%20bibcode%20desc&p_=0" target="_blank" class="perso-ads-link">
+                📚 Voir mes publications sur NASA ADS
             </a>
+            
+            <!-- Découvertes -->
+            <div class="perso-decouvertes">
+                <h3>Découvertes & Distinctions</h3>
+                <div class="perso-decouvertes-list">
+                    
+                    <a href="https://frq.gouv.qc.ca/histoire-et-rapport/etienne-artigau-2e-prix-dexcellence-des-professionnels-et-professionnelles-de-recherche-2023/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2023</span>
+                        <span class="perso-decouverte-titre">2e prix d'excellence des professionnels de recherche FRQ-NT</span>
+                    </a>
+                    
+                    <a href="https://exoplanetes.umontreal.ca/en/webb-telescope-reveals-double-helium-tails-escaping-from-a-hot-jupiter/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2025</span>
+                        <span class="perso-decouverte-titre">WASP-121 b : Double queue d'hélium (JWST/NIRISS)</span>
+                    </a>
+                    
+                    <a href="https://exoplanetes.umontreal.ca/lhs-1140-b-premiere-preuve-prometteuse-dun-monde-de-glace-et-deau/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2024</span>
+                        <span class="perso-decouverte-titre">LHS 1140 b : Indices d'un monde océanique (JWST)</span>
+                    </a>
+                    
+                    <a href="https://www.eso.org/sci/facilities/develop/instruments/NIRPS.html" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2022</span>
+                        <span class="perso-decouverte-titre">NIRPS : Première lumière du spectrographe infrarouge</span>
+                    </a>
+                    
+                    <a href="https://exoplanetes.umontreal.ca/une-planete-ocean/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2022</span>
+                        <span class="perso-decouverte-titre">TOI-1452 b : Découverte d'une possible planète océan</span>
+                    </a>
+                    
+                    <a href="https://exoplanetes.umontreal.ca/une-naine-brune-detectee-tout-pres-dune-etoile-de-faible-masse/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2021</span>
+                        <span class="perso-decouverte-titre">TOI-1278 B : Rare naine brune en orbite rapprochée</span>
+                    </a>
+                    
+                    <a href="https://exoplanetes.umontreal.ca/les-scientifiques-resolvent-le-mystere-des-naines-brunes-variables/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2017</span>
+                        <span class="perso-decouverte-titre">Nuages des naines brunes : Mystère résolu (Science)</span>
+                    </a>
+                    
+                    <a href="https://exoplanetes.umontreal.ca/une-planete-bien-curieuse-si-loin-de-son-etoile/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2014</span>
+                        <span class="perso-decouverte-titre">GU Psc b : Exoplanète par imagerie directe</span>
+                    </a>
+                    
+                    <a href="https://exoplanetes.umontreal.ca/cfbdsir-2149-une-planete-errante/" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2012</span>
+                        <span class="perso-decouverte-titre">CFBDSIR 2149 : Découverte d'une planète errante</span>
+                    </a>
+                    
+                    <a href="https://ui.adsabs.harvard.edu/abs/2009ApJ...701.1534A" target="_blank" class="perso-decouverte-item">
+                        <span class="perso-decouverte-annee">2009</span>
+                        <span class="perso-decouverte-titre">SIMP 0136 : Première variabilité d'une naine T</span>
+                    </a>
+                    
+                </div>
+            </div>
+            
+            <!-- Vidéos -->
+            <div class="perso-videos-grid">
+                
+                <a href="https://www.youtube.com/watch?v=U6U7MkIS4MQ" target="_blank" class="perso-video-card">
+                    <div class="perso-video-thumbnail">
+                        <img src="https://img.youtube.com/vi/U6U7MkIS4MQ/maxresdefault.jpg" 
+                             alt="Titre de la vidéo 1"
+                             onerror="this.src='https://img.youtube.com/vi/U6U7MkIS4MQ/hqdefault.jpg'">
+                        <div class="perso-play-btn">▶</div>
+                    </div>
+                    <div class="perso-video-title">Titre de la vidéo 1</div>
+                </a>
+                
+                <a href="https://www.youtube.com/watch?v=Y4A2LHp6a1o" target="_blank" class="perso-video-card">
+                    <div class="perso-video-thumbnail">
+                        <img src="https://img.youtube.com/vi/Y4A2LHp6a1o/maxresdefault.jpg" 
+                             alt="Titre de la vidéo 2"
+                             onerror="this.src='https://img.youtube.com/vi/Y4A2LHp6a1o/hqdefault.jpg'">
+                        <div class="perso-play-btn">▶</div>
+                    </div>
+                    <div class="perso-video-title">Titre de la vidéo 2</div>
+                </a>
+                
+                <a href="https://www.youtube.com/watch?v=iGqjRoDgzR8" target="_blank" class="perso-video-card">
+                    <div class="perso-video-thumbnail">
+                        <img src="https://img.youtube.com/vi/iGqjRoDgzR8/maxresdefault.jpg" 
+                             alt="Titre de la vidéo 3"
+                             onerror="this.src='https://img.youtube.com/vi/iGqjRoDgzR8/hqdefault.jpg'">
+                        <div class="perso-play-btn">▶</div>
+                    </div>
+                    <div class="perso-video-title">Titre de la vidéo 3</div>
+                </a>
+                
+            </div>
         </div>
     </section>
 
-    <!-- Oiseaux -->
+    <!-- Photographie d'oiseaux -->
     <section class="perso-section perso-birds-section" id="oiseaux">
         <div class="perso-section-inner">
-            <div class="perso-birds-content">
-                <div class="perso-birds-text">
-                    <h2 class="perso-section-title">Ornithologie</h2>
-                    <div class="perso-section-text">En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai 
-documenté plus de 47 000 observations d'oiseaux à travers le monde, accompagnées de 
-milliers de photographies.
-
-Ma galerie photo présente une sélection de mes meilleures images, organisées par 
-espèce, famille taxonomique et voyage.</div>
-                    <a href="gallery/index_fr.html" class="perso-btn">
-                        🐦 Voir ma galerie photo
-                    </a>
+            <h2 class="perso-section-title">Photographie d'oiseaux</h2>
+            <div class="perso-section-content">
+                <div class="perso-section-text">
+                    <p>En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai<br>documenté plus de 47 000 observations d'oiseaux à travers le monde, accompagnées de<br>milliers de photographies.</p>
+<p>Ma galerie photo présente une sélection de mes meilleures images, organisées par<br><href = "https://eartigau.github.io/wazo/species_list_fr.html">espèce</href>, famille taxonomique et voyage.</p>
+                    <a href="https://eartigau.github.io/wazo/species_list_fr.html" class="perso-btn">🐦 Voir la galerie</a>
                 </div>
-                <div class="perso-birds-photo">
-                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/645202618/1200" 
-                         alt="Photo d'oiseau" 
-                         class="perso-bird-image"
-                         onerror="this.style.display='none'">
+                <div class="perso-section-photo">
+                    <img src="cartoon.png" alt="Photographie d'oiseaux" class="perso-content-image" onerror="this.style.display='none'">
                 </div>
             </div>
         </div>
@@ -637,51 +683,25 @@ espèce, famille taxonomique et voyage.</div>
     </footer>
 
     <script>
-        // Toggle menu mobile
         function toggleMenu() {
             document.getElementById('navLinks').classList.toggle('active');
         }
         
-        // Changement de langue
         function switchLang(lang) {
             const currentPath = window.location.pathname;
             const baseName = currentPath.replace(/index_(fr|en)\.html$/, '');
             window.location.href = baseName + 'index_' + lang + '.html';
         }
         
-        // Scroll avec barre espace
-        document.addEventListener('keydown', function(e) {
-            if (e.code === 'Space' && !['INPUT', 'TEXTAREA'].includes(document.activeElement.tagName)) {
-                e.preventDefault();
-                
-                const sections = document.querySelectorAll('.perso-section');
-                const scrollY = window.scrollY;
-                
-                for (let i = 0; i < sections.length; i++) {
-                    const sectionTop = sections[i].offsetTop - 60;
-                    if (sectionTop > scrollY + 50) {
-                        sections[i].scrollIntoView({ behavior: 'smooth' });
-                        break;
-                    }
-                }
-            }
-        });
-        
-        // Fermer menu au clic sur lien
         document.querySelectorAll('.perso-nav-links a').forEach(link => {
             link.addEventListener('click', () => {
                 document.getElementById('navLinks').classList.remove('active');
             });
         });
         
-        // Effet scroll navigation
         window.addEventListener('scroll', () => {
             const nav = document.querySelector('.perso-nav');
-            if (window.scrollY > 50) {
-                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-            } else {
-                nav.style.boxShadow = 'none';
-            }
+            nav.style.boxShadow = window.scrollY > 50 ? '0 2px 10px rgba(0,0,0,0.1)' : 'none';
         });
     </script>
 </body>

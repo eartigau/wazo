@@ -5,7 +5,7 @@
 # ============================================
 
 # --- CHEMINS ---
-css_path: "gallery/gallery.css"  # Chemin vers le CSS partagé avec la galerie
+css_path: "gallery/gallery.css"  # Chemin vers le CSS partagé (à ajuster)
 
 # --- INFORMATIONS DE BASE ---
 nom: "Étienne Artigau"
@@ -13,7 +13,7 @@ titre:
   fr: "Astrophysicien"
   en: "Astrophysicist"
 
-# Photo de profil (mettre le fichier dans le même dossier)
+# Photo de profil (hero)
 photo: "profile.jpg"
 
 # --- AFFILIATION ---
@@ -22,24 +22,21 @@ affiliation:
   departement:
     fr: "Institut de recherche sur les exoplanètes (iREx)"
     en: "Trottier Institute for Research on Exoplanets (iREx)"
-  role:
-    fr: "Chercheur"
-    en: "Research Scientist"
 
 # --- LIENS ---
 liens:
   email: "etienne.artigau@umontreal.ca"
-  publications: "https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0003-3506-5667&sort=date%20desc"
   orcid: "0000-0003-3506-5667"
   irex: "https://exoplanetes.umontreal.ca"
-  galerie_oiseaux: "gallery/index_fr.html"  # Lien relatif vers ta galerie
+  galerie_oiseaux: "https://eartigau.github.io/wazo/species_list_fr.html"
 
 # --- SECTION HERO / INTRODUCTION ---
 intro:
   fr: |
     Je suis astrophysicien à l'Université de Montréal, membre de l'Institut de recherche 
-    sur les exoplanètes (iREx). Mes recherches portent sur les naines brunes, les exoplanètes 
-    et l'instrumentation astronomique.
+    sur les exoplanètes (iREx). Mes recherches portent sur les exoplanètes et les naines brunes. 
+    De façon plus générale, je m'intéresse aux algorithmes de traitement de données et au 
+    développement de nouvelles méthodes numériques pour traiter les données astronomiques.
   en: |
     I am an astrophysicist at Université de Montréal, member of the Trottier Institute 
     for Research on Exoplanets (iREx). My research focuses on brown dwarfs, exoplanets, 
@@ -48,67 +45,164 @@ intro:
 # --- SECTION RECHERCHE ---
 recherche:
   titre:
-    fr: "Mes recherches"
-    en: "My Research"
+    fr: "Recherche"
+    en: "Research"
+  
+  photo: "painting.png"
+  
   contenu:
     fr: |
-      Je travaille sur la détection et la caractérisation des exoplanètes et des naines brunes 
-      dans le voisinage solaire. Je suis responsable scientifique des spectrographes infrarouges 
-      NIRPS (installé au télescope de 3.6m de l'ESO au Chili) et SPIRou (au télescope Canada-France-Hawaii).
+      Je suis spécialisé dans la recherche sur les exoplanètes. Mes travaux sont intimement liés 
+      au développement d'instruments de haute précision en spectroscopie infrarouge, ainsi qu'à 
+      la mise au point de techniques avancées de vélocimétrie.
       
-      J'ai développé des techniques innovantes de vélocimétrie de haute précision permettant de 
-      détecter des planètes de masse terrestre autour d'étoiles de faible masse. Plus récemment, 
-      j'ai mis au point une méthode pour mesurer les variations de température stellaire avec une 
-      précision sans précédent.
+      J'ai participé au développement de plusieurs instruments, dont le spectrographe infrarouge 
+      [NIRPS](https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html) (installé au 
+      télescope de 3,6 m de l'ESO au Chili) et [SPIRou](https://spirou.irap.omp.eu/) (au télescope 
+      Canada-France-Hawaï). Depuis plusieurs années, je suis impliqué dans le support des algorithmes 
+      d'analyse utilisés pour l'instrument [NIRISS](https://www.stsci.edu/jwst/instruments/niriss) 
+      à bord du télescope spatial James Webb. Finalement, je suis aussi impliqué dans les algorithmes 
+      qui seront utilisés dans le futur instrument [ANDES](https://www.eso.org/sci/facilities/eelt/instruments/andes.html) 
+      du télescope ELT.
+      
+      Voici quelques uns de mes travaux récents :
+      
+      • Mesure ultraprécise des variations de température stellaire. Pour la première fois, il est 
+      possible de mesurer des variations de <1 Kelvin d'une étoile sur plusieurs mois 
+      ([publication](https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..60A/abstract))
+      
+      • Développement du code Line-By-Line pour mesurer les vitesses radiales dans l'infrarouge 
+      avec une précision de l'ordre du mètre par seconde ([projet LBL](https://lbl.exoplanets.ca))
+      
+      Tous ces travaux ne sont possibles que grâce à l'équipe de l'iREx. Visitez la 
+      [page de l'institut](https://exoplanetes.umontreal.ca) pour en savoir plus sur nos activités 
+      et abonnez-vous à notre [infolettre](https://exoplanetes.umontreal.ca/infolettre/).
     en: |
       I work on the detection and characterization of exoplanets and brown dwarfs in the solar 
-      neighborhood. I am the scientific lead for the NIRPS infrared spectrograph (installed at 
-      ESO's 3.6m telescope in Chile) and SPIRou (at the Canada-France-Hawaii Telescope).
+      neighborhood. I am the scientific lead for the [NIRPS](https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html) 
+      infrared spectrograph (installed at ESO's 3.6m telescope in Chile) and 
+      [SPIRou](https://spirou.irap.omp.eu/) (at the Canada-France-Hawaii Telescope).
       
       I have developed innovative high-precision velocimetry techniques that enable the detection 
       of Earth-mass planets around low-mass stars. More recently, I developed a method to measure 
       stellar temperature variations with unprecedented precision.
-
-# --- SECTION INSTRUMENTATION ---
-instrumentation:
-  titre:
-    fr: "Instrumentation"
-    en: "Instrumentation"
-  contenu:
-    fr: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
       
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
-    en: |
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor 
-      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-      exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      I am also involved in supporting the analysis algorithms for the 
+      [NIRISS](https://www.stsci.edu/jwst/instruments/niriss) instrument aboard the James Webb 
+      Space Telescope, and in future algorithms for [ANDES](https://www.eso.org/sci/facilities/eelt/instruments/andes.html) 
+      on the ELT.
       
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-      fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      Recent work includes:
+      
+      • Ultra-precise measurement of stellar temperature variations (<1 Kelvin over months) 
+      ([publication](https://ui.adsabs.harvard.edu/abs/2023A%26A...672A..60A/abstract))
+      
+      • Development of the Line-By-Line code for meter-per-second infrared radial velocities 
+      ([LBL project](https://lbl.exoplanets.ca))
+      
+      All this work is possible thanks to the iREx team. Visit the 
+      [institute page](https://exoplanetes.umontreal.ca) and subscribe to our 
+      [newsletter](https://exoplanetes.umontreal.ca/infolettre/).
 
-# --- SECTION PUBLICATIONS ---
-publications:
+# --- SECTION MÉDIAS / PUBLICATIONS ---
+medias:
   titre:
-    fr: "Publications"
-    en: "Publications"
-  description:
-    fr: "Liste complète de mes publications scientifiques sur NASA ADS."
-    en: "Complete list of my scientific publications on NASA ADS."
-  bouton:
-    fr: "Voir mes publications"
-    en: "View my publications"
+    fr: "Médias & Publications"
+    en: "Media & Publications"
+  
+  ads_url: "https://ui.adsabs.harvard.edu/search/fq=%7B!type%3Daqp%20v%3D%24fq_database%7D&fq_database=(database%3Aastronomy%20OR%20database%3Aphysics)&q=%20author%3A%22Artigau%22&sort=date%20desc%2C%20bibcode%20desc&p_=0"
+  ads_texte:
+    fr: "Voir mes publications sur NASA ADS"
+    en: "View my publications on NASA ADS"
+  
+  videos:
+    - url: "https://www.youtube.com/watch?v=U6U7MkIS4MQ"
+      titre:
+        fr: "Titre de la vidéo 1"
+        en: "Video 1 title"
+    - url: "https://www.youtube.com/watch?v=Y4A2LHp6a1o"
+      titre:
+        fr: "Titre de la vidéo 2"
+        en: "Video 2 title"
+    - url: "https://www.youtube.com/watch?v=iGqjRoDgzR8"
+      titre:
+        fr: "Titre de la vidéo 3"
+        en: "Video 3 title"
+  
+  # Découvertes et mentions médiatiques (sources originales)
+  decouvertes_titre:
+    fr: "Découvertes & Distinctions"
+    en: "Discoveries & Awards"
+  
+  decouvertes:
+    - titre:
+        fr: "2e prix d'excellence des professionnels de recherche FRQ-NT"
+        en: "2nd Prize of Excellence for Research Professionals FRQ-NT"
+      annee: "2023"
+      url: "https://frq.gouv.qc.ca/histoire-et-rapport/etienne-artigau-2e-prix-dexcellence-des-professionnels-et-professionnelles-de-recherche-2023/"
+    
+    - titre:
+        fr: "WASP-121 b : Double queue d'hélium (JWST/NIRISS)"
+        en: "WASP-121 b: Double helium tail (JWST/NIRISS)"
+      annee: "2025"
+      url: "https://exoplanetes.umontreal.ca/en/webb-telescope-reveals-double-helium-tails-escaping-from-a-hot-jupiter/"
+    
+    - titre:
+        fr: "LHS 1140 b : Indices d'un monde océanique (JWST)"
+        en: "LHS 1140 b: Evidence of an ocean world (JWST)"
+      annee: "2024"
+      url: "https://exoplanetes.umontreal.ca/lhs-1140-b-premiere-preuve-prometteuse-dun-monde-de-glace-et-deau/"
+    
+    - titre:
+        fr: "NIRPS : Première lumière du spectrographe infrarouge"
+        en: "NIRPS: First light of infrared spectrograph"
+      annee: "2022"
+      url: "https://www.eso.org/sci/facilities/develop/instruments/NIRPS.html"
+    
+    - titre:
+        fr: "TOI-1452 b : Découverte d'une possible planète océan"
+        en: "TOI-1452 b: Discovery of a possible ocean planet"
+      annee: "2022"
+      url: "https://exoplanetes.umontreal.ca/une-planete-ocean/"
+    
+    - titre:
+        fr: "TOI-1278 B : Rare naine brune en orbite rapprochée"
+        en: "TOI-1278 B: Rare brown dwarf in close orbit"
+      annee: "2021"
+      url: "https://exoplanetes.umontreal.ca/une-naine-brune-detectee-tout-pres-dune-etoile-de-faible-masse/"
+    
+    - titre:
+        fr: "Nuages des naines brunes : Mystère résolu (Science)"
+        en: "Brown dwarf clouds: Mystery solved (Science)"
+      annee: "2017"
+      url: "https://exoplanetes.umontreal.ca/les-scientifiques-resolvent-le-mystere-des-naines-brunes-variables/"
+    
+    - titre:
+        fr: "GU Psc b : Exoplanète par imagerie directe"
+        en: "GU Psc b: Exoplanet via direct imaging"
+      annee: "2014"
+      url: "https://exoplanetes.umontreal.ca/une-planete-bien-curieuse-si-loin-de-son-etoile/"
+    
+    - titre:
+        fr: "CFBDSIR 2149 : Découverte d'une planète errante"
+        en: "CFBDSIR 2149: Discovery of a rogue planet"
+      annee: "2012"
+      url: "https://exoplanetes.umontreal.ca/cfbdsir-2149-une-planete-errante/"
+    
+    - titre:
+        fr: "SIMP 0136 : Première variabilité d'une naine T"
+        en: "SIMP 0136: First T dwarf variability"
+      annee: "2009"
+      url: "https://ui.adsabs.harvard.edu/abs/2009ApJ...701.1534A"
 
-# --- SECTION OISEAUX / HOBBY ---
+# --- SECTION PHOTOGRAPHIE D'OISEAUX ---
 oiseaux:
   titre:
-    fr: "Oiseaux"
-    en: "Birding"
-  # Identifiant Macaulay Library pour la photo mise en valeur (dans un rond)
-  photo_ml: "645202618"  # Remplacer par ton identifiant ML
+    fr: "Photographie d'oiseaux"
+    en: "Bird Photography"
+  
+  photo: "cartoon.png"
+  
   contenu:
     fr: |
       En dehors du travail, je suis un ornithologue amateur passionné. Depuis 1989, j'ai 
@@ -116,57 +210,14 @@ oiseaux:
       milliers de photographies.
       
       Ma galerie photo présente une sélection de mes meilleures images, organisées par 
-      espèce, famille taxonomique et voyage.
+      <href = "https://eartigau.github.io/wazo/species_list_fr.html">espèce</href>, famille taxonomique et voyage.
+
     en: |
       Outside of work, I am a passionate amateur birder. Since 1989, I have documented 
       over 47,000 bird observations around the world, along with thousands of photographs.
       
       My photo gallery presents a selection of my best images, organized by species, 
       taxonomic family, and trip.
-  bouton:
-    fr: "Voir ma galerie photo"
-    en: "View my photo gallery"
-
-# --- SECTION PARCOURS ---
-parcours:
-  titre:
-    fr: "Parcours"
-    en: "Career"
-  items:
-    - periode: "2009 - présent"
-      poste:
-        fr: "Chercheur, Université de Montréal"
-        en: "Research Scientist, Université de Montréal"
-    - periode: "2006 - 2009"
-      poste:
-        fr: "Astronome, Observatoire Gemini Sud, Chili"
-        en: "Astronomer, Gemini South Observatory, Chile"
-    - periode: "2006"
-      poste:
-        fr: "Ph.D. Astrophysique, Université de Montréal"
-        en: "Ph.D. Astrophysics, Université de Montréal"
-
-# --- PROJETS CLÉS ---
-projets:
-  titre:
-    fr: "Projets"
-    en: "Projects"
-  liste:
-    - nom: "NIRPS"
-      description:
-        fr: "Spectrographe infrarouge au télescope ESO 3.6m"
-        en: "Infrared spectrograph at ESO 3.6m telescope"
-      lien: "https://www.eso.org/sci/facilities/lasilla/instruments/nirps.html"
-    - nom: "SPIRou"
-      description:
-        fr: "Spectropolarimètre infrarouge au CFHT"
-        en: "Infrared spectropolarimeter at CFHT"
-      lien: "https://www.cfht.hawaii.edu/Instruments/SPIRou/"
-    - nom: "JWST/NIRISS"
-      description:
-        fr: "Support scientifique pour l'instrument NIRISS"
-        en: "Scientific support for NIRISS instrument"
-      lien: "https://jwst-docs.stsci.edu/jwst-near-infrared-imager-and-slitless-spectrograph"
 
 # --- FOOTER ---
 footer:

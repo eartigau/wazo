@@ -503,10 +503,10 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .lightbox-content {
     display: flex;
-    max-width: 1500px;
+    max-width: 1600px;
     max-height: 90vh;
-    margin: 0 100px;
-    gap: 40px;
+    margin: 0 40px;
+    gap: 28px;
 }
 
 .lightbox-image-container {
@@ -526,9 +526,9 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .lightbox-sidebar {
-    width: 360px;
+    width: 280px;
     flex-shrink: 0;
-    padding: 28px 0;
+    padding: 24px 0;
     color: var(--text-dark);
 }
 
@@ -554,9 +554,9 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .lightbox-sidebar h2 {
     font-family: 'Lora', Georgia, serif;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 600;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
     color: var(--text-dark);
     line-height: 1.2;
 }
@@ -565,15 +565,15 @@ a.dropdown-toggle.dropdown-link:hover {
     font-family: 'Lora', Georgia, serif;
     font-style: italic;
     color: var(--text-medium);
-    margin-bottom: 28px;
-    font-size: 16px;
+    margin-bottom: 20px;
+    font-size: 15px;
 }
 
 .lightbox-info {
     background: linear-gradient(135deg, rgba(45, 90, 39, 0.06) 0%, rgba(74, 124, 57, 0.04) 100%);
-    border-radius: 12px;
-    padding: 18px;
-    margin-bottom: 18px;
+    border-radius: 10px;
+    padding: 14px;
+    margin-bottom: 14px;
     border: 1px solid var(--border-light);
 }
 
@@ -596,12 +596,12 @@ a.dropdown-toggle.dropdown-link:hover {
     opacity: 0.8;
 }
 
-/* Carte dans lightbox */
+/* Carte dans lightbox - carrée */
 #lightbox-map {
     width: 100%;
-    height: 180px;
+    aspect-ratio: 1 / 1;
     border-radius: 12px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
     background: var(--forest-green-dark);
     box-shadow: var(--shadow-soft);
 }
