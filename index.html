@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="refresh" content="0; url=index.html">
+    <script>
+        const userLang = navigator.language || navigator.userLanguage;
+        const targetLang = userLang.startsWith('fr') ? 'fr' : 'en';
+        window.location.href = 'familles_index_' + targetLang + '.html';
+    </script>
+</head>
+<body>
+    <p>Redirecting... <a href="familles_index_fr.html">Français</a> | <a href="familles_index_en.html">English</a></p>
+</body>
+</html>
