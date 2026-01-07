@@ -23,14 +23,14 @@
             </ul>
             
             <!-- Sélecteur de langue -->
-            <div class="lang-switch">
-                <a href="{{ other_lang_page }}" class="lang-btn" title="{% if lang == 'fr' %}English{% else %}Français{% endif %}">
-                    {% if lang == 'fr' %}
-                    <span class="flag">🇬🇧</span>
-                    {% else %}
-                    <span class="flag">🇫🇷</span>
-                    {% endif %}
-                </a>
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                {% if lang == 'fr' %}
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
+                <a href="{{ other_lang_page }}" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                {% else %}
+                <a href="{{ other_lang_page }}" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                {% endif %}
             </div>
         </div>
     </nav>
