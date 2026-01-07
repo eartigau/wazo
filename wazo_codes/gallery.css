@@ -264,15 +264,17 @@ a.dropdown-toggle.dropdown-link:hover {
 .lang-switch {
     position: absolute;
     right: 20px;
-    display: flex;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
     gap: 0;
     background: var(--bg-light);
     border-radius: 20px;
     padding: 4px;
 }
 
-.lang-btn {
-    display: flex;
+.lang-switch .lang-btn {
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     padding: 6px 14px;
@@ -283,13 +285,14 @@ a.dropdown-toggle.dropdown-link:hover {
     color: var(--text-light);
     text-decoration: none;
     transition: all 0.2s;
+    cursor: pointer;
 }
 
-.lang-btn:hover {
+.lang-switch .lang-btn:hover {
     color: var(--text-dark);
 }
 
-.lang-btn.active {
+.lang-switch .lang-btn.active {
     background: var(--forest-green);
     color: white;
 }
@@ -1098,6 +1101,8 @@ footer a:hover {
     
     .lang-switch {
         position: static;
+        display: flex !important;
+        flex-direction: row !important;
     }
     
     .gallery-header h1 {
@@ -1480,6 +1485,8 @@ footer a:hover {
         right: 60px;
         top: 50%;
         transform: translateY(-50%);
+        display: flex !important;
+        flex-direction: row !important;
     }
 }
 
