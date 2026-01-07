@@ -33,8 +33,8 @@ fichiers:
 # ------------------------------------------------------------------------------
 site:
   # Page d'accueil (sera ajoutée au menu)
-  index_fr: "https://eartigau.github.io/index_fr.html"
-  index_en: "https://eartigau.github.io/index_en.html"
+  index_fr: "https://eartigau.github.io/page_perso/index_fr.html"
+  index_en: "https://eartigau.github.io/page_perso/index_en.html"
   
   # Titre du site (utilisé dans les métadonnées)
   titre_fr: "Galerie Photos d'Oiseaux"
