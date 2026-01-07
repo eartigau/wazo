@@ -70,8 +70,8 @@ def construire_menu(config, generator, curation=None):
         {
             'name_fr': 'Accueil',
             'name_en': 'Home',
-            'file_fr': config['site'].get('index', 'index.html'),
-            'file_en': config['site'].get('index', 'index.html')
+            'file_fr': config['site'].get('index_fr', 'index_fr.html'),
+            'file_en': config['site'].get('index_en', 'index_en.html')
         },
         {
             'name_fr': 'Espèces',
