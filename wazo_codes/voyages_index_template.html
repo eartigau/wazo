@@ -24,13 +24,13 @@
             
             <!-- Sélecteur de langue -->
             <div class="lang-switch">
-                <a href="{{ other_lang_page }}" class="lang-btn" title="{% if lang == 'fr' %}English{% else %}Français{% endif %}">
-                    {% if lang == 'fr' %}
-                    <span class="flag">🇬🇧</span>
-                    {% else %}
-                    <span class="flag">🇫🇷</span>
-                    {% endif %}
-                </a>
+                {% if lang == 'fr' %}
+                <span class="lang-btn active">FR</span>
+                <a href="{{ other_lang_page }}" class="lang-btn" title="English">EN</a>
+                {% else %}
+                <a href="{{ other_lang_page }}" class="lang-btn" title="Français">FR</a>
+                <span class="lang-btn active">EN</span>
+                {% endif %}
             </div>
         </div>
     </nav>

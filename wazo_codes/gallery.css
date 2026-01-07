@@ -260,30 +260,38 @@ a.dropdown-toggle.dropdown-link:hover {
     color: var(--ebird-green);
 }
 
-/* Sélecteur de langue */
+/* Sélecteur de langue - toggle style */
 .lang-switch {
     position: absolute;
     right: 20px;
+    display: flex;
+    gap: 0;
+    background: var(--bg-light);
+    border-radius: 20px;
+    padding: 4px;
 }
 
 .lang-btn {
     display: flex;
     align-items: center;
-    gap: 6px;
-    padding: 8px 12px;
-    background: var(--bg-light);
-    border-radius: 20px;
-    font-size: 14px;
-    color: var(--text-medium);
+    justify-content: center;
+    padding: 6px 14px;
+    background: transparent;
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-light);
+    text-decoration: none;
     transition: all 0.2s;
 }
 
 .lang-btn:hover {
-    background: var(--border-color);
+    color: var(--text-dark);
 }
 
-.flag {
-    font-size: 18px;
+.lang-btn.active {
+    background: var(--forest-green);
+    color: white;
 }
 
 /* ============================================
@@ -833,7 +841,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .species-info {
-    padding: 14px 16px;
+    padding: 10px 14px;
 }
 
 .species-common {
@@ -841,7 +849,7 @@ a.dropdown-toggle.dropdown-link:hover {
     font-size: 15px;
     font-weight: 600;
     color: var(--text-dark);
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
 
 .species-scientific {
@@ -859,7 +867,7 @@ a.dropdown-toggle.dropdown-link:hover {
     font-size: 12px;
     color: var(--forest-green);
     font-weight: 500;
-    margin-top: 8px;
+    margin-top: 5px;
     padding: 3px 8px;
     background: rgba(45, 90, 39, 0.08);
     border-radius: 12px;

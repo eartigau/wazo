@@ -60,11 +60,10 @@
             
             <!-- Sélecteur de langue -->
             <div class="lang-switch">
-                <a href="species_list_en.html" class="lang-btn" title="English">
-                    
-                    <span class="flag">🇬🇧</span>
-                    
-                </a>
+                
+                <span class="lang-btn active">FR</span>
+                <a href="species_list_en.html" class="lang-btn" title="English">EN</a>
+                
             </div>
         </div>
     </nav>
@@ -153,7 +152,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 6 janvier 2026</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 janvier 2026</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -69326,7 +69325,7 @@
             const name = currentLang === 'fr' ? sp.nameFr : sp.nameEn;
             const photoCountHtml = sp.photoCount > 1 
                 ? `<span class="photo-count">${sp.photoCount} photos</span>` 
-                : '';
+                : (sp.photoCount === 1 ? `<span class="photo-count">1 photo</span>` : '');
             
             card.innerHTML = `
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${sp.ml}/480" 
