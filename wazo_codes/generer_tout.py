@@ -9,6 +9,7 @@ Configuration: config.yaml
 import sys
 import re
 import csv
+import unicodedata
 from pathlib import Path
 from datetime import datetime, timedelta
 
@@ -772,8 +773,15 @@ def generer_toutes_galeries():
                 )
                 total_galeries += 1
         
-        # Trier par ordre alphabétique (nom français)
-        pays_index_data.sort(key=lambda x: x['name_fr'].lower())
+        # Trier par ordre alphabétique (nom français, sans tenir compte des accents)
+        def normalize_for_sort(text):
+            """Enlève les accents pour un tri alphabétique correct"""
+            return ''.join(
+                c for c in unicodedata.normalize('NFD', text.lower())
+                if unicodedata.category(c) != 'Mn'
+            )
+        
+        pays_index_data.sort(key=lambda x: normalize_for_sort(x['name_fr']))
         
         # Page index des pays
         if pays_index_data:
