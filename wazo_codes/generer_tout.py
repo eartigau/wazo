@@ -519,6 +519,9 @@ def generer_toutes_galeries():
     # ========================================
     voyages = config.get('voyages', [])
     if voyages:
+        # Trier par date_debut décroissante (plus récent d'abord)
+        voyages = sorted(voyages, key=lambda v: v.get('date_debut', '0000-00-00'), reverse=True)
+        
         print(f"\n✈️ Galeries voyages...")
         
         voyages_index_data = []
@@ -769,8 +772,8 @@ def generer_toutes_galeries():
                 )
                 total_galeries += 1
         
-        # Trier par continent puis par nombre de photos
-        pays_index_data.sort(key=lambda x: (x['continent'], -x['photo_count']))
+        # Trier par ordre alphabétique (nom français)
+        pays_index_data.sort(key=lambda x: x['name_fr'].lower())
         
         # Page index des pays
         if pays_index_data:
