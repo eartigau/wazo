@@ -120,86 +120,21 @@
         </div>
         
         
-        <div class="masonry-grid">
-            
-            <div class="photo-card" 
-                 data-index="0"
-                 data-ml="22362341"
-                 data-location="Baden-Baden"
-                 onclick="openLightbox(0)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22362341/480"
-                     alt="Mandarin Duck"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Mandarin Duck</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="1"
-                 data-ml="22362321"
-                 data-location="Baden-Baden"
-                 onclick="openLightbox(1)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22362321/480"
-                     alt="Carrion Crow"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Carrion Crow</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="2"
-                 data-ml="22362331"
-                 data-location="Baden-Baden"
-                 onclick="openLightbox(2)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22362331/480"
-                     alt="Gray Wagtail"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Gray Wagtail</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="3"
-                 data-ml="21099451"
-                 data-location="Mummelsee"
-                 onclick="openLightbox(3)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21099451/480"
-                     alt="White Wagtail"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">White Wagtail</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="4"
-                 data-ml="22462281"
-                 data-location="Bad Dürkheim"
-                 onclick="openLightbox(4)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22462281/480"
-                     alt="Eurasian Blackbird"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Eurasian Blackbird</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="5"
-                 data-ml="22462181"
-                 data-location="Speyer"
-                 onclick="openLightbox(5)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22462181/480"
-                     alt="Eurasian Blackbird"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Eurasian Blackbird</div>
-                </div>
-            </div>
-            
+        <div class="masonry-grid" id="photos-grid">
+            <!-- Photos chargées dynamiquement par JavaScript -->
+        </div>
+        
+        <!-- Indicateur de chargement -->
+        <div id="loading-indicator" class="loading-indicator" style="text-align: center; padding: 40px; color: var(--text-medium);">
+            Loading...
+        </div>
+        
+        <!-- Bouton charger plus -->
+        <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
+            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()" style="background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%); color: white; border: none; padding: 14px 32px; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);">
+                Show more photos
+                <span id="remaining-count"></span>
+            </button>
         </div>
     </div>
 
@@ -358,9 +293,89 @@
             
         ];
 
+        // ========================================
+        // CHARGEMENT PROGRESSIF
+        // ========================================
+        const BATCH_SIZE = 48;  // Photos par lot
+        const showDateInOverlay = false;
+        let displayedCount = 0;
         let currentIndex = 0;
         let map = null;
         let marker = null;
+        
+        function createPhotoCard(photo, index) {
+            const card = document.createElement('div');
+            card.className = 'photo-card';
+            card.dataset.index = index;
+            card.dataset.ml = photo.ml;
+            card.dataset.location = photo.location || '';
+            card.onclick = () => openLightbox(index);
+            
+            const name = currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            const date = currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            const dateHtml = showDateInOverlay ? ` · ${date}` : '';
+            
+            card.innerHTML = `
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/480"
+                     alt="${name}"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">${name}${dateHtml}</div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        function renderNextBatch() {
+            const grid = document.getElementById('photos-grid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+            
+            const endIndex = Math.min(displayedCount + BATCH_SIZE, photosData.length);
+            
+            for (let i = displayedCount; i < endIndex; i++) {
+                const photo = photosData[i];
+                const card = createPhotoCard(photo, i);
+                grid.appendChild(card);
+            }
+            
+            displayedCount = endIndex;
+            updateLoadMoreButton();
+        }
+        
+        function updateLoadMoreButton() {
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const remainingCount = document.getElementById('remaining-count');
+            const remaining = photosData.length - displayedCount;
+            
+            if (remaining > 0) {
+                loadMoreContainer.style.display = 'block';
+                const remainingText = currentLang === 'fr' 
+                    ? ` (${remaining} restante${remaining > 1 ? 's' : ''})` 
+                    : ` (${remaining} remaining)`;
+                remainingCount.textContent = remainingText;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+        
+        // Charger le premier lot au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNextBatch();
+        });
+        
+        // Auto-charger au scroll
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
+                if (displayedCount < photosData.length) {
+                    renderNextBatch();
+                }
+            }
+        });
 
         function openLightbox(index) {
             const photo = photosData[index];
@@ -492,6 +507,12 @@
         // Filtrer les photos par lieu
         function filterByLocation(locationName) {
             activeLocationFilter = locationName;
+            
+            // Charger toutes les photos restantes avant de filtrer
+            while (displayedCount < photosData.length) {
+                renderNextBatch();
+            }
+            
             const photoCards = document.querySelectorAll('.photo-card');
             let visibleCount = 0;
             
@@ -504,6 +525,9 @@
                     card.style.display = 'none';
                 }
             });
+            
+            // Cacher le bouton "charger plus" quand filtré
+            document.getElementById('load-more-container').style.display = 'none';
             
             // Afficher l'indicateur de filtre
             const indicator = document.getElementById('location-filter-indicator');
