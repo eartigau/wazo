@@ -112,9 +112,22 @@
             
             <div class="photo-card" 
                  data-index="0"
+                 data-ml="65721011"
+                 data-location="Cape Sable Island"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/65721011/480"
+                     alt="Bécasseau sanderling"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Bécasseau sanderling</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
                  data-ml="66386661"
                  data-location="Louisbourg Lighthouse"
-                 onclick="openLightbox(0)">
+                 onclick="openLightbox(1)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66386661/480"
                      alt="Eider à duvet"
                      loading="lazy">
@@ -124,10 +137,10 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="1"
+                 data-index="2"
                  data-ml="66386971"
                  data-location="Fortress of Louisbourg National Historic Site"
-                 onclick="openLightbox(1)">
+                 onclick="openLightbox(2)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66386971/480"
                      alt="Courlis hudsonien"
                      loading="lazy">
@@ -137,10 +150,10 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="2"
+                 data-index="3"
                  data-ml="66386401"
                  data-location="Havenside Road, Louisbourg"
-                 onclick="openLightbox(2)">
+                 onclick="openLightbox(3)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66386401/480"
                      alt="Pygargue à tête blanche"
                      loading="lazy">
@@ -150,10 +163,10 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="3"
+                 data-index="4"
                  data-ml="66387101"
                  data-location="Fortress of Louisbourg National Historic Site"
-                 onclick="openLightbox(3)">
+                 onclick="openLightbox(4)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66387101/480"
                      alt="Mésange à tête brune"
                      loading="lazy">
@@ -163,10 +176,10 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="4"
+                 data-index="5"
                  data-ml="66387111"
                  data-location="Fortress of Louisbourg National Historic Site"
-                 onclick="openLightbox(4)">
+                 onclick="openLightbox(5)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66387111/480"
                      alt="Mésange à tête brune"
                      loading="lazy">
@@ -176,10 +189,10 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="5"
+                 data-index="6"
                  data-ml="66387041"
                  data-location="Fortress of Louisbourg National Historic Site"
-                 onclick="openLightbox(5)">
+                 onclick="openLightbox(6)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66387041/480"
                      alt="Paruline masquée"
                      loading="lazy">
@@ -189,10 +202,10 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="6"
+                 data-index="7"
                  data-ml="66387081"
                  data-location="Fortress of Louisbourg National Historic Site"
-                 onclick="openLightbox(6)">
+                 onclick="openLightbox(7)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66387081/480"
                      alt="Paruline masquée"
                      loading="lazy">
@@ -202,28 +215,15 @@
             </div>
             
             <div class="photo-card" 
-                 data-index="7"
+                 data-index="8"
                  data-ml="66388331"
                  data-location="Fortress of Louisbourg National Historic Site"
-                 onclick="openLightbox(7)">
+                 onclick="openLightbox(8)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/66388331/480"
                      alt="Plongeon huard"
                      loading="lazy">
                 <div class="photo-overlay">
                     <div class="bird-name">Plongeon huard</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="8"
-                 data-ml="65721011"
-                 data-location="Cape Sable Island"
-                 onclick="openLightbox(8)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/65721011/480"
-                     alt="Bécasseau sanderling"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Bécasseau sanderling</div>
                 </div>
             </div>
             
@@ -457,6 +457,22 @@
         const photosData = [
             
             {
+                ml: "65721011",
+                name_fr: "Bécasseau sanderling",
+                name_en: "Sanderling",
+                scientific: "Calidris alba",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Cape Sable Island",
+                location_fr: "Cape Sable Island, Nouvelle-Écosse, Canada",
+                location_en: "Cape Sable Island, Nova Scotia, Canada",
+                date_fr: "10 août 2017",
+                date_en: "August 10<sup>th</sup>, 2017",
+                lat: 43.4415778,
+                lng: -65.5901814,
+                checklist_id: "S38575111"
+            },
+            
+            {
                 ml: "66386661",
                 name_fr: "Eider à duvet",
                 name_en: "Common Eider",
@@ -582,22 +598,6 @@
                 lat: 45.8914061,
                 lng: -59.9834247,
                 checklist_id: "S38675505"
-            },
-            
-            {
-                ml: "65721011",
-                name_fr: "Bécasseau sanderling",
-                name_en: "Sanderling",
-                scientific: "Calidris alba",
-                family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Cape Sable Island",
-                location_fr: "Cape Sable Island, Nouvelle-Écosse, Canada",
-                location_en: "Cape Sable Island, Nova Scotia, Canada",
-                date_fr: "10 août 2017",
-                date_en: "August 10<sup>th</sup>, 2017",
-                lat: 43.4415778,
-                lng: -65.5901814,
-                checklist_id: "S38575111"
             },
             
             {
@@ -923,13 +923,13 @@
         // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
+            { lat: 43.4415778, lng: -65.5901814, name: "Cape Sable Island" },
+            
             { lat: 45.9063948, lng: -59.9570274, name: "Louisbourg Lighthouse" },
             
             { lat: 45.8812096, lng: -60.0208406, name: "Fortress of Louisbourg National Historic Site" },
             
             { lat: 45.9230493, lng: -59.9617937, name: "Havenside Road, Louisbourg" },
-            
-            { lat: 43.4415778, lng: -65.5901814, name: "Cape Sable Island" },
             
             { lat: 43.6176541, lng: -65.7880855, name: "Lower West Pubnico" },
             

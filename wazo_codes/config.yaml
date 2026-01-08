@@ -258,7 +258,7 @@ voyages:
   - id: chiloe_2008
     nom_fr: "Île de Chiloé, mai 2008"
     nom_en: "Chiloé Island, May 2008"
-    date_debut: "2008-05-01"
+    date_debut: "2008-05-02"
     date_fin: "2008-05-17"
     limite: 300  
   - id: voyage_iguazu_2007
