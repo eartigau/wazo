@@ -250,22 +250,6 @@
         const photosData = [
             
             {
-                ml: "34749121",
-                name_fr: "Solitaire d\'Hawaï",
-                name_en: "Omao",
-                scientific: "Myadestes obscurus",
-                family: "Turdidae (Thrushes and Allies)",
-                location: "Saddle Road - mile 22",
-                location_fr: "Saddle Road - mile 22, Hawaï, États-Unis",
-                location_en: "Saddle Road - mile 22, Hawaii, United States",
-                date_fr: "1<sup>er</sup> octobre 2015",
-                date_en: "October 1<sup>st</sup>, 2015",
-                lat: 19.686944,
-                lng: -155.26833,
-                checklist_id: "S31498342"
-            },
-            
-            {
                 ml: "22404851",
                 name_fr: "Pluvier fauve",
                 name_en: "Pacific Golden-Plover",
@@ -311,6 +295,22 @@
                 lat: 19.725559,
                 lng: -155.0687814,
                 checklist_id: "S25395059"
+            },
+            
+            {
+                ml: "34743281",
+                name_fr: "Pluvier fauve",
+                name_en: "Pacific Golden-Plover",
+                scientific: "Pluvialis fulva",
+                family: "Charadriidae (Plovers and Lapwings)",
+                location: "Kuʻu aliʻi Fishpond",
+                location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
+                location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
+                date_fr: "29 septembre 2015",
+                date_en: "September 29<sup>th</sup>, 2015",
+                lat: 19.9150848,
+                lng: -155.8867816,
+                checklist_id: "S25395029"
             },
             
             {
@@ -378,22 +378,6 @@
             },
             
             {
-                ml: "34743281",
-                name_fr: "Pluvier fauve",
-                name_en: "Pacific Golden-Plover",
-                scientific: "Pluvialis fulva",
-                family: "Charadriidae (Plovers and Lapwings)",
-                location: "Kuʻu aliʻi Fishpond",
-                location_fr: "Kuʻu aliʻi Fishpond, Hawaï, États-Unis",
-                location_en: "Kuʻu aliʻi Fishpond, Hawaii, United States",
-                date_fr: "29 septembre 2015",
-                date_en: "September 29<sup>th</sup>, 2015",
-                lat: 19.9150848,
-                lng: -155.8867816,
-                checklist_id: "S25395029"
-            },
-            
-            {
                 ml: "34743261",
                 name_fr: "Bihoreau gris",
                 name_en: "Black-crowned Night Heron",
@@ -407,6 +391,22 @@
                 lat: 19.9150848,
                 lng: -155.8867816,
                 checklist_id: "S25395029"
+            },
+            
+            {
+                ml: "34749121",
+                name_fr: "Solitaire d\'Hawaï",
+                name_en: "Omao",
+                scientific: "Myadestes obscurus",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Saddle Road - mile 22",
+                location_fr: "Saddle Road - mile 22, Hawaï, États-Unis",
+                location_en: "Saddle Road - mile 22, Hawaii, United States",
+                date_fr: "1<sup>er</sup> octobre 2015",
+                date_en: "October 1<sup>st</sup>, 2015",
+                lat: 19.686944,
+                lng: -155.26833,
+                checklist_id: "S31498342"
             },
             
             {
@@ -428,9 +428,11 @@
         ];
 
         // ========================================
-        // GROUPER PAR ESPÈCE
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
         // ========================================
         const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+        
         photosData.forEach((photo, index) => {
             const sciName = photo.scientific;
             if (!speciesMap[sciName]) {
@@ -440,12 +442,13 @@
                     name_en: photo.name_en,
                     photos: []
                 };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
             }
             speciesMap[sciName].photos.push({...photo, globalIndex: index});
         });
         
-        // Convertir en tableau et trier par nombre de photos décroissant
-        const speciesList = Object.values(speciesMap).sort((a, b) => b.photos.length - a.photos.length);
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
         
         // ========================================
         // CHARGEMENT PROGRESSIF PAR ESPÈCE
@@ -462,13 +465,13 @@
             if (!activeLocationFilter) return speciesList;
             
             // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
             return speciesList
                 .map(sp => ({
                     ...sp,
                     photos: sp.photos.filter(p => p.location === activeLocationFilter)
                 }))
-                .filter(sp => sp.photos.length > 0)
-                .sort((a, b) => b.photos.length - a.photos.length);
+                .filter(sp => sp.photos.length > 0);
         }
         
         function createSpeciesCard(species) {
@@ -701,11 +704,11 @@
         // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
-            { lat: 19.686944, lng: -155.26833, name: "Saddle Road - mile 22" },
-            
             { lat: 19.725559, lng: -155.0687814, name: "Liliuokalani Gardens, Coconut Island and Banyan Drive Hilo" },
             
             { lat: 19.9150848, lng: -155.8867816, name: "Kuʻu aliʻi Fishpond" },
+            
+            { lat: 19.686944, lng: -155.26833, name: "Saddle Road - mile 22" },
             
         ];
         
@@ -844,9 +847,9 @@
                 }
                 
                 // Forcer le rechargement des tuiles après le rendu CSS
-                setTimeout(() => {
-                    tripMap.invalidateSize();
-                }, 100);
+                setTimeout(() => tripMap.invalidateSize(), 100);
+                setTimeout(() => tripMap.invalidateSize(), 300);
+                setTimeout(() => tripMap.invalidateSize(), 500);
             }
         }
         

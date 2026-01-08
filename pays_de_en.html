@@ -286,38 +286,6 @@
             },
             
             {
-                ml: "22362331",
-                name_fr: "Bergeronnette des ruisseaux",
-                name_en: "Gray Wagtail",
-                scientific: "Motacilla cinerea",
-                family: "Motacillidae (Wagtails and Pipits)",
-                location: "Baden-Baden",
-                location_fr: "Baden-Baden, Allemagne",
-                location_en: "Baden-Baden, Germany",
-                date_fr: "14 juillet 2008",
-                date_en: "July 14<sup>th</sup>, 2008",
-                lat: 48.761389,
-                lng: 8.2377778,
-                checklist_id: "S18690791"
-            },
-            
-            {
-                ml: "21099451",
-                name_fr: "Bergeronnette grise",
-                name_en: "White Wagtail",
-                scientific: "Motacilla alba",
-                family: "Motacillidae (Wagtails and Pipits)",
-                location: "Mummelsee",
-                location_fr: "Mummelsee, Allemagne",
-                location_en: "Mummelsee, Germany",
-                date_fr: "13 juillet 2008",
-                date_en: "July 13<sup>th</sup>, 2008",
-                lat: 48.5966809,
-                lng: 8.2016668,
-                checklist_id: "S18690795"
-            },
-            
-            {
                 ml: "22462281",
                 name_fr: "Merle noir",
                 name_en: "Eurasian Blackbird",
@@ -347,14 +315,48 @@
                 lat: 49.316111,
                 lng: 8.4433333,
                 checklist_id: "S18690790"
+            },
+            
+            {
+                ml: "22362331",
+                name_fr: "Bergeronnette des ruisseaux",
+                name_en: "Gray Wagtail",
+                scientific: "Motacilla cinerea",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Baden-Baden",
+                location_fr: "Baden-Baden, Allemagne",
+                location_en: "Baden-Baden, Germany",
+                date_fr: "14 juillet 2008",
+                date_en: "July 14<sup>th</sup>, 2008",
+                lat: 48.761389,
+                lng: 8.2377778,
+                checklist_id: "S18690791"
+            },
+            
+            {
+                ml: "21099451",
+                name_fr: "Bergeronnette grise",
+                name_en: "White Wagtail",
+                scientific: "Motacilla alba",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Mummelsee",
+                location_fr: "Mummelsee, Allemagne",
+                location_en: "Mummelsee, Germany",
+                date_fr: "13 juillet 2008",
+                date_en: "July 13<sup>th</sup>, 2008",
+                lat: 48.5966809,
+                lng: 8.2016668,
+                checklist_id: "S18690795"
             }
             
         ];
 
         // ========================================
-        // GROUPER PAR ESPÈCE
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
         // ========================================
         const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+        
         photosData.forEach((photo, index) => {
             const sciName = photo.scientific;
             if (!speciesMap[sciName]) {
@@ -364,12 +366,13 @@
                     name_en: photo.name_en,
                     photos: []
                 };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
             }
             speciesMap[sciName].photos.push({...photo, globalIndex: index});
         });
         
-        // Convertir en tableau et trier par nombre de photos décroissant
-        const speciesList = Object.values(speciesMap).sort((a, b) => b.photos.length - a.photos.length);
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
         
         // ========================================
         // CHARGEMENT PROGRESSIF PAR ESPÈCE
@@ -386,13 +389,13 @@
             if (!activeLocationFilter) return speciesList;
             
             // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
             return speciesList
                 .map(sp => ({
                     ...sp,
                     photos: sp.photos.filter(p => p.location === activeLocationFilter)
                 }))
-                .filter(sp => sp.photos.length > 0)
-                .sort((a, b) => b.photos.length - a.photos.length);
+                .filter(sp => sp.photos.length > 0);
         }
         
         function createSpeciesCard(species) {
@@ -627,11 +630,11 @@
             
             { lat: 48.761389, lng: 8.2377778, name: "Baden-Baden" },
             
-            { lat: 48.5966809, lng: 8.2016668, name: "Mummelsee" },
-            
             { lat: 49.461944, lng: 8.1652778, name: "Bad Dürkheim" },
             
             { lat: 49.316111, lng: 8.4433333, name: "Speyer" },
+            
+            { lat: 48.5966809, lng: 8.2016668, name: "Mummelsee" },
             
         ];
         
@@ -770,9 +773,9 @@
                 }
                 
                 // Forcer le rechargement des tuiles après le rendu CSS
-                setTimeout(() => {
-                    tripMap.invalidateSize();
-                }, 100);
+                setTimeout(() => tripMap.invalidateSize(), 100);
+                setTimeout(() => tripMap.invalidateSize(), 300);
+                setTimeout(() => tripMap.invalidateSize(), 500);
             }
         }
         

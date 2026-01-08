@@ -630,9 +630,11 @@
         ];
 
         // ========================================
-        // GROUPER PAR ESPÈCE
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
         // ========================================
         const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+        
         photosData.forEach((photo, index) => {
             const sciName = photo.scientific;
             if (!speciesMap[sciName]) {
@@ -642,12 +644,13 @@
                     name_en: photo.name_en,
                     photos: []
                 };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
             }
             speciesMap[sciName].photos.push({...photo, globalIndex: index});
         });
         
-        // Convertir en tableau et trier par nombre de photos décroissant
-        const speciesList = Object.values(speciesMap).sort((a, b) => b.photos.length - a.photos.length);
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
         
         // ========================================
         // CHARGEMENT PROGRESSIF PAR ESPÈCE
@@ -664,13 +667,13 @@
             if (!activeLocationFilter) return speciesList;
             
             // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
             return speciesList
                 .map(sp => ({
                     ...sp,
                     photos: sp.photos.filter(p => p.location === activeLocationFilter)
                 }))
-                .filter(sp => sp.photos.length > 0)
-                .sort((a, b) => b.photos.length - a.photos.length);
+                .filter(sp => sp.photos.length > 0);
         }
         
         function createSpeciesCard(species) {

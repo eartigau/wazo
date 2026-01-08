@@ -254,19 +254,19 @@
         const photosData = [
             
             {
-                ml: "21098951",
-                name_fr: "Grand Cormoran",
-                name_en: "Great Cormorant",
-                scientific: "Phalacrocorax carbo",
-                family: "Phalacrocoracidae (Cormorants and Shags)",
-                location: "Cala Margarida",
-                location_fr: "Cala Margarida, Espagne",
-                location_en: "Cala Margarida, Spain",
-                date_fr: "26 juillet 2012",
-                date_en: "July 26<sup>th</sup>, 2012",
-                lat: 41.848889,
-                lng: 3.1394444,
-                checklist_id: "S18563469"
+                ml: "22409511",
+                name_fr: "Goéland d\'Audouin",
+                name_en: "Audouin\'s Gull",
+                scientific: "Ichthyaetus audouinii",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Au large de Barcelone",
+                location_fr: "Au large de Barcelone, Espagne",
+                location_en: "Au large de Barcelone, Spain",
+                date_fr: "27 juin 2012",
+                date_en: "June 27<sup>th</sup>, 2012",
+                lat: 41.376667,
+                lng: 2.2136111,
+                checklist_id: "S18565201"
             },
             
             {
@@ -283,6 +283,22 @@
                 lat: 42.225,
                 lng: 3.093,
                 checklist_id: "S18563326"
+            },
+            
+            {
+                ml: "21098951",
+                name_fr: "Grand Cormoran",
+                name_en: "Great Cormorant",
+                scientific: "Phalacrocorax carbo",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Cala Margarida",
+                location_fr: "Cala Margarida, Espagne",
+                location_en: "Cala Margarida, Spain",
+                date_fr: "26 juillet 2012",
+                date_en: "July 26<sup>th</sup>, 2012",
+                lat: 41.848889,
+                lng: 3.1394444,
+                checklist_id: "S18563469"
             },
             
             {
@@ -331,30 +347,16 @@
                 lat: 42.225,
                 lng: 3.093,
                 checklist_id: "S18563326"
-            },
-            
-            {
-                ml: "22409511",
-                name_fr: "Goéland d\'Audouin",
-                name_en: "Audouin\'s Gull",
-                scientific: "Ichthyaetus audouinii",
-                family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Au large de Barcelone",
-                location_fr: "Au large de Barcelone, Espagne",
-                location_en: "Au large de Barcelone, Spain",
-                date_fr: "27 juin 2012",
-                date_en: "June 27<sup>th</sup>, 2012",
-                lat: 41.376667,
-                lng: 2.2136111,
-                checklist_id: "S18565201"
             }
             
         ];
 
         // ========================================
-        // GROUPER PAR ESPÈCE
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
         // ========================================
         const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+        
         photosData.forEach((photo, index) => {
             const sciName = photo.scientific;
             if (!speciesMap[sciName]) {
@@ -364,12 +366,13 @@
                     name_en: photo.name_en,
                     photos: []
                 };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
             }
             speciesMap[sciName].photos.push({...photo, globalIndex: index});
         });
         
-        // Convertir en tableau et trier par nombre de photos décroissant
-        const speciesList = Object.values(speciesMap).sort((a, b) => b.photos.length - a.photos.length);
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
         
         // ========================================
         // CHARGEMENT PROGRESSIF PAR ESPÈCE
@@ -386,13 +389,13 @@
             if (!activeLocationFilter) return speciesList;
             
             // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
             return speciesList
                 .map(sp => ({
                     ...sp,
                     photos: sp.photos.filter(p => p.location === activeLocationFilter)
                 }))
-                .filter(sp => sp.photos.length > 0)
-                .sort((a, b) => b.photos.length - a.photos.length);
+                .filter(sp => sp.photos.length > 0);
         }
         
         function createSpeciesCard(species) {
@@ -625,11 +628,11 @@
         // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
-            { lat: 41.848889, lng: 3.1394444, name: "Cala Margarida" },
+            { lat: 41.376667, lng: 2.2136111, name: "Au large de Barcelone" },
             
             { lat: 42.225, lng: 3.093, name: "Aiguamolls de l'Empordà PNat" },
             
-            { lat: 41.376667, lng: 2.2136111, name: "Au large de Barcelone" },
+            { lat: 41.848889, lng: 3.1394444, name: "Cala Margarida" },
             
         ];
         
@@ -768,9 +771,9 @@
                 }
                 
                 // Forcer le rechargement des tuiles après le rendu CSS
-                setTimeout(() => {
-                    tripMap.invalidateSize();
-                }, 100);
+                setTimeout(() => tripMap.invalidateSize(), 100);
+                setTimeout(() => tripMap.invalidateSize(), 300);
+                setTimeout(() => tripMap.invalidateSize(), 500);
             }
         }
         

@@ -535,7 +535,8 @@ def generer_toutes_galeries():
                 date_start=voyage.get('date_debut'),
                 date_end=voyage.get('date_fin'),
                 verifier_medias_en_ligne=VERIFIER_MEDIAS,
-                curation=curation
+                curation=curation,
+                sort_by='taxonomy'
             )
             
             if photos:
@@ -707,7 +708,8 @@ def generer_toutes_galeries():
                 limit=None,  # Pas de limite pour les pays
                 countries=[country_code],
                 verifier_medias_en_ligne=VERIFIER_MEDIAS,
-                curation=curation
+                curation=curation,
+                sort_by='taxonomy'
             )
             
             if photos:
