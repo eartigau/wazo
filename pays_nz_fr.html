@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇳🇿 Nouvelle-Zélande</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_fr.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_fr.html" 
+                       >
+                        Meilleures photos
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_fr.html" 
+                       >
+                        Voyages
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_fr.html" 
+                       >
+                        Pays
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_fr.html" 
+                       >
+                        Familles
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
+                <a href="pays_nz_en.html" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>🇳🇿 Nouvelle-Zélande</h1>
+        
+        <div class="stats">
+            4 photos
+            
+             · 4 espèces
+            
+        </div>
+    </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(2)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Afficher tout ✕
+            </button>
+        </div>
+        
+        
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="42637401"
+                 data-location="Rainbow Ski Field, St Arnaud"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/42637401/480"
+                     alt="Nestor kéa"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nestor kéa</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="155111851"
+                 data-location="Kapiti Island"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/155111851/480"
+                     alt="Talève takahé"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Talève takahé</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="155111871"
+                 data-location="Kapiti Island"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/155111871/480"
+                     alt="Nestor superbe"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nestor superbe</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="34749101"
+                 data-location="Kapiti Island"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34749101/480"
+                     alt="Créadion de Lesson"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Créadion de Lesson</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    Voir sur eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 janvier 2026</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'fr';
+        
+        const photosData = [
+            
+            {
+                ml: "42637401",
+                name_fr: "Nestor kéa",
+                name_en: "Kea",
+                scientific: "Nestor notabilis",
+                family: "Strigopidae (New Zealand Parrots)",
+                location: "Rainbow Ski Field, St Arnaud",
+                location_fr: "Rainbow Ski Field, St Arnaud, Marlborough, Nouvelle-Zélande",
+                location_en: "Rainbow Ski Field, St Arnaud, Marlborough, New Zealand",
+                date_fr: "23 août 1994",
+                date_en: "August 23<sup>rd</sup>, 1994",
+                lat: -41.877222,
+                lng: 172.86139,
+                checklist_id: "S18576157"
+            },
+            
+            {
+                ml: "155111851",
+                name_fr: "Talève takahé",
+                name_en: "South Island Takahe",
+                scientific: "Porphyrio hochstetteri",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Kapiti Island",
+                location_fr: "Kapiti Island, Wellington, Nouvelle-Zélande",
+                location_en: "Kapiti Island, Wellington, New Zealand",
+                date_fr: "23 juillet 1994",
+                date_en: "July 23<sup>rd</sup>, 1994",
+                lat: -40.8528473,
+                lng: 174.9291709,
+                checklist_id: "S18576301"
+            },
+            
+            {
+                ml: "155111871",
+                name_fr: "Nestor superbe",
+                name_en: "New Zealand Kaka",
+                scientific: "Nestor meridionalis",
+                family: "Strigopidae (New Zealand Parrots)",
+                location: "Kapiti Island",
+                location_fr: "Kapiti Island, Wellington, Nouvelle-Zélande",
+                location_en: "Kapiti Island, Wellington, New Zealand",
+                date_fr: "23 juillet 1994",
+                date_en: "July 23<sup>rd</sup>, 1994",
+                lat: -40.8528473,
+                lng: 174.9291709,
+                checklist_id: "S18576301"
+            },
+            
+            {
+                ml: "34749101",
+                name_fr: "Créadion de Lesson",
+                name_en: "North Island Saddleback",
+                scientific: "Philesturnus rufusater",
+                family: "Callaeidae (Wattlebirds)",
+                location: "Kapiti Island",
+                location_fr: "Kapiti Island, Wellington, Nouvelle-Zélande",
+                location_en: "Kapiti Island, Wellington, New Zealand",
+                date_fr: "23 juillet 1994",
+                date_en: "July 23<sup>rd</sup>, 1994",
+                lat: -40.8528473,
+                lng: 174.9291709,
+                checklist_id: "S18576301"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte - cachée sur mobile
+            const mapDiv = document.getElementById('lightbox-map');
+            const isMobile = window.innerWidth <= 768;
+            
+            if (photo.lat && photo.lng && !isMobile) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+
+        
+        // Carte du voyage avec filtrage par lieu
+        const tripLocations = [
+            
+            { lat: -41.877222, lng: 172.86139, name: "Rainbow Ski Field, St Arnaud" },
+            
+            { lat: -40.8528473, lng: 174.9291709, name: "Kapiti Island" },
+            
+        ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs avec compte de photos et filtrage
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
+                if (loc.name) {
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
+                }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
+        
+        // Menu mobile hamburger
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        
+        // Fermer menu au clic ailleurs
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('navMenu');
+            if (menu && !nav.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        
+        // Swipe pour lightbox sur mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.getElementById('lightbox').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        document.getElementById('lightbox').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    navigateLightbox(1); // Swipe gauche = suivant
+                } else {
+                    navigateLightbox(-1); // Swipe droite = précédent
+                }
+            }
+        }
+    </script>
+</body>
+</html>

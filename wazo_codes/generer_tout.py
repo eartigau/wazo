@@ -54,6 +54,107 @@ def charger_config():
 
 
 # ============================================================================
+# MÉTADONNÉES DES PAYS (drapeaux, coordonnées, continents)
+# ============================================================================
+
+COUNTRY_METADATA = {
+    # Amérique du Nord
+    'CA': {'flag': '🇨🇦', 'lat': 56.13, 'lng': -106.35, 'continent': 'north_america', 'continent_fr': 'Amérique du Nord', 'continent_en': 'North America'},
+    'US': {'flag': '🇺🇸', 'lat': 37.09, 'lng': -95.71, 'continent': 'north_america', 'continent_fr': 'Amérique du Nord', 'continent_en': 'North America'},
+    'MX': {'flag': '🇲🇽', 'lat': 23.63, 'lng': -102.55, 'continent': 'north_america', 'continent_fr': 'Amérique du Nord', 'continent_en': 'North America'},
+    
+    # Amérique centrale et Caraïbes
+    'CR': {'flag': '🇨🇷', 'lat': 9.75, 'lng': -83.75, 'continent': 'central_america', 'continent_fr': 'Amérique centrale', 'continent_en': 'Central America'},
+    'PA': {'flag': '🇵🇦', 'lat': 8.54, 'lng': -80.78, 'continent': 'central_america', 'continent_fr': 'Amérique centrale', 'continent_en': 'Central America'},
+    'CU': {'flag': '🇨🇺', 'lat': 21.52, 'lng': -77.78, 'continent': 'central_america', 'continent_fr': 'Caraïbes', 'continent_en': 'Caribbean'},
+    'DO': {'flag': '🇩🇴', 'lat': 18.74, 'lng': -70.16, 'continent': 'central_america', 'continent_fr': 'Caraïbes', 'continent_en': 'Caribbean'},
+    'JM': {'flag': '🇯🇲', 'lat': 18.11, 'lng': -77.30, 'continent': 'central_america', 'continent_fr': 'Caraïbes', 'continent_en': 'Caribbean'},
+    'PR': {'flag': '🇵🇷', 'lat': 18.22, 'lng': -66.59, 'continent': 'central_america', 'continent_fr': 'Caraïbes', 'continent_en': 'Caribbean'},
+    'GT': {'flag': '🇬🇹', 'lat': 15.78, 'lng': -90.23, 'continent': 'central_america', 'continent_fr': 'Amérique centrale', 'continent_en': 'Central America'},
+    'BZ': {'flag': '🇧🇿', 'lat': 17.19, 'lng': -88.50, 'continent': 'central_america', 'continent_fr': 'Amérique centrale', 'continent_en': 'Central America'},
+    'HN': {'flag': '🇭🇳', 'lat': 15.20, 'lng': -86.24, 'continent': 'central_america', 'continent_fr': 'Amérique centrale', 'continent_en': 'Central America'},
+    'NI': {'flag': '🇳🇮', 'lat': 12.87, 'lng': -85.21, 'continent': 'central_america', 'continent_fr': 'Amérique centrale', 'continent_en': 'Central America'},
+    'SV': {'flag': '🇸🇻', 'lat': 13.79, 'lng': -88.90, 'continent': 'central_america', 'continent_fr': 'Amérique centrale', 'continent_en': 'Central America'},
+    
+    # Amérique du Sud
+    'CL': {'flag': '🇨🇱', 'lat': -35.68, 'lng': -71.54, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'AR': {'flag': '🇦🇷', 'lat': -38.42, 'lng': -63.62, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'BR': {'flag': '🇧🇷', 'lat': -14.24, 'lng': -51.93, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'PE': {'flag': '🇵🇪', 'lat': -9.19, 'lng': -75.02, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'CO': {'flag': '🇨🇴', 'lat': 4.57, 'lng': -74.30, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'EC': {'flag': '🇪🇨', 'lat': -1.83, 'lng': -78.18, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'VE': {'flag': '🇻🇪', 'lat': 6.42, 'lng': -66.59, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'BO': {'flag': '🇧🇴', 'lat': -16.29, 'lng': -63.59, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'PY': {'flag': '🇵🇾', 'lat': -23.44, 'lng': -58.44, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'UY': {'flag': '🇺🇾', 'lat': -32.52, 'lng': -55.77, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'GY': {'flag': '🇬🇾', 'lat': 4.86, 'lng': -58.93, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    'SR': {'flag': '🇸🇷', 'lat': 3.92, 'lng': -56.03, 'continent': 'south_america', 'continent_fr': 'Amérique du Sud', 'continent_en': 'South America'},
+    
+    # Europe
+    'FR': {'flag': '🇫🇷', 'lat': 46.23, 'lng': 2.21, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'CH': {'flag': '🇨🇭', 'lat': 46.82, 'lng': 8.23, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'IT': {'flag': '🇮🇹', 'lat': 41.87, 'lng': 12.57, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'ES': {'flag': '🇪🇸', 'lat': 40.46, 'lng': -3.75, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'PT': {'flag': '🇵🇹', 'lat': 39.40, 'lng': -8.22, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'GB': {'flag': '🇬🇧', 'lat': 55.38, 'lng': -3.44, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'DE': {'flag': '🇩🇪', 'lat': 51.17, 'lng': 10.45, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'AT': {'flag': '🇦🇹', 'lat': 47.52, 'lng': 14.55, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'NL': {'flag': '🇳🇱', 'lat': 52.13, 'lng': 5.29, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'BE': {'flag': '🇧🇪', 'lat': 50.50, 'lng': 4.47, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'IE': {'flag': '🇮🇪', 'lat': 53.14, 'lng': -7.69, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'GR': {'flag': '🇬🇷', 'lat': 39.07, 'lng': 21.82, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'TR': {'flag': '🇹🇷', 'lat': 38.96, 'lng': 35.24, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'NO': {'flag': '🇳🇴', 'lat': 60.47, 'lng': 8.47, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'SE': {'flag': '🇸🇪', 'lat': 60.13, 'lng': 18.64, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'FI': {'flag': '🇫🇮', 'lat': 61.92, 'lng': 25.75, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'DK': {'flag': '🇩🇰', 'lat': 56.26, 'lng': 9.50, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'IS': {'flag': '🇮🇸', 'lat': 64.96, 'lng': -19.02, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'PL': {'flag': '🇵🇱', 'lat': 51.92, 'lng': 19.15, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'CZ': {'flag': '🇨🇿', 'lat': 49.82, 'lng': 15.47, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'HU': {'flag': '🇭🇺', 'lat': 47.16, 'lng': 19.50, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'RO': {'flag': '🇷🇴', 'lat': 45.94, 'lng': 24.97, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'HR': {'flag': '🇭🇷', 'lat': 45.10, 'lng': 15.20, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    'SI': {'flag': '🇸🇮', 'lat': 46.15, 'lng': 14.99, 'continent': 'europe', 'continent_fr': 'Europe', 'continent_en': 'Europe'},
+    
+    # Asie
+    'JP': {'flag': '🇯🇵', 'lat': 36.20, 'lng': 138.25, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'CN': {'flag': '🇨🇳', 'lat': 35.86, 'lng': 104.20, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'IN': {'flag': '🇮🇳', 'lat': 20.59, 'lng': 78.96, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'TH': {'flag': '🇹🇭', 'lat': 15.87, 'lng': 100.99, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'VN': {'flag': '🇻🇳', 'lat': 14.06, 'lng': 108.28, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'ID': {'flag': '🇮🇩', 'lat': -0.79, 'lng': 113.92, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'MY': {'flag': '🇲🇾', 'lat': 4.21, 'lng': 101.98, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'SG': {'flag': '🇸🇬', 'lat': 1.35, 'lng': 103.82, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'PH': {'flag': '🇵🇭', 'lat': 12.88, 'lng': 121.77, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'KR': {'flag': '🇰🇷', 'lat': 35.91, 'lng': 127.77, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'TW': {'flag': '🇹🇼', 'lat': 23.70, 'lng': 120.96, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'IL': {'flag': '🇮🇱', 'lat': 31.05, 'lng': 34.85, 'continent': 'asia', 'continent_fr': 'Moyen-Orient', 'continent_en': 'Middle East'},
+    'AE': {'flag': '🇦🇪', 'lat': 23.42, 'lng': 53.85, 'continent': 'asia', 'continent_fr': 'Moyen-Orient', 'continent_en': 'Middle East'},
+    'NP': {'flag': '🇳🇵', 'lat': 28.39, 'lng': 84.12, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    'LK': {'flag': '🇱🇰', 'lat': 7.87, 'lng': 80.77, 'continent': 'asia', 'continent_fr': 'Asie', 'continent_en': 'Asia'},
+    
+    # Afrique
+    'ZA': {'flag': '🇿🇦', 'lat': -30.56, 'lng': 22.94, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'KE': {'flag': '🇰🇪', 'lat': -0.02, 'lng': 37.91, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'TZ': {'flag': '🇹🇿', 'lat': -6.37, 'lng': 34.89, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'MA': {'flag': '🇲🇦', 'lat': 31.79, 'lng': -7.09, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'EG': {'flag': '🇪🇬', 'lat': 26.82, 'lng': 30.80, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'NA': {'flag': '🇳🇦', 'lat': -22.96, 'lng': 18.49, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'BW': {'flag': '🇧🇼', 'lat': -22.33, 'lng': 24.68, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'UG': {'flag': '🇺🇬', 'lat': 1.37, 'lng': 32.29, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'RW': {'flag': '🇷🇼', 'lat': -1.94, 'lng': 29.87, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'ET': {'flag': '🇪🇹', 'lat': 9.15, 'lng': 40.49, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'MG': {'flag': '🇲🇬', 'lat': -18.77, 'lng': 46.87, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    
+    # Océanie
+    'AU': {'flag': '🇦🇺', 'lat': -25.27, 'lng': 133.78, 'continent': 'oceania', 'continent_fr': 'Océanie', 'continent_en': 'Oceania'},
+    'NZ': {'flag': '🇳🇿', 'lat': -40.90, 'lng': 174.89, 'continent': 'oceania', 'continent_fr': 'Océanie', 'continent_en': 'Oceania'},
+    'FJ': {'flag': '🇫🇯', 'lat': -17.71, 'lng': 178.07, 'continent': 'oceania', 'continent_fr': 'Océanie', 'continent_en': 'Oceania'},
+    'PG': {'flag': '🇵🇬', 'lat': -6.31, 'lng': 143.96, 'continent': 'oceania', 'continent_fr': 'Océanie', 'continent_en': 'Oceania'},
+}
+
+
+# ============================================================================
 # CONSTRUCTION DU MENU
 # ============================================================================
 
@@ -105,6 +206,14 @@ def construire_menu(config, generator, curation=None):
             'file_fr': 'voyages_index_fr.html',
             'file_en': 'voyages_index_en.html'
         })
+    
+    # Lien Pays (toujours présent si des photos existent)
+    menu.append({
+        'name_fr': 'Pays',
+        'name_en': 'Countries',
+        'file_fr': 'pays_index_fr.html',
+        'file_en': 'pays_index_en.html'
+    })
     
     # Lien Familles (si des familles ont des photos)
     if familles_avec_photos:
@@ -511,6 +620,177 @@ def generer_toutes_galeries():
                     f.write(html)
             
             print(f"   ✓ voyages_index_fr.html / voyages_index_en.html ({len(voyages_index_data)} voyages)")
+    
+    # ========================================
+    # PAYS
+    # ========================================
+    print(f"\n🌍 Extraction des pays...")
+    
+    # Extraire les pays uniques à partir des observations
+    pays_stats = {}  # code_pays -> {'photos': [...], 'species': set()}
+    
+    for obs in generator.observations:
+        state_code = obs.get('State/Province') or ''
+        if not state_code:
+            continue
+        
+        # Extraire le code pays (2 premières lettres)
+        country_code = state_code.split('-')[0] if '-' in state_code else state_code
+        
+        if not country_code or len(country_code) != 2:
+            continue
+        
+        ml_string = obs.get('ML Catalog Numbers') or ''
+        ml_numbers = [n.strip() for n in ml_string.replace(',', ' ').split() if n.strip()]
+        
+        if not ml_numbers:
+            continue
+        
+        # Vérifier que les médias sont des images
+        has_image = False
+        for ml in ml_numbers:
+            if ml in generator.media_cache:
+                if generator.media_cache[ml]['status'] == 'image':
+                    has_image = True
+                    break
+            else:
+                has_image = True  # On suppose que c'est une image si pas dans le cache
+                break
+        
+        if not has_image:
+            continue
+        
+        sci_name = obs.get('Scientific Name', '').strip()
+        
+        if country_code not in pays_stats:
+            pays_stats[country_code] = {'count': 0, 'species': set()}
+        
+        pays_stats[country_code]['count'] += len(ml_numbers)
+        if sci_name:
+            pays_stats[country_code]['species'].add(sci_name)
+    
+    # Générer les galeries par pays
+    if pays_stats:
+        print(f"   Trouvé {len(pays_stats)} pays avec photos")
+        
+        pays_index_data = []
+        total_photos_pays = 0
+        
+        # Traductions des pays
+        traductions_pays = generator.traductions
+        
+        for country_code, stats in sorted(pays_stats.items(), key=lambda x: -x[1]['count']):
+            # Nom du pays
+            name_fr = traductions_pays.get('fr', {}).get(country_code, country_code)
+            name_en = traductions_pays.get('en', {}).get(country_code, country_code)
+            
+            # Métadonnées du pays
+            metadata = COUNTRY_METADATA.get(country_code, {
+                'flag': '🏳️',
+                'lat': 0,
+                'lng': 0,
+                'continent': 'other',
+                'continent_fr': 'Autre',
+                'continent_en': 'Other'
+            })
+            
+            # Filtrer les photos pour ce pays
+            photos = generator.filter_observations(
+                limit=500,  # Limite par pays
+                countries=[country_code],
+                verifier_medias_en_ligne=VERIFIER_MEDIAS,
+                curation=curation
+            )
+            
+            if photos:
+                species_set = set(p.get('scientific_name', '') for p in photos)
+                species_count = len(species_set)
+                
+                # Frontispice
+                frontispice_ml = obtenir_frontispice(photos, curation)
+                
+                file_id = f"pays_{country_code.lower()}"
+                
+                pays_index_data.append({
+                    'code': country_code,
+                    'name_fr': name_fr,
+                    'name_en': name_en,
+                    'flag': metadata['flag'],
+                    'lat': metadata['lat'],
+                    'lng': metadata['lng'],
+                    'continent': metadata['continent'],
+                    'continent_fr': metadata['continent_fr'],
+                    'continent_en': metadata['continent_en'],
+                    'photo_count': len(photos),
+                    'species_count': species_count,
+                    'frontispice_ml': frontispice_ml,
+                    'file_fr': f"{file_id}_fr.html",
+                    'file_en': f"{file_id}_en.html"
+                })
+                total_photos_pays += len(photos)
+                
+                # Collecter les lieux pour la carte
+                locations_seen = {}
+                for p in photos:
+                    lat = p.get('latitude')
+                    lng = p.get('longitude')
+                    location_name = p.get('location', '')
+                    if lat and lng and lat != 0 and lng != 0 and location_name:
+                        if location_name not in locations_seen:
+                            locations_seen[location_name] = {
+                                'lat': lat,
+                                'lng': lng,
+                                'name_fr': p.get('location_fr', ''),
+                                'name_en': p.get('location_en', ''),
+                                'location': location_name
+                            }
+                
+                trip_locations = list(locations_seen.values()) if locations_seen else None
+                
+                # Générer la galerie du pays
+                generator.generate_gallery(
+                    output_base=file_id,
+                    title_fr=f"{metadata['flag']} {name_fr}",
+                    title_en=f"{metadata['flag']} {name_en}",
+                    photos=photos,
+                    template_file=GALLERY_TEMPLATE,
+                    menu=menu,
+                    gallery_id=file_id,
+                    species_count=species_count,
+                    trip_locations=trip_locations
+                )
+                total_galeries += 1
+        
+        # Trier par continent puis par nombre de photos
+        pays_index_data.sort(key=lambda x: (x['continent'], -x['photo_count']))
+        
+        # Page index des pays
+        if pays_index_data:
+            print(f"\n📑 Page index des pays...")
+            today = datetime.now()
+            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
+            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+            
+            env = Environment(loader=FileSystemLoader('.'))
+            template = env.get_template('pays_index_template.html')
+            
+            for lang in ['fr', 'en']:
+                html = template.render(
+                    lang=lang,
+                    countries=pays_index_data,
+                    total_countries=len(pays_index_data),
+                    total_photos=total_photos_pays,
+                    menu=menu,
+                    current_page=f'pays_index_{lang}.html',
+                    other_lang_page=f'pays_index_{"en" if lang == "fr" else "fr"}.html',
+                    update_date=True,
+                    update_date_fr=update_date_fr,
+                    update_date_en=update_date_en
+                )
+                with open(f'pays_index_{lang}.html', 'w', encoding='utf-8') as f:
+                    f.write(html)
+            
+            print(f"   ✓ pays_index_fr.html / pays_index_en.html ({len(pays_index_data)} pays)")
     
     # ========================================
     # FAMILLES

@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pays</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+    <style>
+        /* Carte monde */
+        .world-map-container {
+            max-width: 1400px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+        }
+        
+        .world-map {
+            width: 100%;
+            height: 400px;
+            border-radius: 16px;
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+        
+        .country-popup {
+            text-align: center;
+            min-width: 120px;
+        }
+        
+        .country-popup-name {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+        
+        .country-popup-stats {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Grille pays avec chargement progressif */
+        .countries-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        
+        .continent-section {
+            margin-bottom: 40px;
+            scroll-margin-top: 80px;
+        }
+        
+        .continent-title {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--forest-green-dark);
+            padding: 12px 0;
+            border-bottom: 2px solid var(--forest-green);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .continent-title::before {
+            content: '🌍';
+            font-size: 20px;
+        }
+        
+        .countries-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .country-card {
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: all var(--transition-smooth);
+            border: 1px solid var(--border-light);
+            text-decoration: none;
+            display: block;
+        }
+        
+        .country-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-5px);
+            border-color: var(--sage);
+        }
+        
+        .country-card-image {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+        }
+        
+        .country-card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .country-card:hover .country-card-image img {
+            transform: scale(1.05);
+        }
+        
+        .country-card-flag {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            font-size: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
+        
+        .country-card-info {
+            padding: 16px;
+        }
+        
+        .country-card-name {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+        
+        .country-card-stats {
+            font-size: 13px;
+            color: var(--text-medium);
+        }
+        
+        .loading-indicator {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-medium);
+            font-size: 16px;
+        }
+        
+        .load-more-container {
+            text-align: center;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .load-more-btn {
+            background: var(--gradient-forest);
+            color: white;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        @media (max-width: 768px) {
+            .world-map {
+                height: 280px;
+            }
+            
+            .countries-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_fr.html" 
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_fr.html" 
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_fr.html" 
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_fr.html" 
+                       >
+                        Meilleures photos
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_fr.html" 
+                       >
+                        Voyages
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_fr.html" 
+                       class="active">
+                        Pays
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_fr.html" 
+                       >
+                        Familles
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
+                <a href="pays_index_en.html" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>Pays</h1>
+        <div class="stats">
+            19 pays • 
+            2744 photos
+        </div>
+    </div>
+
+    <!-- CARTE DU MONDE -->
+    <div class="world-map-container">
+        <div id="world-map" class="world-map"></div>
+    </div>
+
+    <!-- LISTE DES PAYS - Rendu dynamique -->
+    <div class="countries-container" id="countries-container">
+        <div class="loading-indicator" id="loading-indicator">
+            Chargement...
+        </div>
+    </div>
+    
+    <!-- Bouton charger plus -->
+    <div class="load-more-container" id="load-more-container" style="display: none;">
+        <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
+            Afficher plus de pays
+            <span id="remaining-count"></span>
+        </button>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 7 janvier 2026</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // ========================================
+        // CONFIGURATION
+        // ========================================
+        const currentLang = 'fr';
+        const BATCH_SIZE = 12;
+        
+        // Données des pays
+        const countriesData = [
+            
+            {
+                code: "MA",
+                nameFr: "MA",
+                nameEn: "MA",
+                continent: "africa",
+                continentFr: "Afrique",
+                continentEn: "Africa",
+                flag: "🇲🇦",
+                photoCount: 94,
+                speciesCount: 52,
+                frontispiceMl: "29630341",
+                fileFr: "pays_ma_fr.html",
+                fileEn: "pays_ma_en.html",
+                lat: 31.79,
+                lng: -7.09
+            },
+            
+            {
+                code: "IN",
+                nameFr: "Inde",
+                nameEn: "India",
+                continent: "asia",
+                continentFr: "Asie",
+                continentEn: "Asia",
+                flag: "🇮🇳",
+                photoCount: 106,
+                speciesCount: 56,
+                frontispiceMl: "74829131",
+                fileFr: "pays_in_fr.html",
+                fileEn: "pays_in_en.html",
+                lat: 20.59,
+                lng: 78.96
+            },
+            
+            {
+                code: "CU",
+                nameFr: "CU",
+                nameEn: "CU",
+                continent: "central_america",
+                continentFr: "Caraïbes",
+                continentEn: "Caribbean",
+                flag: "🇨🇺",
+                photoCount: 117,
+                speciesCount: 43,
+                frontispiceMl: "213653731",
+                fileFr: "pays_cu_fr.html",
+                fileEn: "pays_cu_en.html",
+                lat: 21.52,
+                lng: -77.78
+            },
+            
+            {
+                code: "FR",
+                nameFr: "France",
+                nameEn: "France",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇫🇷",
+                photoCount: 355,
+                speciesCount: 127,
+                frontispiceMl: "639659232",
+                fileFr: "pays_fr_fr.html",
+                fileEn: "pays_fr_en.html",
+                lat: 46.23,
+                lng: 2.21
+            },
+            
+            {
+                code: "CH",
+                nameFr: "Suisse",
+                nameEn: "Switzerland",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇨🇭",
+                photoCount: 102,
+                speciesCount: 36,
+                frontispiceMl: "645202618",
+                fileFr: "pays_ch_fr.html",
+                fileEn: "pays_ch_en.html",
+                lat: 46.82,
+                lng: 8.23
+            },
+            
+            {
+                code: "PT",
+                nameFr: "Portugal",
+                nameEn: "Portugal",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇵🇹",
+                photoCount: 79,
+                speciesCount: 40,
+                frontispiceMl: "638391672",
+                fileFr: "pays_pt_fr.html",
+                fileEn: "pays_pt_en.html",
+                lat: 39.4,
+                lng: -8.22
+            },
+            
+            {
+                code: "IT",
+                nameFr: "Italie",
+                nameEn: "Italy",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇮🇹",
+                photoCount: 29,
+                speciesCount: 13,
+                frontispiceMl: "608610563",
+                fileFr: "pays_it_fr.html",
+                fileEn: "pays_it_en.html",
+                lat: 41.87,
+                lng: 12.57
+            },
+            
+            {
+                code: "GB",
+                nameFr: "Royaume-Uni",
+                nameEn: "United Kingdom",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇬🇧",
+                photoCount: 29,
+                speciesCount: 23,
+                frontispiceMl: "22536251",
+                fileFr: "pays_gb_fr.html",
+                fileEn: "pays_gb_en.html",
+                lat: 55.38,
+                lng: -3.44
+            },
+            
+            {
+                code: "NL",
+                nameFr: "Pays-Bas",
+                nameEn: "Netherlands",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇳🇱",
+                photoCount: 20,
+                speciesCount: 8,
+                frontispiceMl: "21111841",
+                fileFr: "pays_nl_fr.html",
+                fileEn: "pays_nl_en.html",
+                lat: 52.13,
+                lng: 5.29
+            },
+            
+            {
+                code: "DE",
+                nameFr: "Allemagne",
+                nameEn: "Germany",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇩🇪",
+                photoCount: 6,
+                speciesCount: 5,
+                frontispiceMl: "22362341",
+                fileFr: "pays_de_fr.html",
+                fileEn: "pays_de_en.html",
+                lat: 51.17,
+                lng: 10.45
+            },
+            
+            {
+                code: "ES",
+                nameFr: "Espagne",
+                nameEn: "Spain",
+                continent: "europe",
+                continentFr: "Europe",
+                continentEn: "Europe",
+                flag: "🇪🇸",
+                photoCount: 6,
+                speciesCount: 5,
+                frontispiceMl: "21098951",
+                fileFr: "pays_es_fr.html",
+                fileEn: "pays_es_en.html",
+                lat: 40.46,
+                lng: -3.75
+            },
+            
+            {
+                code: "CA",
+                nameFr: "Canada",
+                nameEn: "Canada",
+                continent: "north_america",
+                continentFr: "Amérique du Nord",
+                continentEn: "North America",
+                flag: "🇨🇦",
+                photoCount: 500,
+                speciesCount: 180,
+                frontispiceMl: "641877722",
+                fileFr: "pays_ca_fr.html",
+                fileEn: "pays_ca_en.html",
+                lat: 56.13,
+                lng: -106.35
+            },
+            
+            {
+                code: "US",
+                nameFr: "États-Unis",
+                nameEn: "United States",
+                continent: "north_america",
+                continentFr: "Amérique du Nord",
+                continentEn: "North America",
+                flag: "🇺🇸",
+                photoCount: 500,
+                speciesCount: 213,
+                frontispiceMl: "615612408",
+                fileFr: "pays_us_fr.html",
+                fileEn: "pays_us_en.html",
+                lat: 37.09,
+                lng: -95.71
+            },
+            
+            {
+                code: "NZ",
+                nameFr: "Nouvelle-Zélande",
+                nameEn: "New Zealand",
+                continent: "oceania",
+                continentFr: "Océanie",
+                continentEn: "Oceania",
+                flag: "🇳🇿",
+                photoCount: 4,
+                speciesCount: 4,
+                frontispiceMl: "42637401",
+                fileFr: "pays_nz_fr.html",
+                fileEn: "pays_nz_en.html",
+                lat: -40.9,
+                lng: 174.89
+            },
+            
+            {
+                code: "CI",
+                nameFr: "CI",
+                nameEn: "CI",
+                continent: "other",
+                continentFr: "Autre",
+                continentEn: "Other",
+                flag: "🏳️",
+                photoCount: 3,
+                speciesCount: 3,
+                frontispiceMl: "187527441",
+                fileFr: "pays_ci_fr.html",
+                fileEn: "pays_ci_en.html",
+                lat: 0,
+                lng: 0
+            },
+            
+            {
+                code: "CL",
+                nameFr: "Chili",
+                nameEn: "Chile",
+                continent: "south_america",
+                continentFr: "Amérique du Sud",
+                continentEn: "South America",
+                flag: "🇨🇱",
+                photoCount: 500,
+                speciesCount: 153,
+                frontispiceMl: "434980971",
+                fileFr: "pays_cl_fr.html",
+                fileEn: "pays_cl_en.html",
+                lat: -35.68,
+                lng: -71.54
+            },
+            
+            {
+                code: "AR",
+                nameFr: "Argentine",
+                nameEn: "Argentina",
+                continent: "south_america",
+                continentFr: "Amérique du Sud",
+                continentEn: "South America",
+                flag: "🇦🇷",
+                photoCount: 184,
+                speciesCount: 85,
+                frontispiceMl: "638763700",
+                fileFr: "pays_ar_fr.html",
+                fileEn: "pays_ar_en.html",
+                lat: -38.42,
+                lng: -63.62
+            },
+            
+            {
+                code: "BR",
+                nameFr: "Brésil",
+                nameEn: "Brazil",
+                continent: "south_america",
+                continentFr: "Amérique du Sud",
+                continentEn: "South America",
+                flag: "🇧🇷",
+                photoCount: 62,
+                speciesCount: 36,
+                frontispiceMl: "21102061",
+                fileFr: "pays_br_fr.html",
+                fileEn: "pays_br_en.html",
+                lat: -14.24,
+                lng: -51.93
+            },
+            
+            {
+                code: "UY",
+                nameFr: "Uruguay",
+                nameEn: "Uruguay",
+                continent: "south_america",
+                continentFr: "Amérique du Sud",
+                continentEn: "South America",
+                flag: "🇺🇾",
+                photoCount: 48,
+                speciesCount: 35,
+                frontispiceMl: "22575801",
+                fileFr: "pays_uy_fr.html",
+                fileEn: "pays_uy_en.html",
+                lat: -32.52,
+                lng: -55.77
+            }
+            
+        ];
+        
+        // ========================================
+        // CARTE MONDIALE
+        // ========================================
+        const map = L.map('world-map', {
+            center: [20, 0],
+            zoom: 2,
+            minZoom: 1,
+            maxZoom: 6,
+            scrollWheelZoom: true
+        });
+        
+        // Tuiles en niveaux de gris
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            attribution: '© OpenStreetMap © CARTO',
+            subdomains: 'abcd',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Marqueurs pour chaque pays
+        countriesData.forEach(country => {
+            if (country.lat && country.lng) {
+                const marker = L.circleMarker([country.lat, country.lng], {
+                    radius: Math.min(8 + Math.log(country.photoCount + 1) * 3, 20),
+                    fillColor: '#2d5a27',
+                    color: '#fff',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                }).addTo(map);
+                
+                const name = currentLang === 'fr' ? country.nameFr : country.nameEn;
+                const file = currentLang === 'fr' ? country.fileFr : country.fileEn;
+                const speciesLabel = currentLang === 'fr' 
+                    ? (country.speciesCount > 1 ? 'espèces' : 'espèce')
+                    : 'species';
+                
+                marker.bindPopup(`
+                    <div class="country-popup">
+                        <div class="country-popup-name">${country.flag} ${name}</div>
+                        <div class="country-popup-stats">
+                            ${country.photoCount} photo${country.photoCount > 1 ? 's' : ''}<br>
+                            ${country.speciesCount} ${speciesLabel}
+                        </div>
+                        <a href="${file}" style="display: inline-block; margin-top: 8px; color: #2d5a27; font-weight: 600;">
+                            ${currentLang === 'fr' ? 'Voir →' : 'View →'}
+                        </a>
+                    </div>
+                `);
+                
+                marker.on('mouseover', function() {
+                    this.openPopup();
+                });
+            }
+        });
+        
+        // ========================================
+        // RENDU PROGRESSIF
+        // ========================================
+        let displayedCount = 0;
+        let renderedContinents = new Set();
+        
+        // Trier par continent puis par nombre de photos
+        const sortedCountries = [...countriesData].sort((a, b) => {
+            if (a.continent !== b.continent) {
+                return a.continent.localeCompare(b.continent);
+            }
+            return b.photoCount - a.photoCount;
+        });
+        
+        function createCountryCard(country) {
+            const name = currentLang === 'fr' ? country.nameFr : country.nameEn;
+            const file = currentLang === 'fr' ? country.fileFr : country.fileEn;
+            const speciesLabel = currentLang === 'fr' 
+                ? (country.speciesCount > 1 ? 'espèces' : 'espèce')
+                : 'species';
+            
+            const card = document.createElement('a');
+            card.href = file;
+            card.className = 'country-card';
+            
+            card.innerHTML = `
+                <div class="country-card-image">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${country.frontispiceMl}/640" 
+                         alt="${name}"
+                         loading="lazy">
+                    <span class="country-card-flag">${country.flag}</span>
+                </div>
+                <div class="country-card-info">
+                    <h2 class="country-card-name">${name}</h2>
+                    <div class="country-card-stats">
+                        ${country.photoCount} photo${country.photoCount > 1 ? 's' : ''} · 
+                        ${country.speciesCount} ${speciesLabel}
+                    </div>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        function createContinentSection(continent, continentFr, continentEn) {
+            const section = document.createElement('div');
+            section.className = 'continent-section';
+            section.id = continent;
+            
+            const name = currentLang === 'fr' ? continentFr : continentEn;
+            
+            section.innerHTML = `
+                <h2 class="continent-title">${name}</h2>
+                <div class="countries-grid"></div>
+            `;
+            
+            return section;
+        }
+        
+        function renderNextBatch() {
+            const container = document.getElementById('countries-container');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+            
+            const endIndex = Math.min(displayedCount + BATCH_SIZE, sortedCountries.length);
+            
+            for (let i = displayedCount; i < endIndex; i++) {
+                const country = sortedCountries[i];
+                
+                // Créer la section continent si nécessaire
+                if (!renderedContinents.has(country.continent)) {
+                    const section = createContinentSection(
+                        country.continent,
+                        country.continentFr,
+                        country.continentEn
+                    );
+                    container.appendChild(section);
+                    renderedContinents.add(country.continent);
+                }
+                
+                // Ajouter la carte pays
+                const section = document.getElementById(country.continent);
+                const grid = section.querySelector('.countries-grid');
+                const card = createCountryCard(country);
+                grid.appendChild(card);
+            }
+            
+            displayedCount = endIndex;
+            updateLoadMoreButton();
+        }
+        
+        function updateLoadMoreButton() {
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const remainingCount = document.getElementById('remaining-count');
+            const remaining = sortedCountries.length - displayedCount;
+            
+            if (remaining > 0) {
+                loadMoreContainer.style.display = 'block';
+                remainingCount.textContent = ` (${remaining} ${currentLang === 'fr' ? 'restant' : 'remaining'}${remaining > 1 && currentLang === 'en' ? 's' : ''})`;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+        
+        // Charger le premier lot
+        renderNextBatch();
+        
+        // Auto-charger au scroll
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 500) {
+                if (displayedCount < sortedCountries.length) {
+                    renderNextBatch();
+                }
+            }
+        });
+    </script>
+</body>
+</html>

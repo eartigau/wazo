@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇺🇾 Uruguay</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_en.html" 
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_en.html" 
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_en.html" 
+                       >
+                        Recent Updates
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_en.html" 
+                       >
+                        Best of
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_en.html" 
+                       >
+                        Trips
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_en.html" 
+                       >
+                        Countries
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_en.html" 
+                       >
+                        Families
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                
+                <a href="pays_uy_fr.html" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>🇺🇾 Uruguay</h1>
+        
+        <div class="stats">
+            48 photos
+            
+             · 35 species
+            
+        </div>
+    </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(5)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Show all ✕
+            </button>
+        </div>
+        
+        
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="22575801"
+                 data-location="Colonia del Sacramento"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22575801/480"
+                     alt="Fork-tailed Flycatcher"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Fork-tailed Flycatcher</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="22416171"
+                 data-location="Playa Ramirez, Montevideo"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416171/480"
+                     alt="Picazuro Pigeon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Picazuro Pigeon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22408571"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408571/480"
+                     alt="American Golden-Plover"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">American Golden-Plover</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="22416211"
+                 data-location="Playa Ramirez, Montevideo"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416211/480"
+                     alt="Monk Parakeet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Monk Parakeet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="22416231"
+                 data-location="Playa Ramirez, Montevideo"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416231/480"
+                     alt="Monk Parakeet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Monk Parakeet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="22416221"
+                 data-location="Playa Ramirez, Montevideo"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416221/480"
+                     alt="Shiny Cowbird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Shiny Cowbird</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="22502661"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502661/480"
+                     alt="Spotted Nothura"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Spotted Nothura</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="22502671"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502671/480"
+                     alt="Southern Screamer"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Southern Screamer</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="22502711"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502711/480"
+                     alt="Coscoroba Swan"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Coscoroba Swan</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="22502761"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502761/480"
+                     alt="Large-billed Tern"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Large-billed Tern</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="22502771"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502771/480"
+                     alt="Snowy-crowned Tern"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Snowy-crowned Tern</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="22502731"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502731/480"
+                     alt="Maguari Stork"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Maguari Stork</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="515590571"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/515590571/480"
+                     alt="Maguari Stork"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Maguari Stork</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="22502791"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502791/480"
+                     alt="Common Miner"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Miner</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="22502801"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502801/480"
+                     alt="White Monjita"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">White Monjita</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22502821"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502821/480"
+                     alt="Southern House Wren"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Southern House Wren</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="22502841"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502841/480"
+                     alt="Correndera Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Correndera Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="22502871"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502871/480"
+                     alt="Brown-and-yellow Marshbird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Brown-and-yellow Marshbird</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="22502851"
+                 data-location="PP Laguna de Rocha"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22502851/480"
+                     alt="Great Pampa-Finch"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Pampa-Finch</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="22571141"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571141/480"
+                     alt="Collared Plover"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Collared Plover</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="22571151"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571151/480"
+                     alt="Collared Plover"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Collared Plover</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="22571051"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571051/480"
+                     alt="Lesser Yellowlegs"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lesser Yellowlegs</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="22571061"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571061/480"
+                     alt="Brown-hooded Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Brown-hooded Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="22571071"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571071/480"
+                     alt="Brown-hooded Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Brown-hooded Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="21111641"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111641/480"
+                     alt="Great Grebe"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Grebe</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="22571081"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571081/480"
+                     alt="Burrowing Owl"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Burrowing Owl</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="21111651"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111651/480"
+                     alt="Rufous Hornero"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rufous Hornero</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="22571101"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571101/480"
+                     alt="Gray Monjita"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gray Monjita</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="21111661"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111661/480"
+                     alt="Great Kiskadee"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Kiskadee</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="22571121"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571121/480"
+                     alt="White-rumped Swallow"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">White-rumped Swallow</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="22571111"
+                 data-location="PN Cabo Polonio"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22571111/480"
+                     alt="Blue-and-white Swallow"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Blue-and-white Swallow</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="21111681"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111681/480"
+                     alt="Hooded Siskin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Hooded Siskin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="21111671"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21111671/480"
+                     alt="Great Pampa-Finch"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Pampa-Finch</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="22416691"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416691/480"
+                     alt="Eared Dove"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eared Dove</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="22416751"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416751/480"
+                     alt="Guira Cuckoo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Guira Cuckoo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="22416781"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416781/480"
+                     alt="Guira Cuckoo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Guira Cuckoo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="22416851"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416851/480"
+                     alt="Green-barred Woodpecker"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Green-barred Woodpecker</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="22416861"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416861/480"
+                     alt="Green-barred Woodpecker"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Green-barred Woodpecker</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="22416871"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416871/480"
+                     alt="Rufous Hornero"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rufous Hornero</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="22416841"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416841/480"
+                     alt="Great Kiskadee"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Kiskadee</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="22416891"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416891/480"
+                     alt="Rufous-bellied Thrush"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rufous-bellied Thrush</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="22416901"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22416901/480"
+                     alt="Rufous-bellied Thrush"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rufous-bellied Thrush</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="22408181"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408181/480"
+                     alt="Guira Cuckoo"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Guira Cuckoo</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="22408221"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408221/480"
+                     alt="White-rumped Sandpiper"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">White-rumped Sandpiper</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="22408231"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408231/480"
+                     alt="White-rumped Sandpiper"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">White-rumped Sandpiper</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="22408241"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408241/480"
+                     alt="Blue-billed Black-Tyrant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Blue-billed Black-Tyrant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="22408261"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408261/480"
+                     alt="Brown-chested Martin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Brown-chested Martin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="22408211"
+                 data-location="Bahia Grande, La Paloma"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22408211/480"
+                     alt="Shiny Cowbird"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Shiny Cowbird</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    View on eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: January 7<sup>th</sup>, 2026</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'en';
+        
+        const photosData = [
+            
+            {
+                ml: "22575801",
+                name_fr: "Tyran des savanes",
+                name_en: "Fork-tailed Flycatcher",
+                scientific: "Tyrannus savana",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Colonia del Sacramento",
+                location_fr: "Colonia del Sacramento, Uruguay",
+                location_en: "Colonia del Sacramento, Uruguay",
+                date_fr: "31 décembre 2006",
+                date_en: "December 31<sup>st</sup>, 2006",
+                lat: -34.4627413,
+                lng: -57.8384545,
+                checklist_id: "S18566233"
+            },
+            
+            {
+                ml: "22416171",
+                name_fr: "Pigeon picazuro",
+                name_en: "Picazuro Pigeon",
+                scientific: "Patagioenas picazuro",
+                family: "Columbidae (Pigeons and Doves)",
+                location: "Playa Ramirez, Montevideo",
+                location_fr: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                location_en: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                date_fr: "30 décembre 2006",
+                date_en: "December 30<sup>th</sup>, 2006",
+                lat: -34.918056,
+                lng: -56.168333,
+                checklist_id: "S18566224"
+            },
+            
+            {
+                ml: "22408571",
+                name_fr: "Pluvier bronzé",
+                name_en: "American Golden-Plover",
+                scientific: "Pluvialis dominica",
+                family: "Charadriidae (Plovers and Lapwings)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "30 décembre 2006",
+                date_en: "December 30<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566222"
+            },
+            
+            {
+                ml: "22416211",
+                name_fr: "Conure veuve",
+                name_en: "Monk Parakeet",
+                scientific: "Myiopsitta monachus",
+                family: "Psittacidae (New World and African Parrots)",
+                location: "Playa Ramirez, Montevideo",
+                location_fr: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                location_en: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                date_fr: "30 décembre 2006",
+                date_en: "December 30<sup>th</sup>, 2006",
+                lat: -34.918056,
+                lng: -56.168333,
+                checklist_id: "S18566224"
+            },
+            
+            {
+                ml: "22416231",
+                name_fr: "Conure veuve",
+                name_en: "Monk Parakeet",
+                scientific: "Myiopsitta monachus",
+                family: "Psittacidae (New World and African Parrots)",
+                location: "Playa Ramirez, Montevideo",
+                location_fr: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                location_en: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                date_fr: "30 décembre 2006",
+                date_en: "December 30<sup>th</sup>, 2006",
+                lat: -34.918056,
+                lng: -56.168333,
+                checklist_id: "S18566224"
+            },
+            
+            {
+                ml: "22416221",
+                name_fr: "Vacher luisant",
+                name_en: "Shiny Cowbird",
+                scientific: "Molothrus bonariensis",
+                family: "Icteridae (Troupials and Allies)",
+                location: "Playa Ramirez, Montevideo",
+                location_fr: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                location_en: "Playa Ramirez, Montevideo, Montevideo, Uruguay",
+                date_fr: "30 décembre 2006",
+                date_en: "December 30<sup>th</sup>, 2006",
+                lat: -34.918056,
+                lng: -56.168333,
+                checklist_id: "S18566224"
+            },
+            
+            {
+                ml: "22502661",
+                name_fr: "Tinamou tacheté",
+                name_en: "Spotted Nothura",
+                scientific: "Nothura maculosa",
+                family: "Tinamidae (Tinamous)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502671",
+                name_fr: "Kamichi à collier",
+                name_en: "Southern Screamer",
+                scientific: "Chauna torquata",
+                family: "Anhimidae (Screamers)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502711",
+                name_fr: "Coscoroba blanc",
+                name_en: "Coscoroba Swan",
+                scientific: "Coscoroba coscoroba",
+                family: "Anatidae (Ducks, Geese, and Waterfowl)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502761",
+                name_fr: "Sterne à gros bec",
+                name_en: "Large-billed Tern",
+                scientific: "Phaetusa simplex",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502771",
+                name_fr: "Sterne de Trudeau",
+                name_en: "Snowy-crowned Tern",
+                scientific: "Sterna trudeaui",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502731",
+                name_fr: "Cigogne maguari",
+                name_en: "Maguari Stork",
+                scientific: "Ciconia maguari",
+                family: "Ciconiidae (Storks)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "515590571",
+                name_fr: "Cigogne maguari",
+                name_en: "Maguari Stork",
+                scientific: "Ciconia maguari",
+                family: "Ciconiidae (Storks)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502791",
+                name_fr: "Géositte mineuse",
+                name_en: "Common Miner",
+                scientific: "Geositta cunicularia",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502801",
+                name_fr: "Pépoaza irupéro",
+                name_en: "White Monjita",
+                scientific: "Xolmis irupero",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502821",
+                name_fr: "Troglodyte austral",
+                name_en: "Southern House Wren",
+                scientific: "Troglodytes musculus",
+                family: "Troglodytidae (Wrens)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502841",
+                name_fr: "Pipit correndera",
+                name_en: "Correndera Pipit",
+                scientific: "Anthus correndera",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502871",
+                name_fr: "Carouge dragon",
+                name_en: "Brown-and-yellow Marshbird",
+                scientific: "Pseudoleistes virescens",
+                family: "Icteridae (Troupials and Allies)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22502851",
+                name_fr: "Embernagre à cinq couleurs",
+                name_en: "Great Pampa-Finch",
+                scientific: "Embernagra platensis",
+                family: "Thraupidae (Tanagers and Allies)",
+                location: "PP Laguna de Rocha",
+                location_fr: "PP Laguna de Rocha, Rocha, Uruguay",
+                location_en: "PP Laguna de Rocha, Rocha, Uruguay",
+                date_fr: "29 décembre 2006",
+                date_en: "December 29<sup>th</sup>, 2006",
+                lat: -34.679665,
+                lng: -54.2731855,
+                checklist_id: "S18566225"
+            },
+            
+            {
+                ml: "22571141",
+                name_fr: "Pluvier d\'Azara",
+                name_en: "Collared Plover",
+                scientific: "Anarhynchus collaris",
+                family: "Charadriidae (Plovers and Lapwings)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "22571151",
+                name_fr: "Pluvier d\'Azara",
+                name_en: "Collared Plover",
+                scientific: "Anarhynchus collaris",
+                family: "Charadriidae (Plovers and Lapwings)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "22571051",
+                name_fr: "Petit Chevalier",
+                name_en: "Lesser Yellowlegs",
+                scientific: "Tringa flavipes",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "22571061",
+                name_fr: "Mouette de Patagonie",
+                name_en: "Brown-hooded Gull",
+                scientific: "Chroicocephalus maculipennis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "22571071",
+                name_fr: "Mouette de Patagonie",
+                name_en: "Brown-hooded Gull",
+                scientific: "Chroicocephalus maculipennis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "21111641",
+                name_fr: "Grand Grèbe",
+                name_en: "Great Grebe",
+                scientific: "Podiceps major",
+                family: "Podicipedidae (Grebes)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566284"
+            },
+            
+            {
+                ml: "22571081",
+                name_fr: "Chevêche des terriers",
+                name_en: "Burrowing Owl",
+                scientific: "Athene cunicularia",
+                family: "Strigidae (Owls)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "21111651",
+                name_fr: "Fournier roux",
+                name_en: "Rufous Hornero",
+                scientific: "Furnarius rufus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566284"
+            },
+            
+            {
+                ml: "22571101",
+                name_fr: "Pépoaza cendré",
+                name_en: "Gray Monjita",
+                scientific: "Nengetus cinereus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "21111661",
+                name_fr: "Tyran quiquivi",
+                name_en: "Great Kiskadee",
+                scientific: "Pitangus sulphuratus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566284"
+            },
+            
+            {
+                ml: "22571121",
+                name_fr: "Hirondelle à diadème",
+                name_en: "White-rumped Swallow",
+                scientific: "Tachycineta leucorrhoa",
+                family: "Hirundinidae (Swallows)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "22571111",
+                name_fr: "Hirondelle bleu et blanc",
+                name_en: "Blue-and-white Swallow",
+                scientific: "Pygochelidon cyanoleuca",
+                family: "Hirundinidae (Swallows)",
+                location: "PN Cabo Polonio",
+                location_fr: "PN Cabo Polonio, Rocha, Uruguay",
+                location_en: "PN Cabo Polonio, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.4060599,
+                lng: -53.7775612,
+                checklist_id: "S18566223"
+            },
+            
+            {
+                ml: "21111681",
+                name_fr: "Tarin de Magellan",
+                name_en: "Hooded Siskin",
+                scientific: "Spinus magellanicus",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566284"
+            },
+            
+            {
+                ml: "21111671",
+                name_fr: "Embernagre à cinq couleurs",
+                name_en: "Great Pampa-Finch",
+                scientific: "Embernagra platensis",
+                family: "Thraupidae (Tanagers and Allies)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "28 décembre 2006",
+                date_en: "December 28<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566284"
+            },
+            
+            {
+                ml: "22416691",
+                name_fr: "Tourterelle oreillarde",
+                name_en: "Eared Dove",
+                scientific: "Zenaida auriculata",
+                family: "Columbidae (Pigeons and Doves)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416751",
+                name_fr: "Guira cantara",
+                name_en: "Guira Cuckoo",
+                scientific: "Guira guira",
+                family: "Cuculidae (Cuckoos)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416781",
+                name_fr: "Guira cantara",
+                name_en: "Guira Cuckoo",
+                scientific: "Guira guira",
+                family: "Cuculidae (Cuckoos)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416851",
+                name_fr: "Pic vert et noir",
+                name_en: "Green-barred Woodpecker",
+                scientific: "Colaptes melanochloros",
+                family: "Picidae (Woodpeckers)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416861",
+                name_fr: "Pic vert et noir",
+                name_en: "Green-barred Woodpecker",
+                scientific: "Colaptes melanochloros",
+                family: "Picidae (Woodpeckers)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416871",
+                name_fr: "Fournier roux",
+                name_en: "Rufous Hornero",
+                scientific: "Furnarius rufus",
+                family: "Furnariidae (Ovenbirds and Woodcreepers)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416841",
+                name_fr: "Tyran quiquivi",
+                name_en: "Great Kiskadee",
+                scientific: "Pitangus sulphuratus",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416891",
+                name_fr: "Merle à ventre roux",
+                name_en: "Rufous-bellied Thrush",
+                scientific: "Turdus rufiventris",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22416901",
+                name_fr: "Merle à ventre roux",
+                name_en: "Rufous-bellied Thrush",
+                scientific: "Turdus rufiventris",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "27 décembre 2006",
+                date_en: "December 27<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566288"
+            },
+            
+            {
+                ml: "22408181",
+                name_fr: "Guira cantara",
+                name_en: "Guira Cuckoo",
+                scientific: "Guira guira",
+                family: "Cuculidae (Cuckoos)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            },
+            
+            {
+                ml: "22408221",
+                name_fr: "Bécasseau à croupion blanc",
+                name_en: "White-rumped Sandpiper",
+                scientific: "Calidris fuscicollis",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            },
+            
+            {
+                ml: "22408231",
+                name_fr: "Bécasseau à croupion blanc",
+                name_en: "White-rumped Sandpiper",
+                scientific: "Calidris fuscicollis",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            },
+            
+            {
+                ml: "22408241",
+                name_fr: "Ada à bec bleu",
+                name_en: "Blue-billed Black-Tyrant",
+                scientific: "Knipolegus cyanirostris",
+                family: "Tyrannidae (Tyrant Flycatchers)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            },
+            
+            {
+                ml: "22408261",
+                name_fr: "Hirondelle tapère",
+                name_en: "Brown-chested Martin",
+                scientific: "Progne tapera",
+                family: "Hirundinidae (Swallows)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            },
+            
+            {
+                ml: "22408211",
+                name_fr: "Vacher luisant",
+                name_en: "Shiny Cowbird",
+                scientific: "Molothrus bonariensis",
+                family: "Icteridae (Troupials and Allies)",
+                location: "Bahia Grande, La Paloma",
+                location_fr: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                location_en: "Bahia Grande, La Paloma, Rocha, Uruguay",
+                date_fr: "26 décembre 2006",
+                date_en: "December 26<sup>th</sup>, 2006",
+                lat: -34.661111,
+                lng: -54.1525,
+                checklist_id: "S18566221"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte - cachée sur mobile
+            const mapDiv = document.getElementById('lightbox-map');
+            const isMobile = window.innerWidth <= 768;
+            
+            if (photo.lat && photo.lng && !isMobile) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+
+        
+        // Carte du voyage avec filtrage par lieu
+        const tripLocations = [
+            
+            { lat: -34.4627413, lng: -57.8384545, name: "Colonia del Sacramento" },
+            
+            { lat: -34.918056, lng: -56.168333, name: "Playa Ramirez, Montevideo" },
+            
+            { lat: -34.661111, lng: -54.1525, name: "Bahia Grande, La Paloma" },
+            
+            { lat: -34.679665, lng: -54.2731855, name: "PP Laguna de Rocha" },
+            
+            { lat: -34.4060599, lng: -53.7775612, name: "PN Cabo Polonio" },
+            
+        ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs avec compte de photos et filtrage
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
+                if (loc.name) {
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
+                }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
+        
+        // Menu mobile hamburger
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        
+        // Fermer menu au clic ailleurs
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('navMenu');
+            if (menu && !nav.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        
+        // Swipe pour lightbox sur mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.getElementById('lightbox').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        document.getElementById('lightbox').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    navigateLightbox(1); // Swipe gauche = suivant
+                } else {
+                    navigateLightbox(-1); // Swipe droite = précédent
+                }
+            }
+        }
+    </script>
+</body>
+</html>

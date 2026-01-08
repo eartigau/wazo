@@ -1,0 +1,1309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇬🇧 United Kingdom</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_en.html" 
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_en.html" 
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_en.html" 
+                       >
+                        Recent Updates
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_en.html" 
+                       >
+                        Best of
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_en.html" 
+                       >
+                        Trips
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_en.html" 
+                       >
+                        Countries
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_en.html" 
+                       >
+                        Families
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                
+                <a href="pays_gb_fr.html" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>🇬🇧 United Kingdom</h1>
+        
+        <div class="stats">
+            29 photos
+            
+             · 23 species
+            
+        </div>
+    </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(7)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Show all ✕
+            </button>
+        </div>
+        
+        
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="22536251"
+                 data-location="The Scores"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536251/480"
+                     alt="Black-headed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-headed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="22536261"
+                 data-location="The Scores"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536261/480"
+                     alt="Eurasian Jackdaw"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Jackdaw</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="22536281"
+                 data-location="The Scores"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536281/480"
+                     alt="Rook"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rook</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="22536301"
+                 data-location="The Scores"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536301/480"
+                     alt="European Starling"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Starling</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="22536321"
+                 data-location="The Scores"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536321/480"
+                     alt="White Wagtail (British)"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">White Wagtail (British)</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="22536331"
+                 data-location="The Scores"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22536331/480"
+                     alt="Rock Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rock Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="22576321"
+                 data-location="The Scores"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576321/480"
+                     alt="Black-headed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-headed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="22576351"
+                 data-location="The Scores"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576351/480"
+                     alt="Sandwich Tern"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sandwich Tern</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="22576311"
+                 data-location="The Scores"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576311/480"
+                     alt="Northern Fulmar"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Northern Fulmar</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="22576381"
+                 data-location="The Scores"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22576381/480"
+                     alt="Rook"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rook</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="612802742"
+                 data-location="The Scores"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/612802742/480"
+                     alt="Carrion Crow"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Carrion Crow</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="22460671"
+                 data-location="Falkland Palace"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22460671/480"
+                     alt="Carrion Crow"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Carrion Crow</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="22389821"
+                 data-location="Garelochhead"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22389821/480"
+                     alt="European Shag"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Shag</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="22389841"
+                 data-location="Garelochhead"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22389841/480"
+                     alt="Gray Heron"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Gray Heron</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="34383811"
+                 data-location="Ben Nevis"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34383811/480"
+                     alt="Ring-necked Pheasant"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ring-necked Pheasant</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="22586001"
+                 data-location="Urquhart Bay Wood"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22586001/480"
+                     alt="Spotted Flycatcher"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Spotted Flycatcher</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="34383831"
+                 data-location="Ben Nevis"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34383831/480"
+                     alt="Common Chaffinch"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Chaffinch</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="34383841"
+                 data-location="Ben Nevis"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34383841/480"
+                     alt="Common Chaffinch"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Chaffinch</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="34383801"
+                 data-location="Ben Nevis"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34383801/480"
+                     alt="Eurasian Siskin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Siskin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="34440561"
+                 data-location="Ben Nevis"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34440561/480"
+                     alt="Ring Ouzel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ring Ouzel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="29682861"
+                 data-location="Ben Nevis"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/29682861/480"
+                     alt="Snow Bunting"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Snow Bunting</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="34507921"
+                 data-location="Fort William / An Gearasdan"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34507921/480"
+                     alt="Eurasian Oystercatcher"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Oystercatcher</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="22409461"
+                 data-location="Fort William / An Gearasdan"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22409461/480"
+                     alt="Common Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="34440601"
+                 data-location="Ben Nevis"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/34440601/480"
+                     alt="Song Thrush"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Song Thrush</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="22534201"
+                 data-location="Fort William / An Gearasdan"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22534201/480"
+                     alt="Common Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="22534191"
+                 data-location="Fort William / An Gearasdan"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22534191/480"
+                     alt="Lesser Black-backed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lesser Black-backed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="22415021"
+                 data-location="Glasgow Green"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22415021/480"
+                     alt="Common Wood-Pigeon"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Wood-Pigeon</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="22415011"
+                 data-location="Glasgow Green"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22415011/480"
+                     alt="Black-headed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-headed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="22414981"
+                 data-location="Glasgow Green"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22414981/480"
+                     alt="Eurasian Magpie"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Magpie</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    View on eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: January 7<sup>th</sup>, 2026</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'en';
+        
+        const photosData = [
+            
+            {
+                ml: "22536251",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "26 juillet 2008",
+                date_en: "July 26<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565197"
+            },
+            
+            {
+                ml: "22536261",
+                name_fr: "Choucas des tours",
+                name_en: "Eurasian Jackdaw",
+                scientific: "Coloeus monedula",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "26 juillet 2008",
+                date_en: "July 26<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565197"
+            },
+            
+            {
+                ml: "22536281",
+                name_fr: "Corbeau freux",
+                name_en: "Rook",
+                scientific: "Corvus frugilegus",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "26 juillet 2008",
+                date_en: "July 26<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565197"
+            },
+            
+            {
+                ml: "22536301",
+                name_fr: "Étourneau sansonnet",
+                name_en: "European Starling",
+                scientific: "Sturnus vulgaris",
+                family: "Sturnidae (Starlings)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "26 juillet 2008",
+                date_en: "July 26<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565197"
+            },
+            
+            {
+                ml: "22536321",
+                name_fr: "Bergeronnette grise (yarrellii)",
+                name_en: "White Wagtail (British)",
+                scientific: "Motacilla alba yarrellii",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "26 juillet 2008",
+                date_en: "July 26<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565197"
+            },
+            
+            {
+                ml: "22536331",
+                name_fr: "Pipit maritime",
+                name_en: "Rock Pipit",
+                scientific: "Anthus petrosus",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "26 juillet 2008",
+                date_en: "July 26<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565197"
+            },
+            
+            {
+                ml: "22576321",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "25 juillet 2008",
+                date_en: "July 25<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565223"
+            },
+            
+            {
+                ml: "22576351",
+                name_fr: "Sterne caugek",
+                name_en: "Sandwich Tern",
+                scientific: "Thalasseus sandvicensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "25 juillet 2008",
+                date_en: "July 25<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565223"
+            },
+            
+            {
+                ml: "22576311",
+                name_fr: "Fulmar boréal",
+                name_en: "Northern Fulmar",
+                scientific: "Fulmarus glacialis",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "25 juillet 2008",
+                date_en: "July 25<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565223"
+            },
+            
+            {
+                ml: "22576381",
+                name_fr: "Corbeau freux",
+                name_en: "Rook",
+                scientific: "Corvus frugilegus",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "25 juillet 2008",
+                date_en: "July 25<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565223"
+            },
+            
+            {
+                ml: "612802742",
+                name_fr: "Corneille noire",
+                name_en: "Carrion Crow",
+                scientific: "Corvus corone",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "25 juillet 2008",
+                date_en: "July 25<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565223"
+            },
+            
+            {
+                ml: "22460671",
+                name_fr: "Corneille noire",
+                name_en: "Carrion Crow",
+                scientific: "Corvus corone",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Falkland Palace",
+                location_fr: "Falkland Palace, Royaume-Uni",
+                location_en: "Falkland Palace, United Kingdom",
+                date_fr: "23 juillet 2008",
+                date_en: "July 23<sup>rd</sup>, 2008",
+                lat: 56.2543297,
+                lng: -3.2055831,
+                checklist_id: "S18563416"
+            },
+            
+            {
+                ml: "22389821",
+                name_fr: "Cormoran huppé",
+                name_en: "European Shag",
+                scientific: "Gulosus aristotelis",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Garelochhead",
+                location_fr: "Garelochhead, Royaume-Uni",
+                location_en: "Garelochhead, United Kingdom",
+                date_fr: "29 juin 2004",
+                date_en: "June 29<sup>th</sup>, 2004",
+                lat: 56.078889,
+                lng: -4.8338889,
+                checklist_id: "S18563471"
+            },
+            
+            {
+                ml: "22389841",
+                name_fr: "Héron cendré",
+                name_en: "Gray Heron",
+                scientific: "Ardea cinerea",
+                family: "Ardeidae (Herons, Egrets, and Bitterns)",
+                location: "Garelochhead",
+                location_fr: "Garelochhead, Royaume-Uni",
+                location_en: "Garelochhead, United Kingdom",
+                date_fr: "29 juin 2004",
+                date_en: "June 29<sup>th</sup>, 2004",
+                lat: 56.078889,
+                lng: -4.8338889,
+                checklist_id: "S18563471"
+            },
+            
+            {
+                ml: "34383811",
+                name_fr: "Faisan de Colchide",
+                name_en: "Ring-necked Pheasant",
+                scientific: "Phasianus colchicus",
+                family: "Phasianidae (Pheasants, Grouse, and Allies)",
+                location: "Ben Nevis",
+                location_fr: "Ben Nevis, Royaume-Uni",
+                location_en: "Ben Nevis, United Kingdom",
+                date_fr: "28 juin 2004",
+                date_en: "June 28<sup>th</sup>, 2004",
+                lat: 56.7955203,
+                lng: -5.0042725,
+                checklist_id: "S18565297"
+            },
+            
+            {
+                ml: "22586001",
+                name_fr: "Gobemouche gris",
+                name_en: "Spotted Flycatcher",
+                scientific: "Muscicapa striata",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Urquhart Bay Wood",
+                location_fr: "Urquhart Bay Wood, Royaume-Uni",
+                location_en: "Urquhart Bay Wood, United Kingdom",
+                date_fr: "28 juin 2004",
+                date_en: "June 28<sup>th</sup>, 2004",
+                lat: 57.332637,
+                lng: -4.4600844,
+                checklist_id: "S18565179"
+            },
+            
+            {
+                ml: "34383831",
+                name_fr: "Pinson des arbres",
+                name_en: "Common Chaffinch",
+                scientific: "Fringilla coelebs",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Ben Nevis",
+                location_fr: "Ben Nevis, Royaume-Uni",
+                location_en: "Ben Nevis, United Kingdom",
+                date_fr: "28 juin 2004",
+                date_en: "June 28<sup>th</sup>, 2004",
+                lat: 56.7955203,
+                lng: -5.0042725,
+                checklist_id: "S18565297"
+            },
+            
+            {
+                ml: "34383841",
+                name_fr: "Pinson des arbres",
+                name_en: "Common Chaffinch",
+                scientific: "Fringilla coelebs",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Ben Nevis",
+                location_fr: "Ben Nevis, Royaume-Uni",
+                location_en: "Ben Nevis, United Kingdom",
+                date_fr: "28 juin 2004",
+                date_en: "June 28<sup>th</sup>, 2004",
+                lat: 56.7955203,
+                lng: -5.0042725,
+                checklist_id: "S18565297"
+            },
+            
+            {
+                ml: "34383801",
+                name_fr: "Tarin des aulnes",
+                name_en: "Eurasian Siskin",
+                scientific: "Spinus spinus",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Ben Nevis",
+                location_fr: "Ben Nevis, Royaume-Uni",
+                location_en: "Ben Nevis, United Kingdom",
+                date_fr: "28 juin 2004",
+                date_en: "June 28<sup>th</sup>, 2004",
+                lat: 56.7955203,
+                lng: -5.0042725,
+                checklist_id: "S18565297"
+            },
+            
+            {
+                ml: "34440561",
+                name_fr: "Merle à plastron",
+                name_en: "Ring Ouzel",
+                scientific: "Turdus torquatus",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Ben Nevis",
+                location_fr: "Ben Nevis, Royaume-Uni",
+                location_en: "Ben Nevis, United Kingdom",
+                date_fr: "27 juin 2004",
+                date_en: "June 27<sup>th</sup>, 2004",
+                lat: 56.7955203,
+                lng: -5.0042725,
+                checklist_id: "S18565304"
+            },
+            
+            {
+                ml: "29682861",
+                name_fr: "Plectrophane des neiges",
+                name_en: "Snow Bunting",
+                scientific: "Plectrophenax nivalis",
+                family: "Calcariidae (Longspurs and Snow Buntings)",
+                location: "Ben Nevis",
+                location_fr: "Ben Nevis, Royaume-Uni",
+                location_en: "Ben Nevis, United Kingdom",
+                date_fr: "27 juin 2004",
+                date_en: "June 27<sup>th</sup>, 2004",
+                lat: 56.7955203,
+                lng: -5.0042725,
+                checklist_id: "S18565304"
+            },
+            
+            {
+                ml: "34507921",
+                name_fr: "Huîtrier pie",
+                name_en: "Eurasian Oystercatcher",
+                scientific: "Haematopus ostralegus",
+                family: "Haematopodidae (Oystercatchers)",
+                location: "Fort William / An Gearasdan",
+                location_fr: "Fort William / An Gearasdan, Royaume-Uni",
+                location_en: "Fort William / An Gearasdan, United Kingdom",
+                date_fr: "26 juin 2004",
+                date_en: "June 26<sup>th</sup>, 2004",
+                lat: 56.8219661,
+                lng: -5.1066363,
+                checklist_id: "S18563369"
+            },
+            
+            {
+                ml: "22409461",
+                name_fr: "Goéland cendré",
+                name_en: "Common Gull",
+                scientific: "Larus canus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Fort William / An Gearasdan",
+                location_fr: "Fort William / An Gearasdan, Royaume-Uni",
+                location_en: "Fort William / An Gearasdan, United Kingdom",
+                date_fr: "26 juin 2004",
+                date_en: "June 26<sup>th</sup>, 2004",
+                lat: 56.8219661,
+                lng: -5.1066363,
+                checklist_id: "S18563369"
+            },
+            
+            {
+                ml: "34440601",
+                name_fr: "Grive musicienne",
+                name_en: "Song Thrush",
+                scientific: "Turdus philomelos",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Ben Nevis",
+                location_fr: "Ben Nevis, Royaume-Uni",
+                location_en: "Ben Nevis, United Kingdom",
+                date_fr: "26 juin 2004",
+                date_en: "June 26<sup>th</sup>, 2004",
+                lat: 56.7955203,
+                lng: -5.0042725,
+                checklist_id: "S18565209"
+            },
+            
+            {
+                ml: "22534201",
+                name_fr: "Goéland cendré",
+                name_en: "Common Gull",
+                scientific: "Larus canus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Fort William / An Gearasdan",
+                location_fr: "Fort William / An Gearasdan, Royaume-Uni",
+                location_en: "Fort William / An Gearasdan, United Kingdom",
+                date_fr: "25 juin 2004",
+                date_en: "June 25<sup>th</sup>, 2004",
+                lat: 56.8219661,
+                lng: -5.1066363,
+                checklist_id: "S18563370"
+            },
+            
+            {
+                ml: "22534191",
+                name_fr: "Goéland brun",
+                name_en: "Lesser Black-backed Gull",
+                scientific: "Larus fuscus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Fort William / An Gearasdan",
+                location_fr: "Fort William / An Gearasdan, Royaume-Uni",
+                location_en: "Fort William / An Gearasdan, United Kingdom",
+                date_fr: "25 juin 2004",
+                date_en: "June 25<sup>th</sup>, 2004",
+                lat: 56.8219661,
+                lng: -5.1066363,
+                checklist_id: "S18563370"
+            },
+            
+            {
+                ml: "22415021",
+                name_fr: "Pigeon ramier",
+                name_en: "Common Wood-Pigeon",
+                scientific: "Columba palumbus",
+                family: "Columbidae (Pigeons and Doves)",
+                location: "Glasgow Green",
+                location_fr: "Glasgow Green, Royaume-Uni",
+                location_en: "Glasgow Green, United Kingdom",
+                date_fr: "20 juin 2004",
+                date_en: "June 20<sup>th</sup>, 2004",
+                lat: 55.848929,
+                lng: -4.235868,
+                checklist_id: "S18565196"
+            },
+            
+            {
+                ml: "22415011",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Glasgow Green",
+                location_fr: "Glasgow Green, Royaume-Uni",
+                location_en: "Glasgow Green, United Kingdom",
+                date_fr: "20 juin 2004",
+                date_en: "June 20<sup>th</sup>, 2004",
+                lat: 55.848929,
+                lng: -4.235868,
+                checklist_id: "S18565196"
+            },
+            
+            {
+                ml: "22414981",
+                name_fr: "Pie bavarde",
+                name_en: "Eurasian Magpie",
+                scientific: "Pica pica",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "Glasgow Green",
+                location_fr: "Glasgow Green, Royaume-Uni",
+                location_en: "Glasgow Green, United Kingdom",
+                date_fr: "20 juin 2004",
+                date_en: "June 20<sup>th</sup>, 2004",
+                lat: 55.848929,
+                lng: -4.235868,
+                checklist_id: "S18565196"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte - cachée sur mobile
+            const mapDiv = document.getElementById('lightbox-map');
+            const isMobile = window.innerWidth <= 768;
+            
+            if (photo.lat && photo.lng && !isMobile) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+
+        
+        // Carte du voyage avec filtrage par lieu
+        const tripLocations = [
+            
+            { lat: 56.342615, lng: -2.7901711, name: "The Scores" },
+            
+            { lat: 56.2543297, lng: -3.2055831, name: "Falkland Palace" },
+            
+            { lat: 56.078889, lng: -4.8338889, name: "Garelochhead" },
+            
+            { lat: 56.7955203, lng: -5.0042725, name: "Ben Nevis" },
+            
+            { lat: 57.332637, lng: -4.4600844, name: "Urquhart Bay Wood" },
+            
+            { lat: 56.8219661, lng: -5.1066363, name: "Fort William / An Gearasdan" },
+            
+            { lat: 55.848929, lng: -4.235868, name: "Glasgow Green" },
+            
+        ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs avec compte de photos et filtrage
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
+                if (loc.name) {
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
+                }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
+        
+        // Menu mobile hamburger
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        
+        // Fermer menu au clic ailleurs
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('navMenu');
+            if (menu && !nav.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        
+        // Swipe pour lightbox sur mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.getElementById('lightbox').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        document.getElementById('lightbox').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    navigateLightbox(1); // Swipe gauche = suivant
+                } else {
+                    navigateLightbox(-1); // Swipe droite = précédent
+                }
+            }
+        }
+    </script>
+</body>
+</html>

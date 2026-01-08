@@ -1,0 +1,2268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🇧🇷 Brazil</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_en.html" 
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_en.html" 
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_en.html" 
+                       >
+                        Recent Updates
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_en.html" 
+                       >
+                        Best of
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_en.html" 
+                       >
+                        Trips
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_en.html" 
+                       >
+                        Countries
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="familles_index_en.html" 
+                       >
+                        Families
+                    </a>
+                </li>
+                
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                
+                <a href="pays_br_fr.html" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>🇧🇷 Brazil</h1>
+        
+        <div class="stats">
+            62 photos
+            
+             · 36 species
+            
+        </div>
+    </div>
+
+    
+    <!-- CARTE DU VOYAGE -->
+    <div class="trip-map-container">
+        <div class="trip-map-header">
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(8)</span>
+        </div>
+        <div id="trip-map"></div>
+    </div>
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+        <!-- Indicateur de filtre par lieu -->
+        <div id="location-filter-indicator" class="location-filter-indicator" style="display: none;">
+            <span class="filter-text">
+                <span class="filter-icon">📍</span>
+                <span id="filter-location-name"></span>
+                <span id="filter-photo-count"></span>
+            </span>
+            <button onclick="resetLocationFilter()" class="filter-reset-btn">
+                Show all ✕
+            </button>
+        </div>
+        
+        
+        <div class="masonry-grid">
+            
+            <div class="photo-card" 
+                 data-index="0"
+                 data-ml="21102061"
+                 data-location="Roscoff"
+                 onclick="openLightbox(0)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102061/480"
+                     alt="Great Black-backed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Black-backed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="1"
+                 data-ml="639563080"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(1)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639563080/480"
+                     alt="Black-tailed Godwit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-tailed Godwit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="2"
+                 data-ml="639562180"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(2)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639562180/480"
+                     alt="Common Sandpiper"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Sandpiper</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="3"
+                 data-ml="639562469"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(3)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639562469/480"
+                     alt="Eurasian Spoonbill"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Spoonbill</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="4"
+                 data-ml="639562527"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(4)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639562527/480"
+                     alt="Eurasian Spoonbill"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Spoonbill</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="5"
+                 data-ml="639562647"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(5)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639562647/480"
+                     alt="Eurasian Spoonbill"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Spoonbill</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="6"
+                 data-ml="639562763"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(6)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639562763/480"
+                     alt="Eurasian Spoonbill"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Spoonbill</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="7"
+                 data-ml="639562971"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(7)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639562971/480"
+                     alt="Eurasian Spoonbill"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Spoonbill</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="8"
+                 data-ml="639562972"
+                 data-location="ENS du Marais de Suscinio"
+                 onclick="openLightbox(8)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639562972/480"
+                     alt="Eurasian Spoonbill"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Spoonbill</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="9"
+                 data-ml="639513422"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(9)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639513422/480"
+                     alt="Common Murre"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Murre</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="10"
+                 data-ml="639510040"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(10)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639510040/480"
+                     alt="Lesser Black-backed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Lesser Black-backed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="11"
+                 data-ml="639510093"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(11)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639510093/480"
+                     alt="European Storm-Petrel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Storm-Petrel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="12"
+                 data-ml="639514020"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(12)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639514020/480"
+                     alt="European Storm-Petrel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Storm-Petrel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="13"
+                 data-ml="639510100"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(13)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639510100/480"
+                     alt="Balearic Shearwater"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Balearic Shearwater</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="14"
+                 data-ml="639510105"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(14)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639510105/480"
+                     alt="Balearic Shearwater"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Balearic Shearwater</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="15"
+                 data-ml="639513184"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(15)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639513184/480"
+                     alt="Balearic Shearwater"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Balearic Shearwater</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="16"
+                 data-ml="639513820"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(16)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639513820/480"
+                     alt="Balearic Shearwater"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Balearic Shearwater</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="17"
+                 data-ml="639519891"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(17)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639519891/480"
+                     alt="Balearic Shearwater"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Balearic Shearwater</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="18"
+                 data-ml="639520000"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(18)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639520000/480"
+                     alt="Northern Gannet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Northern Gannet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="19"
+                 data-ml="639512726"
+                 data-location="Sortie pélagique Mor Braz"
+                 onclick="openLightbox(19)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639512726/480"
+                     alt="European Shag"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Shag</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="20"
+                 data-ml="639464083"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(20)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464083/480"
+                     alt="Eurasian Oystercatcher"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Oystercatcher</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="21"
+                 data-ml="639464076"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(21)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464076/480"
+                     alt="European Shag"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Shag</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="22"
+                 data-ml="639464098"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(22)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464098/480"
+                     alt="Eurasian Kestrel"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Kestrel</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="23"
+                 data-ml="639464065"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(23)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464065/480"
+                     alt="Meadow Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Meadow Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="24"
+                 data-ml="639464066"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(24)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464066/480"
+                     alt="Meadow Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Meadow Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="25"
+                 data-ml="639464067"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(25)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464067/480"
+                     alt="Meadow Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Meadow Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="26"
+                 data-ml="639464087"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(26)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464087/480"
+                     alt="Rock Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rock Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="27"
+                 data-ml="639464135"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(27)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639464135/480"
+                     alt="Eurasian Linnet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Linnet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="28"
+                 data-ml="639418537"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(28)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639418537/480"
+                     alt="Sanderling"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sanderling</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="29"
+                 data-ml="639418723"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(29)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639418723/480"
+                     alt="Sanderling"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sanderling</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="30"
+                 data-ml="639423402"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(30)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639423402/480"
+                     alt="Sanderling"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Sanderling</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="31"
+                 data-ml="639420466"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(31)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639420466/480"
+                     alt="Black-headed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-headed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="32"
+                 data-ml="639420507"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(32)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639420507/480"
+                     alt="Black-headed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-headed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="33"
+                 data-ml="639420591"
+                 data-location="Presqu'île de Quiberon"
+                 onclick="openLightbox(33)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/639420591/480"
+                     alt="Rock Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rock Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="34"
+                 data-ml="22535041"
+                 data-location="Ile de Batz (Enez Vaz)"
+                 onclick="openLightbox(34)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535041/480"
+                     alt="Eurasian Curlew"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Curlew</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="35"
+                 data-ml="22535061"
+                 data-location="Ile de Batz (Enez Vaz)"
+                 onclick="openLightbox(35)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535061/480"
+                     alt="European Herring Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">European Herring Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="36"
+                 data-ml="22535101"
+                 data-location="Ile de Batz (Enez Vaz)"
+                 onclick="openLightbox(36)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535101/480"
+                     alt="Eurasian Skylark"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Skylark</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="37"
+                 data-ml="22535141"
+                 data-location="Ile de Batz (Enez Vaz)"
+                 onclick="openLightbox(37)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22535141/480"
+                     alt="Eurasian Skylark"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eurasian Skylark</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="38"
+                 data-ml="21101941"
+                 data-location="Roscoff"
+                 onclick="openLightbox(38)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101941/480"
+                     alt="Common Ringed Plover"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Ringed Plover</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="39"
+                 data-ml="21101951"
+                 data-location="Roscoff"
+                 onclick="openLightbox(39)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101951/480"
+                     alt="Common Redshank"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Common Redshank</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="40"
+                 data-ml="21101981"
+                 data-location="Roscoff"
+                 onclick="openLightbox(40)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21101981/480"
+                     alt="Ruddy Turnstone"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Ruddy Turnstone</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="41"
+                 data-ml="21102071"
+                 data-location="Roscoff"
+                 onclick="openLightbox(41)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102071/480"
+                     alt="Dunlin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dunlin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="42"
+                 data-ml="21102111"
+                 data-location="Roscoff"
+                 onclick="openLightbox(42)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102111/480"
+                     alt="Dunlin"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Dunlin</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="43"
+                 data-ml="21102001"
+                 data-location="Roscoff"
+                 onclick="openLightbox(43)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102001/480"
+                     alt="Great Black-backed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Black-backed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="44"
+                 data-ml="21102021"
+                 data-location="Roscoff"
+                 onclick="openLightbox(44)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102021/480"
+                     alt="Great Black-backed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Black-backed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="45"
+                 data-ml="21102051"
+                 data-location="Roscoff"
+                 onclick="openLightbox(45)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102051/480"
+                     alt="Great Black-backed Gull"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Great Black-backed Gull</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="46"
+                 data-ml="21102041"
+                 data-location="Roscoff"
+                 onclick="openLightbox(46)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102041/480"
+                     alt="Northern Wheatear"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Northern Wheatear</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="47"
+                 data-ml="21102081"
+                 data-location="Roscoff"
+                 onclick="openLightbox(47)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102081/480"
+                     alt="Rock Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rock Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="48"
+                 data-ml="21102091"
+                 data-location="Roscoff"
+                 onclick="openLightbox(48)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102091/480"
+                     alt="Rock Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rock Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="49"
+                 data-ml="21102121"
+                 data-location="Roscoff"
+                 onclick="openLightbox(49)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21102121/480"
+                     alt="Rock Pipit"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Rock Pipit</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="50"
+                 data-ml="381157001"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(50)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/381157001/480"
+                     alt="Eared Dove"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Eared Dove</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="51"
+                 data-ml="381156041"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(51)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/381156041/480"
+                     alt="Smooth-billed Ani"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Smooth-billed Ani</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="52"
+                 data-ml="22434721"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(52)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434721/480"
+                     alt="Burrowing Owl"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Burrowing Owl</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="53"
+                 data-ml="22434691"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(53)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434691/480"
+                     alt="White Woodpecker"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">White Woodpecker</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="54"
+                 data-ml="22434771"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(54)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434771/480"
+                     alt="Nanday Parakeet"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Nanday Parakeet</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="55"
+                 data-ml="22434701"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(55)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434701/480"
+                     alt="Creamy-bellied Thrush"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Creamy-bellied Thrush</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="56"
+                 data-ml="22434711"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(56)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434711/480"
+                     alt="Red-rumped Cacique"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Red-rumped Cacique</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="57"
+                 data-ml="22434731"
+                 data-location="Foz do Iguaçu"
+                 onclick="openLightbox(57)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22434731/480"
+                     alt="Hooded Tanager"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Hooded Tanager</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="58"
+                 data-ml="22396461"
+                 data-location="RNN des Marais de Séné (RNN131)"
+                 onclick="openLightbox(58)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22396461/480"
+                     alt="Black-winged Stilt"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Black-winged Stilt</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="59"
+                 data-ml="22396481"
+                 data-location="RNN des Marais de Séné (RNN131)"
+                 onclick="openLightbox(59)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22396481/480"
+                     alt="Northern Lapwing"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">Northern Lapwing</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="60"
+                 data-ml="22396501"
+                 data-location="RNN des Marais de Séné (RNN131)"
+                 onclick="openLightbox(60)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/22396501/480"
+                     alt="African Sacred Ibis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">African Sacred Ibis</div>
+                </div>
+            </div>
+            
+            <div class="photo-card" 
+                 data-index="61"
+                 data-ml="21100481"
+                 data-location="Kernevé"
+                 onclick="openLightbox(61)">
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/21100481/480"
+                     alt="African Sacred Ibis"
+                     loading="lazy">
+                <div class="photo-overlay">
+                    <div class="bird-name">African Sacred Ibis</div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
+        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
+        
+        <div class="lightbox-content">
+            <div class="lightbox-image-container">
+                <img id="lightbox-img" src="" alt="">
+            </div>
+            <div class="lightbox-sidebar">
+                <!-- Famille -->
+                <div class="lightbox-family" id="lightbox-family"></div>
+                
+                <!-- Nom commun -->
+                <h2 id="lightbox-title"></h2>
+                
+                <!-- Nom scientifique -->
+                <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Section Info -->
+                <div class="lightbox-info">
+                    <div class="info-row" id="lightbox-location-row">
+                        <span class="info-icon">🌍</span>
+                        <span id="lightbox-location"></span>
+                    </div>
+                    <div class="info-row" id="lightbox-date-row">
+                        <span class="info-icon">📅</span>
+                        <span id="lightbox-date"></span>
+                    </div>
+                </div>
+                
+                <!-- Carte -->
+                <div id="lightbox-map"></div>
+                
+                <!-- Lien eBird -->
+                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
+                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
+                    View on eBird
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: January 7<sup>th</sup>, 2026</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        const currentLang = 'en';
+        
+        const photosData = [
+            
+            {
+                ml: "21102061",
+                name_fr: "Goéland marin",
+                name_en: "Great Black-backed Gull",
+                scientific: "Larus marinus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "639563080",
+                name_fr: "Barge à queue noire",
+                name_en: "Black-tailed Godwit",
+                scientific: "Limosa limosa",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639562180",
+                name_fr: "Chevalier guignette",
+                name_en: "Common Sandpiper",
+                scientific: "Actitis hypoleucos",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639562469",
+                name_fr: "Spatule blanche",
+                name_en: "Eurasian Spoonbill",
+                scientific: "Platalea leucorodia",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639562527",
+                name_fr: "Spatule blanche",
+                name_en: "Eurasian Spoonbill",
+                scientific: "Platalea leucorodia",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639562647",
+                name_fr: "Spatule blanche",
+                name_en: "Eurasian Spoonbill",
+                scientific: "Platalea leucorodia",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639562763",
+                name_fr: "Spatule blanche",
+                name_en: "Eurasian Spoonbill",
+                scientific: "Platalea leucorodia",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639562971",
+                name_fr: "Spatule blanche",
+                name_en: "Eurasian Spoonbill",
+                scientific: "Platalea leucorodia",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639562972",
+                name_fr: "Spatule blanche",
+                name_en: "Eurasian Spoonbill",
+                scientific: "Platalea leucorodia",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "ENS du Marais de Suscinio",
+                location_fr: "ENS du Marais de Suscinio, Bretagne, France",
+                location_en: "ENS du Marais de Suscinio, Brittany, France",
+                date_fr: "29 juillet 2025",
+                date_en: "July 29<sup>th</sup>, 2025",
+                lat: 47.5086353,
+                lng: -2.7278401,
+                checklist_id: "S263586787"
+            },
+            
+            {
+                ml: "639513422",
+                name_fr: "Guillemot marmette",
+                name_en: "Common Murre",
+                scientific: "Uria aalge",
+                family: "Alcidae (Auks, Murres, and Puffins)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639510040",
+                name_fr: "Goéland brun",
+                name_en: "Lesser Black-backed Gull",
+                scientific: "Larus fuscus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639510093",
+                name_fr: "Océanite tempête",
+                name_en: "European Storm-Petrel",
+                scientific: "Hydrobates pelagicus",
+                family: "Hydrobatidae (Northern Storm-Petrels)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639514020",
+                name_fr: "Océanite tempête",
+                name_en: "European Storm-Petrel",
+                scientific: "Hydrobates pelagicus",
+                family: "Hydrobatidae (Northern Storm-Petrels)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639510100",
+                name_fr: "Puffin des Baléares",
+                name_en: "Balearic Shearwater",
+                scientific: "Puffinus mauretanicus",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639510105",
+                name_fr: "Puffin des Baléares",
+                name_en: "Balearic Shearwater",
+                scientific: "Puffinus mauretanicus",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639513184",
+                name_fr: "Puffin des Baléares",
+                name_en: "Balearic Shearwater",
+                scientific: "Puffinus mauretanicus",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639513820",
+                name_fr: "Puffin des Baléares",
+                name_en: "Balearic Shearwater",
+                scientific: "Puffinus mauretanicus",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639519891",
+                name_fr: "Puffin des Baléares",
+                name_en: "Balearic Shearwater",
+                scientific: "Puffinus mauretanicus",
+                family: "Procellariidae (Shearwaters and Petrels)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639520000",
+                name_fr: "Fou de Bassan",
+                name_en: "Northern Gannet",
+                scientific: "Morus bassanus",
+                family: "Sulidae (Boobies and Gannets)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639512726",
+                name_fr: "Cormoran huppé",
+                name_en: "European Shag",
+                scientific: "Gulosus aristotelis",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Sortie pélagique Mor Braz",
+                location_fr: "Sortie pélagique Mor Braz, Bretagne, France",
+                location_en: "Sortie pélagique Mor Braz, Brittany, France",
+                date_fr: "28 juillet 2025",
+                date_en: "July 28<sup>th</sup>, 2025",
+                lat: 47.3606023,
+                lng: -2.7720968,
+                checklist_id: "S263371261"
+            },
+            
+            {
+                ml: "639464083",
+                name_fr: "Huîtrier pie",
+                name_en: "Eurasian Oystercatcher",
+                scientific: "Haematopus ostralegus",
+                family: "Haematopodidae (Oystercatchers)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.5236999,
+                lng: -3.1591916,
+                checklist_id: "S263090252"
+            },
+            
+            {
+                ml: "639464076",
+                name_fr: "Cormoran huppé",
+                name_en: "European Shag",
+                scientific: "Gulosus aristotelis",
+                family: "Phalacrocoracidae (Cormorants and Shags)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.5236999,
+                lng: -3.1591916,
+                checklist_id: "S263090252"
+            },
+            
+            {
+                ml: "639464098",
+                name_fr: "Faucon crécerelle",
+                name_en: "Eurasian Kestrel",
+                scientific: "Falco tinnunculus",
+                family: "Falconidae (Falcons and Caracaras)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.5236999,
+                lng: -3.1591916,
+                checklist_id: "S263090252"
+            },
+            
+            {
+                ml: "639464065",
+                name_fr: "Pipit farlouse",
+                name_en: "Meadow Pipit",
+                scientific: "Anthus pratensis",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.5236999,
+                lng: -3.1591916,
+                checklist_id: "S263090252"
+            },
+            
+            {
+                ml: "639464066",
+                name_fr: "Pipit farlouse",
+                name_en: "Meadow Pipit",
+                scientific: "Anthus pratensis",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.5236999,
+                lng: -3.1591916,
+                checklist_id: "S263090252"
+            },
+            
+            {
+                ml: "639464067",
+                name_fr: "Pipit farlouse",
+                name_en: "Meadow Pipit",
+                scientific: "Anthus pratensis",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.5236999,
+                lng: -3.1591916,
+                checklist_id: "S263090252"
+            },
+            
+            {
+                ml: "639464087",
+                name_fr: "Pipit maritime",
+                name_en: "Rock Pipit",
+                scientific: "Anthus petrosus",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.5236999,
+                lng: -3.1591916,
+                checklist_id: "S263090252"
+            },
+            
+            {
+                ml: "639464135",
+                name_fr: "Linotte mélodieuse",
+                name_en: "Eurasian Linnet",
+                scientific: "Linaria cannabina",
+                family: "Fringillidae (Finches, Euphonias, and Allies)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "27 juillet 2025",
+                date_en: "July 27<sup>th</sup>, 2025",
+                lat: 47.47068,
+                lng: -3.086663,
+                checklist_id: "S263129119"
+            },
+            
+            {
+                ml: "639418537",
+                name_fr: "Bécasseau sanderling",
+                name_en: "Sanderling",
+                scientific: "Calidris alba",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "26 juillet 2025",
+                date_en: "July 26<sup>th</sup>, 2025",
+                lat: 47.47068,
+                lng: -3.086663,
+                checklist_id: "S262878887"
+            },
+            
+            {
+                ml: "639418723",
+                name_fr: "Bécasseau sanderling",
+                name_en: "Sanderling",
+                scientific: "Calidris alba",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "26 juillet 2025",
+                date_en: "July 26<sup>th</sup>, 2025",
+                lat: 47.47068,
+                lng: -3.086663,
+                checklist_id: "S262878887"
+            },
+            
+            {
+                ml: "639423402",
+                name_fr: "Bécasseau sanderling",
+                name_en: "Sanderling",
+                scientific: "Calidris alba",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "26 juillet 2025",
+                date_en: "July 26<sup>th</sup>, 2025",
+                lat: 47.47068,
+                lng: -3.086663,
+                checklist_id: "S262878887"
+            },
+            
+            {
+                ml: "639420466",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "26 juillet 2025",
+                date_en: "July 26<sup>th</sup>, 2025",
+                lat: 47.47068,
+                lng: -3.086663,
+                checklist_id: "S262878887"
+            },
+            
+            {
+                ml: "639420507",
+                name_fr: "Mouette rieuse",
+                name_en: "Black-headed Gull",
+                scientific: "Chroicocephalus ridibundus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "26 juillet 2025",
+                date_en: "July 26<sup>th</sup>, 2025",
+                lat: 47.47068,
+                lng: -3.086663,
+                checklist_id: "S262878887"
+            },
+            
+            {
+                ml: "639420591",
+                name_fr: "Pipit maritime",
+                name_en: "Rock Pipit",
+                scientific: "Anthus petrosus",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Presqu\'île de Quiberon",
+                location_fr: "Presqu\'île de Quiberon, Bretagne, France",
+                location_en: "Presqu\'île de Quiberon, Brittany, France",
+                date_fr: "26 juillet 2025",
+                date_en: "July 26<sup>th</sup>, 2025",
+                lat: 47.47068,
+                lng: -3.086663,
+                checklist_id: "S262878887"
+            },
+            
+            {
+                ml: "22535041",
+                name_fr: "Courlis cendré",
+                name_en: "Eurasian Curlew",
+                scientific: "Numenius arquata",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Ile de Batz (Enez Vaz)",
+                location_fr: "Ile de Batz (Enez Vaz), Bretagne, France",
+                location_en: "Ile de Batz (Enez Vaz), Brittany, France",
+                date_fr: "14 septembre 2011",
+                date_en: "September 14<sup>th</sup>, 2011",
+                lat: 48.7447955,
+                lng: -4.0151328,
+                checklist_id: "S18563362"
+            },
+            
+            {
+                ml: "22535061",
+                name_fr: "Goéland argenté",
+                name_en: "European Herring Gull",
+                scientific: "Larus argentatus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Ile de Batz (Enez Vaz)",
+                location_fr: "Ile de Batz (Enez Vaz), Bretagne, France",
+                location_en: "Ile de Batz (Enez Vaz), Brittany, France",
+                date_fr: "14 septembre 2011",
+                date_en: "September 14<sup>th</sup>, 2011",
+                lat: 48.7447955,
+                lng: -4.0151328,
+                checklist_id: "S18563362"
+            },
+            
+            {
+                ml: "22535101",
+                name_fr: "Alouette des champs",
+                name_en: "Eurasian Skylark",
+                scientific: "Alauda arvensis",
+                family: "Alaudidae (Larks)",
+                location: "Ile de Batz (Enez Vaz)",
+                location_fr: "Ile de Batz (Enez Vaz), Bretagne, France",
+                location_en: "Ile de Batz (Enez Vaz), Brittany, France",
+                date_fr: "14 septembre 2011",
+                date_en: "September 14<sup>th</sup>, 2011",
+                lat: 48.7447955,
+                lng: -4.0151328,
+                checklist_id: "S18563362"
+            },
+            
+            {
+                ml: "22535141",
+                name_fr: "Alouette des champs",
+                name_en: "Eurasian Skylark",
+                scientific: "Alauda arvensis",
+                family: "Alaudidae (Larks)",
+                location: "Ile de Batz (Enez Vaz)",
+                location_fr: "Ile de Batz (Enez Vaz), Bretagne, France",
+                location_en: "Ile de Batz (Enez Vaz), Brittany, France",
+                date_fr: "14 septembre 2011",
+                date_en: "September 14<sup>th</sup>, 2011",
+                lat: 48.7447955,
+                lng: -4.0151328,
+                checklist_id: "S18563362"
+            },
+            
+            {
+                ml: "21101941",
+                name_fr: "Pluvier grand-gravelot",
+                name_en: "Common Ringed Plover",
+                scientific: "Charadrius hiaticula",
+                family: "Charadriidae (Plovers and Lapwings)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21101951",
+                name_fr: "Chevalier gambette",
+                name_en: "Common Redshank",
+                scientific: "Tringa totanus",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21101981",
+                name_fr: "Tournepierre à collier",
+                name_en: "Ruddy Turnstone",
+                scientific: "Arenaria interpres",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102071",
+                name_fr: "Bécasseau variable",
+                name_en: "Dunlin",
+                scientific: "Calidris alpina",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102111",
+                name_fr: "Bécasseau variable",
+                name_en: "Dunlin",
+                scientific: "Calidris alpina",
+                family: "Scolopacidae (Sandpipers and Allies)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102001",
+                name_fr: "Goéland marin",
+                name_en: "Great Black-backed Gull",
+                scientific: "Larus marinus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102021",
+                name_fr: "Goéland marin",
+                name_en: "Great Black-backed Gull",
+                scientific: "Larus marinus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102051",
+                name_fr: "Goéland marin",
+                name_en: "Great Black-backed Gull",
+                scientific: "Larus marinus",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102041",
+                name_fr: "Traquet motteux",
+                name_en: "Northern Wheatear",
+                scientific: "Oenanthe oenanthe",
+                family: "Muscicapidae (Old World Flycatchers)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102081",
+                name_fr: "Pipit maritime",
+                name_en: "Rock Pipit",
+                scientific: "Anthus petrosus",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102091",
+                name_fr: "Pipit maritime",
+                name_en: "Rock Pipit",
+                scientific: "Anthus petrosus",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "21102121",
+                name_fr: "Pipit maritime",
+                name_en: "Rock Pipit",
+                scientific: "Anthus petrosus",
+                family: "Motacillidae (Wagtails and Pipits)",
+                location: "Roscoff",
+                location_fr: "Roscoff, Bretagne, France",
+                location_en: "Roscoff, Brittany, France",
+                date_fr: "11 septembre 2011",
+                date_en: "September 11<sup>th</sup>, 2011",
+                lat: 48.7225,
+                lng: -3.9913889,
+                checklist_id: "S18563364"
+            },
+            
+            {
+                ml: "381157001",
+                name_fr: "Tourterelle oreillarde",
+                name_en: "Eared Dove",
+                scientific: "Zenaida auriculata",
+                family: "Columbidae (Pigeons and Doves)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "381156041",
+                name_fr: "Ani à bec lisse",
+                name_en: "Smooth-billed Ani",
+                scientific: "Crotophaga ani",
+                family: "Cuculidae (Cuckoos)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "22434721",
+                name_fr: "Chevêche des terriers",
+                name_en: "Burrowing Owl",
+                scientific: "Athene cunicularia",
+                family: "Strigidae (Owls)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "22434691",
+                name_fr: "Pic dominicain",
+                name_en: "White Woodpecker",
+                scientific: "Melanerpes candidus",
+                family: "Picidae (Woodpeckers)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "22434771",
+                name_fr: "Conure nanday",
+                name_en: "Nanday Parakeet",
+                scientific: "Aratinga nenday",
+                family: "Psittacidae (New World and African Parrots)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "22434701",
+                name_fr: "Merle à ventre clair",
+                name_en: "Creamy-bellied Thrush",
+                scientific: "Turdus amaurochalinus",
+                family: "Turdidae (Thrushes and Allies)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "22434711",
+                name_fr: "Cassique cul-rouge",
+                name_en: "Red-rumped Cacique",
+                scientific: "Cacicus haemorrhous",
+                family: "Icteridae (Troupials and Allies)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "22434731",
+                name_fr: "Tangara coiffe-noire",
+                name_en: "Hooded Tanager",
+                scientific: "Nemosia pileata",
+                family: "Thraupidae (Tanagers and Allies)",
+                location: "Foz do Iguaçu",
+                location_fr: "Foz do Iguaçu, Brésil",
+                location_en: "Foz do Iguaçu, Brazil",
+                date_fr: "16 juin 2007",
+                date_en: "June 16<sup>th</sup>, 2007",
+                lat: -25.5671963,
+                lng: -54.5562027,
+                checklist_id: "S18690792"
+            },
+            
+            {
+                ml: "22396461",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "RNN des Marais de Séné (RNN131)",
+                location_fr: "RNN des Marais de Séné (RNN131), Bretagne, France",
+                location_en: "RNN des Marais de Séné (RNN131), Brittany, France",
+                date_fr: "18 juillet 2005",
+                date_en: "July 18<sup>th</sup>, 2005",
+                lat: 47.6168099,
+                lng: -2.7127004,
+                checklist_id: "S18563365"
+            },
+            
+            {
+                ml: "22396481",
+                name_fr: "Vanneau huppé",
+                name_en: "Northern Lapwing",
+                scientific: "Vanellus vanellus",
+                family: "Charadriidae (Plovers and Lapwings)",
+                location: "RNN des Marais de Séné (RNN131)",
+                location_fr: "RNN des Marais de Séné (RNN131), Bretagne, France",
+                location_en: "RNN des Marais de Séné (RNN131), Brittany, France",
+                date_fr: "18 juillet 2005",
+                date_en: "July 18<sup>th</sup>, 2005",
+                lat: 47.6168099,
+                lng: -2.7127004,
+                checklist_id: "S18563365"
+            },
+            
+            {
+                ml: "22396501",
+                name_fr: "Ibis sacré",
+                name_en: "African Sacred Ibis",
+                scientific: "Threskiornis aethiopicus",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "RNN des Marais de Séné (RNN131)",
+                location_fr: "RNN des Marais de Séné (RNN131), Bretagne, France",
+                location_en: "RNN des Marais de Séné (RNN131), Brittany, France",
+                date_fr: "18 juillet 2005",
+                date_en: "July 18<sup>th</sup>, 2005",
+                lat: 47.6168099,
+                lng: -2.7127004,
+                checklist_id: "S18563365"
+            },
+            
+            {
+                ml: "21100481",
+                name_fr: "Ibis sacré",
+                name_en: "African Sacred Ibis",
+                scientific: "Threskiornis aethiopicus",
+                family: "Threskiornithidae (Ibises and Spoonbills)",
+                location: "Kernevé",
+                location_fr: "Kernevé, Bretagne, France",
+                location_en: "Kernevé, Brittany, France",
+                date_fr: "17 juillet 2005",
+                date_en: "July 17<sup>th</sup>, 2005",
+                lat: 47.600278,
+                lng: -3.1144444,
+                checklist_id: "S18563323"
+            }
+            
+        ];
+
+        let currentIndex = 0;
+        let map = null;
+        let marker = null;
+
+        function openLightbox(index) {
+            const photo = photosData[index];
+            if (!photo) return;
+
+            currentIndex = index;
+            
+            // Image pleine résolution
+            document.getElementById('lightbox-img').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            // Infos selon la langue - famille sans parenthèses
+            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
+            document.getElementById('lightbox-family').textContent = familyCode;
+            document.getElementById('lightbox-title').textContent = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
+
+            // Carte - cachée sur mobile
+            const mapDiv = document.getElementById('lightbox-map');
+            const isMobile = window.innerWidth <= 768;
+            
+            if (photo.lat && photo.lng && !isMobile) {
+                mapDiv.style.display = 'block';
+                
+                if (!map) {
+                    map = L.map('lightbox-map', {
+                        zoomControl: false,
+                        attributionControl: false
+                    });
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        className: 'grayscale-tiles'
+                    }).addTo(map);
+                }
+                
+                map.setView([photo.lat, photo.lng], 8);
+                
+                const cameraIcon = L.divIcon({
+                    className: 'camera-icon',
+                    html: '<div class="camera-marker">📷</div>',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
+                });
+                
+                if (marker) {
+                    marker.setLatLng([photo.lat, photo.lng]);
+                } else {
+                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                }
+                
+                setTimeout(() => map.invalidateSize(), 100);
+            } else {
+                mapDiv.style.display = 'none';
+            }
+
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function navigateLightbox(direction) {
+            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
+            openLightbox(currentIndex);
+        }
+
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateLightbox(-1);
+            if (e.key === 'ArrowRight') navigateLightbox(1);
+        });
+
+        // Clic hors contenu pour fermer
+        document.getElementById('lightbox').addEventListener('click', (e) => {
+            if (e.target.id === 'lightbox') closeLightbox();
+        });
+
+        // Ouvrir une photo par ML number (pour liens depuis liste espèces)
+        function openPhotoByML(ml) {
+            const index = photosData.findIndex(p => p.ml === ml);
+            if (index >= 0) {
+                openLightbox(index);
+            }
+        }
+
+        // Vérifier si URL contient un paramètre photo
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const ml = params.get('photo');
+            if (ml) {
+                openPhotoByML(ml);
+            }
+        });
+
+        
+        // Carte du voyage avec filtrage par lieu
+        const tripLocations = [
+            
+            { lat: 48.7225, lng: -3.9913889, name: "Roscoff" },
+            
+            { lat: 47.5086353, lng: -2.7278401, name: "ENS du Marais de Suscinio" },
+            
+            { lat: 47.3606023, lng: -2.7720968, name: "Sortie pélagique Mor Braz" },
+            
+            { lat: 47.5236999, lng: -3.1591916, name: "Presqu'île de Quiberon" },
+            
+            { lat: 48.7447955, lng: -4.0151328, name: "Ile de Batz (Enez Vaz)" },
+            
+            { lat: -25.5671963, lng: -54.5562027, name: "Foz do Iguaçu" },
+            
+            { lat: 47.6168099, lng: -2.7127004, name: "RNN des Marais de Séné (RNN131)" },
+            
+            { lat: 47.600278, lng: -3.1144444, name: "Kernevé" },
+            
+        ];
+        
+        // Compter les photos par lieu
+        function countPhotosByLocation(locationName) {
+            return photosData.filter(p => p.location === locationName).length;
+        }
+        
+        // Variable pour garder le filtre actif
+        let activeLocationFilter = null;
+        
+        // Filtrer les photos par lieu
+        function filterByLocation(locationName) {
+            activeLocationFilter = locationName;
+            const photoCards = document.querySelectorAll('.photo-card');
+            let visibleCount = 0;
+            
+            photoCards.forEach(card => {
+                const cardLocation = card.getAttribute('data-location');
+                if (cardLocation === locationName) {
+                    card.style.display = '';
+                    visibleCount++;
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Afficher l'indicateur de filtre
+            const indicator = document.getElementById('location-filter-indicator');
+            const locationNameSpan = document.getElementById('filter-location-name');
+            const photoCountSpan = document.getElementById('filter-photo-count');
+            
+            if (indicator) {
+                locationNameSpan.textContent = locationName;
+                photoCountSpan.textContent = currentLang === 'fr' 
+                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
+                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                indicator.style.display = 'flex';
+            }
+            
+            // Scroll vers la grille
+            document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser le filtre
+        function resetLocationFilter() {
+            activeLocationFilter = null;
+            const photoCards = document.querySelectorAll('.photo-card');
+            photoCards.forEach(card => {
+                card.style.display = '';
+            });
+            
+            const indicator = document.getElementById('location-filter-indicator');
+            if (indicator) {
+                indicator.style.display = 'none';
+            }
+        }
+
+        if (tripLocations.length > 0) {
+            // Créer la carte
+            const tripMap = L.map('trip-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            }).addTo(tripMap);
+
+            // Icône personnalisée pour les épingles
+            const pinIcon = L.divIcon({
+                html: '<div class="trip-pin">📍</div>',
+                className: 'trip-pin-container',
+                iconSize: [24, 24],
+                iconAnchor: [12, 24],
+                popupAnchor: [0, -24]
+            });
+
+            // Ajouter les marqueurs avec compte de photos et filtrage
+            const markers = [];
+            tripLocations.forEach(loc => {
+                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const photoCount = countPhotosByLocation(loc.name);
+                
+                if (loc.name) {
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
+                }
+                
+                // Clic direct sur le marqueur (pas le popup) pour filtrer
+                marker.on('click', function(e) {
+                    // Ne pas filtrer si on ouvre juste le popup
+                    // Le filtrage se fait via le bouton dans le popup
+                });
+                
+                marker.addTo(tripMap);
+                markers.push(marker);
+            });
+
+            // Ajuster la vue pour montrer tous les marqueurs
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                tripMap.fitBounds(group.getBounds().pad(0.1));
+                
+                // Limiter le zoom max pour garder du contexte
+                if (tripMap.getZoom() > 10) {
+                    tripMap.setZoom(10);
+                }
+            }
+        }
+        
+        
+        // Menu mobile hamburger
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        
+        // Fermer menu au clic ailleurs
+        document.addEventListener('click', (e) => {
+            const nav = document.querySelector('nav');
+            const menu = document.getElementById('navMenu');
+            if (menu && !nav.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        
+        // Swipe pour lightbox sur mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        document.getElementById('lightbox').addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        document.getElementById('lightbox').addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const diff = touchStartX - touchEndX;
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    navigateLightbox(1); // Swipe gauche = suivant
+                } else {
+                    navigateLightbox(-1); // Swipe droite = précédent
+                }
+            }
+        }
+    </script>
+</body>
+</html>
