@@ -5,7 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Europe, été 2016</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" href="gallery.css">
+    <style>
+        /* Cluster personnalisé avec icône caméra */
+        .cluster-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%);
+            color: white;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .cluster-icon-small {
+            width: 40px;
+            height: 40px;
+        }
+        .cluster-icon-medium {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+        }
+        .cluster-icon-large {
+            width: 60px;
+            height: 60px;
+            font-size: 15px;
+        }
+        /* Marqueur flamant rose individuel */
+        .flamingo-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .flamingo-marker:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <!-- NAVIGATION CENTRÉE -->
@@ -186,6 +235,7 @@
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script>
         const currentLang = 'fr';
         
@@ -672,9 +722,9 @@
                 
                 map.setView([photo.lat, photo.lng], 8);
                 
-                const cameraIcon = L.divIcon({
-                    className: 'camera-icon',
-                    html: '<div class="camera-marker">📷</div>',
+                const flamingoIcon = L.divIcon({
+                    className: '',
+                    html: '<div class="flamingo-marker">🦩</div>',
                     iconSize: [36, 36],
                     iconAnchor: [18, 18]
                 });
@@ -682,7 +732,7 @@
                 if (marker) {
                     marker.setLatLng([photo.lat, photo.lng]);
                 } else {
-                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                    marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
                 setTimeout(() => map.invalidateSize(), 100);
@@ -833,19 +883,41 @@
                 attribution: '© OpenStreetMap'
             }).addTo(tripMap);
 
-            // Icône personnalisée pour les épingles
-            const pinIcon = L.divIcon({
-                html: '<div class="trip-pin">📍</div>',
-                className: 'trip-pin-container',
-                iconSize: [24, 24],
-                iconAnchor: [12, 24],
-                popupAnchor: [0, -24]
+            // Icône flamant rose pour les marqueurs individuels
+            function createFlamingoIcon() {
+                return L.divIcon({
+                    html: '<div class="flamingo-marker">🦩</div>',
+                    className: '',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18],
+                    popupAnchor: [0, -18]
+                });
+            }
+
+            // Créer le cluster group avec icônes personnalisés
+            const markerCluster = L.markerClusterGroup({
+                maxClusterRadius: 50,
+                spiderfyOnMaxZoom: true,
+                showCoverageOnHover: false,
+                zoomToBoundsOnClick: true,
+                iconCreateFunction: function(cluster) {
+                    const count = cluster.getChildCount();
+                    let sizeClass = 'cluster-icon-small';
+                    if (count >= 10) sizeClass = 'cluster-icon-medium';
+                    if (count >= 25) sizeClass = 'cluster-icon-large';
+                    
+                    return L.divIcon({
+                        html: `<div class="cluster-icon ${sizeClass}">📷 ${count}</div>`,
+                        className: '',
+                        iconSize: [50, 50],
+                        iconAnchor: [25, 25]
+                    });
+                }
             });
 
             // Ajouter les marqueurs avec compte de photos et filtrage
-            const markers = [];
             tripLocations.forEach(loc => {
-                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
                 const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
@@ -862,24 +934,18 @@
                     marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
                 
-                // Clic direct sur le marqueur (pas le popup) pour filtrer
-                marker.on('click', function(e) {
-                    // Ne pas filtrer si on ouvre juste le popup
-                    // Le filtrage se fait via le bouton dans le popup
-                });
-                
-                marker.addTo(tripMap);
-                markers.push(marker);
+                markerCluster.addLayer(marker);
             });
 
+            tripMap.addLayer(markerCluster);
+
             // Ajuster la vue pour montrer tous les marqueurs
-            if (markers.length > 0) {
-                const group = L.featureGroup(markers);
-                tripMap.fitBounds(group.getBounds().pad(0.1));
+            if (tripLocations.length > 0) {
+                tripMap.fitBounds(markerCluster.getBounds().pad(0.1));
                 
                 // Limiter le zoom max pour garder du contexte
-                if (tripMap.getZoom() > 10) {
-                    tripMap.setZoom(10);
+                if (tripMap.getZoom() > 12) {
+                    tripMap.setZoom(12);
                 }
             }
         }

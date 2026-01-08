@@ -6,6 +6,21 @@
     <title>Species List</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="gallery.css">
+    <style>
+        /* Marqueur flamant rose */
+        .flamingo-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 20px;
+        }
+    </style>
 </head>
 <body>
     <!-- NAVIGATION CENTRÉE -->
@@ -8014,7 +8029,7 @@
                 sciName: "Corvus frugilegus",
                 nameFr: "Corbeau freux",
                 nameEn: "Rook",
-                ml: "639035117",
+                ml: "22536281",
                 photoCount: 4,
                 familyCode: "Corvidae",
                 familyDisplayFr: "Corvidae",
@@ -48934,6 +48949,17 @@
                 photos: [
                     
                     {
+                        ml: "22536281",
+                        date_fr: "26 juillet 2008",
+                        date_en: "July 26<sup>th</sup>, 2008",
+                        location_fr: "The Scores, Royaume-Uni",
+                        location_en: "The Scores, United Kingdom",
+                        lat: 56.342615,
+                        lng: -2.7901711,
+                        checklist_id: "S18565197"
+                    },
+                    
+                    {
                         ml: "639035117",
                         date_fr: "17 juillet 2025",
                         date_en: "July 17<sup>th</sup>, 2025",
@@ -48953,17 +48979,6 @@
                         lat: 45.772132,
                         lng: 3.08843,
                         checklist_id: "S260521515"
-                    },
-                    
-                    {
-                        ml: "22536281",
-                        date_fr: "26 juillet 2008",
-                        date_en: "July 26<sup>th</sup>, 2008",
-                        location_fr: "The Scores, Royaume-Uni",
-                        location_en: "The Scores, United Kingdom",
-                        lat: 56.342615,
-                        lng: -2.7901711,
-                        checklist_id: "S18565197"
                     },
                     
                     {
@@ -69685,9 +69700,9 @@
                 
                 map.setView([photo.lat, photo.lng], 8);
                 
-                const cameraIcon = L.divIcon({
-                    className: 'camera-icon',
-                    html: '<div class="camera-marker">📷</div>',
+                const flamingoIcon = L.divIcon({
+                    className: '',
+                    html: '<div class="flamingo-marker">🦩</div>',
                     iconSize: [36, 36],
                     iconAnchor: [18, 18]
                 });
@@ -69695,7 +69710,7 @@
                 if (marker) {
                     marker.setLatLng([photo.lat, photo.lng]);
                 } else {
-                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                    marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
                 setTimeout(() => map.invalidateSize(), 100);

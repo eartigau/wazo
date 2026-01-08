@@ -5,7 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meilleures photos</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" href="gallery.css">
+    <style>
+        /* Cluster personnalisé avec icône caméra */
+        .cluster-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%);
+            color: white;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .cluster-icon-small {
+            width: 40px;
+            height: 40px;
+        }
+        .cluster-icon-medium {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+        }
+        .cluster-icon-large {
+            width: 60px;
+            height: 60px;
+            font-size: 15px;
+        }
+        /* Marqueur flamant rose individuel */
+        .flamingo-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .flamingo-marker:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <!-- NAVIGATION CENTRÉE -->
@@ -81,9 +130,9 @@
         <h1>Meilleures photos</h1>
         
         <div class="stats">
-            62 photos
+            63 photos
             
-             · 60 espèces
+             · 61 espèces
             
         </div>
     </div>
@@ -164,6 +213,7 @@
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script>
         const currentLang = 'fr';
         
@@ -906,6 +956,22 @@
             },
             
             {
+                ml: "22536281",
+                name_fr: "Corbeau freux",
+                name_en: "Rook",
+                scientific: "Corvus frugilegus",
+                family: "Corvidae (Crows, Jays, and Magpies)",
+                location: "The Scores",
+                location_fr: "The Scores, Royaume-Uni",
+                location_en: "The Scores, United Kingdom",
+                date_fr: "26 juillet 2008",
+                date_en: "July 26<sup>th</sup>, 2008",
+                lat: 56.342615,
+                lng: -2.7901711,
+                checklist_id: "S18565197"
+            },
+            
+            {
                 ml: "638764559",
                 name_fr: "Hirondelle rustique",
                 name_en: "Barn Swallow",
@@ -1290,9 +1356,9 @@
                 
                 map.setView([photo.lat, photo.lng], 8);
                 
-                const cameraIcon = L.divIcon({
-                    className: 'camera-icon',
-                    html: '<div class="camera-marker">📷</div>',
+                const flamingoIcon = L.divIcon({
+                    className: '',
+                    html: '<div class="flamingo-marker">🦩</div>',
                     iconSize: [36, 36],
                     iconAnchor: [18, 18]
                 });
@@ -1300,7 +1366,7 @@
                 if (marker) {
                     marker.setLatLng([photo.lat, photo.lng]);
                 } else {
-                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                    marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
                 setTimeout(() => map.invalidateSize(), 100);
