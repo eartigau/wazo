@@ -169,8 +169,11 @@
         </div>
         
         
-        <div class="masonry-grid" id="photos-grid">
-            <!-- Photos chargées dynamiquement par JavaScript -->
+        <!-- Grille par espèce -->
+        <div class="species-list-container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px 40px;">
+            <div class="species-grid" id="species-grid">
+                <!-- Cartes espèces chargées dynamiquement par JavaScript -->
+            </div>
         </div>
         
         <!-- Indicateur de chargement -->
@@ -181,7 +184,7 @@
         <!-- Bouton charger plus -->
         <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
             <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()" style="background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%); color: white; border: none; padding: 14px 32px; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);">
-                Afficher plus de photos
+                Afficher plus d'espèces
                 <span id="remaining-count"></span>
             </button>
         </div>
@@ -198,14 +201,17 @@
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Famille -->
-                <div class="lightbox-family" id="lightbox-family"></div>
+                <!-- Famille (cachée) -->
+                <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
                 
                 <!-- Nom commun -->
                 <h2 id="lightbox-title"></h2>
                 
                 <!-- Nom scientifique -->
                 <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Compteur de photos -->
+                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
                 
                 <!-- Section Info -->
                 <div class="lightbox-info">
@@ -2120,33 +2126,71 @@
         ];
 
         // ========================================
-        // CHARGEMENT PROGRESSIF
+        // GROUPER PAR ESPÈCE
         // ========================================
-        const BATCH_SIZE = 48;  // Photos par lot
-        const showDateInOverlay = false;
+        const speciesMap = {};
+        photosData.forEach((photo, index) => {
+            const sciName = photo.scientific;
+            if (!speciesMap[sciName]) {
+                speciesMap[sciName] = {
+                    scientific: sciName,
+                    name_fr: photo.name_fr,
+                    name_en: photo.name_en,
+                    photos: []
+                };
+            }
+            speciesMap[sciName].photos.push({...photo, globalIndex: index});
+        });
+        
+        // Convertir en tableau et trier par nombre de photos décroissant
+        const speciesList = Object.values(speciesMap).sort((a, b) => b.photos.length - a.photos.length);
+        
+        // ========================================
+        // CHARGEMENT PROGRESSIF PAR ESPÈCE
+        // ========================================
+        const BATCH_SIZE = 24;  // Espèces par lot
         let displayedCount = 0;
-        let currentIndex = 0;
+        let currentSpecies = null;
+        let currentPhotoIndex = 0;
         let map = null;
         let marker = null;
+        let activeLocationFilter = null;
         
-        function createPhotoCard(photo, index) {
-            const card = document.createElement('div');
-            card.className = 'photo-card';
-            card.dataset.index = index;
-            card.dataset.ml = photo.ml;
-            card.dataset.location = photo.location || '';
-            card.onclick = () => openLightbox(index);
+        function getFilteredSpeciesList() {
+            if (!activeLocationFilter) return speciesList;
             
-            const name = currentLang === 'fr' ? photo.name_fr : photo.name_en;
-            const date = currentLang === 'fr' ? photo.date_fr : photo.date_en;
-            const dateHtml = showDateInOverlay ? ` · ${date}` : '';
+            // Filtrer et recréer la liste avec seulement les photos du lieu
+            return speciesList
+                .map(sp => ({
+                    ...sp,
+                    photos: sp.photos.filter(p => p.location === activeLocationFilter)
+                }))
+                .filter(sp => sp.photos.length > 0)
+                .sort((a, b) => b.photos.length - a.photos.length);
+        }
+        
+        function createSpeciesCard(species) {
+            const card = document.createElement('div');
+            card.className = 'species-card';
+            card.dataset.species = species.scientific;
+            card.style.cursor = 'pointer';
+            card.onclick = () => openSpeciesLightbox(species.scientific);
+            
+            const name = currentLang === 'fr' ? species.name_fr : species.name_en;
+            const firstPhoto = species.photos[0];
+            const photoCount = species.photos.length;
+            const photoLabel = photoCount > 1 
+                ? `${photoCount} photos` 
+                : '1 photo';
             
             card.innerHTML = `
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/480"
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${firstPhoto.ml}/480" 
                      alt="${name}"
                      loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">${name}${dateHtml}</div>
+                <div class="species-info">
+                    <span class="species-common">${name}</span>
+                    <span class="species-scientific">${species.scientific}</span>
+                    <span class="photo-count">📷 ${photoLabel}</span>
                 </div>
             `;
             
@@ -2154,18 +2198,19 @@
         }
         
         function renderNextBatch() {
-            const grid = document.getElementById('photos-grid');
+            const grid = document.getElementById('species-grid');
             const loadingIndicator = document.getElementById('loading-indicator');
             
             if (loadingIndicator) {
                 loadingIndicator.style.display = 'none';
             }
             
-            const endIndex = Math.min(displayedCount + BATCH_SIZE, photosData.length);
+            const filteredList = getFilteredSpeciesList();
+            const endIndex = Math.min(displayedCount + BATCH_SIZE, filteredList.length);
             
             for (let i = displayedCount; i < endIndex; i++) {
-                const photo = photosData[i];
-                const card = createPhotoCard(photo, i);
+                const species = filteredList[i];
+                const card = createSpeciesCard(species);
                 grid.appendChild(card);
             }
             
@@ -2176,7 +2221,8 @@
         function updateLoadMoreButton() {
             const loadMoreContainer = document.getElementById('load-more-container');
             const remainingCount = document.getElementById('remaining-count');
-            const remaining = photosData.length - displayedCount;
+            const filteredList = getFilteredSpeciesList();
+            const remaining = filteredList.length - displayedCount;
             
             if (remaining > 0) {
                 loadMoreContainer.style.display = 'block';
@@ -2189,6 +2235,13 @@
             }
         }
         
+        function rebuildGrid() {
+            const grid = document.getElementById('species-grid');
+            grid.innerHTML = '';
+            displayedCount = 0;
+            renderNextBatch();
+        }
+        
         // Charger le premier lot au démarrage
         document.addEventListener('DOMContentLoaded', () => {
             renderNextBatch();
@@ -2197,25 +2250,39 @@
         // Auto-charger au scroll
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
-                if (displayedCount < photosData.length) {
+                const filteredList = getFilteredSpeciesList();
+                if (displayedCount < filteredList.length) {
                     renderNextBatch();
                 }
             }
         });
 
-        function openLightbox(index) {
-            const photo = photosData[index];
+        function openSpeciesLightbox(sciName) {
+            // Trouver l'espèce (filtrée ou non)
+            const filteredList = getFilteredSpeciesList();
+            currentSpecies = filteredList.find(sp => sp.scientific === sciName);
+            if (!currentSpecies || currentSpecies.photos.length === 0) return;
+            
+            currentPhotoIndex = 0;
+            showCurrentPhoto();
+            
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function showCurrentPhoto() {
+            if (!currentSpecies) return;
+            const photo = currentSpecies.photos[currentPhotoIndex];
             if (!photo) return;
-
-            currentIndex = index;
             
             // Image pleine résolution
             document.getElementById('lightbox-img').src = 
                 `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
             
-            // Infos selon la langue - famille sans parenthèses
-            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
-            document.getElementById('lightbox-family').textContent = familyCode;
+            // Cacher la famille (pas demandée)
+            document.getElementById('lightbox-family').style.display = 'none';
+            
+            // Infos
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? photo.name_fr : photo.name_en;
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
@@ -2225,6 +2292,17 @@
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;
+            
+            // Compteur de photos
+            const counterEl = document.getElementById('lightbox-counter');
+            if (counterEl) {
+                if (currentSpecies.photos.length > 1) {
+                    counterEl.textContent = `${currentPhotoIndex + 1} / ${currentSpecies.photos.length}`;
+                    counterEl.style.display = 'block';
+                } else {
+                    counterEl.style.display = 'none';
+                }
+            }
 
             // Carte - cachée sur mobile
             const mapDiv = document.getElementById('lightbox-map');
@@ -2239,8 +2317,10 @@
                         attributionControl: false
                     });
                     
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        className: 'grayscale-tiles'
+                    // Thème nature - OpenTopoMap
+                    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 17,
+                        attribution: '© OpenTopoMap'
                     }).addTo(map);
                 }
                 
@@ -2263,9 +2343,6 @@
             } else {
                 mapDiv.style.display = 'none';
             }
-
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
@@ -2274,8 +2351,10 @@
         }
 
         function navigateLightbox(direction) {
-            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
-            openLightbox(currentIndex);
+            if (!currentSpecies) return;
+            const total = currentSpecies.photos.length;
+            currentPhotoIndex = (currentPhotoIndex + direction + total) % total;
+            showCurrentPhoto();
         }
 
         // Clavier
@@ -2293,9 +2372,17 @@
 
         // Ouvrir une photo par ML number (pour liens depuis liste espèces)
         function openPhotoByML(ml) {
-            const index = photosData.findIndex(p => p.ml === ml);
-            if (index >= 0) {
-                openLightbox(index);
+            // Trouver l'espèce qui contient cette photo
+            for (const species of speciesList) {
+                const photoIndex = species.photos.findIndex(p => p.ml === ml);
+                if (photoIndex >= 0) {
+                    currentSpecies = species;
+                    currentPhotoIndex = photoIndex;
+                    showCurrentPhoto();
+                    document.getElementById('lightbox').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    return;
+                }
             }
         }
 
@@ -2327,33 +2414,24 @@
             return photosData.filter(p => p.location === locationName).length;
         }
         
-        // Variable pour garder le filtre actif
-        let activeLocationFilter = null;
+        // Compter les espèces par lieu
+        function countSpeciesByLocation(locationName) {
+            const speciesSet = new Set();
+            photosData.filter(p => p.location === locationName).forEach(p => speciesSet.add(p.scientific));
+            return speciesSet.size;
+        }
         
-        // Filtrer les photos par lieu
+        // Filtrer par lieu - reconstruit la grille avec les espèces filtrées
         function filterByLocation(locationName) {
             activeLocationFilter = locationName;
             
-            // Charger toutes les photos restantes avant de filtrer
-            while (displayedCount < photosData.length) {
-                renderNextBatch();
-            }
+            // Reconstruire la grille avec les espèces filtrées
+            rebuildGrid();
             
-            const photoCards = document.querySelectorAll('.photo-card');
-            let visibleCount = 0;
-            
-            photoCards.forEach(card => {
-                const cardLocation = card.getAttribute('data-location');
-                if (cardLocation === locationName) {
-                    card.style.display = '';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
-            // Cacher le bouton "charger plus" quand filtré
-            document.getElementById('load-more-container').style.display = 'none';
+            // Compter les espèces et photos du lieu
+            const filteredList = getFilteredSpeciesList();
+            const speciesCount = filteredList.length;
+            const photoCount = filteredList.reduce((sum, sp) => sum + sp.photos.length, 0);
             
             // Afficher l'indicateur de filtre
             const indicator = document.getElementById('location-filter-indicator');
@@ -2362,9 +2440,10 @@
             
             if (indicator) {
                 locationNameSpan.textContent = locationName;
-                photoCountSpan.textContent = currentLang === 'fr' 
-                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
-                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                const statsText = currentLang === 'fr' 
+                    ? ` (${speciesCount} espèce${speciesCount > 1 ? 's' : ''}, ${photoCount} photo${photoCount > 1 ? 's' : ''})` 
+                    : ` (${speciesCount} species, ${photoCount} photo${photoCount > 1 ? 's' : ''})`;
+                photoCountSpan.textContent = statsText;
                 indicator.style.display = 'flex';
             }
             
@@ -2375,10 +2454,9 @@
         // Réinitialiser le filtre
         function resetLocationFilter() {
             activeLocationFilter = null;
-            const photoCards = document.querySelectorAll('.photo-card');
-            photoCards.forEach(card => {
-                card.style.display = '';
-            });
+            
+            // Reconstruire la grille sans filtre
+            rebuildGrid();
             
             const indicator = document.getElementById('location-filter-indicator');
             if (indicator) {
@@ -2393,8 +2471,10 @@
                 zoomControl: true
             });
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap'
+            // Thème nature - OpenTopoMap
+            L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+                maxZoom: 17,
+                attribution: '© OpenTopoMap'
             }).addTo(tripMap);
 
             // Icône flamant rose pour les marqueurs individuels
