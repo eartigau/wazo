@@ -700,7 +700,7 @@ def generer_toutes_galeries():
             
             # Filtrer les photos pour ce pays
             photos = generator.filter_observations(
-                limit=500,  # Limite par pays
+                limit=None,  # Pas de limite pour les pays
                 countries=[country_code],
                 verifier_medias_en_ligne=VERIFIER_MEDIAS,
                 curation=curation
