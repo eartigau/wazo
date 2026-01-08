@@ -145,7 +145,9 @@
             Lieux visités
             <span class="location-count">(21)</span>
         </div>
-        <div id="trip-map"></div>
+        <div class="trip-map-wrapper">
+            <div id="trip-map"></div>
+        </div>
     </div>
     
 
@@ -1753,8 +1755,8 @@
                         attributionControl: false
                     });
                     
-                    // Thème nature - CartoDB Voyager
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    // Thème doux - CartoDB Positron
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         subdomains: 'abcd',
                         maxZoom: 19
                     }).addTo(map);
@@ -1941,8 +1943,8 @@
                 zoomControl: true
             });
 
-            // Thème nature - CartoDB Voyager (fiable et coloré)
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+            // Thème doux - CartoDB Positron (tons gris/beige)
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                 attribution: '© OpenStreetMap © CARTO',
                 subdomains: 'abcd',
                 maxZoom: 19
@@ -2012,6 +2014,11 @@
                 if (tripMap.getZoom() > 12) {
                     tripMap.setZoom(12);
                 }
+                
+                // Forcer le rechargement des tuiles après le rendu CSS
+                setTimeout(() => {
+                    tripMap.invalidateSize();
+                }, 100);
             }
         }
         
