@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if lang == 'fr' %}Pays{% else %}Countries{% endif %}</title>
+    <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                {% for item in menu %}
+                <li>
+                    <a href="{% if lang == 'fr' %}{{ item.file_fr }}{% else %}{{ item.file_en }}{% endif %}" 
+                       {% if current_page == item.file_fr or current_page == item.file_en %}class="active"{% endif %}>
+                        {% if lang == 'fr' %}{{ item.name_fr }}{% else %}{{ item.name_en }}{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                {% if lang == 'fr' %}
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
+                <a href="{{ other_lang_page }}" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                {% else %}
+                <a href="{{ other_lang_page }}" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>{% if lang == 'fr' %}Pays{% else %}Countries{% endif %}</h1>
+        <div class="stats">
+            {{ countries|length }} {% if lang == 'fr' %}pays{% else %}countr{% if countries|length > 1 %}ies{% else %}y{% endif %}{% endif %}
+        </div>
+    </div>
+
+    <!-- GRILLE DES PAYS -->
+    <div class="index-container">
+        <div class="index-grid">
+            {% for country in countries %}
+            <a href="{% if lang == 'fr' %}{{ country.file_fr }}{% else %}{{ country.file_en }}{% endif %}" class="index-card">
+                <div class="index-card-image">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ country.frontispice_ml }}/640" 
+                         alt="{% if lang == 'fr' %}{{ country.name_fr }}{% else %}{{ country.name_en }}{% endif %}"
+                         loading="lazy">
+                    <span style="position: absolute; top: 12px; right: 12px; font-size: 28px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">{{ country.flag }}</span>
+                </div>
+                <div class="index-card-info">
+                    <h2 class="index-card-title">{% if lang == 'fr' %}{{ country.name_fr }}{% else %}{{ country.name_en }}{% endif %}</h2>
+                    <div class="index-card-stats">
+                        {{ country.photo_count }} photo{% if country.photo_count > 1 %}s{% endif %}
+                        · {{ country.species_count }} {% if lang == 'fr' %}espèce{% if country.species_count > 1 %}s{% endif %}{% else %}species{% endif %}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr|safe }}{% else %}Updated: {{ update_date_en|safe }}{% endif %}{% endif %}</p>
+        <p>© Étienne Artigau</p>
+    </footer>
+</body>
+</html>

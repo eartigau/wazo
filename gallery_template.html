@@ -5,7 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ gallery_title }}</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" href="gallery.css">
+    <style>
+        /* Cluster personnalisé avec icône caméra */
+        .cluster-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #2d5a27;
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .cluster-icon-small {
+            width: 40px;
+            height: 40px;
+        }
+        .cluster-icon-medium {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+        }
+        .cluster-icon-large {
+            width: 60px;
+            height: 60px;
+            font-size: 15px;
+        }
+        /* Marqueur flamant rose individuel */
+        .flamingo-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 50%;
+            border: 3px solid white;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .flamingo-marker:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
     <!-- NAVIGATION CENTRÉE -->
@@ -38,6 +87,11 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
+        {% if back_link %}
+        <a href="{{ back_link }}" class="back-link" style="display: inline-flex; align-items: center; gap: 6px; color: var(--forest-green); font-size: 14px; font-weight: 500; margin-bottom: 12px; text-decoration: none;">
+            ← {% if lang == 'fr' %}{{ back_text_fr }}{% else %}{{ back_text_en }}{% endif %}
+        </a>
+        {% endif %}
         <h1>{{ gallery_title }}</h1>
         {% if gallery_subtitle %}
         <div class="gallery-subtitle">{{ gallery_subtitle|safe }}</div>
@@ -58,7 +112,9 @@
             {% if lang == 'fr' %}Lieux visités{% else %}Locations visited{% endif %}
             <span class="location-count">({{ trip_locations|length }})</span>
         </div>
-        <div id="trip-map"></div>
+        <div class="trip-map-wrapper">
+            <div id="trip-map"></div>
+        </div>
     </div>
     {% endif %}
 
@@ -78,21 +134,24 @@
         </div>
         {% endif %}
         
-        <div class="masonry-grid">
-            {% for photo in photos %}
-            <div class="photo-card" 
-                 data-index="{{ loop.index0 }}"
-                 data-ml="{{ photo.ml_catalog_number }}"
-                 data-location="{{ photo.location|default('')|replace('"', '&quot;') }}"
-                 onclick="openLightbox({{ loop.index0 }})">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ photo.ml_catalog_number }}/480"
-                     alt="{% if lang == 'fr' %}{{ photo.common_name_fr }}{% else %}{{ photo.common_name_en }}{% endif %}"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">{% if lang == 'fr' %}{{ photo.common_name_fr }}{% else %}{{ photo.common_name_en }}{% endif %}{% if show_date_in_overlay %} · {% if lang == 'fr' %}{{ photo.date_fr|safe }}{% else %}{{ photo.date_en|safe }}{% endif %}{% endif %}</div>
-                </div>
+        <!-- Grille par espèce -->
+        <div class="species-list-container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px 40px;">
+            <div class="species-grid" id="species-grid">
+                <!-- Cartes espèces chargées dynamiquement par JavaScript -->
             </div>
-            {% endfor %}
+        </div>
+        
+        <!-- Indicateur de chargement -->
+        <div id="loading-indicator" class="loading-indicator" style="text-align: center; padding: 40px; color: var(--text-medium);">
+            {% if lang == 'fr' %}Chargement...{% else %}Loading...{% endif %}
+        </div>
+        
+        <!-- Bouton charger plus -->
+        <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
+            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()" style="background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%); color: white; border: none; padding: 14px 32px; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);">
+                {% if lang == 'fr' %}Afficher plus d'espèces{% else %}Show more species{% endif %}
+                <span id="remaining-count"></span>
+            </button>
         </div>
     </div>
 
@@ -107,14 +166,17 @@
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Famille -->
-                <div class="lightbox-family" id="lightbox-family"></div>
+                <!-- Famille (cachée) -->
+                <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
                 
                 <!-- Nom commun -->
                 <h2 id="lightbox-title"></h2>
                 
                 <!-- Nom scientifique -->
                 <p class="scientific-name" id="lightbox-scientific"></p>
+                
+                <!-- Compteur de photos -->
+                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
                 
                 <!-- Section Info -->
                 <div class="lightbox-info">
@@ -148,6 +210,7 @@
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script>
         const currentLang = '{{ lang }}';
         
@@ -171,23 +234,167 @@
             {% endfor %}
         ];
 
-        let currentIndex = 0;
+        // ========================================
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
+        // ========================================
+        const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+        
+        photosData.forEach((photo, index) => {
+            const sciName = photo.scientific;
+            if (!speciesMap[sciName]) {
+                speciesMap[sciName] = {
+                    scientific: sciName,
+                    name_fr: photo.name_fr,
+                    name_en: photo.name_en,
+                    photos: []
+                };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
+            }
+            speciesMap[sciName].photos.push({...photo, globalIndex: index});
+        });
+        
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
+        
+        // ========================================
+        // CHARGEMENT PROGRESSIF PAR ESPÈCE
+        // ========================================
+        const BATCH_SIZE = 24;  // Espèces par lot
+        let displayedCount = 0;
+        let currentSpecies = null;
+        let currentPhotoIndex = 0;
         let map = null;
         let marker = null;
+        let activeLocationFilter = null;
+        
+        function getFilteredSpeciesList() {
+            if (!activeLocationFilter) return speciesList;
+            
+            // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
+            return speciesList
+                .map(sp => ({
+                    ...sp,
+                    photos: sp.photos.filter(p => p.location === activeLocationFilter)
+                }))
+                .filter(sp => sp.photos.length > 0);
+        }
+        
+        function createSpeciesCard(species) {
+            const card = document.createElement('div');
+            card.className = 'species-card';
+            card.dataset.species = species.scientific;
+            card.style.cursor = 'pointer';
+            card.onclick = () => openSpeciesLightbox(species.scientific);
+            
+            const name = currentLang === 'fr' ? species.name_fr : species.name_en;
+            const firstPhoto = species.photos[0];
+            const photoCount = species.photos.length;
+            const photoLabel = photoCount > 1 
+                ? `${photoCount} photos` 
+                : '1 photo';
+            
+            card.innerHTML = `
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${firstPhoto.ml}/480" 
+                     alt="${name}"
+                     loading="lazy">
+                <div class="species-info">
+                    <span class="species-common">${name}</span>
+                    <span class="species-scientific">${species.scientific}</span>
+                    <span class="photo-count">📷 ${photoLabel}</span>
+                </div>
+            `;
+            
+            return card;
+        }
+        
+        function renderNextBatch() {
+            const grid = document.getElementById('species-grid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+            
+            const filteredList = getFilteredSpeciesList();
+            const endIndex = Math.min(displayedCount + BATCH_SIZE, filteredList.length);
+            
+            for (let i = displayedCount; i < endIndex; i++) {
+                const species = filteredList[i];
+                const card = createSpeciesCard(species);
+                grid.appendChild(card);
+            }
+            
+            displayedCount = endIndex;
+            updateLoadMoreButton();
+        }
+        
+        function updateLoadMoreButton() {
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const remainingCount = document.getElementById('remaining-count');
+            const filteredList = getFilteredSpeciesList();
+            const remaining = filteredList.length - displayedCount;
+            
+            if (remaining > 0) {
+                loadMoreContainer.style.display = 'block';
+                const remainingText = currentLang === 'fr' 
+                    ? ` (${remaining} restante${remaining > 1 ? 's' : ''})` 
+                    : ` (${remaining} remaining)`;
+                remainingCount.textContent = remainingText;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+        
+        function rebuildGrid() {
+            const grid = document.getElementById('species-grid');
+            grid.innerHTML = '';
+            displayedCount = 0;
+            renderNextBatch();
+        }
+        
+        // Charger le premier lot au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            renderNextBatch();
+        });
+        
+        // Auto-charger au scroll
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
+                const filteredList = getFilteredSpeciesList();
+                if (displayedCount < filteredList.length) {
+                    renderNextBatch();
+                }
+            }
+        });
 
-        function openLightbox(index) {
-            const photo = photosData[index];
+        function openSpeciesLightbox(sciName) {
+            // Trouver l'espèce (filtrée ou non)
+            const filteredList = getFilteredSpeciesList();
+            currentSpecies = filteredList.find(sp => sp.scientific === sciName);
+            if (!currentSpecies || currentSpecies.photos.length === 0) return;
+            
+            currentPhotoIndex = 0;
+            showCurrentPhoto();
+            
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function showCurrentPhoto() {
+            if (!currentSpecies) return;
+            const photo = currentSpecies.photos[currentPhotoIndex];
             if (!photo) return;
-
-            currentIndex = index;
             
             // Image pleine résolution
             document.getElementById('lightbox-img').src = 
                 `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
             
-            // Infos selon la langue - famille sans parenthèses
-            const familyCode = photo.family.split(' ')[0];  // Prendre juste "Anatidae" sans "(Ducks...)"
-            document.getElementById('lightbox-family').textContent = familyCode;
+            // Cacher la famille (pas demandée)
+            document.getElementById('lightbox-family').style.display = 'none';
+            
+            // Infos
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? photo.name_fr : photo.name_en;
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
@@ -197,6 +404,17 @@
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;
+            
+            // Compteur de photos
+            const counterEl = document.getElementById('lightbox-counter');
+            if (counterEl) {
+                if (currentSpecies.photos.length > 1) {
+                    counterEl.textContent = `${currentPhotoIndex + 1} / ${currentSpecies.photos.length}`;
+                    counterEl.style.display = 'block';
+                } else {
+                    counterEl.style.display = 'none';
+                }
+            }
 
             // Carte - cachée sur mobile
             const mapDiv = document.getElementById('lightbox-map');
@@ -211,16 +429,18 @@
                         attributionControl: false
                     });
                     
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        className: 'grayscale-tiles'
+                    // Thème doux - CartoDB Positron
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                        subdomains: 'abcd',
+                        maxZoom: 19
                     }).addTo(map);
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);
                 
-                const cameraIcon = L.divIcon({
-                    className: 'camera-icon',
-                    html: '<div class="camera-marker">📷</div>',
+                const flamingoIcon = L.divIcon({
+                    className: '',
+                    html: '<div class="flamingo-marker">🦩</div>',
                     iconSize: [36, 36],
                     iconAnchor: [18, 18]
                 });
@@ -228,16 +448,13 @@
                 if (marker) {
                     marker.setLatLng([photo.lat, photo.lng]);
                 } else {
-                    marker = L.marker([photo.lat, photo.lng], { icon: cameraIcon }).addTo(map);
+                    marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
                 setTimeout(() => map.invalidateSize(), 100);
             } else {
                 mapDiv.style.display = 'none';
             }
-
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
         }
 
         function closeLightbox() {
@@ -246,8 +463,10 @@
         }
 
         function navigateLightbox(direction) {
-            currentIndex = (currentIndex + direction + photosData.length) % photosData.length;
-            openLightbox(currentIndex);
+            if (!currentSpecies) return;
+            const total = currentSpecies.photos.length;
+            currentPhotoIndex = (currentPhotoIndex + direction + total) % total;
+            showCurrentPhoto();
         }
 
         // Clavier
@@ -265,9 +484,17 @@
 
         // Ouvrir une photo par ML number (pour liens depuis liste espèces)
         function openPhotoByML(ml) {
-            const index = photosData.findIndex(p => p.ml === ml);
-            if (index >= 0) {
-                openLightbox(index);
+            // Trouver l'espèce qui contient cette photo
+            for (const species of speciesList) {
+                const photoIndex = species.photos.findIndex(p => p.ml === ml);
+                if (photoIndex >= 0) {
+                    currentSpecies = species;
+                    currentPhotoIndex = photoIndex;
+                    showCurrentPhoto();
+                    document.getElementById('lightbox').classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    return;
+                }
             }
         }
 
@@ -293,24 +520,24 @@
             return photosData.filter(p => p.location === locationName).length;
         }
         
-        // Variable pour garder le filtre actif
-        let activeLocationFilter = null;
+        // Compter les espèces par lieu
+        function countSpeciesByLocation(locationName) {
+            const speciesSet = new Set();
+            photosData.filter(p => p.location === locationName).forEach(p => speciesSet.add(p.scientific));
+            return speciesSet.size;
+        }
         
-        // Filtrer les photos par lieu
+        // Filtrer par lieu - reconstruit la grille avec les espèces filtrées
         function filterByLocation(locationName) {
             activeLocationFilter = locationName;
-            const photoCards = document.querySelectorAll('.photo-card');
-            let visibleCount = 0;
             
-            photoCards.forEach(card => {
-                const cardLocation = card.getAttribute('data-location');
-                if (cardLocation === locationName) {
-                    card.style.display = '';
-                    visibleCount++;
-                } else {
-                    card.style.display = 'none';
-                }
-            });
+            // Reconstruire la grille avec les espèces filtrées
+            rebuildGrid();
+            
+            // Compter les espèces et photos du lieu
+            const filteredList = getFilteredSpeciesList();
+            const speciesCount = filteredList.length;
+            const photoCount = filteredList.reduce((sum, sp) => sum + sp.photos.length, 0);
             
             // Afficher l'indicateur de filtre
             const indicator = document.getElementById('location-filter-indicator');
@@ -319,9 +546,10 @@
             
             if (indicator) {
                 locationNameSpan.textContent = locationName;
-                photoCountSpan.textContent = currentLang === 'fr' 
-                    ? ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})` 
-                    : ` (${visibleCount} photo${visibleCount > 1 ? 's' : ''})`;
+                const statsText = currentLang === 'fr' 
+                    ? ` (${speciesCount} espèce${speciesCount > 1 ? 's' : ''}, ${photoCount} photo${photoCount > 1 ? 's' : ''})` 
+                    : ` (${speciesCount} species, ${photoCount} photo${photoCount > 1 ? 's' : ''})`;
+                photoCountSpan.textContent = statsText;
                 indicator.style.display = 'flex';
             }
             
@@ -332,10 +560,9 @@
         // Réinitialiser le filtre
         function resetLocationFilter() {
             activeLocationFilter = null;
-            const photoCards = document.querySelectorAll('.photo-card');
-            photoCards.forEach(card => {
-                card.style.display = '';
-            });
+            
+            // Reconstruire la grille sans filtre
+            rebuildGrid();
             
             const indicator = document.getElementById('location-filter-indicator');
             if (indicator) {
@@ -350,23 +577,48 @@
                 zoomControl: true
             });
 
-            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap'
+            // Thème doux - CartoDB Positron (tons gris/beige)
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap © CARTO',
+                subdomains: 'abcd',
+                maxZoom: 19
             }).addTo(tripMap);
 
-            // Icône personnalisée pour les épingles
-            const pinIcon = L.divIcon({
-                html: '<div class="trip-pin">📍</div>',
-                className: 'trip-pin-container',
-                iconSize: [24, 24],
-                iconAnchor: [12, 24],
-                popupAnchor: [0, -24]
+            // Icône flamant rose pour les marqueurs individuels
+            function createFlamingoIcon() {
+                return L.divIcon({
+                    html: '<div class="flamingo-marker">🦩</div>',
+                    className: '',
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18],
+                    popupAnchor: [0, -18]
+                });
+            }
+
+            // Créer le cluster group avec icônes personnalisés
+            const markerCluster = L.markerClusterGroup({
+                maxClusterRadius: 50,
+                spiderfyOnMaxZoom: true,
+                showCoverageOnHover: false,
+                zoomToBoundsOnClick: true,
+                iconCreateFunction: function(cluster) {
+                    const count = cluster.getChildCount();
+                    let sizeClass = 'cluster-icon-small';
+                    if (count >= 10) sizeClass = 'cluster-icon-medium';
+                    if (count >= 25) sizeClass = 'cluster-icon-large';
+                    
+                    return L.divIcon({
+                        html: `<div class="cluster-icon ${sizeClass}">📷 ${count}</div>`,
+                        className: '',
+                        iconSize: [50, 50],
+                        iconAnchor: [25, 25]
+                    });
+                }
             });
 
             // Ajouter les marqueurs avec compte de photos et filtrage
-            const markers = [];
             tripLocations.forEach(loc => {
-                const marker = L.marker([loc.lat, loc.lng], { icon: pinIcon });
+                const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
                 const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
@@ -383,25 +635,24 @@
                     marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
                 
-                // Clic direct sur le marqueur (pas le popup) pour filtrer
-                marker.on('click', function(e) {
-                    // Ne pas filtrer si on ouvre juste le popup
-                    // Le filtrage se fait via le bouton dans le popup
-                });
-                
-                marker.addTo(tripMap);
-                markers.push(marker);
+                markerCluster.addLayer(marker);
             });
 
+            tripMap.addLayer(markerCluster);
+
             // Ajuster la vue pour montrer tous les marqueurs
-            if (markers.length > 0) {
-                const group = L.featureGroup(markers);
-                tripMap.fitBounds(group.getBounds().pad(0.1));
+            if (tripLocations.length > 0) {
+                tripMap.fitBounds(markerCluster.getBounds().pad(0.1));
                 
                 // Limiter le zoom max pour garder du contexte
-                if (tripMap.getZoom() > 10) {
-                    tripMap.setZoom(10);
+                if (tripMap.getZoom() > 12) {
+                    tripMap.setZoom(12);
                 }
+                
+                // Forcer le rechargement des tuiles après le rendu CSS
+                setTimeout(() => tripMap.invalidateSize(), 100);
+                setTimeout(() => tripMap.invalidateSize(), 300);
+                setTimeout(() => tripMap.invalidateSize(), 500);
             }
         }
         {% endif %}
