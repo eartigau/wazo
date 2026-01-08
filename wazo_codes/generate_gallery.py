@@ -1163,7 +1163,10 @@ class EBirdGalleryGenerator:
             # Filtre par pays/région
             if countries:
                 state_code = obs.get('State/Province') or ''
-                if not any(c in state_code for c in countries):
+                # Extraire le code pays (partie avant le tiret, ou le code entier)
+                obs_country = state_code.split('-')[0] if '-' in state_code else state_code
+                # Vérifier si le pays correspond exactement OU si c'est une région spécifique demandée
+                if not any(c == obs_country or state_code == c or state_code.startswith(c + '-') for c in countries):
                     continue
             
             if regions:
@@ -1322,7 +1325,11 @@ class EBirdGalleryGenerator:
                         subtitle_en: str = None,
                         species_count: int = None,
                         show_date_in_overlay: bool = False,
-                        trip_locations: list = None):
+                        trip_locations: list = None,
+                        back_link_fr: str = None,
+                        back_link_en: str = None,
+                        back_text_fr: str = None,
+                        back_text_en: str = None):
         """
         Génère les pages HTML de galerie en français et anglais
         
@@ -1339,6 +1346,10 @@ class EBirdGalleryGenerator:
             species_count: Nombre d'espèces (optionnel, pour affichage)
             show_date_in_overlay: Afficher la date dans l'overlay (défaut: False)
             trip_locations: Liste de lieux pour la carte du voyage (optionnel)
+            back_link_fr: Lien de retour version française (optionnel)
+            back_link_en: Lien de retour version anglaise (optionnel)
+            back_text_fr: Texte du lien de retour en français (optionnel)
+            back_text_en: Texte du lien de retour en anglais (optionnel)
         """
         output_fr = f"{output_base}_fr.html"
         output_en = f"{output_base}_en.html"
@@ -1369,7 +1380,10 @@ class EBirdGalleryGenerator:
             trip_locations=trip_locations,
             update_date=True,
             update_date_fr=update_date_fr,
-            update_date_en=update_date_en
+            update_date_en=update_date_en,
+            back_link=back_link_fr,
+            back_text_fr=back_text_fr or 'Retour',
+            back_text_en=back_text_en or 'Back'
         )
         
         with open(output_fr, 'w', encoding='utf-8') as f:
@@ -1390,7 +1404,10 @@ class EBirdGalleryGenerator:
             trip_locations=trip_locations,
             update_date=True,
             update_date_fr=update_date_fr,
-            update_date_en=update_date_en
+            update_date_en=update_date_en,
+            back_link=back_link_en,
+            back_text_fr=back_text_fr or 'Retour',
+            back_text_en=back_text_en or 'Back'
         )
         
         with open(output_en, 'w', encoding='utf-8') as f:

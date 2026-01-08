@@ -139,6 +139,10 @@ COUNTRY_METADATA = {
     'TZ': {'flag': '🇹🇿', 'lat': -6.37, 'lng': 34.89, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
     'MA': {'flag': '🇲🇦', 'lat': 31.79, 'lng': -7.09, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
     'EG': {'flag': '🇪🇬', 'lat': 26.82, 'lng': 30.80, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'CI': {'flag': '🇨🇮', 'lat': 7.54, 'lng': -5.55, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'SN': {'flag': '🇸🇳', 'lat': 14.50, 'lng': -14.45, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'GH': {'flag': '🇬🇭', 'lat': 7.95, 'lng': -1.02, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
+    'CM': {'flag': '🇨🇲', 'lat': 7.37, 'lng': 12.35, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
     'NA': {'flag': '🇳🇦', 'lat': -22.96, 'lng': 18.49, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
     'BW': {'flag': '🇧🇼', 'lat': -22.33, 'lng': 24.68, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
     'UG': {'flag': '🇺🇬', 'lat': 1.37, 'lng': 32.29, 'continent': 'africa', 'continent_fr': 'Afrique', 'continent_en': 'Africa'},
@@ -757,7 +761,11 @@ def generer_toutes_galeries():
                     menu=menu,
                     gallery_id=file_id,
                     species_count=species_count,
-                    trip_locations=trip_locations
+                    trip_locations=trip_locations,
+                    back_link_fr='pays_index_fr.html',
+                    back_link_en='pays_index_en.html',
+                    back_text_fr='Tous les pays',
+                    back_text_en='All countries'
                 )
                 total_galeries += 1
         

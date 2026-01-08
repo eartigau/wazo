@@ -38,6 +38,11 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
+        {% if back_link %}
+        <a href="{{ back_link }}" class="back-link" style="display: inline-flex; align-items: center; gap: 6px; color: var(--forest-green); font-size: 14px; font-weight: 500; margin-bottom: 12px; text-decoration: none;">
+            ← {% if lang == 'fr' %}{{ back_text_fr }}{% else %}{{ back_text_en }}{% endif %}
+        </a>
+        {% endif %}
         <h1>{{ gallery_title }}</h1>
         {% if gallery_subtitle %}
         <div class="gallery-subtitle">{{ gallery_subtitle|safe }}</div>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🏳️ CI</title>
+    <title>🇨🇮 Côte d'Ivoire</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="gallery.css">
 </head>
@@ -77,12 +77,17 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>🏳️ CI</h1>
+        
+        <a href="pays_index_fr.html" class="back-link" style="display: inline-flex; align-items: center; gap: 6px; color: var(--forest-green); font-size: 14px; font-weight: 500; margin-bottom: 12px; text-decoration: none;">
+            ← Tous les pays
+        </a>
+        
+        <h1>🇨🇮 Côte d'Ivoire</h1>
         
         <div class="stats">
-            3 photos
+            1 photo
             
-             · 3 espèces
+             · 1 espèce
             
         </div>
     </div>
@@ -93,7 +98,7 @@
         <div class="trip-map-header">
             <span class="map-icon">🗺️</span>
             Lieux visités
-            <span class="location-count">(3)</span>
+            <span class="location-count">(1)</span>
         </div>
         <div id="trip-map"></div>
     </div>
@@ -119,35 +124,9 @@
             
             <div class="photo-card" 
                  data-index="0"
-                 data-ml="187527441"
-                 data-location="Korhogo"
-                 onclick="openLightbox(0)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/187527441/480"
-                     alt="Tourterelle maillée"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Tourterelle maillée</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="1"
-                 data-ml="187528201"
-                 data-location="Lagune de Dabou"
-                 onclick="openLightbox(1)">
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/187528201/480"
-                     alt="Veuve dominicaine"
-                     loading="lazy">
-                <div class="photo-overlay">
-                    <div class="bird-name">Veuve dominicaine</div>
-                </div>
-            </div>
-            
-            <div class="photo-card" 
-                 data-index="2"
                  data-ml="187527681"
                  data-location="Ville de Dabou"
-                 onclick="openLightbox(2)">
+                 onclick="openLightbox(0)">
                 <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/187527681/480"
                      alt="Tisserin noir et marron"
                      loading="lazy">
@@ -217,46 +196,14 @@
         const photosData = [
             
             {
-                ml: "187527441",
-                name_fr: "Tourterelle maillée",
-                name_en: "Laughing Dove",
-                scientific: "Spilopelia senegalensis",
-                family: "Columbidae (Pigeons and Doves)",
-                location: "Korhogo",
-                location_fr: "Korhogo, CI-03, CI",
-                location_en: "Korhogo, CI-03, CI",
-                date_fr: "20 août 1989",
-                date_en: "August 20<sup>th</sup>, 1989",
-                lat: 9.4533333,
-                lng: -5.6227778,
-                checklist_id: "S18563352"
-            },
-            
-            {
-                ml: "187528201",
-                name_fr: "Veuve dominicaine",
-                name_en: "Pin-tailed Whydah",
-                scientific: "Vidua macroura",
-                family: "Viduidae (Whydahs and Indigobirds)",
-                location: "Lagune de Dabou",
-                location_fr: "Lagune de Dabou, CI-01, CI",
-                location_en: "Lagune de Dabou, CI-01, CI",
-                date_fr: "6 août 1989",
-                date_en: "August 6<sup>th</sup>, 1989",
-                lat: 5.3158153,
-                lng: -4.3853804,
-                checklist_id: "S18563455"
-            },
-            
-            {
                 ml: "187527681",
                 name_fr: "Tisserin noir et marron",
                 name_en: "Chestnut-and-black Weaver",
                 scientific: "Ploceus castaneofuscus",
                 family: "Ploceidae (Weavers and Allies)",
                 location: "Ville de Dabou",
-                location_fr: "Ville de Dabou, CI-01, CI",
-                location_en: "Ville de Dabou, CI-01, CI",
+                location_fr: "Ville de Dabou, Côte d\'Ivoire",
+                location_en: "Ville de Dabou, Ivory Coast",
                 date_fr: "30 juillet 1989",
                 date_en: "July 30<sup>th</sup>, 1989",
                 lat: 5.3294444,
@@ -378,10 +325,6 @@
         
         // Carte du voyage avec filtrage par lieu
         const tripLocations = [
-            
-            { lat: 9.4533333, lng: -5.6227778, name: "Korhogo" },
-            
-            { lat: 5.3158153, lng: -4.3853804, name: "Lagune de Dabou" },
             
             { lat: 5.3294444, lng: -4.3725, name: "Ville de Dabou" },
             
