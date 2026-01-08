@@ -217,6 +217,27 @@ voyages:
     date_fin: "2018-08-17"
     limite: 300
 
+  - id: mysore_2017
+    nom_fr: "Mysore 2017"
+    nom_en: "Mysore 2017"
+    date_debut: "2017-11-01"
+    date_fin: "2017-11-22"
+    limite: 300
+
+  - id: maritimes_2017
+    nom_fr: "Maritimes 2017"
+    nom_en: "Maritimes 2017"
+    date_debut: "2017-08-01"
+    date_fin: "2017-08-31"
+    limite: 300
+
+  - id: ete_2016
+    nom_fr: "Europe, été 2016"
+    nom_en: "Europe, Summer 2016"
+    date_debut: "2016-07-06"
+    date_fin: "2016-08-05"
+    limite: 300
+
 
   - id: voyage_hawaii_automne2015
     nom_fr: "Hawaï automne 2015"
@@ -233,7 +254,13 @@ voyages:
     date_debut: "2015-05-01"
     date_fin: "2015-08-30"
     limite: 300
-  
+
+  - id: chiloe_2008
+    nom_fr: "Île de Chiloé, mai 2008"
+    nom_en: "Chiloé Island, May 2008"
+    date_debut: "2008-05-01"
+    date_fin: "2008-05-17"
+    limite: 300  
   - id: voyage_iguazu_2007
     nom_fr: "Iguazu 2007"
     nom_en: "Iguazu 2007"
