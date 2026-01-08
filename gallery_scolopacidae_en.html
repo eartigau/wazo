@@ -3301,10 +3301,10 @@
                         attributionControl: false
                     });
                     
-                    // Thème nature - OpenTopoMap
-                    L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-                        maxZoom: 17,
-                        attribution: '© OpenTopoMap'
+                    // Thème nature - CartoDB Voyager
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                        subdomains: 'abcd',
+                        maxZoom: 19
                     }).addTo(map);
                 }
                 

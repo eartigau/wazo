@@ -923,7 +923,7 @@ a.dropdown-toggle.dropdown-link:hover {
    ============================================ */
 
 .trip-map-container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto 40px;
     padding: 0 20px;
 }
@@ -956,7 +956,6 @@ a.dropdown-toggle.dropdown-link:hover {
 #trip-map {
     width: 100%;
     aspect-ratio: 4 / 3;
-    max-height: 500px;
     border-radius: 16px;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-light);
@@ -1009,7 +1008,6 @@ a.dropdown-toggle.dropdown-link:hover {
     
     #trip-map {
         aspect-ratio: 4 / 3;
-        max-height: 300px;
         border-radius: 12px;
     }
     
@@ -1706,7 +1704,6 @@ footer a:hover {
     
     #trip-map {
         aspect-ratio: 4 / 3;
-        max-height: 220px;
         border-radius: 10px;
     }
     
