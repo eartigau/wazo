@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if lang == 'fr' %}Familles{% else %}Families{% endif %}</title>
+    <title>{% if lang == 'fr' %}Photos par famille{% else %}Photos by family{% endif %}</title>
     <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
@@ -37,7 +37,7 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>{% if lang == 'fr' %}Familles{% else %}Families{% endif %}</h1>
+        <h1>{% if lang == 'fr' %}Photos triées par famille{% else %}Photos sorted by family{% endif %}</h1>
         <div class="stats">
             {{ familles|length }} {% if lang == 'fr' %}famille{% if familles|length > 1 %}s{% endif %}{% else %}famil{% if familles|length > 1 %}ies{% else %}y{% endif %}{% endif %} · 
             {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} · 

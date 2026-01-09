@@ -25,6 +25,11 @@ except ImportError:
     print("❌ Jinja2 non installé. Exécutez: pip install jinja2")
     sys.exit(1)
 
+try:
+    import openpyxl
+except ImportError:
+    openpyxl = None  # Optional - only for threatened species
+
 from generate_gallery import (
     EBirdGalleryGenerator, 
     verifier_tous_les_medias, 
@@ -52,6 +57,69 @@ def charger_config():
         config = yaml.safe_load(f)
     
     return config
+
+
+# ============================================================================
+# CHARGEMENT STATUTS IUCN
+# ============================================================================
+
+def charger_statuts_iucn(config_menacees: dict) -> dict:
+    """
+    Charge les statuts IUCN depuis un fichier Excel
+    
+    Returns:
+        dict: {nom_scientifique: code_statut}
+    """
+    if not openpyxl:
+        print("   ⚠ openpyxl non installé. Exécutez: pip install openpyxl")
+        return {}
+    
+    fichier = config_menacees.get('fichier_statuts')
+    if not fichier or not Path(fichier).exists():
+        print(f"   ⚠ Fichier statuts IUCN non trouvé: {fichier}")
+        return {}
+    
+    colonne_nom = config_menacees.get('colonne_nom_scientifique', 'Scientific_name')
+    colonne_statut = config_menacees.get('colonne_statut', 'IUCN_Red_List_Category')
+    colonne_rang = config_menacees.get('colonne_rang_taxonomique', 'Taxon_rank')
+    valeur_espece = config_menacees.get('valeur_rang_espece', 'species')
+    
+    statuts = {}
+    
+    try:
+        wb = openpyxl.load_workbook(fichier, read_only=True)
+        ws = wb.active
+        
+        # Trouver les indices des colonnes
+        headers = list(ws.iter_rows(min_row=1, max_row=1, values_only=True))[0]
+        
+        try:
+            idx_nom = headers.index(colonne_nom)
+            idx_statut = headers.index(colonne_statut)
+            idx_rang = headers.index(colonne_rang) if colonne_rang in headers else None
+        except ValueError as e:
+            print(f"   ⚠ Colonne non trouvée dans {fichier}: {e}")
+            return {}
+        
+        # Lire les données
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            # Filtrer sur le rang taxonomique si spécifié
+            if idx_rang is not None and row[idx_rang] != valeur_espece:
+                continue
+            
+            nom_sci = row[idx_nom]
+            statut = row[idx_statut]
+            
+            if nom_sci and statut:
+                statuts[nom_sci] = statut
+        
+        wb.close()
+        print(f"   ✓ Statuts IUCN chargés: {len(statuts)} espèces")
+        
+    except Exception as e:
+        print(f"   ⚠ Erreur lecture {fichier}: {e}")
+    
+    return statuts
 
 
 # ============================================================================
@@ -227,6 +295,16 @@ def construire_menu(config, generator, curation=None):
             'name_en': 'Families',
             'file_fr': 'familles_index_fr.html',
             'file_en': 'familles_index_en.html'
+        })
+    
+    # Lien Espèces menacées (si configuré)
+    config_menacees = config.get('especes_menacees', {})
+    if config_menacees.get('activer', False):
+        menu.append({
+            'name_fr': 'Menacées',
+            'name_en': 'Threatened',
+            'file_fr': 'menacees_fr.html',
+            'file_en': 'menacees_en.html'
         })
     
     # Lien Sons (sera activé si des sons existent)
@@ -902,6 +980,137 @@ def generer_toutes_galeries():
                     f.write(html)
             
             print(f"   ✓ familles_index_fr.html / familles_index_en.html ({len(familles_index_data)} familles)")
+    
+    # ========================================
+    # ESPÈCES MENACÉES
+    # ========================================
+    config_menacees = config.get('especes_menacees', {})
+    if config_menacees.get('activer', False):
+        print(f"\n🔴 Galerie des espèces menacées...")
+        
+        # Charger les statuts IUCN
+        statuts_iucn = charger_statuts_iucn(config_menacees)
+        
+        if statuts_iucn:
+            # Mapping des statuts configuré dans YAML
+            status_mapping = config_menacees.get('mapping_statuts', {
+                'CR': {'name_fr': 'En danger critique', 'name_en': 'Critically Endangered', 'order': 1},
+                'CR (PE)': {'name_fr': 'En danger critique (possiblement éteint)', 'name_en': 'Critically Endangered (Possibly Extinct)', 'order': 2},
+                'CR (PEW)': {'name_fr': 'En danger critique (possiblement éteint à l\'état sauvage)', 'name_en': 'Critically Endangered (Possibly Extinct in the Wild)', 'order': 3},
+                'EN': {'name_fr': 'En danger', 'name_en': 'Endangered', 'order': 4},
+                'VU': {'name_fr': 'Vulnérable', 'name_en': 'Vulnerable', 'order': 5},
+                'NT': {'name_fr': 'Quasi menacé', 'name_en': 'Near Threatened', 'order': 6},
+                'DD': {'name_fr': 'Données insuffisantes', 'name_en': 'Data Deficient', 'order': 7},
+                'EW': {'name_fr': 'Éteint à l\'état sauvage', 'name_en': 'Extinct in the Wild', 'order': 8},
+                'EX': {'name_fr': 'Éteint', 'name_en': 'Extinct', 'order': 9},
+            })
+            
+            # Ajouter l'ordre aux statuts
+            for code, info in status_mapping.items():
+                if 'order' not in info:
+                    info['order'] = 99
+            
+            # Statuts à exclure (par défaut LC = Least Concern)
+            statuts_exclus = config_menacees.get('statuts_exclus', ['LC', 'NE'])
+            
+            # Récupérer toutes les photos
+            all_photos = generator.filter_observations(
+                limit=None,
+                verifier_medias_en_ligne=VERIFIER_MEDIAS,
+                sort_by='taxonomy',
+                curation=curation
+            )
+            
+            # Grouper par espèce et filtrer les menacées
+            species_photos = {}
+            for photo in all_photos:
+                sci_name = photo.get('scientific_name', '')
+                if not sci_name:
+                    continue
+                
+                # Vérifier le statut IUCN
+                statut = statuts_iucn.get(sci_name)
+                if not statut or statut in statuts_exclus:
+                    continue
+                
+                # Normaliser le statut (ex: "CR (PE)" -> "CR")
+                statut_normalise = statut.split()[0] if ' ' in statut else statut
+                if statut not in status_mapping:
+                    # Utiliser le statut normalisé s'il existe
+                    if statut_normalise in status_mapping:
+                        statut = statut_normalise
+                    else:
+                        continue
+                
+                if sci_name not in species_photos:
+                    species_photos[sci_name] = {
+                        'sci_name': sci_name,
+                        'common_name_fr': photo.get('common_name_fr', sci_name),
+                        'common_name_en': photo.get('common_name_en', sci_name),
+                        'status': statut,
+                        'photos': []
+                    }
+                species_photos[sci_name]['photos'].append(photo)
+            
+            if species_photos:
+                # Organiser par statut
+                statuses_data = {}
+                for sci_name, sp_data in species_photos.items():
+                    statut = sp_data['status']
+                    if statut not in statuses_data:
+                        status_info = status_mapping.get(statut, {'name_fr': statut, 'name_en': statut, 'order': 99})
+                        statuses_data[statut] = {
+                            'code': statut,
+                            'name_fr': status_info['name_fr'],
+                            'name_en': status_info['name_en'],
+                            'order': status_info['order'],
+                            'species': []
+                        }
+                    
+                    # Première photo comme représentative
+                    first_photo = sp_data['photos'][0]
+                    
+                    statuses_data[statut]['species'].append({
+                        'sci_name': sci_name,
+                        'common_name_fr': sp_data['common_name_fr'],
+                        'common_name_en': sp_data['common_name_en'],
+                        'ml_catalog_number': first_photo.get('ml_catalog_number', ''),
+                        'photo_count': len(sp_data['photos']),
+                        'all_photos': sp_data['photos']
+                    })
+                
+                # Trier les statuts par ordre de gravité
+                statuses_list = sorted(statuses_data.values(), key=lambda x: x['order'])
+                
+                # Trier les espèces dans chaque statut par nombre de photos (décroissant)
+                for status in statuses_list:
+                    status['species'].sort(key=lambda x: -x['photo_count'])
+                
+                # Compter les totaux
+                total_species = len(species_photos)
+                total_photos = sum(len(sp['photos']) for sp in species_photos.values())
+                
+                print(f"   📊 {total_species} espèces menacées, {total_photos} photos")
+                
+                # Générer la page
+                env = Environment(loader=FileSystemLoader('.'))
+                template = env.get_template('menacees_template.html')
+                
+                for lang in ['fr', 'en']:
+                    html = template.render(
+                        lang=lang,
+                        statuses=statuses_list,
+                        status_mapping=status_mapping,
+                        total_species=total_species,
+                        total_photos=total_photos,
+                        menu=menu,
+                        current_page=f'menacees_{lang}.html',
+                        other_lang_page=f'menacees_{"en" if lang == "fr" else "fr"}.html'
+                    )
+                    with open(f'menacees_{lang}.html', 'w', encoding='utf-8') as f:
+                        f.write(html)
+                
+                print(f"   ✓ menacees_fr.html / menacees_en.html")
     
     # ========================================
     # PAGE ADMIN (numéros ML)

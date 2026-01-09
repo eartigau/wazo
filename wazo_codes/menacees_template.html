@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if lang == 'fr' %}Toutes les espèces{% else %}All species{% endif %}</title>
+    <title>{% if lang == 'fr' %}Espèces menacées{% else %}Threatened Species{% endif %}</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="gallery.css">
     <style>
@@ -19,6 +19,55 @@
             border: 3px solid white;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
             font-size: 20px;
+        }
+        
+        /* Badge de statut IUCN */
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-top: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .status-CR { background: #d32f2f; color: white; }
+        .status-EN { background: #f57c00; color: white; }
+        .status-VU { background: #fbc02d; color: #333; }
+        .status-NT { background: #81c784; color: #333; }
+        .status-DD { background: #9e9e9e; color: white; }
+        .status-EW { background: #6a1b9a; color: white; }
+        .status-EX { background: #000000; color: white; }
+        
+        /* Section par statut */
+        .status-section {
+            margin-bottom: 50px;
+        }
+        .status-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-family: 'Lora', Georgia, serif;
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--forest-green);
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--sage-light);
+        }
+        .status-title .status-badge {
+            font-size: 13px;
+            padding: 5px 12px;
+        }
+        .status-count {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-medium);
+            margin-left: auto;
         }
     </style>
 </head>
@@ -53,10 +102,10 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>{% if lang == 'fr' %}Toutes les espèces photographiées{% else %}All photographed species{% endif %}</h1>
+        <h1>{% if lang == 'fr' %}Espèces menacées photographiées{% else %}Threatened species photographed{% endif %}</h1>
         <div class="stats">
             {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} • 
-            {{ total_families }} {% if lang == 'fr' %}familles{% else %}families{% endif %}
+            {{ total_photos }} photos
         </div>
     </div>
 
@@ -97,8 +146,8 @@
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Famille -->
-                <div class="lightbox-family" id="lightbox-family"></div>
+                <!-- Statut IUCN -->
+                <div class="lightbox-family" id="lightbox-status"></div>
                 
                 <!-- Nom commun -->
                 <h2 id="lightbox-title"></h2>
@@ -135,36 +184,41 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr|safe }}{% else %}Updated: {{ update_date_en|safe }}{% endif %}{% endif %}</p>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · {% if lang == 'fr' %}Statuts{% else %}Status{% endif %} <a href="https://www.iucnredlist.org" target="_blank">IUCN Red List</a></p>
         <p>© Étienne Artigau</p>
     </footer>
-
-    <!-- Bouton retour en haut -->
-    <a href="#" class="back-to-top" id="backToTop">↑</a>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const currentLang = '{{ lang }}';
-        const BATCH_SIZE = 60;  // Nombre d'espèces chargées par batch
+        const BATCH_SIZE = 24;
         
-        // ========================================
-        // DONNÉES DES ESPÈCES (pour l'affichage)
-        // ========================================
+        // Mapping des statuts
+        const statusInfo = {
+            {% for code, info in status_mapping.items() %}
+            "{{ code }}": {
+                code: "{{ code }}",
+                name_fr: "{{ info.name_fr }}",
+                name_en: "{{ info.name_en }}",
+                order: {{ info.order }}
+            }{% if not loop.last %},{% endif %}
+            {% endfor %}
+        };
+        
+        // Données des espèces (format plat pour le rendu progressif)
         const speciesListData = [
-            {% for family in families %}
-            {% for sp in family.species %}
+            {% for status in statuses %}
+            {% for sp in status.species %}
             {
-                sciName: "{{ sp.sci_name|replace('\\', '\\\\')|replace('"', '\\"') }}",
+                sciName: "{{ sp.sci_name }}",
                 nameFr: "{{ sp.common_name_fr|replace('\\', '\\\\')|replace('"', '\\"') }}",
                 nameEn: "{{ sp.common_name_en|replace('\\', '\\\\')|replace('"', '\\"') }}",
                 ml: "{{ sp.ml_catalog_number }}",
                 photoCount: {{ sp.photo_count }},
-                familyCode: "{{ family.code }}",
-                familyDisplayFr: "{{ family.code_display_fr|replace('\\', '\\\\')|replace('"', '\\"') }}",
-                familyDisplayEn: "{{ family.code_display_en|replace('\\', '\\\\')|replace('"', '\\"') }}",
-                familyNameFr: "{{ family.name_fr|replace('\\', '\\\\')|replace('"', '\\"') if family.name_fr else '' }}",
-                familyNameEn: "{{ family.name_en|replace('\\', '\\\\')|replace('"', '\\"') if family.name_en else '' }}"
+                statusCode: "{{ status.code }}",
+                statusNameFr: "{{ status.name_fr }}",
+                statusNameEn: "{{ status.name_en }}"
             }{% if not loop.last %},{% endif %}
             {% endfor %}{% if not loop.last %},{% endif %}
             {% endfor %}
@@ -172,13 +226,15 @@
         
         // Données complètes pour le lightbox (toutes les photos par espèce)
         const speciesData = {
-            {% for family in families %}
-            {% for sp in family.species %}
+            {% for status in statuses %}
+            {% for sp in status.species %}
             "{{ sp.sci_name|replace('\\', '\\\\')|replace('"', '\\"') }}": {
                 name_fr: "{{ sp.common_name_fr|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
                 name_en: "{{ sp.common_name_en|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
                 scientific: "{{ sp.sci_name }}",
-                family: "{{ family.code_display_fr if lang == 'fr' else family.code_display_en }}",
+                status: "{{ status.code }}",
+                status_name_fr: "{{ status.name_fr }}",
+                status_name_en: "{{ status.name_en }}",
                 photos: [
                     {% for photo in sp.all_photos %}
                     {
@@ -204,7 +260,7 @@
         let displayedCount = 0;
         let filteredSpecies = [...speciesListData];
         let currentSearchQuery = '';
-        let renderedFamilies = new Set();
+        let renderedStatuses = new Set();
         
         let currentSpecies = null;
         let currentPhotoIndex = 0;
@@ -247,18 +303,23 @@
             return card;
         }
         
-        function createFamilySection(familyCode, familyDisplayFr, familyDisplayEn, familyNameFr, familyNameEn) {
+        function createStatusSection(statusCode, statusNameFr, statusNameEn, count) {
             const section = document.createElement('div');
-            section.className = 'family-section';
-            section.id = familyCode;
-            section.dataset.family = familyCode;
+            section.className = 'status-section';
+            section.id = 'status-' + statusCode;
+            section.dataset.status = statusCode;
             
-            const display = currentLang === 'fr' ? familyDisplayFr : familyDisplayEn;
-            const name = currentLang === 'fr' ? familyNameFr : familyNameEn;
-            const nameHtml = name ? ` (${name})` : '';
+            const name = currentLang === 'fr' ? statusNameFr : statusNameEn;
+            const countLabel = currentLang === 'fr' 
+                ? `${count} espèce${count > 1 ? 's' : ''}`
+                : `${count} species`;
             
             section.innerHTML = `
-                <h2 class="family-title">${display}${nameHtml}</h2>
+                <h2 class="status-title">
+                    <span class="status-badge status-${statusCode}">${statusCode}</span>
+                    ${name}
+                    <span class="status-count">${countLabel}</span>
+                </h2>
                 <div class="species-grid"></div>
             `;
             
@@ -281,25 +342,30 @@
                 return;
             }
             
-            // Grouper par famille
+            // Compter les espèces par statut (pour le titre de section)
+            const statusCounts = {};
+            filteredSpecies.forEach(sp => {
+                statusCounts[sp.statusCode] = (statusCounts[sp.statusCode] || 0) + 1;
+            });
+            
+            // Grouper par statut
             toRender.forEach(sp => {
-                let familySection = document.getElementById(sp.familyCode);
+                let statusSection = document.getElementById('status-' + sp.statusCode);
                 
-                // Créer la section famille si elle n'existe pas
-                if (!familySection) {
-                    familySection = createFamilySection(
-                        sp.familyCode, 
-                        sp.familyDisplayFr, 
-                        sp.familyDisplayEn,
-                        sp.familyNameFr,
-                        sp.familyNameEn
+                // Créer la section statut si elle n'existe pas
+                if (!statusSection) {
+                    statusSection = createStatusSection(
+                        sp.statusCode, 
+                        sp.statusNameFr, 
+                        sp.statusNameEn,
+                        statusCounts[sp.statusCode]
                     );
-                    container.appendChild(familySection);
-                    renderedFamilies.add(sp.familyCode);
+                    container.appendChild(statusSection);
+                    renderedStatuses.add(sp.statusCode);
                 }
                 
                 // Ajouter la carte d'espèce
-                const grid = familySection.querySelector('.species-grid');
+                const grid = statusSection.querySelector('.species-grid');
                 const card = createSpeciesCard(sp);
                 
                 // Ajouter classe highlight si recherche active
@@ -320,119 +386,145 @@
             
             if (remaining > 0) {
                 container.style.display = 'flex';
-                const countSpan = document.getElementById('remaining-count');
-                countSpan.textContent = currentLang === 'fr' 
-                    ? ` (${remaining} restantes)` 
-                    : ` (${remaining} remaining)`;
+                document.getElementById('remaining-count').textContent = 
+                    ` (${remaining} ${currentLang === 'fr' ? 'restantes' : 'remaining'})`;
             } else {
                 container.style.display = 'none';
             }
         }
         
-        function clearRenderedContent() {
+        function resetAndRender() {
             const container = document.getElementById('species-list-dynamic');
-            // Supprimer toutes les sections famille
-            const sections = container.querySelectorAll('.family-section');
-            sections.forEach(s => s.remove());
+            // Garder uniquement l'indicateur de chargement
+            const loadingIndicator = document.getElementById('loading-indicator');
+            container.innerHTML = '';
+            if (loadingIndicator) {
+                container.appendChild(loadingIndicator);
+            }
             
             displayedCount = 0;
-            renderedFamilies.clear();
+            renderedStatuses.clear();
+            renderNextBatch();
         }
 
         // ========================================
-        // RECHERCHE D'ESPÈCES
+        // RECHERCHE
         // ========================================
         
-        function filterSpecies(query) {
+        const searchInput = document.getElementById('species-search');
+        const searchClear = document.getElementById('search-clear');
+        const searchResults = document.getElementById('search-results');
+        
+        searchInput.addEventListener('input', (e) => {
+            const query = e.target.value.trim();
             currentSearchQuery = query;
+            
+            searchClear.style.display = query.length > 0 ? 'block' : 'none';
+            
+            if (query.length < 2) {
+                searchResults.style.display = 'none';
+                filteredSpecies = [...speciesListData];
+                resetAndRender();
+                return;
+            }
+            
             const normalizedQuery = normalizeText(query);
             
-            if (normalizedQuery.length < 2) {
-                // Réinitialiser à la liste complète
-                filteredSpecies = [...speciesListData];
-                document.getElementById('search-results').style.display = 'none';
-                document.getElementById('search-clear').style.display = 'none';
+            // Filtrer les espèces
+            filteredSpecies = speciesListData.filter(sp => 
+                normalizeText(sp.nameFr).includes(normalizedQuery) ||
+                normalizeText(sp.nameEn).includes(normalizedQuery) ||
+                normalizeText(sp.sciName).includes(normalizedQuery)
+            );
+            
+            // Afficher les suggestions
+            const suggestions = filteredSpecies.slice(0, 8);
+            if (suggestions.length > 0) {
+                searchResults.innerHTML = suggestions.map(sp => {
+                    const name = currentLang === 'fr' ? sp.nameFr : sp.nameEn;
+                    return `<div class="search-result-item" onclick="selectSpecies('${sp.sciName}')">${name} <span class="sci">${sp.sciName}</span></div>`;
+                }).join('');
+                searchResults.style.display = 'block';
             } else {
-                // Filtrer
-                filteredSpecies = speciesListData.filter(sp => 
-                    normalizeText(sp.nameFr).includes(normalizedQuery) ||
-                    normalizeText(sp.nameEn).includes(normalizedQuery) ||
-                    normalizeText(sp.sciName).includes(normalizedQuery)
-                );
-                
-                document.getElementById('search-clear').style.display = 'block';
-                
-                // Afficher le compteur de résultats
-                const searchResults = document.getElementById('search-results');
-                if (filteredSpecies.length > 0) {
-                    const resultText = currentLang === 'fr' 
-                        ? `${filteredSpecies.length} espèce${filteredSpecies.length > 1 ? 's' : ''} trouvée${filteredSpecies.length > 1 ? 's' : ''}`
-                        : `${filteredSpecies.length} species found`;
-                    searchResults.textContent = resultText;
-                } else {
-                    searchResults.textContent = currentLang === 'fr' 
-                        ? 'Aucune espèce trouvée'
-                        : 'No species found';
-                }
+                searchResults.innerHTML = `<div class="search-no-results">${currentLang === 'fr' ? 'Aucun résultat' : 'No results'}</div>`;
                 searchResults.style.display = 'block';
             }
             
-            // Effacer et re-rendre
-            clearRenderedContent();
-            renderNextBatch();
+            resetAndRender();
+        });
+        
+        searchClear.addEventListener('click', () => {
+            searchInput.value = '';
+            currentSearchQuery = '';
+            searchClear.style.display = 'none';
+            searchResults.style.display = 'none';
+            filteredSpecies = [...speciesListData];
+            resetAndRender();
+        });
+        
+        function selectSpecies(sciName) {
+            searchResults.style.display = 'none';
+            openSpeciesLightbox(sciName);
         }
         
+        // Fermer les suggestions au clic ailleurs
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.search-container')) {
+                searchResults.style.display = 'none';
+            }
+        });
+
         // ========================================
         // LIGHTBOX
         // ========================================
-
+        
         function openSpeciesLightbox(sciName) {
             currentSpecies = speciesData[sciName];
             if (!currentSpecies) return;
             
             currentPhotoIndex = 0;
-            showPhoto();
+            showCurrentPhoto();
             
             document.getElementById('lightbox').classList.add('active');
             document.body.style.overflow = 'hidden';
         }
-
-        function showPhoto() {
-            if (!currentSpecies) return;
+        
+        function showCurrentPhoto() {
+            if (!currentSpecies || !currentSpecies.photos.length) return;
             
             const photo = currentSpecies.photos[currentPhotoIndex];
-            if (!photo) return;
             
+            // Image
             document.getElementById('lightbox-img').src = 
                 `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
             
-            document.getElementById('lightbox-family').textContent = currentSpecies.family;
+            // Statut IUCN
+            const statusEl = document.getElementById('lightbox-status');
+            statusEl.innerHTML = `<span class="status-badge status-${currentSpecies.status}">${currentSpecies.status}</span> ${currentLang === 'fr' ? currentSpecies.status_name_fr : currentSpecies.status_name_en}`;
+            
+            // Nom
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? currentSpecies.name_fr : currentSpecies.name_en;
             document.getElementById('lightbox-scientific').textContent = currentSpecies.scientific;
             
-            const total = currentSpecies.photos.length;
-            if (total > 1) {
-                document.getElementById('lightbox-counter').textContent = 
-                    `Photo ${currentPhotoIndex + 1} / ${total}`;
-                document.getElementById('lightbox-counter').style.display = 'block';
+            // Compteur
+            const counter = document.getElementById('lightbox-counter');
+            if (currentSpecies.photos.length > 1) {
+                counter.textContent = `${currentPhotoIndex + 1} / ${currentSpecies.photos.length}`;
+                counter.style.display = 'block';
             } else {
-                document.getElementById('lightbox-counter').style.display = 'none';
+                counter.style.display = 'none';
             }
             
+            // Lieu et date
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
             document.getElementById('lightbox-date').innerHTML = 
                 currentLang === 'fr' ? photo.date_fr : photo.date_en;
+            document.getElementById('lightbox-ebird').href = 
+                `https://ebird.org/checklist/${photo.checklist_id}`;
             
-            if (photo.checklist_id) {
-                document.getElementById('lightbox-ebird').href = 
-                    `https://ebird.org/checklist/${photo.checklist_id}`;
-                document.getElementById('lightbox-ebird').style.display = 'inline-flex';
-            } else {
-                document.getElementById('lightbox-ebird').style.display = 'none';
-            }
-            
+            // Carte
             const mapDiv = document.getElementById('lightbox-map');
             const isMobile = window.innerWidth <= 768;
             
@@ -445,8 +537,8 @@
                         attributionControl: false
                     });
                     
-                    // Thème doux - CartoDB Positron
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                    // Thème nature - CartoDB Voyager
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
                         subdomains: 'abcd',
                         maxZoom: 19
                     }).addTo(map);
@@ -472,95 +564,55 @@
                 mapDiv.style.display = 'none';
             }
         }
-
+        
         function closeLightbox() {
             document.getElementById('lightbox').classList.remove('active');
             document.body.style.overflow = '';
         }
-
+        
         function navigateLightbox(direction) {
             if (!currentSpecies) return;
-            
             const total = currentSpecies.photos.length;
             currentPhotoIndex = (currentPhotoIndex + direction + total) % total;
-            showPhoto();
+            showCurrentPhoto();
         }
-
-        // ========================================
-        // ÉVÉNEMENTS
-        // ========================================
         
-        // Clavier lightbox
+        // Clavier
         document.addEventListener('keydown', (e) => {
             if (!document.getElementById('lightbox').classList.contains('active')) return;
             if (e.key === 'Escape') closeLightbox();
             if (e.key === 'ArrowLeft') navigateLightbox(-1);
             if (e.key === 'ArrowRight') navigateLightbox(1);
         });
-
-        // Clic hors contenu pour fermer
+        
+        // Clic hors contenu
         document.getElementById('lightbox').addEventListener('click', (e) => {
             if (e.target.id === 'lightbox') closeLightbox();
-        });
-
-        // Bouton retour en haut
-        const backToTop = document.getElementById('backToTop');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 500) {
-                backToTop.classList.add('visible');
-            } else {
-                backToTop.classList.remove('visible');
-            }
-        });
-
-        // Recherche
-        const searchInput = document.getElementById('species-search');
-        const searchClear = document.getElementById('search-clear');
-        
-        searchInput.addEventListener('input', (e) => {
-            filterSpecies(e.target.value);
-        });
-
-        searchClear.addEventListener('click', () => {
-            searchInput.value = '';
-            filterSpecies('');
-            searchInput.focus();
-        });
-
-        searchInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                searchInput.value = '';
-                filterSpecies('');
-            }
-        });
-        
-        // Scroll infini - charge automatiquement au scroll
-        let scrollTimeout;
-        window.addEventListener('scroll', () => {
-            if (scrollTimeout) clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                // Charger plus quand on approche du bas
-                if ((window.innerHeight + window.scrollY) >= (document.body.offsetHeight - 1000)) {
-                    if (displayedCount < filteredSpecies.length) {
-                        renderNextBatch();
-                    }
-                }
-            }, 100);
         });
 
         // ========================================
         // INITIALISATION
         // ========================================
+        
+        // Premier rendu au chargement
         document.addEventListener('DOMContentLoaded', () => {
             renderNextBatch();
         });
         
-        // Menu mobile hamburger
+        // Charger plus au scroll
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
+                if (displayedCount < filteredSpecies.length) {
+                    renderNextBatch();
+                }
+            }
+        });
+        
+        // Menu mobile
         function toggleMobileMenu() {
             document.getElementById('navMenu').classList.toggle('active');
         }
         
-        // Fermer menu au clic ailleurs
         document.addEventListener('click', (e) => {
             const nav = document.querySelector('nav');
             const menu = document.getElementById('navMenu');
@@ -568,30 +620,6 @@
                 menu.classList.remove('active');
             }
         });
-        
-        // Swipe pour lightbox sur mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.getElementById('lightbox').addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        document.getElementById('lightbox').addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-        
-        function handleSwipe() {
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    navigateLightbox(1);
-                } else {
-                    navigateLightbox(-1);
-                }
-            }
-        }
     </script>
 </body>
 </html>

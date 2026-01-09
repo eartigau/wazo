@@ -1,0 +1,61 @@
+# ============================================================================
+# CONFIGURATION ESPÈCES MENACÉES
+# À ajouter dans config.yaml
+# ============================================================================
+
+especes_menacees:
+  activer: true
+  
+  # Fichier source des statuts IUCN (Excel)
+  fichier_statuts: "AviList-v2025-11Jun-extended.xlsx"
+  
+  # Colonnes du fichier Excel
+  colonne_nom_scientifique: "Scientific_name"
+  colonne_statut: "IUCN_Red_List_Category"
+  colonne_rang_taxonomique: "Taxon_rank"
+  valeur_rang_espece: "species"
+  
+  # Statuts à exclure (ne pas afficher dans la galerie)
+  statuts_exclus:
+    - LC    # Least Concern (préoccupation mineure)
+    - NE    # Not Evaluated (non évalué)
+  
+  # Mapping des codes de statut vers les noms complets
+  # (optionnel - des valeurs par défaut sont utilisées si non spécifié)
+  mapping_statuts:
+    CR:
+      name_fr: "En danger critique"
+      name_en: "Critically Endangered"
+      order: 1
+    CR (PE):
+      name_fr: "En danger critique (possiblement éteint)"
+      name_en: "Critically Endangered (Possibly Extinct)"
+      order: 2
+    CR (PEW):
+      name_fr: "En danger critique (possiblement éteint à l'état sauvage)"
+      name_en: "Critically Endangered (Possibly Extinct in the Wild)"
+      order: 3
+    EN:
+      name_fr: "En danger"
+      name_en: "Endangered"
+      order: 4
+    VU:
+      name_fr: "Vulnérable"
+      name_en: "Vulnerable"
+      order: 5
+    NT:
+      name_fr: "Quasi menacé"
+      name_en: "Near Threatened"
+      order: 6
+    DD:
+      name_fr: "Données insuffisantes"
+      name_en: "Data Deficient"
+      order: 7
+    EW:
+      name_fr: "Éteint à l'état sauvage"
+      name_en: "Extinct in the Wild"
+      order: 8
+    EX:
+      name_fr: "Éteint"
+      name_en: "Extinct"
+      order: 9
