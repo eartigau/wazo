@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if lang == 'fr' %}Pays{% else %}Countries{% endif %}</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>{% if lang == 'fr' %}Photos par pays{% else %}Photos by country{% endif %}</title>
     <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
@@ -37,7 +38,7 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>{% if lang == 'fr' %}Pays{% else %}Countries{% endif %}</h1>
+        <h1>{% if lang == 'fr' %}Photos triées par pays{% else %}Photos sorted by country{% endif %}</h1>
         <div class="stats">
             {{ countries|length }} {% if lang == 'fr' %}pays{% else %}countr{% if countries|length > 1 %}ies{% else %}y{% endif %}{% endif %}
         </div>
@@ -52,7 +53,6 @@
                     <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ country.frontispice_ml }}/640" 
                          alt="{% if lang == 'fr' %}{{ country.name_fr }}{% else %}{{ country.name_en }}{% endif %}"
                          loading="lazy">
-                    <span style="position: absolute; top: 12px; right: 12px; font-size: 28px; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));">{{ country.flag }}</span>
                 </div>
                 <div class="index-card-info">
                     <h2 class="index-card-title">{% if lang == 'fr' %}{{ country.name_fr }}{% else %}{{ country.name_en }}{% endif %}</h2>

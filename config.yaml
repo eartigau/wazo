@@ -1,0 +1,315 @@
+# ==============================================================================
+# CONFIGURATION GALERIE eBIRD v2.0
+# ==============================================================================
+# Ce fichier contient tous les paramètres configurables de la galerie.
+# Modifiez-le selon vos besoins.
+# ==============================================================================
+
+
+# ------------------------------------------------------------------------------
+# FICHIERS SOURCE
+# ------------------------------------------------------------------------------
+fichiers:
+  # Données eBird exportées (télécharger depuis https://ebird.org/downloadMyData)
+  donnees_ebird: "MyEBirdData.csv"
+  
+  # Taxonomie eBird (télécharger depuis https://ebird.org/science/use-ebird-data/the-ebird-taxonomy)
+  # Mettre à jour annuellement (ex: eBird_taxonomy_v2026.csv)
+  taxonomie: "eBird_taxonomy_v2025.csv"
+  
+  # Cache des vérifications de médias (généré automatiquement)
+  cache_medias: "media_cache.csv"
+  
+  # Traductions des noms de lieux
+  traductions_lieux: "traductions_lieux.csv"
+  
+  # Curation des photos (généré via la page admin)
+  # Contient les statuts: best, include, reject
+  curation: "photo_curation.csv"
+
+
+# ------------------------------------------------------------------------------
+# SITE WEB
+# ------------------------------------------------------------------------------
+site:
+  # Page d'accueil (sera ajoutée au menu)
+  index_fr: "https://eartigau.github.io/index_fr.html"
+  index_en: "https://eartigau.github.io/index_en.html"
+  
+  # Titre du site (utilisé dans les métadonnées)
+  titre_fr: "Galerie Photos d'Oiseaux"
+  titre_en: "Bird Photo Gallery"
+  
+  # Auteur/Copyright
+  auteur: "Étienne Artigau"
+
+
+# ------------------------------------------------------------------------------
+# OPTIONS DE GÉNÉRATION
+# ------------------------------------------------------------------------------
+generation:
+  # Vérifier les médias en ligne (plus lent mais plus précis)
+  # Mettre à false pour accélérer la génération si le cache est à jour
+  verifier_medias_en_ligne: false
+  
+  # Limite par défaut de photos par galerie
+  limite_photos_defaut: 300
+  
+  # Nombre de photos pour "Ajouts récents" (minimum ou période de 3 mois)
+  ajouts_recents_minimum: 50
+  
+  # Limite de photos pour les galeries par famille
+  limite_photos_famille: 500
+
+
+# ------------------------------------------------------------------------------
+# VOYAGES
+# ------------------------------------------------------------------------------
+# Chaque voyage génère une galerie avec les photos des lieux spécifiés.
+#
+# Paramètres:
+#   id: Identifiant unique (utilisé pour les noms de fichiers)
+#   nom_fr/nom_en: Nom affiché
+#   pays: Liste de codes pays/régions eBird (ex: CA-QC, US-FL, CL, CH)
+#   regions: (optionnel) Liste de régions spécifiques
+#   date_debut/date_fin: (optionnel) Filtrer par période (format YYYY-MM-DD)
+#   limite: (optionnel) Nombre max de photos (défaut: limite_photos_defaut)
+#
+# NOTE: L'image de couverture (frontispice) est déterminée automatiquement
+# par la curation. Utilisez la page admin pour marquer une photo comme "best".
+# ------------------------------------------------------------------------------
+
+voyages:
+  - id: voyage_geneve_2025
+    nom_fr: "Genève, novembre 2025"
+    nom_en: "Geneva, Novembre 2025"
+    date_debut: "2025-11-01"
+    date_fin: "2025-11-30"
+    pays: ["CH"]
+    limite: 500
+
+  - id: voyage_europe_ete_2025
+    nom_fr: "Europe, été 2025"
+    nom_en: "Europe, Summer 2025"
+    date_debut: "2025-06-28"
+    date_fin: "2025-08-05"
+    #pays: ["CH"]
+    limite: 500
+
+  - id: voyage_europe_ete_2024
+    nom_fr: "Europe, été 2024"
+    nom_en: "Europe, Summer 2024"
+    date_debut: "2024-07-02"
+    date_fin: "2024-08-10"
+    #pays: ["CH"]
+    limite: 500
+
+  - id: voyage_californie_juin_2024
+    nom_fr: "Californie, juin 2024"
+    nom_en: "California , June 2024"
+    date_debut: "2024-06-10"
+    date_fin: "2024-09-05"
+    pays: ["US-CA"]
+    limite: 400
+
+  - id: voyage_floride_2024
+    nom_fr: "Floride, 2024"
+    nom_en: "Florida, 2024"
+    date_debut: "2024-02-10"
+    date_fin: "2024-03-25"
+    pays: ["US-FL"]
+    limite: 400
+
+  - id: voyage_florence_2023
+    nom_fr: "Florence, septembre 2023"
+    nom_en: "Florence, September 2023"
+    date_debut: "2023-09-01"
+    date_fin: "2023-09-30"
+    pays: ["IT"]
+    limite: 400
+
+  - id: voyage_californie_ete_2023
+    nom_fr: "Californie, juin 2023"
+    nom_en: "California , June 2023"
+    date_debut: "2023-06-10"
+    date_fin: "2023-09-05"
+    pays: ["US-CA"]
+    limite: 400
+
+  - id: voyage_santa_barbara_mars_2023
+    nom_fr: "Santa Barbara, mars 2023"
+    nom_en: "Santa Barbara, March 2023"
+    date_debut: "2023-03-25"
+    date_fin: "2023-03-31"
+    pays: ["US-CA"]
+    limite: 400
+
+  - id: voyage_arizona_fevrier_2023
+    nom_fr: "Arizona, février 2023"
+    nom_en: "Arizona, February 2023"
+    date_debut: "2023-02-01"
+    date_fin: "2023-02-28"
+    pays: ["US-AZ"]
+    limite: 400
+
+  - id: voyage_europe_ete_2022
+    nom_fr: "Europe, été 2022"
+    nom_en: "Europe, Summer 2022"
+    date_debut: "2022-06-28"
+    date_fin: "2022-07-22"
+    pays: ["CL"]
+    limite: 500
+
+
+  - id: voyage_chili_2022
+    nom_fr: "Chili 2022"
+    nom_en: "Chile 2022"
+    date_debut: "2022-01-01"
+    date_fin: "2022-12-31"
+    pays: ["CL"]
+    limite: 500
+
+  - id: voyage_chili_2020
+    nom_fr: "Chili 2020"
+    nom_en: "Chile 2020"
+    date_debut: "2020-01-01"
+    date_fin: "2020-12-31"
+    pays: ["CL"]
+    limite: 500
+
+  - id: voyage_cuba_2020
+    nom_fr: "Cuba, février 2020"
+    nom_en: "Cuba, February 2020"
+    date_debut: "2020-02-01"
+    date_fin: "2020-02-29"
+    pays: ["CU"]
+    limite: 500
+
+  - id: voyage_bc_2019
+    nom_fr: "Colombie-Britannique, été 2019"
+    nom_en: "British Columbia, Summer 2019"
+    date_debut: "2019-06-01"
+    date_fin: "2019-08-31"
+    pays: ["CA-BC"]
+    limite: 500
+
+  - id: voyage_cuba_2019
+    nom_fr: "Cuba, hiver 2019"
+    nom_en: "Cuba, winter 2019"
+    date_debut: "2019-02-01"
+    date_fin: "2019-03-15"
+    pays: ["CU"]
+    limite: 500
+
+
+  - id: voyage_hawaii_2018
+    nom_fr: "Hawaï 2018"
+    nom_en: "Hawaii 2018"
+    pays: ["US-HI"]
+    date_debut: "2018-01-01"
+    date_fin: "2018-12-31"
+    limite: 300
+
+  - id: voyage_europe_ete_2018
+    nom_fr: "Europe, été 2018"
+    nom_en: "Europe, Summer 2018"
+    date_debut: "2018-07-09"
+    date_fin: "2018-08-17"
+    limite: 300
+
+  - id: mysore_2017
+    nom_fr: "Mysore 2017"
+    nom_en: "Mysore 2017"
+    date_debut: "2017-11-01"
+    date_fin: "2017-11-22"
+    limite: 300
+
+  - id: maritimes_2017
+    nom_fr: "Maritimes 2017"
+    nom_en: "Maritimes 2017"
+    date_debut: "2017-08-01"
+    date_fin: "2017-08-31"
+    limite: 300
+
+  - id: ete_2016
+    nom_fr: "Europe, été 2016"
+    nom_en: "Europe, Summer 2016"
+    date_debut: "2016-07-06"
+    date_fin: "2016-08-05"
+    limite: 300
+
+
+  - id: voyage_hawaii_automne2015
+    nom_fr: "Hawaï automne 2015"
+    nom_en: "Hawaii Autumn 2015"
+    pays: ["US-HI"]
+    date_debut: "2015-09-01"
+    date_fin: "2015-11-30"
+    limite: 300
+
+  - id: voyage_hawaii_ete2015
+    nom_fr: "Hawaï été 2015"
+    nom_en: "Hawaii Summer 2015"
+    pays: ["US-HI"]
+    date_debut: "2015-05-01"
+    date_fin: "2015-08-30"
+    limite: 300
+
+  - id: chiloe_2008
+    nom_fr: "Île de Chiloé, mai 2008"
+    nom_en: "Chiloé Island, May 2008"
+    date_debut: "2008-05-02"
+    date_fin: "2008-05-17"
+    limite: 300  
+  - id: voyage_iguazu_2007
+    nom_fr: "Iguazu 2007"
+    nom_en: "Iguazu 2007"
+    date_debut: "2007-06-03"
+    date_fin: "2007-06-17"
+    limite: 300
+
+# ------------------------------------------------------------------------------
+# GALERIES GÉNÉRALES (optionnel)
+# ------------------------------------------------------------------------------
+# Galeries supplémentaires avec des filtres personnalisés.
+# Laissez vide [] si vous n'en voulez pas.
+# ------------------------------------------------------------------------------
+
+galeries_generales:
+  - id: gallery_all
+    nom_fr: "Toutes les photos"
+    nom_en: "All Photos"
+    limite: 1000
+    dans_menu: false
+  
+  - id: gallery_quebec
+    nom_fr: "Québec"
+    nom_en: "Quebec"
+    pays: ["CA-QC"]
+    limite: 500
+    dans_menu: false
+
+
+# ------------------------------------------------------------------------------
+# ESPÈCES MENACÉES
+# ------------------------------------------------------------------------------
+# Génère une galerie des espèces photographiées ayant un statut IUCN.
+# Nécessite le fichier AviList (téléchargeable sur avilist.org)
+# ------------------------------------------------------------------------------
+
+especes_menacees:
+  activer: true
+  
+  # Fichier source des statuts IUCN (Excel)
+  fichier_statuts: "AviList-v2025-11Jun-extended.xlsx"
+  
+  # Colonnes du fichier Excel
+  colonne_nom_scientifique: "Scientific_name"
+  colonne_statut: "IUCN_Red_List_Category"
+  colonne_rang_taxonomique: "Taxon_rank"
+  valeur_rang_espece: "species"
+  
+  # Statuts à exclure (ne pas afficher dans la galerie)
+  statuts_exclus:
+    - LC    # Least Concern (préoccupation mineure)
+    - NE    # Not Evaluated (non évalué)

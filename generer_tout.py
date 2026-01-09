@@ -25,6 +25,11 @@ except ImportError:
     print("❌ Jinja2 non installé. Exécutez: pip install jinja2")
     sys.exit(1)
 
+try:
+    import openpyxl
+except ImportError:
+    openpyxl = None  # Optional - only for threatened species
+
 from generate_gallery import (
     EBirdGalleryGenerator, 
     verifier_tous_les_medias, 
@@ -52,6 +57,69 @@ def charger_config():
         config = yaml.safe_load(f)
     
     return config
+
+
+# ============================================================================
+# CHARGEMENT STATUTS IUCN
+# ============================================================================
+
+def charger_statuts_iucn(config_menacees: dict) -> dict:
+    """
+    Charge les statuts IUCN depuis un fichier Excel
+    
+    Returns:
+        dict: {nom_scientifique: code_statut}
+    """
+    if not openpyxl:
+        print("   ⚠ openpyxl non installé. Exécutez: pip install openpyxl")
+        return {}
+    
+    fichier = config_menacees.get('fichier_statuts')
+    if not fichier or not Path(fichier).exists():
+        print(f"   ⚠ Fichier statuts IUCN non trouvé: {fichier}")
+        return {}
+    
+    colonne_nom = config_menacees.get('colonne_nom_scientifique', 'Scientific_name')
+    colonne_statut = config_menacees.get('colonne_statut', 'IUCN_Red_List_Category')
+    colonne_rang = config_menacees.get('colonne_rang_taxonomique', 'Taxon_rank')
+    valeur_espece = config_menacees.get('valeur_rang_espece', 'species')
+    
+    statuts = {}
+    
+    try:
+        wb = openpyxl.load_workbook(fichier, read_only=True)
+        ws = wb.active
+        
+        # Trouver les indices des colonnes
+        headers = list(ws.iter_rows(min_row=1, max_row=1, values_only=True))[0]
+        
+        try:
+            idx_nom = headers.index(colonne_nom)
+            idx_statut = headers.index(colonne_statut)
+            idx_rang = headers.index(colonne_rang) if colonne_rang in headers else None
+        except ValueError as e:
+            print(f"   ⚠ Colonne non trouvée dans {fichier}: {e}")
+            return {}
+        
+        # Lire les données
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            # Filtrer sur le rang taxonomique si spécifié
+            if idx_rang is not None and row[idx_rang] != valeur_espece:
+                continue
+            
+            nom_sci = row[idx_nom]
+            statut = row[idx_statut]
+            
+            if nom_sci and statut:
+                statuts[nom_sci] = statut
+        
+        wb.close()
+        print(f"   ✓ Statuts IUCN chargés: {len(statuts)} espèces")
+        
+    except Exception as e:
+        print(f"   ⚠ Erreur lecture {fichier}: {e}")
+    
+    return statuts
 
 
 # ============================================================================
@@ -220,13 +288,14 @@ def construire_menu(config, generator, curation=None):
         'file_en': 'pays_index_en.html'
     })
     
-    # Lien Familles (si des familles ont des photos)
-    if familles_avec_photos:
+    # Lien Espèces menacées (si configuré)
+    config_menacees = config.get('especes_menacees', {})
+    if config_menacees.get('activer', False):
         menu.append({
-            'name_fr': 'Familles',
-            'name_en': 'Families',
-            'file_fr': 'familles_index_fr.html',
-            'file_en': 'familles_index_en.html'
+            'name_fr': 'Menacées',
+            'name_en': 'Endangered',
+            'file_fr': 'menacees_fr.html',
+            'file_en': 'menacees_en.html'
         })
     
     # Lien Sons (sera activé si des sons existent)
@@ -400,6 +469,12 @@ def generer_toutes_galeries():
         traductions_file=TRADUCTIONS_FILE
     )
     
+    # Charger les statuts IUCN (pour afficher dans les lightbox)
+    config_menacees = config.get('especes_menacees', {})
+    iucn_statuts = {}
+    if config_menacees.get('activer', False):
+        iucn_statuts = charger_statuts_iucn(config_menacees)
+    
     # Construire le menu
     menu, familles_data = construire_menu(config, generator, curation)
     
@@ -413,7 +488,8 @@ def generer_toutes_galeries():
         output_base='species_list',
         template_file=SPECIES_LIST_TEMPLATE,
         menu=menu,
-        curation=curation
+        curation=curation,
+        iucn_statuts=iucn_statuts
     )
     
     # ========================================
@@ -459,7 +535,8 @@ def generer_toutes_galeries():
             menu=menu,
             gallery_id='gallery_recent',
             species_count=species_count,
-            show_date_in_overlay=True
+            show_date_in_overlay=True,
+            iucn_statuts=iucn_statuts
         )
         total_galeries += 1
     
@@ -481,7 +558,8 @@ def generer_toutes_galeries():
             template_file=GALLERY_TEMPLATE,
             menu=menu,
             gallery_id='gallery_best',
-            species_count=species_count
+            species_count=species_count,
+            iucn_statuts=iucn_statuts
         )
         print(f"   ⭐ {len(best_photos)} photos sélectionnées ({species_count} espèces)")
         total_galeries += 1
@@ -511,7 +589,8 @@ def generer_toutes_galeries():
                     photos=photos,
                     template_file=GALLERY_TEMPLATE,
                     menu=menu,
-                    gallery_id=galerie['id']
+                    gallery_id=galerie['id'],
+                    iucn_statuts=iucn_statuts
                 )
                 total_galeries += 1
     
@@ -600,7 +679,8 @@ def generer_toutes_galeries():
                     gallery_id=voyage['id'],
                     subtitle_fr=subtitle_fr,
                     subtitle_en=subtitle_en,
-                    trip_locations=trip_locations
+                    trip_locations=trip_locations,
+                    iucn_statuts=iucn_statuts
                 )
                 total_galeries += 1
         
@@ -760,8 +840,8 @@ def generer_toutes_galeries():
                 # Générer la galerie du pays
                 generator.generate_gallery(
                     output_base=file_id,
-                    title_fr=f"{metadata['flag']} {name_fr}",
-                    title_en=f"{metadata['flag']} {name_en}",
+                    title_fr=name_fr,
+                    title_en=name_en,
                     photos=photos,
                     template_file=GALLERY_TEMPLATE,
                     menu=menu,
@@ -771,7 +851,8 @@ def generer_toutes_galeries():
                     back_link_fr='pays_index_fr.html',
                     back_link_en='pays_index_en.html',
                     back_text_fr='Tous les pays',
-                    back_text_en='All countries'
+                    back_text_en='All countries',
+                    iucn_statuts=iucn_statuts
                 )
                 total_galeries += 1
         
@@ -814,94 +895,143 @@ def generer_toutes_galeries():
             print(f"   ✓ pays_index_fr.html / pays_index_en.html ({len(pays_index_data)} pays)")
     
     # ========================================
-    # FAMILLES
+    # FAMILLES (désactivé - redondant avec liste des espèces)
     # ========================================
-    if familles_data:
-        print(f"\n🦅 Galeries par famille ({len(familles_data)} familles)...")
+    # La galerie par familles a été désactivée car elle est redondante
+    # avec la liste des espèces qui affiche déjà les espèces par famille.
+    
+    # ========================================
+    # ESPÈCES MENACÉES
+    # ========================================
+    config_menacees = config.get('especes_menacees', {})
+    if config_menacees.get('activer', False):
+        print(f"\n🔴 Galerie des espèces menacées...")
         
-        familles_index_data = []
-        total_species_all = 0
-        total_photos_all = 0
+        # Charger les statuts IUCN
+        statuts_iucn = charger_statuts_iucn(config_menacees)
         
-        for famille in familles_data:
-            fam_code = famille['family_code']
-            file_id = f"gallery_{fam_code.lower()}"
+        if statuts_iucn:
+            # Mapping des statuts configuré dans YAML
+            status_mapping = config_menacees.get('mapping_statuts', {
+                'CR': {'name_fr': 'En danger critique', 'name_en': 'Critically Endangered', 'order': 1},
+                'CR (PE)': {'name_fr': 'En danger critique (possiblement éteint)', 'name_en': 'Critically Endangered (Possibly Extinct)', 'order': 2},
+                'CR (PEW)': {'name_fr': 'En danger critique (possiblement éteint à l\'état sauvage)', 'name_en': 'Critically Endangered (Possibly Extinct in the Wild)', 'order': 3},
+                'EN': {'name_fr': 'En danger', 'name_en': 'Endangered', 'order': 4},
+                'VU': {'name_fr': 'Vulnérable', 'name_en': 'Vulnerable', 'order': 5},
+                'NT': {'name_fr': 'Quasi menacé', 'name_en': 'Near Threatened', 'order': 6},
+                'DD': {'name_fr': 'Données insuffisantes', 'name_en': 'Data Deficient', 'order': 7},
+                'EW': {'name_fr': 'Éteint à l\'état sauvage', 'name_en': 'Extinct in the Wild', 'order': 8},
+                'EX': {'name_fr': 'Éteint', 'name_en': 'Extinct', 'order': 9},
+            })
             
-            photos = generator.filter_observations(
-                limit=LIMITE_FAMILLE,
-                families_list=[fam_code],
+            # Ajouter l'ordre aux statuts
+            for code, info in status_mapping.items():
+                if 'order' not in info:
+                    info['order'] = 99
+            
+            # Statuts à exclure (par défaut LC = Least Concern)
+            statuts_exclus = config_menacees.get('statuts_exclus', ['LC', 'NE'])
+            
+            # Récupérer toutes les photos
+            all_photos = generator.filter_observations(
+                limit=None,
                 verifier_medias_en_ligne=VERIFIER_MEDIAS,
                 sort_by='taxonomy',
                 curation=curation
             )
             
-            if photos:
-                species_set = set(p.get('scientific_name', '') for p in photos)
-                species_count = len(species_set)
+            # Grouper par espèce et filtrer les menacées
+            species_photos = {}
+            for photo in all_photos:
+                sci_name = photo.get('scientific_name', '')
+                if not sci_name:
+                    continue
                 
-                # Icône de la famille: utiliser la curation (best le plus récent) ou la plus récente
-                icone_ml = obtenir_frontispice(photos, curation)
+                # Vérifier le statut IUCN
+                statut = statuts_iucn.get(sci_name)
+                if not statut or statut in statuts_exclus:
+                    continue
                 
-                title_fr = f"Famille des {fam_code}s"
-                title_en = f"{fam_code} Family"
+                # Normaliser le statut (ex: "CR (PE)" -> "CR")
+                statut_normalise = statut.split()[0] if ' ' in statut else statut
+                if statut not in status_mapping:
+                    # Utiliser le statut normalisé s'il existe
+                    if statut_normalise in status_mapping:
+                        statut = statut_normalise
+                    else:
+                        continue
                 
-                subtitle_fr = famille.get('desc_fr', '')
-                subtitle_en = famille.get('desc_en', '')
-                
-                familles_index_data.append({
-                    'code': fam_code,
-                    'name_fr': subtitle_fr,
-                    'name_en': subtitle_en,
-                    'file_fr': f"{file_id}_fr.html",
-                    'file_en': f"{file_id}_en.html",
-                    'species_count': species_count,
-                    'photo_count': len(photos),
-                    'icone_ml': icone_ml
-                })
-                total_species_all += species_count
-                total_photos_all += len(photos)
-                
-                generator.generate_gallery(
-                    output_base=file_id,
-                    title_fr=title_fr,
-                    title_en=title_en,
-                    photos=photos,
-                    template_file=GALLERY_TEMPLATE,
-                    menu=menu,
-                    gallery_id=file_id,
-                    subtitle_fr=subtitle_fr,
-                    subtitle_en=subtitle_en,
-                    species_count=species_count
-                )
-                total_galeries += 1
-        
-        # Page index des familles
-        if familles_index_data:
-            print(f"\n📑 Page index des familles...")
-            today = datetime.now()
-            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
-            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+                if sci_name not in species_photos:
+                    species_photos[sci_name] = {
+                        'sci_name': sci_name,
+                        'common_name_fr': photo.get('common_name_fr', sci_name),
+                        'common_name_en': photo.get('common_name_en', sci_name),
+                        'status': statut,
+                        'taxon_order': photo.get('taxon_order', 999999),
+                        'photos': []
+                    }
+                species_photos[sci_name]['photos'].append(photo)
             
-            env = Environment(loader=FileSystemLoader('.'))
-            template = env.get_template('familles_index_template.html')
-            
-            for lang in ['fr', 'en']:
-                html = template.render(
-                    lang=lang,
-                    familles=familles_index_data,
-                    total_species=total_species_all,
-                    total_photos=total_photos_all,
-                    menu=menu,
-                    current_page=f'familles_index_{lang}.html',
-                    other_lang_page=f'familles_index_{"en" if lang == "fr" else "fr"}.html',
-                    update_date=True,
-                    update_date_fr=update_date_fr,
-                    update_date_en=update_date_en
-                )
-                with open(f'familles_index_{lang}.html', 'w', encoding='utf-8') as f:
-                    f.write(html)
-            
-            print(f"   ✓ familles_index_fr.html / familles_index_en.html ({len(familles_index_data)} familles)")
+            if species_photos:
+                # Organiser par statut
+                statuses_data = {}
+                for sci_name, sp_data in species_photos.items():
+                    statut = sp_data['status']
+                    if statut not in statuses_data:
+                        status_info = status_mapping.get(statut, {'name_fr': statut, 'name_en': statut, 'order': 99})
+                        statuses_data[statut] = {
+                            'code': statut,
+                            'name_fr': status_info['name_fr'],
+                            'name_en': status_info['name_en'],
+                            'order': status_info['order'],
+                            'species': []
+                        }
+                    
+                    # Première photo comme représentative
+                    first_photo = sp_data['photos'][0]
+                    
+                    statuses_data[statut]['species'].append({
+                        'sci_name': sci_name,
+                        'common_name_fr': sp_data['common_name_fr'],
+                        'common_name_en': sp_data['common_name_en'],
+                        'ml_catalog_number': first_photo.get('ml_catalog_number', ''),
+                        'photo_count': len(sp_data['photos']),
+                        'taxon_order': sp_data['taxon_order'],
+                        'all_photos': sp_data['photos']
+                    })
+                
+                # Trier les statuts par ordre de gravité
+                statuses_list = sorted(statuses_data.values(), key=lambda x: x['order'])
+                
+                # Trier les espèces dans chaque statut par ordre phylogénétique
+                for status in statuses_list:
+                    status['species'].sort(key=lambda x: x['taxon_order'])
+                
+                # Compter les totaux
+                total_species = len(species_photos)
+                total_photos = sum(len(sp['photos']) for sp in species_photos.values())
+                
+                print(f"   📊 {total_species} espèces menacées, {total_photos} photos")
+                
+                # Générer la page
+                env = Environment(loader=FileSystemLoader('.'))
+                template = env.get_template('menacees_template.html')
+                
+                for lang in ['fr', 'en']:
+                    html = template.render(
+                        lang=lang,
+                        statuses=statuses_list,
+                        status_mapping=status_mapping,
+                        total_species=total_species,
+                        total_photos=total_photos,
+                        menu=menu,
+                        current_page=f'menacees_{lang}.html',
+                        other_lang_page=f'menacees_{"en" if lang == "fr" else "fr"}.html'
+                    )
+                    with open(f'menacees_{lang}.html', 'w', encoding='utf-8') as f:
+                        f.write(html)
+                
+                print(f"   ✓ menacees_fr.html / menacees_en.html")
     
     # ========================================
     # PAGE ADMIN (numéros ML)
@@ -1073,7 +1203,25 @@ Fichiers requis:
   2. Modifiez config.yaml selon vos besoins
   3. Exécutez: python generer_tout.py verifier (première fois)
   4. Exécutez: python generer_tout.py
+
+Options:
+  python generer_tout.py           - Génère toutes les galeries
+  python generer_tout.py admin     - Génère uniquement la page admin (rapide)
+  python generer_tout.py verifier  - Vérifie les médias en ligne
 """)
+
+
+def generer_admin_seulement():
+    """Génère uniquement la page admin pour la curation des photos"""
+    print("=" * 60)
+    print("🔧 GÉNÉRATION PAGE ADMIN UNIQUEMENT")
+    print("=" * 60)
+    
+    config = charger_config()
+    generer_page_admin(config)
+    
+    print("\n✅ Page admin générée: admin.html")
+    print("   Ouvrez ce fichier dans votre navigateur pour gérer vos photos.")
 
 
 if __name__ == '__main__':
@@ -1081,6 +1229,8 @@ if __name__ == '__main__':
         commande = sys.argv[1].lower()
         if commande == 'verifier':
             verifier_medias()
+        elif commande == 'admin':
+            generer_admin_seulement()
         elif commande == 'help' or commande == '--help' or commande == '-h':
             afficher_aide()
         else:

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if lang == 'fr' %}Voyages{% else %}Trips{% endif %}</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>{% if lang == 'fr' %}Photos par voyage{% else %}Photos by trip{% endif %}</title>
     <link rel="stylesheet" href="gallery.css">
 </head>
 <body>
@@ -37,7 +38,7 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>{% if lang == 'fr' %}Voyages{% else %}Trips{% endif %}</h1>
+        <h1>{% if lang == 'fr' %}Photos triées par voyage{% else %}Photos sorted by trip{% endif %}</h1>
         <div class="stats">
             {{ voyages|length }} {% if lang == 'fr' %}destination{% if voyages|length > 1 %}s{% endif %}{% else %}destination{% if voyages|length > 1 %}s{% endif %}{% endif %}
         </div>
