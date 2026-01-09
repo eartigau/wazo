@@ -288,3 +288,28 @@ galeries_generales:
     pays: ["CA-QC"]
     limite: 500
     dans_menu: false
+
+
+# ------------------------------------------------------------------------------
+# ESPÈCES MENACÉES
+# ------------------------------------------------------------------------------
+# Génère une galerie des espèces photographiées ayant un statut IUCN.
+# Nécessite le fichier AviList (téléchargeable sur avilist.org)
+# ------------------------------------------------------------------------------
+
+especes_menacees:
+  activer: true
+  
+  # Fichier source des statuts IUCN (Excel)
+  fichier_statuts: "AviList-v2025-11Jun-extended.xlsx"
+  
+  # Colonnes du fichier Excel
+  colonne_nom_scientifique: "Scientific_name"
+  colonne_statut: "IUCN_Red_List_Category"
+  colonne_rang_taxonomique: "Taxon_rank"
+  valeur_rang_espece: "species"
+  
+  # Statuts à exclure (ne pas afficher dans la galerie)
+  statuts_exclus:
+    - LC    # Least Concern (préoccupation mineure)
+    - NE    # Not Evaluated (non évalué)
