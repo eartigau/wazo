@@ -54,6 +54,31 @@
         .flamingo-marker:hover {
             transform: scale(1.1);
         }
+        
+        /* Badge statut IUCN dans la lightbox */
+        .iucn-status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+        }
+        .iucn-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .iucn-CR { background: #d32f2f; color: white; }
+        .iucn-EN { background: #f57c00; color: white; }
+        .iucn-VU { background: #fbc02d; color: #333; }
+        .iucn-NT { background: #81c784; color: #333; }
+        .iucn-DD { background: #9e9e9e; color: white; }
+        .iucn-EW { background: #6a1b9a; color: white; }
+        .iucn-EX { background: #000000; color: white; }
     </style>
 </head>
 <body>
@@ -193,6 +218,9 @@
                 <!-- Nom scientifique -->
                 <p class="scientific-name" id="lightbox-scientific"></p>
                 
+                <!-- Statut IUCN (si menacé) -->
+                <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
+                
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
                 
@@ -247,7 +275,8 @@
                 date_en: "July 17<sup>th</sup>, 2017",
                 lat: 45.4285655,
                 lng: -73.6812991,
-                checklist_id: "S38190088"
+                checklist_id: "S38190088",
+                iucn_status: "LC"
             },
             
             {
@@ -263,7 +292,8 @@
                 date_en: "July 17<sup>th</sup>, 2017",
                 lat: 45.4285655,
                 lng: -73.6812991,
-                checklist_id: "S38190088"
+                checklist_id: "S38190088",
+                iucn_status: "LC"
             },
             
             {
@@ -279,7 +309,8 @@
                 date_en: "June 11<sup>th</sup>, 2023",
                 lat: 45.5073442,
                 lng: -73.551118,
-                checklist_id: "S141250750"
+                checklist_id: "S141250750",
+                iucn_status: "VU"
             },
             
             {
@@ -295,7 +326,8 @@
                 date_en: "June 11<sup>th</sup>, 2023",
                 lat: 45.5073442,
                 lng: -73.551118,
-                checklist_id: "S141250750"
+                checklist_id: "S141250750",
+                iucn_status: "VU"
             },
             
             {
@@ -311,7 +343,8 @@
                 date_en: "July 13<sup>th</sup>, 2014",
                 lat: 48.582172,
                 lng: -64.2928505,
-                checklist_id: "S19091255"
+                checklist_id: "S19091255",
+                iucn_status: "VU"
             },
             
             {
@@ -327,7 +360,8 @@
                 date_en: "July 13<sup>th</sup>, 2014",
                 lat: 48.582172,
                 lng: -64.2928505,
-                checklist_id: "S19091255"
+                checklist_id: "S19091255",
+                iucn_status: "VU"
             },
             
             {
@@ -343,7 +377,8 @@
                 date_en: "July 13<sup>th</sup>, 2014",
                 lat: 48.582172,
                 lng: -64.2928505,
-                checklist_id: "S19091255"
+                checklist_id: "S19091255",
+                iucn_status: "VU"
             },
             
             {
@@ -359,7 +394,8 @@
                 date_en: "July 13<sup>th</sup>, 2014",
                 lat: 48.582172,
                 lng: -64.2928505,
-                checklist_id: "S19091255"
+                checklist_id: "S19091255",
+                iucn_status: "VU"
             },
             
             {
@@ -375,7 +411,8 @@
                 date_en: "July 26<sup>th</sup>, 2011",
                 lat: 48.4901476,
                 lng: -64.159543,
-                checklist_id: "S18574054"
+                checklist_id: "S18574054",
+                iucn_status: "VU"
             },
             
             {
@@ -391,7 +428,8 @@
                 date_en: "August 24<sup>th</sup>, 2010",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567078"
+                checklist_id: "S18567078",
+                iucn_status: "VU"
             },
             
             {
@@ -407,7 +445,8 @@
                 date_en: "July 17<sup>th</sup>, 2006",
                 lat: 48.4901476,
                 lng: -64.159543,
-                checklist_id: "S18567393"
+                checklist_id: "S18567393",
+                iucn_status: "VU"
             },
             
             {
@@ -423,7 +462,8 @@
                 date_en: "December 14<sup>th</sup>, 2008",
                 lat: -33.0008897,
                 lng: -71.9479179,
-                checklist_id: "S5772609"
+                checklist_id: "S5772609",
+                iucn_status: "LC"
             },
             
             {
@@ -439,7 +479,8 @@
                 date_en: "December 14<sup>th</sup>, 2008",
                 lat: -33.0008897,
                 lng: -71.9479179,
-                checklist_id: "S5772609"
+                checklist_id: "S5772609",
+                iucn_status: "LC"
             },
             
             {
@@ -455,7 +496,8 @@
                 date_en: "December 14<sup>th</sup>, 2008",
                 lat: -33.0008897,
                 lng: -71.9479179,
-                checklist_id: "S5772609"
+                checklist_id: "S5772609",
+                iucn_status: "LC"
             },
             
             {
@@ -471,7 +513,8 @@
                 date_en: "August 5<sup>th</sup>, 2021",
                 lat: 48.3497186,
                 lng: -69.4018189,
-                checklist_id: "S92811246"
+                checklist_id: "S92811246",
+                iucn_status: "LC"
             },
             
             {
@@ -487,7 +530,8 @@
                 date_en: "August 5<sup>th</sup>, 2021",
                 lat: 48.0951511,
                 lng: -69.5750427,
-                checklist_id: "S92795490"
+                checklist_id: "S92795490",
+                iucn_status: "LC"
             },
             
             {
@@ -503,7 +547,8 @@
                 date_en: "June 16<sup>th</sup>, 2020",
                 lat: 45.37778,
                 lng: -75.79972,
-                checklist_id: "S70494594"
+                checklist_id: "S70494594",
+                iucn_status: "LC"
             },
             
             {
@@ -519,7 +564,8 @@
                 date_en: "October 29<sup>th</sup>, 2018",
                 lat: 45.37778,
                 lng: -75.79972,
-                checklist_id: "S49538088"
+                checklist_id: "S49538088",
+                iucn_status: "LC"
             },
             
             {
@@ -535,7 +581,8 @@
                 date_en: "October 29<sup>th</sup>, 2018",
                 lat: 45.37778,
                 lng: -75.79972,
-                checklist_id: "S49538088"
+                checklist_id: "S49538088",
+                iucn_status: "LC"
             },
             
             {
@@ -551,7 +598,8 @@
                 date_en: "October 29<sup>th</sup>, 2018",
                 lat: 45.37778,
                 lng: -75.79972,
-                checklist_id: "S49538088"
+                checklist_id: "S49538088",
+                iucn_status: "LC"
             },
             
             {
@@ -567,7 +615,8 @@
                 date_en: "August 22<sup>nd</sup>, 2010",
                 lat: 48.3497186,
                 lng: -69.4018189,
-                checklist_id: "S18567405"
+                checklist_id: "S18567405",
+                iucn_status: "LC"
             },
             
             {
@@ -583,7 +632,8 @@
                 date_en: "January 2<sup>nd</sup>, 2009",
                 lat: -22.3357862,
                 lng: -68.0125809,
-                checklist_id: "S5772585"
+                checklist_id: "S5772585",
+                iucn_status: "LC"
             },
             
             {
@@ -599,7 +649,8 @@
                 date_en: "January 2<sup>nd</sup>, 2009",
                 lat: -22.3357862,
                 lng: -68.0125809,
-                checklist_id: "S5772585"
+                checklist_id: "S5772585",
+                iucn_status: "LC"
             },
             
             {
@@ -615,7 +666,8 @@
                 date_en: "January 2<sup>nd</sup>, 2009",
                 lat: -22.3357862,
                 lng: -68.0125809,
-                checklist_id: "S5772585"
+                checklist_id: "S5772585",
+                iucn_status: "LC"
             },
             
             {
@@ -631,7 +683,8 @@
                 date_en: "January 2<sup>nd</sup>, 2009",
                 lat: -22.3357862,
                 lng: -68.0125809,
-                checklist_id: "S5772585"
+                checklist_id: "S5772585",
+                iucn_status: "LC"
             },
             
             {
@@ -647,7 +700,8 @@
                 date_en: "February 17<sup>th</sup>, 2007",
                 lat: -26.9530768,
                 lng: -69.0900075,
-                checklist_id: "S5772436"
+                checklist_id: "S5772436",
+                iucn_status: "LC"
             },
             
             {
@@ -663,7 +717,8 @@
                 date_en: "May 3<sup>rd</sup>, 2008",
                 lat: -41.8259378,
                 lng: -73.6275078,
-                checklist_id: "S5772445"
+                checklist_id: "S5772445",
+                iucn_status: "LC"
             },
             
             {
@@ -679,7 +734,8 @@
                 date_en: "December 28<sup>th</sup>, 2006",
                 lat: -34.4060599,
                 lng: -53.7775612,
-                checklist_id: "S18566223"
+                checklist_id: "S18566223",
+                iucn_status: "LC"
             },
             
             {
@@ -695,7 +751,8 @@
                 date_en: "December 28<sup>th</sup>, 2006",
                 lat: -34.4060599,
                 lng: -53.7775612,
-                checklist_id: "S18566223"
+                checklist_id: "S18566223",
+                iucn_status: "LC"
             },
             
             {
@@ -711,7 +768,8 @@
                 date_en: "November 14<sup>th</sup>, 2025",
                 lat: 46.2059101,
                 lng: 6.1476767,
-                checklist_id: "S284364130"
+                checklist_id: "S284364130",
+                iucn_status: "LC"
             },
             
             {
@@ -727,7 +785,8 @@
                 date_en: "November 14<sup>th</sup>, 2025",
                 lat: 46.2102417,
                 lng: 6.1546,
-                checklist_id: "S284359705"
+                checklist_id: "S284359705",
+                iucn_status: "LC"
             },
             
             {
@@ -743,7 +802,8 @@
                 date_en: "November 14<sup>th</sup>, 2025",
                 lat: 46.2102417,
                 lng: 6.1546,
-                checklist_id: "S284359705"
+                checklist_id: "S284359705",
+                iucn_status: "LC"
             },
             
             {
@@ -759,7 +819,8 @@
                 date_en: "November 14<sup>th</sup>, 2025",
                 lat: 46.2102417,
                 lng: 6.1546,
-                checklist_id: "S284359705"
+                checklist_id: "S284359705",
+                iucn_status: "LC"
             },
             
             {
@@ -775,7 +836,8 @@
                 date_en: "November 14<sup>th</sup>, 2025",
                 lat: 46.2102417,
                 lng: 6.1546,
-                checklist_id: "S284359705"
+                checklist_id: "S284359705",
+                iucn_status: "LC"
             },
             
             {
@@ -791,7 +853,8 @@
                 date_en: "November 14<sup>th</sup>, 2025",
                 lat: 46.2145451,
                 lng: 6.1523707,
-                checklist_id: "S284362377"
+                checklist_id: "S284362377",
+                iucn_status: "LC"
             },
             
             {
@@ -807,7 +870,8 @@
                 date_en: "November 14<sup>th</sup>, 2025",
                 lat: 46.2145451,
                 lng: 6.1523707,
-                checklist_id: "S284362377"
+                checklist_id: "S284362377",
+                iucn_status: "LC"
             },
             
             {
@@ -823,7 +887,8 @@
                 date_en: "August 2<sup>nd</sup>, 2025",
                 lat: 48.8099713,
                 lng: 2.1002925,
-                checklist_id: "S264446889"
+                checklist_id: "S264446889",
+                iucn_status: "LC"
             },
             
             {
@@ -839,7 +904,8 @@
                 date_en: "August 2<sup>nd</sup>, 2025",
                 lat: 48.8099713,
                 lng: 2.1002925,
-                checklist_id: "S264446889"
+                checklist_id: "S264446889",
+                iucn_status: "LC"
             },
             
             {
@@ -855,7 +921,8 @@
                 date_en: "July 26<sup>th</sup>, 2025",
                 lat: 47.47068,
                 lng: -3.086663,
-                checklist_id: "S262878887"
+                checklist_id: "S262878887",
+                iucn_status: "LC"
             },
             
             {
@@ -871,7 +938,8 @@
                 date_en: "July 26<sup>th</sup>, 2025",
                 lat: 47.47068,
                 lng: -3.086663,
-                checklist_id: "S262878887"
+                checklist_id: "S262878887",
+                iucn_status: "LC"
             },
             
             {
@@ -887,7 +955,8 @@
                 date_en: "July 31<sup>st</sup>, 2018",
                 lat: 43.4889737,
                 lng: 4.4041711,
-                checklist_id: "S47558748"
+                checklist_id: "S47558748",
+                iucn_status: "LC"
             },
             
             {
@@ -903,7 +972,8 @@
                 date_en: "January 12<sup>th</sup>, 2016",
                 lat: 46.2102417,
                 lng: 6.1546,
-                checklist_id: "S26857246"
+                checklist_id: "S26857246",
+                iucn_status: "LC"
             },
             
             {
@@ -919,7 +989,8 @@
                 date_en: "January 3<sup>rd</sup>, 2010",
                 lat: 47.3668696,
                 lng: 8.5433916,
-                checklist_id: "S18565222"
+                checklist_id: "S18565222",
+                iucn_status: "LC"
             },
             
             {
@@ -935,7 +1006,8 @@
                 date_en: "January 3<sup>rd</sup>, 2010",
                 lat: 47.3668696,
                 lng: 8.5433916,
-                checklist_id: "S18565222"
+                checklist_id: "S18565222",
+                iucn_status: "LC"
             },
             
             {
@@ -951,7 +1023,8 @@
                 date_en: "January 3<sup>rd</sup>, 2010",
                 lat: 47.3668696,
                 lng: 8.5433916,
-                checklist_id: "S18565222"
+                checklist_id: "S18565222",
+                iucn_status: "LC"
             },
             
             {
@@ -967,7 +1040,8 @@
                 date_en: "July 26<sup>th</sup>, 2008",
                 lat: 56.342615,
                 lng: -2.7901711,
-                checklist_id: "S18565197"
+                checklist_id: "S18565197",
+                iucn_status: "LC"
             },
             
             {
@@ -983,7 +1057,8 @@
                 date_en: "July 25<sup>th</sup>, 2008",
                 lat: 56.342615,
                 lng: -2.7901711,
-                checklist_id: "S18565223"
+                checklist_id: "S18565223",
+                iucn_status: "LC"
             },
             
             {
@@ -999,7 +1074,8 @@
                 date_en: "June 20<sup>th</sup>, 2004",
                 lat: 55.848929,
                 lng: -4.235868,
-                checklist_id: "S18565196"
+                checklist_id: "S18565196",
+                iucn_status: "LC"
             },
             
             {
@@ -1015,7 +1091,8 @@
                 date_en: "July 1<sup>st</sup>, 2007",
                 lat: -30.072845,
                 lng: -71.3760495,
-                checklist_id: "S5772644"
+                checklist_id: "S5772644",
+                iucn_status: "LC"
             },
             
             {
@@ -1031,7 +1108,8 @@
                 date_en: "March 10<sup>th</sup>, 2020",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S65669392"
+                checklist_id: "S65669392",
+                iucn_status: "LC"
             },
             
             {
@@ -1047,7 +1125,8 @@
                 date_en: "April 26<sup>th</sup>, 2009",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772595"
+                checklist_id: "S5772595",
+                iucn_status: "LC"
             },
             
             {
@@ -1063,7 +1142,8 @@
                 date_en: "December 6<sup>th</sup>, 2008",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772503"
+                checklist_id: "S5772503",
+                iucn_status: "LC"
             },
             
             {
@@ -1079,7 +1159,8 @@
                 date_en: "October 26<sup>th</sup>, 2007",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772648"
+                checklist_id: "S5772648",
+                iucn_status: "LC"
             },
             
             {
@@ -1095,7 +1176,8 @@
                 date_en: "October 26<sup>th</sup>, 2007",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772648"
+                checklist_id: "S5772648",
+                iucn_status: "LC"
             },
             
             {
@@ -1111,7 +1193,8 @@
                 date_en: "September 17<sup>th</sup>, 2007",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772646"
+                checklist_id: "S5772646",
+                iucn_status: "LC"
             },
             
             {
@@ -1127,7 +1210,8 @@
                 date_en: "July 1<sup>st</sup>, 2007",
                 lat: -30.072845,
                 lng: -71.3760495,
-                checklist_id: "S5772644"
+                checklist_id: "S5772644",
+                iucn_status: "LC"
             },
             
             {
@@ -1143,7 +1227,8 @@
                 date_en: "July 1<sup>st</sup>, 2007",
                 lat: -30.072845,
                 lng: -71.3760495,
-                checklist_id: "S5772644"
+                checklist_id: "S5772644",
+                iucn_status: "LC"
             },
             
             {
@@ -1159,7 +1244,8 @@
                 date_en: "October 1<sup>st</sup>, 2006",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772443"
+                checklist_id: "S5772443",
+                iucn_status: "LC"
             },
             
             {
@@ -1175,7 +1261,8 @@
                 date_en: "September 26<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772618"
+                checklist_id: "S5772618",
+                iucn_status: "LC"
             },
             
             {
@@ -1191,7 +1278,8 @@
                 date_en: "September 26<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772618"
+                checklist_id: "S5772618",
+                iucn_status: "LC"
             },
             
             {
@@ -1207,7 +1295,8 @@
                 date_en: "September 24<sup>th</sup>, 2006",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772450"
+                checklist_id: "S5772450",
+                iucn_status: "LC"
             },
             
             {
@@ -1223,7 +1312,8 @@
                 date_en: "January 28<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772627"
+                checklist_id: "S5772627",
+                iucn_status: "LC"
             },
             
             {
@@ -1239,7 +1329,8 @@
                 date_en: "February 20<sup>th</sup>, 2005",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772638"
+                checklist_id: "S5772638",
+                iucn_status: "LC"
             },
             
             {
@@ -1255,7 +1346,8 @@
                 date_en: "December 24<sup>th</sup>, 2008",
                 lat: -53.1596637,
                 lng: -70.8985734,
-                checklist_id: "S5772636"
+                checklist_id: "S5772636",
+                iucn_status: "LC"
             },
             
             {
@@ -1271,7 +1363,8 @@
                 date_en: "December 24<sup>th</sup>, 2008",
                 lat: -53.1596637,
                 lng: -70.8985734,
-                checklist_id: "S5772636"
+                checklist_id: "S5772636",
+                iucn_status: "LC"
             },
             
             {
@@ -1287,7 +1380,8 @@
                 date_en: "May 5<sup>th</sup>, 2008",
                 lat: -41.868333,
                 lng: -73.799444,
-                checklist_id: "S5772628"
+                checklist_id: "S5772628",
+                iucn_status: "LC"
             },
             
             {
@@ -1303,7 +1397,8 @@
                 date_en: "February 25<sup>th</sup>, 2019",
                 lat: 22.6598204,
                 lng: -79.0503514,
-                checklist_id: "S53399866"
+                checklist_id: "S53399866",
+                iucn_status: "LC"
             },
             
             {
@@ -1319,7 +1414,8 @@
                 date_en: "February 25<sup>th</sup>, 2019",
                 lat: 22.6598204,
                 lng: -79.0503514,
-                checklist_id: "S53399866"
+                checklist_id: "S53399866",
+                iucn_status: "LC"
             },
             
             {
@@ -1335,7 +1431,8 @@
                 date_en: "March 6<sup>th</sup>, 2017",
                 lat: 28.3677641,
                 lng: -80.6017703,
-                checklist_id: "S35012498"
+                checklist_id: "S35012498",
+                iucn_status: "LC"
             },
             
             {
@@ -1351,7 +1448,8 @@
                 date_en: "March 6<sup>th</sup>, 2017",
                 lat: 28.3677641,
                 lng: -80.6017703,
-                checklist_id: "S35012498"
+                checklist_id: "S35012498",
+                iucn_status: "LC"
             },
             
             {
@@ -1367,7 +1465,8 @@
                 date_en: "March 4<sup>th</sup>, 2014",
                 lat: 26.4520609,
                 lng: -82.0151281,
-                checklist_id: "S18575046"
+                checklist_id: "S18575046",
+                iucn_status: "LC"
             },
             
             {
@@ -1383,7 +1482,8 @@
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
                 lng: -74.0452476,
-                checklist_id: "S18575032"
+                checklist_id: "S18575032",
+                iucn_status: "LC"
             },
             
             {
@@ -1399,7 +1499,8 @@
                 date_en: "May 28<sup>th</sup>, 2006",
                 lat: 28.3677641,
                 lng: -80.6017703,
-                checklist_id: "S18575033"
+                checklist_id: "S18575033",
+                iucn_status: "LC"
             },
             
             {
@@ -1415,7 +1516,8 @@
                 date_en: "December 6<sup>th</sup>, 2008",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772503"
+                checklist_id: "S5772503",
+                iucn_status: "LC"
             },
             
             {
@@ -1431,7 +1533,8 @@
                 date_en: "December 6<sup>th</sup>, 2008",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772594"
+                checklist_id: "S5772594",
+                iucn_status: "LC"
             },
             
             {
@@ -1447,7 +1550,8 @@
                 date_en: "January 23<sup>rd</sup>, 2008",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772656"
+                checklist_id: "S5772656",
+                iucn_status: "LC"
             },
             
             {
@@ -1463,7 +1567,8 @@
                 date_en: "January 28<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772627"
+                checklist_id: "S5772627",
+                iucn_status: "LC"
             },
             
             {
@@ -1479,7 +1584,8 @@
                 date_en: "January 28<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772627"
+                checklist_id: "S5772627",
+                iucn_status: "LC"
             },
             
             {
@@ -1495,7 +1601,8 @@
                 date_en: "January 28<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772627"
+                checklist_id: "S5772627",
+                iucn_status: "LC"
             },
             
             {
@@ -1511,7 +1618,8 @@
                 date_en: "February 20<sup>th</sup>, 2005",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772638"
+                checklist_id: "S5772638",
+                iucn_status: "LC"
             },
             
             {
@@ -1527,7 +1635,8 @@
                 date_en: "June 27<sup>th</sup>, 2012",
                 lat: 41.376667,
                 lng: 2.2136111,
-                checklist_id: "S18565201"
+                checklist_id: "S18565201",
+                iucn_status: "VU"
             },
             
             {
@@ -1543,7 +1652,8 @@
                 date_en: "July 18<sup>th</sup>, 2004",
                 lat: 30.3623594,
                 lng: -9.5867729,
-                checklist_id: "S18565219"
+                checklist_id: "S18565219",
+                iucn_status: "VU"
             },
             
             {
@@ -1559,7 +1669,8 @@
                 date_en: "June 30<sup>th</sup>, 2025",
                 lat: 41.147844,
                 lng: -8.65356,
-                checklist_id: "S255499671"
+                checklist_id: "S255499671",
+                iucn_status: "LC"
             },
             
             {
@@ -1575,7 +1686,8 @@
                 date_en: "July 1<sup>st</sup>, 2022",
                 lat: 43.4889737,
                 lng: 4.4041711,
-                checklist_id: "S114163850"
+                checklist_id: "S114163850",
+                iucn_status: "LC"
             },
             
             {
@@ -1591,7 +1703,8 @@
                 date_en: "July 1<sup>st</sup>, 2022",
                 lat: 43.4889737,
                 lng: 4.4041711,
-                checklist_id: "S114163850"
+                checklist_id: "S114163850",
+                iucn_status: "LC"
             },
             
             {
@@ -1607,7 +1720,8 @@
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.5694546,
                 lng: 4.1894174,
-                checklist_id: "S47592138"
+                checklist_id: "S47592138",
+                iucn_status: "LC"
             },
             
             {
@@ -1623,7 +1737,8 @@
                 date_en: "June 22<sup>nd</sup>, 2008",
                 lat: 43.4889737,
                 lng: 4.4041711,
-                checklist_id: "S18565375"
+                checklist_id: "S18565375",
+                iucn_status: "LC"
             },
             
             {
@@ -1639,7 +1754,8 @@
                 date_en: "June 22<sup>nd</sup>, 2008",
                 lat: 43.4889737,
                 lng: 4.4041711,
-                checklist_id: "S18565375"
+                checklist_id: "S18565375",
+                iucn_status: "LC"
             },
             
             {
@@ -1655,7 +1771,8 @@
                 date_en: "March 1<sup>st</sup>, 2008",
                 lat: -29.9339241,
                 lng: -71.3358271,
-                checklist_id: "S5772650"
+                checklist_id: "S5772650",
+                iucn_status: "LC"
             },
             
             {
@@ -1671,7 +1788,8 @@
                 date_en: "June 28<sup>th</sup>, 2024",
                 lat: 32.8507576,
                 lng: -117.2735641,
-                checklist_id: "S184255937"
+                checklist_id: "S184255937",
+                iucn_status: "NT"
             },
             
             {
@@ -1687,7 +1805,8 @@
                 date_en: "August 3<sup>rd</sup>, 2023",
                 lat: 37.807614,
                 lng: -122.4213409,
-                checklist_id: "S146363796"
+                checklist_id: "S146363796",
+                iucn_status: "NT"
             },
             
             {
@@ -1703,7 +1822,8 @@
                 date_en: "August 3<sup>rd</sup>, 2023",
                 lat: 37.807614,
                 lng: -122.4213409,
-                checklist_id: "S146363796"
+                checklist_id: "S146363796",
+                iucn_status: "NT"
             },
             
             {
@@ -1719,7 +1839,8 @@
                 date_en: "August 2<sup>nd</sup>, 2023",
                 lat: 37.8304863,
                 lng: -122.5329514,
-                checklist_id: "S146304549"
+                checklist_id: "S146304549",
+                iucn_status: "NT"
             },
             
             {
@@ -1735,7 +1856,8 @@
                 date_en: "March 27<sup>th</sup>, 2023",
                 lat: 34.4098907,
                 lng: -119.6858793,
-                checklist_id: "S131967196"
+                checklist_id: "S131967196",
+                iucn_status: "NT"
             },
             
             {
@@ -1751,7 +1873,8 @@
                 date_en: "June 30<sup>th</sup>, 2010",
                 lat: 32.722109,
                 lng: -117.172575,
-                checklist_id: "S18575213"
+                checklist_id: "S18575213",
+                iucn_status: "NT"
             },
             
             {
@@ -1767,7 +1890,8 @@
                 date_en: "June 30<sup>th</sup>, 2010",
                 lat: 32.722109,
                 lng: -117.172575,
-                checklist_id: "S18575213"
+                checklist_id: "S18575213",
+                iucn_status: "NT"
             },
             
             {
@@ -1783,7 +1907,8 @@
                 date_en: "June 26<sup>th</sup>, 2004",
                 lat: 56.8219661,
                 lng: -5.1066363,
-                checklist_id: "S18563369"
+                checklist_id: "S18563369",
+                iucn_status: "NE"
             },
             
             {
@@ -1799,7 +1924,8 @@
                 date_en: "June 25<sup>th</sup>, 2004",
                 lat: 56.8219661,
                 lng: -5.1066363,
-                checklist_id: "S18563370"
+                checklist_id: "S18563370",
+                iucn_status: "NE"
             },
             
             {
@@ -1815,7 +1941,8 @@
                 date_en: "October 5<sup>th</sup>, 2018",
                 lat: 48.5952164,
                 lng: -123.3716993,
-                checklist_id: "S48947692"
+                checklist_id: "S48947692",
+                iucn_status: "NE"
             },
             
             {
@@ -1831,7 +1958,8 @@
                 date_en: "October 5<sup>th</sup>, 2018",
                 lat: 48.5952164,
                 lng: -123.3716993,
-                checklist_id: "S48947692"
+                checklist_id: "S48947692",
+                iucn_status: "NE"
             },
             
             {
@@ -1847,7 +1975,8 @@
                 date_en: "October 3<sup>rd</sup>, 2024",
                 lat: 45.2538535,
                 lng: -73.7997936,
-                checklist_id: "S197350433"
+                checklist_id: "S197350433",
+                iucn_status: "LC"
             },
             
             {
@@ -1863,7 +1992,8 @@
                 date_en: "July 10<sup>th</sup>, 2023",
                 lat: 45.37778,
                 lng: -75.79972,
-                checklist_id: "S144133841"
+                checklist_id: "S144133841",
+                iucn_status: "LC"
             },
             
             {
@@ -1879,7 +2009,8 @@
                 date_en: "December 13<sup>th</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
-                checklist_id: "S77441388"
+                checklist_id: "S77441388",
+                iucn_status: "LC"
             },
             
             {
@@ -1895,7 +2026,8 @@
                 date_en: "October 3<sup>rd</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
-                checklist_id: "S74372467"
+                checklist_id: "S74372467",
+                iucn_status: "LC"
             },
             
             {
@@ -1911,7 +2043,8 @@
                 date_en: "May 8<sup>th</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
-                checklist_id: "S68624058"
+                checklist_id: "S68624058",
+                iucn_status: "LC"
             },
             
             {
@@ -1927,7 +2060,8 @@
                 date_en: "May 8<sup>th</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
-                checklist_id: "S68624058"
+                checklist_id: "S68624058",
+                iucn_status: "LC"
             },
             
             {
@@ -1943,7 +2077,8 @@
                 date_en: "May 8<sup>th</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
-                checklist_id: "S68624058"
+                checklist_id: "S68624058",
+                iucn_status: "LC"
             },
             
             {
@@ -1959,7 +2094,8 @@
                 date_en: "February 25<sup>th</sup>, 2020",
                 lat: 22.6598204,
                 lng: -79.0503514,
-                checklist_id: "S65057206"
+                checklist_id: "S65057206",
+                iucn_status: "LC"
             },
             
             {
@@ -1975,7 +2111,8 @@
                 date_en: "February 25<sup>th</sup>, 2020",
                 lat: 22.6598204,
                 lng: -79.0503514,
-                checklist_id: "S65057206"
+                checklist_id: "S65057206",
+                iucn_status: "LC"
             },
             
             {
@@ -1991,7 +2128,8 @@
                 date_en: "October 13<sup>th</sup>, 2019",
                 lat: 45.4277985,
                 lng: -73.5921872,
-                checklist_id: "S60591687"
+                checklist_id: "S60591687",
+                iucn_status: "LC"
             },
             
             {
@@ -2007,7 +2145,8 @@
                 date_en: "July 6<sup>th</sup>, 2019",
                 lat: 49.50158,
                 lng: -119.6119416,
-                checklist_id: "S57975834"
+                checklist_id: "S57975834",
+                iucn_status: "LC"
             },
             
             {
@@ -2023,7 +2162,8 @@
                 date_en: "July 6<sup>th</sup>, 2019",
                 lat: 49.50158,
                 lng: -119.6119416,
-                checklist_id: "S57975834"
+                checklist_id: "S57975834",
+                iucn_status: "LC"
             },
             
             {
@@ -2039,7 +2179,8 @@
                 date_en: "February 28<sup>th</sup>, 2019",
                 lat: 22.6598204,
                 lng: -79.0503514,
-                checklist_id: "S53400337"
+                checklist_id: "S53400337",
+                iucn_status: "LC"
             },
             
             {
@@ -2055,7 +2196,8 @@
                 date_en: "March 31<sup>st</sup>, 2018",
                 lat: 45.37778,
                 lng: -75.79972,
-                checklist_id: "S44130633"
+                checklist_id: "S44130633",
+                iucn_status: "LC"
             },
             
             {
@@ -2071,7 +2213,8 @@
                 date_en: "July 17<sup>th</sup>, 2017",
                 lat: 45.4285655,
                 lng: -73.6812991,
-                checklist_id: "S38190088"
+                checklist_id: "S38190088",
+                iucn_status: "LC"
             },
             
             {
@@ -2087,7 +2230,8 @@
                 date_en: "May 14<sup>th</sup>, 2017",
                 lat: 41.1367384,
                 lng: -8.6624771,
-                checklist_id: "S36866604"
+                checklist_id: "S36866604",
+                iucn_status: "LC"
             },
             
             {
@@ -2103,7 +2247,8 @@
                 date_en: "April 8<sup>th</sup>, 2012",
                 lat: 45.5263573,
                 lng: -73.5693468,
-                checklist_id: "S18567068"
+                checklist_id: "S18567068",
+                iucn_status: "LC"
             },
             
             {
@@ -2119,7 +2264,8 @@
                 date_en: "November 19<sup>th</sup>, 2011",
                 lat: 45.5073442,
                 lng: -73.551118,
-                checklist_id: "S18567067"
+                checklist_id: "S18567067",
+                iucn_status: "LC"
             },
             
             {
@@ -2135,7 +2281,8 @@
                 date_en: "April 3<sup>rd</sup>, 2011",
                 lat: 45.5596562,
                 lng: -73.5626078,
-                checklist_id: "S18567066"
+                checklist_id: "S18567066",
+                iucn_status: "LC"
             },
             
             {
@@ -2151,7 +2298,8 @@
                 date_en: "May 9<sup>th</sup>, 2010",
                 lat: 45.4858176,
                 lng: -73.6294305,
-                checklist_id: "S18567065"
+                checklist_id: "S18567065",
+                iucn_status: "LC"
             },
             
             {
@@ -2167,7 +2315,8 @@
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
                 lng: -74.0452476,
-                checklist_id: "S18575032"
+                checklist_id: "S18575032",
+                iucn_status: "LC"
             },
             
             {
@@ -2183,7 +2332,8 @@
                 date_en: "July 25<sup>th</sup>, 2006",
                 lat: 46.8263988,
                 lng: -64.910192,
-                checklist_id: "S18567031"
+                checklist_id: "S18567031",
+                iucn_status: "LC"
             },
             
             {
@@ -2199,7 +2349,8 @@
                 date_en: "July 19<sup>th</sup>, 2006",
                 lat: 48.8510489,
                 lng: -64.4361019,
-                checklist_id: "S18567064"
+                checklist_id: "S18567064",
+                iucn_status: "LC"
             },
             
             {
@@ -2215,7 +2366,8 @@
                 date_en: "April 14<sup>th</sup>, 2006",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567410"
+                checklist_id: "S18567410",
+                iucn_status: "LC"
             },
             
             {
@@ -2231,7 +2383,8 @@
                 date_en: "August 20<sup>th</sup>, 2005",
                 lat: 45.434722,
                 lng: -75.763056,
-                checklist_id: "S18567409"
+                checklist_id: "S18567409",
+                iucn_status: "LC"
             },
             
             {
@@ -2247,7 +2400,8 @@
                 date_en: "June 25<sup>th</sup>, 2005",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567408"
+                checklist_id: "S18567408",
+                iucn_status: "LC"
             },
             
             {
@@ -2263,7 +2417,8 @@
                 date_en: "March 27<sup>th</sup>, 2005",
                 lat: 45.5596562,
                 lng: -73.5626078,
-                checklist_id: "S18567407"
+                checklist_id: "S18567407",
+                iucn_status: "LC"
             },
             
             {
@@ -2279,7 +2434,8 @@
                 date_en: "October 10<sup>th</sup>, 2004",
                 lat: 48.3570253,
                 lng: -68.7974055,
-                checklist_id: "S18567063"
+                checklist_id: "S18567063",
+                iucn_status: "LC"
             },
             
             {
@@ -2295,7 +2451,8 @@
                 date_en: "April 25<sup>th</sup>, 2004",
                 lat: 45.5160946,
                 lng: -73.5340624,
-                checklist_id: "S18567062"
+                checklist_id: "S18567062",
+                iucn_status: "LC"
             },
             
             {
@@ -2311,7 +2468,8 @@
                 date_en: "September 13<sup>th</sup>, 2003",
                 lat: 45.5073442,
                 lng: -73.551118,
-                checklist_id: "S18567061"
+                checklist_id: "S18567061",
+                iucn_status: "LC"
             },
             
             {
@@ -2327,7 +2485,8 @@
                 date_en: "September 12<sup>th</sup>, 2003",
                 lat: 45.5073442,
                 lng: -73.551118,
-                checklist_id: "S18567398"
+                checklist_id: "S18567398",
+                iucn_status: "LC"
             },
             
             {
@@ -2343,7 +2502,8 @@
                 date_en: "June 28<sup>th</sup>, 2024",
                 lat: 32.8495772,
                 lng: -117.2697229,
-                checklist_id: "S184244681"
+                checklist_id: "S184244681",
+                iucn_status: "LC"
             },
             
             {
@@ -2359,7 +2519,8 @@
                 date_en: "March 29<sup>th</sup>, 2023",
                 lat: 34.4127959,
                 lng: -119.6869361,
-                checklist_id: "S132126926"
+                checklist_id: "S132126926",
+                iucn_status: "LC"
             },
             
             {
@@ -2375,7 +2536,8 @@
                 date_en: "March 29<sup>th</sup>, 2023",
                 lat: 34.4078515,
                 lng: -119.6898863,
-                checklist_id: "S132183663"
+                checklist_id: "S132183663",
+                iucn_status: "LC"
             },
             
             {
@@ -2391,7 +2553,8 @@
                 date_en: "March 27<sup>th</sup>, 2023",
                 lat: 34.4098907,
                 lng: -119.6858793,
-                checklist_id: "S131967196"
+                checklist_id: "S131967196",
+                iucn_status: "LC"
             },
             
             {
@@ -2407,7 +2570,8 @@
                 date_en: "March 27<sup>th</sup>, 2023",
                 lat: 34.4098907,
                 lng: -119.6858793,
-                checklist_id: "S131967196"
+                checklist_id: "S131967196",
+                iucn_status: "LC"
             },
             
             {
@@ -2423,7 +2587,8 @@
                 date_en: "July 1<sup>st</sup>, 2010",
                 lat: 32.6742155,
                 lng: -117.2414321,
-                checklist_id: "S18574875"
+                checklist_id: "S18574875",
+                iucn_status: "LC"
             },
             
             {
@@ -2439,7 +2604,8 @@
                 date_en: "March 10<sup>th</sup>, 2020",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S65669392"
+                checklist_id: "S65669392",
+                iucn_status: "LC"
             },
             
             {
@@ -2455,7 +2621,8 @@
                 date_en: "September 28<sup>th</sup>, 2008",
                 lat: -30.1885379,
                 lng: -71.4033651,
-                checklist_id: "S31498153"
+                checklist_id: "S31498153",
+                iucn_status: "LC"
             },
             
             {
@@ -2471,7 +2638,8 @@
                 date_en: "August 12<sup>th</sup>, 2007",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772487"
+                checklist_id: "S5772487",
+                iucn_status: "LC"
             },
             
             {
@@ -2487,7 +2655,8 @@
                 date_en: "August 12<sup>th</sup>, 2007",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772487"
+                checklist_id: "S5772487",
+                iucn_status: "LC"
             },
             
             {
@@ -2503,7 +2672,8 @@
                 date_en: "July 1<sup>st</sup>, 2007",
                 lat: -30.072845,
                 lng: -71.3760495,
-                checklist_id: "S5772644"
+                checklist_id: "S5772644",
+                iucn_status: "LC"
             },
             
             {
@@ -2519,7 +2689,8 @@
                 date_en: "July 1<sup>st</sup>, 2007",
                 lat: -30.072845,
                 lng: -71.3760495,
-                checklist_id: "S5772644"
+                checklist_id: "S5772644",
+                iucn_status: "LC"
             },
             
             {
@@ -2535,7 +2706,8 @@
                 date_en: "September 24<sup>th</sup>, 2006",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772450"
+                checklist_id: "S5772450",
+                iucn_status: "LC"
             },
             
             {
@@ -2551,7 +2723,8 @@
                 date_en: "February 20<sup>th</sup>, 2005",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772638"
+                checklist_id: "S5772638",
+                iucn_status: "LC"
             },
             
             {
@@ -2567,7 +2740,8 @@
                 date_en: "February 20<sup>th</sup>, 2005",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772638"
+                checklist_id: "S5772638",
+                iucn_status: "LC"
             },
             
             {
@@ -2583,7 +2757,8 @@
                 date_en: "August 9<sup>th</sup>, 2017",
                 lat: 43.6176541,
                 lng: -65.7880855,
-                checklist_id: "S38561908"
+                checklist_id: "S38561908",
+                iucn_status: "NE"
             },
             
             {
@@ -2599,7 +2774,8 @@
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
                 lng: -74.0452476,
-                checklist_id: "S18575032"
+                checklist_id: "S18575032",
+                iucn_status: "NE"
             },
             
             {
@@ -2615,7 +2791,8 @@
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
                 lng: -74.0452476,
-                checklist_id: "S18575032"
+                checklist_id: "S18575032",
+                iucn_status: "NE"
             },
             
             {
@@ -2631,7 +2808,8 @@
                 date_en: "July 18<sup>th</sup>, 2006",
                 lat: 48.5248732,
                 lng: -64.2071001,
-                checklist_id: "S18567411"
+                checklist_id: "S18567411",
+                iucn_status: "NE"
             },
             
             {
@@ -2647,7 +2825,8 @@
                 date_en: "July 17<sup>th</sup>, 2006",
                 lat: 48.4901476,
                 lng: -64.159543,
-                checklist_id: "S18567393"
+                checklist_id: "S18567393",
+                iucn_status: "NE"
             },
             
             {
@@ -2663,7 +2842,8 @@
                 date_en: "April 16<sup>th</sup>, 2006",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567073"
+                checklist_id: "S18567073",
+                iucn_status: "NE"
             },
             
             {
@@ -2679,7 +2859,8 @@
                 date_en: "April 14<sup>th</sup>, 2006",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567410"
+                checklist_id: "S18567410",
+                iucn_status: "NE"
             },
             
             {
@@ -2695,7 +2876,8 @@
                 date_en: "June 25<sup>th</sup>, 2005",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567408"
+                checklist_id: "S18567408",
+                iucn_status: "NE"
             },
             
             {
@@ -2711,7 +2893,8 @@
                 date_en: "September 14<sup>th</sup>, 2011",
                 lat: 48.7447955,
                 lng: -4.0151328,
-                checklist_id: "S18563362"
+                checklist_id: "S18563362",
+                iucn_status: "LC"
             },
             
             {
@@ -2727,7 +2910,8 @@
                 date_en: "July 26<sup>th</sup>, 2024",
                 lat: 39.4155075,
                 lng: -9.5121002,
-                checklist_id: "S188896152"
+                checklist_id: "S188896152",
+                iucn_status: "LC"
             },
             
             {
@@ -2743,7 +2927,8 @@
                 date_en: "June 29<sup>th</sup>, 2025",
                 lat: 41.1688984,
                 lng: -8.6798859,
-                checklist_id: "S255226847"
+                checklist_id: "S255226847",
+                iucn_status: "LC"
             },
             
             {
@@ -2759,7 +2944,8 @@
                 date_en: "July 26<sup>th</sup>, 2024",
                 lat: 39.4155075,
                 lng: -9.5121002,
-                checklist_id: "S188896152"
+                checklist_id: "S188896152",
+                iucn_status: "LC"
             },
             
             {
@@ -2775,7 +2961,8 @@
                 date_en: "July 26<sup>th</sup>, 2024",
                 lat: 39.4155075,
                 lng: -9.5121002,
-                checklist_id: "S188896152"
+                checklist_id: "S188896152",
+                iucn_status: "LC"
             },
             
             {
@@ -2791,7 +2978,8 @@
                 date_en: "July 26<sup>th</sup>, 2024",
                 lat: 39.4155075,
                 lng: -9.5121002,
-                checklist_id: "S188896152"
+                checklist_id: "S188896152",
+                iucn_status: "LC"
             },
             
             {
@@ -2807,7 +2995,8 @@
                 date_en: "July 26<sup>th</sup>, 2024",
                 lat: 39.4155075,
                 lng: -9.5121002,
-                checklist_id: "S188896152"
+                checklist_id: "S188896152",
+                iucn_status: "LC"
             },
             
             {
@@ -2823,7 +3012,8 @@
                 date_en: "July 26<sup>th</sup>, 2024",
                 lat: 39.3903053,
                 lng: -9.46558,
-                checklist_id: "S188902195"
+                checklist_id: "S188902195",
+                iucn_status: "LC"
             },
             
             {
@@ -2839,7 +3029,8 @@
                 date_en: "May 18<sup>th</sup>, 2017",
                 lat: 41.147911,
                 lng: -8.665303,
-                checklist_id: "S36952197"
+                checklist_id: "S36952197",
+                iucn_status: "LC"
             },
             
             {
@@ -2855,7 +3046,8 @@
                 date_en: "May 16<sup>th</sup>, 2017",
                 lat: 41.1579944,
                 lng: -8.6289614,
-                checklist_id: "S36898977"
+                checklist_id: "S36898977",
+                iucn_status: "LC"
             },
             
             {
@@ -2871,7 +3063,8 @@
                 date_en: "July 22<sup>nd</sup>, 2004",
                 lat: 31.509609,
                 lng: -9.7734475,
-                checklist_id: "S18563373"
+                checklist_id: "S18563373",
+                iucn_status: "LC"
             },
             
             {
@@ -2887,7 +3080,8 @@
                 date_en: "July 21<sup>st</sup>, 2004",
                 lat: 31.509609,
                 lng: -9.7734475,
-                checklist_id: "S18563372"
+                checklist_id: "S18563372",
+                iucn_status: "LC"
             },
             
             {
@@ -2903,7 +3097,8 @@
                 date_en: "July 21<sup>st</sup>, 2004",
                 lat: 31.509609,
                 lng: -9.7734475,
-                checklist_id: "S18563372"
+                checklist_id: "S18563372",
+                iucn_status: "LC"
             },
             
             {
@@ -2919,7 +3114,8 @@
                 date_en: "September 11<sup>th</sup>, 2011",
                 lat: 48.7225,
                 lng: -3.9913889,
-                checklist_id: "S18563364"
+                checklist_id: "S18563364",
+                iucn_status: "LC"
             },
             
             {
@@ -2935,7 +3131,8 @@
                 date_en: "July 4<sup>th</sup>, 2025",
                 lat: 43.499761,
                 lng: -1.4898743,
-                checklist_id: "S256711173"
+                checklist_id: "S256711173",
+                iucn_status: "LC"
             },
             
             {
@@ -2951,7 +3148,8 @@
                 date_en: "July 4<sup>th</sup>, 2025",
                 lat: 43.499761,
                 lng: -1.4898743,
-                checklist_id: "S256711173"
+                checklist_id: "S256711173",
+                iucn_status: "LC"
             },
             
             {
@@ -2967,7 +3165,8 @@
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
                 lng: -80.448761,
-                checklist_id: "S35074281"
+                checklist_id: "S35074281",
+                iucn_status: "LC"
             },
             
             {
@@ -2983,7 +3182,8 @@
                 date_en: "September 11<sup>th</sup>, 2011",
                 lat: 48.7225,
                 lng: -3.9913889,
-                checklist_id: "S18563364"
+                checklist_id: "S18563364",
+                iucn_status: "LC"
             },
             
             {
@@ -2999,7 +3199,8 @@
                 date_en: "September 11<sup>th</sup>, 2011",
                 lat: 48.7225,
                 lng: -3.9913889,
-                checklist_id: "S18563364"
+                checklist_id: "S18563364",
+                iucn_status: "LC"
             },
             
             {
@@ -3015,7 +3216,8 @@
                 date_en: "September 11<sup>th</sup>, 2011",
                 lat: 48.7225,
                 lng: -3.9913889,
-                checklist_id: "S18563364"
+                checklist_id: "S18563364",
+                iucn_status: "LC"
             },
             
             {
@@ -3031,7 +3233,8 @@
                 date_en: "July 29<sup>th</sup>, 2011",
                 lat: 48.0926387,
                 lng: -66.1002078,
-                checklist_id: "S18567025"
+                checklist_id: "S18567025",
+                iucn_status: "LC"
             },
             
             {
@@ -3047,7 +3250,8 @@
                 date_en: "July 18<sup>th</sup>, 2006",
                 lat: 48.5248732,
                 lng: -64.2071001,
-                checklist_id: "S18567411"
+                checklist_id: "S18567411",
+                iucn_status: "LC"
             },
             
             {
@@ -3063,7 +3267,8 @@
                 date_en: "July 23<sup>rd</sup>, 2014",
                 lat: 49.1335069,
                 lng: -66.4876699,
-                checklist_id: "S19236875"
+                checklist_id: "S19236875",
+                iucn_status: "LC"
             },
             
             {
@@ -3079,7 +3284,8 @@
                 date_en: "April 16<sup>th</sup>, 2006",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567073"
+                checklist_id: "S18567073",
+                iucn_status: "LC"
             },
             
             {
@@ -3095,7 +3301,8 @@
                 date_en: "April 16<sup>th</sup>, 2006",
                 lat: 48.1431991,
                 lng: -69.7131816,
-                checklist_id: "S18567073"
+                checklist_id: "S18567073",
+                iucn_status: "LC"
             },
             
             {
@@ -3111,7 +3318,8 @@
                 date_en: "July 28<sup>th</sup>, 2025",
                 lat: 47.3606023,
                 lng: -2.7720968,
-                checklist_id: "S263371261"
+                checklist_id: "S263371261",
+                iucn_status: "LC"
             },
             
             {
@@ -3127,7 +3335,8 @@
                 date_en: "July 1<sup>st</sup>, 2025",
                 lat: 41.147844,
                 lng: -8.65356,
-                checklist_id: "S255811610"
+                checklist_id: "S255811610",
+                iucn_status: "LC"
             },
             
             {
@@ -3143,7 +3352,8 @@
                 date_en: "July 26<sup>th</sup>, 2024",
                 lat: 39.4155075,
                 lng: -9.5121002,
-                checklist_id: "S188896152"
+                checklist_id: "S188896152",
+                iucn_status: "LC"
             },
             
             {
@@ -3159,7 +3369,8 @@
                 date_en: "August 5<sup>th</sup>, 2021",
                 lat: 48.3497186,
                 lng: -69.4018189,
-                checklist_id: "S92811246"
+                checklist_id: "S92811246",
+                iucn_status: "LC"
             },
             
             {
@@ -3175,7 +3386,8 @@
                 date_en: "May 18<sup>th</sup>, 2017",
                 lat: 41.147911,
                 lng: -8.665303,
-                checklist_id: "S36952197"
+                checklist_id: "S36952197",
+                iucn_status: "LC"
             },
             
             {
@@ -3191,7 +3403,8 @@
                 date_en: "June 25<sup>th</sup>, 2004",
                 lat: 56.8219661,
                 lng: -5.1066363,
-                checklist_id: "S18563370"
+                checklist_id: "S18563370",
+                iucn_status: "LC"
             },
             
             {
@@ -3207,7 +3420,8 @@
                 date_en: "June 25<sup>th</sup>, 2024",
                 lat: 32.8758738,
                 lng: -117.2470005,
-                checklist_id: "S183696675"
+                checklist_id: "S183696675",
+                iucn_status: "LC"
             },
             
             {
@@ -3223,7 +3437,8 @@
                 date_en: "August 3<sup>rd</sup>, 2023",
                 lat: 37.807614,
                 lng: -122.4213409,
-                checklist_id: "S146363796"
+                checklist_id: "S146363796",
+                iucn_status: "LC"
             },
             
             {
@@ -3239,7 +3454,8 @@
                 date_en: "July 6<sup>th</sup>, 2019",
                 lat: 49.50158,
                 lng: -119.6119416,
-                checklist_id: "S57975834"
+                checklist_id: "S57975834",
+                iucn_status: "LC"
             },
             
             {
@@ -3255,7 +3471,8 @@
                 date_en: "July 1<sup>st</sup>, 2010",
                 lat: 32.6273723,
                 lng: -117.1076402,
-                checklist_id: "S18574835"
+                checklist_id: "S18574835",
+                iucn_status: "LC"
             },
             
             {
@@ -3271,7 +3488,8 @@
                 date_en: "September 1<sup>st</sup>, 2010",
                 lat: 47.6038482,
                 lng: -122.3388147,
-                checklist_id: "S18574834"
+                checklist_id: "S18574834",
+                iucn_status: "LC"
             },
             
             {
@@ -3287,7 +3505,8 @@
                 date_en: "March 29<sup>th</sup>, 2023",
                 lat: 34.4078515,
                 lng: -119.6898863,
-                checklist_id: "S132183663"
+                checklist_id: "S132183663",
+                iucn_status: "LC"
             },
             
             {
@@ -3303,7 +3522,8 @@
                 date_en: "June 28<sup>th</sup>, 2019",
                 lat: 48.4254415,
                 lng: -123.3883953,
-                checklist_id: "S57760161"
+                checklist_id: "S57760161",
+                iucn_status: "LC"
             },
             
             {
@@ -3319,7 +3539,8 @@
                 date_en: "June 23<sup>rd</sup>, 2019",
                 lat: 49.3029688,
                 lng: -123.1432629,
-                checklist_id: "S57635563"
+                checklist_id: "S57635563",
+                iucn_status: "LC"
             },
             
             {
@@ -3335,7 +3556,8 @@
                 date_en: "October 3<sup>rd</sup>, 2018",
                 lat: 48.4224588,
                 lng: -123.383107,
-                checklist_id: "S48918460"
+                checklist_id: "S48918460",
+                iucn_status: "LC"
             },
             
             {
@@ -3351,7 +3573,8 @@
                 date_en: "May 5<sup>th</sup>, 2013",
                 lat: 49.3737986,
                 lng: -123.2719347,
-                checklist_id: "S18567070"
+                checklist_id: "S18567070",
+                iucn_status: "LC"
             },
             
             {
@@ -3367,7 +3590,8 @@
                 date_en: "May 5<sup>th</sup>, 2013",
                 lat: 49.3737986,
                 lng: -123.2719347,
-                checklist_id: "S18567070"
+                checklist_id: "S18567070",
+                iucn_status: "LC"
             },
             
             {
@@ -3383,7 +3607,8 @@
                 date_en: "September 1<sup>st</sup>, 2010",
                 lat: 47.6038482,
                 lng: -122.3388147,
-                checklist_id: "S18574834"
+                checklist_id: "S18574834",
+                iucn_status: "LC"
             },
             
             {
@@ -3399,7 +3624,8 @@
                 date_en: "September 1<sup>st</sup>, 2010",
                 lat: 47.6038482,
                 lng: -122.3388147,
-                checklist_id: "S18574834"
+                checklist_id: "S18574834",
+                iucn_status: "LC"
             },
             
             {
@@ -3415,7 +3641,8 @@
                 date_en: "October 4<sup>th</sup>, 2018",
                 lat: 48.4224588,
                 lng: -123.383107,
-                checklist_id: "S48938826"
+                checklist_id: "S48938826",
+                iucn_status: ""
             },
             
             {
@@ -3431,7 +3658,8 @@
                 date_en: "March 27<sup>th</sup>, 2023",
                 lat: 34.4098907,
                 lng: -119.6858793,
-                checklist_id: "S131967196"
+                checklist_id: "S131967196",
+                iucn_status: "LC"
             },
             
             {
@@ -3447,7 +3675,8 @@
                 date_en: "January 23<sup>rd</sup>, 2008",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772656"
+                checklist_id: "S5772656",
+                iucn_status: "LC"
             },
             
             {
@@ -3463,7 +3692,8 @@
                 date_en: "December 17<sup>th</sup>, 2006",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772629"
+                checklist_id: "S5772629",
+                iucn_status: "LC"
             },
             
             {
@@ -3479,7 +3709,8 @@
                 date_en: "October 29<sup>th</sup>, 2006",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772425"
+                checklist_id: "S5772425",
+                iucn_status: "LC"
             },
             
             {
@@ -3495,7 +3726,8 @@
                 date_en: "October 29<sup>th</sup>, 2006",
                 lat: -29.8220854,
                 lng: -71.2886524,
-                checklist_id: "S5772425"
+                checklist_id: "S5772425",
+                iucn_status: "LC"
             },
             
             {
@@ -3511,7 +3743,8 @@
                 date_en: "July 11<sup>th</sup>, 2015",
                 lat: 21.2801171,
                 lng: -157.8342676,
-                checklist_id: "S24233326"
+                checklist_id: "S24233326",
+                iucn_status: "LC"
             },
             
             {
@@ -3527,7 +3760,8 @@
                 date_en: "July 11<sup>th</sup>, 2015",
                 lat: 21.2801171,
                 lng: -157.8342676,
-                checklist_id: "S24233326"
+                checklist_id: "S24233326",
+                iucn_status: "LC"
             },
             
             {
@@ -3543,7 +3777,8 @@
                 date_en: "July 25<sup>th</sup>, 2015",
                 lat: 19.2945372,
                 lng: -155.0979424,
-                checklist_id: "S24383556"
+                checklist_id: "S24383556",
+                iucn_status: "LC"
             },
             
             {
@@ -3559,7 +3794,8 @@
                 date_en: "July 25<sup>th</sup>, 2015",
                 lat: 19.2945372,
                 lng: -155.0979424,
-                checklist_id: "S24383556"
+                checklist_id: "S24383556",
+                iucn_status: "LC"
             },
             
             {
@@ -3575,7 +3811,8 @@
                 date_en: "July 25<sup>th</sup>, 2015",
                 lat: 19.2945372,
                 lng: -155.0979424,
-                checklist_id: "S24383556"
+                checklist_id: "S24383556",
+                iucn_status: "LC"
             },
             
             {
@@ -3591,7 +3828,8 @@
                 date_en: "July 25<sup>th</sup>, 2015",
                 lat: 19.2945372,
                 lng: -155.0979424,
-                checklist_id: "S24383556"
+                checklist_id: "S24383556",
+                iucn_status: "LC"
             },
             
             {
@@ -3607,7 +3845,8 @@
                 date_en: "July 25<sup>th</sup>, 2015",
                 lat: 19.2945372,
                 lng: -155.0979424,
-                checklist_id: "S24383556"
+                checklist_id: "S24383556",
+                iucn_status: "LC"
             },
             
             {
@@ -3623,7 +3862,8 @@
                 date_en: "July 1<sup>st</sup>, 2022",
                 lat: 43.4889737,
                 lng: 4.4041711,
-                checklist_id: "S114163850"
+                checklist_id: "S114163850",
+                iucn_status: "LC"
             },
             
             {
@@ -3639,7 +3879,8 @@
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.5694546,
                 lng: 4.1894174,
-                checklist_id: "S47592138"
+                checklist_id: "S47592138",
+                iucn_status: "LC"
             },
             
             {
@@ -3655,7 +3896,8 @@
                 date_en: "July 27<sup>th</sup>, 2016",
                 lat: 43.0969683,
                 lng: 3.0968034,
-                checklist_id: "S30889617"
+                checklist_id: "S30889617",
+                iucn_status: "LC"
             },
             
             {
@@ -3671,7 +3913,8 @@
                 date_en: "June 30<sup>th</sup>, 2010",
                 lat: 32.722109,
                 lng: -117.172575,
-                checklist_id: "S18575213"
+                checklist_id: "S18575213",
+                iucn_status: "LC"
             },
             
             {
@@ -3687,7 +3930,8 @@
                 date_en: "December 29<sup>th</sup>, 2006",
                 lat: -34.679665,
                 lng: -54.2731855,
-                checklist_id: "S18566225"
+                checklist_id: "S18566225",
+                iucn_status: "LC"
             },
             
             {
@@ -3703,7 +3947,8 @@
                 date_en: "July 31<sup>st</sup>, 2018",
                 lat: 43.4889737,
                 lng: 4.4041711,
-                checklist_id: "S47558748"
+                checklist_id: "S47558748",
+                iucn_status: "LC"
             },
             
             {
@@ -3719,7 +3964,8 @@
                 date_en: "August 19<sup>th</sup>, 2021",
                 lat: 45.385922,
                 lng: -75.7966705,
-                checklist_id: "S93462910"
+                checklist_id: "S93462910",
+                iucn_status: "LC"
             },
             
             {
@@ -3735,7 +3981,8 @@
                 date_en: "August 14<sup>th</sup>, 2020",
                 lat: 45.6383774,
                 lng: -74.6835351,
-                checklist_id: "S72409956"
+                checklist_id: "S72409956",
+                iucn_status: "LC"
             },
             
             {
@@ -3751,7 +3998,8 @@
                 date_en: "July 8<sup>th</sup>, 2020",
                 lat: 45.3985252,
                 lng: -75.7812616,
-                checklist_id: "S71269636"
+                checklist_id: "S71269636",
+                iucn_status: "LC"
             },
             
             {
@@ -3767,7 +4015,8 @@
                 date_en: "August 3<sup>rd</sup>, 2011",
                 lat: 45.4277985,
                 lng: -73.5921872,
-                checklist_id: "S18567160"
+                checklist_id: "S18567160",
+                iucn_status: "LC"
             },
             
             {
@@ -3783,7 +4032,8 @@
                 date_en: "May 22<sup>nd</sup>, 2009",
                 lat: 43.9942,
                 lng: -77.71059,
-                checklist_id: "S18574107"
+                checklist_id: "S18574107",
+                iucn_status: "LC"
             },
             
             {
@@ -3799,7 +4049,8 @@
                 date_en: "February 1<sup>st</sup>, 2009",
                 lat: -29.9339241,
                 lng: -71.3358271,
-                checklist_id: "S5772586"
+                checklist_id: "S5772586",
+                iucn_status: "NT"
             },
             
             {
@@ -3815,7 +4066,8 @@
                 date_en: "February 1<sup>st</sup>, 2009",
                 lat: -29.9339241,
                 lng: -71.3358271,
-                checklist_id: "S5772586"
+                checklist_id: "S5772586",
+                iucn_status: "NT"
             },
             
             {
@@ -3831,7 +4083,8 @@
                 date_en: "February 8<sup>th</sup>, 2007",
                 lat: -29.9339241,
                 lng: -71.3358271,
-                checklist_id: "S5772643"
+                checklist_id: "S5772643",
+                iucn_status: "NT"
             },
             
             {
@@ -3847,7 +4100,8 @@
                 date_en: "November 11<sup>th</sup>, 2006",
                 lat: -29.9339241,
                 lng: -71.3358271,
-                checklist_id: "S5772633"
+                checklist_id: "S5772633",
+                iucn_status: "NT"
             },
             
             {
@@ -3863,7 +4117,8 @@
                 date_en: "November 11<sup>th</sup>, 2006",
                 lat: -29.9339241,
                 lng: -71.3358271,
-                checklist_id: "S5772633"
+                checklist_id: "S5772633",
+                iucn_status: "NT"
             },
             
             {
@@ -3879,7 +4134,8 @@
                 date_en: "January 25<sup>th</sup>, 2006",
                 lat: -29.9339241,
                 lng: -71.3358271,
-                checklist_id: "S5772617"
+                checklist_id: "S5772617",
+                iucn_status: "NT"
             },
             
             {
@@ -3895,7 +4151,8 @@
                 date_en: "May 23<sup>rd</sup>, 2011",
                 lat: 45.5100537,
                 lng: -73.8786578,
-                checklist_id: "S18567084"
+                checklist_id: "S18567084",
+                iucn_status: "LC"
             },
             
             {
@@ -3911,7 +4168,8 @@
                 date_en: "May 23<sup>rd</sup>, 2011",
                 lat: 45.5100537,
                 lng: -73.8786578,
-                checklist_id: "S18567084"
+                checklist_id: "S18567084",
+                iucn_status: "LC"
             },
             
             {
@@ -3927,7 +4185,8 @@
                 date_en: "June 12<sup>th</sup>, 2010",
                 lat: 45.5100537,
                 lng: -73.8786578,
-                checklist_id: "S18567008"
+                checklist_id: "S18567008",
+                iucn_status: "LC"
             },
             
             {
@@ -3943,7 +4202,8 @@
                 date_en: "June 12<sup>th</sup>, 2010",
                 lat: 45.5100537,
                 lng: -73.8786578,
-                checklist_id: "S18567008"
+                checklist_id: "S18567008",
+                iucn_status: "LC"
             },
             
             {
@@ -3959,7 +4219,8 @@
                 date_en: "June 12<sup>th</sup>, 2010",
                 lat: 45.5100537,
                 lng: -73.8786578,
-                checklist_id: "S18567008"
+                checklist_id: "S18567008",
+                iucn_status: "LC"
             },
             
             {
@@ -3975,7 +4236,8 @@
                 date_en: "May 22<sup>nd</sup>, 2010",
                 lat: 45.5100537,
                 lng: -73.8786578,
-                checklist_id: "S18567005"
+                checklist_id: "S18567005",
+                iucn_status: "LC"
             },
             
             {
@@ -3991,7 +4253,8 @@
                 date_en: "May 22<sup>nd</sup>, 2010",
                 lat: 45.5100537,
                 lng: -73.8786578,
-                checklist_id: "S18567005"
+                checklist_id: "S18567005",
+                iucn_status: "LC"
             },
             
             {
@@ -4007,7 +4270,8 @@
                 date_en: "December 29<sup>th</sup>, 2006",
                 lat: -34.679665,
                 lng: -54.2731855,
-                checklist_id: "S18566225"
+                checklist_id: "S18566225",
+                iucn_status: "LC"
             },
             
             {
@@ -4023,7 +4287,8 @@
                 date_en: "August 1<sup>st</sup>, 2003",
                 lat: 44.5208489,
                 lng: -67.0906734,
-                checklist_id: "S18566849"
+                checklist_id: "S18566849",
+                iucn_status: "LC"
             },
             
             {
@@ -4039,7 +4304,8 @@
                 date_en: "August 1<sup>st</sup>, 2003",
                 lat: 44.5208489,
                 lng: -67.0906734,
-                checklist_id: "S18566849"
+                checklist_id: "S18566849",
+                iucn_status: "LC"
             },
             
             {
@@ -4055,7 +4321,8 @@
                 date_en: "December 20<sup>th</sup>, 2008",
                 lat: -51.729899,
                 lng: -72.4982,
-                checklist_id: "S5772634"
+                checklist_id: "S5772634",
+                iucn_status: "LC"
             },
             
             {
@@ -4071,7 +4338,8 @@
                 date_en: "December 16<sup>th</sup>, 2008",
                 lat: -53.025,
                 lng: -70.666667,
-                checklist_id: "S5772612"
+                checklist_id: "S5772612",
+                iucn_status: "LC"
             },
             
             {
@@ -4087,7 +4355,8 @@
                 date_en: "November 5<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772632"
+                checklist_id: "S5772632",
+                iucn_status: "LC"
             },
             
             {
@@ -4103,7 +4372,8 @@
                 date_en: "November 5<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772632"
+                checklist_id: "S5772632",
+                iucn_status: "LC"
             },
             
             {
@@ -4119,7 +4389,8 @@
                 date_en: "November 5<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772632"
+                checklist_id: "S5772632",
+                iucn_status: "LC"
             },
             
             {
@@ -4135,7 +4406,8 @@
                 date_en: "July 18<sup>th</sup>, 2021",
                 lat: 45.4546332,
                 lng: -73.5529532,
-                checklist_id: "S91951565"
+                checklist_id: "S91951565",
+                iucn_status: "LC"
             },
             
             {
@@ -4151,7 +4423,8 @@
                 date_en: "May 6<sup>th</sup>, 2018",
                 lat: 45.4445136,
                 lng: -73.6017311,
-                checklist_id: "S45372737"
+                checklist_id: "S45372737",
+                iucn_status: "LC"
             },
             
             {
@@ -4167,7 +4440,8 @@
                 date_en: "June 17<sup>th</sup>, 2017",
                 lat: 45.3914585,
                 lng: -73.7611771,
-                checklist_id: "S37646681"
+                checklist_id: "S37646681",
+                iucn_status: "LC"
             },
             
             {
@@ -4183,7 +4457,8 @@
                 date_en: "July 24<sup>th</sup>, 2011",
                 lat: 48.0952184,
                 lng: -66.1129761,
-                checklist_id: "S18566875"
+                checklist_id: "S18566875",
+                iucn_status: "LC"
             },
             
             {
@@ -4199,7 +4474,8 @@
                 date_en: "July 25<sup>th</sup>, 2006",
                 lat: 46.8263988,
                 lng: -64.910192,
-                checklist_id: "S18567031"
+                checklist_id: "S18567031",
+                iucn_status: "LC"
             },
             
             {
@@ -4215,7 +4491,8 @@
                 date_en: "July 20<sup>th</sup>, 2005",
                 lat: 47.585278,
                 lng: 1.335,
-                checklist_id: "S18563346"
+                checklist_id: "S18563346",
+                iucn_status: "LC"
             },
             
             {
@@ -4231,7 +4508,8 @@
                 date_en: "July 28<sup>th</sup>, 2003",
                 lat: 46.8263988,
                 lng: -64.910192,
-                checklist_id: "S18566865"
+                checklist_id: "S18566865",
+                iucn_status: "LC"
             },
             
             {
@@ -4247,7 +4525,8 @@
                 date_en: "July 28<sup>th</sup>, 2003",
                 lat: 46.8263988,
                 lng: -64.910192,
-                checklist_id: "S18566865"
+                checklist_id: "S18566865",
+                iucn_status: "LC"
             },
             
             {
@@ -4263,7 +4542,8 @@
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.459383,
                 lng: 4.4436479,
-                checklist_id: "S47578750"
+                checklist_id: "S47578750",
+                iucn_status: "LC"
             },
             
             {
@@ -4279,7 +4559,8 @@
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
                 lng: -80.448761,
-                checklist_id: "S35074281"
+                checklist_id: "S35074281",
+                iucn_status: "LC"
             },
             
             {
@@ -4295,7 +4576,8 @@
                 date_en: "July 25<sup>th</sup>, 2008",
                 lat: 56.342615,
                 lng: -2.7901711,
-                checklist_id: "S18565223"
+                checklist_id: "S18565223",
+                iucn_status: "LC"
             },
             
             {
@@ -4311,7 +4593,8 @@
                 date_en: "September 13<sup>th</sup>, 2007",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772494"
+                checklist_id: "S5772494",
+                iucn_status: "NT"
             },
             
             {
@@ -4327,7 +4610,8 @@
                 date_en: "November 5<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772632"
+                checklist_id: "S5772632",
+                iucn_status: "NT"
             },
             
             {
@@ -4343,7 +4627,8 @@
                 date_en: "November 5<sup>th</sup>, 2006",
                 lat: -29.9252584,
                 lng: -71.2786746,
-                checklist_id: "S5772632"
+                checklist_id: "S5772632",
+                iucn_status: "NT"
             },
             
             {
@@ -4359,7 +4644,8 @@
                 date_en: "June 28<sup>th</sup>, 2024",
                 lat: 32.8507576,
                 lng: -117.2735641,
-                checklist_id: "S184255937"
+                checklist_id: "S184255937",
+                iucn_status: "NE"
             },
             
             {
@@ -4375,7 +4661,8 @@
                 date_en: "June 28<sup>th</sup>, 2024",
                 lat: 32.8507576,
                 lng: -117.2735641,
-                checklist_id: "S184255937"
+                checklist_id: "S184255937",
+                iucn_status: "NE"
             },
             
             {
@@ -4391,7 +4678,8 @@
                 date_en: "March 29<sup>th</sup>, 2023",
                 lat: 34.4078515,
                 lng: -119.6898863,
-                checklist_id: "S132183663"
+                checklist_id: "S132183663",
+                iucn_status: "NE"
             },
             
             {
@@ -4407,7 +4695,8 @@
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
                 lng: -80.448761,
-                checklist_id: "S35074281"
+                checklist_id: "S35074281",
+                iucn_status: "NE"
             },
             
             {
@@ -4423,7 +4712,8 @@
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
                 lng: -80.448761,
-                checklist_id: "S35074281"
+                checklist_id: "S35074281",
+                iucn_status: "NE"
             },
             
             {
@@ -4439,7 +4729,8 @@
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
                 lng: -80.448761,
-                checklist_id: "S35074281"
+                checklist_id: "S35074281",
+                iucn_status: "NE"
             }
             
         ];
@@ -4457,6 +4748,7 @@
                     scientific: sciName,
                     name_fr: photo.name_fr,
                     name_en: photo.name_en,
+                    iucn_status: photo.iucn_status,
                     photos: []
                 };
                 speciesOrder.push(sciName); // Garder l'ordre d'apparition
@@ -4608,6 +4900,31 @@
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? photo.name_fr : photo.name_en;
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            
+            // Afficher le statut IUCN si l'espèce est menacée
+            const iucnDiv = document.getElementById('lightbox-iucn');
+            const iucnStatus = currentSpecies.iucn_status || photo.iucn_status;
+            if (iucnStatus && iucnStatus !== 'LC' && iucnStatus !== 'NE' && iucnStatus !== '') {
+                const statusNames = {
+                    'CR': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'CR (PE)': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'CR (PEW)': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'EN': { fr: 'En danger', en: 'Endangered' },
+                    'VU': { fr: 'Vulnérable', en: 'Vulnerable' },
+                    'NT': { fr: 'Quasi menacé', en: 'Near Threatened' },
+                    'DD': { fr: 'Données insuffisantes', en: 'Data Deficient' },
+                    'EW': { fr: 'Éteint à l\'état sauvage', en: 'Extinct in the Wild' },
+                    'EX': { fr: 'Éteint', en: 'Extinct' }
+                };
+                const statusCode = iucnStatus.split(' ')[0];
+                const statusInfo = statusNames[iucnStatus] || statusNames[statusCode] || { fr: iucnStatus, en: iucnStatus };
+                const statusLabel = currentLang === 'fr' ? statusInfo.fr : statusInfo.en;
+                iucnDiv.innerHTML = `<span class="iucn-badge iucn-${statusCode}">${statusCode}</span> ${statusLabel}`;
+                iucnDiv.style.display = 'flex';
+            } else {
+                iucnDiv.style.display = 'none';
+            }
+            
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
             document.getElementById('lightbox-date').innerHTML = 
@@ -4639,11 +4956,13 @@
                         attributionControl: false
                     });
                     
-                    // Thème doux - CartoDB Positron
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                        subdomains: 'abcd',
-                        maxZoom: 19
+                    // Tile layer selon la langue
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '© OpenStreetMap France'
                     }).addTo(map);
+                    
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);

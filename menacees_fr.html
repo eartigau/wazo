@@ -7281,11 +7281,12 @@
                         attributionControl: false
                     });
                     
-                    // Thème nature - CartoDB Voyager
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-                        subdomains: 'abcd',
+                    // Tile layer selon la langue
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
                         maxZoom: 19
                     }).addTo(map);
+                    
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);

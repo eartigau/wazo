@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Threatened Species</title>
+    <title>Endangered species</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="gallery.css">
     <style>
@@ -130,7 +130,7 @@
                 <li>
                     <a href="menacees_en.html" 
                        class="active">
-                        Threatened
+                        Endangered
                     </a>
                 </li>
                 
@@ -148,7 +148,7 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>Threatened species photographed</h1>
+        <h1>Endangered species photographed</h1>
         <div class="stats">
             97 species • 
             403 photos
@@ -7281,11 +7281,13 @@
                         attributionControl: false
                     });
                     
-                    // Thème nature - CartoDB Voyager
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    // Tile layer selon la langue
+                    
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         subdomains: 'abcd',
                         maxZoom: 19
                     }).addTo(map);
+                    
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);

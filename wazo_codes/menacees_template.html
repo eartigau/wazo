@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% if lang == 'fr' %}Espèces menacées{% else %}Threatened Species{% endif %}</title>
+    <title>{% if lang == 'fr' %}Espèces menacées{% else %}Endangered species{% endif %}</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="gallery.css">
     <style>
@@ -102,7 +102,7 @@
 
     <!-- EN-TÊTE -->
     <div class="gallery-header">
-        <h1>{% if lang == 'fr' %}Espèces menacées photographiées{% else %}Threatened species photographed{% endif %}</h1>
+        <h1>{% if lang == 'fr' %}Espèces menacées photographiées{% else %}Endangered species photographed{% endif %}</h1>
         <div class="stats">
             {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} • 
             {{ total_photos }} photos
@@ -537,11 +537,17 @@
                         attributionControl: false
                     });
                     
-                    // Thème nature - CartoDB Voyager
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+                    // Tile layer selon la langue
+                    {% if lang == 'fr' %}
+                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                        maxZoom: 19
+                    }).addTo(map);
+                    {% else %}
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         subdomains: 'abcd',
                         maxZoom: 19
                     }).addTo(map);
+                    {% endif %}
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);

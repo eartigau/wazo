@@ -302,7 +302,7 @@ def construire_menu(config, generator, curation=None):
     if config_menacees.get('activer', False):
         menu.append({
             'name_fr': 'Menacées',
-            'name_en': 'Threatened',
+            'name_en': 'Endangered',
             'file_fr': 'menacees_fr.html',
             'file_en': 'menacees_en.html'
         })
@@ -478,6 +478,12 @@ def generer_toutes_galeries():
         traductions_file=TRADUCTIONS_FILE
     )
     
+    # Charger les statuts IUCN (pour afficher dans les lightbox)
+    config_menacees = config.get('especes_menacees', {})
+    iucn_statuts = {}
+    if config_menacees.get('activer', False):
+        iucn_statuts = charger_statuts_iucn(config_menacees)
+    
     # Construire le menu
     menu, familles_data = construire_menu(config, generator, curation)
     
@@ -491,7 +497,8 @@ def generer_toutes_galeries():
         output_base='species_list',
         template_file=SPECIES_LIST_TEMPLATE,
         menu=menu,
-        curation=curation
+        curation=curation,
+        iucn_statuts=iucn_statuts
     )
     
     # ========================================
@@ -537,7 +544,8 @@ def generer_toutes_galeries():
             menu=menu,
             gallery_id='gallery_recent',
             species_count=species_count,
-            show_date_in_overlay=True
+            show_date_in_overlay=True,
+            iucn_statuts=iucn_statuts
         )
         total_galeries += 1
     
@@ -559,7 +567,8 @@ def generer_toutes_galeries():
             template_file=GALLERY_TEMPLATE,
             menu=menu,
             gallery_id='gallery_best',
-            species_count=species_count
+            species_count=species_count,
+            iucn_statuts=iucn_statuts
         )
         print(f"   ⭐ {len(best_photos)} photos sélectionnées ({species_count} espèces)")
         total_galeries += 1
@@ -589,7 +598,8 @@ def generer_toutes_galeries():
                     photos=photos,
                     template_file=GALLERY_TEMPLATE,
                     menu=menu,
-                    gallery_id=galerie['id']
+                    gallery_id=galerie['id'],
+                    iucn_statuts=iucn_statuts
                 )
                 total_galeries += 1
     
@@ -678,7 +688,8 @@ def generer_toutes_galeries():
                     gallery_id=voyage['id'],
                     subtitle_fr=subtitle_fr,
                     subtitle_en=subtitle_en,
-                    trip_locations=trip_locations
+                    trip_locations=trip_locations,
+                    iucn_statuts=iucn_statuts
                 )
                 total_galeries += 1
         
@@ -838,8 +849,8 @@ def generer_toutes_galeries():
                 # Générer la galerie du pays
                 generator.generate_gallery(
                     output_base=file_id,
-                    title_fr=f"{metadata['flag']} {name_fr}",
-                    title_en=f"{metadata['flag']} {name_en}",
+                    title_fr=name_fr,
+                    title_en=name_en,
                     photos=photos,
                     template_file=GALLERY_TEMPLATE,
                     menu=menu,
@@ -849,7 +860,8 @@ def generer_toutes_galeries():
                     back_link_fr='pays_index_fr.html',
                     back_link_en='pays_index_en.html',
                     back_text_fr='Tous les pays',
-                    back_text_en='All countries'
+                    back_text_en='All countries',
+                    iucn_statuts=iucn_statuts
                 )
                 total_galeries += 1
         
@@ -949,7 +961,8 @@ def generer_toutes_galeries():
                     gallery_id=file_id,
                     subtitle_fr=subtitle_fr,
                     subtitle_en=subtitle_en,
-                    species_count=species_count
+                    species_count=species_count,
+                    iucn_statuts=iucn_statuts
                 )
                 total_galeries += 1
         

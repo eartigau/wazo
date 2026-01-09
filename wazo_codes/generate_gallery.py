@@ -1329,7 +1329,8 @@ class EBirdGalleryGenerator:
                         back_link_fr: str = None,
                         back_link_en: str = None,
                         back_text_fr: str = None,
-                        back_text_en: str = None):
+                        back_text_en: str = None,
+                        iucn_statuts: dict = None):
         """
         Génère les pages HTML de galerie en français et anglais
         
@@ -1350,6 +1351,7 @@ class EBirdGalleryGenerator:
             back_link_en: Lien de retour version anglaise (optionnel)
             back_text_fr: Texte du lien de retour en français (optionnel)
             back_text_en: Texte du lien de retour en anglais (optionnel)
+            iucn_statuts: Dictionnaire {nom_scientifique: code_statut} (optionnel)
         """
         output_fr = f"{output_base}_fr.html"
         output_en = f"{output_base}_en.html"
@@ -1359,6 +1361,12 @@ class EBirdGalleryGenerator:
         
         if gallery_id is None:
             gallery_id = output_base
+        
+        # Ajouter statut IUCN à chaque photo
+        if iucn_statuts:
+            for photo in photos:
+                sci_name = photo.get('scientific_name', '')
+                photo['iucn_status'] = iucn_statuts.get(sci_name, '')
         
         # Date de mise à jour (aujourd'hui)
         today = datetime.now()
@@ -1420,13 +1428,20 @@ class EBirdGalleryGenerator:
                              output_base: str = 'species_list',
                              template_file: str = 'species_list_template.html',
                              menu: list = None,
-                             curation: dict = None):
+                             curation: dict = None,
+                             iucn_statuts: dict = None):
         """Génère la page liste des espèces par famille"""
         
         output_fr = f"{output_base}_fr.html"
         output_en = f"{output_base}_en.html"
         
         species_list = self.get_species_list(curation=curation)
+        
+        # Ajouter statut IUCN à chaque espèce
+        if iucn_statuts:
+            for sp in species_list:
+                sci_name = sp.get('sci_name', '')
+                sp['iucn_status'] = iucn_statuts.get(sci_name, '')
         
         # Grouper par famille
         families = {}

@@ -54,6 +54,31 @@
         .flamingo-marker:hover {
             transform: scale(1.1);
         }
+        
+        /* Badge statut IUCN dans la lightbox */
+        .iucn-status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+        }
+        .iucn-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .iucn-CR { background: #d32f2f; color: white; }
+        .iucn-EN { background: #f57c00; color: white; }
+        .iucn-VU { background: #fbc02d; color: #333; }
+        .iucn-NT { background: #81c784; color: #333; }
+        .iucn-DD { background: #9e9e9e; color: white; }
+        .iucn-EW { background: #6a1b9a; color: white; }
+        .iucn-EX { background: #000000; color: white; }
     </style>
 </head>
 <body>
@@ -193,6 +218,9 @@
                 <!-- Nom scientifique -->
                 <p class="scientific-name" id="lightbox-scientific"></p>
                 
+                <!-- Statut IUCN (si menacé) -->
+                <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
+                
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
                 
@@ -247,7 +275,8 @@
                 date_en: "September 6<sup>th</sup>, 2023",
                 lat: 43.7627299,
                 lng: 11.2499652,
-                checklist_id: "S149123375"
+                checklist_id: "S149123375",
+                iucn_status: "LC"
             },
             
             {
@@ -263,7 +292,8 @@
                 date_en: "November 7<sup>th</sup>, 2017",
                 lat: 12.3585768,
                 lng: 76.6104984,
-                checklist_id: "S40354331"
+                checklist_id: "S40354331",
+                iucn_status: "LC"
             },
             
             {
@@ -279,7 +309,8 @@
                 date_en: "November 6<sup>th</sup>, 2017",
                 lat: 12.3602739,
                 lng: 76.5989477,
-                checklist_id: "S40333737"
+                checklist_id: "S40333737",
+                iucn_status: "LC"
             },
             
             {
@@ -295,7 +326,8 @@
                 date_en: "May 4<sup>th</sup>, 2008",
                 lat: -42.622631,
                 lng: -74.1126859,
-                checklist_id: "S5772599"
+                checklist_id: "S5772599",
+                iucn_status: "LC"
             },
             
             {
@@ -311,7 +343,8 @@
                 date_en: "May 3<sup>rd</sup>, 2008",
                 lat: -41.886944,
                 lng: -73.960556,
-                checklist_id: "S5772530"
+                checklist_id: "S5772530",
+                iucn_status: "LC"
             },
             
             {
@@ -327,7 +360,8 @@
                 date_en: "May 8<sup>th</sup>, 2020",
                 lat: 45.4445136,
                 lng: -73.6017311,
-                checklist_id: "S68624058"
+                checklist_id: "S68624058",
+                iucn_status: "LC"
             },
             
             {
@@ -343,7 +377,8 @@
                 date_en: "September 29<sup>th</sup>, 2019",
                 lat: 45.4277985,
                 lng: -73.5921872,
-                checklist_id: "S60216421"
+                checklist_id: "S60216421",
+                iucn_status: "LC"
             },
             
             {
@@ -359,7 +394,8 @@
                 date_en: "March 2<sup>nd</sup>, 2019",
                 lat: 22.6557471,
                 lng: -79.0021384,
-                checklist_id: "S53455184"
+                checklist_id: "S53455184",
+                iucn_status: "LC"
             },
             
             {
@@ -375,7 +411,8 @@
                 date_en: "October 4<sup>th</sup>, 2018",
                 lat: 48.4224588,
                 lng: -123.383107,
-                checklist_id: "S48938826"
+                checklist_id: "S48938826",
+                iucn_status: "LC"
             }
             
         ];
@@ -393,6 +430,7 @@
                     scientific: sciName,
                     name_fr: photo.name_fr,
                     name_en: photo.name_en,
+                    iucn_status: photo.iucn_status,
                     photos: []
                 };
                 speciesOrder.push(sciName); // Garder l'ordre d'apparition
@@ -544,6 +582,31 @@
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? photo.name_fr : photo.name_en;
             document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            
+            // Afficher le statut IUCN si l'espèce est menacée
+            const iucnDiv = document.getElementById('lightbox-iucn');
+            const iucnStatus = currentSpecies.iucn_status || photo.iucn_status;
+            if (iucnStatus && iucnStatus !== 'LC' && iucnStatus !== 'NE' && iucnStatus !== '') {
+                const statusNames = {
+                    'CR': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'CR (PE)': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'CR (PEW)': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'EN': { fr: 'En danger', en: 'Endangered' },
+                    'VU': { fr: 'Vulnérable', en: 'Vulnerable' },
+                    'NT': { fr: 'Quasi menacé', en: 'Near Threatened' },
+                    'DD': { fr: 'Données insuffisantes', en: 'Data Deficient' },
+                    'EW': { fr: 'Éteint à l\'état sauvage', en: 'Extinct in the Wild' },
+                    'EX': { fr: 'Éteint', en: 'Extinct' }
+                };
+                const statusCode = iucnStatus.split(' ')[0];
+                const statusInfo = statusNames[iucnStatus] || statusNames[statusCode] || { fr: iucnStatus, en: iucnStatus };
+                const statusLabel = currentLang === 'fr' ? statusInfo.fr : statusInfo.en;
+                iucnDiv.innerHTML = `<span class="iucn-badge iucn-${statusCode}">${statusCode}</span> ${statusLabel}`;
+                iucnDiv.style.display = 'flex';
+            } else {
+                iucnDiv.style.display = 'none';
+            }
+            
             document.getElementById('lightbox-location').textContent = 
                 currentLang === 'fr' ? photo.location_fr : photo.location_en;
             document.getElementById('lightbox-date').innerHTML = 
@@ -575,11 +638,13 @@
                         attributionControl: false
                     });
                     
-                    // Thème doux - CartoDB Positron
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                        subdomains: 'abcd',
-                        maxZoom: 19
+                    // Tile layer selon la langue
+                    
+                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '© OpenStreetMap France'
                     }).addTo(map);
+                    
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);

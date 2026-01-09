@@ -20,6 +20,31 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
             font-size: 20px;
         }
+        
+        /* Badge statut IUCN dans la lightbox */
+        .iucn-status-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+        }
+        .iucn-badge {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 2px 6px;
+            border-radius: 3px;
+            text-transform: uppercase;
+        }
+        .iucn-CR { background: #d32f2f; color: white; }
+        .iucn-EN { background: #f57c00; color: white; }
+        .iucn-VU { background: #fbc02d; color: #333; }
+        .iucn-NT { background: #81c784; color: #333; }
+        .iucn-DD { background: #9e9e9e; color: white; }
+        .iucn-EW { background: #6a1b9a; color: white; }
+        .iucn-EX { background: #000000; color: white; }
     </style>
 </head>
 <body>
@@ -106,6 +131,9 @@
                 <!-- Nom scientifique -->
                 <p class="scientific-name" id="lightbox-scientific"></p>
                 
+                <!-- Statut IUCN (si menacé) -->
+                <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
+                
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter"></div>
                 
@@ -179,6 +207,7 @@
                 name_en: "{{ sp.common_name_en|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
                 scientific: "{{ sp.sci_name }}",
                 family: "{{ family.code_display_fr if lang == 'fr' else family.code_display_en }}",
+                iucn_status: "{{ sp.iucn_status|default('', true) }}",
                 photos: [
                     {% for photo in sp.all_photos %}
                     {
@@ -411,6 +440,29 @@
                 currentLang === 'fr' ? currentSpecies.name_fr : currentSpecies.name_en;
             document.getElementById('lightbox-scientific').textContent = currentSpecies.scientific;
             
+            // Afficher le statut IUCN si l'espèce est menacée
+            const iucnDiv = document.getElementById('lightbox-iucn');
+            if (currentSpecies.iucn_status && currentSpecies.iucn_status !== 'LC' && currentSpecies.iucn_status !== 'NE') {
+                const statusNames = {
+                    'CR': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'CR (PE)': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'CR (PEW)': { fr: 'En danger critique', en: 'Critically Endangered' },
+                    'EN': { fr: 'En danger', en: 'Endangered' },
+                    'VU': { fr: 'Vulnérable', en: 'Vulnerable' },
+                    'NT': { fr: 'Quasi menacé', en: 'Near Threatened' },
+                    'DD': { fr: 'Données insuffisantes', en: 'Data Deficient' },
+                    'EW': { fr: 'Éteint à l\'état sauvage', en: 'Extinct in the Wild' },
+                    'EX': { fr: 'Éteint', en: 'Extinct' }
+                };
+                const statusCode = currentSpecies.iucn_status.split(' ')[0];
+                const statusInfo = statusNames[currentSpecies.iucn_status] || statusNames[statusCode] || { fr: currentSpecies.iucn_status, en: currentSpecies.iucn_status };
+                const statusLabel = currentLang === 'fr' ? statusInfo.fr : statusInfo.en;
+                iucnDiv.innerHTML = `<span class="iucn-badge iucn-${statusCode}">${statusCode}</span> ${statusLabel}`;
+                iucnDiv.style.display = 'block';
+            } else {
+                iucnDiv.style.display = 'none';
+            }
+            
             const total = currentSpecies.photos.length;
             if (total > 1) {
                 document.getElementById('lightbox-counter').textContent = 
@@ -445,11 +497,17 @@
                         attributionControl: false
                     });
                     
-                    // Thème doux - CartoDB Positron
+                    // Tile layer selon la langue
+                    {% if lang == 'fr' %}
+                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                        maxZoom: 19
+                    }).addTo(map);
+                    {% else %}
                     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         subdomains: 'abcd',
                         maxZoom: 19
                     }).addTo(map);
+                    {% endif %}
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);
