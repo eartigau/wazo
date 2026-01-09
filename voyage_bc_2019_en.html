@@ -131,13 +131,6 @@
                 </li>
                 
                 <li>
-                    <a href="familles_index_en.html" 
-                       >
-                        Families
-                    </a>
-                </li>
-                
-                <li>
                     <a href="menacees_en.html" 
                        >
                         Endangered
@@ -272,7 +265,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: January 8<sup>th</sup>, 2026</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: January 9<sup>th</sup>, 2026</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -1680,13 +1673,11 @@
                         attributionControl: false
                     });
                     
-                    // Tile layer selon la langue
-                    
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                        subdomains: 'abcd',
-                        maxZoom: 19
+                    // OpenStreetMap standard
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        maxZoom: 19,
+                        attribution: '© OpenStreetMap'
                     }).addTo(map);
-                    
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);
@@ -1864,14 +1855,11 @@
                 zoomControl: true
             });
 
-            // Tile layer selon la langue
-            
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                attribution: '© OpenStreetMap © CARTO',
-                subdomains: 'abcd',
+            // OpenStreetMap standard
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
                 maxZoom: 19
             }).addTo(tripMap);
-            
 
             // Icône flamant rose pour les marqueurs individuels
             function createFlamingoIcon() {

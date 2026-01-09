@@ -288,15 +288,6 @@ def construire_menu(config, generator, curation=None):
         'file_en': 'pays_index_en.html'
     })
     
-    # Lien Familles (si des familles ont des photos)
-    if familles_avec_photos:
-        menu.append({
-            'name_fr': 'Familles',
-            'name_en': 'Families',
-            'file_fr': 'familles_index_fr.html',
-            'file_en': 'familles_index_en.html'
-        })
-    
     # Lien Espèces menacées (si configuré)
     config_menacees = config.get('especes_menacees', {})
     if config_menacees.get('activer', False):
@@ -904,95 +895,10 @@ def generer_toutes_galeries():
             print(f"   ✓ pays_index_fr.html / pays_index_en.html ({len(pays_index_data)} pays)")
     
     # ========================================
-    # FAMILLES
+    # FAMILLES (désactivé - redondant avec liste des espèces)
     # ========================================
-    if familles_data:
-        print(f"\n🦅 Galeries par famille ({len(familles_data)} familles)...")
-        
-        familles_index_data = []
-        total_species_all = 0
-        total_photos_all = 0
-        
-        for famille in familles_data:
-            fam_code = famille['family_code']
-            file_id = f"gallery_{fam_code.lower()}"
-            
-            photos = generator.filter_observations(
-                limit=LIMITE_FAMILLE,
-                families_list=[fam_code],
-                verifier_medias_en_ligne=VERIFIER_MEDIAS,
-                sort_by='taxonomy',
-                curation=curation
-            )
-            
-            if photos:
-                species_set = set(p.get('scientific_name', '') for p in photos)
-                species_count = len(species_set)
-                
-                # Icône de la famille: utiliser la curation (best le plus récent) ou la plus récente
-                icone_ml = obtenir_frontispice(photos, curation)
-                
-                title_fr = f"Famille des {fam_code}s"
-                title_en = f"{fam_code} Family"
-                
-                subtitle_fr = famille.get('desc_fr', '')
-                subtitle_en = famille.get('desc_en', '')
-                
-                familles_index_data.append({
-                    'code': fam_code,
-                    'name_fr': subtitle_fr,
-                    'name_en': subtitle_en,
-                    'file_fr': f"{file_id}_fr.html",
-                    'file_en': f"{file_id}_en.html",
-                    'species_count': species_count,
-                    'photo_count': len(photos),
-                    'icone_ml': icone_ml
-                })
-                total_species_all += species_count
-                total_photos_all += len(photos)
-                
-                generator.generate_gallery(
-                    output_base=file_id,
-                    title_fr=title_fr,
-                    title_en=title_en,
-                    photos=photos,
-                    template_file=GALLERY_TEMPLATE,
-                    menu=menu,
-                    gallery_id=file_id,
-                    subtitle_fr=subtitle_fr,
-                    subtitle_en=subtitle_en,
-                    species_count=species_count,
-                    iucn_statuts=iucn_statuts
-                )
-                total_galeries += 1
-        
-        # Page index des familles
-        if familles_index_data:
-            print(f"\n📑 Page index des familles...")
-            today = datetime.now()
-            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
-            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
-            
-            env = Environment(loader=FileSystemLoader('.'))
-            template = env.get_template('familles_index_template.html')
-            
-            for lang in ['fr', 'en']:
-                html = template.render(
-                    lang=lang,
-                    familles=familles_index_data,
-                    total_species=total_species_all,
-                    total_photos=total_photos_all,
-                    menu=menu,
-                    current_page=f'familles_index_{lang}.html',
-                    other_lang_page=f'familles_index_{"en" if lang == "fr" else "fr"}.html',
-                    update_date=True,
-                    update_date_fr=update_date_fr,
-                    update_date_en=update_date_en
-                )
-                with open(f'familles_index_{lang}.html', 'w', encoding='utf-8') as f:
-                    f.write(html)
-            
-            print(f"   ✓ familles_index_fr.html / familles_index_en.html ({len(familles_index_data)} familles)")
+    # La galerie par familles a été désactivée car elle est redondante
+    # avec la liste des espèces qui affiche déjà les espèces par famille.
     
     # ========================================
     # ESPÈCES MENACÉES
@@ -1061,6 +967,7 @@ def generer_toutes_galeries():
                         'common_name_fr': photo.get('common_name_fr', sci_name),
                         'common_name_en': photo.get('common_name_en', sci_name),
                         'status': statut,
+                        'taxon_order': photo.get('taxon_order', 999999),
                         'photos': []
                     }
                 species_photos[sci_name]['photos'].append(photo)
@@ -1089,15 +996,16 @@ def generer_toutes_galeries():
                         'common_name_en': sp_data['common_name_en'],
                         'ml_catalog_number': first_photo.get('ml_catalog_number', ''),
                         'photo_count': len(sp_data['photos']),
+                        'taxon_order': sp_data['taxon_order'],
                         'all_photos': sp_data['photos']
                     })
                 
                 # Trier les statuts par ordre de gravité
                 statuses_list = sorted(statuses_data.values(), key=lambda x: x['order'])
                 
-                # Trier les espèces dans chaque statut par nombre de photos (décroissant)
+                # Trier les espèces dans chaque statut par ordre phylogénétique
                 for status in statuses_list:
-                    status['species'].sort(key=lambda x: -x['photo_count'])
+                    status['species'].sort(key=lambda x: x['taxon_order'])
                 
                 # Compter les totaux
                 total_species = len(species_photos)

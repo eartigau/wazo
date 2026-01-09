@@ -131,13 +131,6 @@
                 </li>
                 
                 <li>
-                    <a href="familles_index_fr.html" 
-                       >
-                        Familles
-                    </a>
-                </li>
-                
-                <li>
                     <a href="menacees_fr.html" 
                        >
                         Menacées
@@ -272,7 +265,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 8 janvier 2026</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 9 janvier 2026</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -1680,13 +1673,11 @@
                         attributionControl: false
                     });
                     
-                    // Tile layer selon la langue
-                    
-                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // OpenStreetMap standard
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
-                        attribution: '© OpenStreetMap France'
+                        attribution: '© OpenStreetMap'
                     }).addTo(map);
-                    
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);
@@ -1836,13 +1827,11 @@
                 zoomControl: true
             });
 
-            // Tile layer selon la langue
-            
-            L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap France',
+            // OpenStreetMap standard
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
                 maxZoom: 19
             }).addTo(tripMap);
-            
 
             // Icône flamant rose pour les marqueurs individuels
             function createFlamingoIcon() {

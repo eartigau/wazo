@@ -497,17 +497,10 @@
                         attributionControl: false
                     });
                     
-                    // Tile layer selon la langue
-                    {% if lang == 'fr' %}
-                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // OpenStreetMap standard
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19
                     }).addTo(map);
-                    {% else %}
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                        subdomains: 'abcd',
-                        maxZoom: 19
-                    }).addTo(map);
-                    {% endif %}
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);

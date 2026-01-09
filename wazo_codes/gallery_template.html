@@ -484,18 +484,11 @@
                         attributionControl: false
                     });
                     
-                    // Tile layer selon la langue
-                    {% if lang == 'fr' %}
-                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // OpenStreetMap standard
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19,
-                        attribution: '© OpenStreetMap France'
+                        attribution: '© OpenStreetMap'
                     }).addTo(map);
-                    {% else %}
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                        subdomains: 'abcd',
-                        maxZoom: 19
-                    }).addTo(map);
-                    {% endif %}
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);
@@ -639,19 +632,11 @@
                 zoomControl: true
             });
 
-            // Tile layer selon la langue
-            {% if lang == 'fr' %}
-            L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap France',
+            // OpenStreetMap standard
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
                 maxZoom: 19
             }).addTo(tripMap);
-            {% else %}
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                attribution: '© OpenStreetMap © CARTO',
-                subdomains: 'abcd',
-                maxZoom: 19
-            }).addTo(tripMap);
-            {% endif %}
 
             // Icône flamant rose pour les marqueurs individuels
             function createFlamingoIcon() {

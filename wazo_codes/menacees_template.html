@@ -109,16 +109,6 @@
         </div>
     </div>
 
-    <!-- RECHERCHE -->
-    <div class="search-container">
-        <input type="text" id="species-search" 
-               placeholder="{% if lang == 'fr' %}Rechercher une espèce...{% else %}Search species...{% endif %}"
-               autocomplete="off">
-        <span class="search-icon">🔍</span>
-        <span class="search-clear" id="search-clear" style="display: none;">✕</span>
-        <div class="search-results" id="search-results"></div>
-    </div>
-
     <!-- LISTE DES ESPÈCES - Rendu dynamique -->
     <div class="species-list-container" id="species-list-dynamic">
         <!-- Les cartes sont générées dynamiquement par JavaScript -->
@@ -408,73 +398,6 @@
         }
 
         // ========================================
-        // RECHERCHE
-        // ========================================
-        
-        const searchInput = document.getElementById('species-search');
-        const searchClear = document.getElementById('search-clear');
-        const searchResults = document.getElementById('search-results');
-        
-        searchInput.addEventListener('input', (e) => {
-            const query = e.target.value.trim();
-            currentSearchQuery = query;
-            
-            searchClear.style.display = query.length > 0 ? 'block' : 'none';
-            
-            if (query.length < 2) {
-                searchResults.style.display = 'none';
-                filteredSpecies = [...speciesListData];
-                resetAndRender();
-                return;
-            }
-            
-            const normalizedQuery = normalizeText(query);
-            
-            // Filtrer les espèces
-            filteredSpecies = speciesListData.filter(sp => 
-                normalizeText(sp.nameFr).includes(normalizedQuery) ||
-                normalizeText(sp.nameEn).includes(normalizedQuery) ||
-                normalizeText(sp.sciName).includes(normalizedQuery)
-            );
-            
-            // Afficher les suggestions
-            const suggestions = filteredSpecies.slice(0, 8);
-            if (suggestions.length > 0) {
-                searchResults.innerHTML = suggestions.map(sp => {
-                    const name = currentLang === 'fr' ? sp.nameFr : sp.nameEn;
-                    return `<div class="search-result-item" onclick="selectSpecies('${sp.sciName}')">${name} <span class="sci">${sp.sciName}</span></div>`;
-                }).join('');
-                searchResults.style.display = 'block';
-            } else {
-                searchResults.innerHTML = `<div class="search-no-results">${currentLang === 'fr' ? 'Aucun résultat' : 'No results'}</div>`;
-                searchResults.style.display = 'block';
-            }
-            
-            resetAndRender();
-        });
-        
-        searchClear.addEventListener('click', () => {
-            searchInput.value = '';
-            currentSearchQuery = '';
-            searchClear.style.display = 'none';
-            searchResults.style.display = 'none';
-            filteredSpecies = [...speciesListData];
-            resetAndRender();
-        });
-        
-        function selectSpecies(sciName) {
-            searchResults.style.display = 'none';
-            openSpeciesLightbox(sciName);
-        }
-        
-        // Fermer les suggestions au clic ailleurs
-        document.addEventListener('click', (e) => {
-            if (!e.target.closest('.search-container')) {
-                searchResults.style.display = 'none';
-            }
-        });
-
-        // ========================================
         // LIGHTBOX
         // ========================================
         
@@ -537,17 +460,10 @@
                         attributionControl: false
                     });
                     
-                    // Tile layer selon la langue
-                    {% if lang == 'fr' %}
-                    L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // OpenStreetMap standard
+                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                         maxZoom: 19
                     }).addTo(map);
-                    {% else %}
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                        subdomains: 'abcd',
-                        maxZoom: 19
-                    }).addTo(map);
-                    {% endif %}
                 }
                 
                 map.setView([photo.lat, photo.lng], 8);
