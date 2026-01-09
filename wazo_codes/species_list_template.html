@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if lang == 'fr' %}Toutes les espèces{% else %}All species{% endif %}</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="gallery.css">
     <style>
@@ -66,6 +67,9 @@
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
+            <a href="{% if lang == 'fr' %}species_list_fr.html{% else %}species_list_en.html{% endif %}" class="site-logo">
+                <span class="site-logo-icon">🦩</span>
+            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 {% for item in menu %}
