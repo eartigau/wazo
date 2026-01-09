@@ -136,9 +136,14 @@
     <!-- CARTE DU VOYAGE -->
     <div class="trip-map-container">
         <div class="trip-map-header">
-            <span class="map-icon">🗺️</span>
-            {% if lang == 'fr' %}Lieux visités{% else %}Locations visited{% endif %}
-            <span class="location-count">({{ trip_locations|length }})</span>
+            <div class="map-title-group">
+                <span class="map-icon">🗺️</span>
+                {% if lang == 'fr' %}Lieux visités{% else %}Locations visited{% endif %}
+                <span class="location-count">({{ trip_locations|length }})</span>
+            </div>
+            <button class="map-reset-btn" onclick="resetMapZoom()" title="{% if lang == 'fr' %}Réinitialiser le zoom{% else %}Reset zoom{% endif %}">
+                🔄 {% if lang == 'fr' %}Réinitialiser{% else %}Reset{% endif %}
+            </button>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
@@ -634,6 +639,10 @@
                 scrollWheelZoom: false,
                 zoomControl: true
             });
+            
+            // Garder une référence globale pour les fonctions de reset
+            window.tripMapInstance = tripMap;
+            window.tripMapMarkerCluster = null;
 
             // OpenStreetMap standard
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -690,12 +699,20 @@
                         </div>
                     `;
                     marker.bindPopup(popupContent, { className: 'trip-popup' });
+                    
+                    // Click sur le marqueur = filtre directement
+                    marker.on('click', function() {
+                        filterByLocation(loc.name);
+                    });
                 }
                 
                 markerCluster.addLayer(marker);
             });
 
             tripMap.addLayer(markerCluster);
+            
+            // Garder référence au cluster pour le reset
+            window.tripMapMarkerCluster = markerCluster;
 
             // Ajuster la vue pour montrer tous les marqueurs
             if (tripLocations.length > 0) {
@@ -713,6 +730,19 @@
             }
         }
         {% endif %}
+        
+        // Réinitialiser le zoom de la carte
+        function resetMapZoom() {
+            if (window.tripMapInstance && window.tripMapMarkerCluster) {
+                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
+                window.tripMapInstance.fitBounds(bounds);
+                
+                // Limiter le zoom max
+                if (window.tripMapInstance.getZoom() > 12) {
+                    window.tripMapInstance.setZoom(12);
+                }
+            }
+        }
         
         // Menu mobile hamburger
         function toggleMobileMenu() {

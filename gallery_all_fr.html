@@ -17557,6 +17557,19 @@
 
         
         
+        // Réinitialiser le zoom de la carte
+        function resetMapZoom() {
+            if (window.tripMapInstance && window.tripMapMarkerCluster) {
+                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
+                window.tripMapInstance.fitBounds(bounds);
+                
+                // Limiter le zoom max
+                if (window.tripMapInstance.getZoom() > 12) {
+                    window.tripMapInstance.setZoom(12);
+                }
+            }
+        }
+        
         // Menu mobile hamburger
         function toggleMobileMenu() {
             document.getElementById('navMenu').classList.toggle('active');
