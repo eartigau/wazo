@@ -1394,8 +1394,8 @@ footer a:hover {
     gap: 16px;
     padding: 12px 20px;
     margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--ebird-green-light), #e8f5e9);
-    border: 1px solid var(--ebird-green);
+    background: linear-gradient(90deg, #ffffff 0%, #f0f7f0 30%, var(--forest-green) 100%);
+    border: 1px solid var(--forest-green);
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
 }
@@ -1414,19 +1414,20 @@ footer a:hover {
 
 #filter-location-name {
     font-weight: 600;
-    color: var(--ebird-green-dark);
+    color: var(--text-dark);
 }
 
 #filter-photo-count {
-    color: var(--text-medium);
+    color: white;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
 }
 
 .filter-reset-btn {
     padding: 8px 16px;
     background: white;
-    border: 1px solid var(--ebird-green);
+    border: 1px solid var(--forest-green);
     border-radius: 20px;
-    color: var(--ebird-green-dark);
+    color: var(--forest-green-dark);
     font-size: 14px;
     font-weight: 500;
     cursor: pointer;
@@ -1434,7 +1435,7 @@ footer a:hover {
 }
 
 .filter-reset-btn:hover {
-    background: var(--ebird-green);
+    background: var(--forest-green-dark);
     color: white;
 }
 
