@@ -16,9 +16,24 @@
             height: 36px;
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 50%;
-            border: 3px solid white;
+            border: 3px solid #2d5a27;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
             font-size: 20px;
+        }
+        
+        /* Compteur d'espèces par famille */
+        .family-title {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .family-count {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-medium);
+            margin-left: auto;
         }
         
         /* Badge statut IUCN dans la lightbox */
@@ -227,6 +242,12 @@
             {% endfor %}
         };
 
+        // Compteur d'espèces par famille
+        const familyCounts = {};
+        speciesListData.forEach(sp => {
+            familyCounts[sp.familyCode] = (familyCounts[sp.familyCode] || 0) + 1;
+        });
+
         // ========================================
         // ÉTAT DE L'APPLICATION
         // ========================================
@@ -276,7 +297,7 @@
             return card;
         }
         
-        function createFamilySection(familyCode, familyDisplayFr, familyDisplayEn, familyNameFr, familyNameEn) {
+        function createFamilySection(familyCode, familyDisplayFr, familyDisplayEn, familyNameFr, familyNameEn, count) {
             const section = document.createElement('div');
             section.className = 'family-section';
             section.id = familyCode;
@@ -285,9 +306,15 @@
             const display = currentLang === 'fr' ? familyDisplayFr : familyDisplayEn;
             const name = currentLang === 'fr' ? familyNameFr : familyNameEn;
             const nameHtml = name ? ` (${name})` : '';
+            const countLabel = currentLang === 'fr' 
+                ? `${count} espèce${count > 1 ? 's' : ''}`
+                : `${count} species`;
             
             section.innerHTML = `
-                <h2 class="family-title">${display}${nameHtml}</h2>
+                <h2 class="family-title">
+                    <span>${display}${nameHtml}</span>
+                    <span class="family-count">${countLabel}</span>
+                </h2>
                 <div class="species-grid"></div>
             `;
             
@@ -321,7 +348,8 @@
                         sp.familyDisplayFr, 
                         sp.familyDisplayEn,
                         sp.familyNameFr,
-                        sp.familyNameEn
+                        sp.familyNameEn,
+                        familyCounts[sp.familyCode] || 0
                     );
                     container.appendChild(familySection);
                     renderedFamilies.add(sp.familyCode);
