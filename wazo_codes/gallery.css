@@ -982,11 +982,11 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 /* ============================================
-   CARTES DU VOYAGE (Location + Heat)
+   CARTE DU VOYAGE
    ============================================ */
 
-.trip-maps-container {
-    max-width: 1400px;
+.trip-map-container {
+    max-width: 600px;
     margin: 0 auto 40px;
     padding: 0 20px;
 }
@@ -1000,7 +1000,6 @@ a.dropdown-toggle.dropdown-link:hover {
     font-size: 20px;
     font-weight: 600;
     color: var(--forest-green);
-    justify-content: center;
 }
 
 .trip-map-header .map-icon {
@@ -1017,27 +1016,6 @@ a.dropdown-toggle.dropdown-link:hover {
     border-radius: 12px;
 }
 
-/* Layout côte à côte pour les deux cartes */
-.dual-map-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.map-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.map-label {
-    font-family: 'Inter', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--forest-green);
-    margin-bottom: 8px;
-    text-align: center;
-}
-
 /* Wrapper pour la carte - ratio 4:3 */
 .trip-map-wrapper {
     position: relative;
@@ -1051,8 +1029,7 @@ a.dropdown-toggle.dropdown-link:hover {
     overflow: hidden;
 }
 
-#trip-map,
-#heat-map {
+#trip-map {
     position: absolute;
     top: 0;
     left: 0;
@@ -1106,14 +1083,9 @@ a.dropdown-toggle.dropdown-link:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
-    .trip-maps-container {
+    .trip-map-container {
         padding: 0 16px;
         margin-bottom: 30px;
-    }
-    
-    .dual-map-layout {
-        grid-template-columns: 1fr;
-        gap: 24px;
     }
     
     .trip-map-wrapper {
