@@ -841,21 +841,8 @@
             // Ajouter les marqueurs avec compte de photos et filtrage
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
-                const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
-                    // Popup avec nom et compte de photos
-                    const popupContent = `
-                        <div class="trip-popup-content">
-                            <strong>${loc.name}</strong>
-                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
-                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
-                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
-                            </button>
-                        </div>
-                    `;
-                    marker.bindPopup(popupContent, { className: 'trip-popup' });
-                    
                     // Click sur le marqueur = filtre directement
                     marker.on('click', function() {
                         filterByLocation(loc.name);

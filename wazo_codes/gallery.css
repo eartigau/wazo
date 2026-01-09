@@ -1014,10 +1014,10 @@ a.dropdown-toggle.dropdown-link:hover {
     background: linear-gradient(135deg, var(--forest-green) 0%, var(--moss) 100%);
     color: white;
     border: none;
-    padding: 8px 16px;
+    padding: 10px 20px;
     border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 700;
     cursor: pointer;
     transition: all 0.2s;
     box-shadow: var(--shadow-md);
@@ -1428,24 +1428,25 @@ footer a:hover {
     align-items: center;
     justify-content: space-between;
     gap: 16px;
-    padding: 12px 20px;
-    margin-bottom: 20px;
-    background: linear-gradient(135deg, var(--ebird-green-light), #e8f5e9);
-    border: 1px solid var(--ebird-green);
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
+    padding: 16px 24px;
+    margin-bottom: 24px;
+    background: linear-gradient(135deg, var(--ebird-green-light), #c8e6c9);
+    border: 2px solid var(--ebird-green);
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
 }
 
 .filter-text {
     display: flex;
     align-items: center;
-    gap: 8px;
-    font-size: 15px;
-    color: var(--text-dark);
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--forest-green-dark);
 }
 
 .filter-icon {
-    font-size: 18px;
+    font-size: 22px;
 }
 
 #filter-location-name {
