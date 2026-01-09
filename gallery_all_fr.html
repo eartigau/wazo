@@ -212,7 +212,7 @@
                 <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
                 
                 <!-- Compteur de photos -->
-                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
+                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600; padding: 4px 12px; background: rgba(45, 90, 39, 0.1); border-radius: 12px; display: inline-block; transition: background 0.2s;"></div>
                 
                 <!-- Section Info -->
                 <div class="lightbox-info">
@@ -17451,14 +17451,18 @@
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;
             
-            // Compteur de photos
+            // Compteur de photos (cliquable pour voir les autres photos de l'espèce)
             const counterEl = document.getElementById('lightbox-counter');
             if (counterEl) {
                 if (currentSpecies.photos.length > 1) {
                     counterEl.textContent = `${currentPhotoIndex + 1} / ${currentSpecies.photos.length}`;
                     counterEl.style.display = 'block';
+                    counterEl.style.cursor = 'pointer';
+                    counterEl.title = currentLang === 'fr' ? 'Cliquer pour voir la photo suivante' : 'Click to see next photo';
+                    counterEl.onclick = () => navigatePhoto(1);
                 } else {
                     counterEl.style.display = 'none';
+                    counterEl.onclick = null;
                 }
             }
 
@@ -17509,6 +17513,24 @@
         }
 
         function navigateLightbox(direction) {
+            if (!currentSpecies) return;
+            
+            // Naviguer entre espèces (pas entre photos de la même espèce)
+            const filteredList = getFilteredSpeciesList();
+            const currentIndex = filteredList.findIndex(sp => sp.scientific === currentSpecies.scientific);
+            if (currentIndex < 0) return;
+            
+            // Calculer le nouvel index avec wrap-around
+            const newIndex = (currentIndex + direction + filteredList.length) % filteredList.length;
+            
+            // Passer à la nouvelle espèce, première photo
+            currentSpecies = filteredList[newIndex];
+            currentPhotoIndex = 0;
+            showCurrentPhoto();
+        }
+        
+        function navigatePhoto(direction) {
+            // Naviguer entre photos de la même espèce
             if (!currentSpecies) return;
             const total = currentSpecies.photos.length;
             currentPhotoIndex = (currentPhotoIndex + direction + total) % total;

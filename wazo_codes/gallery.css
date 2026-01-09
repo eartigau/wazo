@@ -1394,7 +1394,7 @@ footer a:hover {
     gap: 16px;
     padding: 12px 20px;
     margin-bottom: 20px;
-    background: linear-gradient(90deg, #e8f5e9 0%, var(--forest-green) 100%);
+    background: linear-gradient(90deg, #ffffff 0%, #f0f7f0 30%, var(--forest-green) 100%);
     border: 1px solid var(--forest-green);
     border-radius: 12px;
     box-shadow: var(--shadow-sm);
@@ -1405,7 +1405,7 @@ footer a:hover {
     align-items: center;
     gap: 8px;
     font-size: 15px;
-    color: var(--forest-green-dark);
+    color: var(--text-dark);
 }
 
 .filter-icon {
@@ -1414,7 +1414,7 @@ footer a:hover {
 
 #filter-location-name {
     font-weight: 600;
-    color: var(--forest-green-dark);
+    color: var(--text-dark);
 }
 
 #filter-photo-count {

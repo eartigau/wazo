@@ -242,7 +242,7 @@
                 <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
                 
                 <!-- Compteur de photos -->
-                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
+                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600; padding: 4px 12px; background: rgba(45, 90, 39, 0.1); border-radius: 12px; display: inline-block; transition: background 0.2s;"></div>
                 
                 <!-- Section Info -->
                 <div class="lightbox-info">
@@ -1297,14 +1297,18 @@
             document.getElementById('lightbox-ebird').href = 
                 `https://ebird.org/checklist/${photo.checklist_id}`;
             
-            // Compteur de photos
+            // Compteur de photos (cliquable pour voir les autres photos de l'espèce)
             const counterEl = document.getElementById('lightbox-counter');
             if (counterEl) {
                 if (currentSpecies.photos.length > 1) {
                     counterEl.textContent = `${currentPhotoIndex + 1} / ${currentSpecies.photos.length}`;
                     counterEl.style.display = 'block';
+                    counterEl.style.cursor = 'pointer';
+                    counterEl.title = currentLang === 'fr' ? 'Cliquer pour voir la photo suivante' : 'Click to see next photo';
+                    counterEl.onclick = () => navigatePhoto(1);
                 } else {
                     counterEl.style.display = 'none';
+                    counterEl.onclick = null;
                 }
             }
 
@@ -1355,6 +1359,24 @@
         }
 
         function navigateLightbox(direction) {
+            if (!currentSpecies) return;
+            
+            // Naviguer entre espèces (pas entre photos de la même espèce)
+            const filteredList = getFilteredSpeciesList();
+            const currentIndex = filteredList.findIndex(sp => sp.scientific === currentSpecies.scientific);
+            if (currentIndex < 0) return;
+            
+            // Calculer le nouvel index avec wrap-around
+            const newIndex = (currentIndex + direction + filteredList.length) % filteredList.length;
+            
+            // Passer à la nouvelle espèce, première photo
+            currentSpecies = filteredList[newIndex];
+            currentPhotoIndex = 0;
+            showCurrentPhoto();
+        }
+        
+        function navigatePhoto(direction) {
+            // Naviguer entre photos de la même espèce
             if (!currentSpecies) return;
             const total = currentSpecies.photos.length;
             currentPhotoIndex = (currentPhotoIndex + direction + total) % total;
@@ -1518,23 +1540,15 @@
                 }
             });
 
-            // Ajouter les marqueurs avec compte de photos et filtrage
+            // Ajouter les marqueurs avec filtrage direct au clic
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
-                const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
-                    // Popup avec nom et compte de photos
-                    const popupContent = `
-                        <div class="trip-popup-content">
-                            <strong>${loc.name}</strong>
-                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
-                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
-                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
-                            </button>
-                        </div>
-                    `;
-                    marker.bindPopup(popupContent, { className: 'trip-popup' });
+                    // Clic direct pour filtrer les photos
+                    marker.on('click', function() {
+                        filterByLocation(loc.name);
+                    });
                 }
                 
                 markerCluster.addLayer(marker);
