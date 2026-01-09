@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
     <link rel="stylesheet" href="gallery.css">
     <style>
         /* Cluster personnalisé avec icône caméra */
@@ -167,15 +168,26 @@
     </div>
 
     
-    <!-- CARTE DU VOYAGE -->
-    <div class="trip-map-container">
+    <!-- CARTES DU VOYAGE -->
+    <div class="trip-maps-container">
         <div class="trip-map-header">
             <span class="map-icon">🗺️</span>
             Locations visited
             <span class="location-count">(19)</span>
         </div>
-        <div class="trip-map-wrapper">
-            <div id="trip-map"></div>
+        <div class="dual-map-layout">
+            <div class="map-column">
+                <div class="map-label">Location Map</div>
+                <div class="trip-map-wrapper">
+                    <div id="trip-map"></div>
+                </div>
+            </div>
+            <div class="map-column">
+                <div class="map-label">Heat Map</div>
+                <div class="trip-map-wrapper">
+                    <div id="heat-map"></div>
+                </div>
+            </div>
         </div>
     </div>
     
@@ -2042,17 +2054,41 @@
         }
 
         if (tripLocations.length > 0) {
-            // Créer la carte
+            // Créer la carte des lieux
             const tripMap = L.map('trip-map', {
                 scrollWheelZoom: false,
                 zoomControl: true
             });
 
-            // OpenStreetMap standard
+            // Créer la carte de densité (heat map)
+            const heatMap = L.map('heat-map', {
+                scrollWheelZoom: false,
+                zoomControl: true
+            });
+
+            // OpenStreetMap standard pour les deux cartes
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
                 attribution: '© OpenStreetMap',
                 maxZoom: 19
             }).addTo(tripMap);
+
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
+                maxZoom: 19
+            }).addTo(heatMap);
+
+            // Synchroniser les cartes - zoom et pan interactifs
+            function syncMaps(sourceMap, targetMap) {
+                sourceMap.on('moveend', function() {
+                    const center = sourceMap.getCenter();
+                    const zoom = sourceMap.getZoom();
+                    targetMap.setView(center, zoom, { animate: false });
+                });
+            }
+
+            // Synchroniser dans les deux sens
+            syncMaps(tripMap, heatMap);
+            syncMaps(heatMap, tripMap);
 
             // Icône flamant rose pour les marqueurs individuels
             function createFlamingoIcon() {
@@ -2110,19 +2146,55 @@
 
             tripMap.addLayer(markerCluster);
 
-            // Ajuster la vue pour montrer tous les marqueurs
+            // Préparer les données pour la heat map - toutes les observations
+            const heatData = [];
+            photosData.forEach(photo => {
+                if (photo.lat && photo.lng) {
+                    heatData.push([photo.lat, photo.lng, 1]); // lat, lng, intensity
+                }
+            });
+
+            // Ajouter la couche de densité
+            const heat = L.heatLayer(heatData, {
+                radius: 25,
+                blur: 15,
+                maxZoom: 17,
+                max: 1.0,
+                gradient: {
+                    0.0: '#e8f5e9',
+                    0.2: '#81c784',
+                    0.4: '#4caf50',
+                    0.6: '#2e7d32',
+                    0.8: '#1b5e20',
+                    1.0: '#0d3f13'
+                }
+            }).addTo(heatMap);
+
+            // Ajuster la vue pour montrer tous les marqueurs (les deux cartes)
             if (tripLocations.length > 0) {
-                tripMap.fitBounds(markerCluster.getBounds().pad(0.1));
+                const bounds = markerCluster.getBounds().pad(0.1);
+                tripMap.fitBounds(bounds);
+                heatMap.fitBounds(bounds);
                 
                 // Limiter le zoom max pour garder du contexte
                 if (tripMap.getZoom() > 12) {
                     tripMap.setZoom(12);
+                    heatMap.setZoom(12);
                 }
                 
                 // Forcer le rechargement des tuiles après le rendu CSS
-                setTimeout(() => tripMap.invalidateSize(), 100);
-                setTimeout(() => tripMap.invalidateSize(), 300);
-                setTimeout(() => tripMap.invalidateSize(), 500);
+                setTimeout(() => {
+                    tripMap.invalidateSize();
+                    heatMap.invalidateSize();
+                }, 100);
+                setTimeout(() => {
+                    tripMap.invalidateSize();
+                    heatMap.invalidateSize();
+                }, 300);
+                setTimeout(() => {
+                    tripMap.invalidateSize();
+                    heatMap.invalidateSize();
+                }, 500);
             }
         }
         

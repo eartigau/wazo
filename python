@@ -12479,3 +12479,1068 @@ prix_ram/venv/lib/python3.12/site-packages/wsproto/utilities.py
           2.869 100%    6,46kB/s    0:00:00            2.869 100%    6,46kB/s    0:00:00 (xfr#1041, to-chk=1/1333)
 prix_ram/venv/lib/python3.12/site-packages/wsproto/__pycache__/
 sending incremental file list
+sending incremental file list
+pytess/
+pytess/Lightcurve.py
+          3.768 100%    0,00kB/s    0:00:00            3.768 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=4/6)
+pytess/.idea/
+pytess/.idea/inspectionProfiles/
+pytess/fits/
+pytess/lcurves/
+sending incremental file list
+pythonProject/
+pythonProject/toto.py
+          1.049 100%    0,00kB/s    0:00:00            1.049 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=2/4)
+pythonProject/.idea/
+pythonProject/.idea/inspectionProfiles/
+sending incremental file list
+retraite/
+retraite/calcul_rente.py
+          5.917 100%    0,00kB/s    0:00:00            5.917 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=0/2)
+sending incremental file list
+rotbroad/
+rotbroad/rot_broad_template.py
+         10.946 100%    0,00kB/s    0:00:00           10.946 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=3/5)
+rotbroad/simu_broad.py
+          3.402 100%    3,24MB/s    0:00:00            3.402 100%    3,24MB/s    0:00:00 (xfr#2, to-chk=2/5)
+rotbroad/.idea/
+rotbroad/.idea/inspectionProfiles/
+sending incremental file list
+scarvs/
+scarvs/setup.py
+          1.526 100%    0,00kB/s    0:00:00            1.526 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=44/46)
+scarvs/.git/
+scarvs/.git/hooks/
+scarvs/.git/info/
+scarvs/.git/logs/
+scarvs/.git/logs/refs/
+scarvs/.git/logs/refs/heads/
+scarvs/.git/logs/refs/remotes/
+scarvs/.git/logs/refs/remotes/origin/
+scarvs/.git/objects/
+scarvs/.git/objects/37/
+scarvs/.git/objects/62/
+scarvs/.git/objects/f0/
+scarvs/.git/objects/info/
+scarvs/.git/objects/pack/
+scarvs/.git/refs/
+scarvs/.git/refs/heads/
+scarvs/.git/refs/remotes/
+scarvs/.git/refs/remotes/origin/
+scarvs/.git/refs/tags/
+scarvs/.idea/
+scarvs/docs/
+scarvs/scarvs.egg-info/
+scarvs/scarvs/
+scarvs/scarvs/__init__.py
+          1.323 100%   39,15kB/s    0:00:00            1.323 100%   39,15kB/s    0:00:00 (xfr#2, to-chk=20/46)
+scarvs/scarvs/constants/
+scarvs/scarvs/constants/__init__.py
+            713 100%   21,10kB/s    0:00:00              713 100%   21,10kB/s    0:00:00 (xfr#3, to-chk=13/46)
+scarvs/scarvs/constants/constants.py
+          5.991 100%  172,08kB/s    0:00:00            5.991 100%  172,08kB/s    0:00:00 (xfr#4, to-chk=12/46)
+scarvs/scarvs/core/
+scarvs/scarvs/core/__init__.py
+          1.323 100%   38,00kB/s    0:00:00            1.323 100%   38,00kB/s    0:00:00 (xfr#5, to-chk=11/46)
+scarvs/scarvs/core/base.py
+          1.710 100%   47,71kB/s    0:00:00            1.710 100%   47,71kB/s    0:00:00 (xfr#6, to-chk=10/46)
+scarvs/scarvs/core/general.py
+          4.201 100%  117,22kB/s    0:00:00            4.201 100%  117,22kB/s    0:00:00 (xfr#7, to-chk=9/46)
+scarvs/scarvs/core/startup.py
+         11.635 100%  315,62kB/s    0:00:00           11.635 100%  315,62kB/s    0:00:00 (xfr#8, to-chk=8/46)
+scarvs/scarvs/plotting/
+scarvs/scarvs/plotting/__init__.py
+            646 100%   17,05kB/s    0:00:00              646 100%   17,05kB/s    0:00:00 (xfr#9, to-chk=7/46)
+scarvs/scarvs/plotting/core.py
+          3.541 100%   93,46kB/s    0:00:00            3.541 100%   93,46kB/s    0:00:00 (xfr#10, to-chk=6/46)
+scarvs/scarvs/plotting/test.py
+          2.286 100%   60,34kB/s    0:00:00            2.286 100%   58,75kB/s    0:00:00 (xfr#11, to-chk=5/46)
+scarvs/scarvs/recipes/
+scarvs/scarvs/recipes/__init__.py
+          1.219 100%   31,33kB/s    0:00:00            1.219 100%   31,33kB/s    0:00:00 (xfr#12, to-chk=4/46)
+scarvs/scarvs/recipes/scarvs_run.py
+          2.490 100%   63,99kB/s    0:00:00            2.490 100%   63,99kB/s    0:00:00 (xfr#13, to-chk=3/46)
+scarvs/scarvs/recipes/scarvs_setup.py
+          1.733 100%   43,39kB/s    0:00:00            1.733 100%   43,39kB/s    0:00:00 (xfr#14, to-chk=2/46)
+scarvs/scarvs/resources/
+scarvs/scarvs/science/
+scarvs/scarvs/science/__init__.py
+            650 100%   16,28kB/s    0:00:00              650 100%   16,28kB/s    0:00:00 (xfr#15, to-chk=1/46)
+scarvs/scarvs/science/test.py
+          2.674 100%   65,28kB/s    0:00:00            2.674 100%   65,28kB/s    0:00:00 (xfr#16, to-chk=0/46)
+sending incremental file list
+shift/
+shift/get_shift.py
+          2.061 100%    0,00kB/s    0:00:00            2.061 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=2/4)
+shift/.idea/
+shift/.idea/inspectionProfiles/
+sending incremental file list
+simp0136_apai/
+simp0136_apai/read_sp.py
+          1.002 100%    0,00kB/s    0:00:00            1.002 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=1/3)
+simp0136_apai/.vscode/
+sending incremental file list
+simp0136_doppler/
+simp0136_doppler/predict_rv_acc.py
+         16.573 100%    0,00kB/s    0:00:00           16.573 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=21/23)
+simp0136_doppler/.vscode/
+simp0136_doppler/wb266328_c1_2025-09-09_20.47.24/
+simp0136_doppler/wb266328_c1_2025-09-09_20.47.24/cube/
+simp0136_doppler/wb266328_c1_2025-09-09_20.47.24/cube/model/
+simp0136_doppler/wb266328_c1_2025-09-09_20.47.24/image/
+simp0136_doppler/wb266328_c1_2025-09-09_20.47.24/lineplot/
+simp0136_doppler/wb266328_c1_2025-09-12_18.07.52/
+simp0136_doppler/wb266328_c1_2025-09-12_18.07.52/cube/
+simp0136_doppler/wb266328_c1_2025-09-12_18.07.52/cube/model/
+simp0136_doppler/wb266328_c1_2025-09-12_18.07.52/image/
+simp0136_doppler/wb266328_c1_2025-09-12_18.07.52/lineplot/
+simp0136_doppler/wb266328_c1_2025-09-12_18.09.04/
+simp0136_doppler/wb266328_c1_2025-09-12_18.09.04/cube/
+simp0136_doppler/wb266328_c1_2025-09-12_18.09.04/cube/model/
+simp0136_doppler/wb266328_c1_2025-09-12_18.09.04/image/
+simp0136_doppler/wb266328_c1_2025-09-12_18.09.04/lineplot/
+simp0136_doppler/wb266328_c1_2025-09-12_21.08.08/
+simp0136_doppler/wb266328_c1_2025-09-12_21.08.08/cube/
+simp0136_doppler/wb266328_c1_2025-09-12_21.08.08/cube/model/
+simp0136_doppler/wb266328_c1_2025-09-12_21.08.08/image/
+simp0136_doppler/wb266328_c1_2025-09-12_21.08.08/lineplot/
+sending incremental file list
+simp0136_soss/
+simp0136_soss/crop256.py
+            652 100%    0,00kB/s    0:00:00              652 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=2/4)
+simp0136_soss/get_wavesol_model.py
+          2.536 100%    2,42MB/s    0:00:00            2.536 100%    2,42MB/s    0:00:00 (xfr#2, to-chk=1/4)
+simp0136_soss/plot_simp0136.py -> /Users/eartigau/Dropbox/SIMP0136-variabilite/plot_simp0136.py
+sending incremental file list
+slinky/
+slinky/._pixpca.py
+          4.096 100%    0,00kB/s    0:00:00            4.096 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=158/160)
+slinky/._pixtools.py
+          4.096 100%    3,91MB/s    0:00:00            4.096 100%    3,91MB/s    0:00:00 (xfr#2, to-chk=157/160)
+slinky/._residual_pca.py
+          4.096 100%    3,91MB/s    0:00:00            4.096 100%    3,91MB/s    0:00:00 (xfr#3, to-chk=156/160)
+slinky/._slinky.py
+          4.096 100%    3,91MB/s    0:00:00            4.096 100%    3,91MB/s    0:00:00 (xfr#4, to-chk=155/160)
+slinky/astromdatabase.py
+          2.110 100%    2,01MB/s    0:00:00            2.110 100%    2,01MB/s    0:00:00 (xfr#5, to-chk=154/160)
+slinky/batch_slinky.py
+         16.640 100%    7,93MB/s    0:00:00           16.640 100%    7,93MB/s    0:00:00 (xfr#6, to-chk=153/160)
+slinky/copy_to_git_tmp.py
+            421 100%  137,04kB/s    0:00:00              421 100%  137,04kB/s    0:00:00 (xfr#7, to-chk=152/160)
+slinky/etienne_tools.py
+         32.768  53%    7,81MB/s    0:00:00           60.834 100%    9,67MB/s    0:00:00 (xfr#8, to-chk=151/160)
+slinky/pixpca.py
+         32.768  69%    3,91MB/s    0:00:00           46.961 100%    5,60MB/s    0:00:00 (xfr#9, to-chk=150/160)
+slinky/pixtools.py
+          9.980 100%    1,06MB/s    0:00:00            9.980 100%    1,06MB/s    0:00:00 (xfr#10, to-chk=149/160)
+slinky/residual_pca.py
+         27.811 100%    2,41MB/s    0:00:00           27.811 100%    2,41MB/s    0:00:00 (xfr#11, to-chk=148/160)
+slinky/slinky.py
+         32.263 100%    2,56MB/s    0:00:00           32.263 100%    2,37MB/s    0:00:00 (xfr#12, to-chk=147/160)
+slinky/wrap_lbl_slinky.py
+          8.750 100%  657,30kB/s    0:00:00            8.750 100%  657,30kB/s    0:00:00 (xfr#13, to-chk=146/160)
+slinky/.git/
+slinky/.git/hooks/
+slinky/.git/info/
+slinky/.git/logs/
+slinky/.git/logs/refs/
+slinky/.git/logs/refs/heads/
+slinky/.git/logs/refs/remotes/
+slinky/.git/logs/refs/remotes/origin/
+slinky/.git/objects/
+slinky/.git/objects/00/
+slinky/.git/objects/01/
+slinky/.git/objects/02/
+slinky/.git/objects/04/
+slinky/.git/objects/05/
+slinky/.git/objects/07/
+slinky/.git/objects/08/
+slinky/.git/objects/0b/
+slinky/.git/objects/0e/
+slinky/.git/objects/10/
+slinky/.git/objects/11/
+slinky/.git/objects/15/
+slinky/.git/objects/16/
+slinky/.git/objects/17/
+slinky/.git/objects/18/
+slinky/.git/objects/1b/
+slinky/.git/objects/1d/
+slinky/.git/objects/22/
+slinky/.git/objects/25/
+slinky/.git/objects/2c/
+slinky/.git/objects/2e/
+slinky/.git/objects/30/
+slinky/.git/objects/31/
+slinky/.git/objects/32/
+slinky/.git/objects/33/
+slinky/.git/objects/35/
+slinky/.git/objects/3c/
+slinky/.git/objects/3d/
+slinky/.git/objects/3f/
+slinky/.git/objects/40/
+slinky/.git/objects/41/
+slinky/.git/objects/44/
+slinky/.git/objects/45/
+slinky/.git/objects/46/
+slinky/.git/objects/47/
+slinky/.git/objects/4b/
+slinky/.git/objects/4c/
+slinky/.git/objects/55/
+slinky/.git/objects/56/
+slinky/.git/objects/57/
+slinky/.git/objects/5a/
+slinky/.git/objects/5d/
+slinky/.git/objects/63/
+slinky/.git/objects/66/
+slinky/.git/objects/72/
+slinky/.git/objects/75/
+slinky/.git/objects/76/
+slinky/.git/objects/7a/
+slinky/.git/objects/7c/
+slinky/.git/objects/7d/
+slinky/.git/objects/7e/
+slinky/.git/objects/7f/
+slinky/.git/objects/83/
+slinky/.git/objects/89/
+slinky/.git/objects/8a/
+slinky/.git/objects/8c/
+slinky/.git/objects/8f/
+slinky/.git/objects/90/
+slinky/.git/objects/92/
+slinky/.git/objects/95/
+slinky/.git/objects/96/
+slinky/.git/objects/98/
+slinky/.git/objects/9b/
+slinky/.git/objects/9c/
+slinky/.git/objects/9f/
+slinky/.git/objects/a1/
+slinky/.git/objects/a2/
+slinky/.git/objects/a5/
+slinky/.git/objects/a7/
+slinky/.git/objects/a8/
+slinky/.git/objects/a9/
+slinky/.git/objects/ad/
+slinky/.git/objects/b0/
+slinky/.git/objects/b3/
+slinky/.git/objects/b6/
+slinky/.git/objects/ba/
+slinky/.git/objects/c2/
+slinky/.git/objects/c7/
+slinky/.git/objects/cc/
+slinky/.git/objects/d1/
+slinky/.git/objects/d3/
+slinky/.git/objects/d4/
+slinky/.git/objects/d5/
+slinky/.git/objects/d6/
+slinky/.git/objects/d7/
+slinky/.git/objects/d8/
+slinky/.git/objects/da/
+slinky/.git/objects/dc/
+slinky/.git/objects/dd/
+slinky/.git/objects/de/
+slinky/.git/objects/e2/
+slinky/.git/objects/e3/
+slinky/.git/objects/e4/
+slinky/.git/objects/e6/
+slinky/.git/objects/e7/
+slinky/.git/objects/ef/
+slinky/.git/objects/f4/
+slinky/.git/objects/f6/
+slinky/.git/objects/fa/
+slinky/.git/objects/fc/
+slinky/.git/objects/fd/
+slinky/.git/objects/fe/
+slinky/.git/objects/ff/
+slinky/.git/objects/info/
+slinky/.git/objects/pack/
+slinky/.git/refs/
+slinky/.git/refs/heads/
+slinky/.git/refs/remotes/
+slinky/.git/refs/remotes/origin/
+slinky/.git/refs/tags/
+slinky/.vscode/
+slinky/__pycache__/
+slinky/obsolete/
+slinky/obsolete/._batch_slinky.py
+          4.096 100%   29,63kB/s    0:00:00            4.096 100%   29,63kB/s    0:00:00 (xfr#14, to-chk=21/160)
+slinky/obsolete/._pixpca.py
+          4.096 100%   29,41kB/s    0:00:00            4.096 100%   29,41kB/s    0:00:00 (xfr#15, to-chk=20/160)
+slinky/obsolete/._slinky.py
+          4.096 100%   29,41kB/s    0:00:00            4.096 100%   29,41kB/s    0:00:00 (xfr#16, to-chk=19/160)
+slinky/obsolete/Untitled-1.py
+          3.169 100%   22,76kB/s    0:00:00            3.169 100%   22,76kB/s    0:00:00 (xfr#17, to-chk=18/160)
+slinky/obsolete/__init__.py
+              0 100%    0,00kB/s    0:00:00 (xfr#18, to-chk=17/160)
+slinky/obsolete/apply_slinky.py
+          1.683 100%   12,00kB/s    0:00:00            1.683 100%   12,00kB/s    0:00:00 (xfr#19, to-chk=16/160)
+slinky/obsolete/batch_spirou.py
+            281 100%    2,00kB/s    0:00:00              281 100%    2,00kB/s    0:00:00 (xfr#20, to-chk=15/160)
+slinky/obsolete/derive_wavesol.py
+         22.811 100%  161,42kB/s    0:00:00           22.811 100%  161,42kB/s    0:00:00 (xfr#21, to-chk=14/160)
+slinky/obsolete/fp_slinky.py
+          1.827 100%   12,84kB/s    0:00:00            1.827 100%   12,84kB/s    0:00:00 (xfr#22, to-chk=13/160)
+slinky/obsolete/get_slope_hc.py
+          2.322 100%   16,31kB/s    0:00:00            2.322 100%   16,31kB/s    0:00:00 (xfr#23, to-chk=12/160)
+slinky/obsolete/lbl_spirou_paul.py
+          8.366 100%   58,36kB/s    0:00:00            8.366 100%   58,36kB/s    0:00:00 (xfr#24, to-chk=11/160)
+slinky/obsolete/median_structure.py
+          2.851 100%   19,89kB/s    0:00:00            2.851 100%   19,89kB/s    0:00:00 (xfr#25, to-chk=10/160)
+slinky/obsolete/padding_wavesol_maestria.py
+              0 100%    0,00kB/s    0:00:00 (xfr#26, to-chk=9/160)
+slinky/obsolete/pca_pix_space_global.py
+         29.658 100%  203,96kB/s    0:00:00           29.658 100%  203,96kB/s    0:00:00 (xfr#27, to-chk=8/160)
+slinky/obsolete/pca_pix_space_global_oct19.py
+         18.721 100%  127,85kB/s    0:00:00           18.721 100%  127,85kB/s    0:00:00 (xfr#28, to-chk=7/160)
+slinky/obsolete/plot_slinky.py
+          1.683 100%   11,41kB/s    0:00:00            1.683 100%   11,41kB/s    0:00:00 (xfr#29, to-chk=6/160)
+slinky/obsolete/push.py
+          1.550 100%   10,51kB/s    0:00:00            1.550 100%   10,51kB/s    0:00:00 (xfr#30, to-chk=5/160)
+slinky/obsolete/test_wave_grad.py
+          2.762 100%   18,60kB/s    0:00:00            2.762 100%   18,60kB/s    0:00:00 (xfr#31, to-chk=4/160)
+slinky/obsolete/wrap_test_mask.py
+          6.092 100%   41,03kB/s    0:00:00            6.092 100%   41,03kB/s    0:00:00 (xfr#32, to-chk=3/160)
+slinky/obsolete/wrap_test_mask_spirou.py
+          5.684 100%   38,02kB/s    0:00:00            5.684 100%   38,02kB/s    0:00:00 (xfr#33, to-chk=2/160)
+slinky/obsolete/wrap_test_ohcorr.py
+          5.827 100%   38,98kB/s    0:00:00            5.827 100%   38,71kB/s    0:00:00 (xfr#34, to-chk=1/160)
+slinky/obsolete/__pycache__/
+slinky/plots/
+slinky/yamls/
+sending incremental file list
+spalipy/
+spalipy/setup.py
+          1.788 100%    0,00kB/s    0:00:00            1.788 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=32/34)
+spalipy/.git/
+spalipy/.git/hooks/
+spalipy/.git/info/
+spalipy/.git/logs/
+spalipy/.git/logs/refs/
+spalipy/.git/logs/refs/heads/
+spalipy/.git/logs/refs/remotes/
+spalipy/.git/logs/refs/remotes/origin/
+spalipy/.git/objects/
+spalipy/.git/objects/info/
+spalipy/.git/objects/pack/
+spalipy/.git/refs/
+spalipy/.git/refs/heads/
+spalipy/.git/refs/remotes/
+spalipy/.git/refs/remotes/origin/
+spalipy/.git/refs/tags/
+spalipy/build/
+spalipy/build/bdist.macosx-10.9-x86_64/
+spalipy/build/lib/
+spalipy/build/lib/spalipy/
+spalipy/build/lib/spalipy/__init__.py
+            788 100%   15,39kB/s    0:00:00              788 100%   15,39kB/s    0:00:00 (xfr#2, to-chk=7/34)
+spalipy/build/lib/spalipy/spalipy.py
+         32.768  51%  627,45kB/s    0:00:00           64.184 100%    1,15MB/s    0:00:00 (xfr#3, to-chk=6/34)
+spalipy/build/lib/test/
+spalipy/build/lib/test/__init__.py
+              0 100%    0,00kB/s    0:00:00 (xfr#4, to-chk=5/34)
+spalipy/build/lib/test/test_spalipy.py
+          9.528 100%  172,31kB/s    0:00:00            9.528 100%  172,31kB/s    0:00:00 (xfr#5, to-chk=4/34)
+spalipy/spalipy.egg-info/
+spalipy/spalipy/
+spalipy/spalipy/__init__.py
+            788 100%   14,25kB/s    0:00:00              788 100%   14,25kB/s    0:00:00 (xfr#6, to-chk=3/34)
+spalipy/spalipy/spalipy.py
+         32.768  51%  571,43kB/s    0:00:00           64.184 100%    1,07MB/s    0:00:00 (xfr#7, to-chk=2/34)
+spalipy/test/
+spalipy/test/__init__.py
+              0 100%    0,00kB/s    0:00:00 (xfr#8, to-chk=1/34)
+spalipy/test/test_spalipy.py
+          9.528 100%  160,43kB/s    0:00:00            9.528 100%  160,43kB/s    0:00:00 (xfr#9, to-chk=0/34)
+sending incremental file list
+spip/
+spip/coarse_wavelength.py
+         32.768  96%    0,00kB/s    0:00:00           34.100 100%    1,27MB/s    0:00:00 (xfr#1, to-chk=10/12)
+spip/create_line_list.py
+            377 100%  368,16kB/s    0:00:00              377 100%  368,16kB/s    0:00:00 (xfr#2, to-chk=9/12)
+spip/etienne_tools.py
+         32.768  50%   15,62MB/s    0:00:00           64.968 100%   15,49MB/s    0:00:00 (xfr#3, to-chk=8/12)
+spip/ll_quality.py
+          1.699 100%  414,79kB/s    0:00:00            1.699 100%  414,79kB/s    0:00:00 (xfr#4, to-chk=7/12)
+spip/loco2mask.py
+          1.636 100%  319,53kB/s    0:00:00            1.636 100%  319,53kB/s    0:00:00 (xfr#5, to-chk=6/12)
+spip/old/
+spip/test2/
+spip/test2/2025-05-20/
+spip/test3/
+spip/tmp/
+spip/tmp2/
+sending incremental file list
+strange_wd/
+strange_wd/chemistry.py
+          5.246 100%    0,00kB/s    0:00:00            5.246 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=36/38)
+strange_wd/dtemp_rotation.py
+          5.765 100%    5,50MB/s    0:00:00            5.765 100%    5,50MB/s    0:00:00 (xfr#2, to-chk=35/38)
+strange_wd/kelp.py -> /Users/eartigau/pycodes/PRV-tools/kelp.py
+strange_wd/load_evol.py
+          4.685 100%    4,47MB/s    0:00:00            4.685 100%    4,47MB/s    0:00:00 (xfr#3, to-chk=33/38)
+strange_wd/.idea/
+strange_wd/.idea/inspectionProfiles/
+strange_wd/.vscode/
+strange_wd/Monte_Carlo 2/
+strange_wd/Monte_Carlo 2/orbit_fit.py
+         11.424 100%  348,63kB/s    0:00:00           11.424 100%  348,63kB/s    0:00:00 (xfr#4, to-chk=21/38)
+strange_wd/Monte_Carlo 2/DATA/
+strange_wd/Monte_Carlo/
+strange_wd/Monte_Carlo/orbit_fit.py
+         11.424 100%  338,07kB/s    0:00:00           11.424 100%  338,07kB/s    0:00:00 (xfr#5, to-chk=19/38)
+strange_wd/Monte_Carlo/DATA/
+strange_wd/__MACOSX/
+strange_wd/__MACOSX/Monte_Carlo/
+strange_wd/__MACOSX/Monte_Carlo/DATA/
+strange_wd/__pycache__/
+strange_wd/data/
+strange_wd/data/Alopeke/
+strange_wd/data/Alopeke/Alopeke_aug24/
+strange_wd/data/Alopeke/Alopeke_aug24/Artigau 2/
+strange_wd/data/Alopeke/Alopeke_dec23/
+strange_wd/data/Alopeke/Alopeke_sep24/
+strange_wd/data/Alopeke/Alopeke_sep24/Artigau/
+strange_wd/data/GNIRS_raw/
+strange_wd/data/GNIRS_reduc/
+strange_wd/data/ukidss/
+strange_wd/spectrophotometry/
+strange_wd/spectrophotometry/.vscode/
+strange_wd/spirou/
+strange_wd/wd_codes/
+strange_wd/wd_codes/astrometry_alopeke.py
+          6.745 100%  193,73kB/s    0:00:00            6.745 100%  193,73kB/s    0:00:00 (xfr#6, to-chk=5/38)
+strange_wd/wd_codes/colmag_diagram.py
+          9.047 100%  252,43kB/s    0:00:00            9.047 100%  252,43kB/s    0:00:00 (xfr#7, to-chk=4/38)
+strange_wd/wd_codes/combine_gnirs.py
+          8.098 100%  225,95kB/s    0:00:00            8.098 100%  219,67kB/s    0:00:00 (xfr#8, to-chk=3/38)
+strange_wd/wd_codes/strange_wd_utils.py
+          3.554 100%   96,41kB/s    0:00:00            3.554 100%   96,41kB/s    0:00:00 (xfr#9, to-chk=2/38)
+strange_wd/wd_codes/zp_ukirt.py
+         12.179 100%  321,45kB/s    0:00:00           12.179 100%  321,45kB/s    0:00:00 (xfr#10, to-chk=1/38)
+strange_wd/wd_codes/__pycache__/
+sending incremental file list
+summary_wp1/
+summary_wp1/summary_wp1.py
+         16.908 100%    0,00kB/s    0:00:00           16.908 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=0/2)
+sending incremental file list
+tako/
+tako/plot_sp.py
+          1.601 100%    0,00kB/s    0:00:00            1.601 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=3/5)
+tako/.idea/
+tako/.idea/inspectionProfiles/
+tako/data/
+sending incremental file list
+tapas/
+tapas/downloader.py
+         16.278 100%    0,00kB/s    0:00:00           16.278 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=86/88)
+tapas/merger.py
+          4.098 100%    3,91MB/s    0:00:00            4.098 100%    3,91MB/s    0:00:00 (xfr#2, to-chk=85/88)
+tapas/.vscode/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_1000-1250nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_1250-1500nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_1500-1750nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_1750-2000nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_2000-2500nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_2500-3000nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_300-350nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_3000-3500nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_350-500nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_500-750nm/
+tapas/Canada France Hawaii Telescope (CFHT) Mauna Kea Hawaii_2024-01-01_750-1000nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_1000-1250nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_1250-1500nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_1500-1750nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_1750-2000nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_2000-2500nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_2500-3000nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_300-350nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_3000-3500nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_350-500nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_500-750nm/
+tapas/European Southern Obs (ESO) La Silla Chile_2024-01-01_750-1000nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_1000-1500nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_1500-2000nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_2000-2500nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_2500-3000nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_300-350nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_3000-3500nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_350-500nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_500-750nm/
+tapas/Kitt Peak National Obs Tucson USA_2024-01-01_750-1000nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_1000-1250nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_1250-1500nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_1500-2000nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_2000-2500nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_2500-3000nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_300-350nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_3000-3500nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_350-500nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_500-750nm/
+tapas/Mont Megantic Ast Obs Quebec_2024-01-01_750-1000nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_1000-1250nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_1250-1500nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_1500-2000nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_2000-2500nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_2500-3000nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_300-350nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_3000-3500nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_350-500nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_500-750nm/
+tapas/Pic du Midi Obs Bagneres de Bigorre France_2024-01-01_750-1000nm/
+tapas/test_fit/
+tapas/test_fit/compil_stats.py
+         14.124 100%  229,88kB/s    0:00:00           14.124 100%  229,88kB/s    0:00:00 (xfr#3, to-chk=31/88)
+tapas/test_fit/compil_stats_new.py
+         13.804 100%  220,99kB/s    0:00:00           13.804 100%  220,99kB/s    0:00:00 (xfr#4, to-chk=30/88)
+tapas/test_fit/compil_stats_old.py
+          7.444 100%  117,25kB/s    0:00:00            7.444 100%  117,25kB/s    0:00:00 (xfr#5, to-chk=29/88)
+tapas/test_fit/predict_abso.py
+          8.877 100%  137,60kB/s    0:00:00            8.877 100%  137,60kB/s    0:00:00 (xfr#6, to-chk=28/88)
+tapas/test_fit/residuals.py
+         12.822 100%  198,75kB/s    0:00:00           12.822 100%  198,75kB/s    0:00:00 (xfr#7, to-chk=27/88)
+tapas/test_fit/smart_fit.py
+         30.233 100%  454,22kB/s    0:00:00           30.233 100%  454,22kB/s    0:00:00 (xfr#8, to-chk=26/88)
+tapas/test_fit/variable_res_conv.py
+              0 100%    0,00kB/s    0:00:00 (xfr#9, to-chk=25/88)
+tapas/test_fit/.vscode/
+tapas/test_fit/__pycache__/
+tapas/test_fit/apero_before/
+tapas/test_fit/calib_NIRPS/
+tapas/test_fit/calib_SPIROU/
+tapas/test_fit/corrdata_NIRPS/
+tapas/test_fit/corrdata_NIRPS/PROXIMA/
+tapas/test_fit/corrdata_NIRPS/TOI4552/
+tapas/test_fit/drs/
+tapas/test_fit/hotstars/
+tapas/test_fit/hotstars/compil_stats.py
+         13.823 100%  204,53kB/s    0:00:00           13.823 100%  204,53kB/s    0:00:00 (xfr#10, to-chk=5/88)
+tapas/test_fit/hotstars_NIRPS/
+tapas/test_fit/hotstars_SPIROU/
+tapas/test_fit/orig_NIRPS/
+tapas/test_fit/orig_NIRPS/GL699/
+tapas/test_fit/orig_NIRPS/PROXIMA/
+tapas/test_fit/orig_NIRPS/TOI4552/
+tapas/test_fit/residuals_NIRPS/
+tapas/test_fit/scidata_NIRPS/
+tapas/test_fit/scidata_NIRPS/PROXIMA/
+tapas/test_fit/scidata_NIRPS/TOI4552/
+tapas/test_fit/sky_NIRPS/
+tapas/test_fit/tellu_fit_NIRPS/
+tapas/test_fit/tellu_fit_SPIROU/
+tapas/test_fit/templates_NIRPS/
+sending incremental file list
+teff_HD189733/
+teff_HD189733/toymodels.py
+          8.999 100%    0,00kB/s    0:00:00            8.999 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=0/2)
+sending incremental file list
+teff_lbl/
+teff_lbl/get_apero_astrometrics.py -> /Users/eartigau/lbl_wraps/get_apero_astrometrics.py
+teff_lbl/__pycache__/
+teff_lbl/bad/
+teff_lbl/carmenes/
+teff_lbl/lblrv/
+teff_lbl/masks/
+teff_lbl/ref_mask/
+teff_lbl/spirou/
+teff_lbl/teff_gp/
+teff_lbl/teff_gp/Analysis_dET.py
+              0 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=4/15)
+teff_lbl/teff_gp/main.py
+            519 100%    0,00kB/s    0:00:00              519 100%    0,00kB/s    0:00:00 (xfr#2, to-chk=3/15)
+teff_lbl/teff_gp/.idea/
+teff_lbl/teff_gp/.idea/inspectionProfiles/
+teff_lbl/teff_gp/__pycache__/
+sending incremental file list
+tellu_hitran/
+tellu_hitran/tellu.py
+          2.887 100%    0,00kB/s    0:00:00            2.887 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=0/2)
+sending incremental file list
+templatepy/
+templatepy/gaussian_savgol.py
+         22.790 100%    0,00kB/s    0:00:00           22.790 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=21/23)
+templatepy/plot_sp.py
+          1.128 100%    1,08MB/s    0:00:00            1.128 100%    1,08MB/s    0:00:00 (xfr#2, to-chk=20/23)
+templatepy/template_nointerp.py
+         29.838 100%   14,23MB/s    0:00:00           29.838 100%   14,23MB/s    0:00:00 (xfr#3, to-chk=19/23)
+templatepy/.git/
+templatepy/.git/hooks/
+templatepy/.git/info/
+templatepy/.git/objects/
+templatepy/.git/objects/info/
+templatepy/.git/objects/pack/
+templatepy/.git/refs/
+templatepy/.git/refs/heads/
+templatepy/.git/refs/tags/
+templatepy/.vscode/
+templatepy/TOI4552_temp/
+templatepy/TOI4552_xxx_model_temp/
+templatepy/TOI4552pca_temp/
+templatepy/TOI4552skypca_temp/
+templatepy/TOI756_temp/
+templatepy/__pycache__/
+templatepy/data/
+templatepy/data2/
+templatepy/data_temp/
+sending incremental file list
+templates/
+templates/get_template_tako.py
+            927 100%    0,00kB/s    0:00:00              927 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=6/8)
+templates/templates_py/
+templates/templates_py/compil_templates.py
+            452 100%  147,14kB/s    0:00:00              452 100%  147,14kB/s    0:00:00 (xfr#2, to-chk=4/8)
+templates/templates_py/toto.py
+          1.575 100%  384,52kB/s    0:00:00            1.575 100%  384,52kB/s    0:00:00 (xfr#3, to-chk=3/8)
+templates/templates_py/xmatch_ucds.py
+            596 100%  145,51kB/s    0:00:00              596 100%  145,51kB/s    0:00:00 (xfr#4, to-chk=2/8)
+templates/templates_py/.idea/
+templates/templates_py/.idea/inspectionProfiles/
+sending incremental file list
+templates_nirps/
+templates_nirps/rvcontent.py
+             43 100%    0,00kB/s    0:00:00               43 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=9/11)
+templates_nirps/lblrdb/
+templates_nirps/rvcontent/
+templates_nirps/rvcontent/plot_rdbs_slinky.py
+            569 100%   15,44kB/s    0:00:00              569 100%   15,44kB/s    0:00:00 (xfr#2, to-chk=5/11)
+templates_nirps/rvcontent/rvcontent.py
+          6.164 100%  162,69kB/s    0:00:00            6.164 100%  162,69kB/s    0:00:00 (xfr#3, to-chk=4/11)
+templates_nirps/rvcontent/snr_jh.py
+            708 100%   18,69kB/s    0:00:00              708 100%   18,69kB/s    0:00:00 (xfr#4, to-chk=3/11)
+templates_nirps/rvcontent/.idea/
+templates_nirps/rvcontent/.idea/inspectionProfiles/
+templates_nirps/templates/
+templates_nirps/templates/rdbs/
+sending incremental file list
+test_yaml312/
+test_yaml312/test_yaml.py
+            343 100%    0,00kB/s    0:00:00              343 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=0/2)
+sending incremental file list
+toi406/
+toi406/plot_dtemp.py
+          2.149 100%    0,00kB/s    0:00:00            2.149 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=0/2)
+sending incremental file list
+toi5375/
+toi5375/ccf_s1d.py
+          5.142 100%    0,00kB/s    0:00:00            5.142 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=7/9)
+toi5375/stack_ccf.py
+            321 100%  313,48kB/s    0:00:00              321 100%  313,48kB/s    0:00:00 (xfr#2, to-chk=6/9)
+toi5375/ccf_gl699neg/
+toi5375/ccf_gl699pos/
+toi5375/data/
+toi5375/mask/
+toi5375/output_neg/
+toi5375/output_pos/
+sending incremental file list
+v347aur/
+v347aur/ccf_s1d.py
+          5.196 100%    0,00kB/s    0:00:00            5.196 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=36/38)
+v347aur/demo.py
+            790 100%  771,48kB/s    0:00:00              790 100%  771,48kB/s    0:00:00 (xfr#2, to-chk=35/38)
+v347aur/demo_ccf_subdomain.py
+          2.102 100%    1,00MB/s    0:00:00            2.102 100%    1,00MB/s    0:00:00 (xfr#3, to-chk=34/38)
+v347aur/.idea/
+v347aur/.idea/inspectionProfiles/
+v347aur/__pycache__/
+v347aur/ccf/
+v347aur/ccf/AUMIC_H/
+v347aur/ccf/AUMIC_J/
+v347aur/ccf/AUMIC_K/
+v347aur/ccf/AUMIC_Y/
+v347aur/ccf/GJ1002_H/
+v347aur/ccf/GJ1002_J/
+v347aur/ccf/GJ1002_K/
+v347aur/ccf/GJ1002_Y/
+v347aur/ccf/GJ4063_H/
+v347aur/ccf/GJ4063_J/
+v347aur/ccf/GJ4063_K/
+v347aur/ccf/GJ4063_Y/
+v347aur/ccf/HD189733_H/
+v347aur/ccf/HD189733_J/
+v347aur/ccf/HD189733_K/
+v347aur/ccf/HD189733_Y/
+v347aur/ccf/TOI1759_H/
+v347aur/ccf/TOI1759_J/
+v347aur/ccf/TOI1759_K/
+v347aur/ccf/TOI1759_Y/
+v347aur/ccf/V347AUR_H/
+v347aur/ccf/V347AUR_J/
+v347aur/ccf/V347AUR_K/
+v347aur/ccf/V347AUR_Y/
+v347aur/ccf/Y/
+v347aur/ccf_demo/
+v347aur/data/
+v347aur/data/ccf/
+v347aur/mask/
+v347aur/my_ccfs/
+sending incremental file list
+sending incremental file list
+wazo/
+wazo/config_galeries.py
+          6.407 100%    0,00kB/s    0:00:00            6.407 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=324/326)
+wazo/generate_gallery.py
+         32.768  49%   31,25MB/s    0:00:00           65.629 100%   31,29MB/s    0:00:00 (xfr#2, to-chk=323/326)
+wazo/generer_tout.py
+         32.768  57%   10,42MB/s    0:00:00           56.710 100%   13,52MB/s    0:00:00 (xfr#3, to-chk=322/326)
+wazo/verifier_medias.py
+         11.980 100%    2,86MB/s    0:00:00           11.980 100%    2,86MB/s    0:00:00 (xfr#4, to-chk=321/326)
+wazo/.git/
+wazo/.git/hooks/
+wazo/.git/info/
+wazo/.git/logs/
+wazo/.git/logs/refs/
+wazo/.git/logs/refs/heads/
+wazo/.git/logs/refs/remotes/
+wazo/.git/logs/refs/remotes/origin/
+wazo/.git/objects/
+wazo/.git/objects/00/
+wazo/.git/objects/01/
+wazo/.git/objects/02/
+wazo/.git/objects/03/
+wazo/.git/objects/04/
+wazo/.git/objects/05/
+wazo/.git/objects/06/
+wazo/.git/objects/07/
+wazo/.git/objects/08/
+wazo/.git/objects/09/
+wazo/.git/objects/0a/
+wazo/.git/objects/0b/
+wazo/.git/objects/0c/
+wazo/.git/objects/0d/
+wazo/.git/objects/0e/
+wazo/.git/objects/0f/
+wazo/.git/objects/10/
+wazo/.git/objects/11/
+wazo/.git/objects/12/
+wazo/.git/objects/13/
+wazo/.git/objects/14/
+wazo/.git/objects/15/
+wazo/.git/objects/16/
+wazo/.git/objects/17/
+wazo/.git/objects/18/
+wazo/.git/objects/19/
+wazo/.git/objects/1a/
+wazo/.git/objects/1b/
+wazo/.git/objects/1c/
+wazo/.git/objects/1d/
+wazo/.git/objects/1e/
+wazo/.git/objects/1f/
+wazo/.git/objects/20/
+wazo/.git/objects/21/
+wazo/.git/objects/22/
+wazo/.git/objects/23/
+wazo/.git/objects/24/
+wazo/.git/objects/25/
+wazo/.git/objects/26/
+wazo/.git/objects/27/
+wazo/.git/objects/28/
+wazo/.git/objects/29/
+wazo/.git/objects/2a/
+wazo/.git/objects/2b/
+wazo/.git/objects/2c/
+wazo/.git/objects/2d/
+wazo/.git/objects/2e/
+wazo/.git/objects/2f/
+wazo/.git/objects/30/
+wazo/.git/objects/31/
+wazo/.git/objects/32/
+wazo/.git/objects/33/
+wazo/.git/objects/34/
+wazo/.git/objects/35/
+wazo/.git/objects/36/
+wazo/.git/objects/37/
+wazo/.git/objects/38/
+wazo/.git/objects/39/
+wazo/.git/objects/3a/
+wazo/.git/objects/3b/
+wazo/.git/objects/3c/
+wazo/.git/objects/3d/
+wazo/.git/objects/3e/
+wazo/.git/objects/3f/
+wazo/.git/objects/40/
+wazo/.git/objects/41/
+wazo/.git/objects/42/
+wazo/.git/objects/43/
+wazo/.git/objects/44/
+wazo/.git/objects/45/
+wazo/.git/objects/46/
+wazo/.git/objects/47/
+wazo/.git/objects/48/
+wazo/.git/objects/49/
+wazo/.git/objects/4a/
+wazo/.git/objects/4b/
+wazo/.git/objects/4c/
+wazo/.git/objects/4d/
+wazo/.git/objects/4e/
+wazo/.git/objects/4f/
+wazo/.git/objects/50/
+wazo/.git/objects/51/
+wazo/.git/objects/52/
+wazo/.git/objects/53/
+wazo/.git/objects/54/
+wazo/.git/objects/55/
+wazo/.git/objects/56/
+wazo/.git/objects/57/
+wazo/.git/objects/58/
+wazo/.git/objects/59/
+wazo/.git/objects/5a/
+wazo/.git/objects/5b/
+wazo/.git/objects/5c/
+wazo/.git/objects/5d/
+wazo/.git/objects/5e/
+wazo/.git/objects/5f/
+wazo/.git/objects/60/
+wazo/.git/objects/61/
+wazo/.git/objects/62/
+wazo/.git/objects/63/
+wazo/.git/objects/64/
+wazo/.git/objects/65/
+wazo/.git/objects/66/
+wazo/.git/objects/67/
+wazo/.git/objects/68/
+wazo/.git/objects/69/
+wazo/.git/objects/6a/
+wazo/.git/objects/6b/
+wazo/.git/objects/6c/
+wazo/.git/objects/6d/
+wazo/.git/objects/6e/
+wazo/.git/objects/6f/
+wazo/.git/objects/70/
+wazo/.git/objects/71/
+wazo/.git/objects/72/
+wazo/.git/objects/73/
+wazo/.git/objects/74/
+wazo/.git/objects/75/
+wazo/.git/objects/76/
+wazo/.git/objects/77/
+wazo/.git/objects/78/
+wazo/.git/objects/79/
+wazo/.git/objects/7a/
+wazo/.git/objects/7b/
+wazo/.git/objects/7c/
+wazo/.git/objects/7d/
+wazo/.git/objects/7e/
+wazo/.git/objects/7f/
+wazo/.git/objects/80/
+wazo/.git/objects/81/
+wazo/.git/objects/82/
+wazo/.git/objects/83/
+wazo/.git/objects/84/
+wazo/.git/objects/85/
+wazo/.git/objects/86/
+wazo/.git/objects/87/
+wazo/.git/objects/88/
+wazo/.git/objects/89/
+wazo/.git/objects/8a/
+wazo/.git/objects/8b/
+wazo/.git/objects/8c/
+wazo/.git/objects/8d/
+wazo/.git/objects/8e/
+wazo/.git/objects/8f/
+wazo/.git/objects/90/
+wazo/.git/objects/91/
+wazo/.git/objects/92/
+wazo/.git/objects/93/
+wazo/.git/objects/94/
+wazo/.git/objects/95/
+wazo/.git/objects/96/
+wazo/.git/objects/97/
+wazo/.git/objects/98/
+wazo/.git/objects/99/
+wazo/.git/objects/9a/
+wazo/.git/objects/9b/
+wazo/.git/objects/9c/
+wazo/.git/objects/9d/
+wazo/.git/objects/9e/
+wazo/.git/objects/9f/
+wazo/.git/objects/a0/
+wazo/.git/objects/a1/
+wazo/.git/objects/a2/
+wazo/.git/objects/a3/
+wazo/.git/objects/a4/
+wazo/.git/objects/a5/
+wazo/.git/objects/a6/
+wazo/.git/objects/a7/
+wazo/.git/objects/a8/
+wazo/.git/objects/a9/
+wazo/.git/objects/aa/
+wazo/.git/objects/ab/
+wazo/.git/objects/ac/
+wazo/.git/objects/ad/
+wazo/.git/objects/ae/
+wazo/.git/objects/af/
+wazo/.git/objects/b0/
+wazo/.git/objects/b1/
+wazo/.git/objects/b2/
+wazo/.git/objects/b3/
+wazo/.git/objects/b4/
+wazo/.git/objects/b5/
+wazo/.git/objects/b6/
+wazo/.git/objects/b7/
+wazo/.git/objects/b8/
+wazo/.git/objects/b9/
+wazo/.git/objects/ba/
+wazo/.git/objects/bb/
+wazo/.git/objects/bc/
+wazo/.git/objects/bd/
+wazo/.git/objects/be/
+wazo/.git/objects/bf/
+wazo/.git/objects/c0/
+wazo/.git/objects/c1/
+wazo/.git/objects/c2/
+wazo/.git/objects/c3/
+wazo/.git/objects/c4/
+wazo/.git/objects/c5/
+wazo/.git/objects/c6/
+wazo/.git/objects/c7/
+wazo/.git/objects/c8/
+wazo/.git/objects/c9/
+wazo/.git/objects/ca/
+wazo/.git/objects/cb/
+wazo/.git/objects/cc/
+wazo/.git/objects/cd/
+wazo/.git/objects/ce/
+wazo/.git/objects/cf/
+wazo/.git/objects/d1/
+wazo/.git/objects/d2/
+wazo/.git/objects/d3/
+wazo/.git/objects/d4/
+wazo/.git/objects/d5/
+wazo/.git/objects/d6/
+wazo/.git/objects/d7/
+wazo/.git/objects/d8/
+wazo/.git/objects/d9/
+wazo/.git/objects/da/
+wazo/.git/objects/db/
+wazo/.git/objects/dc/
+wazo/.git/objects/dd/
+wazo/.git/objects/de/
+wazo/.git/objects/df/
+wazo/.git/objects/e0/
+wazo/.git/objects/e1/
+wazo/.git/objects/e2/
+wazo/.git/objects/e3/
+wazo/.git/objects/e4/
+wazo/.git/objects/e5/
+wazo/.git/objects/e6/
+wazo/.git/objects/e7/
+wazo/.git/objects/e8/
+wazo/.git/objects/e9/
+wazo/.git/objects/ea/
+wazo/.git/objects/eb/
+wazo/.git/objects/ec/
+wazo/.git/objects/ed/
+wazo/.git/objects/ee/
+wazo/.git/objects/ef/
+wazo/.git/objects/f0/
+wazo/.git/objects/f1/
+wazo/.git/objects/f2/
+wazo/.git/objects/f3/
+wazo/.git/objects/f4/
+wazo/.git/objects/f5/
+wazo/.git/objects/f6/
+wazo/.git/objects/f7/
+wazo/.git/objects/f8/
+wazo/.git/objects/f9/
+wazo/.git/objects/fa/
+wazo/.git/objects/fb/
+wazo/.git/objects/fc/
+wazo/.git/objects/fd/
+wazo/.git/objects/fe/
+wazo/.git/objects/ff/
+wazo/.git/objects/info/
+wazo/.git/objects/pack/
+wazo/.git/refs/
+wazo/.git/refs/heads/
+wazo/.git/refs/remotes/
+wazo/.git/refs/remotes/origin/
+wazo/.git/refs/tags/
+wazo/.vscode/
+wazo/__pycache__/
+wazo/ebird_final/
+wazo/old/
+wazo/old/bgnd/
+wazo/old/css/
+wazo/old/ebird/
+wazo/old/fonts/
+wazo/old/fonts/flaticon/
+wazo/old/fonts/flaticon/font/
+wazo/old/fonts/flaticon/license/
+wazo/old/fonts/icomoon/
+wazo/old/fonts/icomoon/demo-files/
+wazo/old/fonts/icomoon/fonts/
+wazo/old/fonts/lg/
+wazo/old/iucn/
+wazo/old/js/
+wazo/old/pngs/
+wazo/old/templates/
+wazo/page_perso/
+wazo/page_perso/.vscode/
+wazo/wazo_codes/
+wazo/wazo_codes/generate_gallery.py
+         32.768  49%   86,25kB/s    0:00:00           65.629 100%  169,11kB/s    0:00:00 (xfr#5, to-chk=26/326)
+wazo/wazo_codes/generer_tout.py
+         32.768  58%   84,21kB/s    0:00:00           56.013 100%  143,57kB/s    0:00:00 (xfr#6, to-chk=25/326)
+wazo/wazo_codes/verifier_medias.py
+         11.980 100%   30,63kB/s    0:00:00           11.980 100%   30,63kB/s    0:00:00 (xfr#7, to-chk=24/326)
+wazo/wazo_codes/.vscode/
+wazo/wazo_codes/__pycache__/
+wazo/wazopy/
+wazo/wazopy/bok.py
+          1.015 100%    2,58kB/s    0:00:00            1.015 100%    2,58kB/s    0:00:00 (xfr#8, to-chk=21/326)
+wazo/wazopy/drag_old.py
+          8.394 100%   21,29kB/s    0:00:00            8.394 100%   21,29kB/s    0:00:00 (xfr#9, to-chk=20/326)
+wazo/wazopy/geomap.py
+            552 100%    1,40kB/s    0:00:00              552 100%    1,40kB/s    0:00:00 (xfr#10, to-chk=19/326)
+wazo/wazopy/load_hotspot.py
+          1.543 100%    3,90kB/s    0:00:00            1.543 100%    3,90kB/s    0:00:00 (xfr#11, to-chk=18/326)
+wazo/wazopy/open_weather.py
+          8.058 100%   20,39kB/s    0:00:00            8.058 100%   20,39kB/s    0:00:00 (xfr#12, to-chk=17/326)
+wazo/wazopy/open_weather_maati.py
+          7.461 100%   18,83kB/s    0:00:00            7.461 100%   18,83kB/s    0:00:00 (xfr#13, to-chk=16/326)
+wazo/wazopy/wazo.py
+         32.768  57%   82,47kB/s    0:00:00           56.915 100%  142,52kB/s    0:00:00 (xfr#14, to-chk=15/326)
+wazo/wazopy/wazo_reloaded.py
+          4.787 100%   11,99kB/s    0:00:00            4.787 100%   11,99kB/s    0:00:00 (xfr#15, to-chk=14/326)
+wazo/wazopy/weather.py
+          1.394 100%    3,48kB/s    0:00:00            1.394 100%    3,48kB/s    0:00:00 (xfr#16, to-chk=13/326)
+wazo/wazopy/web2.py
+            964 100%    2,41kB/s    0:00:00              964 100%    2,41kB/s    0:00:00 (xfr#17, to-chk=12/326)
+wazo/wazopy/__pycache__/
+wazo/wazopy/autobirding/
+wazo/wazopy/autobirding/get_data.py
+            596 100%    1,48kB/s    0:00:00              596 100%    1,48kB/s    0:00:00 (xfr#18, to-chk=7/326)
+wazo/wazopy/autobirding/sound_recognition.py
+          8.086 100%   20,14kB/s    0:00:00            8.086 100%   20,14kB/s    0:00:00 (xfr#19, to-chk=6/326)
+wazo/wazopy/ebird/
+wazo/wazopy/ebird/get_sites.py
+          6.172 100%   15,34kB/s    0:00:00            6.172 100%   15,34kB/s    0:00:00 (xfr#20, to-chk=5/326)
+wazo/wazopy/ebird/test_download_histo.py
+          4.605 100%   11,44kB/s    0:00:00            4.605 100%   11,41kB/s    0:00:00 (xfr#21, to-chk=4/326)
+wazo/wazopy/old/
+wazo/wazopy/old/ebird.py
+         32.768  72%   81,01kB/s    0:00:00           45.287 100%  111,68kB/s    0:00:00 (xfr#22, to-chk=3/326)
+wazo/wazopy/old/get_best_sites.py
+             77 100%    0,19kB/s    0:00:00               77 100%    0,19kB/s    0:00:00 (xfr#23, to-chk=2/326)
+wazo/wazopy/old/list_check.py
+            903 100%    2,23kB/s    0:00:00              903 100%    2,23kB/s    0:00:00 (xfr#24, to-chk=1/326)
+wazo/wazopy/old/sensible_fr.py
+            976 100%    2,40kB/s    0:00:00              976 100%    2,40kB/s    0:00:00 (xfr#25, to-chk=0/326)
+sending incremental file list
+wrap_gaucho/
+wrap_gaucho/constants.py
+          3.191 100%    0,00kB/s    0:00:00            3.191 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=7/9)
+wrap_gaucho/main.py
+          6.132 100%    5,85MB/s    0:00:00            6.132 100%    5,85MB/s    0:00:00 (xfr#2, to-chk=6/9)
+wrap_gaucho/plot_gaucho.py
+          1.580 100%    1,51MB/s    0:00:00            1.580 100%    1,51MB/s    0:00:00 (xfr#3, to-chk=5/9)
+wrap_gaucho/.idea/
+wrap_gaucho/.idea/inspectionProfiles/
+wrap_gaucho/__pycache__/
+wrap_gaucho/objects/
+wrap_gaucho/rdbs/
+sending incremental file list
+zeta/
+zeta/plot_line.py
+          5.177 100%    0,00kB/s    0:00:00            5.177 100%    0,00kB/s    0:00:00 (xfr#1, to-chk=2/4)
+zeta/smart_template.py
+         32.768  70%   31,25MB/s    0:00:00           46.541 100%   22,19MB/s    0:00:00 (xfr#2, to-chk=1/4)
+zeta/.vscode/
