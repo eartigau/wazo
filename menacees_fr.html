@@ -70,15 +70,37 @@
             color: var(--text-medium);
             margin-left: auto;
         }
+        
+        /* Wrapper image avec skeleton */
+        .card-image-wrapper {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            background: linear-gradient(135deg, #f8f9f8 0%, #f0f2f0 100%);
+        }
+        .card-image-wrapper .skeleton-image {
+            position: absolute;
+            inset: 0;
+        }
+        .card-image-wrapper .lazy-image {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.4s ease-out;
+        }
+        .card-image-wrapper .lazy-image.loaded {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
-            <a href="species_list_fr.html" class="site-logo">
-                <span class="site-logo-icon">🦩</span>
-            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 
@@ -2160,8 +2182,8 @@
                         ml: "348706601",
                         date_fr: "13 juin 2021",
                         date_en: "June 13<sup>th</sup>, 2021",
-                        location_fr: "RécréoParc (Côte-Ste-Catherine), Québec, Canada",
-                        location_en: "RécréoParc (Côte-Ste-Catherine), Quebec, Canada",
+                        location_fr: "RécréoParc, Québec, Canada",
+                        location_en: "RécréoParc, Quebec, Canada",
                         lat: 45.4088164,
                         lng: -73.5745737,
                         checklist_id: "S90141054"
@@ -2463,8 +2485,8 @@
                         ml: "22415611",
                         date_fr: "18 juillet 2013",
                         date_en: "July 18<sup>th</sup>, 2013",
-                        location_fr: "Machias Seal Island (NB), Nouveau-Brunswick, Canada",
-                        location_en: "Machias Seal Island (NB), New Brunswick, Canada",
+                        location_fr: "Machias Seal Island, Nouveau-Brunswick, Canada",
+                        location_en: "Machias Seal Island, New Brunswick, Canada",
                         lat: 44.5208489,
                         lng: -67.0906734,
                         checklist_id: "S18567604"
@@ -2474,8 +2496,8 @@
                         ml: "22415661",
                         date_fr: "18 juillet 2013",
                         date_en: "July 18<sup>th</sup>, 2013",
-                        location_fr: "Machias Seal Island (NB), Nouveau-Brunswick, Canada",
-                        location_en: "Machias Seal Island (NB), New Brunswick, Canada",
+                        location_fr: "Machias Seal Island, Nouveau-Brunswick, Canada",
+                        location_en: "Machias Seal Island, New Brunswick, Canada",
                         lat: 44.5208489,
                         lng: -67.0906734,
                         checklist_id: "S18567604"
@@ -2485,8 +2507,8 @@
                         ml: "22415671",
                         date_fr: "18 juillet 2013",
                         date_en: "July 18<sup>th</sup>, 2013",
-                        location_fr: "Machias Seal Island (NB), Nouveau-Brunswick, Canada",
-                        location_en: "Machias Seal Island (NB), New Brunswick, Canada",
+                        location_fr: "Machias Seal Island, Nouveau-Brunswick, Canada",
+                        location_en: "Machias Seal Island, New Brunswick, Canada",
                         lat: 44.5208489,
                         lng: -67.0906734,
                         checklist_id: "S18567604"
@@ -2507,8 +2529,8 @@
                         ml: "22415421",
                         date_fr: "1<sup>er</sup> août 2003",
                         date_en: "August 1<sup>st</sup>, 2003",
-                        location_fr: "Machias Seal Island (NB), Nouveau-Brunswick, Canada",
-                        location_en: "Machias Seal Island (NB), New Brunswick, Canada",
+                        location_fr: "Machias Seal Island, Nouveau-Brunswick, Canada",
+                        location_en: "Machias Seal Island, New Brunswick, Canada",
                         lat: 44.5208489,
                         lng: -67.0906734,
                         checklist_id: "S18566849"
@@ -2518,8 +2540,8 @@
                         ml: "22415471",
                         date_fr: "1<sup>er</sup> août 2003",
                         date_en: "August 1<sup>st</sup>, 2003",
-                        location_fr: "Machias Seal Island (NB), Nouveau-Brunswick, Canada",
-                        location_en: "Machias Seal Island (NB), New Brunswick, Canada",
+                        location_fr: "Machias Seal Island, Nouveau-Brunswick, Canada",
+                        location_en: "Machias Seal Island, New Brunswick, Canada",
                         lat: 44.5208489,
                         lng: -67.0906734,
                         checklist_id: "S18566849"
@@ -3391,8 +3413,8 @@
                         ml: "464261931",
                         date_fr: "2 juillet 2022",
                         date_en: "July 2<sup>nd</sup>, 2022",
-                        location_fr: "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d\'Azur, France",
-                        location_en: "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d\'Azur, France",
+                        location_fr: "RNN des Coussouls de Crau, Provence-Alpes-Côte d\'Azur, France",
+                        location_en: "RNN des Coussouls de Crau, Provence-Alpes-Côte d\'Azur, France",
                         lat: 43.5603842,
                         lng: 4.8294809,
                         checklist_id: "S114205836"
@@ -3537,8 +3559,8 @@
                         ml: "608632608",
                         date_fr: "8 septembre 2023",
                         date_en: "September 8<sup>th</sup>, 2023",
-                        location_fr: "Lungarno (Arno river), Italie",
-                        location_en: "Lungarno (Arno river), Italy",
+                        location_fr: "Lungarno, Italie",
+                        location_en: "Lungarno, Italy",
                         lat: 43.7650785,
                         lng: 11.266037,
                         checklist_id: "S149237601"
@@ -3548,8 +3570,8 @@
                         ml: "608632598",
                         date_fr: "7 septembre 2023",
                         date_en: "September 7<sup>th</sup>, 2023",
-                        location_fr: "Lungarno (Arno river), Italie",
-                        location_en: "Lungarno (Arno river), Italy",
+                        location_fr: "Lungarno, Italie",
+                        location_en: "Lungarno, Italy",
                         lat: 43.7650785,
                         lng: 11.266037,
                         checklist_id: "S149169006"
@@ -3559,8 +3581,8 @@
                         ml: "608680080",
                         date_fr: "6 septembre 2023",
                         date_en: "September 6<sup>th</sup>, 2023",
-                        location_fr: "Lungarno (Arno river), Italie",
-                        location_en: "Lungarno (Arno river), Italy",
+                        location_fr: "Lungarno, Italie",
+                        location_en: "Lungarno, Italy",
                         lat: 43.7650785,
                         lng: 11.266037,
                         checklist_id: "S149103033"
@@ -3682,8 +3704,8 @@
                         ml: "102747871",
                         date_fr: "27 mai 2018",
                         date_en: "May 27<sup>th</sup>, 2018",
-                        location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
-                        location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
+                        location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaï, États-Unis",
+                        location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaii, United States",
                         lat: 19.6714434,
                         lng: -155.3849602,
                         checklist_id: "S46086383"
@@ -3771,8 +3793,8 @@
                         ml: "22496611",
                         date_fr: "8 septembre 2006",
                         date_en: "September 8<sup>th</sup>, 2006",
-                        location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
-                        location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                        location_fr: "Rapides Deschênes, Québec, Canada",
+                        location_en: "Rapides Deschênes, Quebec, Canada",
                         lat: 45.37778,
                         lng: -75.79972,
                         checklist_id: "S18566795"
@@ -4063,8 +4085,8 @@
                         ml: "184801711",
                         date_fr: "28 octobre 2019",
                         date_en: "October 28<sup>th</sup>, 2019",
-                        location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
-                        location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                        location_fr: "Rapides Deschênes, Québec, Canada",
+                        location_en: "Rapides Deschênes, Quebec, Canada",
                         lat: 45.37778,
                         lng: -75.79972,
                         checklist_id: "S60996585"
@@ -4109,8 +4131,8 @@
                         ml: "464261871",
                         date_fr: "2 juillet 2022",
                         date_en: "July 2<sup>nd</sup>, 2022",
-                        location_fr: "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d\'Azur, France",
-                        location_en: "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d\'Azur, France",
+                        location_fr: "RNN des Coussouls de Crau, Provence-Alpes-Côte d\'Azur, France",
+                        location_en: "RNN des Coussouls de Crau, Provence-Alpes-Côte d\'Azur, France",
                         lat: 43.5603842,
                         lng: 4.8294809,
                         checklist_id: "S114205836"
@@ -4524,8 +4546,8 @@
                         ml: "22396481",
                         date_fr: "18 juillet 2005",
                         date_en: "July 18<sup>th</sup>, 2005",
-                        location_fr: "RNN des Marais de Séné (RNN131), Bretagne, France",
-                        location_en: "RNN des Marais de Séné (RNN131), Brittany, France",
+                        location_fr: "RNN des Marais de Séné, Bretagne, France",
+                        location_en: "RNN des Marais de Séné, Brittany, France",
                         lat: 47.6168099,
                         lng: -2.7127004,
                         checklist_id: "S18563365"
@@ -4647,8 +4669,8 @@
                         ml: "22535041",
                         date_fr: "14 septembre 2011",
                         date_en: "September 14<sup>th</sup>, 2011",
-                        location_fr: "Ile de Batz (Enez Vaz), Bretagne, France",
-                        location_en: "Ile de Batz (Enez Vaz), Brittany, France",
+                        location_fr: "Ile de Batz, Bretagne, France",
+                        location_en: "Ile de Batz, Brittany, France",
                         lat: 48.7447955,
                         lng: -4.0151328,
                         checklist_id: "S18563362"
@@ -4826,8 +4848,8 @@
                         ml: "51319341",
                         date_fr: "9 mars 2017",
                         date_en: "March 9<sup>th</sup>, 2017",
-                        location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                        location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                        location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                        location_en: "Sebastian Inlet SP, Florida, United States",
                         lat: 27.8568345,
                         lng: -80.448761,
                         checklist_id: "S35074281"
@@ -4837,8 +4859,8 @@
                         ml: "51319351",
                         date_fr: "9 mars 2017",
                         date_en: "March 9<sup>th</sup>, 2017",
-                        location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                        location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                        location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                        location_en: "Sebastian Inlet SP, Florida, United States",
                         lat: 27.8568345,
                         lng: -80.448761,
                         checklist_id: "S35074281"
@@ -4848,8 +4870,8 @@
                         ml: "51319371",
                         date_fr: "9 mars 2017",
                         date_en: "March 9<sup>th</sup>, 2017",
-                        location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                        location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                        location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                        location_en: "Sebastian Inlet SP, Florida, United States",
                         lat: 27.8568345,
                         lng: -80.448761,
                         checklist_id: "S35074281"
@@ -5070,8 +5092,8 @@
                         ml: "34384171",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park, Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park, Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -5081,8 +5103,8 @@
                         ml: "34384181",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park, Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park, Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -5092,8 +5114,8 @@
                         ml: "34384191",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park, Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park, Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -5203,8 +5225,8 @@
                         ml: "22376851",
                         date_fr: "23 mai 2010",
                         date_en: "May 23<sup>rd</sup>, 2010",
-                        location_fr: "RécréoParc (Côte-Ste-Catherine), Québec, Canada",
-                        location_en: "RécréoParc (Côte-Ste-Catherine), Quebec, Canada",
+                        location_fr: "RécréoParc, Québec, Canada",
+                        location_en: "RécréoParc, Quebec, Canada",
                         lat: 45.4088164,
                         lng: -73.5745737,
                         checklist_id: "S18566851"
@@ -5214,8 +5236,8 @@
                         ml: "22376921",
                         date_fr: "23 mai 2010",
                         date_en: "May 23<sup>rd</sup>, 2010",
-                        location_fr: "RécréoParc (Côte-Ste-Catherine), Québec, Canada",
-                        location_en: "RécréoParc (Côte-Ste-Catherine), Quebec, Canada",
+                        location_fr: "RécréoParc, Québec, Canada",
+                        location_en: "RécréoParc, Quebec, Canada",
                         lat: 45.4088164,
                         lng: -73.5745737,
                         checklist_id: "S18566851"
@@ -5225,8 +5247,8 @@
                         ml: "22376931",
                         date_fr: "23 mai 2010",
                         date_en: "May 23<sup>rd</sup>, 2010",
-                        location_fr: "RécréoParc (Côte-Ste-Catherine), Québec, Canada",
-                        location_en: "RécréoParc (Côte-Ste-Catherine), Quebec, Canada",
+                        location_fr: "RécréoParc, Québec, Canada",
+                        location_en: "RécréoParc, Quebec, Canada",
                         lat: 45.4088164,
                         lng: -73.5745737,
                         checklist_id: "S18566851"
@@ -5403,8 +5425,8 @@
                         ml: "599900381",
                         date_fr: "2 août 2023",
                         date_en: "August 2<sup>nd</sup>, 2023",
-                        location_fr: "Rodeo Lagoon (including beach and offshore), Californie, États-Unis",
-                        location_en: "Rodeo Lagoon (including beach and offshore), California, United States",
+                        location_fr: "Rodeo Lagoon, Californie, États-Unis",
+                        location_en: "Rodeo Lagoon, California, United States",
                         lat: 37.8304863,
                         lng: -122.5329514,
                         checklist_id: "S146304549"
@@ -5425,8 +5447,8 @@
                         ml: "22409341",
                         date_fr: "30 juin 2010",
                         date_en: "June 30<sup>th</sup>, 2010",
-                        location_fr: "Waterfront Park (San Diego), Californie, États-Unis",
-                        location_en: "Waterfront Park (San Diego), California, United States",
+                        location_fr: "Waterfront Park, Californie, États-Unis",
+                        location_en: "Waterfront Park, California, United States",
                         lat: 32.722109,
                         lng: -117.172575,
                         checklist_id: "S18575213"
@@ -5436,8 +5458,8 @@
                         ml: "22409351",
                         date_fr: "30 juin 2010",
                         date_en: "June 30<sup>th</sup>, 2010",
-                        location_fr: "Waterfront Park (San Diego), Californie, États-Unis",
-                        location_en: "Waterfront Park (San Diego), California, United States",
+                        location_fr: "Waterfront Park, Californie, États-Unis",
+                        location_en: "Waterfront Park, California, United States",
                         lat: 32.722109,
                         lng: -117.172575,
                         checklist_id: "S18575213"
@@ -6490,8 +6512,8 @@
                         ml: "102747771",
                         date_fr: "27 mai 2018",
                         date_en: "May 27<sup>th</sup>, 2018",
-                        location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
-                        location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
+                        location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaï, États-Unis",
+                        location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaii, United States",
                         lat: 19.6714434,
                         lng: -155.3849602,
                         checklist_id: "S46086383"
@@ -6524,8 +6546,8 @@
                         ml: "34435011",
                         date_fr: "20 juillet 2015",
                         date_en: "July 20<sup>th</sup>, 2015",
-                        location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                        location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                        location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                        location_en: "Kōkeʻe State Park, Hawaii, United States",
                         lat: 22.1302507,
                         lng: -159.6556377,
                         checklist_id: "S24332841"
@@ -6535,8 +6557,8 @@
                         ml: "34435021",
                         date_fr: "20 juillet 2015",
                         date_en: "July 20<sup>th</sup>, 2015",
-                        location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                        location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                        location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                        location_en: "Kōkeʻe State Park, Hawaii, United States",
                         lat: 22.1302507,
                         lng: -159.6556377,
                         checklist_id: "S24332841"
@@ -6546,8 +6568,8 @@
                         ml: "34435031",
                         date_fr: "20 juillet 2015",
                         date_en: "July 20<sup>th</sup>, 2015",
-                        location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                        location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                        location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                        location_en: "Kōkeʻe State Park, Hawaii, United States",
                         lat: 22.1302507,
                         lng: -159.6556377,
                         checklist_id: "S24332841"
@@ -6557,8 +6579,8 @@
                         ml: "34435041",
                         date_fr: "20 juillet 2015",
                         date_en: "July 20<sup>th</sup>, 2015",
-                        location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                        location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                        location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                        location_en: "Kōkeʻe State Park, Hawaii, United States",
                         lat: 22.1302507,
                         lng: -159.6556377,
                         checklist_id: "S24332841"
@@ -6927,8 +6949,8 @@
                         ml: "22409641",
                         date_fr: "13 septembre 2006",
                         date_en: "September 13<sup>th</sup>, 2006",
-                        location_fr: "Liberty Island/Statue of Liberty (NY County), New York, États-Unis",
-                        location_en: "Liberty Island/Statue of Liberty (NY County), New York, United States",
+                        location_fr: "Liberty Island/Statue of Liberty, New York, États-Unis",
+                        location_en: "Liberty Island/Statue of Liberty, New York, United States",
                         lat: 40.6900653,
                         lng: -74.0452476,
                         checklist_id: "S18575032"
@@ -6938,8 +6960,8 @@
                         ml: "33890491",
                         date_fr: "3 mai 2003",
                         date_en: "May 3<sup>rd</sup>, 2003",
-                        location_fr: "PN de Plaisance (SVP choisir des endroits plus précis), Québec, Canada",
-                        location_en: "PN de Plaisance (SVP choisir des endroits plus précis), Quebec, Canada",
+                        location_fr: "PN de Plaisance, Québec, Canada",
+                        location_en: "PN de Plaisance, Quebec, Canada",
                         lat: 45.6006057,
                         lng: -75.0858823,
                         checklist_id: "S18566892"
@@ -7021,9 +7043,14 @@
                 : (sp.photoCount === 1 ? `<span class="photo-count">1 photo</span>` : '');
             
             card.innerHTML = `
-                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${sp.ml}/480" 
-                     alt="${name}"
-                     loading="lazy">
+                <div class="card-image-wrapper">
+                    <div class="skeleton-image"></div>
+                    <img class="lazy-image" 
+                         src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${sp.ml}/480" 
+                         alt="${name}"
+                         loading="lazy"
+                         onload="this.classList.add('loaded'); this.previousElementSibling.style.display='none';">
+                </div>
                 <div class="species-info">
                     <span class="species-common">${name}</span>
                     <span class="species-scientific">${sp.sciName}</span>

@@ -56,24 +56,17 @@ COMMENTAIRES_LIEUX = [
 
 def nettoyer_nom_lieu(location: str) -> str:
     """
-    Nettoie un nom de lieu en enlevant les commentaires eBird.
-    Ex: "Zoo de Granby (do not report captive species)" -> "Zoo de Granby"
+    Nettoie un nom de lieu en enlevant tout contenu entre parenthèses.
+    Ex: "Parque Bicentenario de Vitacura (no contar cisnes / don't count swans)" 
+        -> "Parque Bicentenario de Vitacura"
     """
     if not location:
         return ''
     
     result = location
     
-    # Enlever les commentaires connus (insensible à la casse)
-    for commentaire in COMMENTAIRES_LIEUX:
-        # Recherche insensible à la casse
-        pattern = re.compile(re.escape(commentaire), re.IGNORECASE)
-        result = pattern.sub('', result)
-    
-    # Enlever les commentaires génériques entre parenthèses à la fin
-    # qui contiennent des mots-clés comme "restricted", "captive", "private", etc.
-    keywords = r'restricted|captive|private|permit|access|restreint|report|do not|please'
-    result = re.sub(rf'\s*\([^)]*(?:{keywords})[^)]*\)\s*', '', result, flags=re.IGNORECASE)
+    # Enlever TOUT contenu entre parenthèses
+    result = re.sub(r'\s*\([^)]*\)', '', result)
     
     # Enlever les commentaires avec double tiret
     result = re.sub(r'\s*--.*$', '', result)
@@ -145,7 +138,10 @@ def normaliser_nom_commun(common_name: str) -> str:
     """
     if not common_name:
         return ''
-    return re.sub(r'\s*\([^)]+\)\s*$', '', common_name).strip()
+    # Enlever tout contenu entre parenthèses
+    result = re.sub(r'\s*\([^)]+\)', '', common_name)
+    # Nettoyer les espaces multiples
+    return re.sub(r'\s+', ' ', result).strip()
 
 def extraire_type_oiseau(nom_fr: str) -> str:
     """
@@ -716,10 +712,14 @@ class EBirdGalleryGenerator:
         else:
             lieu_complet_en = f"{location}, {country_en}" if location and country_en else location or country_en
         
+        # Normaliser les noms communs (enlever annotations comme "forme domestique")
+        common_name_fr = normaliser_nom_commun(obs.get('Common Name') or 'Inconnu')
+        common_name_en = normaliser_nom_commun(taxon_info.get('common_name_en') or obs.get('Common Name') or 'Unknown')
+        
         return {
             'ml_catalog_number': ml,
-            'common_name_fr': obs.get('Common Name') or 'Inconnu',
-            'common_name_en': taxon_info.get('common_name_en') or obs.get('Common Name') or 'Unknown',
+            'common_name_fr': common_name_fr,
+            'common_name_en': common_name_en,
             'scientific_name': sci_name,
             'family': taxon_info.get('family', ''),
             'family_full': taxon_info.get('family_full', ''),

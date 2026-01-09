@@ -43,13 +43,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 50%;
             border: 3px solid #2d5a27;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
         }
         .flamingo-marker:hover {
@@ -86,8 +86,6 @@
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
-            <a href="species_list_en.html" class="site-logo">
-            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 
@@ -313,9 +311,9 @@
                 name_en: "American Black Duck",
                 scientific: "Anas rubripes",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Rapides Deschênes (incluant Parc)",
-                location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
-                location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                location: "Rapides Deschênes",
+                location_fr: "Rapides Deschênes, Québec, Canada",
+                location_en: "Rapides Deschênes, Quebec, Canada",
                 date_fr: "2 janvier 2026",
                 date_en: "January 2<sup>nd</sup>, 2026",
                 lat: 45.37778,
@@ -1341,8 +1339,8 @@
                 const flamingoIcon = L.divIcon({
                     className: '',
                     html: '<div class="flamingo-marker">🦩</div>',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
                 });
                 
                 if (marker) {
@@ -1408,19 +1406,6 @@
         });
 
         
-        
-        // Réinitialiser le zoom de la carte
-        function resetMapZoom() {
-            if (window.tripMapInstance && window.tripMapMarkerCluster) {
-                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
-                window.tripMapInstance.fitBounds(bounds);
-                
-                // Limiter le zoom max
-                if (window.tripMapInstance.getZoom() > 12) {
-                    window.tripMapInstance.setZoom(12);
-                }
-            }
-        }
         
         // Menu mobile hamburger
         function toggleMobileMenu() {

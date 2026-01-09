@@ -1203,7 +1203,25 @@ Fichiers requis:
   2. Modifiez config.yaml selon vos besoins
   3. Exécutez: python generer_tout.py verifier (première fois)
   4. Exécutez: python generer_tout.py
+
+Options:
+  python generer_tout.py           - Génère toutes les galeries
+  python generer_tout.py admin     - Génère uniquement la page admin (rapide)
+  python generer_tout.py verifier  - Vérifie les médias en ligne
 """)
+
+
+def generer_admin_seulement():
+    """Génère uniquement la page admin pour la curation des photos"""
+    print("=" * 60)
+    print("🔧 GÉNÉRATION PAGE ADMIN UNIQUEMENT")
+    print("=" * 60)
+    
+    config = charger_config()
+    generer_page_admin(config)
+    
+    print("\n✅ Page admin générée: admin.html")
+    print("   Ouvrez ce fichier dans votre navigateur pour gérer vos photos.")
 
 
 if __name__ == '__main__':
@@ -1211,6 +1229,8 @@ if __name__ == '__main__':
         commande = sys.argv[1].lower()
         if commande == 'verifier':
             verifier_medias()
+        elif commande == 'admin':
+            generer_admin_seulement()
         elif commande == 'help' or commande == '--help' or commande == '-h':
             afficher_aide()
         else:

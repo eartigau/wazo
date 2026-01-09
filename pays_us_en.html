@@ -43,13 +43,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 50%;
             border: 3px solid #2d5a27;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
         }
         .flamingo-marker:hover {
@@ -86,8 +86,6 @@
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
-            <a href="species_list_en.html" class="site-logo">
-            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 
@@ -173,14 +171,9 @@
     <!-- CARTE DU VOYAGE -->
     <div class="trip-map-container">
         <div class="trip-map-header">
-            <div class="map-title-group">
-                <span class="map-icon">🗺️</span>
-                Locations visited
-                <span class="location-count">(118)</span>
-            </div>
-            <button class="map-reset-btn" onclick="resetMapZoom()" title="Reset zoom">
-                🔄 Reset
-            </button>
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(118)</span>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
@@ -295,9 +288,9 @@
                 name_en: "Black-bellied Whistling-Duck",
                 scientific: "Dendrocygna autumnalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Hornsby Bend (HOTE 037)",
-                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
-                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                location: "Hornsby Bend",
+                location_fr: "Hornsby Bend, Texas, États-Unis",
+                location_en: "Hornsby Bend, Texas, United States",
                 date_fr: "12 juin 2018",
                 date_en: "June 12<sup>th</sup>, 2018",
                 lat: 30.2181988,
@@ -2029,9 +2022,9 @@
                 name_en: "Broad-billed Hummingbird",
                 scientific: "Cynanthus latirostris",
                 family: "Trochilidae (Hummingbirds)",
-                location: "Paton Center for Hummingbirds (Patons\' Yard)",
-                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
-                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                location: "Paton Center for Hummingbirds",
+                location_fr: "Paton Center for Hummingbirds, Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds, Arizona, United States",
                 date_fr: "23 février 2023",
                 date_en: "February 23<sup>rd</sup>, 2023",
                 lat: 31.5390131,
@@ -2046,9 +2039,9 @@
                 name_en: "Broad-billed Hummingbird",
                 scientific: "Cynanthus latirostris",
                 family: "Trochilidae (Hummingbirds)",
-                location: "Paton Center for Hummingbirds (Patons\' Yard)",
-                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
-                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                location: "Paton Center for Hummingbirds",
+                location_fr: "Paton Center for Hummingbirds, Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds, Arizona, United States",
                 date_fr: "23 février 2023",
                 date_en: "February 23<sup>rd</sup>, 2023",
                 lat: 31.5390131,
@@ -2080,9 +2073,9 @@
                 name_en: "Violet-crowned Hummingbird",
                 scientific: "Ramosomyia violiceps",
                 family: "Trochilidae (Hummingbirds)",
-                location: "Paton Center for Hummingbirds (Patons\' Yard)",
-                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
-                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                location: "Paton Center for Hummingbirds",
+                location_fr: "Paton Center for Hummingbirds, Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds, Arizona, United States",
                 date_fr: "23 février 2023",
                 date_en: "February 23<sup>rd</sup>, 2023",
                 lat: 31.5390131,
@@ -2097,9 +2090,9 @@
                 name_en: "Violet-crowned Hummingbird",
                 scientific: "Ramosomyia violiceps",
                 family: "Trochilidae (Hummingbirds)",
-                location: "Paton Center for Hummingbirds (Patons\' Yard)",
-                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
-                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                location: "Paton Center for Hummingbirds",
+                location_fr: "Paton Center for Hummingbirds, Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds, Arizona, United States",
                 date_fr: "23 février 2023",
                 date_en: "February 23<sup>rd</sup>, 2023",
                 lat: 31.5390131,
@@ -2348,8 +2341,8 @@
             
             {
                 ml: "29632691",
-                name_fr: "Gallinule d\'Amérique (sandvicensis)",
-                name_en: "Common Gallinule (Hawaiian)",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
                 location: "Hanalei NWR",
@@ -2365,8 +2358,8 @@
             
             {
                 ml: "29632701",
-                name_fr: "Gallinule d\'Amérique (sandvicensis)",
-                name_en: "Common Gallinule (Hawaiian)",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
                 location: "Hanalei NWR",
@@ -2382,8 +2375,8 @@
             
             {
                 ml: "29632571",
-                name_fr: "Gallinule d\'Amérique (sandvicensis)",
-                name_en: "Common Gallinule (Hawaiian)",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
                 location: "Hanalei NWR",
@@ -2501,7 +2494,7 @@
             
             {
                 ml: "22503981",
-                name_fr: "Foulque d\'Amérique (forme à cachet rouge)",
+                name_fr: "Foulque d\'Amérique",
                 name_en: "American Coot",
                 scientific: "Fulica americana (Red-shielded)",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
@@ -2518,7 +2511,7 @@
             
             {
                 ml: "22503991",
-                name_fr: "Foulque d\'Amérique (forme à cachet rouge)",
+                name_fr: "Foulque d\'Amérique",
                 name_en: "American Coot",
                 scientific: "Fulica americana (Red-shielded)",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
@@ -2535,7 +2528,7 @@
             
             {
                 ml: "21101001",
-                name_fr: "Foulque d\'Amérique (forme à cachet rouge)",
+                name_fr: "Foulque d\'Amérique",
                 name_en: "American Coot",
                 scientific: "Fulica americana (Red-shielded)",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
@@ -2552,7 +2545,7 @@
             
             {
                 ml: "21101011",
-                name_fr: "Foulque d\'Amérique (forme à cachet rouge)",
+                name_fr: "Foulque d\'Amérique",
                 name_en: "American Coot",
                 scientific: "Fulica americana (Red-shielded)",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
@@ -2743,9 +2736,9 @@
                 name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus",
                 family: "Recurvirostridae (Stilts and Avocets)",
-                location: "Hornsby Bend (HOTE 037)",
-                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
-                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                location: "Hornsby Bend",
+                location_fr: "Hornsby Bend, Texas, États-Unis",
+                location_en: "Hornsby Bend, Texas, United States",
                 date_fr: "12 juin 2018",
                 date_en: "June 12<sup>th</sup>, 2018",
                 lat: 30.2181988,
@@ -2756,8 +2749,8 @@
             
             {
                 ml: "62726591",
-                name_fr: "Échasse d\'Amérique (knudseni)",
-                name_en: "Black-necked Stilt (Hawaiian)",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
                 location: "Kailua Beach Park",
@@ -2773,8 +2766,8 @@
             
             {
                 ml: "62726601",
-                name_fr: "Échasse d\'Amérique (knudseni)",
-                name_en: "Black-necked Stilt (Hawaiian)",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
                 location: "Kailua Beach Park",
@@ -2790,8 +2783,8 @@
             
             {
                 ml: "62726611",
-                name_fr: "Échasse d\'Amérique (knudseni)",
-                name_en: "Black-necked Stilt (Hawaiian)",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
                 location: "Kailua Beach Park",
@@ -2807,8 +2800,8 @@
             
             {
                 ml: "22401421",
-                name_fr: "Échasse d\'Amérique (knudseni)",
-                name_en: "Black-necked Stilt (Hawaiian)",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
                 location: "Kaloko-Honokōhau NHP",
@@ -3338,9 +3331,9 @@
                 name_en: "Willet",
                 scientific: "Tringa semipalmata",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -3389,9 +3382,9 @@
                 name_en: "Willet",
                 scientific: "Tringa semipalmata",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Chula Vista Bayside Park (H St.)",
-                location_fr: "Chula Vista Bayside Park (H St.), Californie, États-Unis",
-                location_en: "Chula Vista Bayside Park (H St.), California, United States",
+                location: "Chula Vista Bayside Park",
+                location_fr: "Chula Vista Bayside Park, Californie, États-Unis",
+                location_en: "Chula Vista Bayside Park, California, United States",
                 date_fr: "1<sup>er</sup> juillet 2010",
                 date_en: "July 1<sup>st</sup>, 2010",
                 lat: 32.6273723,
@@ -3423,9 +3416,9 @@
                 name_en: "Ruddy Turnstone",
                 scientific: "Arenaria interpres",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -3440,9 +3433,9 @@
                 name_en: "Ruddy Turnstone",
                 scientific: "Arenaria interpres",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -3457,9 +3450,9 @@
                 name_en: "Ruddy Turnstone",
                 scientific: "Arenaria interpres",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -3729,9 +3722,9 @@
                 name_en: "Sanderling",
                 scientific: "Calidris alba",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -3746,9 +3739,9 @@
                 name_en: "Sanderling",
                 scientific: "Calidris alba",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -3831,9 +3824,9 @@
                 name_en: "Laughing Gull",
                 scientific: "Leucophaeus atricilla",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Liberty Island/Statue of Liberty (NY County)",
-                location_fr: "Liberty Island/Statue of Liberty (NY County), New York, États-Unis",
-                location_en: "Liberty Island/Statue of Liberty (NY County), New York, United States",
+                location: "Liberty Island/Statue of Liberty",
+                location_fr: "Liberty Island/Statue of Liberty, New York, États-Unis",
+                location_en: "Liberty Island/Statue of Liberty, New York, United States",
                 date_fr: "13 septembre 2006",
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
@@ -3916,9 +3909,9 @@
                 name_en: "Heermann\'s Gull",
                 scientific: "Larus heermanni",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Rodeo Lagoon (including beach and offshore)",
-                location_fr: "Rodeo Lagoon (including beach and offshore), Californie, États-Unis",
-                location_en: "Rodeo Lagoon (including beach and offshore), California, United States",
+                location: "Rodeo Lagoon",
+                location_fr: "Rodeo Lagoon, Californie, États-Unis",
+                location_en: "Rodeo Lagoon, California, United States",
                 date_fr: "2 août 2023",
                 date_en: "August 2<sup>nd</sup>, 2023",
                 lat: 37.8304863,
@@ -3950,9 +3943,9 @@
                 name_en: "Heermann\'s Gull",
                 scientific: "Larus heermanni",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Waterfront Park (San Diego)",
-                location_fr: "Waterfront Park (San Diego), Californie, États-Unis",
-                location_en: "Waterfront Park (San Diego), California, United States",
+                location: "Waterfront Park",
+                location_fr: "Waterfront Park, Californie, États-Unis",
+                location_en: "Waterfront Park, California, United States",
                 date_fr: "30 juin 2010",
                 date_en: "June 30<sup>th</sup>, 2010",
                 lat: 32.722109,
@@ -3967,9 +3960,9 @@
                 name_en: "Heermann\'s Gull",
                 scientific: "Larus heermanni",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Waterfront Park (San Diego)",
-                location_fr: "Waterfront Park (San Diego), Californie, États-Unis",
-                location_en: "Waterfront Park (San Diego), California, United States",
+                location: "Waterfront Park",
+                location_fr: "Waterfront Park, Californie, États-Unis",
+                location_en: "Waterfront Park, California, United States",
                 date_fr: "30 juin 2010",
                 date_en: "June 30<sup>th</sup>, 2010",
                 lat: 32.722109,
@@ -3984,9 +3977,9 @@
                 name_en: "Ring-billed Gull",
                 scientific: "Larus delawarensis",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Liberty Island/Statue of Liberty (NY County)",
-                location_fr: "Liberty Island/Statue of Liberty (NY County), New York, États-Unis",
-                location_en: "Liberty Island/Statue of Liberty (NY County), New York, United States",
+                location: "Liberty Island/Statue of Liberty",
+                location_fr: "Liberty Island/Statue of Liberty, New York, États-Unis",
+                location_en: "Liberty Island/Statue of Liberty, New York, United States",
                 date_fr: "13 septembre 2006",
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
@@ -4103,9 +4096,9 @@
                 name_en: "American Herring Gull",
                 scientific: "Larus smithsonianus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Liberty Island/Statue of Liberty (NY County)",
-                location_fr: "Liberty Island/Statue of Liberty (NY County), New York, États-Unis",
-                location_en: "Liberty Island/Statue of Liberty (NY County), New York, United States",
+                location: "Liberty Island/Statue of Liberty",
+                location_fr: "Liberty Island/Statue of Liberty, New York, États-Unis",
+                location_en: "Liberty Island/Statue of Liberty, New York, United States",
                 date_fr: "13 septembre 2006",
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
@@ -4120,9 +4113,9 @@
                 name_en: "American Herring Gull",
                 scientific: "Larus smithsonianus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Liberty Island/Statue of Liberty (NY County)",
-                location_fr: "Liberty Island/Statue of Liberty (NY County), New York, États-Unis",
-                location_en: "Liberty Island/Statue of Liberty (NY County), New York, United States",
+                location: "Liberty Island/Statue of Liberty",
+                location_fr: "Liberty Island/Statue of Liberty, New York, États-Unis",
+                location_en: "Liberty Island/Statue of Liberty, New York, United States",
                 date_fr: "13 septembre 2006",
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
@@ -4137,9 +4130,9 @@
                 name_en: "Great Black-backed Gull",
                 scientific: "Larus marinus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -4188,9 +4181,9 @@
                 name_en: "California Gull",
                 scientific: "Larus californicus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Chula Vista Bayside Park (H St.)",
-                location_fr: "Chula Vista Bayside Park (H St.), Californie, États-Unis",
-                location_en: "Chula Vista Bayside Park (H St.), California, United States",
+                location: "Chula Vista Bayside Park",
+                location_fr: "Chula Vista Bayside Park, Californie, États-Unis",
+                location_en: "Chula Vista Bayside Park, California, United States",
                 date_fr: "1<sup>er</sup> juillet 2010",
                 date_en: "July 1<sup>st</sup>, 2010",
                 lat: 32.6273723,
@@ -4409,9 +4402,9 @@
                 name_en: "Least Tern",
                 scientific: "Sternula antillarum",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Waterfront Park (San Diego)",
-                location_fr: "Waterfront Park (San Diego), Californie, États-Unis",
-                location_en: "Waterfront Park (San Diego), California, United States",
+                location: "Waterfront Park",
+                location_fr: "Waterfront Park, Californie, États-Unis",
+                location_en: "Waterfront Park, California, United States",
                 date_fr: "30 juin 2010",
                 date_en: "June 30<sup>th</sup>, 2010",
                 lat: 32.722109,
@@ -4426,9 +4419,9 @@
                 name_en: "Sandwich Tern",
                 scientific: "Thalasseus sandvicensis",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -4494,9 +4487,9 @@
                 name_en: "Royal Tern",
                 scientific: "Thalasseus maximus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -4511,9 +4504,9 @@
                 name_en: "Royal Tern",
                 scientific: "Thalasseus maximus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -4528,9 +4521,9 @@
                 name_en: "Royal Tern",
                 scientific: "Thalasseus maximus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -7010,9 +7003,9 @@
                 name_en: "Osprey",
                 scientific: "Pandion haliaetus",
                 family: "Pandionidae (Osprey)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -7027,9 +7020,9 @@
                 name_en: "Osprey",
                 scientific: "Pandion haliaetus",
                 family: "Pandionidae (Osprey)",
-                location: "Sebastian Inlet SP (Indian River co.)",
-                location_fr: "Sebastian Inlet SP (Indian River co.), Floride, États-Unis",
-                location_en: "Sebastian Inlet SP (Indian River co.), Florida, United States",
+                location: "Sebastian Inlet SP",
+                location_fr: "Sebastian Inlet SP, Floride, États-Unis",
+                location_en: "Sebastian Inlet SP, Florida, United States",
                 date_fr: "9 mars 2017",
                 date_en: "March 9<sup>th</sup>, 2017",
                 lat: 27.8568345,
@@ -7197,9 +7190,9 @@
                 name_en: "Red-shouldered Hawk",
                 scientific: "Buteo lineatus",
                 family: "Accipitridae (Hawks, Eagles, and Kites)",
-                location: "Southern Glades Trail (C111 Canal outside ENP)",
-                location_fr: "Southern Glades Trail (C111 Canal outside ENP), Floride, États-Unis",
-                location_en: "Southern Glades Trail (C111 Canal outside ENP), Florida, United States",
+                location: "Southern Glades Trail",
+                location_fr: "Southern Glades Trail, Floride, États-Unis",
+                location_en: "Southern Glades Trail, Florida, United States",
                 date_fr: "3 mars 2024",
                 date_en: "March 3<sup>rd</sup>, 2024",
                 lat: 25.4034735,
@@ -7329,8 +7322,8 @@
             
             {
                 ml: "22535901",
-                name_fr: "Hibou des marais (sandwichensis)",
-                name_en: "Short-eared Owl (Hawaiian)",
+                name_fr: "Hibou des marais",
+                name_en: "Short-eared Owl",
                 scientific: "Asio flammeus sandwichensis",
                 family: "Strigidae (Owls)",
                 location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
@@ -7537,9 +7530,9 @@
                 name_en: "Ladder-backed Woodpecker",
                 scientific: "Dryobates scalaris",
                 family: "Picidae (Woodpeckers)",
-                location: "Paton Center for Hummingbirds (Patons\' Yard)",
-                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
-                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                location: "Paton Center for Hummingbirds",
+                location_fr: "Paton Center for Hummingbirds, Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds, Arizona, United States",
                 date_fr: "23 février 2023",
                 date_en: "February 23<sup>rd</sup>, 2023",
                 lat: 31.5390131,
@@ -8030,9 +8023,9 @@
                 name_en: "Western Kingbird",
                 scientific: "Tyrannus verticalis",
                 family: "Tyrannidae (Tyrant Flycatchers)",
-                location: "Southern Glades Trail (C111 Canal outside ENP)",
-                location_fr: "Southern Glades Trail (C111 Canal outside ENP), Floride, États-Unis",
-                location_en: "Southern Glades Trail (C111 Canal outside ENP), Florida, United States",
+                location: "Southern Glades Trail",
+                location_fr: "Southern Glades Trail, Floride, États-Unis",
+                location_en: "Southern Glades Trail, Florida, United States",
                 date_fr: "3 mars 2024",
                 date_en: "March 3<sup>rd</sup>, 2024",
                 lat: 25.4034735,
@@ -8047,9 +8040,9 @@
                 name_en: "Western Kingbird",
                 scientific: "Tyrannus verticalis",
                 family: "Tyrannidae (Tyrant Flycatchers)",
-                location: "Hornsby Bend (HOTE 037)",
-                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
-                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                location: "Hornsby Bend",
+                location_fr: "Hornsby Bend, Texas, États-Unis",
+                location_en: "Hornsby Bend, Texas, United States",
                 date_fr: "12 juin 2018",
                 date_en: "June 12<sup>th</sup>, 2018",
                 lat: 30.2181988,
@@ -8064,9 +8057,9 @@
                 name_en: "Scissor-tailed Flycatcher",
                 scientific: "Tyrannus forficatus",
                 family: "Tyrannidae (Tyrant Flycatchers)",
-                location: "Southern Glades Trail (C111 Canal outside ENP)",
-                location_fr: "Southern Glades Trail (C111 Canal outside ENP), Floride, États-Unis",
-                location_en: "Southern Glades Trail (C111 Canal outside ENP), Florida, United States",
+                location: "Southern Glades Trail",
+                location_fr: "Southern Glades Trail, Floride, États-Unis",
+                location_en: "Southern Glades Trail, Florida, United States",
                 date_fr: "3 mars 2024",
                 date_en: "March 3<sup>rd</sup>, 2024",
                 lat: 25.4034735,
@@ -8149,9 +8142,9 @@
                 name_en: "Hawaii Elepaio",
                 scientific: "Chasiempis sandwichensis",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles)",
-                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
-                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
+                location: "Pu\'u O\'o Trail, Kipuka Ainahou section",
+                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaï, États-Unis",
+                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaii, United States",
                 date_fr: "27 mai 2018",
                 date_en: "May 27<sup>th</sup>, 2018",
                 lat: 19.6714434,
@@ -8179,8 +8172,8 @@
             
             {
                 ml: "22535941",
-                name_fr: "Monarque d\'Hawaï (bryani)",
-                name_en: "Hawaii Elepaio (Mauna Kea)",
+                name_fr: "Monarque d\'Hawaï",
+                name_en: "Hawaii Elepaio",
                 scientific: "Chasiempis sandwichensis bryani",
                 family: "Monarchidae (Monarch Flycatchers)",
                 location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
@@ -8200,9 +8193,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -8217,9 +8210,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -8234,9 +8227,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -8251,9 +8244,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -9067,9 +9060,9 @@
                 name_en: "Cliff Swallow",
                 scientific: "Petrochelidon pyrrhonota",
                 family: "Hirundinidae (Swallows)",
-                location: "Hornsby Bend (HOTE 037)",
-                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
-                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                location: "Hornsby Bend",
+                location_fr: "Hornsby Bend, Texas, États-Unis",
+                location_en: "Hornsby Bend, Texas, United States",
                 date_fr: "12 juin 2018",
                 date_en: "June 12<sup>th</sup>, 2018",
                 lat: 30.2181988,
@@ -9084,9 +9077,9 @@
                 name_en: "Cliff Swallow",
                 scientific: "Petrochelidon pyrrhonota",
                 family: "Hirundinidae (Swallows)",
-                location: "Hornsby Bend (HOTE 037)",
-                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
-                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                location: "Hornsby Bend",
+                location_fr: "Hornsby Bend, Texas, États-Unis",
+                location_en: "Hornsby Bend, Texas, United States",
                 date_fr: "12 juin 2018",
                 date_en: "June 12<sup>th</sup>, 2018",
                 lat: 30.2181988,
@@ -9165,8 +9158,8 @@
             
             {
                 ml: "29630801",
-                name_fr: "Orite buissonnière (plumbeus)",
-                name_en: "Bushtit (Interior)",
+                name_fr: "Orite buissonnière",
+                name_en: "Bushtit",
                 scientific: "Psaltriparus minimus plumbeus",
                 family: "Aegithalidae (Long-tailed Tits)",
                 location: "Mt. Lemmon",
@@ -9522,8 +9515,8 @@
             
             {
                 ml: "34665871",
-                name_fr: "Gobemoucheron gris-bleu (groupe obscura)",
-                name_en: "Blue-gray Gnatcatcher (Western)",
+                name_fr: "Gobemoucheron gris-bleu",
+                name_en: "Blue-gray Gnatcatcher",
                 scientific: "Polioptila caerulea [obscura Group]",
                 family: "Polioptilidae (Gnatcatchers)",
                 location: "Mt. Lemmon",
@@ -11124,9 +11117,9 @@
                 name_en: "Iiwi",
                 scientific: "Drepanis coccinea",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles)",
-                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
-                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
+                location: "Pu\'u O\'o Trail, Kipuka Ainahou section",
+                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaï, États-Unis",
+                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaii, United States",
                 date_fr: "27 mai 2018",
                 date_en: "May 27<sup>th</sup>, 2018",
                 lat: 19.6714434,
@@ -11175,9 +11168,9 @@
                 name_en: "Hawaii Amakihi",
                 scientific: "Chlorodrepanis virens",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles)",
-                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
-                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
+                location: "Pu\'u O\'o Trail, Kipuka Ainahou section",
+                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaï, États-Unis",
+                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaii, United States",
                 date_fr: "27 mai 2018",
                 date_en: "May 27<sup>th</sup>, 2018",
                 lat: 19.6714434,
@@ -11192,9 +11185,9 @@
                 name_en: "Hawaii Amakihi",
                 scientific: "Chlorodrepanis virens",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles)",
-                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaï, États-Unis",
-                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section (first 2 miles), Hawaii, United States",
+                location: "Pu\'u O\'o Trail, Kipuka Ainahou section",
+                location_fr: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaï, États-Unis",
+                location_en: "Pu\'u O\'o Trail, Kipuka Ainahou section, Hawaii, United States",
                 date_fr: "27 mai 2018",
                 date_en: "May 27<sup>th</sup>, 2018",
                 lat: 19.6714434,
@@ -11464,9 +11457,9 @@
                 name_en: "Lesser Goldfinch",
                 scientific: "Spinus psaltria",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Paton Center for Hummingbirds (Patons\' Yard)",
-                location_fr: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, États-Unis",
-                location_en: "Paton Center for Hummingbirds (Patons\' Yard), Arizona, United States",
+                location: "Paton Center for Hummingbirds",
+                location_fr: "Paton Center for Hummingbirds, Arizona, États-Unis",
+                location_en: "Paton Center for Hummingbirds, Arizona, United States",
                 date_fr: "23 février 2023",
                 date_en: "February 23<sup>rd</sup>, 2023",
                 lat: 31.5390131,
@@ -11872,9 +11865,9 @@
                 name_en: "White-crowned Sparrow",
                 scientific: "Zonotrichia leucophrys",
                 family: "Passerellidae (New World Sparrows)",
-                location: "Rodeo Lagoon (including beach and offshore)",
-                location_fr: "Rodeo Lagoon (including beach and offshore), Californie, États-Unis",
-                location_en: "Rodeo Lagoon (including beach and offshore), California, United States",
+                location: "Rodeo Lagoon",
+                location_fr: "Rodeo Lagoon, Californie, États-Unis",
+                location_en: "Rodeo Lagoon, California, United States",
                 date_fr: "2 août 2023",
                 date_en: "August 2<sup>nd</sup>, 2023",
                 lat: 37.8304863,
@@ -12297,9 +12290,9 @@
                 name_en: "Brewer\'s Blackbird",
                 scientific: "Euphagus cyanocephalus",
                 family: "Icteridae (Troupials and Allies)",
-                location: "Chula Vista Bayside Park (H St.)",
-                location_fr: "Chula Vista Bayside Park (H St.), Californie, États-Unis",
-                location_en: "Chula Vista Bayside Park (H St.), California, United States",
+                location: "Chula Vista Bayside Park",
+                location_fr: "Chula Vista Bayside Park, Californie, États-Unis",
+                location_en: "Chula Vista Bayside Park, California, United States",
                 date_fr: "1<sup>er</sup> juillet 2010",
                 date_en: "July 1<sup>st</sup>, 2010",
                 lat: 32.6273723,
@@ -12314,9 +12307,9 @@
                 name_en: "Brewer\'s Blackbird",
                 scientific: "Euphagus cyanocephalus",
                 family: "Icteridae (Troupials and Allies)",
-                location: "Chula Vista Bayside Park (H St.)",
-                location_fr: "Chula Vista Bayside Park (H St.), Californie, États-Unis",
-                location_en: "Chula Vista Bayside Park (H St.), California, United States",
+                location: "Chula Vista Bayside Park",
+                location_fr: "Chula Vista Bayside Park, Californie, États-Unis",
+                location_en: "Chula Vista Bayside Park, California, United States",
                 date_fr: "1<sup>er</sup> juillet 2010",
                 date_en: "July 1<sup>st</sup>, 2010",
                 lat: 32.6273723,
@@ -12365,9 +12358,9 @@
                 name_en: "Common Grackle",
                 scientific: "Quiscalus quiscula",
                 family: "Icteridae (Troupials and Allies)",
-                location: "Liberty Island/Statue of Liberty (NY County)",
-                location_fr: "Liberty Island/Statue of Liberty (NY County), New York, États-Unis",
-                location_en: "Liberty Island/Statue of Liberty (NY County), New York, United States",
+                location: "Liberty Island/Statue of Liberty",
+                location_fr: "Liberty Island/Statue of Liberty, New York, États-Unis",
+                location_en: "Liberty Island/Statue of Liberty, New York, United States",
                 date_fr: "13 septembre 2006",
                 date_en: "September 13<sup>th</sup>, 2006",
                 lat: 40.6900653,
@@ -12552,9 +12545,9 @@
                 name_en: "Great-tailed Grackle",
                 scientific: "Quiscalus mexicanus",
                 family: "Icteridae (Troupials and Allies)",
-                location: "Hornsby Bend (HOTE 037)",
-                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
-                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                location: "Hornsby Bend",
+                location_fr: "Hornsby Bend, Texas, États-Unis",
+                location_en: "Hornsby Bend, Texas, United States",
                 date_fr: "12 juin 2018",
                 date_en: "June 12<sup>th</sup>, 2018",
                 lat: 30.2181988,
@@ -12718,8 +12711,8 @@
             
             {
                 ml: "56260821",
-                name_fr: "Paruline à croupion jaune (auduboni)",
-                name_en: "Yellow-rumped Warbler (Audubon\'s)",
+                name_fr: "Paruline à croupion jaune",
+                name_en: "Yellow-rumped Warbler",
                 scientific: "Setophaga coronata auduboni",
                 family: "Parulidae (New World Warblers)",
                 location: "Mt. Lemmon",
@@ -13529,8 +13522,8 @@
                 const flamingoIcon = L.divIcon({
                     className: '',
                     html: '<div class="flamingo-marker">🦩</div>',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
                 });
                 
                 if (marker) {
@@ -13599,7 +13592,7 @@
         // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
-            { lat: 30.2181988, lng: -97.6458054, name: "Hornsby Bend (HOTE 037)" },
+            { lat: 30.2181988, lng: -97.6458054, name: "Hornsby Bend" },
             
             { lat: 34.4215353, lng: -119.6572856, name: "Andree Clark Bird Refuge" },
             
@@ -13685,7 +13678,7 @@
             
             { lat: 34.4071359, lng: -119.8783064, name: "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails" },
             
-            { lat: 31.5390131, lng: -110.7606337, name: "Paton Center for Hummingbirds (Patons' Yard)" },
+            { lat: 31.5390131, lng: -110.7606337, name: "Paton Center for Hummingbirds" },
             
             { lat: 37.7421628, lng: -122.2112274, name: "MLK Jr. Regional Shoreline" },
             
@@ -13713,11 +13706,11 @@
             
             { lat: 19.5584961, lng: -155.9652615, name: "Outrigger Kona Resort and Spa" },
             
-            { lat: 27.8568345, lng: -80.448761, name: "Sebastian Inlet SP (Indian River co.)" },
+            { lat: 27.8568345, lng: -80.448761, name: "Sebastian Inlet SP" },
             
             { lat: 26.4520609, lng: -82.0151281, name: "Point Ybel Lighthouse Beach Park" },
             
-            { lat: 32.6273723, lng: -117.1076402, name: "Chula Vista Bayside Park (H St.)" },
+            { lat: 32.6273723, lng: -117.1076402, name: "Chula Vista Bayside Park" },
             
             { lat: 28.3677641, lng: -80.6017703, name: "Cocoa Beach Pier" },
             
@@ -13729,15 +13722,15 @@
             
             { lat: 37.8259411, lng: -122.422198, name: "Alcatraz Island" },
             
-            { lat: 40.6900653, lng: -74.0452476, name: "Liberty Island/Statue of Liberty (NY County)" },
+            { lat: 40.6900653, lng: -74.0452476, name: "Liberty Island/Statue of Liberty" },
             
             { lat: 32.8507576, lng: -117.2735641, name: "Point La Jolla" },
             
             { lat: 37.807614, lng: -122.4213409, name: "San Francisco Maritime NHP" },
             
-            { lat: 37.8304863, lng: -122.5329514, name: "Rodeo Lagoon (including beach and offshore)" },
+            { lat: 37.8304863, lng: -122.5329514, name: "Rodeo Lagoon" },
             
-            { lat: 32.722109, lng: -117.172575, name: "Waterfront Park (San Diego)" },
+            { lat: 32.722109, lng: -117.172575, name: "Waterfront Park" },
             
             { lat: 32.8495772, lng: -117.2697229, name: "Goldfish Point & Coast Walk Trail" },
             
@@ -13761,7 +13754,7 @@
             
             { lat: 35.546399, lng: -120.958265, name: "Green Valley Road" },
             
-            { lat: 25.4034735, lng: -80.5586135, name: "Southern Glades Trail (C111 Canal outside ENP)" },
+            { lat: 25.4034735, lng: -80.5586135, name: "Southern Glades Trail" },
             
             { lat: 37.8277685, lng: -122.4816799, name: "Golden Gate View Point" },
             
@@ -13783,9 +13776,9 @@
             
             { lat: 25.396439, lng: -80.566581, name: "Frog Pond WMA" },
             
-            { lat: 19.6714434, lng: -155.3849602, name: "Pu'u O'o Trail, Kipuka Ainahou section (first 2 miles)" },
+            { lat: 19.6714434, lng: -155.3849602, name: "Pu'u O'o Trail, Kipuka Ainahou section" },
             
-            { lat: 22.1302507, lng: -159.6556377, name: "Kōkeʻe State Park (general)" },
+            { lat: 22.1302507, lng: -159.6556377, name: "Kōkeʻe State Park" },
             
             { lat: 21.3108002, lng: -157.7279675, name: "Kuli'ou'ou Valley Trail" },
             
@@ -13890,6 +13883,9 @@
             if (indicator) {
                 indicator.style.display = 'none';
             }
+            
+            // Remonter en haut de la page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         if (tripLocations.length > 0) {
@@ -13898,10 +13894,6 @@
                 scrollWheelZoom: false,
                 zoomControl: true
             });
-            
-            // Garder une référence globale pour les fonctions de reset
-            window.tripMapInstance = tripMap;
-            window.tripMapMarkerCluster = null;
 
             // OpenStreetMap standard
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -13914,9 +13906,9 @@
                 return L.divIcon({
                     html: '<div class="flamingo-marker">🦩</div>',
                     className: '',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24],
-                    popupAnchor: [0, -24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18],
+                    popupAnchor: [0, -18]
                 });
             }
 
@@ -13944,21 +13936,26 @@
             // Ajouter les marqueurs avec compte de photos et filtrage
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
+                const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
-                    // Click sur le marqueur = filtre directement
-                    marker.on('click', function() {
-                        filterByLocation(loc.name);
-                    });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
                 
                 markerCluster.addLayer(marker);
             });
 
             tripMap.addLayer(markerCluster);
-            
-            // Garder référence au cluster pour le reset
-            window.tripMapMarkerCluster = markerCluster;
 
             // Ajuster la vue pour montrer tous les marqueurs
             if (tripLocations.length > 0) {
@@ -13976,19 +13973,6 @@
             }
         }
         
-        
-        // Réinitialiser le zoom de la carte
-        function resetMapZoom() {
-            if (window.tripMapInstance && window.tripMapMarkerCluster) {
-                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
-                window.tripMapInstance.fitBounds(bounds);
-                
-                // Limiter le zoom max
-                if (window.tripMapInstance.getZoom() > 12) {
-                    window.tripMapInstance.setZoom(12);
-                }
-            }
-        }
         
         // Menu mobile hamburger
         function toggleMobileMenu() {

@@ -43,13 +43,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 50%;
             border: 3px solid #2d5a27;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
         }
         .flamingo-marker:hover {
@@ -86,8 +86,6 @@
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
-            <a href="species_list_fr.html" class="site-logo">
-            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 
@@ -169,14 +167,9 @@
     <!-- CARTE DU VOYAGE -->
     <div class="trip-map-container">
         <div class="trip-map-header">
-            <div class="map-title-group">
-                <span class="map-icon">🗺️</span>
-                Lieux visités
-                <span class="location-count">(21)</span>
-            </div>
-            <button class="map-reset-btn" onclick="resetMapZoom()" title="Réinitialiser le zoom">
-                🔄 Réinitialiser
-            </button>
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(21)</span>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
@@ -525,8 +518,8 @@
             
             {
                 ml: "29632691",
-                name_fr: "Gallinule d\'Amérique (sandvicensis)",
-                name_en: "Common Gallinule (Hawaiian)",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
                 location: "Hanalei NWR",
@@ -542,8 +535,8 @@
             
             {
                 ml: "29632701",
-                name_fr: "Gallinule d\'Amérique (sandvicensis)",
-                name_en: "Common Gallinule (Hawaiian)",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
                 location: "Hanalei NWR",
@@ -559,8 +552,8 @@
             
             {
                 ml: "29632571",
-                name_fr: "Gallinule d\'Amérique (sandvicensis)",
-                name_en: "Common Gallinule (Hawaiian)",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
                 scientific: "Gallinula galeata sandvicensis",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
                 location: "Hanalei NWR",
@@ -610,8 +603,8 @@
             
             {
                 ml: "62726591",
-                name_fr: "Échasse d\'Amérique (knudseni)",
-                name_en: "Black-necked Stilt (Hawaiian)",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
                 location: "Kailua Beach Park",
@@ -627,8 +620,8 @@
             
             {
                 ml: "62726601",
-                name_fr: "Échasse d\'Amérique (knudseni)",
-                name_en: "Black-necked Stilt (Hawaiian)",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
                 location: "Kailua Beach Park",
@@ -644,8 +637,8 @@
             
             {
                 ml: "62726611",
-                name_fr: "Échasse d\'Amérique (knudseni)",
-                name_en: "Black-necked Stilt (Hawaiian)",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
                 scientific: "Himantopus mexicanus knudseni",
                 family: "Recurvirostridae (Stilts and Avocets)",
                 location: "Kailua Beach Park",
@@ -1035,8 +1028,8 @@
             
             {
                 ml: "22535901",
-                name_fr: "Hibou des marais (sandwichensis)",
-                name_en: "Short-eared Owl (Hawaiian)",
+                name_fr: "Hibou des marais",
+                name_en: "Short-eared Owl",
                 scientific: "Asio flammeus sandwichensis",
                 family: "Strigidae (Owls)",
                 location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
@@ -1052,8 +1045,8 @@
             
             {
                 ml: "22535941",
-                name_fr: "Monarque d\'Hawaï (bryani)",
-                name_en: "Hawaii Elepaio (Mauna Kea)",
+                name_fr: "Monarque d\'Hawaï",
+                name_en: "Hawaii Elepaio",
                 scientific: "Chasiempis sandwichensis bryani",
                 family: "Monarchidae (Monarch Flycatchers)",
                 location: "Pu\'u La\'au, Palila Discovery Trail and Ka\'ohe GMA",
@@ -1073,9 +1066,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -1090,9 +1083,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -1107,9 +1100,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -1124,9 +1117,9 @@
                 name_en: "Kauai Elepaio",
                 scientific: "Chasiempis sclateri",
                 family: "Monarchidae (Monarch Flycatchers)",
-                location: "Kōkeʻe State Park (general)",
-                location_fr: "Kōkeʻe State Park (general), Hawaï, États-Unis",
-                location_en: "Kōkeʻe State Park (general), Hawaii, United States",
+                location: "Kōkeʻe State Park",
+                location_fr: "Kōkeʻe State Park, Hawaï, États-Unis",
+                location_en: "Kōkeʻe State Park, Hawaii, United States",
                 date_fr: "20 juillet 2015",
                 date_en: "July 20<sup>th</sup>, 2015",
                 lat: 22.1302507,
@@ -1914,8 +1907,8 @@
                 const flamingoIcon = L.divIcon({
                     className: '',
                     html: '<div class="flamingo-marker">🦩</div>',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
                 });
                 
                 if (marker) {
@@ -2006,7 +1999,7 @@
             
             { lat: 19.8319137, lng: -155.5947653, name: "Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA" },
             
-            { lat: 22.1302507, lng: -159.6556377, name: "Kōkeʻe State Park (general)" },
+            { lat: 22.1302507, lng: -159.6556377, name: "Kōkeʻe State Park" },
             
             { lat: 21.3108002, lng: -157.7279675, name: "Kuli'ou'ou Valley Trail" },
             
@@ -2081,6 +2074,9 @@
             if (indicator) {
                 indicator.style.display = 'none';
             }
+            
+            // Remonter en haut de la page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         if (tripLocations.length > 0) {
@@ -2089,10 +2085,6 @@
                 scrollWheelZoom: false,
                 zoomControl: true
             });
-            
-            // Garder une référence globale pour les fonctions de reset
-            window.tripMapInstance = tripMap;
-            window.tripMapMarkerCluster = null;
 
             // OpenStreetMap standard
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -2105,9 +2097,9 @@
                 return L.divIcon({
                     html: '<div class="flamingo-marker">🦩</div>',
                     className: '',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24],
-                    popupAnchor: [0, -24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18],
+                    popupAnchor: [0, -18]
                 });
             }
 
@@ -2135,21 +2127,26 @@
             // Ajouter les marqueurs avec compte de photos et filtrage
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
+                const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
-                    // Click sur le marqueur = filtre directement
-                    marker.on('click', function() {
-                        filterByLocation(loc.name);
-                    });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
                 
                 markerCluster.addLayer(marker);
             });
 
             tripMap.addLayer(markerCluster);
-            
-            // Garder référence au cluster pour le reset
-            window.tripMapMarkerCluster = markerCluster;
 
             // Ajuster la vue pour montrer tous les marqueurs
             if (tripLocations.length > 0) {
@@ -2167,19 +2164,6 @@
             }
         }
         
-        
-        // Réinitialiser le zoom de la carte
-        function resetMapZoom() {
-            if (window.tripMapInstance && window.tripMapMarkerCluster) {
-                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
-                window.tripMapInstance.fitBounds(bounds);
-                
-                // Limiter le zoom max
-                if (window.tripMapInstance.getZoom() > 12) {
-                    window.tripMapInstance.setZoom(12);
-                }
-            }
-        }
         
         // Menu mobile hamburger
         function toggleMobileMenu() {

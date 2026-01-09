@@ -43,13 +43,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 50%;
             border: 3px solid #2d5a27;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
         }
         .flamingo-marker:hover {
@@ -86,8 +86,6 @@
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
-            <a href="species_list_en.html" class="site-logo">
-            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 
@@ -364,9 +362,9 @@
                 name_en: "Willow Ptarmigan",
                 scientific: "Lagopus lagopus",
                 family: "Phasianidae (Pheasants, Grouse, and Allies)",
-                location: "poste d\'observation Lagopède des saules, Montréal (2025)",
-                location_fr: "poste d\'observation Lagopède des saules, Montréal (2025), Québec, Canada",
-                location_en: "poste d\'observation Lagopède des saules, Montréal (2025), Quebec, Canada",
+                location: "poste d\'observation Lagopède des saules, Montréal",
+                location_fr: "poste d\'observation Lagopède des saules, Montréal, Québec, Canada",
+                location_en: "poste d\'observation Lagopède des saules, Montréal, Quebec, Canada",
                 date_fr: "28 avril 2025",
                 date_en: "April 28<sup>th</sup>, 2025",
                 lat: 45.5648313,
@@ -377,7 +375,7 @@
             
             {
                 ml: "608684974",
-                name_fr: "Pigeon biset (forme domestique)",
+                name_fr: "Pigeon biset",
                 name_en: "Rock Pigeon",
                 scientific: "Columba livia (Feral Pigeon)",
                 family: "Columbidae (Pigeons and Doves)",
@@ -772,9 +770,9 @@
                 name_en: "Great Cormorant",
                 scientific: "Phalacrocorax carbo",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
-                location: "Berges de l\'Adour (Bayonne)",
-                location_fr: "Berges de l\'Adour (Bayonne), Nouvelle-Aquitaine, France",
-                location_en: "Berges de l\'Adour (Bayonne), Nouvelle-Aquitaine, France",
+                location: "Berges de l\'Adour",
+                location_fr: "Berges de l\'Adour, Nouvelle-Aquitaine, France",
+                location_en: "Berges de l\'Adour, Nouvelle-Aquitaine, France",
                 date_fr: "4 juillet 2025",
                 date_en: "July 4<sup>th</sup>, 2025",
                 lat: 43.499761,
@@ -840,9 +838,9 @@
                 name_en: "Great Egret",
                 scientific: "Ardea alba",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
-                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
-                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
-                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                location: "Parque Jardín del Corazón",
+                location_fr: "Parque Jardín del Corazón, Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón, Coquimbo, Chile",
                 date_fr: "16 décembre 2007",
                 date_en: "December 16<sup>th</sup>, 2007",
                 lat: -29.9037627,
@@ -908,9 +906,9 @@
                 name_en: "Monk Parakeet",
                 scientific: "Myiopsitta monachus",
                 family: "Psittacidae (New World and African Parrots)",
-                location: "Parque Bicentenario de Vitacura (no contar cisnes / don\'t count swans)",
-                location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / don\'t count swans), Région Métropolitaine, Chili",
-                location_en: "Parque Bicentenario de Vitacura (no contar cisnes / don\'t count swans), Metropolitan Region, Chile",
+                location: "Parque Bicentenario de Vitacura",
+                location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+                location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
                 date_en: "April 12<sup>th</sup>, 2022",
                 lat: -33.3980197,
@@ -1562,8 +1560,8 @@
                 const flamingoIcon = L.divIcon({
                     className: '',
                     html: '<div class="flamingo-marker">🦩</div>',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
                 });
                 
                 if (marker) {
@@ -1629,19 +1627,6 @@
         });
 
         
-        
-        // Réinitialiser le zoom de la carte
-        function resetMapZoom() {
-            if (window.tripMapInstance && window.tripMapMarkerCluster) {
-                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
-                window.tripMapInstance.fitBounds(bounds);
-                
-                // Limiter le zoom max
-                if (window.tripMapInstance.getZoom() > 12) {
-                    window.tripMapInstance.setZoom(12);
-                }
-            }
-        }
         
         // Menu mobile hamburger
         function toggleMobileMenu() {

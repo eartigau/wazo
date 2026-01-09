@@ -43,13 +43,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 50%;
             border: 3px solid #2d5a27;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
         }
         .flamingo-marker:hover {
@@ -86,8 +86,6 @@
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
-            <a href="species_list_fr.html" class="site-logo">
-            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 
@@ -169,14 +167,9 @@
     <!-- CARTE DU VOYAGE -->
     <div class="trip-map-container">
         <div class="trip-map-header">
-            <div class="map-title-group">
-                <span class="map-icon">🗺️</span>
-                Lieux visités
-                <span class="location-count">(4)</span>
-            </div>
-            <button class="map-reset-btn" onclick="resetMapZoom()" title="Réinitialiser le zoom">
-                🔄 Réinitialiser
-            </button>
+            <span class="map-icon">🗺️</span>
+            Lieux visités
+            <span class="location-count">(4)</span>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
@@ -1693,8 +1686,8 @@
                 const flamingoIcon = L.divIcon({
                     className: '',
                     html: '<div class="flamingo-marker">🦩</div>',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
                 });
                 
                 if (marker) {
@@ -1826,6 +1819,9 @@
             if (indicator) {
                 indicator.style.display = 'none';
             }
+            
+            // Remonter en haut de la page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         if (tripLocations.length > 0) {
@@ -1834,10 +1830,6 @@
                 scrollWheelZoom: false,
                 zoomControl: true
             });
-            
-            // Garder une référence globale pour les fonctions de reset
-            window.tripMapInstance = tripMap;
-            window.tripMapMarkerCluster = null;
 
             // OpenStreetMap standard
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1850,9 +1842,9 @@
                 return L.divIcon({
                     html: '<div class="flamingo-marker">🦩</div>',
                     className: '',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24],
-                    popupAnchor: [0, -24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18],
+                    popupAnchor: [0, -18]
                 });
             }
 
@@ -1880,21 +1872,26 @@
             // Ajouter les marqueurs avec compte de photos et filtrage
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
+                const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
-                    // Click sur le marqueur = filtre directement
-                    marker.on('click', function() {
-                        filterByLocation(loc.name);
-                    });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
                 
                 markerCluster.addLayer(marker);
             });
 
             tripMap.addLayer(markerCluster);
-            
-            // Garder référence au cluster pour le reset
-            window.tripMapMarkerCluster = markerCluster;
 
             // Ajuster la vue pour montrer tous les marqueurs
             if (tripLocations.length > 0) {
@@ -1912,19 +1909,6 @@
             }
         }
         
-        
-        // Réinitialiser le zoom de la carte
-        function resetMapZoom() {
-            if (window.tripMapInstance && window.tripMapMarkerCluster) {
-                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
-                window.tripMapInstance.fitBounds(bounds);
-                
-                // Limiter le zoom max
-                if (window.tripMapInstance.getZoom() > 12) {
-                    window.tripMapInstance.setZoom(12);
-                }
-            }
-        }
         
         // Menu mobile hamburger
         function toggleMobileMenu() {

@@ -43,13 +43,13 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 48px;
-            height: 48px;
+            width: 36px;
+            height: 36px;
             background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
             border-radius: 50%;
             border: 3px solid #2d5a27;
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            font-size: 24px;
+            font-size: 20px;
             cursor: pointer;
         }
         .flamingo-marker:hover {
@@ -86,8 +86,6 @@
     <!-- NAVIGATION CENTRÉE -->
     <nav>
         <div class="nav-container">
-            <a href="species_list_en.html" class="site-logo">
-            </a>
             <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
             <ul class="nav-menu" id="navMenu">
                 
@@ -169,14 +167,9 @@
     <!-- CARTE DU VOYAGE -->
     <div class="trip-map-container">
         <div class="trip-map-header">
-            <div class="map-title-group">
-                <span class="map-icon">🗺️</span>
-                Locations visited
-                <span class="location-count">(7)</span>
-            </div>
-            <button class="map-reset-btn" onclick="resetMapZoom()" title="Reset zoom">
-                🔄 Reset
-            </button>
+            <span class="map-icon">🗺️</span>
+            Locations visited
+            <span class="location-count">(7)</span>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
@@ -291,9 +284,9 @@
                 name_en: "Mallard",
                 scientific: "Anas platyrhynchos",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "23 juillet 2018",
                 date_en: "July 23<sup>rd</sup>, 2018",
                 lat: 45.1742263,
@@ -308,9 +301,9 @@
                 name_en: "Red-crested Pochard",
                 scientific: "Netta rufina",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Canals du Rhône à Sète (Aigues-Mortes)",
-                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
-                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location: "Canals du Rhône à Sète",
+                location_fr: "Canals du Rhône à Sète, Occitanie, France",
+                location_en: "Canals du Rhône à Sète, Occitanie, France",
                 date_fr: "1<sup>er</sup> août 2018",
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.5694546,
@@ -325,9 +318,9 @@
                 name_en: "Eurasian Collared-Dove",
                 scientific: "Streptopelia decaocto",
                 family: "Columbidae (Pigeons and Doves)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -342,9 +335,9 @@
                 name_en: "Common Swift",
                 scientific: "Apus apus",
                 family: "Apodidae (Swifts)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -427,9 +420,9 @@
                 name_en: "Eurasian Moorhen",
                 scientific: "Gallinula chloropus",
                 family: "Rallidae (Rails, Gallinules, and Coots)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "23 juillet 2018",
                 date_en: "July 23<sup>rd</sup>, 2018",
                 lat: 45.1742263,
@@ -529,9 +522,9 @@
                 name_en: "Mediterranean Gull",
                 scientific: "Ichthyaetus melanocephalus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Canals du Rhône à Sète (Aigues-Mortes)",
-                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
-                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location: "Canals du Rhône à Sète",
+                location_fr: "Canals du Rhône à Sète, Occitanie, France",
+                location_en: "Canals du Rhône à Sète, Occitanie, France",
                 date_fr: "1<sup>er</sup> août 2018",
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.5694546,
@@ -546,9 +539,9 @@
                 name_en: "Little Tern",
                 scientific: "Sternula albifrons",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Canals du Rhône à Sète (Aigues-Mortes)",
-                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
-                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location: "Canals du Rhône à Sète",
+                location_fr: "Canals du Rhône à Sète, Occitanie, France",
+                location_en: "Canals du Rhône à Sète, Occitanie, France",
                 date_fr: "1<sup>er</sup> août 2018",
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.5694546,
@@ -631,9 +624,9 @@
                 name_en: "Great Cormorant",
                 scientific: "Phalacrocorax carbo",
                 family: "Phalacrocoracidae (Cormorants and Shags)",
-                location: "Canals du Rhône à Sète (Aigues-Mortes)",
-                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
-                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location: "Canals du Rhône à Sète",
+                location_fr: "Canals du Rhône à Sète, Occitanie, France",
+                location_en: "Canals du Rhône à Sète, Occitanie, France",
                 date_fr: "1<sup>er</sup> août 2018",
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.5694546,
@@ -682,9 +675,9 @@
                 name_en: "Little Egret",
                 scientific: "Egretta garzetta",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
-                location: "Canals du Rhône à Sète (Aigues-Mortes)",
-                location_fr: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
-                location_en: "Canals du Rhône à Sète (Aigues-Mortes), Occitanie, France",
+                location: "Canals du Rhône à Sète",
+                location_fr: "Canals du Rhône à Sète, Occitanie, France",
+                location_en: "Canals du Rhône à Sète, Occitanie, France",
                 date_fr: "1<sup>er</sup> août 2018",
                 date_en: "August 1<sup>st</sup>, 2018",
                 lat: 43.5694546,
@@ -750,9 +743,9 @@
                 name_en: "Gray Heron",
                 scientific: "Ardea cinerea",
                 family: "Ardeidae (Herons, Egrets, and Bitterns)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -784,9 +777,9 @@
                 name_en: "Short-toed Snake-Eagle",
                 scientific: "Circaetus gallicus",
                 family: "Accipitridae (Hawks, Eagles, and Kites)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "16 août 2018",
                 date_en: "August 16<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -801,9 +794,9 @@
                 name_en: "Common Buzzard",
                 scientific: "Buteo buteo",
                 family: "Accipitridae (Hawks, Eagles, and Kites)",
-                location: "La Sône (ville)",
-                location_fr: "La Sône (ville), Auvergne-Rhône-Alpes, France",
-                location_en: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                location: "La Sône",
+                location_fr: "La Sône, Auvergne-Rhône-Alpes, France",
+                location_en: "La Sône, Auvergne-Rhône-Alpes, France",
                 date_fr: "27 juillet 2018",
                 date_en: "July 27<sup>th</sup>, 2018",
                 lat: 45.1113234,
@@ -818,9 +811,9 @@
                 name_en: "Common Buzzard",
                 scientific: "Buteo buteo",
                 family: "Accipitridae (Hawks, Eagles, and Kites)",
-                location: "La Sône (ville)",
-                location_fr: "La Sône (ville), Auvergne-Rhône-Alpes, France",
-                location_en: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                location: "La Sône",
+                location_fr: "La Sône, Auvergne-Rhône-Alpes, France",
+                location_en: "La Sône, Auvergne-Rhône-Alpes, France",
                 date_fr: "27 juillet 2018",
                 date_en: "July 27<sup>th</sup>, 2018",
                 lat: 45.1113234,
@@ -852,9 +845,9 @@
                 name_en: "Eurasian Kestrel",
                 scientific: "Falco tinnunculus",
                 family: "Falconidae (Falcons and Caracaras)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "15 juillet 2018",
                 date_en: "July 15<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -869,9 +862,9 @@
                 name_en: "Eurasian Kestrel",
                 scientific: "Falco tinnunculus",
                 family: "Falconidae (Falcons and Caracaras)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -886,9 +879,9 @@
                 name_en: "Eurasian Kestrel",
                 scientific: "Falco tinnunculus",
                 family: "Falconidae (Falcons and Caracaras)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "9 juillet 2018",
                 date_en: "July 9<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -903,9 +896,9 @@
                 name_en: "Eurasian Hobby",
                 scientific: "Falco subbuteo",
                 family: "Falconidae (Falcons and Caracaras)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -920,9 +913,9 @@
                 name_en: "Crested Tit",
                 scientific: "Lophophanes cristatus",
                 family: "Paridae (Tits, Chickadees, and Titmice)",
-                location: "Lascours (Roquevaire)",
-                location_fr: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
-                location_en: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                location: "Lascours",
+                location_fr: "Lascours, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Lascours, Provence-Alpes-Côte d\'Azur, France",
                 date_fr: "6 août 2018",
                 date_en: "August 6<sup>th</sup>, 2018",
                 lat: 43.3459099,
@@ -937,9 +930,9 @@
                 name_en: "Eurasian Blue Tit",
                 scientific: "Cyanistes caeruleus",
                 family: "Paridae (Tits, Chickadees, and Titmice)",
-                location: "Lascours (Roquevaire)",
-                location_fr: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
-                location_en: "Lascours (Roquevaire), Provence-Alpes-Côte d\'Azur, France",
+                location: "Lascours",
+                location_fr: "Lascours, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Lascours, Provence-Alpes-Côte d\'Azur, France",
                 date_fr: "6 août 2018",
                 date_en: "August 6<sup>th</sup>, 2018",
                 lat: 43.3459099,
@@ -954,9 +947,9 @@
                 name_en: "Eurasian Blue Tit",
                 scientific: "Cyanistes caeruleus",
                 family: "Paridae (Tits, Chickadees, and Titmice)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "21 juillet 2018",
                 date_en: "July 21<sup>st</sup>, 2018",
                 lat: 45.1742263,
@@ -971,9 +964,9 @@
                 name_en: "Great Tit",
                 scientific: "Parus major",
                 family: "Paridae (Tits, Chickadees, and Titmice)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "15 juillet 2018",
                 date_en: "July 15<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -988,9 +981,9 @@
                 name_en: "Western House-Martin",
                 scientific: "Delichon urbicum",
                 family: "Hirundinidae (Swallows)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "23 juillet 2018",
                 date_en: "July 23<sup>rd</sup>, 2018",
                 lat: 45.1742263,
@@ -1005,9 +998,9 @@
                 name_en: "Willow Warbler",
                 scientific: "Phylloscopus trochilus",
                 family: "Phylloscopidae (Leaf Warblers)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "3 août 2018",
                 date_en: "August 3<sup>rd</sup>, 2018",
                 lat: 45.1742263,
@@ -1022,9 +1015,9 @@
                 name_en: "Common Firecrest",
                 scientific: "Regulus ignicapilla",
                 family: "Regulidae (Kinglets)",
-                location: "La Sône (ville)",
-                location_fr: "La Sône (ville), Auvergne-Rhône-Alpes, France",
-                location_en: "La Sône (ville), Auvergne-Rhône-Alpes, France",
+                location: "La Sône",
+                location_fr: "La Sône, Auvergne-Rhône-Alpes, France",
+                location_en: "La Sône, Auvergne-Rhône-Alpes, France",
                 date_fr: "27 juillet 2018",
                 date_en: "July 27<sup>th</sup>, 2018",
                 lat: 45.1113234,
@@ -1056,9 +1049,9 @@
                 name_en: "Eurasian Blackbird",
                 scientific: "Turdus merula",
                 family: "Turdidae (Thrushes and Allies)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "15 juillet 2018",
                 date_en: "July 15<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1073,9 +1066,9 @@
                 name_en: "Eurasian Blackbird",
                 scientific: "Turdus merula",
                 family: "Turdidae (Thrushes and Allies)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1090,9 +1083,9 @@
                 name_en: "Eurasian Blackbird",
                 scientific: "Turdus merula",
                 family: "Turdidae (Thrushes and Allies)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1107,9 +1100,9 @@
                 name_en: "Eurasian Blackbird",
                 scientific: "Turdus merula",
                 family: "Turdidae (Thrushes and Allies)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "9 juillet 2018",
                 date_en: "July 9<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1124,9 +1117,9 @@
                 name_en: "Spotted Flycatcher",
                 scientific: "Muscicapa striata",
                 family: "Muscicapidae (Old World Flycatchers)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "15 juillet 2018",
                 date_en: "July 15<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1141,9 +1134,9 @@
                 name_en: "Spotted Flycatcher",
                 scientific: "Muscicapa striata",
                 family: "Muscicapidae (Old World Flycatchers)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1158,9 +1151,9 @@
                 name_en: "Common Redstart",
                 scientific: "Phoenicurus phoenicurus",
                 family: "Muscicapidae (Old World Flycatchers)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "14 juillet 2018",
                 date_en: "July 14<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1175,9 +1168,9 @@
                 name_en: "Black Redstart",
                 scientific: "Phoenicurus ochruros",
                 family: "Muscicapidae (Old World Flycatchers)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "3 août 2018",
                 date_en: "August 3<sup>rd</sup>, 2018",
                 lat: 45.1742263,
@@ -1192,9 +1185,9 @@
                 name_en: "Black Redstart",
                 scientific: "Phoenicurus ochruros",
                 family: "Muscicapidae (Old World Flycatchers)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "21 juillet 2018",
                 date_en: "July 21<sup>st</sup>, 2018",
                 lat: 45.1742263,
@@ -1209,9 +1202,9 @@
                 name_en: "Black Redstart",
                 scientific: "Phoenicurus ochruros",
                 family: "Muscicapidae (Old World Flycatchers)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "9 juillet 2018",
                 date_en: "July 9<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1226,9 +1219,9 @@
                 name_en: "European Greenfinch",
                 scientific: "Chloris chloris",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "3 août 2018",
                 date_en: "August 3<sup>rd</sup>, 2018",
                 lat: 45.1742263,
@@ -1243,9 +1236,9 @@
                 name_en: "European Goldfinch",
                 scientific: "Carduelis carduelis",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Saint-Antoine l\'Abbaye (commune)",
-                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
-                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location: "Saint-Antoine l\'Abbaye",
+                location_fr: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye, Auvergne-Rhône-Alpes, France",
                 date_fr: "13 août 2018",
                 date_en: "August 13<sup>th</sup>, 2018",
                 lat: 45.1742263,
@@ -1489,8 +1482,8 @@
                 const flamingoIcon = L.divIcon({
                     className: '',
                     html: '<div class="flamingo-marker">🦩</div>',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18]
                 });
                 
                 if (marker) {
@@ -1559,9 +1552,9 @@
         // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
-            { lat: 45.1742263, lng: 5.216454, name: "Saint-Antoine l'Abbaye (commune)" },
+            { lat: 45.1742263, lng: 5.216454, name: "Saint-Antoine l'Abbaye" },
             
-            { lat: 43.5694546, lng: 4.1894174, name: "Canals du Rhône à Sète (Aigues-Mortes)" },
+            { lat: 43.5694546, lng: 4.1894174, name: "Canals du Rhône à Sète" },
             
             { lat: 43.2943685, lng: 5.3689027, name: "Vieux-Port de Marseille" },
             
@@ -1569,9 +1562,9 @@
             
             { lat: 46.3082483, lng: 6.1342695, name: "Observatoire de Genève" },
             
-            { lat: 45.1113234, lng: 5.2788234, name: "La Sône (ville)" },
+            { lat: 45.1113234, lng: 5.2788234, name: "La Sône" },
             
-            { lat: 43.3459099, lng: 5.5817655, name: "Lascours (Roquevaire)" },
+            { lat: 43.3459099, lng: 5.5817655, name: "Lascours" },
             
         ];
         
@@ -1628,6 +1621,9 @@
             if (indicator) {
                 indicator.style.display = 'none';
             }
+            
+            // Remonter en haut de la page
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
         if (tripLocations.length > 0) {
@@ -1636,10 +1632,6 @@
                 scrollWheelZoom: false,
                 zoomControl: true
             });
-            
-            // Garder une référence globale pour les fonctions de reset
-            window.tripMapInstance = tripMap;
-            window.tripMapMarkerCluster = null;
 
             // OpenStreetMap standard
             L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -1652,9 +1644,9 @@
                 return L.divIcon({
                     html: '<div class="flamingo-marker">🦩</div>',
                     className: '',
-                    iconSize: [48, 48],
-                    iconAnchor: [24, 24],
-                    popupAnchor: [0, -24]
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18],
+                    popupAnchor: [0, -18]
                 });
             }
 
@@ -1682,21 +1674,26 @@
             // Ajouter les marqueurs avec compte de photos et filtrage
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
+                const photoCount = countPhotosByLocation(loc.name);
                 
                 if (loc.name) {
-                    // Click sur le marqueur = filtre directement
-                    marker.on('click', function() {
-                        filterByLocation(loc.name);
-                    });
+                    // Popup avec nom et compte de photos
+                    const popupContent = `
+                        <div class="trip-popup-content">
+                            <strong>${loc.name}</strong>
+                            <div class="popup-photo-count">${photoCount} photo${photoCount > 1 ? 's' : ''}</div>
+                            <button class="popup-filter-btn" onclick="filterByLocation('${loc.name.replace(/'/g, "\\'")}')">
+                                ${currentLang === 'fr' ? 'Voir ces photos' : 'View photos'}
+                            </button>
+                        </div>
+                    `;
+                    marker.bindPopup(popupContent, { className: 'trip-popup' });
                 }
                 
                 markerCluster.addLayer(marker);
             });
 
             tripMap.addLayer(markerCluster);
-            
-            // Garder référence au cluster pour le reset
-            window.tripMapMarkerCluster = markerCluster;
 
             // Ajuster la vue pour montrer tous les marqueurs
             if (tripLocations.length > 0) {
@@ -1714,19 +1711,6 @@
             }
         }
         
-        
-        // Réinitialiser le zoom de la carte
-        function resetMapZoom() {
-            if (window.tripMapInstance && window.tripMapMarkerCluster) {
-                const bounds = window.tripMapMarkerCluster.getBounds().pad(0.1);
-                window.tripMapInstance.fitBounds(bounds);
-                
-                // Limiter le zoom max
-                if (window.tripMapInstance.getZoom() > 12) {
-                    window.tripMapInstance.setZoom(12);
-                }
-            }
-        }
         
         // Menu mobile hamburger
         function toggleMobileMenu() {
