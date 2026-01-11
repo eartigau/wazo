@@ -478,6 +478,9 @@
             currentSpecies = speciesData[sciName];
             if (!currentSpecies) return;
             
+            // Stocker le sciName pour la navigation
+            currentSpecies.sciName = sciName;
+            
             currentPhotoIndex = 0;
             showPhoto();
             
@@ -523,12 +526,16 @@
             }
             
             const total = currentSpecies.photos.length;
+            const counterEl = document.getElementById('lightbox-counter');
             if (total > 1) {
-                document.getElementById('lightbox-counter').textContent = 
-                    `Photo ${currentPhotoIndex + 1} / ${total}`;
-                document.getElementById('lightbox-counter').style.display = 'block';
+                counterEl.textContent = `${currentPhotoIndex + 1} / ${total}`;
+                counterEl.style.display = 'block';
+                counterEl.style.cursor = 'pointer';
+                counterEl.title = currentLang === 'fr' ? 'Cliquer pour voir la photo suivante' : 'Click to see next photo';
+                counterEl.onclick = () => navigateLightbox(1);
             } else {
-                document.getElementById('lightbox-counter').style.display = 'none';
+                counterEl.style.display = 'none';
+                counterEl.onclick = null;
             }
             
             document.getElementById('lightbox-location').textContent = 
@@ -591,8 +598,32 @@
         function navigateLightbox(direction) {
             if (!currentSpecies) return;
             
-            const total = currentSpecies.photos.length;
-            currentPhotoIndex = (currentPhotoIndex + direction + total) % total;
+            // Trouver l'index actuel de l'espèce dans la liste filtrée
+            const currentSpeciesIndex = filteredSpecies.findIndex(sp => sp.sciName === currentSpecies.sciName);
+            if (currentSpeciesIndex < 0) return;
+            
+            // Calculer le nouvel index de photo
+            const newPhotoIndex = currentPhotoIndex + direction;
+            
+            if (newPhotoIndex >= 0 && newPhotoIndex < currentSpecies.photos.length) {
+                // Rester dans la même espèce
+                currentPhotoIndex = newPhotoIndex;
+            } else if (direction > 0) {
+                // Aller à l'espèce suivante (première photo)
+                const nextSpeciesIndex = (currentSpeciesIndex + 1) % filteredSpecies.length;
+                const nextSp = filteredSpecies[nextSpeciesIndex];
+                currentSpecies = speciesData[nextSp.sciName];
+                currentSpecies.sciName = nextSp.sciName;
+                currentPhotoIndex = 0;
+            } else {
+                // Aller à l'espèce précédente (dernière photo)
+                const prevSpeciesIndex = (currentSpeciesIndex - 1 + filteredSpecies.length) % filteredSpecies.length;
+                const prevSp = filteredSpecies[prevSpeciesIndex];
+                currentSpecies = speciesData[prevSp.sciName];
+                currentSpecies.sciName = prevSp.sciName;
+                currentPhotoIndex = currentSpecies.photos.length - 1;
+            }
+            
             showPhoto();
         }
 

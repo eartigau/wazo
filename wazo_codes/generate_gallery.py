@@ -68,8 +68,8 @@ def nettoyer_nom_lieu(location: str) -> str:
     # Enlever TOUT contenu entre parenthèses
     result = re.sub(r'\s*\([^)]*\)', '', result)
     
-    # Enlever les commentaires avec double tiret
-    result = re.sub(r'\s*--.*$', '', result)
+    # Enlever les segments après -- seulement si contiennent des mots-clés de restriction
+    result = re.sub(r'--.*(?:please|historical|restricted).*$', '', result, flags=re.IGNORECASE)
     
     # Nettoyer les espaces multiples et trim
     result = re.sub(r'\s+', ' ', result).strip()
