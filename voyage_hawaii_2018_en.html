@@ -170,6 +170,7 @@
             <span class="map-icon">🗺️</span>
             Locations visited
             <span class="location-count">(8)</span>
+            <button id="reset-map-btn" onclick="resetMapView()" style="display: none; margin-left: 12px; background: transparent; border: 1px solid var(--sage-medium); color: var(--forest-green); padding: 4px 12px; border-radius: 15px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s;" title="Reset to overview">🔄 Reset</button>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
@@ -266,7 +267,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: January 11<sup>th</sup>, 2026</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: January 12<sup>th</sup>, 2026</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -1203,68 +1204,96 @@
             { lat: 19.8319137, lng: -155.5947653, name: "Pu'u La'au, Palila Discovery Trail and Ka'ohe GMA" },
             
         ];
-        
+
+        // Variable pour stocker les bounds initiaux
+        let initialMapBounds = null;
+        let tripMap = null;
+
         // Compter les photos par lieu
         function countPhotosByLocation(locationName) {
             return photosData.filter(p => p.location === locationName).length;
         }
-        
+
         // Compter les espèces par lieu
         function countSpeciesByLocation(locationName) {
             const speciesSet = new Set();
             photosData.filter(p => p.location === locationName).forEach(p => speciesSet.add(p.scientific));
             return speciesSet.size;
         }
-        
+
         // Filtrer par lieu - reconstruit la grille avec les espèces filtrées
         function filterByLocation(locationName) {
             activeLocationFilter = locationName;
-            
+
             // Reconstruire la grille avec les espèces filtrées
             rebuildGrid();
-            
+
             // Compter les espèces et photos du lieu
             const filteredList = getFilteredSpeciesList();
             const speciesCount = filteredList.length;
             const photoCount = filteredList.reduce((sum, sp) => sum + sp.photos.length, 0);
-            
+
             // Afficher l'indicateur de filtre
             const indicator = document.getElementById('location-filter-indicator');
             const locationNameSpan = document.getElementById('filter-location-name');
             const photoCountSpan = document.getElementById('filter-photo-count');
-            
+
             if (indicator) {
                 locationNameSpan.textContent = locationName;
-                const statsText = currentLang === 'fr' 
-                    ? ` (${speciesCount} espèce${speciesCount > 1 ? 's' : ''}, ${photoCount} photo${photoCount > 1 ? 's' : ''})` 
+                const statsText = currentLang === 'fr'
+                    ? ` (${speciesCount} espèce${speciesCount > 1 ? 's' : ''}, ${photoCount} photo${photoCount > 1 ? 's' : ''})`
                     : ` (${speciesCount} species, ${photoCount} photo${photoCount > 1 ? 's' : ''})`;
                 photoCountSpan.textContent = statsText;
                 indicator.style.display = 'flex';
             }
-            
+
+            // Afficher le bouton de reset
+            const resetBtn = document.getElementById('reset-map-btn');
+            if (resetBtn) {
+                resetBtn.style.display = 'inline-block';
+            }
+
             // Scroll vers la grille
             document.querySelector('.gallery-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
-        
+
         // Réinitialiser le filtre
         function resetLocationFilter() {
             activeLocationFilter = null;
-            
+
             // Reconstruire la grille sans filtre
             rebuildGrid();
-            
+
             const indicator = document.getElementById('location-filter-indicator');
             if (indicator) {
                 indicator.style.display = 'none';
             }
-            
+
             // Remonter en haut de la page
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
+        // Réinitialiser la vue de la carte
+        function resetMapView() {
+            if (tripMap && initialMapBounds) {
+                tripMap.fitBounds(initialMapBounds);
+
+                // Limiter le zoom max
+                if (tripMap.getZoom() > 12) {
+                    tripMap.setZoom(12);
+                }
+
+                // Cacher le bouton de reset
+                const resetBtn = document.getElementById('reset-map-btn');
+                if (resetBtn) {
+                    resetBtn.style.display = 'none';
+                }
+            }
+        }
+
         if (tripLocations.length > 0) {
             // Créer la carte
-            const tripMap = L.map('trip-map', {
+            tripMap = L.map('trip-map', {
                 scrollWheelZoom: false,
                 zoomControl: true
             });
@@ -1297,7 +1326,7 @@
                     let sizeClass = 'cluster-icon-small';
                     if (count >= 10) sizeClass = 'cluster-icon-medium';
                     if (count >= 25) sizeClass = 'cluster-icon-large';
-                    
+
                     return L.divIcon({
                         html: `<div class="cluster-icon ${sizeClass}">📷 ${count}</div>`,
                         className: '',
@@ -1310,14 +1339,14 @@
             // Ajouter les marqueurs avec filtrage direct au clic
             tripLocations.forEach(loc => {
                 const marker = L.marker([loc.lat, loc.lng], { icon: createFlamingoIcon() });
-                
+
                 if (loc.name) {
                     // Clic direct pour filtrer les photos
                     marker.on('click', function() {
                         filterByLocation(loc.name);
                     });
                 }
-                
+
                 markerCluster.addLayer(marker);
             });
 
@@ -1326,12 +1355,32 @@
             // Ajuster la vue pour montrer tous les marqueurs
             if (tripLocations.length > 0) {
                 tripMap.fitBounds(markerCluster.getBounds().pad(0.1));
-                
+
                 // Limiter le zoom max pour garder du contexte
                 if (tripMap.getZoom() > 12) {
                     tripMap.setZoom(12);
                 }
-                
+
+                // Sauvegarder les bounds initiaux après configuration
+                setTimeout(() => {
+                    initialMapBounds = tripMap.getBounds();
+                }, 600);
+
+                // Afficher le bouton de reset lors du zoom ou pan
+                tripMap.on('zoomend moveend', function() {
+                    const resetBtn = document.getElementById('reset-map-btn');
+                    if (resetBtn && initialMapBounds) {
+                        // Vérifier si la vue actuelle est différente de la vue initiale
+                        const currentBounds = tripMap.getBounds();
+                        const isDifferent = !initialMapBounds.equals(currentBounds) ||
+                                          Math.abs(tripMap.getZoom() - tripMap.getBoundsZoom(initialMapBounds)) > 0.5;
+
+                        if (isDifferent) {
+                            resetBtn.style.display = 'inline-block';
+                        }
+                    }
+                });
+
                 // Forcer le rechargement des tuiles après le rendu CSS
                 setTimeout(() => tripMap.invalidateSize(), 100);
                 setTimeout(() => tripMap.invalidateSize(), 300);

@@ -127,10 +127,10 @@
     </nav>
 
     <!-- EN-TÊTE -->
-    <div class="gallery-header">
+    <div class="gallery-header" style="padding-top: 20px;">
         <h1>{% if lang == 'fr' %}Espèces menacées photographiées{% else %}Endangered species photographed{% endif %}</h1>
         <div class="stats">
-            {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} • 
+            {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} •
             {{ total_photos }} photos
         </div>
     </div>
