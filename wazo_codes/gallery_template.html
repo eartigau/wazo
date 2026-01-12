@@ -137,7 +137,7 @@
             <span class="map-icon">🗺️</span>
             {% if lang == 'fr' %}Lieux visités{% else %}Locations visited{% endif %}
             <span class="location-count">({{ trip_locations|length }})</span>
-            <button id="reset-map-btn" onclick="resetMapView()" style="display: none; margin-left: 12px; background: transparent; border: 1px solid var(--sage-medium); color: var(--forest-green); padding: 4px 12px; border-radius: 15px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s;" title="{% if lang == 'fr' %}Revenir à la vue d'ensemble{% else %}Reset to overview{% endif %}">🔄 {% if lang == 'fr' %}Réinitialiser{% else %}Reset{% endif %}</button>
+            <button id="reset-map-btn" onclick="resetMapView()" style="display: none; margin-left: 12px; background: transparent; border: 1px solid var(--sage-medium); color: var(--forest-green); padding: 4px 12px; border-radius: 15px; font-size: 13px; font-weight: 500; cursor: pointer; transition: all 0.2s; position: relative; z-index: 10;" title="{% if lang == 'fr' %}Revenir à la vue d'ensemble{% else %}Reset to overview{% endif %}">🔄 {% if lang == 'fr' %}Réinitialiser{% else %}Reset{% endif %}</button>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
