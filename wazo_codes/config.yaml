@@ -29,6 +29,16 @@ fichiers:
 
 
 # ------------------------------------------------------------------------------
+# LISTES eBIRD REJETÉES
+# ------------------------------------------------------------------------------
+# Listes eBird à exclure de la lifelist (observations d'autres personnes, erreurs, etc.)
+# Format: liste des Submission ID (ex: S71949702)
+# ------------------------------------------------------------------------------
+rejected_lists:
+  - "S71949702"  # Syrie - observation partagée par une autre personne
+
+
+# ------------------------------------------------------------------------------
 # SITE WEB
 # ------------------------------------------------------------------------------
 site:
@@ -60,6 +70,18 @@ generation:
   
   # Limite de photos pour les galeries par famille
   limite_photos_famille: 500
+
+
+# ------------------------------------------------------------------------------
+# LIFELIST
+# ------------------------------------------------------------------------------
+# Page montrant toutes les observations sur une carte interactive.
+# En cliquant sur un site, on voit les espèces observées avec photos si disponibles.
+# ------------------------------------------------------------------------------
+
+lifelist:
+  # Activer/désactiver la page lifelist
+  activer: true
 
 
 # ------------------------------------------------------------------------------

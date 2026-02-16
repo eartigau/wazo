@@ -1431,18 +1431,18 @@ class EBirdGalleryGenerator:
                              curation: dict = None,
                              iucn_statuts: dict = None):
         """Génère la page liste des espèces par famille"""
-        
+
         output_fr = f"{output_base}_fr.html"
         output_en = f"{output_base}_en.html"
-        
+
         species_list = self.get_species_list(curation=curation)
-        
+
         # Ajouter statut IUCN à chaque espèce
         if iucn_statuts:
             for sp in species_list:
                 sci_name = sp.get('sci_name', '')
                 sp['iucn_status'] = iucn_statuts.get(sci_name, '')
-        
+
         # Grouper par famille
         families = {}
         for sp in species_list:

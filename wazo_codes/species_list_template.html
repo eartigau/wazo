@@ -21,7 +21,7 @@
             box-shadow: 0 3px 10px rgba(0,0,0,0.3);
             font-size: 20px;
         }
-        
+
         /* Compteur d'espèces par famille */
         .family-title {
             display: flex;
@@ -121,7 +121,7 @@
     <div class="gallery-header">
         <h1>{% if lang == 'fr' %}Toutes les espèces photographiées{% else %}All photographed species{% endif %}</h1>
         <div class="stats">
-            {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} • 
+            {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} •
             {{ total_families }} {% if lang == 'fr' %}familles{% else %}families{% endif %}
         </div>
     </div>
@@ -281,7 +281,7 @@
         let filteredSpecies = [...speciesListData];
         let currentSearchQuery = '';
         let renderedFamilies = new Set();
-        
+
         let currentSpecies = null;
         let currentPhotoIndex = 0;
         let map = null;
@@ -430,11 +430,11 @@
         // ========================================
         // RECHERCHE D'ESPÈCES
         // ========================================
-        
+
         function filterSpecies(query) {
             currentSearchQuery = query;
             const normalizedQuery = normalizeText(query);
-            
+
             if (normalizedQuery.length < 2) {
                 // Réinitialiser à la liste complète
                 filteredSpecies = [...speciesListData];
@@ -442,29 +442,29 @@
                 document.getElementById('search-clear').style.display = 'none';
             } else {
                 // Filtrer
-                filteredSpecies = speciesListData.filter(sp => 
+                filteredSpecies = speciesListData.filter(sp =>
                     normalizeText(sp.nameFr).includes(normalizedQuery) ||
                     normalizeText(sp.nameEn).includes(normalizedQuery) ||
                     normalizeText(sp.sciName).includes(normalizedQuery)
                 );
-                
+
                 document.getElementById('search-clear').style.display = 'block';
-                
+
                 // Afficher le compteur de résultats
                 const searchResults = document.getElementById('search-results');
                 if (filteredSpecies.length > 0) {
-                    const resultText = currentLang === 'fr' 
+                    const resultText = currentLang === 'fr'
                         ? `${filteredSpecies.length} espèce${filteredSpecies.length > 1 ? 's' : ''} trouvée${filteredSpecies.length > 1 ? 's' : ''}`
                         : `${filteredSpecies.length} species found`;
                     searchResults.textContent = resultText;
                 } else {
-                    searchResults.textContent = currentLang === 'fr' 
+                    searchResults.textContent = currentLang === 'fr'
                         ? 'Aucune espèce trouvée'
                         : 'No species found';
                 }
                 searchResults.style.display = 'block';
             }
-            
+
             // Effacer et re-rendre
             clearRenderedContent();
             renderNextBatch();

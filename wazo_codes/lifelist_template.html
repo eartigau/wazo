@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>{% if lang == 'fr' %}Ma Lifelist{% else %}My Lifelist{% endif %}</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.Default.css">
+    <link rel="stylesheet" href="gallery.css">
+    <style>
+        /* Carte carrée occupant 90% de la largeur */
+        .lifelist-map-container {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+        .lifelist-map-wrapper {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        #lifelist-map {
+            width: 100%;
+            aspect-ratio: 1/1;
+            max-height: 80vh;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        @media (max-width: 768px) {
+            .lifelist-map-wrapper {
+                width: 95%;
+            }
+            #lifelist-map {
+                aspect-ratio: 1/1;
+                max-height: 70vh;
+            }
+        }
+        
+        /* Bouton reset carte */
+        .map-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .reset-map-btn {
+            display: none;
+            background: transparent;
+            border: 1px solid var(--sage-medium);
+            color: var(--forest-green);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .reset-map-btn:hover {
+            background: var(--sage-light);
+        }
+        .reset-map-btn.visible {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        
+        /* Cluster personnalisé pour observations - style nuage/agrégé */
+        .obs-cluster-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #fff3e0 0%, #ffcc80 100%);
+            color: #e65100;
+            border-radius: 50%;
+            border: 3px solid #e65100;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .obs-cluster-icon-small {
+            width: 44px;
+            height: 44px;
+        }
+        .obs-cluster-icon-medium {
+            width: 54px;
+            height: 54px;
+            font-size: 14px;
+        }
+        .obs-cluster-icon-large {
+            width: 64px;
+            height: 64px;
+            font-size: 15px;
+        }
+        
+        /* Marqueur individuel - point final (différent des clusters) */
+        .single-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #c8e6c9 0%, #81c784 100%);
+            border-radius: 50%;
+            border: 3px solid #2e7d32;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 16px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .single-marker:hover {
+            transform: scale(1.15);
+        }
+        
+        /* Conteneur liste espèces par site */
+        .site-species-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* En-tête du site sélectionné */
+        .site-header {
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 24px;
+            border-left: 4px solid #1565c0;
+        }
+        .site-header.full-lifelist {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 4px solid var(--forest-green);
+        }
+        .site-header h2 {
+            margin: 0 0 8px 0;
+            color: #1565c0;
+            font-size: 1.5em;
+        }
+        .site-header.full-lifelist h2 {
+            color: var(--forest-green);
+        }
+        .site-header .site-stats {
+            color: var(--text-medium);
+            font-size: 14px;
+        }
+        .site-header .site-dates {
+            color: var(--text-light);
+            font-size: 13px;
+            margin-top: 4px;
+        }
+        
+        /* Liste des espèces du site - groupée par famille */
+        .site-species-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+        
+        /* Groupe famille */
+        .family-group {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .family-header {
+            background: linear-gradient(135deg, #f5f3f0 0%, #e8e4df 100%);
+            padding: 8px 16px;
+            font-weight: 600;
+            color: var(--forest-green);
+            font-size: 13px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .family-species-list {
+            padding: 0;
+        }
+        
+        /* Ligne espèce dans la liste */
+        .species-row {
+            display: flex;
+            align-items: center;
+            padding: 6px 16px;
+            border-bottom: 1px solid #f0f0f0;
+            transition: background 0.2s;
+            cursor: pointer;
+        }
+        .species-row:last-child {
+            border-bottom: none;
+        }
+        .species-row:hover {
+            background: #f8f8f8;
+        }
+        .species-row.expanded {
+            background: #f0f5f0;
+        }
+        
+        /* Infos espèce sur la ligne - inline */
+        .species-row-info {
+            flex: 1;
+            min-width: 0;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            overflow: hidden;
+        }
+        .species-row-name {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        .species-row-scientific {
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 13px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* Icône appareil photo */
+        .species-photo-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 50%;
+            margin-left: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            font-size: 16px;
+        }
+        .species-photo-icon:hover {
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .species-photo-count {
+            font-size: 11px;
+            color: var(--forest-green);
+            font-weight: 600;
+            margin-left: 4px;
+        }
+        
+        /* Chevron pour détails */
+        .species-row-chevron {
+            margin-left: 12px;
+            color: var(--text-light);
+            font-size: 12px;
+            transition: transform 0.2s;
+        }
+        .species-row.expanded .species-row-chevron {
+            transform: rotate(90deg);
+        }
+        
+        /* Détails espèce (panneau déroulant) */
+        .species-details {
+            display: none;
+            background: #fafafa;
+            border-top: 1px solid #eee;
+            padding: 16px 20px;
+        }
+        .species-details.expanded {
+            display: block;
+        }
+        .species-details-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .species-details-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 14px;
+        }
+        .observation-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+            font-size: 13px;
+        }
+        .observation-item:last-child {
+            border-bottom: none;
+        }
+        .observation-date {
+            color: var(--text-medium);
+        }
+        .observation-location {
+            color: var(--text-light);
+            font-size: 12px;
+            margin-left: 8px;
+        }
+        .observation-count-num {
+            background: var(--sage-light);
+            color: var(--forest-green);
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+        
+        /* Message sélection site */
+        .select-site-message {
+            text-align: center;
+            padding: 60px 20px;
+            color: var(--text-light);
+        }
+        .select-site-message .icon {
+            font-size: 48px;
+            margin-bottom: 16px;
+        }
+        .select-site-message p {
+            font-size: 16px;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        
+        /* Lightbox simplifiée pour photos */
+        .photo-lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo-lightbox.active {
+            display: flex;
+        }
+        .photo-lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        .photo-lightbox-content img {
+            max-width: 100%;
+            max-height: 85vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+        .photo-lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 32px;
+            cursor: pointer;
+        }
+        .photo-lightbox-info {
+            color: white;
+            text-align: center;
+            padding: 12px;
+        }
+        .photo-lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            font-size: 24px;
+            padding: 16px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .photo-lightbox-nav:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        .photo-lightbox-prev { left: 20px; }
+        .photo-lightbox-next { right: 20px; }
+        
+        /* Indicateur du site actif */
+        .site-indicator {
+            display: none;
+            background: linear-gradient(135deg, #1565c0 0%, #1976d2 100%);
+            color: white;
+            padding: 12px 24px;
+            margin: 0 auto 20px;
+            max-width: 1360px;
+            border-radius: 8px;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .site-indicator.active {
+            display: flex;
+        }
+        .site-indicator .site-name {
+            font-weight: 600;
+        }
+        .site-indicator .reset-btn {
+            background: rgba(255,255,255,0.2);
+            border: none;
+            color: white;
+            padding: 6px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .site-indicator .reset-btn:hover {
+            background: rgba(255,255,255,0.3);
+        }
+        
+        /* Panneau de statistiques déroulant */
+        .stats-panel {
+            max-width: 1360px;
+            margin: 0 auto 24px;
+            padding: 0 20px;
+        }
+        .stats-panel-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            padding: 14px 20px;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 1px solid #81c784;
+        }
+        .stats-panel-header:hover {
+            background: linear-gradient(135deg, #c8e6c9 0%, #a5d6a7 100%);
+        }
+        .stats-panel-header.expanded {
+            border-radius: 12px 12px 0 0;
+        }
+        .stats-panel-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--forest-green);
+            font-size: 15px;
+        }
+        .stats-panel-chevron {
+            color: var(--forest-green);
+            font-size: 14px;
+            transition: transform 0.3s;
+        }
+        .stats-panel-header.expanded .stats-panel-chevron {
+            transform: rotate(180deg);
+        }
+        .stats-panel-content {
+            display: none;
+            background: white;
+            border: 1px solid #81c784;
+            border-top: none;
+            border-radius: 0 0 12px 12px;
+            padding: 20px;
+        }
+        .stats-panel-content.expanded {
+            display: block;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+        }
+        .stat-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #f0f2f4 100%);
+            border-radius: 10px;
+            padding: 16px;
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+        }
+        .stat-icon {
+            font-size: 28px;
+            width: 44px;
+            height: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .stat-info {
+            flex: 1;
+            min-width: 0;
+        }
+        .stat-label {
+            font-size: 12px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 4px;
+        }
+        .stat-value {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--forest-green);
+        }
+        .stat-detail {
+            font-size: 13px;
+            color: var(--text-medium);
+            margin-top: 4px;
+        }
+        
+        /* Observation count badge */
+        .observation-count-num {
+            background: var(--sage-light);
+            color: var(--forest-green);
+            padding: 2px 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        .observation-province-country {
+            color: var(--text-light);
+            font-size: 11px;
+            margin-top: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                {% for item in menu %}
+                <li>
+                    <a href="{% if lang == 'fr' %}{{ item.file_fr }}{% else %}{{ item.file_en }}{% endif %}" 
+                       {% if current_page == item.file_fr or current_page == item.file_en %}class="active"{% endif %}>
+                        {% if lang == 'fr' %}{{ item.name_fr }}{% else %}{{ item.name_en }}{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+            
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                {% if lang == 'fr' %}
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
+                <a href="{{ other_lang_page }}" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                {% else %}
+                <a href="{{ other_lang_page }}" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>{% if lang == 'fr' %}Ma Lifelist{% else %}My Lifelist{% endif %}</h1>
+        <div class="stats">
+            {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %}
+            · {{ total_sites }} {% if lang == 'fr' %}sites{% else %}sites{% endif %}
+            · {{ total_observations }} {% if lang == 'fr' %}observations{% else %}observations{% endif %}
+        </div>
+    </div>
+
+    <!-- CARTE DES OBSERVATIONS -->
+    <div class="lifelist-map-container">
+        <div class="lifelist-map-wrapper">
+            <div class="map-header">
+                <span style="font-size: 24px;">🗺️</span>
+                <span style="font-weight: 600; color: var(--forest-green);">{% if lang == 'fr' %}Carte des observations{% else %}Observations map{% endif %}</span>
+                <button class="reset-map-btn" id="reset-map-btn" onclick="resetMapView()">
+                    🔄 {% if lang == 'fr' %}Vue initiale{% else %}Reset view{% endif %}
+                </button>
+            </div>
+            <div id="lifelist-map"></div>
+        </div>
+    </div>
+
+    <!-- PANNEAU STATISTIQUES -->
+    <div class="stats-panel">
+        <div class="stats-panel-header" id="stats-panel-header" onclick="toggleStatsPanel()">
+            <div class="stats-panel-title">
+                <span>📊</span>
+                <span>{% if lang == 'fr' %}Statistiques détaillées{% else %}Detailed statistics{% endif %}</span>
+            </div>
+            <span class="stats-panel-chevron">▼</span>
+        </div>
+        <div class="stats-panel-content" id="stats-panel-content">
+            <div class="stats-grid" id="stats-grid">
+                <!-- Stats générées par JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- INDICATEUR SITE SÉLECTIONNÉ -->
+    <div class="site-indicator" id="site-indicator">
+        <span>📍 <span class="site-name" id="selected-site-name"></span></span>
+        <button class="reset-btn" onclick="resetSiteSelection()">
+            {% if lang == 'fr' %}Voir tous les sites{% else %}Show all sites{% endif %} ✕
+        </button>
+    </div>
+
+    <!-- CONTENU: LISTE ESPÈCES PAR SITE -->
+    <div class="site-species-container" id="species-container">
+        <!-- Contenu du site (chargé dynamiquement) -->
+        <div id="site-content">
+            <div class="site-header" id="site-header">
+                <h2 id="site-title"></h2>
+                <div class="site-stats" id="site-stats"></div>
+                <div class="site-dates" id="site-dates"></div>
+            </div>
+            <div class="site-species-list" id="species-list"></div>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX PHOTOS -->
+    <div class="photo-lightbox" id="photo-lightbox">
+        <button class="photo-lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="photo-lightbox-nav photo-lightbox-prev" onclick="navigateLightbox(-1)">‹</button>
+        <button class="photo-lightbox-nav photo-lightbox-next" onclick="navigateLightbox(1)">›</button>
+        <div class="photo-lightbox-content">
+            <img id="lightbox-image" src="" alt="">
+            <div class="photo-lightbox-info">
+                <div id="lightbox-species-name"></div>
+                <div id="lightbox-location"></div>
+                <div id="lightbox-date"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr|safe }}{% else %}Updated: {{ update_date_en|safe }}{% endif %}{% endif %}</p>
+        <p>© {{ author }}</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script>
+        const currentLang = '{{ lang }}';
+        
+        // Données des sites avec observations
+        const sitesData = {{ sites_json|safe }};
+        
+        // Photos par espèce et site
+        const photosData = {{ photos_json|safe }};
+        
+        // Statistiques avancées
+        const advancedStats = {{ advanced_stats_json|safe }};
+        
+        // Variables globales
+        let lifelistMap = null;
+        let markerCluster = null;
+        let selectedSite = null;
+        let currentPhotos = [];
+        let currentPhotoIndex = 0;
+        let initialMapBounds = null;
+        
+        // Initialiser la carte
+        function initMap() {
+            lifelistMap = L.map('lifelist-map', {
+                scrollWheelZoom: true,
+                zoomControl: true
+            });
+            
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap',
+                maxZoom: 19
+            }).addTo(lifelistMap);
+            
+            // Créer le cluster group avec icônes différenciées
+            markerCluster = L.markerClusterGroup({
+                maxClusterRadius: 60,
+                spiderfyOnMaxZoom: true,
+                showCoverageOnHover: false,
+                zoomToBoundsOnClick: true,
+                iconCreateFunction: function(cluster) {
+                    const count = cluster.getChildCount();
+                    let sizeClass = 'obs-cluster-icon-small';
+                    if (count >= 10) sizeClass = 'obs-cluster-icon-medium';
+                    if (count >= 50) sizeClass = 'obs-cluster-icon-large';
+                    
+                    // Icône cluster (agrégé) - style orange avec plusieurs points
+                    return L.divIcon({
+                        html: `<div class="obs-cluster-icon ${sizeClass}">📍 ${count}</div>`,
+                        className: '',
+                        iconSize: [54, 54],
+                        iconAnchor: [27, 27]
+                    });
+                }
+            });
+            
+            // Ajouter les marqueurs individuels (points finaux) - style vert
+            const bounds = [];
+            sitesData.forEach(site => {
+                if (site.lat && site.lng) {
+                    bounds.push([site.lat, site.lng]);
+                    
+                    const marker = L.marker([site.lat, site.lng], {
+                        icon: L.divIcon({
+                            html: '<div class="single-marker">📍</div>',
+                            className: '',
+                            iconSize: [32, 32],
+                            iconAnchor: [16, 16]
+                        })
+                    });
+                    
+                    marker.on('click', () => selectSite(site.location_id));
+                    markerCluster.addLayer(marker);
+                }
+            });
+            
+            lifelistMap.addLayer(markerCluster);
+            
+            // Ajuster la vue et sauvegarder les bounds initiaux
+            if (bounds.length > 0) {
+                lifelistMap.fitBounds(bounds, { padding: [30, 30] });
+                if (lifelistMap.getZoom() > 12) {
+                    lifelistMap.setZoom(12);
+                }
+                // Sauvegarder les bounds initiaux pour le reset
+                initialMapBounds = L.latLngBounds(bounds);
+            }
+            
+            // Afficher le bouton reset quand on zoom
+            lifelistMap.on('zoomend moveend', function() {
+                updateResetButton();
+            });
+        }
+        
+        // Mettre à jour la visibilité du bouton reset
+        function updateResetButton() {
+            const resetBtn = document.getElementById('reset-map-btn');
+            if (!resetBtn || !initialMapBounds) return;
+            
+            const currentBounds = lifelistMap.getBounds();
+            const currentZoom = lifelistMap.getZoom();
+            const initialZoom = lifelistMap.getBoundsZoom(initialMapBounds, false, [30, 30]);
+            
+            // Afficher le bouton si on a zoomé ou bougé significativement
+            const zoomDiff = Math.abs(currentZoom - Math.min(initialZoom, 12));
+            const boundsChanged = !initialMapBounds.contains(currentBounds.getCenter());
+            
+            if (zoomDiff > 1 || boundsChanged) {
+                resetBtn.classList.add('visible');
+            } else {
+                resetBtn.classList.remove('visible');
+            }
+        }
+        
+        // Réinitialiser la vue de la carte
+        function resetMapView() {
+            if (lifelistMap && initialMapBounds) {
+                lifelistMap.fitBounds(initialMapBounds, { padding: [30, 30] });
+                if (lifelistMap.getZoom() > 12) {
+                    lifelistMap.setZoom(12);
+                }
+                document.getElementById('reset-map-btn').classList.remove('visible');
+            }
+        }
+        
+        // Sélectionner un site
+        function selectSite(locationId) {
+            const site = sitesData.find(s => s.location_id === locationId);
+            if (!site) return;
+            
+            selectedSite = site;
+            
+            // Mettre à jour l'indicateur
+            document.getElementById('site-indicator').classList.add('active');
+            document.getElementById('selected-site-name').textContent = site.location;
+            
+            // Remplir l'en-tête
+            document.getElementById('site-title').textContent = site.location;
+            
+            const speciesCount = site.species.length;
+            const obsCount = site.species.reduce((sum, sp) => sum + sp.observations.length, 0);
+            const photosCount = site.species.filter(sp => sp.photos && sp.photos.length > 0).length;
+            
+            const statsText = currentLang === 'fr'
+                ? `${speciesCount} espèce${speciesCount > 1 ? 's' : ''} · ${obsCount} observation${obsCount > 1 ? 's' : ''}${photosCount > 0 ? ` · ${photosCount} photographiée${photosCount > 1 ? 's' : ''}` : ''}`
+                : `${speciesCount} species · ${obsCount} observation${obsCount > 1 ? 's' : ''}${photosCount > 0 ? ` · ${photosCount} photographed` : ''}`;
+            document.getElementById('site-stats').textContent = statsText;
+            
+            // Dates de visite
+            const allDates = site.species.flatMap(sp => sp.observations.map(o => o.date_raw)).sort();
+            const firstVisit = allDates[0];
+            const lastVisit = allDates[allDates.length - 1];
+            const uniqueDates = [...new Set(allDates)];
+            
+            let datesText = '';
+            if (uniqueDates.length === 1) {
+                datesText = currentLang === 'fr' ? `Visite: ${formatDate(firstVisit, 'fr')}` : `Visit: ${formatDate(firstVisit, 'en')}`;
+            } else {
+                datesText = currentLang === 'fr' 
+                    ? `${uniqueDates.length} visites · ${formatDate(firstVisit, 'fr')} → ${formatDate(lastVisit, 'fr')}`
+                    : `${uniqueDates.length} visits · ${formatDate(firstVisit, 'en')} → ${formatDate(lastVisit, 'en')}`;
+            }
+            document.getElementById('site-dates').textContent = datesText;
+            
+            // Enlever le style full-lifelist de l'en-tête
+            document.getElementById('site-header').classList.remove('full-lifelist');
+            
+            // Générer la liste des espèces
+            renderSpeciesList(site.species);
+            
+            // Scroll vers la liste
+            document.getElementById('species-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+        
+        // Réinitialiser la sélection - afficher la lifelist complète
+        function resetSiteSelection() {
+            selectedSite = null;
+            document.getElementById('site-indicator').classList.remove('active');
+            showFullLifelist();
+            
+            // Revenir en haut
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+        
+        // Afficher la lifelist complète (toutes les espèces de tous les sites)
+        function showFullLifelist() {
+            // Construire une liste de toutes les espèces uniques avec leurs meilleures données
+            const allSpeciesMap = {};
+            
+            sitesData.forEach(site => {
+                site.species.forEach(sp => {
+                    const key = sp.sci_name;
+                    if (!allSpeciesMap[key]) {
+                        allSpeciesMap[key] = {
+                            sci_name: sp.sci_name,
+                            name_fr: sp.name_fr,
+                            name_en: sp.name_en,
+                            family: sp.family,
+                            taxon_order: sp.taxon_order,
+                            observations: [],
+                            photos: [],
+                            sites: new Set()
+                        };
+                    }
+                    
+                    // Ajouter les observations
+                    sp.observations.forEach(obs => {
+                        allSpeciesMap[key].observations.push({
+                            ...obs,
+                            location: site.location
+                        });
+                    });
+                    
+                    // Ajouter les photos
+                    if (sp.photos) {
+                        sp.photos.forEach(photo => {
+                            // Éviter les doublons de photos
+                            if (!allSpeciesMap[key].photos.find(p => p.ml === photo.ml)) {
+                                allSpeciesMap[key].photos.push(photo);
+                            }
+                        });
+                    }
+                    
+                    allSpeciesMap[key].sites.add(site.location);
+                });
+            });
+            
+            // Convertir en array et trier les observations par date
+            const fullSpeciesList = Object.values(allSpeciesMap).map(sp => {
+                sp.observations.sort((a, b) => b.date_raw.localeCompare(a.date_raw));
+                // Garder seulement les premières observations pour chaque espèce (lifer)
+                sp.first_obs = sp.observations[sp.observations.length - 1];
+                sp.sites_count = sp.sites.size;
+                delete sp.sites;
+                return sp;
+            });
+            
+            // Trier par ordre taxonomique
+            fullSpeciesList.sort((a, b) => (a.taxon_order || 999999) - (b.taxon_order || 999999));
+            
+            // Créer un "site virtuel" pour la lifelist complète
+            selectedSite = {
+                location: currentLang === 'fr' ? 'Lifelist complète' : 'Full Lifelist',
+                location_id: '__ALL__',
+                species: fullSpeciesList
+            };
+            
+            // Mettre à jour l'en-tête
+            document.getElementById('site-title').textContent = currentLang === 'fr' ? '🌍 Lifelist complète' : '🌍 Full Lifelist';
+            
+            // Ajouter le style full-lifelist à l'en-tête
+            document.getElementById('site-header').classList.add('full-lifelist');
+            
+            const speciesCount = fullSpeciesList.length;
+            const sitesCount = sitesData.length;
+            const totalObs = fullSpeciesList.reduce((sum, sp) => sum + sp.observations.length, 0);
+            const photosCount = fullSpeciesList.filter(sp => sp.photos && sp.photos.length > 0).length;
+            
+            const statsText = currentLang === 'fr'
+                ? `${speciesCount} espèces · ${sitesCount} sites · ${totalObs} observations${photosCount > 0 ? ` · ${photosCount} photographiées` : ''}`
+                : `${speciesCount} species · ${sitesCount} sites · ${totalObs} observations${photosCount > 0 ? ` · ${photosCount} photographed` : ''}`;
+            document.getElementById('site-stats').textContent = statsText;
+            
+            // Dates
+            const allDates = fullSpeciesList.flatMap(sp => sp.observations.map(o => o.date_raw)).sort();
+            const firstDate = allDates[0];
+            const lastDate = allDates[allDates.length - 1];
+            
+            const datesText = currentLang === 'fr' 
+                ? `Première observation: ${formatDate(firstDate, 'fr')} · Dernière: ${formatDate(lastDate, 'fr')}`
+                : `First observation: ${formatDate(firstDate, 'en')} · Last: ${formatDate(lastDate, 'en')}`;
+            document.getElementById('site-dates').textContent = datesText;
+            
+            // Générer la liste
+            renderSpeciesList(fullSpeciesList);
+        }
+        
+        // Formater une date
+        function formatDate(dateStr, lang) {
+            if (!dateStr) return '';
+            const parts = dateStr.split('-');
+            if (parts.length !== 3) return dateStr;
+            
+            const months_fr = ['', 'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 
+                              'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
+            const months_en = ['', 'January', 'February', 'March', 'April', 'May', 'June',
+                              'July', 'August', 'September', 'October', 'November', 'December'];
+            
+            const year = parseInt(parts[0]);
+            const month = parseInt(parts[1]);
+            const day = parseInt(parts[2]);
+            
+            if (lang === 'fr') {
+                const dayStr = day === 1 ? '1<sup>er</sup>' : day.toString();
+                return `${dayStr} ${months_fr[month]} ${year}`;
+            } else {
+                const suffix = (day === 1 || day === 21 || day === 31) ? 'st' :
+                              (day === 2 || day === 22) ? 'nd' :
+                              (day === 3 || day === 23) ? 'rd' : 'th';
+                return `${months_en[month]} ${day}<sup>${suffix}</sup>, ${year}`;
+            }
+        }
+        
+        // Générer la liste des espèces groupée par famille
+        function renderSpeciesList(species) {
+            const listContainer = document.getElementById('species-list');
+            listContainer.innerHTML = '';
+            
+            // Grouper les espèces par famille
+            const familyGroups = {};
+            const familyMinOrder = {}; // Pour trier les familles par ordre phylogénétique
+            
+            species.forEach(sp => {
+                const family = sp.family || (currentLang === 'fr' ? 'Autres' : 'Others');
+                if (!familyGroups[family]) {
+                    familyGroups[family] = [];
+                    familyMinOrder[family] = sp.taxon_order || 999999;
+                }
+                familyGroups[family].push(sp);
+                // Garder le min taxon_order pour trier les familles
+                if (sp.taxon_order < familyMinOrder[family]) {
+                    familyMinOrder[family] = sp.taxon_order;
+                }
+            });
+            
+            // Trier les familles par ordre phylogénétique (min taxon_order)
+            const sortedFamilies = Object.keys(familyGroups).sort((a, b) => {
+                return (familyMinOrder[a] || 999999) - (familyMinOrder[b] || 999999);
+            });
+            
+            // Créer les groupes de familles en ordre phylogénétique
+            sortedFamilies.forEach(family => {
+                // Trier les espèces dans chaque famille par ordre phylogénétique
+                familyGroups[family].sort((a, b) => (a.taxon_order || 999999) - (b.taxon_order || 999999));
+                
+                const familyDiv = document.createElement('div');
+                familyDiv.className = 'family-group';
+                
+                const headerDiv = document.createElement('div');
+                headerDiv.className = 'family-header';
+                // Remove parentheses description from family name
+                const familyName = family.replace(/\s*\([^)]*\)\s*$/, '');
+                headerDiv.textContent = familyName;
+                familyDiv.appendChild(headerDiv);
+                
+                const speciesListDiv = document.createElement('div');
+                speciesListDiv.className = 'family-species-list';
+                
+                familyGroups[family].forEach(sp => {
+                    const hasPhotos = sp.photos && sp.photos.length > 0;
+                    const name = currentLang === 'fr' ? sp.name_fr : sp.name_en;
+                    const sciNameId = sp.sci_name.replace(/[\s\.]/g, '-');
+                    
+                    // Ligne espèce
+                    const row = document.createElement('div');
+                    row.className = 'species-row';
+                    row.dataset.sciname = sp.sci_name;
+                    
+                    row.innerHTML = `
+                        <div class="species-row-info">
+                            <span class="species-row-name">${name}</span>
+                            <span class="species-row-scientific">${sp.sci_name}</span>
+                        </div>
+                        ${hasPhotos ? `
+                            <div class="species-photo-icon" onclick="event.stopPropagation(); openPhotoLightbox('${sp.sci_name}', 0)" title="${currentLang === 'fr' ? 'Voir les photos' : 'View photos'}">
+                                📷${sp.photos.length > 1 ? `<span class="species-photo-count">${sp.photos.length}</span>` : ''}
+                            </div>
+                        ` : ''}
+                        <span class="species-row-chevron">▶</span>
+                    `;
+                    
+                    row.addEventListener('click', () => toggleSpeciesDetails(sp.sci_name));
+                    speciesListDiv.appendChild(row);
+                    
+                    // Panneau détails
+                    const details = document.createElement('div');
+                    details.className = 'species-details';
+                    details.id = `details-${sciNameId}`;
+                    
+                    let detailsHtml = `
+                        <div class="species-details-header">
+                            <span class="species-details-title">${currentLang === 'fr' ? 'Observations' : 'Observations'} (${sp.observations.length})</span>
+                        </div>
+                    `;
+                    
+                    sp.observations.forEach(obs => {
+                        const dateDisplay = currentLang === 'fr' ? obs.date_fr : obs.date_en;
+                        const countDisplay = obs.count === 'X' ? 'X' : obs.count;
+                        const locationDisplay = obs.location ? `<span class="observation-location">· ${obs.location}</span>` : '';
+                        const provinceCountry = currentLang === 'fr' 
+                            ? (obs.province_country_fr || '') 
+                            : (obs.province_country_en || '');
+                        detailsHtml += `
+                            <div class="observation-item">
+                                <div style="flex: 1;">
+                                    <div class="observation-date">${dateDisplay}${locationDisplay}</div>
+                                    ${provinceCountry ? `<div class="observation-province-country">📍 ${provinceCountry}</div>` : ''}
+                                </div>
+                                <span class="observation-count-num" title="${currentLang === 'fr' ? 'Nombre d\'individus' : 'Number of individuals'}">${countDisplay}</span>
+                            </div>
+                        `;
+                    });
+                    
+                    details.innerHTML = detailsHtml;
+                    speciesListDiv.appendChild(details);
+                });
+                
+                familyDiv.appendChild(speciesListDiv);
+                listContainer.appendChild(familyDiv);
+            });
+        }
+        
+        // Basculer les détails d'une espèce
+        function toggleSpeciesDetails(sciName) {
+            const sciNameId = sciName.replace(/[\s\.]/g, '-');
+            const details = document.getElementById(`details-${sciNameId}`);
+            const row = document.querySelector(`.species-row[data-sciname="${sciName}"]`);
+            
+            if (details && row) {
+                details.classList.toggle('expanded');
+                row.classList.toggle('expanded');
+            }
+        }
+        
+        // Ouvrir la lightbox photo
+        function openPhotoLightbox(sciName, index) {
+            if (!selectedSite) return;
+            
+            const species = selectedSite.species.find(sp => sp.sci_name === sciName);
+            if (!species || !species.photos || species.photos.length === 0) return;
+            
+            currentPhotos = species.photos;
+            currentPhotoIndex = index;
+            
+            showPhoto();
+            document.getElementById('photo-lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+        
+        // Afficher la photo courante
+        function showPhoto() {
+            if (!currentPhotos.length) return;
+            
+            const photo = currentPhotos[currentPhotoIndex];
+            document.getElementById('lightbox-image').src = 
+                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
+            
+            document.getElementById('lightbox-species-name').innerHTML = 
+                currentLang === 'fr' ? photo.name_fr : photo.name_en;
+            document.getElementById('lightbox-location').textContent = 
+                currentLang === 'fr' ? photo.location_fr : photo.location_en;
+            document.getElementById('lightbox-date').innerHTML = 
+                currentLang === 'fr' ? photo.date_fr : photo.date_en;
+        }
+        
+        // Fermer la lightbox
+        function closeLightbox() {
+            document.getElementById('photo-lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+        
+        // Navigation lightbox
+        function navigateLightbox(direction) {
+            if (!currentPhotos.length) return;
+            currentPhotoIndex = (currentPhotoIndex + direction + currentPhotos.length) % currentPhotos.length;
+            showPhoto();
+        }
+        
+        // Clavier
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('photo-lightbox').classList.contains('active')) {
+                if (e.key === 'Escape') closeLightbox();
+                if (e.key === 'ArrowLeft') navigateLightbox(-1);
+                if (e.key === 'ArrowRight') navigateLightbox(1);
+            }
+        });
+        
+        // Menu mobile
+        function toggleMobileMenu() {
+            document.getElementById('navMenu').classList.toggle('active');
+        }
+        
+        // Toggle stats panel
+        function toggleStatsPanel() {
+            const header = document.getElementById('stats-panel-header');
+            const content = document.getElementById('stats-panel-content');
+            header.classList.toggle('expanded');
+            content.classList.toggle('expanded');
+        }
+        
+        // Render stats panel
+        function renderStatsPanel() {
+            const grid = document.getElementById('stats-grid');
+            if (!grid || !advancedStats) return;
+            
+            const formatNumber = (n) => n ? n.toLocaleString() : '0';
+            
+            const stats = [
+                {
+                    icon: '🐦',
+                    label_fr: 'Espèces totales',
+                    label_en: 'Total species',
+                    value: formatNumber(sitesData.reduce((acc, s) => {
+                        s.species.forEach(sp => acc.add(sp.sci_name));
+                        return acc;
+                    }, new Set()).size),
+                    detail_fr: `${formatNumber(advancedStats.countries_count)} pays`,
+                    detail_en: `${formatNumber(advancedStats.countries_count)} countries`
+                },
+                {
+                    icon: '👁️',
+                    label_fr: 'Individus comptés',
+                    label_en: 'Individuals counted',
+                    value: formatNumber(advancedStats.total_individuals),
+                    detail_fr: 'Nombre cumulé d\'individus',
+                    detail_en: 'Cumulative count'
+                },
+                {
+                    icon: '⭐',
+                    label_fr: 'Espèce la plus observée',
+                    label_en: 'Most observed species',
+                    value: currentLang === 'fr' ? advancedStats.most_observed_species_fr : advancedStats.most_observed_species_en,
+                    detail_fr: `${formatNumber(advancedStats.most_observed_species_count)} observations`,
+                    detail_en: `${formatNumber(advancedStats.most_observed_species_count)} observations`
+                },
+                {
+                    icon: '📍',
+                    label_fr: 'Lieu le plus visité',
+                    label_en: 'Most visited location',
+                    value: advancedStats.most_visited_location,
+                    detail_fr: `${formatNumber(advancedStats.most_visited_count)} observations`,
+                    detail_en: `${formatNumber(advancedStats.most_visited_count)} observations`
+                },
+                {
+                    icon: '🏆',
+                    label_fr: 'Meilleur jour',
+                    label_en: 'Best day',
+                    value: `${formatNumber(advancedStats.best_day_species_count)} ${currentLang === 'fr' ? 'espèces' : 'species'}`,
+                    detail_fr: advancedStats.best_day_date_fr,
+                    detail_en: advancedStats.best_day_date_en
+                },
+                {
+                    icon: '🔥',
+                    label_fr: 'Plus longue séquence',
+                    label_en: 'Longest streak',
+                    value: `${formatNumber(advancedStats.longest_streak)} ${currentLang === 'fr' ? 'jours consécutifs' : 'consecutive days'}`,
+                    detail_fr: advancedStats.streak_start_fr && advancedStats.streak_end_fr 
+                        ? `${advancedStats.streak_start_fr} → ${advancedStats.streak_end_fr}` 
+                        : '',
+                    detail_en: advancedStats.streak_start_en && advancedStats.streak_end_en 
+                        ? `${advancedStats.streak_start_en} → ${advancedStats.streak_end_en}` 
+                        : ''
+                },
+                {
+                    icon: '📅',
+                    label_fr: 'Jours d\'observation',
+                    label_en: 'Observation days',
+                    value: formatNumber(advancedStats.observation_days_count),
+                    detail_fr: `Moyenne: ${advancedStats.avg_species_per_day} espèces/jour`,
+                    detail_en: `Average: ${advancedStats.avg_species_per_day} species/day`
+                },
+                {
+                    icon: '🗓️',
+                    label_fr: 'Période d\'observation',
+                    label_en: 'Observation period',
+                    value_fr: advancedStats.first_obs_date_fr,
+                    value_en: advancedStats.first_obs_date_en,
+                    detail_fr: `→ ${advancedStats.last_obs_date_fr}`,
+                    detail_en: `→ ${advancedStats.last_obs_date_en}`
+                },
+                {
+                    icon: '📋',
+                    label_fr: 'Site avec le plus de listes',
+                    label_en: 'Site with most checklists',
+                    value: advancedStats.most_lists_site,
+                    detail_fr: `${formatNumber(advancedStats.most_lists_count)} listes`,
+                    detail_en: `${formatNumber(advancedStats.most_lists_count)} checklists`
+                },
+                {
+                    icon: '🌟',
+                    label_fr: 'Site le plus riche',
+                    label_en: 'Most species-rich site',
+                    value: advancedStats.most_species_site,
+                    detail_fr: `${formatNumber(advancedStats.most_species_site_count)} espèces`,
+                    detail_en: `${formatNumber(advancedStats.most_species_site_count)} species`
+                },
+                {
+                    icon: '🎯',
+                    label_fr: 'Meilleure année',
+                    label_en: 'Best year',
+                    value: advancedStats.best_year,
+                    detail_fr: `${formatNumber(advancedStats.best_year_species_count)} espèces observées`,
+                    detail_en: `${formatNumber(advancedStats.best_year_species_count)} species observed`
+                }
+            ];
+            
+            grid.innerHTML = stats.map(stat => `
+                <div class="stat-card">
+                    <div class="stat-icon">${stat.icon}</div>
+                    <div class="stat-info">
+                        <div class="stat-label">${currentLang === 'fr' ? stat.label_fr : stat.label_en}</div>
+                        <div class="stat-value">${stat.value_fr !== undefined ? (currentLang === 'fr' ? stat.value_fr : stat.value_en) : stat.value}</div>
+                        <div class="stat-detail">${currentLang === 'fr' ? stat.detail_fr : stat.detail_en}</div>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        // Initialiser au chargement
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap();
+            renderStatsPanel();
+            // Afficher la lifelist complète par défaut
+            showFullLifelist();
+        });
+    </script>
+</body>
+</html>

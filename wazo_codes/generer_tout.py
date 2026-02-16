@@ -40,6 +40,8 @@ from generate_gallery import (
     charger_cache
 )
 
+from generate_lifelist import LifelistGenerator
+
 
 # ============================================================================
 # CHARGEMENT CONFIGURATION
@@ -296,6 +298,16 @@ def construire_menu(config, generator, curation=None):
             'name_en': 'Endangered',
             'file_fr': 'menacees_fr.html',
             'file_en': 'menacees_en.html'
+        })
+    
+    # Lien Lifelist (si configuré ou par défaut)
+    config_lifelist = config.get('lifelist', {})
+    if config_lifelist.get('activer', True):  # Activé par défaut
+        menu.append({
+            'name_fr': 'Lifelist',
+            'name_en': 'Lifelist',
+            'file_fr': 'lifelist_fr.html',
+            'file_en': 'lifelist_en.html'
         })
     
     # Lien Sons (sera activé si des sons existent)
@@ -1032,6 +1044,35 @@ def generer_toutes_galeries():
                         f.write(html)
                 
                 print(f"   ✓ menacees_fr.html / menacees_en.html")
+    
+    # ========================================
+    # LIFELIST (toutes les observations)
+    # ========================================
+    config_lifelist = config.get('lifelist', {})
+    if config_lifelist.get('activer', True):  # Activé par défaut
+        print(f"\n🗺️ Page Lifelist (toutes les observations)...")
+        
+        # Récupérer les listes rejetées depuis la config
+        rejected_lists = config.get('rejected_lists', [])
+        
+        lifelist_generator = LifelistGenerator(
+            csv_file=CSV_FILE,
+            taxonomy_file=TAXONOMY_FILE,
+            media_cache_file=MEDIA_CACHE,
+            traductions_file=TRADUCTIONS_FILE,
+            rejected_lists=rejected_lists
+        )
+        
+        auteur = config.get('site', {}).get('auteur', 'Étienne Artigau')
+        
+        lifelist_generator.generate_lifelist_page(
+            output_base='lifelist',
+            template_file='lifelist_template.html',
+            menu=menu,
+            curation=curation,
+            author=auteur
+        )
+        total_galeries += 1
     
     # ========================================
     # PAGE ADMIN (numéros ML)
