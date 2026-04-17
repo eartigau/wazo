@@ -433,8 +433,9 @@
     
     <div class="footer">
         <span class="changes-count"><span id="changesCount">0</span> modification(s)</span>
-        <button class="download-btn" id="downloadBtn" onclick="downloadCSV()">
-            📥 Télécharger CSV
+        <span id="saveStatus" style="font-size:13px; color: var(--text-dim);"></span>
+        <button class="download-btn" id="downloadBtn" onclick="saveCuration()">
+            💾 Sauvegarder
         </button>
     </div>
     
@@ -40271,6 +40272,8 @@
         let changesCount = 0;
         let currentFilter = 'all';
         let currentSearch = '';
+        let autoSaveTimer = null;
+        const USE_SERVER = true;  // passe à false pour desactiver l'API locale
         
         // Initialiser curationData
         allPhotosData.forEach(p => {
@@ -40425,6 +40428,13 @@
             if (currentFilter !== 'all' && status !== currentFilter) {
                 card.style.display = 'none';
             }
+            
+            // Auto-sauvegarde debounced (2 s après la dernière modif)
+            if (USE_SERVER) {
+                if (autoSaveTimer) clearTimeout(autoSaveTimer);
+                setSaveStatus('En attente...');
+                autoSaveTimer = setTimeout(saveCuration, 2000);
+            }
         }
         
         // Mettre à jour les statistiques
@@ -40457,7 +40467,39 @@
             });
         });
         
-        // Télécharger le CSV
+        // Afficher le statut de sauvegarde
+        function setSaveStatus(msg, color) {
+            const el = document.getElementById('saveStatus');
+            el.textContent = msg;
+            el.style.color = color || 'var(--text-dim)';
+        }
+        
+        // Sauvegarder via le serveur local (ou télécharger si pas de serveur)
+        async function saveCuration() {
+            if (!USE_SERVER) {
+                downloadCSV();
+                return;
+            }
+            setSaveStatus('Sauvegarde...');
+            try {
+                const resp = await fetch('/api/curation', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ curation: curationData })
+                });
+                if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+                const data = await resp.json();
+                setSaveStatus(`✓ Sauvegardé (${data.saved})`, 'var(--success)');
+                setTimeout(() => setSaveStatus(''), 3000);
+                changesCount = 0;
+                document.getElementById('changesCount').textContent = 0;
+            } catch (err) {
+                setSaveStatus('⚠ Erreur: ' + err.message, 'var(--highlight)');
+                console.error('Erreur sauvegarde:', err);
+            }
+        }
+        
+        // Télécharger le CSV (fallback)
         function downloadCSV() {
             let csv = 'ml_number,status\n';
             for (const [ml, status] of Object.entries(curationData)) {
@@ -40489,7 +40531,24 @@
         });
         
         // Initialisation
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Charger la curation depuis le serveur local si disponible
+            if (USE_SERVER) {
+                try {
+                    const resp = await fetch('/api/curation');
+                    if (resp.ok) {
+                        const data = await resp.json();
+                        const serverCuration = data.curation || {};
+                        // Les données serveur prennent le dessus sur les défauts embarqués
+                        Object.assign(curationData, serverCuration);
+                        setSaveStatus('Curation chargée depuis le serveur', 'var(--success)');
+                        setTimeout(() => setSaveStatus(''), 3000);
+                    }
+                } catch (err) {
+                    // Pas de serveur — on reste sur les données embarquées, download CSV disponible
+                    setSaveStatus('Mode hors-ligne (CSV téléchargeable)', 'var(--text-dim)');
+                }
+            }
             updateStats();
             renderNextBatch();
         });
