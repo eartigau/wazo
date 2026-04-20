@@ -492,7 +492,7 @@
                     }).addTo(map);
                 }
                 
-                map.setView([photo.lat, photo.lng], 8);
+                map.setView([photo.lat, photo.lng], 5);
                 
                 const flamingoIcon = L.divIcon({
                     className: '',
@@ -507,7 +507,7 @@
                     marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
-                setTimeout(() => map.invalidateSize(), 100);
+                setTimeout(() => { map.invalidateSize(); map.setView([photo.lat, photo.lng], 5); }, 250);
             } else {
                 mapDiv.style.display = 'none';
             }

@@ -1975,3 +1975,220 @@ footer a:hover {
     opacity: 0;
     pointer-events: none;
 }
+
+/* ============================================
+   LIGHTBOX — THÈME CINÉMATIQUE
+   Fond noir profond. La photo seule apporte la couleur.
+   ============================================ */
+
+/* Fond */
+.lightbox {
+    background: rgba(5, 5, 5, 0.97) !important;
+}
+
+/* Photo : légère lueur pour la détacher du noir */
+.lightbox-image-container img {
+    box-shadow:
+        0 0 0 1px rgba(255,255,255,0.06),
+        0 20px 80px rgba(0,0,0,0.9),
+        0 0 120px rgba(0,0,0,0.6) !important;
+    border-radius: 6px !important;
+}
+
+/* Bouton ✕ — minimaliste */
+.lightbox-close {
+    background: rgba(255,255,255,0.08) !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    color: rgba(255,255,255,0.7) !important;
+    backdrop-filter: blur(8px) !important;
+}
+.lightbox-close:hover {
+    background: rgba(255,255,255,0.18) !important;
+    border-color: rgba(255,255,255,0.3) !important;
+    color: #fff !important;
+    transform: rotate(90deg) scale(1.05) !important;
+}
+
+/* Boutons prev/next — petits et translucides */
+.lightbox-nav {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 13px !important;
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.1) !important;
+    color: rgba(255,255,255,0.55) !important;
+    backdrop-filter: blur(10px) !important;
+}
+.lightbox-nav:hover {
+    background: rgba(255,255,255,0.16) !important;
+    border-color: rgba(255,255,255,0.28) !important;
+    color: rgba(255,255,255,0.9) !important;
+}
+.lightbox-prev { left: 16px !important; }
+.lightbox-next { right: 16px !important; }
+
+/* Sidebar — police serif pour élégance */
+.lightbox-sidebar {
+    font-family: 'Lora', Georgia, serif !important;
+    color: #d8d8d8 !important;
+    border-left: 1px solid rgba(255,255,255,0.06) !important;
+    padding-left: 28px !important;
+}
+
+/* Famille — caps Inter discret */
+.lightbox-family {
+    font-family: 'Inter', sans-serif !important;
+    color: #555 !important;
+    letter-spacing: 2.5px !important;
+    font-size: 10px !important;
+}
+.lightbox-family::before {
+    background: #3a3a3a !important;
+}
+
+/* Titre espèce */
+.lightbox-sidebar h2 {
+    color: #f0f0f0 !important;
+    font-size: 26px !important;
+    font-weight: 600 !important;
+    line-height: 1.15 !important;
+    margin-bottom: 4px !important;
+}
+
+/* Nom scientifique + séparateur décoratif après */
+.lightbox-sidebar .scientific-name {
+    color: #b0b0b0 !important;
+    font-size: 14px !important;
+    font-style: italic !important;
+    margin-bottom: 0 !important;
+}
+.lightbox-sidebar .scientific-name::after {
+    content: '· · ·';
+    display: block;
+    text-align: left;
+    color: #383838;
+    letter-spacing: 5px;
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    margin: 16px 0;
+}
+
+/* Compteur n/total — sous le séparateur */
+#lightbox-counter {
+    color: #666 !important;
+    background: none !important;
+    border: none !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 12px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.8px !important;
+    margin-bottom: 4px !important;
+    margin-top: -12px !important;
+}
+
+/* Bloc infos — séparé par un trait */
+.lightbox-info {
+    background: none !important;
+    border: none !important;
+    border-top: 1px solid rgba(255,255,255,0.07) !important;
+    border-radius: 0 !important;
+    padding: 14px 0 !important;
+    margin-bottom: 6px !important;
+    margin-top: 4px !important;
+}
+
+/* Icônes globe/calendrier masquées */
+.lightbox .info-icon {
+    display: none !important;
+}
+.lightbox .info-row {
+    font-family: 'Inter', sans-serif !important;
+    color: #bbb !important;
+    font-size: 13px !important;
+    margin-bottom: 7px !important;
+    gap: 0 !important;
+}
+.lightbox .info-row:last-child {
+    margin-bottom: 0 !important;
+}
+
+/* Séparateur avant la carte */
+#lightbox-map {
+    background: #050505 !important;
+    border-radius: 10px !important;
+    border: 1px solid rgba(255,255,255,0.07) !important;
+    margin-top: 14px !important;
+}
+#lightbox-map .leaflet-tile-pane {
+    filter: grayscale(100%) invert(1) brightness(0.8) contrast(1.1) !important;
+}
+
+/* Lien eBird — visible, sobre */
+.lightbox .ebird-link {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding: 9px 16px !important;
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.14) !important;
+    border-radius: 8px !important;
+    color: #e8e8e8 !important;
+    font-family: 'Inter', sans-serif !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.3px !important;
+    transition: all 0.2s ease !important;
+    margin-top: 14px !important;
+}
+.lightbox .ebird-link:hover {
+    background: rgba(255,255,255,0.15) !important;
+    border-color: rgba(255,255,255,0.28) !important;
+    color: #fff !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+.lightbox .ebird-icon {
+    filter: grayscale(1) brightness(2.5) !important;
+    opacity: 0.7 !important;
+    width: 15px !important;
+    height: 15px !important;
+    flex-shrink: 0 !important;
+}
+
+/* Marqueur caméra — blanc sur fond sombre */
+.camera-marker {
+    background: rgba(255,255,255,0.15) !important;
+    border: 2px solid rgba(255,255,255,0.5) !important;
+}
+
+/* Popups leaflet */
+.lightbox .leaflet-popup-content-wrapper,
+.lightbox .leaflet-popup-tip {
+    background: #1e1e1e !important;
+    color: #d8d8d8 !important;
+    border: 1px solid #333 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6) !important;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .lightbox-sidebar {
+        background: #0d0d0d !important;
+        border-left: none !important;
+        border-top: 1px solid rgba(255,255,255,0.08) !important;
+        padding-left: 16px !important;
+    }
+    .lightbox-nav {
+        width: 34px !important;
+        height: 34px !important;
+        font-size: 12px !important;
+        background: rgba(20,20,20,0.92) !important;
+        color: rgba(255,255,255,0.5) !important;
+    }
+    .lightbox-close {
+        background: rgba(10,10,10,0.85) !important;
+        border-color: rgba(255,255,255,0.15) !important;
+    }
+}

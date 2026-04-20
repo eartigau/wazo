@@ -1063,8 +1063,9 @@ class EBirdGalleryGenerator:
         
         # Date de mise à jour
         today = datetime.now()
-        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
-        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+        heure = today.strftime('%-Hh%M')
+        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr') + f' ({heure})'
+        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en') + f' ({heure})'
         
         # Version française
         html_fr = template.render(
@@ -1370,8 +1371,9 @@ class EBirdGalleryGenerator:
         
         # Date de mise à jour (aujourd'hui)
         today = datetime.now()
-        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
-        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+        heure = today.strftime('%-Hh%M')
+        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr') + f' ({heure})'
+        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en') + f' ({heure})'
         
         # Version française
         html_fr = template.render(
@@ -1487,8 +1489,9 @@ class EBirdGalleryGenerator:
         
         # Date de mise à jour (aujourd'hui)
         today = datetime.now()
-        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
-        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+        heure = today.strftime('%-Hh%M')
+        update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr') + f' ({heure})'
+        update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en') + f' ({heure})'
         
         # Version française
         html_fr = template.render(

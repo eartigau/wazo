@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Florence, September 2023</title>
+    <title>Côte d'Ivoire</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
@@ -90,51 +90,51 @@
             <ul class="nav-menu" id="navMenu">
                 
                 <li>
-                    <a href="https://eartigau.github.io/index_en.html" 
+                    <a href="https://eartigau.github.io/index_fr.html" 
                        >
-                        Home
+                        Accueil
                     </a>
                 </li>
                 
                 <li>
-                    <a href="species_list_en.html" 
+                    <a href="species_list_fr.html" 
                        >
-                        Species
+                        Espèces
                     </a>
                 </li>
                 
                 <li>
-                    <a href="gallery_recent_en.html" 
+                    <a href="gallery_recent_fr.html" 
                        >
-                        Recent Updates
+                        Ajouts récents
                     </a>
                 </li>
                 
                 <li>
-                    <a href="gallery_best_en.html" 
+                    <a href="gallery_best_fr.html" 
                        >
-                        Best of
+                        Meilleures photos
                     </a>
                 </li>
                 
                 <li>
-                    <a href="voyages_index_en.html" 
+                    <a href="voyages_index_fr.html" 
                        >
-                        Trips
+                        Voyages
                     </a>
                 </li>
                 
                 <li>
-                    <a href="pays_index_en.html" 
+                    <a href="pays_index_fr.html" 
                        >
-                        Countries
+                        Pays
                     </a>
                 </li>
                 
                 <li>
-                    <a href="menacees_en.html" 
+                    <a href="menacees_fr.html" 
                        >
-                        Endangered
+                        Menacées
                     </a>
                 </li>
                 
@@ -143,8 +143,8 @@
             <!-- Sélecteur de langue -->
             <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
                 
-                <a href="voyage_florence_2023_fr.html" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
-                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
+                <a href="pays_ci_en.html" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
                 
             </div>
         </div>
@@ -153,12 +153,16 @@
     <!-- EN-TÊTE -->
     <div class="gallery-header">
         
-        <h1>Florence, September 2023</h1>
+        <a href="pays_index_fr.html" class="back-link" style="display: inline-flex; align-items: center; gap: 6px; color: var(--forest-green); font-size: 14px; font-weight: 500; margin-bottom: 12px; text-decoration: none;">
+            ← Tous les pays
+        </a>
         
-        <div class="gallery-subtitle">September 5<sup>th</sup>–8<sup>th</sup>, 2023</div>
+        <h1>Côte d'Ivoire</h1>
         
         <div class="stats">
-            28 photos
+            3 photos
+            
+             · 3 espèces
             
         </div>
     </div>
@@ -168,8 +172,8 @@
     <div class="trip-map-container">
         <div class="trip-map-header">
             <span class="map-icon">🗺️</span>
-            Locations visited
-            <span class="location-count">(6)</span>
+            Lieux visités
+            <span class="location-count">(3)</span>
         </div>
         <div class="trip-map-wrapper">
             <div id="trip-map"></div>
@@ -188,7 +192,7 @@
                 <span id="filter-photo-count"></span>
             </span>
             <button onclick="resetLocationFilter()" class="filter-reset-btn">
-                Show all ✕
+                Afficher tout ✕
             </button>
         </div>
         
@@ -202,13 +206,13 @@
         
         <!-- Indicateur de chargement -->
         <div id="loading-indicator" class="loading-indicator" style="text-align: center; padding: 40px; color: var(--text-medium);">
-            Loading...
+            Chargement...
         </div>
         
         <!-- Bouton charger plus -->
         <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
             <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()" style="background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%); color: white; border: none; padding: 14px 32px; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);">
-                Show more species
+                Afficher plus d'espèces
                 <span id="remaining-count"></span>
             </button>
         </div>
@@ -258,7 +262,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    View on eBird
+                    Voir sur eBird
                 </a>
             </div>
         </div>
@@ -266,7 +270,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: April 19<sup>th</sup>, 2026 (13h24)</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 19 avril 2026 (13h24)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -274,484 +278,59 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script>
-        const currentLang = 'en';
+        const currentLang = 'fr';
         
         const photosData = [
             
             {
-                ml: "608679995",
-                name_fr: "Ouette d\'Égypte",
-                name_en: "Egyptian Goose",
-                scientific: "Alopochen aegyptiaca",
-                family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608684974",
-                name_fr: "Pigeon biset (forme domestique)",
-                name_en: "Rock Pigeon",
-                scientific: "Columba livia (Feral Pigeon)",
+                ml: "187527441",
+                name_fr: "Tourterelle maillée",
+                name_en: "Laughing Dove",
+                scientific: "Spilopelia senegalensis",
                 family: "Columbidae (Pigeons and Doves)",
-                location: "Piazza della Santissima Annunziata",
-                location_fr: "Piazza della Santissima Annunziata, Italie",
-                location_en: "Piazza della Santissima Annunziata, Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.776412,
-                lng: 11.260556,
-                checklist_id: "S149554635",
-                iucn_status: ""
-            },
-            
-            {
-                ml: "608611934",
-                name_fr: "Pigeon ramier",
-                name_en: "Common Wood-Pigeon",
-                scientific: "Columba palumbus",
-                family: "Columbidae (Pigeons and Doves)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
+                location: "Korhogo",
+                location_fr: "Korhogo, Côte d\'Ivoire",
+                location_en: "Korhogo, Ivory Coast",
+                date_fr: "20 août 1989",
+                date_en: "August 20<sup>th</sup>, 1989",
+                lat: 9.4533333,
+                lng: -5.6227778,
+                checklist_id: "S18563352",
                 iucn_status: "LC"
             },
             
             {
-                ml: "608685038",
-                name_fr: "Pigeon ramier",
-                name_en: "Common Wood-Pigeon",
-                scientific: "Columba palumbus",
-                family: "Columbidae (Pigeons and Doves)",
-                location: "Cattedrale Santa Maria del Fiore",
-                location_fr: "Cattedrale Santa Maria del Fiore, Italie",
-                location_en: "Cattedrale Santa Maria del Fiore, Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.773004,
-                lng: 11.255795,
-                checklist_id: "S149554859",
+                ml: "187527681",
+                name_fr: "Tisserin noir et marron",
+                name_en: "Chestnut-and-black Weaver",
+                scientific: "Ploceus castaneofuscus",
+                family: "Ploceidae (Weavers and Allies)",
+                location: "Ville de Dabou",
+                location_fr: "Ville de Dabou, Côte d\'Ivoire",
+                location_en: "Ville de Dabou, Ivory Coast",
+                date_fr: "30 juillet 1989",
+                date_en: "July 30<sup>th</sup>, 1989",
+                lat: 5.3294444,
+                lng: -4.3725,
+                checklist_id: "S18563452",
                 iucn_status: "LC"
             },
             
             {
-                ml: "608680008",
-                name_fr: "Pigeon ramier",
-                name_en: "Common Wood-Pigeon",
-                scientific: "Columba palumbus",
-                family: "Columbidae (Pigeons and Doves)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
+                ml: "187528201",
+                name_fr: "Veuve dominicaine",
+                name_en: "Pin-tailed Whydah",
+                scientific: "Vidua macroura",
+                family: "Viduidae (Whydahs and Indigobirds)",
+                location: "Lagune de Dabou",
+                location_fr: "Lagune de Dabou, Côte d\'Ivoire",
+                location_en: "Lagune de Dabou, Ivory Coast",
+                date_fr: "6 août 1989",
+                date_en: "August 6<sup>th</sup>, 1989",
+                lat: 5.3158153,
+                lng: -4.3853804,
+                checklist_id: "S18563455",
                 iucn_status: "LC"
-            },
-            
-            {
-                ml: "608632601",
-                name_fr: "Chevalier guignette",
-                name_en: "Common Sandpiper",
-                scientific: "Actitis hypoleucos",
-                family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "7 septembre 2023",
-                date_en: "September 7<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149169006",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608632600",
-                name_fr: "Grand Cormoran",
-                name_en: "Great Cormorant",
-                scientific: "Phalacrocorax carbo",
-                family: "Phalacrocoracidae (Cormorants and Shags)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "7 septembre 2023",
-                date_en: "September 7<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149169006",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608680075",
-                name_fr: "Héron cendré",
-                name_en: "Gray Heron",
-                scientific: "Ardea cinerea",
-                family: "Ardeidae (Herons, Egrets, and Bitterns)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149103033",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608680094",
-                name_fr: "Martin-pêcheur d\'Europe",
-                name_en: "Common Kingfisher",
-                scientific: "Alcedo atthis",
-                family: "Alcedinidae (Kingfishers)",
-                location: "Giardino di Boboli",
-                location_fr: "Giardino di Boboli, Italie",
-                location_en: "Giardino di Boboli, Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.7627299,
-                lng: 11.2499652,
-                checklist_id: "S149123375",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608613724",
-                name_fr: "Corneille mantelée",
-                name_en: "Hooded Crow",
-                scientific: "Corvus cornix",
-                family: "Corvidae (Crows, Jays, and Magpies)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "7 septembre 2023",
-                date_en: "September 7<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149169006",
-                iucn_status: ""
-            },
-            
-            {
-                ml: "608612452",
-                name_fr: "Corneille mantelée",
-                name_en: "Hooded Crow",
-                scientific: "Corvus cornix",
-                family: "Corvidae (Crows, Jays, and Magpies)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
-                iucn_status: ""
-            },
-            
-            {
-                ml: "608680063",
-                name_fr: "Bouscarle de Cetti",
-                name_en: "Cetti\'s Warbler",
-                scientific: "Cettia cetti",
-                family: "Cettiidae (Bush Warblers and Allies)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149103033",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608613840",
-                name_fr: "Merle noir",
-                name_en: "Eurasian Blackbird",
-                scientific: "Turdus merula",
-                family: "Turdidae (Thrushes and Allies)",
-                location: "Piazzale Michelangelo",
-                location_fr: "Piazzale Michelangelo, Italie",
-                location_en: "Piazzale Michelangelo, Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.7629178,
-                lng: 11.2650536,
-                checklist_id: "S149237606",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608613894",
-                name_fr: "Merle noir",
-                name_en: "Eurasian Blackbird",
-                scientific: "Turdus merula",
-                family: "Turdidae (Thrushes and Allies)",
-                location: "Piazzale Michelangelo",
-                location_fr: "Piazzale Michelangelo, Italie",
-                location_en: "Piazzale Michelangelo, Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.7629178,
-                lng: 11.2650536,
-                checklist_id: "S149237606",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608613944",
-                name_fr: "Merle noir",
-                name_en: "Eurasian Blackbird",
-                scientific: "Turdus merula",
-                family: "Turdidae (Thrushes and Allies)",
-                location: "Piazzale Michelangelo",
-                location_fr: "Piazzale Michelangelo, Italie",
-                location_en: "Piazzale Michelangelo, Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.7629178,
-                lng: 11.2650536,
-                checklist_id: "S149237606",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608680084",
-                name_fr: "Rougegorge familier",
-                name_en: "European Robin",
-                scientific: "Erithacus rubecula",
-                family: "Muscicapidae (Old World Flycatchers)",
-                location: "Giardino di Boboli",
-                location_fr: "Giardino di Boboli, Italie",
-                location_en: "Giardino di Boboli, Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.7627299,
-                lng: 11.2499652,
-                checklist_id: "S149123375",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608680103",
-                name_fr: "Rougegorge familier",
-                name_en: "European Robin",
-                scientific: "Erithacus rubecula",
-                family: "Muscicapidae (Old World Flycatchers)",
-                location: "Giardino di Boboli",
-                location_fr: "Giardino di Boboli, Italie",
-                location_en: "Giardino di Boboli, Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.7627299,
-                lng: 11.2499652,
-                checklist_id: "S149123375",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "608610563",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Cattedrale Santa Maria del Fiore",
-                location_fr: "Cattedrale Santa Maria del Fiore, Italie",
-                location_en: "Cattedrale Santa Maria del Fiore, Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.773004,
-                lng: 11.255795,
-                checklist_id: "S149258251",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608632604",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Cattedrale Santa Maria del Fiore",
-                location_fr: "Cattedrale Santa Maria del Fiore, Italie",
-                location_en: "Cattedrale Santa Maria del Fiore, Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.773004,
-                lng: 11.255795,
-                checklist_id: "S149258251",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608632605",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Cattedrale Santa Maria del Fiore",
-                location_fr: "Cattedrale Santa Maria del Fiore, Italie",
-                location_en: "Cattedrale Santa Maria del Fiore, Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.773004,
-                lng: 11.255795,
-                checklist_id: "S149258251",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608632607",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Cattedrale Santa Maria del Fiore",
-                location_fr: "Cattedrale Santa Maria del Fiore, Italie",
-                location_en: "Cattedrale Santa Maria del Fiore, Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.773004,
-                lng: 11.255795,
-                checklist_id: "S149258251",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608632608",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "8 septembre 2023",
-                date_en: "September 8<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149237601",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608632598",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "7 septembre 2023",
-                date_en: "September 7<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149169006",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608680080",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Lungarno (Arno river)",
-                location_fr: "Lungarno (Arno river), Italie",
-                location_en: "Lungarno (Arno river), Italy",
-                date_fr: "6 septembre 2023",
-                date_en: "September 6<sup>th</sup>, 2023",
-                lat: 43.7650785,
-                lng: 11.266037,
-                checklist_id: "S149103033",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608680004",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608680013",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608680143",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
-                iucn_status: "VU"
-            },
-            
-            {
-                ml: "608680146",
-                name_fr: "Moineau cisalpin",
-                name_en: "Italian Sparrow",
-                scientific: "Passer italiae",
-                family: "Passeridae (Old World Sparrows)",
-                location: "Ponte Vecchio",
-                location_fr: "Ponte Vecchio, Italie",
-                location_en: "Ponte Vecchio, Italy",
-                date_fr: "5 septembre 2023",
-                date_en: "September 5<sup>th</sup>, 2023",
-                lat: 43.7679861,
-                lng: 11.2531348,
-                checklist_id: "S149036156",
-                iucn_status: "VU"
             }
             
         ];
@@ -1059,17 +638,11 @@
         // Carte du voyage avec filtrage par lieu
         const tripLocations = [
             
-            { lat: 43.7679861, lng: 11.2531348, name: "Ponte Vecchio" },
+            { lat: 9.4533333, lng: -5.6227778, name: "Korhogo" },
             
-            { lat: 43.776412, lng: 11.260556, name: "Piazza della Santissima Annunziata" },
+            { lat: 5.3294444, lng: -4.3725, name: "Ville de Dabou" },
             
-            { lat: 43.773004, lng: 11.255795, name: "Cattedrale Santa Maria del Fiore" },
-            
-            { lat: 43.7650785, lng: 11.266037, name: "Lungarno (Arno river)" },
-            
-            { lat: 43.7627299, lng: 11.2499652, name: "Giardino di Boboli" },
-            
-            { lat: 43.7629178, lng: 11.2650536, name: "Piazzale Michelangelo" },
+            { lat: 5.3158153, lng: -4.3853804, name: "Lagune de Dabou" },
             
         ];
         

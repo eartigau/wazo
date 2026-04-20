@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <title>Admin - Curation des photos</title>
     <style>
         :root {
@@ -433,9 +434,8 @@
     
     <div class="footer">
         <span class="changes-count"><span id="changesCount">0</span> modification(s)</span>
-        <span id="saveStatus" style="font-size:13px; color: var(--text-dim);"></span>
-        <button class="download-btn" id="downloadBtn" onclick="saveCuration()">
-            💾 Sauvegarder
+        <button class="download-btn" id="downloadBtn" onclick="downloadCSV()">
+            📥 Télécharger CSV
         </button>
     </div>
     
@@ -446,6 +446,429 @@
         
         // Données des photos
         const allPhotosData = [
+            
+            {
+                ml: "651878092",
+                nameFr: "Dindon sauvage",
+                nameEn: "Wild Turkey",
+                sciName: "Meleagris gallopavo",
+                date: "2026-02-28",
+                status: "include"
+            },
+            
+            {
+                ml: "651878094",
+                nameFr: "Dindon sauvage",
+                nameEn: "Wild Turkey",
+                sciName: "Meleagris gallopavo",
+                date: "2026-02-28",
+                status: "include"
+            },
+            
+            {
+                ml: "651878095",
+                nameFr: "Dindon sauvage",
+                nameEn: "Wild Turkey",
+                sciName: "Meleagris gallopavo",
+                date: "2026-02-28",
+                status: "include"
+            },
+            
+            {
+                ml: "651878097",
+                nameFr: "Dindon sauvage",
+                nameEn: "Wild Turkey",
+                sciName: "Meleagris gallopavo",
+                date: "2026-02-28",
+                status: "include"
+            },
+            
+            {
+                ml: "651878106",
+                nameFr: "Mésange à tête noire",
+                nameEn: "Black-capped Chickadee",
+                sciName: "Poecile atricapillus",
+                date: "2026-02-28",
+                status: "include"
+            },
+            
+            {
+                ml: "651878204",
+                nameFr: "Hybride Canard colvert x C. noir",
+                nameEn: "Mallard x American Black Duck (hybrid)",
+                sciName: "Anas platyrhynchos x rubripes",
+                date: "2026-02-27",
+                status: "include"
+            },
+            
+            {
+                ml: "651511698",
+                nameFr: "Canard colvert",
+                nameEn: "Mallard",
+                sciName: "Anas platyrhynchos",
+                date: "2026-02-22",
+                status: "include"
+            },
+            
+            {
+                ml: "651511699",
+                nameFr: "Canard colvert",
+                nameEn: "Mallard",
+                sciName: "Anas platyrhynchos",
+                date: "2026-02-22",
+                status: "include"
+            },
+            
+            {
+                ml: "651511744",
+                nameFr: "Bruant de Lincoln",
+                nameEn: "Lincoln's Sparrow",
+                sciName: "Melospiza lincolnii",
+                date: "2026-02-22",
+                status: "include"
+            },
+            
+            {
+                ml: "651511745",
+                nameFr: "Bruant de Lincoln",
+                nameEn: "Lincoln's Sparrow",
+                sciName: "Melospiza lincolnii",
+                date: "2026-02-22",
+                status: "include"
+            },
+            
+            {
+                ml: "651511746",
+                nameFr: "Bruant de Lincoln",
+                nameEn: "Lincoln's Sparrow",
+                sciName: "Melospiza lincolnii",
+                date: "2026-02-22",
+                status: "include"
+            },
+            
+            {
+                ml: "651511747",
+                nameFr: "Bruant de Lincoln",
+                nameEn: "Lincoln's Sparrow",
+                sciName: "Melospiza lincolnii",
+                date: "2026-02-22",
+                status: "include"
+            },
+            
+            {
+                ml: "651511748",
+                nameFr: "Bruant de Lincoln",
+                nameEn: "Lincoln's Sparrow",
+                sciName: "Melospiza lincolnii",
+                date: "2026-02-22",
+                status: "include"
+            },
+            
+            {
+                ml: "650524999",
+                nameFr: "Grand-duc d'Amérique",
+                nameEn: "Great Horned Owl",
+                sciName: "Bubo virginianus",
+                date: "2026-02-08",
+                status: "include"
+            },
+            
+            {
+                ml: "650525119",
+                nameFr: "Pic mineur",
+                nameEn: "Downy Woodpecker",
+                sciName: "Dryobates pubescens",
+                date: "2026-02-08",
+                status: "include"
+            },
+            
+            {
+                ml: "650524991",
+                nameFr: "Mésange à tête noire",
+                nameEn: "Black-capped Chickadee",
+                sciName: "Poecile atricapillus",
+                date: "2026-02-08",
+                status: "include"
+            },
+            
+            {
+                ml: "650724181",
+                nameFr: "Mésange à tête noire",
+                nameEn: "Black-capped Chickadee",
+                sciName: "Poecile atricapillus",
+                date: "2026-02-08",
+                status: "include"
+            },
+            
+            {
+                ml: "649626093",
+                nameFr: "Mésange à tête noire",
+                nameEn: "Black-capped Chickadee",
+                sciName: "Poecile atricapillus",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649632369",
+                nameFr: "Merle d'Amérique",
+                nameEn: "American Robin",
+                sciName: "Turdus migratorius",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649626105",
+                nameFr: "Junco ardoisé",
+                nameEn: "Dark-eyed Junco",
+                sciName: "Junco hyemalis",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649626137",
+                nameFr: "Cardinal rouge",
+                nameEn: "Northern Cardinal",
+                sciName: "Cardinalis cardinalis",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649626139",
+                nameFr: "Cardinal rouge",
+                nameEn: "Northern Cardinal",
+                sciName: "Cardinalis cardinalis",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649626140",
+                nameFr: "Cardinal rouge",
+                nameEn: "Northern Cardinal",
+                sciName: "Cardinalis cardinalis",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649626141",
+                nameFr: "Cardinal rouge",
+                nameEn: "Northern Cardinal",
+                sciName: "Cardinalis cardinalis",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649626142",
+                nameFr: "Cardinal rouge",
+                nameEn: "Northern Cardinal",
+                sciName: "Cardinalis cardinalis",
+                date: "2026-01-25",
+                status: "include"
+            },
+            
+            {
+                ml: "649163488",
+                nameFr: "Rougegorge familier",
+                nameEn: "European Robin",
+                sciName: "Erithacus rubecula",
+                date: "2026-01-18",
+                status: "include"
+            },
+            
+            {
+                ml: "648712611",
+                nameFr: "Rougegorge familier",
+                nameEn: "European Robin",
+                sciName: "Erithacus rubecula",
+                date: "2026-01-11",
+                status: "include"
+            },
+            
+            {
+                ml: "648713425",
+                nameFr: "Rougegorge familier",
+                nameEn: "European Robin",
+                sciName: "Erithacus rubecula",
+                date: "2026-01-11",
+                status: "include"
+            },
+            
+            {
+                ml: "648713426",
+                nameFr: "Rougegorge familier",
+                nameEn: "European Robin",
+                sciName: "Erithacus rubecula",
+                date: "2026-01-11",
+                status: "include"
+            },
+            
+            {
+                ml: "648712363",
+                nameFr: "Moqueur polyglotte",
+                nameEn: "Northern Mockingbird",
+                sciName: "Mimus polyglottos",
+                date: "2026-01-10",
+                status: "include"
+            },
+            
+            {
+                ml: "648712364",
+                nameFr: "Moqueur polyglotte",
+                nameEn: "Northern Mockingbird",
+                sciName: "Mimus polyglottos",
+                date: "2026-01-10",
+                status: "include"
+            },
+            
+            {
+                ml: "648712417",
+                nameFr: "Bruant à gorge blanche",
+                nameEn: "White-throated Sparrow",
+                sciName: "Zonotrichia albicollis",
+                date: "2026-01-10",
+                status: "include"
+            },
+            
+            {
+                ml: "648243069",
+                nameFr: "Mésange à tête noire",
+                nameEn: "Black-capped Chickadee",
+                sciName: "Poecile atricapillus",
+                date: "2026-01-04",
+                status: "include"
+            },
+            
+            {
+                ml: "648242828",
+                nameFr: "Merlebleu de l'Est",
+                nameEn: "Eastern Bluebird",
+                sciName: "Sialia sialis",
+                date: "2026-01-04",
+                status: "include"
+            },
+            
+            {
+                ml: "648242830",
+                nameFr: "Merlebleu de l'Est",
+                nameEn: "Eastern Bluebird",
+                sciName: "Sialia sialis",
+                date: "2026-01-04",
+                status: "include"
+            },
+            
+            {
+                ml: "648244122",
+                nameFr: "Canard noir",
+                nameEn: "American Black Duck",
+                sciName: "Anas rubripes",
+                date: "2026-01-02",
+                status: "include"
+            },
+            
+            {
+                ml: "647798734",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-29",
+                status: "include"
+            },
+            
+            {
+                ml: "647798735",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-29",
+                status: "include"
+            },
+            
+            {
+                ml: "647727304",
+                nameFr: "Fuligule milouinan",
+                nameEn: "Greater Scaup",
+                sciName: "Aythya marila",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647756386",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647756387",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647762099",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647762100",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647762672",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647762673",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647824138",
+                nameFr: "Harelde kakawi",
+                nameEn: "Long-tailed Duck",
+                sciName: "Clangula hyemalis",
+                date: "2025-12-28",
+                status: "include"
+            },
+            
+            {
+                ml: "647727307",
+                nameFr: "Harle huppé",
+                nameEn: "Red-breasted Merganser",
+                sciName: "Mergus serrator",
+                date: "2025-12-28",
+                status: "include"
+            },
             
             {
                 ml: "646147892",
@@ -16756,6 +17179,15 @@
             },
             
             {
+                ml: "646648686",
+                nameFr: "Psittirostre palila",
+                nameEn: "Palila",
+                sciName: "Loxioides bailleui",
+                date: "2018-05-26",
+                status: "include"
+            },
+            
+            {
                 ml: "105391201",
                 nameFr: "Roselin familier",
                 nameEn: "House Finch",
@@ -16905,7 +17337,7 @@
                 nameEn: "Red-breasted Nuthatch",
                 sciName: "Sitta canadensis",
                 date: "2018-05-14",
-                status: "include"
+                status: "best"
             },
             
             {
@@ -16914,7 +17346,7 @@
                 nameEn: "Eastern Bluebird",
                 sciName: "Sialia sialis",
                 date: "2018-05-14",
-                status: "include"
+                status: "reject"
             },
             
             {
@@ -28240,6 +28672,15 @@
             },
             
             {
+                ml: "649798462",
+                nameFr: "Mouette des Andes",
+                nameEn: "Andean Gull",
+                sciName: "Chroicocephalus serranus",
+                date: "2009-01-02",
+                status: "include"
+            },
+            
+            {
                 ml: "22502591",
                 nameFr: "Flamant des Andes",
                 nameEn: "Andean Flamingo",
@@ -28699,6 +29140,15 @@
             },
             
             {
+                ml: "646693378",
+                nameFr: "Ouette à tête rousse",
+                nameEn: "Ruddy-headed Goose",
+                sciName: "Chloephaga rubidiceps",
+                date: "2008-12-18",
+                status: "include"
+            },
+            
+            {
                 ml: "29632161",
                 nameFr: "Brassemer de Patagonie",
                 nameEn: "Flying Steamer-Duck",
@@ -28870,6 +29320,24 @@
             },
             
             {
+                ml: "646693350",
+                nameFr: "Manchot de Magellan",
+                nameEn: "Magellanic Penguin",
+                sciName: "Spheniscus magellanicus",
+                date: "2008-12-16",
+                status: "include"
+            },
+            
+            {
+                ml: "646693351",
+                nameFr: "Manchot de Magellan",
+                nameEn: "Magellanic Penguin",
+                sciName: "Spheniscus magellanicus",
+                date: "2008-12-16",
+                status: "include"
+            },
+            
+            {
                 ml: "21111931",
                 nameFr: "Albatros à sourcils noirs",
                 nameEn: "Black-browed Albatross",
@@ -28889,6 +29357,15 @@
             
             {
                 ml: "21111961",
+                nameFr: "Pétrel géant",
+                nameEn: "Southern Giant-Petrel",
+                sciName: "Macronectes giganteus",
+                date: "2008-12-16",
+                status: "include"
+            },
+            
+            {
+                ml: "646693328",
                 nameFr: "Pétrel géant",
                 nameEn: "Southern Giant-Petrel",
                 sciName: "Macronectes giganteus",
@@ -29900,6 +30377,15 @@
                 nameFr: "Cygne à cou noir",
                 nameEn: "Black-necked Swan",
                 sciName: "Cygnus melancoryphus",
+                date: "2008-05-05",
+                status: "include"
+            },
+            
+            {
+                ml: "649802003",
+                nameFr: "Huîtrier d'Amérique",
+                nameEn: "American Oystercatcher",
+                sciName: "Haematopus palliatus",
                 date: "2008-05-05",
                 status: "include"
             },
@@ -31925,6 +32411,15 @@
                 nameFr: "Bruant chingolo",
                 nameEn: "Rufous-collared Sparrow",
                 sciName: "Zonotrichia capensis",
+                date: "2007-08-01",
+                status: "include"
+            },
+            
+            {
+                ml: "649763193",
+                nameFr: "Phrygile à tête grise",
+                nameEn: "Gray-hooded Sierra Finch",
+                sciName: "Phrygilus gayi",
                 date: "2007-08-01",
                 status: "include"
             },
@@ -34621,6 +35116,15 @@
             },
             
             {
+                ml: "646684856",
+                nameFr: "Diuca gris",
+                nameEn: "Diuca Finch",
+                sciName: "Diuca diuca",
+                date: "2006-12-19",
+                status: "include"
+            },
+            
+            {
                 ml: "29631941",
                 nameFr: "Vanneau téro",
                 nameEn: "Southern Lapwing",
@@ -34769,6 +35273,15 @@
                 nameFr: "Échasse d'Amérique (melanurus)",
                 nameEn: "Black-necked Stilt (White-backed)",
                 sciName: "Himantopus mexicanus melanurus",
+                date: "2006-12-03",
+                status: "include"
+            },
+            
+            {
+                ml: "646670090",
+                nameFr: "Petit Chevalier",
+                nameEn: "Lesser Yellowlegs",
+                sciName: "Tringa flavipes",
                 date: "2006-12-03",
                 status: "include"
             },
@@ -40272,8 +40785,6 @@
         let changesCount = 0;
         let currentFilter = 'all';
         let currentSearch = '';
-        let autoSaveTimer = null;
-        const USE_SERVER = true;  // passe à false pour desactiver l'API locale
         
         // Initialiser curationData
         allPhotosData.forEach(p => {
@@ -40428,13 +40939,6 @@
             if (currentFilter !== 'all' && status !== currentFilter) {
                 card.style.display = 'none';
             }
-            
-            // Auto-sauvegarde debounced (2 s après la dernière modif)
-            if (USE_SERVER) {
-                if (autoSaveTimer) clearTimeout(autoSaveTimer);
-                setSaveStatus('En attente...');
-                autoSaveTimer = setTimeout(saveCuration, 2000);
-            }
         }
         
         // Mettre à jour les statistiques
@@ -40467,39 +40971,7 @@
             });
         });
         
-        // Afficher le statut de sauvegarde
-        function setSaveStatus(msg, color) {
-            const el = document.getElementById('saveStatus');
-            el.textContent = msg;
-            el.style.color = color || 'var(--text-dim)';
-        }
-        
-        // Sauvegarder via le serveur local (ou télécharger si pas de serveur)
-        async function saveCuration() {
-            if (!USE_SERVER) {
-                downloadCSV();
-                return;
-            }
-            setSaveStatus('Sauvegarde...');
-            try {
-                const resp = await fetch('/api/curation', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ curation: curationData })
-                });
-                if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-                const data = await resp.json();
-                setSaveStatus(`✓ Sauvegardé (${data.saved})`, 'var(--success)');
-                setTimeout(() => setSaveStatus(''), 3000);
-                changesCount = 0;
-                document.getElementById('changesCount').textContent = 0;
-            } catch (err) {
-                setSaveStatus('⚠ Erreur: ' + err.message, 'var(--highlight)');
-                console.error('Erreur sauvegarde:', err);
-            }
-        }
-        
-        // Télécharger le CSV (fallback)
+        // Télécharger le CSV
         function downloadCSV() {
             let csv = 'ml_number,status\n';
             for (const [ml, status] of Object.entries(curationData)) {
@@ -40531,24 +41003,7 @@
         });
         
         // Initialisation
-        document.addEventListener('DOMContentLoaded', async () => {
-            // Charger la curation depuis le serveur local si disponible
-            if (USE_SERVER) {
-                try {
-                    const resp = await fetch('/api/curation');
-                    if (resp.ok) {
-                        const data = await resp.json();
-                        const serverCuration = data.curation || {};
-                        // Les données serveur prennent le dessus sur les défauts embarqués
-                        Object.assign(curationData, serverCuration);
-                        setSaveStatus('Curation chargée depuis le serveur', 'var(--success)');
-                        setTimeout(() => setSaveStatus(''), 3000);
-                    }
-                } catch (err) {
-                    // Pas de serveur — on reste sur les données embarquées, download CSV disponible
-                    setSaveStatus('Mode hors-ligne (CSV téléchargeable)', 'var(--text-dim)');
-                }
-            }
+        document.addEventListener('DOMContentLoaded', () => {
             updateStats();
             renderNextBatch();
         });

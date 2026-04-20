@@ -11,14 +11,14 @@
 # ------------------------------------------------------------------------------
 fichiers:
   # Données eBird exportées (télécharger depuis https://ebird.org/downloadMyData)
-  donnees_ebird: "MyEBirdData.csv"
+  donnees_ebird: "wazo_codes/MyEBirdData.csv"
   
   # Taxonomie eBird (télécharger depuis https://ebird.org/science/use-ebird-data/the-ebird-taxonomy)
   # Mettre à jour annuellement (ex: eBird_taxonomy_v2026.csv)
-  taxonomie: "eBird_taxonomy_v2025.csv"
+  taxonomie: "wazo_codes/eBird_taxonomy_v2025.csv"
   
   # Cache des vérifications de médias (généré automatiquement)
-  cache_medias: "media_cache.csv"
+  cache_medias: "wazo_codes/media_cache.csv"
   
   # Traductions des noms de lieux
   traductions_lieux: "traductions_lieux.csv"

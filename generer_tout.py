@@ -688,8 +688,9 @@ def generer_toutes_galeries():
         if voyages_index_data:
             print(f"\n📑 Page index des voyages...")
             today = datetime.now()
-            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
-            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+            heure = today.strftime('%-Hh%M')
+            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr') + f' ({heure})'
+            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en') + f' ({heure})'
             
             env = Environment(loader=FileSystemLoader('.'))
             template = env.get_template('voyages_index_template.html')
@@ -870,8 +871,9 @@ def generer_toutes_galeries():
         if pays_index_data:
             print(f"\n📑 Page index des pays...")
             today = datetime.now()
-            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr')
-            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en')
+            heure = today.strftime('%-Hh%M')
+            update_date_fr = formater_date(today.strftime('%Y-%m-%d'), 'fr') + f' ({heure})'
+            update_date_en = formater_date(today.strftime('%Y-%m-%d'), 'en') + f' ({heure})'
             
             env = Environment(loader=FileSystemLoader('.'))
             template = env.get_template('pays_index_template.html')
