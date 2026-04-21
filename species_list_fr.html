@@ -193,26 +193,23 @@
 
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
         <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
         <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
-        
+
+        <!-- En-tête espèce (au-dessus de la photo) -->
+        <div class="lightbox-species-header">
+            <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
+            <h2 id="lightbox-title"></h2>
+            <p class="scientific-name" id="lightbox-scientific"></p>
+            <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
+        </div>
+
         <div class="lightbox-content">
             <div class="lightbox-image-container">
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Famille -->
-                <div class="lightbox-family" id="lightbox-family"></div>
-                
-                <!-- Nom commun -->
-                <h2 id="lightbox-title"></h2>
-                
-                <!-- Nom scientifique -->
-                <p class="scientific-name" id="lightbox-scientific"></p>
-                
-                <!-- Statut IUCN (si menacé) -->
-                <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
                 
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter"></div>
@@ -235,7 +232,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    Voir sur eBird
+                    Liste eBird
                 </a>
             </div>
         </div>
@@ -243,7 +240,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 19 avril 2026 (13h24)</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 21 avril 2026 (7h00)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -3679,8 +3676,8 @@
                 sciName: "Larus delawarensis",
                 nameFr: "Goéland à bec cerclé",
                 nameEn: "Ring-billed Gull",
-                ml: "624479526",
-                photoCount: 31,
+                ml: "653797263",
+                photoCount: 36,
                 familyCode: "Laridae",
                 familyDisplayFr: "Laridae",
                 familyDisplayEn: "Laridae",
@@ -11120,7 +11117,7 @@
                 sciName: "Melospiza lincolnii",
                 nameFr: "Bruant de Lincoln",
                 nameEn: "Lincoln's Sparrow",
-                ml: "651511744",
+                ml: "651511745",
                 photoCount: 5,
                 familyCode: "Passerellidae",
                 familyDisplayFr: "Passerellidae",
@@ -12571,8 +12568,8 @@
                         date_en: "August 2<sup>nd</sup>, 2021",
                         location_fr: "PN du Fjord-du-Saguenay, Québec, Canada",
                         location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
-                        lat: 48.3077673,
-                        lng: -70.3309062,
+                        lat: 48.3128551,
+                        lng: -70.3264215,
                         checklist_id: "S92671939"
                     },
                     
@@ -12679,8 +12676,8 @@
                         ml: "39600931",
                         date_fr: "10 novembre 2016",
                         date_en: "November 10<sup>th</sup>, 2016",
-                        location_fr: "Réservoir Beaudet, Québec, Canada",
-                        location_en: "Réservoir Beaudet, Quebec, Canada",
+                        location_fr: "Parc du Réservoir-Beaudet, Québec, Canada",
+                        location_en: "Parc du Réservoir-Beaudet, Quebec, Canada",
                         lat: 46.0718015,
                         lng: -71.9707489,
                         checklist_id: "S32482724"
@@ -12690,8 +12687,8 @@
                         ml: "39600941",
                         date_fr: "10 novembre 2016",
                         date_en: "November 10<sup>th</sup>, 2016",
-                        location_fr: "Réservoir Beaudet, Québec, Canada",
-                        location_en: "Réservoir Beaudet, Quebec, Canada",
+                        location_fr: "Parc du Réservoir-Beaudet, Québec, Canada",
+                        location_en: "Parc du Réservoir-Beaudet, Quebec, Canada",
                         lat: 46.0718015,
                         lng: -71.9707489,
                         checklist_id: "S32482724"
@@ -12745,8 +12742,8 @@
                         ml: "39869801",
                         date_fr: "10 novembre 2016",
                         date_en: "November 10<sup>th</sup>, 2016",
-                        location_fr: "Réservoir Beaudet, Québec, Canada",
-                        location_en: "Réservoir Beaudet, Quebec, Canada",
+                        location_fr: "Parc du Réservoir-Beaudet, Québec, Canada",
+                        location_en: "Parc du Réservoir-Beaudet, Quebec, Canada",
                         lat: 46.0718015,
                         lng: -71.9707489,
                         checklist_id: "S32482724"
@@ -13625,8 +13622,8 @@
                         ml: "33889891",
                         date_fr: "21 mai 2009",
                         date_en: "May 21<sup>st</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18566881"
@@ -13858,8 +13855,8 @@
                         date_en: "December 23<sup>rd</sup>, 2008",
                         location_fr: "PN Torres del Paine, Magallanes, Chili",
                         location_en: "PN Torres del Paine, Magallanes, Chile",
-                        lat: -50.9794573,
-                        lng: -72.8003858,
+                        lat: -50.9794594,
+                        lng: -72.8004205,
                         checklist_id: "S5772447"
                     },
                     
@@ -16661,8 +16658,8 @@
                         ml: "647727304",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -16947,8 +16944,8 @@
                         ml: "647798734",
                         date_fr: "29 décembre 2025",
                         date_en: "December 29<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S291016152"
@@ -16958,8 +16955,8 @@
                         ml: "647798735",
                         date_fr: "29 décembre 2025",
                         date_en: "December 29<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S291016152"
@@ -16969,8 +16966,8 @@
                         ml: "647756386",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -16980,8 +16977,8 @@
                         ml: "647756387",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -16991,8 +16988,8 @@
                         ml: "647762099",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -17002,8 +16999,8 @@
                         ml: "647762100",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -17013,8 +17010,8 @@
                         ml: "647762672",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -17024,8 +17021,8 @@
                         ml: "647762673",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -17035,8 +17032,8 @@
                         ml: "647824138",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -17618,8 +17615,8 @@
                         ml: "647727307",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -17923,8 +17920,8 @@
                         date_en: "February 28<sup>th</sup>, 2026",
                         location_fr: "Parc du Lac-Beauchamp, Québec, Canada",
                         location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
-                        lat: 45.4885445,
-                        lng: -75.6144148,
+                        lat: 45.48949,
+                        lng: -75.62258,
                         checklist_id: "S304677001"
                     },
                     
@@ -17934,8 +17931,8 @@
                         date_en: "February 28<sup>th</sup>, 2026",
                         location_fr: "Parc du Lac-Beauchamp, Québec, Canada",
                         location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
-                        lat: 45.4885445,
-                        lng: -75.6144148,
+                        lat: 45.48949,
+                        lng: -75.62258,
                         checklist_id: "S304677001"
                     },
                     
@@ -17945,8 +17942,8 @@
                         date_en: "February 28<sup>th</sup>, 2026",
                         location_fr: "Parc du Lac-Beauchamp, Québec, Canada",
                         location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
-                        lat: 45.4885445,
-                        lng: -75.6144148,
+                        lat: 45.48949,
+                        lng: -75.62258,
                         checklist_id: "S304677001"
                     },
                     
@@ -17956,8 +17953,8 @@
                         date_en: "February 28<sup>th</sup>, 2026",
                         location_fr: "Parc du Lac-Beauchamp, Québec, Canada",
                         location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
-                        lat: 45.4885445,
-                        lng: -75.6144148,
+                        lat: 45.48949,
+                        lng: -75.62258,
                         checklist_id: "S304677001"
                     },
                     
@@ -18198,8 +18195,8 @@
                         date_en: "June 24<sup>th</sup>, 2005",
                         location_fr: "Baie des Rochers, Québec, Canada",
                         location_en: "Baie des Rochers, Quebec, Canada",
-                        lat: 47.9570713,
-                        lng: -69.799699,
+                        lat: 47.9527206,
+                        lng: -69.8097279,
                         checklist_id: "S18566998"
                     },
                     
@@ -24327,10 +24324,10 @@
                         ml: "360324211",
                         date_fr: "5 août 2021",
                         date_en: "August 5<sup>th</sup>, 2021",
-                        location_fr: "Baie des Escoumins, Québec, Canada",
-                        location_en: "Baie des Escoumins, Quebec, Canada",
-                        lat: 48.3497186,
-                        lng: -69.4018189,
+                        location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                        location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
+                        lat: 48.3482569,
+                        lng: -69.4026557,
                         checklist_id: "S92811246"
                     },
                     
@@ -26760,8 +26757,8 @@
                         ml: "34384171",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -26771,8 +26768,8 @@
                         ml: "34384181",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -26782,8 +26779,8 @@
                         ml: "34384191",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -26839,8 +26836,8 @@
                         date_en: "August 23<sup>rd</sup>, 2010",
                         location_fr: "Banc de Portneuf-sur-Mer, Québec, Canada",
                         location_en: "Banc de Portneuf-sur-Mer, Quebec, Canada",
-                        lat: 48.6087989,
-                        lng: -69.0891989,
+                        lat: 48.61949,
+                        lng: -69.08833,
                         checklist_id: "S18567037"
                     },
                     
@@ -26850,8 +26847,8 @@
                         date_en: "August 23<sup>rd</sup>, 2010",
                         location_fr: "Banc de Portneuf-sur-Mer, Québec, Canada",
                         location_en: "Banc de Portneuf-sur-Mer, Quebec, Canada",
-                        lat: 48.6087989,
-                        lng: -69.0891989,
+                        lat: 48.61949,
+                        lng: -69.08833,
                         checklist_id: "S18567037"
                     },
                     
@@ -27211,10 +27208,10 @@
                         ml: "29634111",
                         date_fr: "22 août 2010",
                         date_en: "August 22<sup>nd</sup>, 2010",
-                        location_fr: "Baie des Escoumins, Québec, Canada",
-                        location_en: "Baie des Escoumins, Quebec, Canada",
-                        lat: 48.3497186,
-                        lng: -69.4018189,
+                        location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                        location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
+                        lat: 48.3482569,
+                        lng: -69.4026557,
                         checklist_id: "S18567405"
                     },
                     
@@ -27382,8 +27379,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -27470,8 +27467,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -27481,8 +27478,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     }
                     
@@ -27569,8 +27566,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -27624,8 +27621,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     },
                     
@@ -27679,8 +27676,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -27690,8 +27687,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -27723,8 +27720,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -27734,8 +27731,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     },
                     
@@ -27868,8 +27865,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -27890,8 +27887,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     }
                     
@@ -27954,10 +27951,10 @@
                         ml: "360394741",
                         date_fr: "5 août 2021",
                         date_en: "August 5<sup>th</sup>, 2021",
-                        location_fr: "Baie des Escoumins, Québec, Canada",
-                        location_en: "Baie des Escoumins, Quebec, Canada",
-                        lat: 48.3497186,
-                        lng: -69.4018189,
+                        location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                        location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
+                        lat: 48.3482569,
+                        lng: -69.4026557,
                         checklist_id: "S92811246"
                     },
                     
@@ -27967,8 +27964,8 @@
                         date_en: "August 5<sup>th</sup>, 2021",
                         location_fr: "Parc marin du Saguenay-St-Laurent, Québec, Canada",
                         location_en: "Parc marin du Saguenay-St-Laurent, Quebec, Canada",
-                        lat: 48.0951511,
-                        lng: -69.5750427,
+                        lat: 48.12221,
+                        lng: -69.56818,
                         checklist_id: "S92795490"
                     },
                     
@@ -28020,10 +28017,10 @@
                         ml: "29634121",
                         date_fr: "22 août 2010",
                         date_en: "August 22<sup>nd</sup>, 2010",
-                        location_fr: "Baie des Escoumins, Québec, Canada",
-                        location_en: "Baie des Escoumins, Quebec, Canada",
-                        lat: 48.3497186,
-                        lng: -69.4018189,
+                        location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                        location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
+                        lat: 48.3482569,
+                        lng: -69.4026557,
                         checklist_id: "S18567405"
                     }
                     
@@ -29062,6 +29059,61 @@
                 photos: [
                     
                     {
+                        ml: "653797263",
+                        date_fr: "29 mars 2026",
+                        date_en: "March 29<sup>th</sup>, 2026",
+                        location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                        location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                        lat: 45.4465233,
+                        lng: -73.5709548,
+                        checklist_id: "S314321585"
+                    },
+                    
+                    {
+                        ml: "653797264",
+                        date_fr: "29 mars 2026",
+                        date_en: "March 29<sup>th</sup>, 2026",
+                        location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                        location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                        lat: 45.4465233,
+                        lng: -73.5709548,
+                        checklist_id: "S314321585"
+                    },
+                    
+                    {
+                        ml: "653797265",
+                        date_fr: "29 mars 2026",
+                        date_en: "March 29<sup>th</sup>, 2026",
+                        location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                        location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                        lat: 45.4465233,
+                        lng: -73.5709548,
+                        checklist_id: "S314321585"
+                    },
+                    
+                    {
+                        ml: "653797266",
+                        date_fr: "29 mars 2026",
+                        date_en: "March 29<sup>th</sup>, 2026",
+                        location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                        location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                        lat: 45.4465233,
+                        lng: -73.5709548,
+                        checklist_id: "S314321585"
+                    },
+                    
+                    {
+                        ml: "653797269",
+                        date_fr: "29 mars 2026",
+                        date_en: "March 29<sup>th</sup>, 2026",
+                        location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                        location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                        lat: 45.4465233,
+                        lng: -73.5709548,
+                        checklist_id: "S314321585"
+                    },
+                    
+                    {
                         ml: "624479526",
                         date_fr: "3 octobre 2024",
                         date_en: "October 3<sup>rd</sup>, 2024",
@@ -29175,8 +29227,8 @@
                         ml: "167225381",
                         date_fr: "6 juillet 2019",
                         date_en: "July 6<sup>th</sup>, 2019",
-                        location_fr: "Penticton, Colombie-Britannique, Canada",
-                        location_en: "Penticton, British Columbia, Canada",
+                        location_fr: "Penticton Dam, Colombie-Britannique, Canada",
+                        location_en: "Penticton Dam, British Columbia, Canada",
                         lat: 49.50158,
                         lng: -119.6119416,
                         checklist_id: "S57975834"
@@ -29186,8 +29238,8 @@
                         ml: "167225431",
                         date_fr: "6 juillet 2019",
                         date_en: "July 6<sup>th</sup>, 2019",
-                        location_fr: "Penticton, Colombie-Britannique, Canada",
-                        location_en: "Penticton, British Columbia, Canada",
+                        location_fr: "Penticton Dam, Colombie-Britannique, Canada",
+                        location_en: "Penticton Dam, British Columbia, Canada",
                         lat: 49.50158,
                         lng: -119.6119416,
                         checklist_id: "S57975834"
@@ -29650,8 +29702,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     },
                     
@@ -30055,10 +30107,10 @@
                         ml: "360395641",
                         date_fr: "5 août 2021",
                         date_en: "August 5<sup>th</sup>, 2021",
-                        location_fr: "Baie des Escoumins, Québec, Canada",
-                        location_en: "Baie des Escoumins, Quebec, Canada",
-                        lat: 48.3497186,
-                        lng: -69.4018189,
+                        location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                        location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
+                        lat: 48.3482569,
+                        lng: -69.4026557,
                         checklist_id: "S92811246"
                     },
                     
@@ -30121,8 +30173,8 @@
                         ml: "167225291",
                         date_fr: "6 juillet 2019",
                         date_en: "July 6<sup>th</sup>, 2019",
-                        location_fr: "Penticton, Colombie-Britannique, Canada",
-                        location_en: "Penticton, British Columbia, Canada",
+                        location_fr: "Penticton Dam, Colombie-Britannique, Canada",
+                        location_en: "Penticton Dam, British Columbia, Canada",
                         lat: 49.50158,
                         lng: -119.6119416,
                         checklist_id: "S57975834"
@@ -30605,8 +30657,8 @@
                         ml: "34384161",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -34118,8 +34170,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -34129,8 +34181,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -34140,8 +34192,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -34151,8 +34203,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -34162,8 +34214,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     },
                     
@@ -34173,8 +34225,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     },
                     
@@ -34184,8 +34236,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     }
                     
@@ -35101,8 +35153,8 @@
                         date_en: "August 5<sup>th</sup>, 2021",
                         location_fr: "Parc marin du Saguenay-St-Laurent, Québec, Canada",
                         location_en: "Parc marin du Saguenay-St-Laurent, Quebec, Canada",
-                        lat: 48.0951511,
-                        lng: -69.5750427,
+                        lat: 48.12221,
+                        lng: -69.56818,
                         checklist_id: "S92795490"
                     },
                     
@@ -35178,8 +35230,8 @@
                         date_en: "July 17<sup>th</sup>, 2014",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S19129449"
                     },
                     
@@ -40294,8 +40346,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -50501,8 +50553,8 @@
                         date_en: "February 28<sup>th</sup>, 2026",
                         location_fr: "Parc du Lac-Beauchamp, Québec, Canada",
                         location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
-                        lat: 45.4885445,
-                        lng: -75.6144148,
+                        lat: 45.48949,
+                        lng: -75.62258,
                         checklist_id: "S304677001"
                     },
                     
@@ -55295,8 +55347,8 @@
                         ml: "34523261",
                         date_fr: "23 mai 2009",
                         date_en: "May 23<sup>rd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18567226"
@@ -55306,8 +55358,8 @@
                         ml: "33889901",
                         date_fr: "21 mai 2009",
                         date_en: "May 21<sup>st</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18566881"
@@ -55317,8 +55369,8 @@
                         ml: "33889911",
                         date_fr: "21 mai 2009",
                         date_en: "May 21<sup>st</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18566881"
@@ -56366,8 +56418,8 @@
                         date_en: "August 2<sup>nd</sup>, 2021",
                         location_fr: "PN du Fjord-du-Saguenay, Québec, Canada",
                         location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
-                        lat: 48.3077673,
-                        lng: -70.3309062,
+                        lat: 48.3128551,
+                        lng: -70.3264215,
                         checklist_id: "S92671939"
                     },
                     
@@ -58823,8 +58875,8 @@
                         date_en: "February 24<sup>th</sup>, 2015",
                         location_fr: "Quai, Pointe-au-Pic, Québec, Canada",
                         location_en: "Quai, Pointe-au-Pic, Quebec, Canada",
-                        lat: 47.6236944,
-                        lng: -70.1395512,
+                        lat: 47.6239988,
+                        lng: -70.139277,
                         checklist_id: "S22059085"
                     },
                     
@@ -58834,8 +58886,8 @@
                         date_en: "February 24<sup>th</sup>, 2015",
                         location_fr: "Quai, Pointe-au-Pic, Québec, Canada",
                         location_en: "Quai, Pointe-au-Pic, Quebec, Canada",
-                        lat: 47.6236944,
-                        lng: -70.1395512,
+                        lat: 47.6239988,
+                        lng: -70.139277,
                         checklist_id: "S22059085"
                     },
                     
@@ -60990,10 +61042,10 @@
                         ml: "310883681",
                         date_fr: "23 février 2021",
                         date_en: "February 23<sup>rd</sup>, 2021",
-                        location_fr: "Parc Boisé du Quai, Québec, Canada",
-                        location_en: "Parc Boisé du Quai, Quebec, Canada",
-                        lat: 47.4281537,
-                        lng: -70.4924552,
+                        location_fr: "Boisé du Quai, Québec, Canada",
+                        location_en: "Boisé du Quai, Quebec, Canada",
+                        lat: 47.42619,
+                        lng: -70.49423,
                         checklist_id: "S82224976"
                     },
                     
@@ -61001,10 +61053,10 @@
                         ml: "310883771",
                         date_fr: "23 février 2021",
                         date_en: "February 23<sup>rd</sup>, 2021",
-                        location_fr: "Parc Boisé du Quai, Québec, Canada",
-                        location_en: "Parc Boisé du Quai, Quebec, Canada",
-                        lat: 47.4281537,
-                        lng: -70.4924552,
+                        location_fr: "Boisé du Quai, Québec, Canada",
+                        location_en: "Boisé du Quai, Quebec, Canada",
+                        lat: 47.42619,
+                        lng: -70.49423,
                         checklist_id: "S82224976"
                     },
                     
@@ -61012,10 +61064,10 @@
                         ml: "310883781",
                         date_fr: "23 février 2021",
                         date_en: "February 23<sup>rd</sup>, 2021",
-                        location_fr: "Parc Boisé du Quai, Québec, Canada",
-                        location_en: "Parc Boisé du Quai, Quebec, Canada",
-                        lat: 47.4281537,
-                        lng: -70.4924552,
+                        location_fr: "Boisé du Quai, Québec, Canada",
+                        location_en: "Boisé du Quai, Quebec, Canada",
+                        lat: 47.42619,
+                        lng: -70.49423,
                         checklist_id: "S82224976"
                     },
                     
@@ -61023,10 +61075,10 @@
                         ml: "310883791",
                         date_fr: "23 février 2021",
                         date_en: "February 23<sup>rd</sup>, 2021",
-                        location_fr: "Parc Boisé du Quai, Québec, Canada",
-                        location_en: "Parc Boisé du Quai, Quebec, Canada",
-                        lat: 47.4281537,
-                        lng: -70.4924552,
+                        location_fr: "Boisé du Quai, Québec, Canada",
+                        location_en: "Boisé du Quai, Quebec, Canada",
+                        lat: 47.42619,
+                        lng: -70.49423,
                         checklist_id: "S82224976"
                     },
                     
@@ -61034,10 +61086,10 @@
                         ml: "310883861",
                         date_fr: "23 février 2021",
                         date_en: "February 23<sup>rd</sup>, 2021",
-                        location_fr: "Parc Boisé du Quai, Québec, Canada",
-                        location_en: "Parc Boisé du Quai, Quebec, Canada",
-                        lat: 47.4281537,
-                        lng: -70.4924552,
+                        location_fr: "Boisé du Quai, Québec, Canada",
+                        location_en: "Boisé du Quai, Quebec, Canada",
+                        lat: 47.42619,
+                        lng: -70.49423,
                         checklist_id: "S82224976"
                     },
                     
@@ -61045,10 +61097,10 @@
                         ml: "310883931",
                         date_fr: "23 février 2021",
                         date_en: "February 23<sup>rd</sup>, 2021",
-                        location_fr: "Parc Boisé du Quai, Québec, Canada",
-                        location_en: "Parc Boisé du Quai, Quebec, Canada",
-                        lat: 47.4281537,
-                        lng: -70.4924552,
+                        location_fr: "Boisé du Quai, Québec, Canada",
+                        location_en: "Boisé du Quai, Quebec, Canada",
+                        lat: 47.42619,
+                        lng: -70.49423,
                         checklist_id: "S82224976"
                     },
                     
@@ -61661,10 +61713,10 @@
                         ml: "29682821",
                         date_fr: "22 février 2015",
                         date_en: "February 22<sup>nd</sup>, 2015",
-                        location_fr: "Pointe de l\'Islet (incluant quai), Québec, Canada",
-                        location_en: "Pointe de l\'Islet (incluant quai), Quebec, Canada",
-                        lat: 48.1363076,
-                        lng: -69.7164861,
+                        location_fr: "PN du Fjord-du-Saguenay, Québec, Canada",
+                        location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
+                        lat: 48.1370733,
+                        lng: -69.716389,
                         checklist_id: "S22025905"
                     },
                     
@@ -61672,10 +61724,10 @@
                         ml: "29682831",
                         date_fr: "22 février 2015",
                         date_en: "February 22<sup>nd</sup>, 2015",
-                        location_fr: "Pointe de l\'Islet (incluant quai), Québec, Canada",
-                        location_en: "Pointe de l\'Islet (incluant quai), Quebec, Canada",
-                        lat: 48.1363076,
-                        lng: -69.7164861,
+                        location_fr: "PN du Fjord-du-Saguenay, Québec, Canada",
+                        location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
+                        lat: 48.1370733,
+                        lng: -69.716389,
                         checklist_id: "S22025905"
                     },
                     
@@ -61685,8 +61737,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     }
                     
@@ -63253,8 +63305,8 @@
                         date_en: "August 2<sup>nd</sup>, 2021",
                         location_fr: "PN du Fjord-du-Saguenay, Québec, Canada",
                         location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
-                        lat: 48.3077673,
-                        lng: -70.3309062,
+                        lat: 48.3128551,
+                        lng: -70.3264215,
                         checklist_id: "S92671939"
                     },
                     
@@ -64628,8 +64680,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     },
                     
@@ -64656,17 +64708,6 @@
                 photos: [
                     
                     {
-                        ml: "651511744",
-                        date_fr: "22 février 2026",
-                        date_en: "February 22<sup>nd</sup>, 2026",
-                        location_fr: "Parc Angrignon, Québec, Canada",
-                        location_en: "Parc Angrignon, Quebec, Canada",
-                        lat: 45.4445136,
-                        lng: -73.6017311,
-                        checklist_id: "S303122244"
-                    },
-                    
-                    {
                         ml: "651511745",
                         date_fr: "22 février 2026",
                         date_en: "February 22<sup>nd</sup>, 2026",
@@ -64678,7 +64719,7 @@
                     },
                     
                     {
-                        ml: "651511746",
+                        ml: "651890794",
                         date_fr: "22 février 2026",
                         date_en: "February 22<sup>nd</sup>, 2026",
                         location_fr: "Parc Angrignon, Québec, Canada",
@@ -64689,7 +64730,7 @@
                     },
                     
                     {
-                        ml: "651511747",
+                        ml: "651890797",
                         date_fr: "22 février 2026",
                         date_en: "February 22<sup>nd</sup>, 2026",
                         location_fr: "Parc Angrignon, Québec, Canada",
@@ -64700,7 +64741,18 @@
                     },
                     
                     {
-                        ml: "651511748",
+                        ml: "651890798",
+                        date_fr: "22 février 2026",
+                        date_en: "February 22<sup>nd</sup>, 2026",
+                        location_fr: "Parc Angrignon, Québec, Canada",
+                        location_en: "Parc Angrignon, Quebec, Canada",
+                        lat: 45.4445136,
+                        lng: -73.6017311,
+                        checklist_id: "S303122244"
+                    },
+                    
+                    {
+                        ml: "651890800",
                         date_fr: "22 février 2026",
                         date_en: "February 22<sup>nd</sup>, 2026",
                         location_fr: "Parc Angrignon, Québec, Canada",
@@ -65336,8 +65388,8 @@
                         ml: "33889921",
                         date_fr: "21 mai 2009",
                         date_en: "May 21<sup>st</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18566881"
@@ -65479,8 +65531,8 @@
                         ml: "33889941",
                         date_fr: "21 mai 2009",
                         date_en: "May 21<sup>st</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18566881"
@@ -65954,8 +66006,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -66812,10 +66864,10 @@
                         ml: "360324361",
                         date_fr: "5 août 2021",
                         date_en: "August 5<sup>th</sup>, 2021",
-                        location_fr: "Pointe à John (quai & base de plein air), Québec, Canada",
-                        location_en: "Pointe à John (quai & base de plein air), Quebec, Canada",
-                        lat: 48.2316643,
-                        lng: -69.5485501,
+                        location_fr: "Pointe à John, Québec, Canada",
+                        location_en: "Pointe à John, Quebec, Canada",
+                        lat: 48.23095,
+                        lng: -69.55188,
                         checklist_id: "S92805468"
                     },
                     
@@ -67505,8 +67557,8 @@
                         ml: "34523281",
                         date_fr: "23 mai 2009",
                         date_en: "May 23<sup>rd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18567226"
@@ -67516,8 +67568,8 @@
                         ml: "34523291",
                         date_fr: "23 mai 2009",
                         date_en: "May 23<sup>rd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18567226"
@@ -68341,10 +68393,10 @@
                         ml: "360324391",
                         date_fr: "5 août 2021",
                         date_en: "August 5<sup>th</sup>, 2021",
-                        location_fr: "Pointe à John (quai & base de plein air), Québec, Canada",
-                        location_en: "Pointe à John (quai & base de plein air), Quebec, Canada",
-                        lat: 48.2316643,
-                        lng: -69.5485501,
+                        location_fr: "Pointe à John, Québec, Canada",
+                        location_en: "Pointe à John, Quebec, Canada",
+                        lat: 48.23095,
+                        lng: -69.55188,
                         checklist_id: "S92805468"
                     },
                     
@@ -68352,8 +68404,8 @@
                         ml: "34930871",
                         date_fr: "14 juillet 2014",
                         date_en: "July 14<sup>th</sup>, 2014",
-                        location_fr: "Mt-Ste-Anne, Québec, Canada",
-                        location_en: "Mt-Ste-Anne, Quebec, Canada",
+                        location_fr: "Mont Ste-Anne, Québec, Canada",
+                        location_en: "Mont Ste-Anne, Quebec, Canada",
                         lat: 48.5203566,
                         lng: -64.2344856,
                         checklist_id: "S31498431"
@@ -70995,7 +71047,7 @@
                 </div>
                 <div class="species-info">
                     <span class="species-common">${name}</span>
-                    <span class="species-scientific">${sp.sciName}</span>
+                    <span class="species-scientific">${sp.sciName.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '')}</span>
                     ${photoCountHtml}
                 </div>
             `;
@@ -71172,7 +71224,7 @@
             document.getElementById('lightbox-family').textContent = currentSpecies.family;
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? currentSpecies.name_fr : currentSpecies.name_en;
-            document.getElementById('lightbox-scientific').textContent = currentSpecies.scientific;
+            document.getElementById('lightbox-scientific').textContent = currentSpecies.scientific.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '');
             
             // Afficher le statut IUCN si l'espèce est menacée
             const iucnDiv = document.getElementById('lightbox-iucn');

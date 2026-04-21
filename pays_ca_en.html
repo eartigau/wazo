@@ -160,7 +160,7 @@
         <h1>Canada</h1>
         
         <div class="stats">
-            1745 photos
+            1750 photos
             
              · 297 species
             
@@ -224,23 +224,19 @@
         <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
         <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
         
+        <!-- En-tête espèce (au-dessus de la photo) -->
+        <div class="lightbox-species-header">
+            <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
+            <h2 id="lightbox-title"></h2>
+            <p class="scientific-name" id="lightbox-scientific"></p>
+            <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
+        </div>
+
         <div class="lightbox-content">
             <div class="lightbox-image-container">
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Famille (cachée) -->
-                <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
-                
-                <!-- Nom commun -->
-                <h2 id="lightbox-title"></h2>
-                
-                <!-- Nom scientifique -->
-                <p class="scientific-name" id="lightbox-scientific"></p>
-                
-                <!-- Statut IUCN (si menacé) -->
-                <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
-                
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
                 
@@ -262,7 +258,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    View on eBird
+                    eBird checklist
                 </a>
             </div>
         </div>
@@ -270,7 +266,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: April 19<sup>th</sup>, 2026 (13h24)</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: April 21<sup>st</sup>, 2026 (7h00)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -327,8 +323,8 @@
                 location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
                 date_fr: "2 août 2021",
                 date_en: "August 2<sup>nd</sup>, 2021",
-                lat: 48.3077673,
-                lng: -70.3309062,
+                lat: 48.3128551,
+                lng: -70.3264215,
                 checklist_id: "S92671939",
                 iucn_status: "LC"
             },
@@ -492,9 +488,9 @@
                 name_en: "Snow Goose",
                 scientific: "Anser caerulescens",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Réservoir Beaudet",
-                location_fr: "Réservoir Beaudet, Québec, Canada",
-                location_en: "Réservoir Beaudet, Quebec, Canada",
+                location: "Parc du Réservoir-Beaudet",
+                location_fr: "Parc du Réservoir-Beaudet, Québec, Canada",
+                location_en: "Parc du Réservoir-Beaudet, Quebec, Canada",
                 date_fr: "10 novembre 2016",
                 date_en: "November 10<sup>th</sup>, 2016",
                 lat: 46.0718015,
@@ -509,9 +505,9 @@
                 name_en: "Snow Goose",
                 scientific: "Anser caerulescens",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Réservoir Beaudet",
-                location_fr: "Réservoir Beaudet, Québec, Canada",
-                location_en: "Réservoir Beaudet, Quebec, Canada",
+                location: "Parc du Réservoir-Beaudet",
+                location_fr: "Parc du Réservoir-Beaudet, Québec, Canada",
+                location_en: "Parc du Réservoir-Beaudet, Quebec, Canada",
                 date_fr: "10 novembre 2016",
                 date_en: "November 10<sup>th</sup>, 2016",
                 lat: 46.0718015,
@@ -577,9 +573,9 @@
                 name_en: "Ross\'s Goose",
                 scientific: "Anser rossii",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Réservoir Beaudet",
-                location_fr: "Réservoir Beaudet, Québec, Canada",
-                location_en: "Réservoir Beaudet, Quebec, Canada",
+                location: "Parc du Réservoir-Beaudet",
+                location_fr: "Parc du Réservoir-Beaudet, Québec, Canada",
+                location_en: "Parc du Réservoir-Beaudet, Quebec, Canada",
                 date_fr: "10 novembre 2016",
                 date_en: "November 10<sup>th</sup>, 2016",
                 lat: 46.0718015,
@@ -1291,9 +1287,9 @@
                 name_en: "Mute Swan",
                 scientific: "Cygnus olor",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "21 mai 2009",
                 date_en: "May 21<sup>st</sup>, 2009",
                 lat: 43.9942,
@@ -3076,9 +3072,9 @@
                 name_en: "Greater Scaup",
                 scientific: "Aythya marila",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3365,9 +3361,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "29 décembre 2025",
                 date_en: "December 29<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3382,9 +3378,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "29 décembre 2025",
                 date_en: "December 29<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3399,9 +3395,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3416,9 +3412,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3433,9 +3429,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3450,9 +3446,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3467,9 +3463,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3484,9 +3480,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -3501,9 +3497,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -4096,9 +4092,9 @@
                 name_en: "Red-breasted Merganser",
                 scientific: "Mergus serrator",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -4220,8 +4216,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -4237,8 +4233,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -4254,8 +4250,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -4271,8 +4267,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -4526,8 +4522,8 @@
                 location_en: "Baie des Rochers, Quebec, Canada",
                 date_fr: "24 juin 2005",
                 date_en: "June 24<sup>th</sup>, 2005",
-                lat: 47.9570713,
-                lng: -69.799699,
+                lat: 47.9527206,
+                lng: -69.8097279,
                 checklist_id: "S18566998",
                 iucn_status: "LC"
             },
@@ -5813,13 +5809,13 @@
                 name_en: "Killdeer",
                 scientific: "Charadrius vociferus",
                 family: "Charadriidae (Plovers and Lapwings)",
-                location: "Baie des Escoumins",
-                location_fr: "Baie des Escoumins, Québec, Canada",
-                location_en: "Baie des Escoumins, Quebec, Canada",
+                location: "Baie des Escoumins (poissonnerie et promenade)",
+                location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
                 date_fr: "5 août 2021",
                 date_en: "August 5<sup>th</sup>, 2021",
-                lat: 48.3497186,
-                lng: -69.4018189,
+                lat: 48.3482569,
+                lng: -69.4026557,
                 checklist_id: "S92811246",
                 iucn_status: "NT"
             },
@@ -6850,9 +6846,9 @@
                 name_en: "Dunlin",
                 scientific: "Calidris alpina",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "22 mai 2009",
                 date_en: "May 22<sup>nd</sup>, 2009",
                 lat: 43.9942,
@@ -6867,9 +6863,9 @@
                 name_en: "Dunlin",
                 scientific: "Calidris alpina",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "22 mai 2009",
                 date_en: "May 22<sup>nd</sup>, 2009",
                 lat: 43.9942,
@@ -6884,9 +6880,9 @@
                 name_en: "Dunlin",
                 scientific: "Calidris alpina",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "22 mai 2009",
                 date_en: "May 22<sup>nd</sup>, 2009",
                 lat: 43.9942,
@@ -6957,8 +6953,8 @@
                 location_en: "Banc de Portneuf-sur-Mer, Quebec, Canada",
                 date_fr: "23 août 2010",
                 date_en: "August 23<sup>rd</sup>, 2010",
-                lat: 48.6087989,
-                lng: -69.0891989,
+                lat: 48.61949,
+                lng: -69.08833,
                 checklist_id: "S18567037",
                 iucn_status: "LC"
             },
@@ -6974,8 +6970,8 @@
                 location_en: "Banc de Portneuf-sur-Mer, Quebec, Canada",
                 date_fr: "23 août 2010",
                 date_en: "August 23<sup>rd</sup>, 2010",
-                lat: 48.6087989,
-                lng: -69.0891989,
+                lat: 48.61949,
+                lng: -69.08833,
                 checklist_id: "S18567037",
                 iucn_status: "LC"
             },
@@ -7343,13 +7339,13 @@
                 name_en: "Semipalmated Sandpiper",
                 scientific: "Calidris pusilla",
                 family: "Scolopacidae (Sandpipers and Allies)",
-                location: "Baie des Escoumins",
-                location_fr: "Baie des Escoumins, Québec, Canada",
-                location_en: "Baie des Escoumins, Quebec, Canada",
+                location: "Baie des Escoumins (poissonnerie et promenade)",
+                location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
                 date_fr: "22 août 2010",
                 date_en: "August 22<sup>nd</sup>, 2010",
-                lat: 48.3497186,
-                lng: -69.4018189,
+                lat: 48.3482569,
+                lng: -69.4026557,
                 checklist_id: "S18567405",
                 iucn_status: "NT"
             },
@@ -7501,8 +7497,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "26 juillet 2011",
                 date_en: "July 26<sup>th</sup>, 2011",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18574054",
                 iucn_status: "VU"
             },
@@ -7603,8 +7599,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -7620,8 +7616,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -7705,8 +7701,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -7790,8 +7786,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -7841,8 +7837,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -7858,8 +7854,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -7909,8 +7905,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "26 juillet 2011",
                 date_en: "July 26<sup>th</sup>, 2011",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18574054",
                 iucn_status: "LC"
             },
@@ -7926,8 +7922,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -8096,8 +8092,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "26 juillet 2011",
                 date_en: "July 26<sup>th</sup>, 2011",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18574054",
                 iucn_status: "VU"
             },
@@ -8130,8 +8126,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "VU"
             },
@@ -8142,13 +8138,13 @@
                 name_en: "Bonaparte\'s Gull",
                 scientific: "Chroicocephalus philadelphia",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Baie des Escoumins",
-                location_fr: "Baie des Escoumins, Québec, Canada",
-                location_en: "Baie des Escoumins, Quebec, Canada",
+                location: "Baie des Escoumins (poissonnerie et promenade)",
+                location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
                 date_fr: "5 août 2021",
                 date_en: "August 5<sup>th</sup>, 2021",
-                lat: 48.3497186,
-                lng: -69.4018189,
+                lat: 48.3482569,
+                lng: -69.4026557,
                 checklist_id: "S92811246",
                 iucn_status: "LC"
             },
@@ -8164,8 +8160,8 @@
                 location_en: "Parc marin du Saguenay-St-Laurent, Quebec, Canada",
                 date_fr: "5 août 2021",
                 date_en: "August 5<sup>th</sup>, 2021",
-                lat: 48.0951511,
-                lng: -69.5750427,
+                lat: 48.12221,
+                lng: -69.56818,
                 checklist_id: "S92795490",
                 iucn_status: "LC"
             },
@@ -8244,13 +8240,13 @@
                 name_en: "Bonaparte\'s Gull",
                 scientific: "Chroicocephalus philadelphia",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Baie des Escoumins",
-                location_fr: "Baie des Escoumins, Québec, Canada",
-                location_en: "Baie des Escoumins, Quebec, Canada",
+                location: "Baie des Escoumins (poissonnerie et promenade)",
+                location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
                 date_fr: "22 août 2010",
                 date_en: "August 22<sup>nd</sup>, 2010",
-                lat: 48.3497186,
-                lng: -69.4018189,
+                lat: 48.3482569,
+                lng: -69.4026557,
                 checklist_id: "S18567405",
                 iucn_status: "LC"
             },
@@ -8287,6 +8283,91 @@
                 lng: -123.3716993,
                 checklist_id: "S48947692",
                 iucn_status: "NE"
+            },
+            
+            {
+                ml: "653797263",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797264",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797265",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797266",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797269",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
             },
             
             {
@@ -8431,9 +8512,9 @@
                 name_en: "Ring-billed Gull",
                 scientific: "Larus delawarensis",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Penticton",
-                location_fr: "Penticton, Colombie-Britannique, Canada",
-                location_en: "Penticton, British Columbia, Canada",
+                location: "Penticton Dam",
+                location_fr: "Penticton Dam, Colombie-Britannique, Canada",
+                location_en: "Penticton Dam, British Columbia, Canada",
                 date_fr: "6 juillet 2019",
                 date_en: "July 6<sup>th</sup>, 2019",
                 lat: 49.50158,
@@ -8448,9 +8529,9 @@
                 name_en: "Ring-billed Gull",
                 scientific: "Larus delawarensis",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Penticton",
-                location_fr: "Penticton, Colombie-Britannique, Canada",
-                location_en: "Penticton, British Columbia, Canada",
+                location: "Penticton Dam",
+                location_fr: "Penticton Dam, Colombie-Britannique, Canada",
+                location_en: "Penticton Dam, British Columbia, Canada",
                 date_fr: "6 juillet 2019",
                 date_en: "July 6<sup>th</sup>, 2019",
                 lat: 49.50158,
@@ -8776,8 +8857,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "NE"
             },
@@ -8924,13 +9005,13 @@
                 name_en: "Lesser Black-backed Gull",
                 scientific: "Larus fuscus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Baie des Escoumins",
-                location_fr: "Baie des Escoumins, Québec, Canada",
-                location_en: "Baie des Escoumins, Quebec, Canada",
+                location: "Baie des Escoumins (poissonnerie et promenade)",
+                location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
                 date_fr: "5 août 2021",
                 date_en: "August 5<sup>th</sup>, 2021",
-                lat: 48.3497186,
-                lng: -69.4018189,
+                lat: 48.3482569,
+                lng: -69.4026557,
                 checklist_id: "S92811246",
                 iucn_status: "LC"
             },
@@ -8941,9 +9022,9 @@
                 name_en: "California Gull",
                 scientific: "Larus californicus",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Penticton",
-                location_fr: "Penticton, Colombie-Britannique, Canada",
-                location_en: "Penticton, British Columbia, Canada",
+                location: "Penticton Dam",
+                location_fr: "Penticton Dam, Colombie-Britannique, Canada",
+                location_en: "Penticton Dam, British Columbia, Canada",
                 date_fr: "6 juillet 2019",
                 date_en: "July 6<sup>th</sup>, 2019",
                 lat: 49.50158,
@@ -9128,9 +9209,9 @@
                 name_en: "Caspian Tern",
                 scientific: "Hydroprogne caspia",
                 family: "Laridae (Gulls, Terns, and Skimmers)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "22 mai 2009",
                 date_en: "May 22<sup>nd</sup>, 2009",
                 lat: 43.9942,
@@ -10221,8 +10302,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -10238,8 +10319,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -10255,8 +10336,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -10272,8 +10353,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "26 juillet 2011",
                 date_en: "July 26<sup>th</sup>, 2011",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18574054",
                 iucn_status: "LC"
             },
@@ -10289,8 +10370,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -10306,8 +10387,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -10323,8 +10404,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -10391,8 +10472,8 @@
                 location_en: "Parc marin du Saguenay-St-Laurent, Quebec, Canada",
                 date_fr: "5 août 2021",
                 date_en: "August 5<sup>th</sup>, 2021",
-                lat: 48.0951511,
-                lng: -69.5750427,
+                lat: 48.12221,
+                lng: -69.56818,
                 checklist_id: "S92795490",
                 iucn_status: "LC"
             },
@@ -10493,8 +10574,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2014",
                 date_en: "July 17<sup>th</sup>, 2014",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S19129449",
                 iucn_status: "LC"
             },
@@ -12244,8 +12325,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "26 juillet 2011",
                 date_en: "July 26<sup>th</sup>, 2011",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18574054",
                 iucn_status: "LC"
             },
@@ -16511,8 +16592,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -19736,9 +19817,9 @@
                 name_en: "Gray Catbird",
                 scientific: "Dumetella carolinensis",
                 family: "Mimidae (Mockingbirds and Thrashers)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "23 mai 2009",
                 date_en: "May 23<sup>rd</sup>, 2009",
                 lat: 43.9942,
@@ -19753,9 +19834,9 @@
                 name_en: "Gray Catbird",
                 scientific: "Dumetella carolinensis",
                 family: "Mimidae (Mockingbirds and Thrashers)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "21 mai 2009",
                 date_en: "May 21<sup>st</sup>, 2009",
                 lat: 43.9942,
@@ -19770,9 +19851,9 @@
                 name_en: "Gray Catbird",
                 scientific: "Dumetella carolinensis",
                 family: "Mimidae (Mockingbirds and Thrashers)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "21 mai 2009",
                 date_en: "May 21<sup>st</sup>, 2009",
                 lat: 43.9942,
@@ -20489,8 +20570,8 @@
                 location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
                 date_fr: "2 août 2021",
                 date_en: "August 2<sup>nd</sup>, 2021",
-                lat: 48.3077673,
-                lng: -70.3309062,
+                lat: 48.3128551,
+                lng: -70.3264215,
                 checklist_id: "S92671939",
                 iucn_status: "NE"
             },
@@ -21934,8 +22015,8 @@
                 location_en: "Quai, Pointe-au-Pic, Quebec, Canada",
                 date_fr: "24 février 2015",
                 date_en: "February 24<sup>th</sup>, 2015",
-                lat: 47.6236944,
-                lng: -70.1395512,
+                lat: 47.6239988,
+                lng: -70.139277,
                 checklist_id: "S22059085",
                 iucn_status: "LC"
             },
@@ -21951,8 +22032,8 @@
                 location_en: "Quai, Pointe-au-Pic, Quebec, Canada",
                 date_fr: "24 février 2015",
                 date_en: "February 24<sup>th</sup>, 2015",
-                lat: 47.6236944,
-                lng: -70.1395512,
+                lat: 47.6239988,
+                lng: -70.139277,
                 checklist_id: "S22059085",
                 iucn_status: "LC"
             },
@@ -22354,13 +22435,13 @@
                 name_en: "Pine Grosbeak",
                 scientific: "Pinicola enucleator",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Parc Boisé du Quai",
-                location_fr: "Parc Boisé du Quai, Québec, Canada",
-                location_en: "Parc Boisé du Quai, Quebec, Canada",
+                location: "Boisé du Quai",
+                location_fr: "Boisé du Quai, Québec, Canada",
+                location_en: "Boisé du Quai, Quebec, Canada",
                 date_fr: "23 février 2021",
                 date_en: "February 23<sup>rd</sup>, 2021",
-                lat: 47.4281537,
-                lng: -70.4924552,
+                lat: 47.42619,
+                lng: -70.49423,
                 checklist_id: "S82224976",
                 iucn_status: "LC"
             },
@@ -22371,13 +22452,13 @@
                 name_en: "Pine Grosbeak",
                 scientific: "Pinicola enucleator",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Parc Boisé du Quai",
-                location_fr: "Parc Boisé du Quai, Québec, Canada",
-                location_en: "Parc Boisé du Quai, Quebec, Canada",
+                location: "Boisé du Quai",
+                location_fr: "Boisé du Quai, Québec, Canada",
+                location_en: "Boisé du Quai, Quebec, Canada",
                 date_fr: "23 février 2021",
                 date_en: "February 23<sup>rd</sup>, 2021",
-                lat: 47.4281537,
-                lng: -70.4924552,
+                lat: 47.42619,
+                lng: -70.49423,
                 checklist_id: "S82224976",
                 iucn_status: "LC"
             },
@@ -22388,13 +22469,13 @@
                 name_en: "Pine Grosbeak",
                 scientific: "Pinicola enucleator",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Parc Boisé du Quai",
-                location_fr: "Parc Boisé du Quai, Québec, Canada",
-                location_en: "Parc Boisé du Quai, Quebec, Canada",
+                location: "Boisé du Quai",
+                location_fr: "Boisé du Quai, Québec, Canada",
+                location_en: "Boisé du Quai, Quebec, Canada",
                 date_fr: "23 février 2021",
                 date_en: "February 23<sup>rd</sup>, 2021",
-                lat: 47.4281537,
-                lng: -70.4924552,
+                lat: 47.42619,
+                lng: -70.49423,
                 checklist_id: "S82224976",
                 iucn_status: "LC"
             },
@@ -22405,13 +22486,13 @@
                 name_en: "Pine Grosbeak",
                 scientific: "Pinicola enucleator",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Parc Boisé du Quai",
-                location_fr: "Parc Boisé du Quai, Québec, Canada",
-                location_en: "Parc Boisé du Quai, Quebec, Canada",
+                location: "Boisé du Quai",
+                location_fr: "Boisé du Quai, Québec, Canada",
+                location_en: "Boisé du Quai, Quebec, Canada",
                 date_fr: "23 février 2021",
                 date_en: "February 23<sup>rd</sup>, 2021",
-                lat: 47.4281537,
-                lng: -70.4924552,
+                lat: 47.42619,
+                lng: -70.49423,
                 checklist_id: "S82224976",
                 iucn_status: "LC"
             },
@@ -22422,13 +22503,13 @@
                 name_en: "Pine Grosbeak",
                 scientific: "Pinicola enucleator",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Parc Boisé du Quai",
-                location_fr: "Parc Boisé du Quai, Québec, Canada",
-                location_en: "Parc Boisé du Quai, Quebec, Canada",
+                location: "Boisé du Quai",
+                location_fr: "Boisé du Quai, Québec, Canada",
+                location_en: "Boisé du Quai, Quebec, Canada",
                 date_fr: "23 février 2021",
                 date_en: "February 23<sup>rd</sup>, 2021",
-                lat: 47.4281537,
-                lng: -70.4924552,
+                lat: 47.42619,
+                lng: -70.49423,
                 checklist_id: "S82224976",
                 iucn_status: "LC"
             },
@@ -22439,13 +22520,13 @@
                 name_en: "Pine Grosbeak",
                 scientific: "Pinicola enucleator",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Parc Boisé du Quai",
-                location_fr: "Parc Boisé du Quai, Québec, Canada",
-                location_en: "Parc Boisé du Quai, Quebec, Canada",
+                location: "Boisé du Quai",
+                location_fr: "Boisé du Quai, Québec, Canada",
+                location_en: "Boisé du Quai, Quebec, Canada",
                 date_fr: "23 février 2021",
                 date_en: "February 23<sup>rd</sup>, 2021",
-                lat: 47.4281537,
-                lng: -70.4924552,
+                lat: 47.42619,
+                lng: -70.49423,
                 checklist_id: "S82224976",
                 iucn_status: "LC"
             },
@@ -23034,13 +23115,13 @@
                 name_en: "White-winged Crossbill",
                 scientific: "Loxia leucoptera",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Pointe de l\'Islet (incluant quai)",
-                location_fr: "Pointe de l\'Islet (incluant quai), Québec, Canada",
-                location_en: "Pointe de l\'Islet (incluant quai), Quebec, Canada",
+                location: "PN du Fjord-du-Saguenay",
+                location_fr: "PN du Fjord-du-Saguenay, Québec, Canada",
+                location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
                 date_fr: "22 février 2015",
                 date_en: "February 22<sup>nd</sup>, 2015",
-                lat: 48.1363076,
-                lng: -69.7164861,
+                lat: 48.1370733,
+                lng: -69.716389,
                 checklist_id: "S22025905",
                 iucn_status: "LC"
             },
@@ -23051,13 +23132,13 @@
                 name_en: "White-winged Crossbill",
                 scientific: "Loxia leucoptera",
                 family: "Fringillidae (Finches, Euphonias, and Allies)",
-                location: "Pointe de l\'Islet (incluant quai)",
-                location_fr: "Pointe de l\'Islet (incluant quai), Québec, Canada",
-                location_en: "Pointe de l\'Islet (incluant quai), Quebec, Canada",
+                location: "PN du Fjord-du-Saguenay",
+                location_fr: "PN du Fjord-du-Saguenay, Québec, Canada",
+                location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
                 date_fr: "22 février 2015",
                 date_en: "February 22<sup>nd</sup>, 2015",
-                lat: 48.1363076,
-                lng: -69.7164861,
+                lat: 48.1370733,
+                lng: -69.716389,
                 checklist_id: "S22025905",
                 iucn_status: "LC"
             },
@@ -23073,8 +23154,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -24229,8 +24310,8 @@
                 location_en: "PN du Fjord-du-Saguenay, Quebec, Canada",
                 date_fr: "2 août 2021",
                 date_en: "August 2<sup>nd</sup>, 2021",
-                lat: 48.3077673,
-                lng: -70.3309062,
+                lat: 48.3128551,
+                lng: -70.3264215,
                 checklist_id: "S92671939",
                 iucn_status: "LC"
             },
@@ -25776,8 +25857,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "17 juillet 2006",
                 date_en: "July 17<sup>th</sup>, 2006",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18567393",
                 iucn_status: "LC"
             },
@@ -25800,23 +25881,6 @@
             },
             
             {
-                ml: "651511744",
-                name_fr: "Bruant de Lincoln",
-                name_en: "Lincoln\'s Sparrow",
-                scientific: "Melospiza lincolnii",
-                family: "Passerellidae (New World Sparrows)",
-                location: "Parc Angrignon",
-                location_fr: "Parc Angrignon, Québec, Canada",
-                location_en: "Parc Angrignon, Quebec, Canada",
-                date_fr: "22 février 2026",
-                date_en: "February 22<sup>nd</sup>, 2026",
-                lat: 45.4445136,
-                lng: -73.6017311,
-                checklist_id: "S303122244",
-                iucn_status: "LC"
-            },
-            
-            {
                 ml: "651511745",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
@@ -25834,7 +25898,7 @@
             },
             
             {
-                ml: "651511746",
+                ml: "651890794",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
                 scientific: "Melospiza lincolnii",
@@ -25851,7 +25915,7 @@
             },
             
             {
-                ml: "651511747",
+                ml: "651890797",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
                 scientific: "Melospiza lincolnii",
@@ -25868,7 +25932,24 @@
             },
             
             {
-                ml: "651511748",
+                ml: "651890798",
+                name_fr: "Bruant de Lincoln",
+                name_en: "Lincoln\'s Sparrow",
+                scientific: "Melospiza lincolnii",
+                family: "Passerellidae (New World Sparrows)",
+                location: "Parc Angrignon",
+                location_fr: "Parc Angrignon, Québec, Canada",
+                location_en: "Parc Angrignon, Quebec, Canada",
+                date_fr: "22 février 2026",
+                date_en: "February 22<sup>nd</sup>, 2026",
+                lat: 45.4445136,
+                lng: -73.6017311,
+                checklist_id: "S303122244",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "651890800",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
                 scientific: "Melospiza lincolnii",
@@ -26077,9 +26158,9 @@
                 name_en: "Orchard Oriole",
                 scientific: "Icterus spurius",
                 family: "Icteridae (Troupials and Allies)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "21 mai 2009",
                 date_en: "May 21<sup>st</sup>, 2009",
                 lat: 43.9942,
@@ -26213,9 +26294,9 @@
                 name_en: "Baltimore Oriole",
                 scientific: "Icterus galbula",
                 family: "Icteridae (Troupials and Allies)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "21 mai 2009",
                 date_en: "May 21<sup>st</sup>, 2009",
                 lat: 43.9942,
@@ -26796,8 +26877,8 @@
                 location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
                 date_fr: "26 juillet 2011",
                 date_en: "July 26<sup>th</sup>, 2011",
-                lat: 48.4901476,
-                lng: -64.159543,
+                lat: 48.4943924,
+                lng: -64.1619892,
                 checklist_id: "S18574054",
                 iucn_status: "LC"
             },
@@ -27233,13 +27314,13 @@
                 name_en: "Tennessee Warbler",
                 scientific: "Leiothlypis peregrina",
                 family: "Parulidae (New World Warblers)",
-                location: "Pointe à John (quai & base de plein air)",
-                location_fr: "Pointe à John (quai & base de plein air), Québec, Canada",
-                location_en: "Pointe à John (quai & base de plein air), Quebec, Canada",
+                location: "Pointe à John",
+                location_fr: "Pointe à John, Québec, Canada",
+                location_en: "Pointe à John, Quebec, Canada",
                 date_fr: "5 août 2021",
                 date_en: "August 5<sup>th</sup>, 2021",
-                lat: 48.2316643,
-                lng: -69.5485501,
+                lat: 48.23095,
+                lng: -69.55188,
                 checklist_id: "S92805468",
                 iucn_status: "LC"
             },
@@ -28049,9 +28130,9 @@
                 name_en: "Northern Yellow Warbler",
                 scientific: "Setophaga aestiva",
                 family: "Parulidae (New World Warblers)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "23 mai 2009",
                 date_en: "May 23<sup>rd</sup>, 2009",
                 lat: 43.9942,
@@ -28066,9 +28147,9 @@
                 name_en: "Northern Yellow Warbler",
                 scientific: "Setophaga aestiva",
                 family: "Parulidae (New World Warblers)",
-                location: "Presqu\'ile Provincial Park (general location)",
-                location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                location: "Presqu\'ile Provincial Park* general (use more precise loc.)",
+                location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                 date_fr: "23 mai 2009",
                 date_en: "May 23<sup>rd</sup>, 2009",
                 lat: 43.9942,
@@ -28814,13 +28895,13 @@
                 name_en: "Black-throated Green Warbler",
                 scientific: "Setophaga virens",
                 family: "Parulidae (New World Warblers)",
-                location: "Pointe à John (quai & base de plein air)",
-                location_fr: "Pointe à John (quai & base de plein air), Québec, Canada",
-                location_en: "Pointe à John (quai & base de plein air), Quebec, Canada",
+                location: "Pointe à John",
+                location_fr: "Pointe à John, Québec, Canada",
+                location_en: "Pointe à John, Quebec, Canada",
                 date_fr: "5 août 2021",
                 date_en: "August 5<sup>th</sup>, 2021",
-                lat: 48.2316643,
-                lng: -69.5485501,
+                lat: 48.23095,
+                lng: -69.55188,
                 checklist_id: "S92805468",
                 iucn_status: "LC"
             },
@@ -28831,9 +28912,9 @@
                 name_en: "Black-throated Green Warbler",
                 scientific: "Setophaga virens",
                 family: "Parulidae (New World Warblers)",
-                location: "Mt-Ste-Anne",
-                location_fr: "Mt-Ste-Anne, Québec, Canada",
-                location_en: "Mt-Ste-Anne, Quebec, Canada",
+                location: "Mont Ste-Anne",
+                location_fr: "Mont Ste-Anne, Québec, Canada",
+                location_en: "Mont Ste-Anne, Quebec, Canada",
                 date_fr: "14 juillet 2014",
                 date_en: "July 14<sup>th</sup>, 2014",
                 lat: 48.5203566,
@@ -30113,7 +30194,7 @@
             // Infos
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? photo.name_fr : photo.name_en;
-            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '');
             
             // Afficher le statut IUCN si l'espèce est menacée
             const iucnDiv = document.getElementById('lightbox-iucn');
@@ -30254,7 +30335,7 @@
             
             { lat: 45.4052268, lng: -73.5650861, name: "Parc Optimiste (cté Roussillon)" },
             
-            { lat: 48.3077673, lng: -70.3309062, name: "PN du Fjord-du-Saguenay" },
+            { lat: 48.3128551, lng: -70.3264215, name: "PN du Fjord-du-Saguenay" },
             
             { lat: 45.3914585, lng: -73.7611771, name: "RF Marguerite-D'Youville" },
             
@@ -30266,7 +30347,7 @@
             
             { lat: 45.4285655, lng: -73.6812991, name: "Parc René-Lévesque" },
             
-            { lat: 46.0718015, lng: -71.9707489, name: "Réservoir Beaudet" },
+            { lat: 46.0718015, lng: -71.9707489, name: "Parc du Réservoir-Beaudet" },
             
             { lat: 45.4343284, lng: -73.6587576, name: "Parc Dollier-de-Casson" },
             
@@ -30290,7 +30371,7 @@
             
             { lat: 44.183435, lng: -76.7209625, name: "Amherst Island Ferry" },
             
-            { lat: 43.9942, lng: -77.71059, name: "Presqu'ile Provincial Park (general location)" },
+            { lat: 43.9942, lng: -77.71059, name: "Presqu'ile Provincial Park* general (use more precise loc.)" },
             
             { lat: 45.2629261, lng: -73.932023, name: "Marais, St-Étienne-de-Beauharnois" },
             
@@ -30338,7 +30419,7 @@
             
             { lat: 44.6599813, lng: -66.801231, name: "Grand Manan" },
             
-            { lat: 43.6379784, lng: -79.3812249, name: "Toronto" },
+            { lat: 43.6379784, lng: -79.3812249, name: "Waterfront Trail (Harbourfront Centre)" },
             
             { lat: 48.5188557, lng: -68.4732342, name: "Quai, Pointe-au-Père" },
             
@@ -30372,7 +30453,7 @@
             
             { lat: 44.0617788, lng: -77.003603, name: "Adolphustown" },
             
-            { lat: 45.4885445, lng: -75.6144148, name: "Parc du Lac-Beauchamp" },
+            { lat: 45.48949, lng: -75.62258, name: "Parc du Lac-Beauchamp" },
             
             { lat: 45.5056251, lng: -73.5274601, name: "Ile Notre-Dame" },
             
@@ -30382,7 +30463,7 @@
             
             { lat: 48.3630927, lng: -68.7616253, name: "PN du Bic" },
             
-            { lat: 47.9570713, lng: -69.799699, name: "Baie des Rochers" },
+            { lat: 47.9527206, lng: -69.8097279, name: "Baie des Rochers" },
             
             { lat: 45.5648313, lng: -73.5424725, name: "poste d'observation Lagopède des saules, Montréal (2025)" },
             
@@ -30404,7 +30485,7 @@
             
             { lat: 43.9080345, lng: -77.2879171, name: "Sandbanks Provincial Park" },
             
-            { lat: 48.3497186, lng: -69.4018189, name: "Baie des Escoumins" },
+            { lat: 48.3482569, lng: -69.4026557, name: "Baie des Escoumins (poissonnerie et promenade)" },
             
             { lat: 48.0926387, lng: -66.1002078, name: "Halte routière, av. du Phare" },
             
@@ -30436,7 +30517,7 @@
             
             { lat: 45.418054, lng: -75.7431577, name: "Parc Brébeuf" },
             
-            { lat: 48.6087989, lng: -69.0891989, name: "Banc de Portneuf-sur-Mer" },
+            { lat: 48.61949, lng: -69.08833, name: "Banc de Portneuf-sur-Mer" },
             
             { lat: 48.1431991, lng: -69.7131816, name: "Tadoussac" },
             
@@ -30446,7 +30527,7 @@
             
             { lat: 44.5208489, lng: -67.0906734, name: "Machias Seal Island (NB)" },
             
-            { lat: 48.4901476, lng: -64.159543, name: "PN de l'Île-Bonaventure-et-du-Rocher-Percé" },
+            { lat: 48.4943924, lng: -64.1619892, name: "PN de l'Île-Bonaventure-et-du-Rocher-Percé" },
             
             { lat: 48.5279344, lng: -124.4476279, name: "Juan de Fuca Provincial Park" },
             
@@ -30454,9 +30535,11 @@
             
             { lat: 48.582172, lng: -64.2928505, name: "Barachois, Percé" },
             
-            { lat: 48.0951511, lng: -69.5750427, name: "Parc marin du Saguenay-St-Laurent" },
+            { lat: 48.12221, lng: -69.56818, name: "Parc marin du Saguenay-St-Laurent" },
             
-            { lat: 49.50158, lng: -119.6119416, name: "Penticton" },
+            { lat: 45.4465233, lng: -73.5709548, name: "Parc du Quai-de-la-Tortue" },
+            
+            { lat: 49.50158, lng: -119.6119416, name: "Penticton Dam" },
             
             { lat: 45.5263573, lng: -73.5693468, name: "Parc La Fontaine" },
             
@@ -30600,15 +30683,13 @@
             
             { lat: 48.1591008, lng: -69.0193748, name: "Lac St-Mathieu" },
             
-            { lat: 47.6236944, lng: -70.1395512, name: "Quai, Pointe-au-Pic" },
+            { lat: 47.6239988, lng: -70.139277, name: "Quai, Pointe-au-Pic" },
             
             { lat: 45.3168453, lng: -73.6550045, name: "Champs agricoles Rg St-Simon" },
             
-            { lat: 47.4281537, lng: -70.4924552, name: "Parc Boisé du Quai" },
+            { lat: 47.42619, lng: -70.49423, name: "Boisé du Quai" },
             
             { lat: 46.653056, lng: -70.148333, name: "Saint-Fabien-de-Panet" },
-            
-            { lat: 48.1363076, lng: -69.7164861, name: "Pointe de l'Islet (incluant quai)" },
             
             { lat: 48.442593, lng: -123.5323251, name: "Grob Court, Victoria" },
             
@@ -30626,7 +30707,7 @@
             
             { lat: 49.238278, lng: -124.0502493, name: "Woodgrove Centre" },
             
-            { lat: 48.2316643, lng: -69.5485501, name: "Pointe à John (quai & base de plein air)" },
+            { lat: 48.23095, lng: -69.55188, name: "Pointe à John" },
             
             { lat: 45.4230339, lng: -75.7569122, name: "Domaine de la ferme Moore" },
             
@@ -30634,7 +30715,7 @@
             
             { lat: 45.543889, lng: -73.509444, name: "Parc Marie-Victorin, Longueuil" },
             
-            { lat: 48.5203566, lng: -64.2344856, name: "Mt-Ste-Anne" },
+            { lat: 48.5203566, lng: -64.2344856, name: "Mont Ste-Anne" },
             
             { lat: 46.4995046, lng: -70.4145764, name: "Le Domaine Tanguay, Sainte-Sabine" },
             

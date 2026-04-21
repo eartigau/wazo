@@ -220,23 +220,19 @@
         <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
         <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
         
+        <!-- En-tête espèce (au-dessus de la photo) -->
+        <div class="lightbox-species-header">
+            <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
+            <h2 id="lightbox-title"></h2>
+            <p class="scientific-name" id="lightbox-scientific"></p>
+            <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
+        </div>
+
         <div class="lightbox-content">
             <div class="lightbox-image-container">
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Famille (cachée) -->
-                <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
-                
-                <!-- Nom commun -->
-                <h2 id="lightbox-title"></h2>
-                
-                <!-- Nom scientifique -->
-                <p class="scientific-name" id="lightbox-scientific"></p>
-                
-                <!-- Statut IUCN (si menacé) -->
-                <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
-                
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
                 
@@ -258,7 +254,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    View on eBird
+                    eBird checklist
                 </a>
             </div>
         </div>
@@ -266,7 +262,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: April 19<sup>th</sup>, 2026 (13h24)</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: April 21<sup>st</sup>, 2026 (7h00)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -1617,7 +1613,7 @@
             // Infos
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? photo.name_fr : photo.name_en;
-            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '');
             
             // Afficher le statut IUCN si l'espèce est menacée
             const iucnDiv = document.getElementById('lightbox-iucn');

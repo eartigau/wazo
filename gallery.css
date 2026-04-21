@@ -3,7 +3,7 @@
    Design inspiré de la forêt et de l'ornithologie
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     /* Palette nature - Forêt */
@@ -75,7 +75,7 @@
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: var(--gradient-dawn);
     background-attachment: fixed;
     color: var(--text-dark);
@@ -354,7 +354,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .gallery-header h1 {
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 40px;
     font-weight: 600;
     color: var(--text-dark);
@@ -369,7 +369,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .gallery-subtitle {
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 20px;
     color: var(--forest-green);
     margin-bottom: 12px;
@@ -454,7 +454,7 @@ a.dropdown-toggle.dropdown-link:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(250, 248, 245, 0.92);
+    background: rgba(30, 40, 30, 0.88);
     display: none;
     z-index: 2000;
     overflow-y: auto;
@@ -464,6 +464,7 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .lightbox.active {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     animation: lightboxFadeIn 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -493,29 +494,29 @@ a.dropdown-toggle.dropdown-link:hover {
     position: fixed;
     top: 24px;
     right: 28px;
-    background: var(--bg-white);
-    border: 1px solid var(--border-light);
+    background: #ffffff;
+    border: 1.5px solid #ffffff;
     color: var(--text-dark);
     font-size: 26px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
     cursor: pointer;
-    opacity: 0.95;
+    opacity: 1;
     z-index: 2001;
     transition: all var(--transition-smooth);
-    box-shadow: var(--shadow-md);
+    box-shadow: 0 0 0 1.5px rgba(255,255,255,0.85), var(--shadow-md);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .lightbox-close:hover {
-    opacity: 1;
     background: var(--gradient-forest);
-    border-color: transparent;
+    border-color: white;
     color: white;
     transform: rotate(90deg) scale(1.05);
+    box-shadow: 0 0 0 1.5px rgba(255,255,255,0.85), var(--shadow-lg);
 }
 
 .lightbox-nav {
@@ -550,11 +551,42 @@ a.dropdown-toggle.dropdown-link:hover {
     transform: translateY(-50%) scale(1.1);
 }
 
+.lightbox-species-header {
+    width: calc(100% - 80px);
+    max-width: 1600px;
+    margin: 0 0 16px 0;
+    padding: 0 4px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.lightbox-species-header h2 {
+    font-family: 'Manrope', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.35);
+    letter-spacing: 0.4px;
+}
+
+.lightbox-species-header .scientific-name {
+    font-family: 'Manrope', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    color: rgba(255,255,255,0.78);
+    font-size: 20px;
+    margin-bottom: 6px;
+    letter-spacing: 0.2px;
+}
+
 .lightbox-content {
     display: flex;
+    width: calc(100% - 80px);
     max-width: 1600px;
-    max-height: 90vh;
-    margin: 0 40px;
+    max-height: 74vh;
+    margin: 0;
     gap: 28px;
 }
 
@@ -568,7 +600,7 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .lightbox-image-container img {
     max-width: 100%;
-    max-height: 85vh;
+    max-height: 72vh;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: var(--shadow-xl);
@@ -577,7 +609,7 @@ a.dropdown-toggle.dropdown-link:hover {
 .lightbox-sidebar {
     width: 280px;
     flex-shrink: 0;
-    padding: 24px 0;
+    padding: 8px 0;
     color: var(--text-dark);
 }
 
@@ -587,7 +619,7 @@ a.dropdown-toggle.dropdown-link:hover {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -601,21 +633,13 @@ a.dropdown-toggle.dropdown-link:hover {
     border-radius: 1px;
 }
 
-.lightbox-sidebar h2 {
-    font-family: 'Lora', Georgia, serif;
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 4px;
-    color: var(--text-dark);
-    line-height: 1.2;
+/* Dans l'en-tête au-dessus de la photo, le statut doit être blanc */
+.lightbox-species-header .lightbox-family {
+    color: #ffffff;
 }
 
-.lightbox-sidebar .scientific-name {
-    font-family: 'Lora', Georgia, serif;
-    font-style: italic;
-    color: var(--text-medium);
-    margin-bottom: 20px;
-    font-size: 15px;
+.lightbox-species-header .lightbox-family::before {
+    background: rgba(255, 255, 255, 0.5);
 }
 
 .lightbox-info {
@@ -836,7 +860,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .family-title {
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 24px;
     font-weight: 600;
     color: var(--forest-green-dark);
@@ -920,7 +944,7 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .species-scientific {
     display: block;
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 13px;
     font-style: italic;
     color: var(--text-light);
@@ -996,7 +1020,7 @@ a.dropdown-toggle.dropdown-link:hover {
     align-items: center;
     gap: 10px;
     margin-bottom: 16px;
-    font-family: 'Lora', Georgia, serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 20px;
     font-weight: 600;
     color: var(--forest-green);
@@ -1007,7 +1031,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .trip-map-header .location-count {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 14px;
     font-weight: 500;
     color: var(--text-medium);
@@ -1071,7 +1095,7 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .trip-popup .leaflet-popup-content {
     margin: 10px 14px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 13px;
     color: var(--text-dark);
     line-height: 1.4;
@@ -2029,7 +2053,7 @@ footer a:hover {
 
 /* Sidebar — police serif pour élégance */
 .lightbox-sidebar {
-    font-family: 'Lora', Georgia, serif !important;
+    font-family: 'Manrope', sans-serif !important;
     color: #d8d8d8 !important;
     border-left: 1px solid rgba(255,255,255,0.06) !important;
     padding-left: 28px !important;
@@ -2037,7 +2061,7 @@ footer a:hover {
 
 /* Famille — caps Inter discret */
 .lightbox-family {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Manrope', sans-serif !important;
     color: #555 !important;
     letter-spacing: 2.5px !important;
     font-size: 10px !important;
@@ -2069,7 +2093,7 @@ footer a:hover {
     color: #383838;
     letter-spacing: 5px;
     font-style: normal;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Manrope', sans-serif;
     font-size: 12px;
     margin: 16px 0;
 }
@@ -2079,7 +2103,7 @@ footer a:hover {
     color: #666 !important;
     background: none !important;
     border: none !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Manrope', sans-serif !important;
     font-size: 12px !important;
     font-weight: 400 !important;
     letter-spacing: 0.8px !important;
@@ -2103,7 +2127,7 @@ footer a:hover {
     display: none !important;
 }
 .lightbox .info-row {
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Manrope', sans-serif !important;
     color: #bbb !important;
     font-size: 13px !important;
     margin-bottom: 7px !important;
@@ -2135,7 +2159,7 @@ footer a:hover {
     border: 1px solid rgba(255,255,255,0.14) !important;
     border-radius: 8px !important;
     color: #e8e8e8 !important;
-    font-family: 'Inter', sans-serif !important;
+    font-family: 'Manrope', sans-serif !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     letter-spacing: 0.3px !important;

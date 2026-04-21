@@ -192,23 +192,22 @@
 
     <!-- LIGHTBOX -->
     <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
         <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
         <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
-        
+
+        <!-- En-tête espèce (au-dessus de la photo) -->
+        <div class="lightbox-species-header">
+            <h2 id="lightbox-title"></h2>
+            <p class="scientific-name" id="lightbox-scientific"></p>
+            <div class="lightbox-family" id="lightbox-status" style="text-align:center; margin-top:4px;"></div>
+        </div>
+
         <div class="lightbox-content">
             <div class="lightbox-image-container">
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Statut IUCN -->
-                <div class="lightbox-family" id="lightbox-status"></div>
-                
-                <!-- Nom commun -->
-                <h2 id="lightbox-title"></h2>
-                
-                <!-- Nom scientifique -->
-                <p class="scientific-name" id="lightbox-scientific"></p>
                 
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter"></div>
@@ -231,7 +230,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    View on eBird
+                    eBird checklist
                 </a>
             </div>
         </div>
@@ -1925,8 +1924,8 @@
                         ml: "647798734",
                         date_fr: "29 décembre 2025",
                         date_en: "December 29<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S291016152"
@@ -1936,8 +1935,8 @@
                         ml: "647798735",
                         date_fr: "29 décembre 2025",
                         date_en: "December 29<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S291016152"
@@ -1947,8 +1946,8 @@
                         ml: "647756386",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -1958,8 +1957,8 @@
                         ml: "647756387",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -1969,8 +1968,8 @@
                         ml: "647762099",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -1980,8 +1979,8 @@
                         ml: "647762100",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -1991,8 +1990,8 @@
                         ml: "647762672",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -2002,8 +2001,8 @@
                         ml: "647762673",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -2013,8 +2012,8 @@
                         ml: "647824138",
                         date_fr: "28 décembre 2025",
                         date_en: "December 28<sup>th</sup>, 2025",
-                        location_fr: "Toronto, Ontario, Canada",
-                        location_en: "Toronto, Ontario, Canada",
+                        location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                        location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                         lat: 43.6379784,
                         lng: -79.3812249,
                         checklist_id: "S290813973"
@@ -2520,8 +2519,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -2631,8 +2630,8 @@
                         date_en: "July 26<sup>th</sup>, 2011",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18574054"
                     },
                     
@@ -2653,8 +2652,8 @@
                         date_en: "July 17<sup>th</sup>, 2006",
                         location_fr: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Québec, Canada",
                         location_en: "PN de l\'Île-Bonaventure-et-du-Rocher-Percé, Quebec, Canada",
-                        lat: 48.4901476,
-                        lng: -64.159543,
+                        lat: 48.4943924,
+                        lng: -64.1619892,
                         checklist_id: "S18567393"
                     }
                     
@@ -4445,10 +4444,10 @@
                         ml: "360324211",
                         date_fr: "5 août 2021",
                         date_en: "August 5<sup>th</sup>, 2021",
-                        location_fr: "Baie des Escoumins, Québec, Canada",
-                        location_en: "Baie des Escoumins, Quebec, Canada",
-                        lat: 48.3497186,
-                        lng: -69.4018189,
+                        location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                        location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
+                        lat: 48.3482569,
+                        lng: -69.4026557,
                         checklist_id: "S92811246"
                     },
                     
@@ -5092,8 +5091,8 @@
                         ml: "34384171",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -5103,8 +5102,8 @@
                         ml: "34384181",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -5114,8 +5113,8 @@
                         ml: "34384191",
                         date_fr: "22 mai 2009",
                         date_en: "May 22<sup>nd</sup>, 2009",
-                        location_fr: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
-                        location_en: "Presqu\'ile Provincial Park (general location), Ontario, Canada",
+                        location_fr: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
+                        location_en: "Presqu\'ile Provincial Park* general (use more precise loc.), Ontario, Canada",
                         lat: 43.9942,
                         lng: -77.71059,
                         checklist_id: "S18574107"
@@ -5336,10 +5335,10 @@
                         ml: "29634111",
                         date_fr: "22 août 2010",
                         date_en: "August 22<sup>nd</sup>, 2010",
-                        location_fr: "Baie des Escoumins, Québec, Canada",
-                        location_en: "Baie des Escoumins, Quebec, Canada",
-                        lat: 48.3497186,
-                        lng: -69.4018189,
+                        location_fr: "Baie des Escoumins (poissonnerie et promenade), Québec, Canada",
+                        location_en: "Baie des Escoumins (poissonnerie et promenade), Quebec, Canada",
+                        lat: 48.3482569,
+                        lng: -69.4026557,
                         checklist_id: "S18567405"
                     },
                     
@@ -7191,12 +7190,12 @@
             
             // Statut IUCN
             const statusEl = document.getElementById('lightbox-status');
-            statusEl.innerHTML = `<span class="status-badge status-${currentSpecies.status}">${currentSpecies.status}</span> ${currentLang === 'fr' ? currentSpecies.status_name_fr : currentSpecies.status_name_en}`;
+            statusEl.innerHTML = `<span class="status-badge status-${currentSpecies.status}">${currentSpecies.status}</span> <span style="color:#ffffff;">${currentLang === 'fr' ? currentSpecies.status_name_fr : currentSpecies.status_name_en}</span>`;
             
             // Nom
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? currentSpecies.name_fr : currentSpecies.name_en;
-            document.getElementById('lightbox-scientific').textContent = currentSpecies.scientific;
+            document.getElementById('lightbox-scientific').textContent = currentSpecies.scientific.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '');
             
             // Compteur
             const counter = document.getElementById('lightbox-counter');

@@ -158,7 +158,7 @@
         <div class="stats">
             50 photos
             
-             · 20 species
+             · 17 species
             
         </div>
     </div>
@@ -196,23 +196,19 @@
         <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
         <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
         
+        <!-- En-tête espèce (au-dessus de la photo) -->
+        <div class="lightbox-species-header">
+            <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
+            <h2 id="lightbox-title"></h2>
+            <p class="scientific-name" id="lightbox-scientific"></p>
+            <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
+        </div>
+
         <div class="lightbox-content">
             <div class="lightbox-image-container">
                 <img id="lightbox-img" src="" alt="">
             </div>
             <div class="lightbox-sidebar">
-                <!-- Famille (cachée) -->
-                <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
-                
-                <!-- Nom commun -->
-                <h2 id="lightbox-title"></h2>
-                
-                <!-- Nom scientifique -->
-                <p class="scientific-name" id="lightbox-scientific"></p>
-                
-                <!-- Statut IUCN (si menacé) -->
-                <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
-                
                 <!-- Compteur de photos -->
                 <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
                 
@@ -234,7 +230,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    View on eBird
+                    eBird checklist
                 </a>
             </div>
         </div>
@@ -242,7 +238,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: April 19<sup>th</sup>, 2026 (13h24)</p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: April 21<sup>st</sup>, 2026 (7h00)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -255,6 +251,91 @@
         const photosData = [
             
             {
+                ml: "653797263",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797264",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797265",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797266",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "653797269",
+                name_fr: "Goéland à bec cerclé",
+                name_en: "Ring-billed Gull",
+                scientific: "Larus delawarensis",
+                family: "Laridae (Gulls, Terns, and Skimmers)",
+                location: "Parc du Quai-de-la-Tortue",
+                location_fr: "Parc du Quai-de-la-Tortue, Québec, Canada",
+                location_en: "Parc du Quai-de-la-Tortue, Quebec, Canada",
+                date_fr: "29 mars 2026",
+                date_en: "March 29<sup>th</sup>, 2026",
+                lat: 45.4465233,
+                lng: -73.5709548,
+                checklist_id: "S314321585",
+                iucn_status: "LC"
+            },
+            
+            {
                 ml: "651878092",
                 name_fr: "Dindon sauvage",
                 name_en: "Wild Turkey",
@@ -265,8 +346,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -282,8 +363,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -299,8 +380,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -316,8 +397,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -333,8 +414,8 @@
                 location_en: "Parc du Lac-Beauchamp, Quebec, Canada",
                 date_fr: "28 février 2026",
                 date_en: "February 28<sup>th</sup>, 2026",
-                lat: 45.4885445,
-                lng: -75.6144148,
+                lat: 45.48949,
+                lng: -75.62258,
                 checklist_id: "S304677001",
                 iucn_status: "LC"
             },
@@ -374,23 +455,6 @@
             },
             
             {
-                ml: "651511744",
-                name_fr: "Bruant de Lincoln",
-                name_en: "Lincoln\'s Sparrow",
-                scientific: "Melospiza lincolnii",
-                family: "Passerellidae (New World Sparrows)",
-                location: "Parc Angrignon",
-                location_fr: "Parc Angrignon, Québec, Canada",
-                location_en: "Parc Angrignon, Quebec, Canada",
-                date_fr: "22 février 2026",
-                date_en: "February 22<sup>nd</sup>, 2026",
-                lat: 45.4445136,
-                lng: -73.6017311,
-                checklist_id: "S303122244",
-                iucn_status: "LC"
-            },
-            
-            {
                 ml: "651511745",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
@@ -408,7 +472,7 @@
             },
             
             {
-                ml: "651511746",
+                ml: "651890794",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
                 scientific: "Melospiza lincolnii",
@@ -425,7 +489,7 @@
             },
             
             {
-                ml: "651511747",
+                ml: "651890797",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
                 scientific: "Melospiza lincolnii",
@@ -442,7 +506,24 @@
             },
             
             {
-                ml: "651511748",
+                ml: "651890798",
+                name_fr: "Bruant de Lincoln",
+                name_en: "Lincoln\'s Sparrow",
+                scientific: "Melospiza lincolnii",
+                family: "Passerellidae (New World Sparrows)",
+                location: "Parc Angrignon",
+                location_fr: "Parc Angrignon, Québec, Canada",
+                location_en: "Parc Angrignon, Quebec, Canada",
+                date_fr: "22 février 2026",
+                date_en: "February 22<sup>nd</sup>, 2026",
+                lat: 45.4445136,
+                lng: -73.6017311,
+                checklist_id: "S303122244",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "651890800",
                 name_fr: "Bruant de Lincoln",
                 name_en: "Lincoln\'s Sparrow",
                 scientific: "Melospiza lincolnii",
@@ -855,9 +936,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "29 décembre 2025",
                 date_en: "December 29<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -872,9 +953,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "29 décembre 2025",
                 date_en: "December 29<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -889,9 +970,9 @@
                 name_en: "Greater Scaup",
                 scientific: "Aythya marila",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -906,9 +987,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -923,9 +1004,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -940,9 +1021,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -957,9 +1038,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -974,9 +1055,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -991,9 +1072,9 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
@@ -1008,100 +1089,15 @@
                 name_en: "Long-tailed Duck",
                 scientific: "Clangula hyemalis",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
+                location: "Waterfront Trail (Harbourfront Centre)",
+                location_fr: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
+                location_en: "Waterfront Trail (Harbourfront Centre), Ontario, Canada",
                 date_fr: "28 décembre 2025",
                 date_en: "December 28<sup>th</sup>, 2025",
                 lat: 43.6379784,
                 lng: -79.3812249,
                 checklist_id: "S290813973",
                 iucn_status: "VU"
-            },
-            
-            {
-                ml: "647727307",
-                name_fr: "Harle huppé",
-                name_en: "Red-breasted Merganser",
-                scientific: "Mergus serrator",
-                family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Toronto",
-                location_fr: "Toronto, Ontario, Canada",
-                location_en: "Toronto, Ontario, Canada",
-                date_fr: "28 décembre 2025",
-                date_en: "December 28<sup>th</sup>, 2025",
-                lat: 43.6379784,
-                lng: -79.3812249,
-                checklist_id: "S290813973",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "646147892",
-                name_fr: "Grive solitaire",
-                name_en: "Hermit Thrush",
-                scientific: "Catharus guttatus",
-                family: "Turdidae (Thrushes and Allies)",
-                location: "PN du Cap-St-Jacques",
-                location_fr: "PN du Cap-St-Jacques, Québec, Canada",
-                location_en: "PN du Cap-St-Jacques, Quebec, Canada",
-                date_fr: "30 novembre 2025",
-                date_en: "November 30<sup>th</sup>, 2025",
-                lat: 45.4645346,
-                lng: -73.9315517,
-                checklist_id: "S286831265",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "646148013",
-                name_fr: "Paruline grise",
-                name_en: "Black-throated Gray Warbler",
-                scientific: "Setophaga nigrescens",
-                family: "Parulidae (New World Warblers)",
-                location: "PN du Cap-St-Jacques",
-                location_fr: "PN du Cap-St-Jacques, Québec, Canada",
-                location_en: "PN du Cap-St-Jacques, Quebec, Canada",
-                date_fr: "30 novembre 2025",
-                date_en: "November 30<sup>th</sup>, 2025",
-                lat: 45.4645346,
-                lng: -73.9315517,
-                checklist_id: "S286831265",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "646148023",
-                name_fr: "Paruline grise",
-                name_en: "Black-throated Gray Warbler",
-                scientific: "Setophaga nigrescens",
-                family: "Parulidae (New World Warblers)",
-                location: "PN du Cap-St-Jacques",
-                location_fr: "PN du Cap-St-Jacques, Québec, Canada",
-                location_en: "PN du Cap-St-Jacques, Quebec, Canada",
-                date_fr: "30 novembre 2025",
-                date_en: "November 30<sup>th</sup>, 2025",
-                lat: 45.4645346,
-                lng: -73.9315517,
-                checklist_id: "S286831265",
-                iucn_status: "LC"
-            },
-            
-            {
-                ml: "645202618",
-                name_fr: "Cygne tuberculé",
-                name_en: "Mute Swan",
-                scientific: "Cygnus olor",
-                family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Quai Wilson",
-                location_fr: "Quai Wilson, Genève, Suisse",
-                location_en: "Quai Wilson, Geneva, Switzerland",
-                date_fr: "14 novembre 2025",
-                date_en: "November 14<sup>th</sup>, 2025",
-                lat: 46.2145451,
-                lng: 6.1523707,
-                checklist_id: "S284362377",
-                iucn_status: "LC"
             }
             
         ];
@@ -1270,7 +1266,7 @@
             // Infos
             document.getElementById('lightbox-title').textContent = 
                 currentLang === 'fr' ? photo.name_fr : photo.name_en;
-            document.getElementById('lightbox-scientific').textContent = photo.scientific;
+            document.getElementById('lightbox-scientific').textContent = photo.scientific.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '');
             
             // Afficher le statut IUCN si l'espèce est menacée
             const iucnDiv = document.getElementById('lightbox-iucn');
