@@ -210,7 +210,7 @@
             </div>
             <div class="lightbox-sidebar">
                 <!-- Compteur de photos -->
-                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
+                <div class="photo-counter" id="lightbox-counter"></div>
                 
                 <!-- Section Info -->
                 <div class="lightbox-info">
@@ -238,7 +238,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 21 avril 2026 (7h00)</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 22 avril 2026 (8h44)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -919,9 +919,9 @@
                 name_en: "American Black Duck",
                 scientific: "Anas rubripes",
                 family: "Anatidae (Ducks, Geese, and Waterfowl)",
-                location: "Rapides Deschênes (incluant Parc)",
-                location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
-                location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                location: "Rapides Deschênes",
+                location_fr: "Rapides Deschênes, Québec, Canada",
+                location_en: "Rapides Deschênes, Quebec, Canada",
                 date_fr: "2 janvier 2026",
                 date_en: "January 2<sup>nd</sup>, 2026",
                 lat: 45.37778,
@@ -1324,13 +1324,13 @@
                     });
                     
                     // OpenStreetMap standard
-                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         maxZoom: 19,
-                        attribution: '© OpenStreetMap'
+                        attribution: '© OpenStreetMap © Carto'
                     }).addTo(map);
                 }
                 
-                map.setView([photo.lat, photo.lng], 5);
+                map.setView([photo.lat, photo.lng], 4);
                 
                 const flamingoIcon = L.divIcon({
                     className: '',
@@ -1345,7 +1345,7 @@
                     marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
-                setTimeout(() => { map.invalidateSize(); map.setView([photo.lat, photo.lng], 5); }, 250);
+                setTimeout(() => { map.invalidateSize(); map.setView([photo.lat, photo.lng], 4); }, 250);
             } else {
                 mapDiv.style.display = 'none';
             }

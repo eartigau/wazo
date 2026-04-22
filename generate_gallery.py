@@ -53,6 +53,14 @@ COMMENTAIRES_LIEUX = [
     '-please bird from road only',
 ]
 
+# Substitutions exactes de noms de lieux (nom eBird -> nom affiché)
+# La clé est le nom exact tel qu'il apparaît dans eBird (insensible à la casse)
+SUBSTITUTIONS_LIEUX = {
+    'Rapides Deschênes (incluant Parc)': 'Rapides Deschênes',
+    'Rapides Deschenes (incluant Parc)': 'Rapides Deschênes',
+    'Parque Bicentenario de Vitacura (no contar cisnes / don\'t count swans)': 'Parque Bicentenario de Vitacura',
+}
+
 
 def nettoyer_nom_lieu(location: str) -> str:
     """
@@ -63,6 +71,12 @@ def nettoyer_nom_lieu(location: str) -> str:
         return ''
     
     result = location
+    
+    # Appliquer les substitutions exactes
+    for original, remplacement in SUBSTITUTIONS_LIEUX.items():
+        if result.strip().lower() == original.lower():
+            result = remplacement
+            break
     
     # Enlever les commentaires connus (insensible à la casse)
     for commentaire in COMMENTAIRES_LIEUX:

@@ -238,7 +238,7 @@
             </div>
             <div class="lightbox-sidebar">
                 <!-- Compteur de photos -->
-                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
+                <div class="photo-counter" id="lightbox-counter"></div>
                 
                 <!-- Section Info -->
                 <div class="lightbox-info">
@@ -266,7 +266,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 21 avril 2026 (7h00)</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 22 avril 2026 (8h44)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -2491,13 +2491,13 @@
                     });
                     
                     // OpenStreetMap standard
-                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         maxZoom: 19,
-                        attribution: '© OpenStreetMap'
+                        attribution: '© OpenStreetMap © Carto'
                     }).addTo(map);
                 }
                 
-                map.setView([photo.lat, photo.lng], 5);
+                map.setView([photo.lat, photo.lng], 4);
                 
                 const flamingoIcon = L.divIcon({
                     className: '',
@@ -2512,7 +2512,7 @@
                     marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
-                setTimeout(() => { map.invalidateSize(); map.setView([photo.lat, photo.lng], 5); }, 250);
+                setTimeout(() => { map.invalidateSize(); map.setView([photo.lat, photo.lng], 4); }, 250);
             } else {
                 mapDiv.style.display = 'none';
             }
@@ -2644,9 +2644,9 @@
                 zoomControl: true
             });
 
-            // OpenStreetMap standard
-            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                attribution: '© OpenStreetMap',
+            // Carto Light tiles
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© OpenStreetMap © Carto',
                 maxZoom: 19
             }).addTo(tripMap);
 

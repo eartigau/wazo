@@ -210,7 +210,7 @@
             </div>
             <div class="lightbox-sidebar">
                 <!-- Compteur de photos -->
-                <div class="photo-counter" id="lightbox-counter" style="margin-bottom: 16px; font-size: 14px; color: var(--forest-green); font-weight: 600;"></div>
+                <div class="photo-counter" id="lightbox-counter"></div>
                 
                 <!-- Section Info -->
                 <div class="lightbox-info">
@@ -238,7 +238,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 21 avril 2026 (7h00)</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 22 avril 2026 (8h44)</p>
         <p>© Étienne Artigau</p>
     </footer>
 
@@ -885,9 +885,9 @@
                 name_en: "Monk Parakeet",
                 scientific: "Myiopsitta monachus",
                 family: "Psittacidae (New World and African Parrots)",
-                location: "Parque Bicentenario de Vitacura (no contar cisnes / don\'t count swans)",
-                location_fr: "Parque Bicentenario de Vitacura (no contar cisnes / don\'t count swans), Région Métropolitaine, Chili",
-                location_en: "Parque Bicentenario de Vitacura (no contar cisnes / don\'t count swans), Metropolitan Region, Chile",
+                location: "Parque Bicentenario de Vitacura",
+                location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+                location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
                 date_fr: "12 avril 2022",
                 date_en: "April 12<sup>th</sup>, 2022",
                 lat: -33.3980197,
@@ -1511,13 +1511,13 @@
                     });
                     
                     // OpenStreetMap standard
-                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         maxZoom: 19,
-                        attribution: '© OpenStreetMap'
+                        attribution: '© OpenStreetMap © Carto'
                     }).addTo(map);
                 }
                 
-                map.setView([photo.lat, photo.lng], 5);
+                map.setView([photo.lat, photo.lng], 4);
                 
                 const flamingoIcon = L.divIcon({
                     className: '',
@@ -1532,7 +1532,7 @@
                     marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
                 }
                 
-                setTimeout(() => { map.invalidateSize(); map.setView([photo.lat, photo.lng], 5); }, 250);
+                setTimeout(() => { map.invalidateSize(); map.setView([photo.lat, photo.lng], 4); }, 250);
             } else {
                 mapDiv.style.display = 'none';
             }

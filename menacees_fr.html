@@ -3792,8 +3792,8 @@
                         ml: "22496611",
                         date_fr: "8 septembre 2006",
                         date_en: "September 8<sup>th</sup>, 2006",
-                        location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
-                        location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                        location_fr: "Rapides Deschênes, Québec, Canada",
+                        location_en: "Rapides Deschênes, Quebec, Canada",
                         lat: 45.37778,
                         lng: -75.79972,
                         checklist_id: "S18566795"
@@ -4084,8 +4084,8 @@
                         ml: "184801711",
                         date_fr: "28 octobre 2019",
                         date_en: "October 28<sup>th</sup>, 2019",
-                        location_fr: "Rapides Deschênes (incluant Parc), Québec, Canada",
-                        location_en: "Rapides Deschênes (incluant Parc), Quebec, Canada",
+                        location_fr: "Rapides Deschênes, Québec, Canada",
+                        location_en: "Rapides Deschênes, Quebec, Canada",
                         lat: 45.37778,
                         lng: -75.79972,
                         checklist_id: "S60996585"
@@ -7227,13 +7227,13 @@
                         attributionControl: false
                     });
                     
-                    // OpenStreetMap standard
-                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    // Carto Light tiles
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         maxZoom: 19
                     }).addTo(map);
                 }
                 
-                map.setView([photo.lat, photo.lng], 8);
+                map.setView([photo.lat, photo.lng], 4);
                 
                 const flamingoIcon = L.divIcon({
                     className: '',

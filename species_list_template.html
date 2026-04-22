@@ -553,13 +553,13 @@
                         attributionControl: false
                     });
                     
-                    // OpenStreetMap standard
-                    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    // Carto Light tiles
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
                         maxZoom: 19
                     }).addTo(map);
                 }
                 
-                map.setView([photo.lat, photo.lng], 8);
+                map.setView([photo.lat, photo.lng], 4);
                 
                 const flamingoIcon = L.divIcon({
                     className: '',

@@ -3,6 +3,7 @@
    Design inspiré de la forêt et de l'ornithologie
    ============================================ */
 
+@import url('https://api.fontshare.com/v2/css?f[]=ogg@300,400,700,300i,400i,700i&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap');
 
 :root {
@@ -75,7 +76,7 @@
 }
 
 body {
-    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     background: var(--gradient-dawn);
     background-attachment: fixed;
     color: var(--text-dark);
@@ -354,7 +355,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .gallery-header h1 {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 40px;
     font-weight: 600;
     color: var(--text-dark);
@@ -369,7 +370,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .gallery-subtitle {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 20px;
     color: var(--forest-green);
     margin-bottom: 12px;
@@ -396,7 +397,7 @@ a.dropdown-toggle.dropdown-link:hover {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    border-radius: 12px;
+    border-radius: 16px;
     background: var(--bg-white);
     aspect-ratio: 4/3;
     box-shadow: var(--shadow-soft);
@@ -561,7 +562,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .lightbox-species-header h2 {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 36px;
     font-weight: 700;
     color: #ffffff;
@@ -572,7 +573,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .lightbox-species-header .scientific-name {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-style: italic;
     font-weight: 400;
     color: rgba(255,255,255,0.78);
@@ -611,6 +612,10 @@ a.dropdown-toggle.dropdown-link:hover {
     flex-shrink: 0;
     padding: 8px 0;
     color: var(--text-dark);
+    display: flex;
+    flex-direction: column;
+    max-height: 74vh;
+    overflow-y: auto;
 }
 
 .lightbox-family {
@@ -675,8 +680,10 @@ a.dropdown-toggle.dropdown-link:hover {
     aspect-ratio: 1 / 1;
     border-radius: 12px;
     margin-bottom: 16px;
-    background: var(--forest-green-dark);
+    background: #e8e8e8;
     box-shadow: var(--shadow-soft);
+    flex-shrink: 1;
+    min-height: 0;
 }
 
 .grayscale-tiles {
@@ -860,7 +867,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .family-title {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 24px;
     font-weight: 600;
     color: var(--forest-green-dark);
@@ -886,7 +893,7 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .species-card {
     background: var(--bg-white);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
     box-shadow: var(--shadow-soft);
     transition: all var(--transition-out);
@@ -944,7 +951,7 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .species-scientific {
     display: block;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 13px;
     font-style: italic;
     color: var(--text-light);
@@ -965,13 +972,15 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .photo-counter {
     font-size: 13px;
-    color: var(--text-medium);
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 16px;
-    padding: 10px 16px;
-    background: rgba(45, 90, 39, 0.06);
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.12);
     border-radius: 8px;
     display: inline-block;
-    border: 1px solid var(--border-light);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    letter-spacing: 0.5px;
 }
 
 /* Bouton retour en haut */
@@ -1020,7 +1029,7 @@ a.dropdown-toggle.dropdown-link:hover {
     align-items: center;
     gap: 10px;
     margin-bottom: 16px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 20px;
     font-weight: 600;
     color: var(--forest-green);
@@ -1031,7 +1040,7 @@ a.dropdown-toggle.dropdown-link:hover {
 }
 
 .trip-map-header .location-count {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 14px;
     font-weight: 500;
     color: var(--text-medium);
@@ -1063,10 +1072,14 @@ a.dropdown-toggle.dropdown-link:hover {
     height: 100% !important;
 }
 
-/* Teinte nature légère sur les tuiles de carte */
-#trip-map .leaflet-tile-pane,
+/* Teinte légère sur la carte du voyage uniquement */
+#trip-map .leaflet-tile-pane {
+    filter: sepia(10%) saturate(85%);
+}
+
+/* Carte lightbox : claire, pas de filtre sombre */
 #lightbox-map .leaflet-tile-pane {
-    filter: sepia(15%) saturate(90%) hue-rotate(10deg);
+    filter: none;
 }
 
 /* Styles des épingles */
@@ -1095,7 +1108,7 @@ a.dropdown-toggle.dropdown-link:hover {
 
 .trip-popup .leaflet-popup-content {
     margin: 10px 14px;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 13px;
     color: var(--text-dark);
     line-height: 1.4;
@@ -1662,7 +1675,7 @@ footer a:hover {
     }
     
     .photo-card {
-        border-radius: 8px;
+        border-radius: 10px;
     }
     
     .photo-overlay {
@@ -1695,7 +1708,7 @@ footer a:hover {
     }
     
     .species-card {
-        border-radius: 8px;
+        border-radius: 10px;
     }
     
     .species-info {
@@ -2001,35 +2014,47 @@ footer a:hover {
 }
 
 /* ============================================
-   LIGHTBOX — THÈME CINÉMATIQUE
-   Fond noir profond. La photo seule apporte la couleur.
+   LIGHTBOX — STYLE CARTE SOMBRE (inspiré birds.html)
    ============================================ */
 
-/* Fond */
+/* Fond global */
 .lightbox {
-    background: rgba(5, 5, 5, 0.97) !important;
+    background: rgba(34, 30, 27, 0.96) !important;
 }
 
-/* Photo : légère lueur pour la détacher du noir */
+/* Carte principale photo + panneau droit */
+.lightbox-content {
+    gap: 0 !important;
+    background: #23201d !important;
+    border: 1px solid #3a342f !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
+    box-shadow: 0 18px 70px rgba(0, 0, 0, 0.55) !important;
+}
+
+.lightbox-image-container {
+    background: #23201d !important;
+    padding: 24px !important;
+}
+
+/* Photo : lueur discrète */
 .lightbox-image-container img {
     box-shadow:
-        0 0 0 1px rgba(255,255,255,0.06),
-        0 20px 80px rgba(0,0,0,0.9),
-        0 0 120px rgba(0,0,0,0.6) !important;
+        0 18px 60px rgba(0,0,0,0.82) !important;
     border-radius: 6px !important;
 }
 
 /* Bouton ✕ — minimaliste */
 .lightbox-close {
-    background: rgba(255,255,255,0.08) !important;
-    border: 1px solid rgba(255,255,255,0.12) !important;
-    color: rgba(255,255,255,0.7) !important;
+    background: rgba(240, 231, 220, 0.1) !important;
+    border: 1px solid rgba(240, 231, 220, 0.2) !important;
+    color: rgba(244, 236, 227, 0.85) !important;
     backdrop-filter: blur(8px) !important;
 }
 .lightbox-close:hover {
-    background: rgba(255,255,255,0.18) !important;
-    border-color: rgba(255,255,255,0.3) !important;
-    color: #fff !important;
+    background: rgba(240, 231, 220, 0.2) !important;
+    border-color: rgba(240, 231, 220, 0.35) !important;
+    color: #fffaf4 !important;
     transform: rotate(90deg) scale(1.05) !important;
 }
 
@@ -2038,41 +2063,42 @@ footer a:hover {
     width: 36px !important;
     height: 36px !important;
     font-size: 13px !important;
-    background: rgba(255,255,255,0.07) !important;
-    border: 1px solid rgba(255,255,255,0.1) !important;
-    color: rgba(255,255,255,0.55) !important;
+    background: rgba(240, 231, 220, 0.08) !important;
+    border: 1px solid rgba(240, 231, 220, 0.18) !important;
+    color: rgba(241, 231, 218, 0.72) !important;
     backdrop-filter: blur(10px) !important;
 }
 .lightbox-nav:hover {
-    background: rgba(255,255,255,0.16) !important;
-    border-color: rgba(255,255,255,0.28) !important;
-    color: rgba(255,255,255,0.9) !important;
+    background: rgba(240, 231, 220, 0.16) !important;
+    border-color: rgba(240, 231, 220, 0.28) !important;
+    color: #fff8ee !important;
 }
 .lightbox-prev { left: 16px !important; }
 .lightbox-next { right: 16px !important; }
 
-/* Sidebar — police serif pour élégance */
+/* Sidebar — même gris que la galerie de référence */
 .lightbox-sidebar {
-    font-family: 'Manrope', sans-serif !important;
-    color: #d8d8d8 !important;
-    border-left: 1px solid rgba(255,255,255,0.06) !important;
-    padding-left: 28px !important;
+    font-family: 'Ogg', 'Manrope', Georgia, serif !important;
+    color: #d8d1c7 !important;
+    background: #2a2622 !important;
+    border-left: 1px solid #3a342f !important;
+    padding: 24px 24px 22px !important;
 }
 
 /* Famille — caps Inter discret */
 .lightbox-family {
-    font-family: 'Manrope', sans-serif !important;
-    color: #555 !important;
+    font-family: 'Ogg', 'Manrope', Georgia, serif !important;
+    color: #a79a8d !important;
     letter-spacing: 2.5px !important;
     font-size: 10px !important;
 }
 .lightbox-family::before {
-    background: #3a3a3a !important;
+    background: #5a5148 !important;
 }
 
 /* Titre espèce */
 .lightbox-sidebar h2 {
-    color: #f0f0f0 !important;
+    color: #f2ece3 !important;
     font-size: 26px !important;
     font-weight: 600 !important;
     line-height: 1.15 !important;
@@ -2081,7 +2107,7 @@ footer a:hover {
 
 /* Nom scientifique + séparateur décoratif après */
 .lightbox-sidebar .scientific-name {
-    color: #b0b0b0 !important;
+    color: #b7aa9d !important;
     font-size: 14px !important;
     font-style: italic !important;
     margin-bottom: 0 !important;
@@ -2090,20 +2116,20 @@ footer a:hover {
     content: '· · ·';
     display: block;
     text-align: left;
-    color: #383838;
+    color: #4a4037;
     letter-spacing: 5px;
     font-style: normal;
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Ogg', 'Manrope', Georgia, serif;
     font-size: 12px;
     margin: 16px 0;
 }
 
 /* Compteur n/total — sous le séparateur */
 #lightbox-counter {
-    color: #666 !important;
+    color: #ad9f92 !important;
     background: none !important;
     border: none !important;
-    font-family: 'Manrope', sans-serif !important;
+    font-family: 'Ogg', 'Manrope', Georgia, serif !important;
     font-size: 12px !important;
     font-weight: 400 !important;
     letter-spacing: 0.8px !important;
@@ -2115,7 +2141,7 @@ footer a:hover {
 .lightbox-info {
     background: none !important;
     border: none !important;
-    border-top: 1px solid rgba(255,255,255,0.07) !important;
+    border-top: 1px solid #3a342f !important;
     border-radius: 0 !important;
     padding: 14px 0 !important;
     margin-bottom: 6px !important;
@@ -2127,8 +2153,8 @@ footer a:hover {
     display: none !important;
 }
 .lightbox .info-row {
-    font-family: 'Manrope', sans-serif !important;
-    color: #bbb !important;
+    font-family: 'Ogg', 'Manrope', Georgia, serif !important;
+    color: #d7cec3 !important;
     font-size: 13px !important;
     margin-bottom: 7px !important;
     gap: 0 !important;
@@ -2139,13 +2165,16 @@ footer a:hover {
 
 /* Séparateur avant la carte */
 #lightbox-map {
-    background: #050505 !important;
+    background: #e7dfd4 !important;
     border-radius: 10px !important;
-    border: 1px solid rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(70, 60, 50, 0.28) !important;
     margin-top: 14px !important;
 }
-#lightbox-map .leaflet-tile-pane {
-    filter: grayscale(100%) invert(1) brightness(0.8) contrast(1.1) !important;
+#lightbox-map .leaflet-container {
+    background-color: #ddd2c4 !important;
+}
+#lightbox-map .leaflet-tile {
+    filter: grayscale(88%) contrast(1.02) sepia(6%) brightness(1.03) !important;
 }
 
 /* Lien eBird — visible, sobre */
@@ -2155,11 +2184,11 @@ footer a:hover {
     align-items: center !important;
     gap: 8px !important;
     padding: 9px 16px !important;
-    background: rgba(255,255,255,0.07) !important;
-    border: 1px solid rgba(255,255,255,0.14) !important;
+    background: #332d27 !important;
+    border: 1px solid #4b4137 !important;
     border-radius: 8px !important;
-    color: #e8e8e8 !important;
-    font-family: 'Manrope', sans-serif !important;
+    color: #f0e8dd !important;
+    font-family: 'Ogg', 'Manrope', Georgia, serif !important;
     font-size: 14px !important;
     font-weight: 500 !important;
     letter-spacing: 0.3px !important;
@@ -2167,9 +2196,9 @@ footer a:hover {
     margin-top: 14px !important;
 }
 .lightbox .ebird-link:hover {
-    background: rgba(255,255,255,0.15) !important;
-    border-color: rgba(255,255,255,0.28) !important;
-    color: #fff !important;
+    background: #3d352e !important;
+    border-color: #5b4f42 !important;
+    color: #fffaf2 !important;
     transform: none !important;
     box-shadow: none !important;
 }
@@ -2183,36 +2212,47 @@ footer a:hover {
 
 /* Marqueur caméra — blanc sur fond sombre */
 .camera-marker {
-    background: rgba(255,255,255,0.15) !important;
-    border: 2px solid rgba(255,255,255,0.5) !important;
+    background: rgba(239, 231, 220, 0.2) !important;
+    border: 2px solid rgba(239, 231, 220, 0.6) !important;
 }
 
 /* Popups leaflet */
 .lightbox .leaflet-popup-content-wrapper,
 .lightbox .leaflet-popup-tip {
-    background: #1e1e1e !important;
-    color: #d8d8d8 !important;
-    border: 1px solid #333 !important;
+    background: #2c2722 !important;
+    color: #e5ddd2 !important;
+    border: 1px solid #453b33 !important;
     box-shadow: 0 4px 20px rgba(0,0,0,0.6) !important;
 }
 
 /* Mobile */
 @media (max-width: 768px) {
+    .lightbox-content {
+        background: #23201d !important;
+        border-radius: 0 !important;
+        border: none !important;
+    }
+    .lightbox-image-container {
+        background: #23201d !important;
+    }
     .lightbox-sidebar {
-        background: #0d0d0d !important;
+        background: #2a2622 !important;
         border-left: none !important;
-        border-top: 1px solid rgba(255,255,255,0.08) !important;
+        border-top: 1px solid #3a342f !important;
         padding-left: 16px !important;
     }
     .lightbox-nav {
-        width: 34px !important;
-        height: 34px !important;
-        font-size: 12px !important;
-        background: rgba(20,20,20,0.92) !important;
-        color: rgba(255,255,255,0.5) !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 16px !important;
+        background: rgba(50, 44, 38, 0.92) !important;
+        color: rgba(245, 235, 223, 0.78) !important;
     }
     .lightbox-close {
-        background: rgba(10,10,10,0.85) !important;
-        border-color: rgba(255,255,255,0.15) !important;
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 30px !important;
+        background: rgba(41, 35, 30, 0.9) !important;
+        border-color: rgba(240, 231, 220, 0.28) !important;
     }
 }
