@@ -106,7 +106,7 @@ voyages:
 
   - id: voyage_californie_juin_2024
     nom_fr: "Californie, juin 2024"
-    nom_en: "California , June 2024"
+    nom_en: "California, June 2024"
     date_debut: "2024-06-10"
     date_fin: "2024-09-05"
     pays: ["US-CA"]
@@ -130,7 +130,7 @@ voyages:
 
   - id: voyage_californie_ete_2023
     nom_fr: "Californie, juin 2023"
-    nom_en: "California , June 2023"
+    nom_en: "California, June 2023"
     date_debut: "2023-06-10"
     date_fin: "2023-09-05"
     pays: ["US-CA"]

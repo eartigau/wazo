@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ gallery_title }}</title>
+    <meta name="description" content="{{ gallery_title }}{% if gallery_subtitle %} — {{ gallery_subtitle|striptags }}{% endif %}{% if species_count %} · {{ species_count }} {% if lang == 'fr' %}espèces{% else %}species{% endif %}{% endif %}">
+    <meta property="og:title" content="{{ gallery_title }}">
+    <meta property="og:description" content="{% if lang == 'fr' %}Galerie photos d'oiseaux · Étienne Artigau{% else %}Bird photo gallery · Étienne Artigau{% endif %}{% if species_count %} · {{ species_count }} {% if lang == 'fr' %}espèces{% else %}species{% endif %}{% endif %}">
+    {% if photos %}<meta property="og:image" content="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ photos[0].ml_catalog_number }}/480">{% endif %}
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="{% if lang == 'fr' %}fr_CA{% else %}en_US{% endif %}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ gallery_title }}">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
@@ -99,13 +107,13 @@
             </ul>
             
             <!-- Sélecteur de langue -->
-            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+            <div class="lang-switch">
                 {% if lang == 'fr' %}
-                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
-                <a href="{{ other_lang_page }}" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                <span class="lang-btn active">FR</span>
+                <a href="{{ other_lang_page }}" class="lang-btn" title="English">EN</a>
                 {% else %}
-                <a href="{{ other_lang_page }}" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
-                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                <a href="{{ other_lang_page }}" class="lang-btn" title="Français">FR</a>
+                <span class="lang-btn active">EN</span>
                 {% endif %}
             </div>
         </div>
@@ -114,7 +122,7 @@
     <!-- EN-TÊTE -->
     <div class="gallery-header">
         {% if back_link %}
-        <a href="{{ back_link }}" class="back-link" style="display: inline-flex; align-items: center; gap: 6px; color: var(--forest-green); font-size: 14px; font-weight: 500; margin-bottom: 12px; text-decoration: none;">
+        <a href="{{ back_link }}" class="back-link">
             ← {% if lang == 'fr' %}{{ back_text_fr }}{% else %}{{ back_text_en }}{% endif %}
         </a>
         {% endif %}
@@ -161,20 +169,30 @@
         {% endif %}
         
         <!-- Grille par espèce -->
-        <div class="species-list-container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px 40px;">
+        <div class="species-list-container" style="max-width: 1800px; margin: 0 auto; padding: 0 20px 40px;">
             <div class="species-grid" id="species-grid">
                 <!-- Cartes espèces chargées dynamiquement par JavaScript -->
             </div>
         </div>
         
-        <!-- Indicateur de chargement -->
-        <div id="loading-indicator" class="loading-indicator" style="text-align: center; padding: 40px; color: var(--text-medium);">
-            {% if lang == 'fr' %}Chargement...{% else %}Loading...{% endif %}
+        <!-- Indicateur de chargement avec squelettes -->
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="species-grid" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+                {% for _ in range(12) %}
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
         </div>
         
         <!-- Bouton charger plus -->
         <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
-            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()" style="background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%); color: white; border: none; padding: 14px 32px; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);">
+            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
                 {% if lang == 'fr' %}Afficher plus d'espèces{% else %}Show more species{% endif %}
                 <span id="remaining-count"></span>
             </button>
@@ -230,8 +248,11 @@
     <!-- FOOTER -->
     <footer>
         <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a>{% if update_date %} · {% if lang == 'fr' %}Mise à jour : {{ update_date_fr|safe }}{% else %}Updated: {{ update_date_en|safe }}{% endif %}{% endif %}</p>
-        <p>© Étienne Artigau</p>
+        <p>© Étienne Artigau · <a href="https://eartigau.github.io/{% if lang == 'fr' %}index_fr.html{% else %}index_en.html{% endif %}">eartigau.github.io</a></p>
     </footer>
+
+    <!-- RETOUR EN HAUT -->
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -386,13 +407,17 @@
             renderNextBatch();
         });
         
-        // Auto-charger au scroll
+        // Auto-charger au scroll + bouton retour en haut
+        const backToTopBtn = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
                 const filteredList = getFilteredSpeciesList();
                 if (displayedCount < filteredList.length) {
                     renderNextBatch();
                 }
+            }
+            if (backToTopBtn) {
+                backToTopBtn.classList.toggle('visible', window.scrollY > 400);
             }
         });
 

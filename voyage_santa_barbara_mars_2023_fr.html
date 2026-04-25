@@ -4,6 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Santa Barbara, mars 2023</title>
+    <meta name="description" content="Santa Barbara, mars 2023 — 26 au 30 mars 2023">
+    <meta property="og:title" content="Santa Barbara, mars 2023">
+    <meta property="og:description" content="Galerie photos d'oiseaux · Étienne Artigau">
+    <meta property="og:image" content="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/550903291/480">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Santa Barbara, mars 2023">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
@@ -141,10 +149,10 @@
             </ul>
             
             <!-- Sélecteur de langue -->
-            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+            <div class="lang-switch">
                 
-                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
-                <a href="voyage_santa_barbara_mars_2023_en.html" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                <span class="lang-btn active">FR</span>
+                <a href="voyage_santa_barbara_mars_2023_en.html" class="lang-btn" title="English">EN</a>
                 
             </div>
         </div>
@@ -194,20 +202,118 @@
         
         
         <!-- Grille par espèce -->
-        <div class="species-list-container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px 40px;">
+        <div class="species-list-container" style="max-width: 1800px; margin: 0 auto; padding: 0 20px 40px;">
             <div class="species-grid" id="species-grid">
                 <!-- Cartes espèces chargées dynamiquement par JavaScript -->
             </div>
         </div>
         
-        <!-- Indicateur de chargement -->
-        <div id="loading-indicator" class="loading-indicator" style="text-align: center; padding: 40px; color: var(--text-medium);">
-            Chargement...
+        <!-- Indicateur de chargement avec squelettes -->
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="species-grid" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
         
         <!-- Bouton charger plus -->
         <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
-            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()" style="background: linear-gradient(135deg, #2d5a27 0%, #4a7c39 100%); color: white; border: none; padding: 14px 32px; border-radius: 30px; font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 15px rgba(45, 90, 39, 0.3);">
+            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
                 Afficher plus d'espèces
                 <span id="remaining-count"></span>
             </button>
@@ -262,9 +368,12 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 22 avril 2026 (8h44)</p>
-        <p>© Étienne Artigau</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 25 avril 2026 (7h50)</p>
+        <p>© Étienne Artigau · <a href="https://eartigau.github.io/index_fr.html">eartigau.github.io</a></p>
     </footer>
+
+    <!-- RETOUR EN HAUT -->
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
 
     <!-- SCRIPTS -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -1218,13 +1327,17 @@
             renderNextBatch();
         });
         
-        // Auto-charger au scroll
+        // Auto-charger au scroll + bouton retour en haut
+        const backToTopBtn = document.getElementById('back-to-top');
         window.addEventListener('scroll', () => {
             if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
                 const filteredList = getFilteredSpeciesList();
                 if (displayedCount < filteredList.length) {
                     renderNextBatch();
                 }
+            }
+            if (backToTopBtn) {
+                backToTopBtn.classList.toggle('visible', window.scrollY > 400);
             }
         });
 
