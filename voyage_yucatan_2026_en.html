@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mexique</title>
-    <meta name="description" content="Mexique · 74 espèces">
-    <meta property="og:title" content="Mexique">
-    <meta property="og:description" content="Galerie photos d'oiseaux · Étienne Artigau · 74 espèces">
+    <title>Yucatán, 2026</title>
+    <meta name="description" content="Yucatán, 2026 — June 22nd – July 10th, 2026">
+    <meta property="og:title" content="Yucatán, 2026">
+    <meta property="og:description" content="Bird photo gallery · Étienne Artigau">
     <meta property="og:image" content="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/660929507/480">
     <meta property="og:type" content="website">
-    <meta property="og:locale" content="fr_CA">
+    <meta property="og:locale" content="en_US">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Mexique">
+    <meta name="twitter:title" content="Yucatán, 2026">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.4.1/dist/MarkerCluster.css">
@@ -98,51 +98,51 @@
             <ul class="nav-menu" id="navMenu">
                 
                 <li>
-                    <a href="https://eartigau.github.io/index_fr.html" 
+                    <a href="https://eartigau.github.io/index_en.html" 
                        >
-                        Accueil
+                        Home
                     </a>
                 </li>
                 
                 <li>
-                    <a href="species_list_fr.html" 
+                    <a href="species_list_en.html" 
                        >
-                        Espèces
+                        Species
                     </a>
                 </li>
                 
                 <li>
-                    <a href="gallery_recent_fr.html" 
+                    <a href="gallery_recent_en.html" 
                        >
-                        Ajouts récents
+                        Recent Updates
                     </a>
                 </li>
                 
                 <li>
-                    <a href="gallery_best_fr.html" 
+                    <a href="gallery_best_en.html" 
                        >
-                        Meilleures photos
+                        Best of
                     </a>
                 </li>
                 
                 <li>
-                    <a href="voyages_index_fr.html" 
+                    <a href="voyages_index_en.html" 
                        >
-                        Voyages
+                        Trips
                     </a>
                 </li>
                 
                 <li>
-                    <a href="pays_index_fr.html" 
+                    <a href="pays_index_en.html" 
                        >
-                        Pays
+                        Countries
                     </a>
                 </li>
                 
                 <li>
-                    <a href="menacees_fr.html" 
+                    <a href="menacees_en.html" 
                        >
-                        Menacées
+                        Endangered
                     </a>
                 </li>
                 
@@ -151,8 +151,8 @@
             <!-- Sélecteur de langue -->
             <div class="lang-switch">
                 
-                <span class="lang-btn active">FR</span>
-                <a href="pays_mx_en.html" class="lang-btn" title="English">EN</a>
+                <a href="voyage_yucatan_2026_fr.html" class="lang-btn" title="Français">FR</a>
+                <span class="lang-btn active">EN</span>
                 
             </div>
         </div>
@@ -161,16 +161,12 @@
     <!-- EN-TÊTE -->
     <div class="gallery-header">
         
-        <a href="pays_index_fr.html" class="back-link">
-            ← Tous les pays
-        </a>
+        <h1>Yucatán, 2026</h1>
         
-        <h1>Mexique</h1>
+        <div class="gallery-subtitle">June 22<sup>nd</sup> – July 10<sup>th</sup>, 2026</div>
         
         <div class="stats">
             136 photos
-            
-             · 74 espèces
             
         </div>
     </div>
@@ -180,7 +176,7 @@
     <div class="trip-map-container">
         <div class="trip-map-header">
             <span class="map-icon">🗺️</span>
-            Lieux visités
+            Locations visited
             <span class="location-count">(17)</span>
         </div>
         <div class="trip-map-wrapper">
@@ -200,7 +196,7 @@
                 <span id="filter-photo-count"></span>
             </span>
             <button onclick="resetLocationFilter()" class="filter-reset-btn">
-                Afficher tout ✕
+                Show all ✕
             </button>
         </div>
         
@@ -318,7 +314,7 @@
         <!-- Bouton charger plus -->
         <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
             <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
-                Afficher plus d'espèces
+                Show more species
                 <span id="remaining-count"></span>
             </button>
         </div>
@@ -364,7 +360,7 @@
                 <!-- Lien eBird -->
                 <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
                     <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    Liste eBird
+                    eBird checklist
                 </a>
             </div>
         </div>
@@ -372,8 +368,8 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 13 juillet 2026 (14h27)</p>
-        <p>© Étienne Artigau · <a href="https://eartigau.github.io/index_fr.html">eartigau.github.io</a></p>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: July 13<sup>th</sup>, 2026 (14h27)</p>
+        <p>© Étienne Artigau · <a href="https://eartigau.github.io/index_en.html">eartigau.github.io</a></p>
     </footer>
 
     <!-- RETOUR EN HAUT -->
@@ -383,7 +379,7 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
     <script>
-        const currentLang = 'fr';
+        const currentLang = 'en';
         
         const photosData = [
             

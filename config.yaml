@@ -80,6 +80,13 @@ generation:
 # ------------------------------------------------------------------------------
 
 voyages:
+  - id: voyage_yucatan_2026
+    nom_fr: "Yucatán, 2026"
+    nom_en: "Yucatán, 2026"
+    date_debut: "2026-06-22"
+    date_fin: "2026-07-12"
+    pays: ["MX"]
+    limite: 500
   - id: voyage_geneve_2025
     nom_fr: "Genève, novembre 2025"
     nom_en: "Geneva, Novembre 2025"
