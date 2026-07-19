@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prunellidae</title>
+    <meta name="description" content="Prunellidae — Accentors · 2 species">
+    <meta property="og:title" content="Prunellidae">
+    <meta property="og:description" content="Bird photo gallery · Étienne Artigau · 2 species">
+    <meta property="og:image" content="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/638539315/480">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Prunellidae">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link rel="stylesheet" href="gallery.css?v=2">
+    <style>
+        /* Cluster personnalisé avec icône caméra */
+        .cluster-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #2d5a27;
+            border-radius: 50%;
+            border: 3px solid #2d5a27;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .cluster-icon-small {
+            width: 40px;
+            height: 40px;
+        }
+        .cluster-icon-medium {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+        }
+        .cluster-icon-large {
+            width: 60px;
+            height: 60px;
+            font-size: 15px;
+        }
+        /* Marqueur flamant rose individuel */
+        .flamingo-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 50%;
+            border: 3px solid #2d5a27;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .flamingo-marker:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_en.html"
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_en.html"
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_en.html"
+                       >
+                        Recent Updates
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_en.html"
+                       >
+                        Best of
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_en.html"
+                       >
+                        Trips
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_en.html"
+                       >
+                        Countries
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="menacees_en.html"
+                       >
+                        Endangered
+                    </a>
+                </li>
+                
+            </ul>
+
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                
+                <a href="gallery_prunellidae_fr.html" class="lang-btn" title="Français">FR</a>
+                <span class="lang-btn active">EN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        
+        <a href="species_list_en.html" class="back-link">
+            ← Species list
+        </a>
+        
+        <h1>Prunellidae</h1>
+        
+        <div class="gallery-subtitle">Accentors</div>
+        
+        <div class="stats">
+            4 photos
+            
+             · 2 species
+            
+        </div>
+    </div>
+
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+
+        <!-- Grille par espèce -->
+        <div class="species-list-container" style="max-width: 1800px; margin: 0 auto; padding: 0 20px 40px;">
+            <div class="species-grid" id="species-grid">
+                <!-- Cartes espèces chargées dynamiquement par JavaScript -->
+            </div>
+        </div>
+
+        <!-- Indicateur de chargement avec squelettes -->
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="species-grid" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Bouton charger plus -->
+        <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
+            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
+                Show more species
+                <span id="remaining-count"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: July 18<sup>th</sup>, 2026 (20h40)</p>
+        <p>© Étienne Artigau · <a href="https://eartigau.github.io/index_en.html">eartigau.github.io</a></p>
+    </footer>
+
+    <!-- RETOUR EN HAUT -->
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+
+    <!-- SCRIPTS -->
+    
+    <script src="gallery-common.js"></script>
+    <script>
+        const currentLang = 'en';
+        const FEED_URL = 'gallery_prunellidae_feed_en.html';
+
+        // Calcule et fixe la taille exacte (en px) de l'image pour qu'elle tienne dans son
+        // conteneur en respectant son ratio, sans dépendre de l'algorithme du navigateur :
+        // Safari ne gère pas toujours bien width:auto/height:auto + max-width/max-height
+        // sur un enfant flex (il ignore parfois max-height), ce qui rognait certaines
+        // photos portrait.
+        function fitContain(img) {
+            const box = img.parentElement;
+            const cs = getComputedStyle(box);
+            const availW = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+            const availH = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+            const scale = Math.min(availW / img.naturalWidth, availH / img.naturalHeight);
+            img.style.width = Math.round(img.naturalWidth * scale) + 'px';
+            img.style.height = Math.round(img.naturalHeight * scale) + 'px';
+        }
+
+        const photosData = [
+            
+            {
+                ml: "638539315",
+                name_fr: "Accenteur alpin",
+                name_en: "Alpine Accentor",
+                scientific: "Prunella collaris",
+                family: "Prunellidae (Accentors)",
+                location: "Pic du Midi",
+                location_fr: "Pic du Midi, Occitanie, France",
+                location_en: "Pic du Midi, Occitanie, France",
+                date_fr: "5 juillet 2025",
+                date_en: "July 5<sup>th</sup>, 2025",
+                lat: 42.9364906,
+                lng: 0.1419908,
+                checklist_id: "S257122735",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "638539590",
+                name_fr: "Accenteur alpin",
+                name_en: "Alpine Accentor",
+                scientific: "Prunella collaris",
+                family: "Prunellidae (Accentors)",
+                location: "Pic du Midi",
+                location_fr: "Pic du Midi, Occitanie, France",
+                location_en: "Pic du Midi, Occitanie, France",
+                date_fr: "6 juillet 2025",
+                date_en: "July 6<sup>th</sup>, 2025",
+                lat: 42.9364906,
+                lng: 0.1419908,
+                checklist_id: "S257384956",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22536431",
+                name_fr: "Accenteur alpin",
+                name_en: "Alpine Accentor",
+                scientific: "Prunella collaris",
+                family: "Prunellidae (Accentors)",
+                location: "Les Baux-de-Provence (ville)",
+                location_fr: "Les Baux-de-Provence (ville), Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Les Baux-de-Provence (ville), Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "24 décembre 2010",
+                date_en: "December 24<sup>th</sup>, 2010",
+                lat: 43.7443322,
+                lng: 4.7952077,
+                checklist_id: "S18565408",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22576731",
+                name_fr: "Accenteur mouchet",
+                name_en: "Dunnock",
+                scientific: "Prunella modularis",
+                family: "Prunellidae (Accentors)",
+                location: "Parc Montsouris",
+                location_fr: "Parc Montsouris, Île-de-France, France",
+                location_en: "Parc Montsouris, Île-de-France, France",
+                date_fr: "24 juin 2011",
+                date_en: "June 24<sup>th</sup>, 2011",
+                lat: 48.8221546,
+                lng: 2.3380588,
+                checklist_id: "S18563315",
+                iucn_status: "LC"
+            }
+            
+        ];
+
+        // ========================================
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
+        // ========================================
+        const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+
+        photosData.forEach((photo, index) => {
+            const sciName = photo.scientific;
+            if (!speciesMap[sciName]) {
+                speciesMap[sciName] = {
+                    scientific: sciName,
+                    name_fr: photo.name_fr,
+                    name_en: photo.name_en,
+                    iucn_status: photo.iucn_status,
+                    photos: []
+                };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
+            }
+            speciesMap[sciName].photos.push({...photo, globalIndex: index});
+        });
+
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
+
+        // ========================================
+        // CHARGEMENT PROGRESSIF PAR ESPÈCE
+        // ========================================
+        const BATCH_SIZE = 24;  // Espèces par lot
+        let displayedCount = 0;
+        let activeLocationFilter = null;
+
+        function getFilteredSpeciesList() {
+            if (!activeLocationFilter) return speciesList;
+
+            // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
+            return speciesList
+                .map(sp => ({
+                    ...sp,
+                    photos: sp.photos.filter(p => p.location === activeLocationFilter)
+                }))
+                .filter(sp => sp.photos.length > 0);
+        }
+
+        function createSpeciesCard(species) {
+            const card = document.createElement('div');
+            card.className = 'species-card';
+            card.dataset.species = species.scientific;
+            card.title = species.scientific;
+            card.style.cursor = 'pointer';
+            card.onclick = () => openSpeciesLightbox(species.scientific);
+
+            const name = currentLang === 'fr' ? species.name_fr : species.name_en;
+            const firstPhoto = species.photos[0];
+            const photoCount = species.photos.length;
+            const badgeHtml = `<span class="photo-count-badge">${photoCount}</span>`;
+
+            card.innerHTML = `
+                <div class="card-image-wrapper">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${firstPhoto.ml}/480"
+                         alt="${name}"
+                         loading="lazy"
+                         onload="fitContain(this)">
+                    ${badgeHtml}
+                </div>
+                <div class="species-info">
+                    <span class="species-common">${name}</span>
+                    <span class="species-sci">${species.scientific}</span>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function renderNextBatch() {
+            const grid = document.getElementById('species-grid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+
+            const filteredList = getFilteredSpeciesList();
+            const endIndex = Math.min(displayedCount + BATCH_SIZE, filteredList.length);
+
+            for (let i = displayedCount; i < endIndex; i++) {
+                const species = filteredList[i];
+                const card = createSpeciesCard(species);
+                grid.appendChild(card);
+            }
+
+            displayedCount = endIndex;
+            updateLoadMoreButton();
+        }
+
+        function updateLoadMoreButton() {
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const remainingCount = document.getElementById('remaining-count');
+            const filteredList = getFilteredSpeciesList();
+            const remaining = filteredList.length - displayedCount;
+
+            if (remaining > 0) {
+                loadMoreContainer.style.display = 'block';
+                const remainingText = currentLang === 'fr'
+                    ? ` (${remaining} restante${remaining > 1 ? 's' : ''})`
+                    : ` (${remaining} remaining)`;
+                remainingCount.textContent = remainingText;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+
+        function rebuildGrid() {
+            const grid = document.getElementById('species-grid');
+            grid.innerHTML = '';
+            displayedCount = 0;
+            renderNextBatch();
+        }
+
+        // Charger le premier lot au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            rebuildGrid();
+        });
+
+        // Auto-charger au scroll + bouton retour en haut
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
+                const filteredList = getFilteredSpeciesList();
+                if (displayedCount < filteredList.length) {
+                    renderNextBatch();
+                }
+            }
+            if (backToTopBtn) {
+                backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+            }
+        });
+
+        // Cliquer une espèce ouvre le feed plein écran (infinite scroll) sur cette espèce
+        function openSpeciesLightbox(sciName) {
+            const idx = speciesList.findIndex(sp => sp.scientific === sciName);
+            if (idx < 0) return;
+            window.location.href = `${FEED_URL}?s=${idx}`;
+        }
+
+        // Lien direct vers une photo précise (?photo=<ML>) : ouvre le feed sur l'espèce concernée.
+        // Retour du feed sur une espèce précise (?species=<nom scientifique>) : dérouler les
+        // lots nécessaires (chargement progressif) puis défiler jusqu'à la carte, même si elle
+        // n'était pas encore affichée.
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            const ml = params.get('photo');
+            if (ml) {
+                const idx = speciesList.findIndex(sp => sp.photos.some(p => p.ml === ml));
+                if (idx >= 0) {
+                    window.location.href = `${FEED_URL}?s=${idx}`;
+                }
+                return;
+            }
+
+            const targetSci = params.get('species');
+            if (targetSci) {
+                const filteredList = getFilteredSpeciesList();
+                const idx = filteredList.findIndex(sp => sp.scientific === targetSci);
+                if (idx >= 0) {
+                    while (displayedCount <= idx) {
+                        renderNextBatch();
+                    }
+                    const card = document.querySelector(`.species-card[data-species="${CSS.escape(targetSci)}"]`);
+                    if (card) {
+                        card.scrollIntoView({ block: 'center' });
+                        card.classList.add('return-highlight');
+                        setTimeout(() => card.classList.remove('return-highlight'), 1600);
+                    }
+                }
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

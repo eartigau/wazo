@@ -1,0 +1,2399 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rallidae</title>
+    <meta name="description" content="Rallidae — Foulques, Râles, Talèves, Gallinules et Marouettes · 23 espèces">
+    <meta property="og:title" content="Rallidae">
+    <meta property="og:description" content="Galerie photos d'oiseaux · Étienne Artigau · 23 espèces">
+    <meta property="og:image" content="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/599974511/480">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="fr_CA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Rallidae">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link rel="stylesheet" href="gallery.css?v=2">
+    <style>
+        /* Cluster personnalisé avec icône caméra */
+        .cluster-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #2d5a27;
+            border-radius: 50%;
+            border: 3px solid #2d5a27;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .cluster-icon-small {
+            width: 40px;
+            height: 40px;
+        }
+        .cluster-icon-medium {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+        }
+        .cluster-icon-large {
+            width: 60px;
+            height: 60px;
+            font-size: 15px;
+        }
+        /* Marqueur flamant rose individuel */
+        .flamingo-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 50%;
+            border: 3px solid #2d5a27;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .flamingo-marker:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_fr.html"
+                       >
+                        Accueil
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_fr.html"
+                       >
+                        Espèces
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_fr.html"
+                       >
+                        Ajouts récents
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_fr.html"
+                       >
+                        Meilleures photos
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_fr.html"
+                       >
+                        Voyages
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_fr.html"
+                       >
+                        Pays
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="menacees_fr.html"
+                       >
+                        Menacées
+                    </a>
+                </li>
+                
+            </ul>
+
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                
+                <span class="lang-btn active">FR</span>
+                <a href="gallery_rallidae_en.html" class="lang-btn" title="English">EN</a>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        
+        <a href="species_list_fr.html" class="back-link">
+            ← Liste des espèces
+        </a>
+        
+        <h1>Rallidae</h1>
+        
+        <div class="gallery-subtitle">Foulques, Râles, Talèves, Gallinules et Marouettes</div>
+        
+        <div class="stats">
+            112 photos
+            
+             · 23 espèces
+            
+        </div>
+    </div>
+
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+
+        <!-- Grille par espèce -->
+        <div class="species-list-container" style="max-width: 1800px; margin: 0 auto; padding: 0 20px 40px;">
+            <div class="species-grid" id="species-grid">
+                <!-- Cartes espèces chargées dynamiquement par JavaScript -->
+            </div>
+        </div>
+
+        <!-- Indicateur de chargement avec squelettes -->
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="species-grid" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Bouton charger plus -->
+        <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
+            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
+                Afficher plus d'espèces
+                <span id="remaining-count"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 18 juillet 2026 (20h40)</p>
+        <p>© Étienne Artigau · <a href="https://eartigau.github.io/index_fr.html">eartigau.github.io</a></p>
+    </footer>
+
+    <!-- RETOUR EN HAUT -->
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+
+    <!-- SCRIPTS -->
+    
+    <script src="gallery-common.js"></script>
+    <script>
+        const currentLang = 'fr';
+        const FEED_URL = 'gallery_rallidae_feed_fr.html';
+
+        // Calcule et fixe la taille exacte (en px) de l'image pour qu'elle tienne dans son
+        // conteneur en respectant son ratio, sans dépendre de l'algorithme du navigateur :
+        // Safari ne gère pas toujours bien width:auto/height:auto + max-width/max-height
+        // sur un enfant flex (il ignore parfois max-height), ce qui rognait certaines
+        // photos portrait.
+        function fitContain(img) {
+            const box = img.parentElement;
+            const cs = getComputedStyle(box);
+            const availW = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+            const availH = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+            const scale = Math.min(availW / img.naturalWidth, availH / img.naturalHeight);
+            img.style.width = Math.round(img.naturalWidth * scale) + 'px';
+            img.style.height = Math.round(img.naturalHeight * scale) + 'px';
+        }
+
+        const photosData = [
+            
+            {
+                ml: "599974511",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599901291",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599901311",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599974461",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599974471",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599974481",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599974491",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599974501",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599974521",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "599974551",
+                name_fr: "Râle de Californie",
+                name_en: "Ridgway\'s Rail",
+                scientific: "Rallus obsoletus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "MLK Jr. Regional Shoreline",
+                location_fr: "MLK Jr. Regional Shoreline, Californie, États-Unis",
+                location_en: "MLK Jr. Regional Shoreline, California, United States",
+                date_fr: "2 août 2023",
+                date_en: "August 2<sup>nd</sup>, 2023",
+                lat: 37.7421628,
+                lng: -122.2112274,
+                checklist_id: "S146275264",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "245859551",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "RF Marguerite-D\'Youville",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "26 juin 2020",
+                date_en: "June 26<sup>th</sup>, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S70853172",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "34384011",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "22 mai 2010",
+                date_en: "May 22<sup>nd</sup>, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567005",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "34384021",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "22 mai 2010",
+                date_en: "May 22<sup>nd</sup>, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567005",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "34383851",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "24 juin 2006",
+                date_en: "June 24<sup>th</sup>, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566981",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "33891741",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "17 mai 2006",
+                date_en: "May 17<sup>th</sup>, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566956",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "33891751",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "17 mai 2006",
+                date_en: "May 17<sup>th</sup>, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566956",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "33891761",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "17 mai 2006",
+                date_en: "May 17<sup>th</sup>, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566956",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "33891771",
+                name_fr: "Râle de Virginie",
+                name_en: "Virginia Rail",
+                scientific: "Rallus limicola",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "17 mai 2006",
+                date_en: "May 17<sup>th</sup>, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566956",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22375071",
+                name_fr: "Râle à bec ensanglanté",
+                name_en: "Plumbeous Rail",
+                scientific: "Pardirallus sanguinolentus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Caulín",
+                location_fr: "Caulín, Los Lagos, Chili",
+                location_en: "Caulín, Los Lagos, Chile",
+                date_fr: "3 mai 2008",
+                date_en: "May 3<sup>rd</sup>, 2008",
+                lat: -41.8259378,
+                lng: -73.6275078,
+                checklist_id: "S5772445",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "613004192",
+                name_fr: "Râle à bec ensanglanté",
+                name_en: "Plumbeous Rail",
+                scientific: "Pardirallus sanguinolentus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Caulín",
+                location_fr: "Caulín, Los Lagos, Chili",
+                location_en: "Caulín, Los Lagos, Chile",
+                date_fr: "3 mai 2008",
+                date_en: "May 3<sup>rd</sup>, 2008",
+                lat: -41.8259378,
+                lng: -73.6275078,
+                checklist_id: "S5772445",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22573431",
+                name_fr: "Râle à bec ensanglanté",
+                name_en: "Plumbeous Rail",
+                scientific: "Pardirallus sanguinolentus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "29 octobre 2006",
+                date_en: "October 29<sup>th</sup>, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772425",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "660930003",
+                name_fr: "Râle à ventre blanc",
+                name_en: "Russet-naped Wood-Rail",
+                scientific: "Aramides albiventris",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Reserva de la Biosfera Calakmul",
+                location_fr: "Reserva de la Biosfera Calakmul, Mexique",
+                location_en: "Reserva de la Biosfera Calakmul, Mexico",
+                date_fr: "4 juillet 2026",
+                date_en: "July 4<sup>th</sup>, 2026",
+                lat: 18.113345,
+                lng: -89.8033067,
+                checklist_id: "S367724834",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "439463021",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Bicentenario de Vitacura",
+                location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+                location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
+                date_fr: "23 avril 2022",
+                date_en: "April 23<sup>rd</sup>, 2022",
+                lat: -33.3980197,
+                lng: -70.6022,
+                checklist_id: "S107795304",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "435156961",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Bicentenario de Vitacura",
+                location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+                location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
+                date_fr: "12 avril 2022",
+                date_en: "April 12<sup>th</sup>, 2022",
+                lat: -33.3980197,
+                lng: -70.6022,
+                checklist_id: "S106897237",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22394261",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "16 décembre 2007",
+                date_en: "December 16<sup>th</sup>, 2007",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772655",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22394281",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "16 décembre 2007",
+                date_en: "December 16<sup>th</sup>, 2007",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772655",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22399651",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "19 août 2007",
+                date_en: "August 19<sup>th</sup>, 2007",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772486",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22376471",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "12 août 2007",
+                date_en: "August 12<sup>th</sup>, 2007",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772645",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22376491",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "12 août 2007",
+                date_en: "August 12<sup>th</sup>, 2007",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772645",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22376501",
+                name_fr: "Gallinule à face noire",
+                name_en: "Spot-flanked Gallinule",
+                scientific: "Porphyriops melanops",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "12 août 2007",
+                date_en: "August 12<sup>th</sup>, 2007",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772645",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "51363181",
+                name_fr: "Marouette de Caroline",
+                name_en: "Sora",
+                scientific: "Porzana carolina",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Merritt Island NWR",
+                location_fr: "Merritt Island NWR, Floride, États-Unis",
+                location_en: "Merritt Island NWR, Florida, United States",
+                date_fr: "6 mars 2017",
+                date_en: "March 6<sup>th</sup>, 2017",
+                lat: 28.6575241,
+                lng: -80.7545391,
+                checklist_id: "S35012384",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "51363211",
+                name_fr: "Marouette de Caroline",
+                name_en: "Sora",
+                scientific: "Porzana carolina",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Merritt Island NWR",
+                location_fr: "Merritt Island NWR, Floride, États-Unis",
+                location_en: "Merritt Island NWR, Florida, United States",
+                date_fr: "6 mars 2017",
+                date_en: "March 6<sup>th</sup>, 2017",
+                lat: 28.6575241,
+                lng: -80.7545391,
+                checklist_id: "S35012384",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "34383861",
+                name_fr: "Marouette de Caroline",
+                name_en: "Sora",
+                scientific: "Porzana carolina",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "24 juin 2006",
+                date_en: "June 24<sup>th</sup>, 2006",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566981",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "639815857",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Bois de Vincennes",
+                location_fr: "Bois de Vincennes, Île-de-France, France",
+                location_en: "Bois de Vincennes, Île-de-France, France",
+                date_fr: "3 août 2025",
+                date_en: "August 3<sup>rd</sup>, 2025",
+                lat: 48.8360799,
+                lng: 2.4583197,
+                checklist_id: "S264658458",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "639676083",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Jardin des Tuileries",
+                location_fr: "Jardin des Tuileries, Île-de-France, France",
+                location_en: "Jardin des Tuileries, Île-de-France, France",
+                date_fr: "1<sup>er</sup> août 2025",
+                date_en: "August 1<sup>st</sup>, 2025",
+                lat: 48.8633843,
+                lng: 2.3276988,
+                checklist_id: "S264182520",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "108435311",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Saint-Antoine l\'Abbaye (commune)",
+                location_fr: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                location_en: "Saint-Antoine l\'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+                date_fr: "23 juillet 2018",
+                date_en: "July 23<sup>rd</sup>, 2018",
+                lat: 45.1742263,
+                lng: 5.216454,
+                checklist_id: "S47403882",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22576671",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parc Montsouris",
+                location_fr: "Parc Montsouris, Île-de-France, France",
+                location_en: "Parc Montsouris, Île-de-France, France",
+                date_fr: "24 juin 2011",
+                date_en: "June 24<sup>th</sup>, 2011",
+                lat: 48.8221546,
+                lng: 2.3380588,
+                checklist_id: "S18563315",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22576681",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parc Montsouris",
+                location_fr: "Parc Montsouris, Île-de-France, France",
+                location_en: "Parc Montsouris, Île-de-France, France",
+                date_fr: "24 juin 2011",
+                date_en: "June 24<sup>th</sup>, 2011",
+                lat: 48.8221546,
+                lng: 2.3380588,
+                checklist_id: "S18563315",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22576811",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parc Montsouris",
+                location_fr: "Parc Montsouris, Île-de-France, France",
+                location_en: "Parc Montsouris, Île-de-France, France",
+                date_fr: "24 juin 2011",
+                date_en: "June 24<sup>th</sup>, 2011",
+                lat: 48.8221546,
+                lng: 2.3380588,
+                checklist_id: "S18563315",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22366501",
+                name_fr: "Gallinule poule-d\'eau",
+                name_en: "Eurasian Moorhen",
+                scientific: "Gallinula chloropus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "29 décembre 2010",
+                date_en: "December 29<sup>th</sup>, 2010",
+                lat: 43.5352027,
+                lng: 4.644599,
+                checklist_id: "S18565406",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "660541590",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Acuaparque",
+                location_fr: "Parque Acuaparque, Mexique",
+                location_en: "Parque Acuaparque, Mexico",
+                date_fr: "29 juin 2026",
+                date_en: "June 29<sup>th</sup>, 2026",
+                lat: 20.9477032,
+                lng: -89.5776299,
+                checklist_id: "S365357969",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "243341461",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "RF Marguerite-D\'Youville",
+                location_fr: "RF Marguerite-D\'Youville, Québec, Canada",
+                location_en: "RF Marguerite-D\'Youville, Quebec, Canada",
+                date_fr: "14 juin 2020",
+                date_en: "June 14<sup>th</sup>, 2020",
+                lat: 45.3914585,
+                lng: -73.7611771,
+                checklist_id: "S70432892",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "213069561",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon",
+                location_fr: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                location_en: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                date_fr: "24 février 2020",
+                date_en: "February 24<sup>th</sup>, 2020",
+                lat: 22.65235,
+                lng: -79.02832,
+                checklist_id: "S64944535",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "33892241",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "National Tropical Botanical Garden",
+                location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
+                location_en: "National Tropical Botanical Garden, Hawaii, United States",
+                date_fr: "21 juillet 2015",
+                date_en: "July 21<sup>st</sup>, 2015",
+                lat: 21.8940159,
+                lng: -159.5025301,
+                checklist_id: "S24343255",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "33892271",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "National Tropical Botanical Garden",
+                location_fr: "National Tropical Botanical Garden, Hawaï, États-Unis",
+                location_en: "National Tropical Botanical Garden, Hawaii, United States",
+                date_fr: "21 juillet 2015",
+                date_en: "July 21<sup>st</sup>, 2015",
+                lat: 21.8940159,
+                lng: -159.5025301,
+                checklist_id: "S24343255",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "29632691",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
+                location_fr: "Hanalei NWR, Hawaï, États-Unis",
+                location_en: "Hanalei NWR, Hawaii, United States",
+                date_fr: "17 juillet 2015",
+                date_en: "July 17<sup>th</sup>, 2015",
+                lat: 22.2075046,
+                lng: -159.4748387,
+                checklist_id: "S24309944",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "29632701",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
+                location_fr: "Hanalei NWR, Hawaï, États-Unis",
+                location_en: "Hanalei NWR, Hawaii, United States",
+                date_fr: "17 juillet 2015",
+                date_en: "July 17<sup>th</sup>, 2015",
+                lat: 22.2075046,
+                lng: -159.4748387,
+                checklist_id: "S24309944",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "29632571",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
+                location_fr: "Hanalei NWR, Hawaï, États-Unis",
+                location_en: "Hanalei NWR, Hawaii, United States",
+                date_fr: "16 juillet 2015",
+                date_en: "July 16<sup>th</sup>, 2015",
+                lat: 22.2075046,
+                lng: -159.4748387,
+                checklist_id: "S24291530",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "34384101",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "12 juin 2010",
+                date_en: "June 12<sup>th</sup>, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567008",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "34384111",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "12 juin 2010",
+                date_en: "June 12<sup>th</sup>, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567008",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "34384121",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "12 juin 2010",
+                date_en: "June 12<sup>th</sup>, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567008",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "34384031",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "22 mai 2010",
+                date_en: "May 22<sup>nd</sup>, 2010",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18567005",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22573241",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "13 octobre 2008",
+                date_en: "October 13<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772485",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22503541",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN du Bois-de-l\'île-Bizard",
+                location_fr: "PN du Bois-de-l\'île-Bizard, Québec, Canada",
+                location_en: "PN du Bois-de-l\'île-Bizard, Quebec, Canada",
+                date_fr: "3 juillet 2005",
+                date_en: "July 3<sup>rd</sup>, 2005",
+                lat: 45.5100537,
+                lng: -73.8786578,
+                checklist_id: "S18566827",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "33891211",
+                name_fr: "Gallinule d\'Amérique",
+                name_en: "Common Gallinule",
+                scientific: "Gallinula galeata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Marais Sabourin",
+                location_fr: "Marais Sabourin, Québec, Canada",
+                location_en: "Marais Sabourin, Quebec, Canada",
+                date_fr: "13 juin 2004",
+                date_en: "June 13<sup>th</sup>, 2004",
+                lat: 45.4708855,
+                lng: -75.7419716,
+                checklist_id: "S18566917",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "214757701",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "214840321",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "10 mars 2020",
+                date_en: "March 10<sup>th</sup>, 2020",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S65669392",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22503171",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "17 mars 2008",
+                date_en: "March 17<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772591",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22503201",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "17 mars 2008",
+                date_en: "March 17<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772591",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22568821",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "3 juillet 2007",
+                date_en: "July 3<sup>rd</sup>, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772454",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22568871",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "3 juillet 2007",
+                date_en: "July 3<sup>rd</sup>, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772454",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22527251",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Estero El Culebrón",
+                location_fr: "Estero El Culebrón, Coquimbo, Chili",
+                location_en: "Estero El Culebrón, Coquimbo, Chile",
+                date_fr: "1<sup>er</sup> mai 2007",
+                date_en: "May 1<sup>st</sup>, 2007",
+                lat: -29.9617015,
+                lng: -71.3218206,
+                checklist_id: "S5772598",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21101101",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "16 décembre 2006",
+                date_en: "December 16<sup>th</sup>, 2006",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772596",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21101121",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Jardín del Corazón (Kokoro No Niwa)",
+                location_fr: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chili",
+                location_en: "Parque Jardín del Corazón (Kokoro No Niwa), Coquimbo, Chile",
+                date_fr: "16 décembre 2006",
+                date_en: "December 16<sup>th</sup>, 2006",
+                lat: -29.9037627,
+                lng: -71.2556934,
+                checklist_id: "S5772596",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22533941",
+                name_fr: "Foulque à front rouge",
+                name_en: "Red-fronted Coot",
+                scientific: "Fulica rufifrons",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "24 septembre 2006",
+                date_en: "September 24<sup>th</sup>, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772450",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21101311",
+                name_fr: "Foulque cornue",
+                name_en: "Horned Coot",
+                scientific: "Fulica cornuta",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "PN Nevado Tres Cruces",
+                location_fr: "PN Nevado Tres Cruces, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17<sup>th</sup>, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "22571261",
+                name_fr: "Foulque géante",
+                name_en: "Giant Coot",
+                scientific: "Fulica gigantea",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Vados del Putana",
+                location_fr: "Vados del Putana, Antofagasta, Chili",
+                location_en: "Vados del Putana, Antofagasta, Chile",
+                date_fr: "2 janvier 2009",
+                date_en: "January 2<sup>nd</sup>, 2009",
+                lat: -22.533805,
+                lng: -68.0335236,
+                checklist_id: "S5772442",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22571271",
+                name_fr: "Foulque géante",
+                name_en: "Giant Coot",
+                scientific: "Fulica gigantea",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Vados del Putana",
+                location_fr: "Vados del Putana, Antofagasta, Chili",
+                location_en: "Vados del Putana, Antofagasta, Chile",
+                date_fr: "2 janvier 2009",
+                date_en: "January 2<sup>nd</sup>, 2009",
+                lat: -22.533805,
+                lng: -68.0335236,
+                checklist_id: "S5772442",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "435157081",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Bicentenario de Vitacura",
+                location_fr: "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+                location_en: "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
+                date_fr: "12 avril 2022",
+                date_en: "April 12<sup>th</sup>, 2022",
+                lat: -33.3980197,
+                lng: -70.6022,
+                checklist_id: "S106897237",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22573251",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "13 octobre 2008",
+                date_en: "October 13<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772485",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "29633321",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "3 décembre 2007",
+                date_en: "December 3<sup>rd</sup>, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772488",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22502971",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "2 septembre 2007",
+                date_en: "September 2<sup>nd</sup>, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772590",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22568811",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "3 juillet 2007",
+                date_en: "July 3<sup>rd</sup>, 2007",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772454",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22504131",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "SN Humedales de Tongoy",
+                location_fr: "SN Humedales de Tongoy, Coquimbo, Chili",
+                location_en: "SN Humedales de Tongoy, Coquimbo, Chile",
+                date_fr: "11 février 2007",
+                date_en: "February 11<sup>th</sup>, 2007",
+                lat: -30.2828485,
+                lng: -71.5062434,
+                checklist_id: "S5772597",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22533901",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "24 septembre 2006",
+                date_en: "September 24<sup>th</sup>, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772450",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22533911",
+                name_fr: "Foulque à jarretières",
+                name_en: "Red-gartered Coot",
+                scientific: "Fulica armillata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "24 septembre 2006",
+                date_en: "September 24<sup>th</sup>, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772450",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "645225399",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Jetée et Port des Pâquis",
+                location_fr: "Jetée et Port des Pâquis, Genève, Suisse",
+                location_en: "Jetée et Port des Pâquis, Geneva, Switzerland",
+                date_fr: "14 novembre 2025",
+                date_en: "November 14<sup>th</sup>, 2025",
+                lat: 46.2102417,
+                lng: 6.1546,
+                checklist_id: "S284359705",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "639815593",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Bois de Vincennes",
+                location_fr: "Bois de Vincennes, Île-de-France, France",
+                location_en: "Bois de Vincennes, Île-de-France, France",
+                date_fr: "3 août 2025",
+                date_en: "August 3<sup>rd</sup>, 2025",
+                lat: 48.8360799,
+                lng: 2.4583197,
+                checklist_id: "S264658458",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "639668407",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Bois de Vincennes",
+                location_fr: "Bois de Vincennes, Île-de-France, France",
+                location_en: "Bois de Vincennes, Île-de-France, France",
+                date_fr: "1<sup>er</sup> août 2025",
+                date_en: "August 1<sup>st</sup>, 2025",
+                lat: 48.8360799,
+                lng: 2.4583197,
+                checklist_id: "S264138553",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "150152921",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Port Choiseul",
+                location_fr: "Port Choiseul, Genève, Suisse",
+                location_en: "Port Choiseul, Geneva, Switzerland",
+                date_fr: "8 avril 2019",
+                date_en: "April 8<sup>th</sup>, 2019",
+                lat: 46.2879333,
+                lng: 6.1719167,
+                checklist_id: "S54719929",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "109534951",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "30 juillet 2018",
+                date_en: "July 30<sup>th</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47545018",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21111711",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Amsterdam",
+                location_fr: "Amsterdam, Pays-Bas",
+                location_en: "Amsterdam, Netherlands",
+                date_fr: "1<sup>er</sup> juillet 2012",
+                date_en: "July 1<sup>st</sup>, 2012",
+                lat: 52.344444,
+                lng: 4.8813889,
+                checklist_id: "S18565312",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21082691",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Quaibrücke",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3<sup>rd</sup>, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21082701",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Quaibrücke",
+                location_fr: "Quaibrücke, Zurich, Suisse",
+                location_en: "Quaibrücke, Zurich, Switzerland",
+                date_fr: "3 janvier 2010",
+                date_en: "January 3<sup>rd</sup>, 2010",
+                lat: 47.3668696,
+                lng: 8.5433916,
+                checklist_id: "S18565222",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22393971",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "22 juin 2008",
+                date_en: "June 22<sup>nd</sup>, 2008",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S18565375",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22361611",
+                name_fr: "Foulque macroule",
+                name_en: "Eurasian Coot",
+                scientific: "Fulica atra",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "21 juin 2008",
+                date_en: "June 21<sup>st</sup>, 2008",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S18564329",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "71427171",
+                name_fr: "Foulque à crête",
+                name_en: "Red-knobbed Coot",
+                scientific: "Fulica cristata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "منتزه سيدي بوغابة | PN Sidi Boughaba",
+                location_fr: "منتزه سيدي بوغابة | PN Sidi Boughaba, Maroc",
+                location_en: "منتزه سيدي بوغابة | PN Sidi Boughaba, Morocco",
+                date_fr: "14 juillet 2004",
+                date_en: "July 14<sup>th</sup>, 2004",
+                lat: 34.242791,
+                lng: -6.6726837,
+                checklist_id: "S18564333",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "71427181",
+                name_fr: "Foulque à crête",
+                name_en: "Red-knobbed Coot",
+                scientific: "Fulica cristata",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "منتزه سيدي بوغابة | PN Sidi Boughaba",
+                location_fr: "منتزه سيدي بوغابة | PN Sidi Boughaba, Maroc",
+                location_en: "منتزه سيدي بوغابة | PN Sidi Boughaba, Morocco",
+                date_fr: "14 juillet 2004",
+                date_en: "July 14<sup>th</sup>, 2004",
+                lat: 34.242791,
+                lng: -6.6726837,
+                checklist_id: "S18564333",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "102749061",
+                name_fr: "Foulque des Hawaï",
+                name_en: "Hawaiian Coot",
+                scientific: "Fulica alai",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Kaloko-Honokōhau NHP",
+                location_fr: "Kaloko-Honokōhau NHP, Hawaï, États-Unis",
+                location_en: "Kaloko-Honokōhau NHP, Hawaii, United States",
+                date_fr: "26 mai 2018",
+                date_en: "May 26<sup>th</sup>, 2018",
+                lat: 19.6771833,
+                lng: -156.0259759,
+                checklist_id: "S46055655",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "29632661",
+                name_fr: "Foulque des Hawaï",
+                name_en: "Hawaiian Coot",
+                scientific: "Fulica alai",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
+                location_fr: "Hanalei NWR, Hawaï, États-Unis",
+                location_en: "Hanalei NWR, Hawaii, United States",
+                date_fr: "17 juillet 2015",
+                date_en: "July 17<sup>th</sup>, 2015",
+                lat: 22.2075046,
+                lng: -159.4748387,
+                checklist_id: "S24309944",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "29632671",
+                name_fr: "Foulque des Hawaï",
+                name_en: "Hawaiian Coot",
+                scientific: "Fulica alai",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Hanalei NWR",
+                location_fr: "Hanalei NWR, Hawaï, États-Unis",
+                location_en: "Hanalei NWR, Hawaii, United States",
+                date_fr: "17 juillet 2015",
+                date_en: "July 17<sup>th</sup>, 2015",
+                lat: 22.2075046,
+                lng: -159.4748387,
+                checklist_id: "S24309944",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "29633301",
+                name_fr: "Foulque des Hawaï",
+                name_en: "Hawaiian Coot",
+                scientific: "Fulica alai",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Lokowaka Pond and 4 Miles Beaches",
+                location_fr: "Lokowaka Pond and 4 Miles Beaches, Hawaï, États-Unis",
+                location_en: "Lokowaka Pond and 4 Miles Beaches, Hawaii, United States",
+                date_fr: "25 décembre 2003",
+                date_en: "December 25<sup>th</sup>, 2003",
+                lat: 19.7308362,
+                lng: -155.0285912,
+                checklist_id: "S18574820",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "22401431",
+                name_fr: "Foulque des Hawaï",
+                name_en: "Hawaiian Coot",
+                scientific: "Fulica alai",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Kaloko-Honokōhau NHP",
+                location_fr: "Kaloko-Honokōhau NHP, Hawaï, États-Unis",
+                location_en: "Kaloko-Honokōhau NHP, Hawaii, United States",
+                date_fr: "5 décembre 2003",
+                date_en: "December 5<sup>th</sup>, 2003",
+                lat: 19.6771833,
+                lng: -156.0259759,
+                checklist_id: "S18575198",
+                iucn_status: "NT"
+            },
+            
+            {
+                ml: "213069591",
+                name_fr: "Foulque d\'Amérique",
+                name_en: "American Coot",
+                scientific: "Fulica americana",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon",
+                location_fr: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                location_en: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                date_fr: "24 février 2020",
+                date_en: "February 24<sup>th</sup>, 2020",
+                lat: 22.65235,
+                lng: -79.02832,
+                checklist_id: "S64944535",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "56288821",
+                name_fr: "Foulque d\'Amérique",
+                name_en: "American Coot",
+                scientific: "Fulica americana",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Sweetwater Wetlands",
+                location_fr: "Sweetwater Wetlands, Arizona, États-Unis",
+                location_en: "Sweetwater Wetlands, Arizona, United States",
+                date_fr: "27 avril 2017",
+                date_en: "April 27<sup>th</sup>, 2017",
+                lat: 32.2790144,
+                lng: -111.0216061,
+                checklist_id: "S36371253",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22503981",
+                name_fr: "Foulque d\'Amérique",
+                name_en: "American Coot",
+                scientific: "Fulica americana",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "J. N. Ding Darling NWR",
+                location_fr: "J. N. Ding Darling NWR, Floride, États-Unis",
+                location_en: "J. N. Ding Darling NWR, Florida, United States",
+                date_fr: "2 mars 2014",
+                date_en: "March 2<sup>nd</sup>, 2014",
+                lat: 26.4276,
+                lng: -82.0819,
+                checklist_id: "S18574861",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22503991",
+                name_fr: "Foulque d\'Amérique",
+                name_en: "American Coot",
+                scientific: "Fulica americana",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "J. N. Ding Darling NWR",
+                location_fr: "J. N. Ding Darling NWR, Floride, États-Unis",
+                location_en: "J. N. Ding Darling NWR, Florida, United States",
+                date_fr: "2 mars 2014",
+                date_en: "March 2<sup>nd</sup>, 2014",
+                lat: 26.4276,
+                lng: -82.0819,
+                checklist_id: "S18574861",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21101001",
+                name_fr: "Foulque d\'Amérique",
+                name_en: "American Coot",
+                scientific: "Fulica americana",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Patagonia Lake State Park",
+                location_fr: "Patagonia Lake State Park, Arizona, États-Unis",
+                location_en: "Patagonia Lake State Park, Arizona, United States",
+                date_fr: "4 janvier 2006",
+                date_en: "January 4<sup>th</sup>, 2006",
+                lat: 31.4951992,
+                lng: -110.8566971,
+                checklist_id: "S18575051",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21101011",
+                name_fr: "Foulque d\'Amérique",
+                name_en: "American Coot",
+                scientific: "Fulica americana",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Patagonia Lake State Park",
+                location_fr: "Patagonia Lake State Park, Arizona, États-Unis",
+                location_en: "Patagonia Lake State Park, Arizona, United States",
+                date_fr: "4 janvier 2006",
+                date_en: "January 4<sup>th</sup>, 2006",
+                lat: 31.4951992,
+                lng: -110.8566971,
+                checklist_id: "S18575051",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22571281",
+                name_fr: "Foulque ardoisée",
+                name_en: "Slate-colored Coot",
+                scientific: "Fulica ardesiaca",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Vados del Putana",
+                location_fr: "Vados del Putana, Antofagasta, Chili",
+                location_en: "Vados del Putana, Antofagasta, Chile",
+                date_fr: "2 janvier 2009",
+                date_en: "January 2<sup>nd</sup>, 2009",
+                lat: -22.533805,
+                lng: -68.0335236,
+                checklist_id: "S5772442",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22526121",
+                name_fr: "Foulque leucoptère",
+                name_en: "White-winged Coot",
+                scientific: "Fulica leucoptera",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "SN Humedales de Tongoy",
+                location_fr: "SN Humedales de Tongoy, Coquimbo, Chili",
+                location_en: "SN Humedales de Tongoy, Coquimbo, Chile",
+                date_fr: "3 décembre 2006",
+                date_en: "December 3<sup>rd</sup>, 2006",
+                lat: -30.2828485,
+                lng: -71.5062434,
+                checklist_id: "S5772600",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "615597119",
+                name_fr: "Talève violacée",
+                name_en: "Purple Gallinule",
+                scientific: "Porphyrio martinica",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Everglades NP",
+                location_fr: "Everglades NP, Floride, États-Unis",
+                location_en: "Everglades NP, Florida, United States",
+                date_fr: "3 mars 2024",
+                date_en: "March 3<sup>rd</sup>, 2024",
+                lat: 25.3820583,
+                lng: -80.6069362,
+                checklist_id: "S163589255",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "615560826",
+                name_fr: "Talève violacée",
+                name_en: "Purple Gallinule",
+                scientific: "Porphyrio martinica",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Everglades NP",
+                location_fr: "Everglades NP, Floride, États-Unis",
+                location_en: "Everglades NP, Florida, United States",
+                date_fr: "2 mars 2024",
+                date_en: "March 2<sup>nd</sup>, 2024",
+                lat: 25.3820583,
+                lng: -80.6069362,
+                checklist_id: "S163443572",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "621754364",
+                name_fr: "Talève sultane",
+                name_en: "Western Swamphen",
+                scientific: "Porphyrio porphyrio",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Lagoa dos Salgados",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "621673415",
+                name_fr: "Talève sultane",
+                name_en: "Western Swamphen",
+                scientific: "Porphyrio porphyrio",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Ambiental de Vilamoura",
+                location_fr: "Parque Ambiental de Vilamoura, Portugal",
+                location_en: "Parque Ambiental de Vilamoura, Portugal",
+                date_fr: "20 juillet 2024",
+                date_en: "July 20<sup>th</sup>, 2024",
+                lat: 37.0893497,
+                lng: -8.1423175,
+                checklist_id: "S187916410",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "621673422",
+                name_fr: "Talève sultane",
+                name_en: "Western Swamphen",
+                scientific: "Porphyrio porphyrio",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Parque Ambiental de Vilamoura",
+                location_fr: "Parque Ambiental de Vilamoura, Portugal",
+                location_en: "Parque Ambiental de Vilamoura, Portugal",
+                date_fr: "20 juillet 2024",
+                date_en: "July 20<sup>th</sup>, 2024",
+                lat: 37.0893497,
+                lng: -8.1423175,
+                checklist_id: "S187916410",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "155111851",
+                name_fr: "Talève takahé",
+                name_en: "South Island Takahe",
+                scientific: "Porphyrio hochstetteri",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Kapiti Island",
+                location_fr: "Kapiti Island, Wellington, Nouvelle-Zélande",
+                location_en: "Kapiti Island, Wellington, New Zealand",
+                date_fr: "23 juillet 1994",
+                date_en: "July 23<sup>rd</sup>, 1994",
+                lat: -40.8528473,
+                lng: 174.9291709,
+                checklist_id: "S18576301",
+                iucn_status: "EN"
+            },
+            
+            {
+                ml: "615790956",
+                name_fr: "Talève à tête grise",
+                name_en: "Gray-headed Swamphen",
+                scientific: "Porphyrio poliocephalus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Dolphin Mall",
+                location_fr: "Dolphin Mall, Floride, États-Unis",
+                location_en: "Dolphin Mall, Florida, United States",
+                date_fr: "5 mars 2024",
+                date_en: "March 5<sup>th</sup>, 2024",
+                lat: 25.783585,
+                lng: -80.3782082,
+                checklist_id: "S163790079",
+                iucn_status: ""
+            },
+            
+            {
+                ml: "615790957",
+                name_fr: "Talève à tête grise",
+                name_en: "Gray-headed Swamphen",
+                scientific: "Porphyrio poliocephalus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Dolphin Mall",
+                location_fr: "Dolphin Mall, Floride, États-Unis",
+                location_en: "Dolphin Mall, Florida, United States",
+                date_fr: "5 mars 2024",
+                date_en: "March 5<sup>th</sup>, 2024",
+                lat: 25.783585,
+                lng: -80.3782082,
+                checklist_id: "S163790079",
+                iucn_status: ""
+            },
+            
+            {
+                ml: "615790958",
+                name_fr: "Talève à tête grise",
+                name_en: "Gray-headed Swamphen",
+                scientific: "Porphyrio poliocephalus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Dolphin Mall",
+                location_fr: "Dolphin Mall, Floride, États-Unis",
+                location_en: "Dolphin Mall, Florida, United States",
+                date_fr: "5 mars 2024",
+                date_en: "March 5<sup>th</sup>, 2024",
+                lat: 25.783585,
+                lng: -80.3782082,
+                checklist_id: "S163790079",
+                iucn_status: ""
+            },
+            
+            {
+                ml: "74443071",
+                name_fr: "Talève à tête grise",
+                name_en: "Gray-headed Swamphen",
+                scientific: "Porphyrio poliocephalus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Mysore City Bird Atlas 2C, Hebbal kere, ಹೆಬ್ಬಾಳ ಕೆರೆ",
+                location_fr: "Mysore City Bird Atlas 2C, Hebbal kere, ಹೆಬ್ಬಾಳ ಕೆರೆ, Inde",
+                location_en: "Mysore City Bird Atlas 2C, Hebbal kere, ಹೆಬ್ಬಾಳ ಕೆರೆ, India",
+                date_fr: "7 novembre 2017",
+                date_en: "November 7<sup>th</sup>, 2017",
+                lat: 12.3585768,
+                lng: 76.6104984,
+                checklist_id: "S40354331",
+                iucn_status: ""
+            },
+            
+            {
+                ml: "74435531",
+                name_fr: "Râle à poitrine blanche",
+                name_en: "White-breasted Waterhen",
+                scientific: "Amaurornis phoenicurus",
+                family: "Rallidae (Rails, Gallinules, and Coots)",
+                location: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes",
+                location_fr: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, Inde",
+                location_en: "Mysore City Bird Atlas 1D, L & T -Infosys-DFRL complexes, India",
+                date_fr: "6 novembre 2017",
+                date_en: "November 6<sup>th</sup>, 2017",
+                lat: 12.3602739,
+                lng: 76.5989477,
+                checklist_id: "S40333737",
+                iucn_status: "LC"
+            }
+            
+        ];
+
+        // ========================================
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
+        // ========================================
+        const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+
+        photosData.forEach((photo, index) => {
+            const sciName = photo.scientific;
+            if (!speciesMap[sciName]) {
+                speciesMap[sciName] = {
+                    scientific: sciName,
+                    name_fr: photo.name_fr,
+                    name_en: photo.name_en,
+                    iucn_status: photo.iucn_status,
+                    photos: []
+                };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
+            }
+            speciesMap[sciName].photos.push({...photo, globalIndex: index});
+        });
+
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
+
+        // ========================================
+        // CHARGEMENT PROGRESSIF PAR ESPÈCE
+        // ========================================
+        const BATCH_SIZE = 24;  // Espèces par lot
+        let displayedCount = 0;
+        let activeLocationFilter = null;
+
+        function getFilteredSpeciesList() {
+            if (!activeLocationFilter) return speciesList;
+
+            // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
+            return speciesList
+                .map(sp => ({
+                    ...sp,
+                    photos: sp.photos.filter(p => p.location === activeLocationFilter)
+                }))
+                .filter(sp => sp.photos.length > 0);
+        }
+
+        function createSpeciesCard(species) {
+            const card = document.createElement('div');
+            card.className = 'species-card';
+            card.dataset.species = species.scientific;
+            card.title = species.scientific;
+            card.style.cursor = 'pointer';
+            card.onclick = () => openSpeciesLightbox(species.scientific);
+
+            const name = currentLang === 'fr' ? species.name_fr : species.name_en;
+            const firstPhoto = species.photos[0];
+            const photoCount = species.photos.length;
+            const badgeHtml = `<span class="photo-count-badge">${photoCount}</span>`;
+
+            card.innerHTML = `
+                <div class="card-image-wrapper">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${firstPhoto.ml}/480"
+                         alt="${name}"
+                         loading="lazy"
+                         onload="fitContain(this)">
+                    ${badgeHtml}
+                </div>
+                <div class="species-info">
+                    <span class="species-common">${name}</span>
+                    <span class="species-sci">${species.scientific}</span>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function renderNextBatch() {
+            const grid = document.getElementById('species-grid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+
+            const filteredList = getFilteredSpeciesList();
+            const endIndex = Math.min(displayedCount + BATCH_SIZE, filteredList.length);
+
+            for (let i = displayedCount; i < endIndex; i++) {
+                const species = filteredList[i];
+                const card = createSpeciesCard(species);
+                grid.appendChild(card);
+            }
+
+            displayedCount = endIndex;
+            updateLoadMoreButton();
+        }
+
+        function updateLoadMoreButton() {
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const remainingCount = document.getElementById('remaining-count');
+            const filteredList = getFilteredSpeciesList();
+            const remaining = filteredList.length - displayedCount;
+
+            if (remaining > 0) {
+                loadMoreContainer.style.display = 'block';
+                const remainingText = currentLang === 'fr'
+                    ? ` (${remaining} restante${remaining > 1 ? 's' : ''})`
+                    : ` (${remaining} remaining)`;
+                remainingCount.textContent = remainingText;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+
+        function rebuildGrid() {
+            const grid = document.getElementById('species-grid');
+            grid.innerHTML = '';
+            displayedCount = 0;
+            renderNextBatch();
+        }
+
+        // Charger le premier lot au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            rebuildGrid();
+        });
+
+        // Auto-charger au scroll + bouton retour en haut
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
+                const filteredList = getFilteredSpeciesList();
+                if (displayedCount < filteredList.length) {
+                    renderNextBatch();
+                }
+            }
+            if (backToTopBtn) {
+                backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+            }
+        });
+
+        // Cliquer une espèce ouvre le feed plein écran (infinite scroll) sur cette espèce
+        function openSpeciesLightbox(sciName) {
+            const idx = speciesList.findIndex(sp => sp.scientific === sciName);
+            if (idx < 0) return;
+            window.location.href = `${FEED_URL}?s=${idx}`;
+        }
+
+        // Lien direct vers une photo précise (?photo=<ML>) : ouvre le feed sur l'espèce concernée.
+        // Retour du feed sur une espèce précise (?species=<nom scientifique>) : dérouler les
+        // lots nécessaires (chargement progressif) puis défiler jusqu'à la carte, même si elle
+        // n'était pas encore affichée.
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            const ml = params.get('photo');
+            if (ml) {
+                const idx = speciesList.findIndex(sp => sp.photos.some(p => p.ml === ml));
+                if (idx >= 0) {
+                    window.location.href = `${FEED_URL}?s=${idx}`;
+                }
+                return;
+            }
+
+            const targetSci = params.get('species');
+            if (targetSci) {
+                const filteredList = getFilteredSpeciesList();
+                const idx = filteredList.findIndex(sp => sp.scientific === targetSci);
+                if (idx >= 0) {
+                    while (displayedCount <= idx) {
+                        renderNextBatch();
+                    }
+                    const card = document.querySelector(`.species-card[data-species="${CSS.escape(targetSci)}"]`);
+                    if (card) {
+                        card.scrollIntoView({ block: 'center' });
+                        card.classList.add('return-highlight');
+                        setTimeout(() => card.classList.remove('return-highlight'), 1600);
+                    }
+                }
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

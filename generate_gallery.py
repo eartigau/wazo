@@ -8,6 +8,7 @@ Générateur de galeries eBird v2.0
 """
 
 import csv
+import json
 import os
 import time
 import re
@@ -448,7 +449,7 @@ class EBirdTaxonomy:
                         # Stocker avec le nom original
                         self.species[sci_name] = {
                             'taxon_order': taxon_order,
-                            'common_name_en': row.get('PRIMARY_COM_NAME', ''),
+                            'common_name_en': normaliser_nom_commun(row.get('PRIMARY_COM_NAME', '')),
                             'sci_name': sci_name,
                             'sci_name_normalized': sci_name_normalized,
                             'order': row.get('ORDER', ''),
@@ -648,6 +649,43 @@ def verifier_medias(ml_numbers: list, fichier_cache: str = CACHE_FILE,
 
 
 # ============================================================================
+# DONNÉES DU FEED PLEIN ÉCRAN (fichier JSON séparé, chargé en fetch() côté client)
+# ============================================================================
+
+def construire_donnees_feed(photos: list) -> list:
+    """
+    Construit la liste de dictionnaires pour le JSON du feed plein écran, avec les mêmes
+    champs que l'ancien bloc JS en ligne dans gallery_feed_template.html (photosData).
+    """
+    data = []
+    for photo in photos:
+        lat = photo.get('latitude')
+        lng = photo.get('longitude')
+        data.append({
+            'ml': photo.get('ml_catalog_number', ''),
+            'name_fr': photo.get('common_name_fr', ''),
+            'name_en': photo.get('common_name_en', ''),
+            'scientific': photo.get('scientific_name', ''),
+            'location': photo.get('location', '') or '',
+            'location_fr': photo.get('location_full_fr', '') or '',
+            'location_en': photo.get('location_full_en', '') or '',
+            'date_fr': photo.get('date_fr', ''),
+            'date_en': photo.get('date_en', ''),
+            'lat': lat if lat else None,
+            'lng': lng if lng else None,
+            'checklist_id': photo.get('checklist_id', ''),
+            'iucn_status': photo.get('iucn_status', '') or '',
+        })
+    return data
+
+
+def ecrire_feed_json(photos: list, chemin_fichier: str):
+    """Écrit le JSON des données photo du feed plein écran (une fois par langue, mêmes données)."""
+    with open(chemin_fichier, 'w', encoding='utf-8') as f:
+        json.dump(construire_donnees_feed(photos), f, ensure_ascii=False, separators=(',', ':'))
+
+
+# ============================================================================
 # CLASSE PRINCIPALE
 # ============================================================================
 
@@ -676,15 +714,23 @@ class EBirdGalleryGenerator:
     def _load_data(self):
         """Charge les données du fichier CSV eBird"""
         print(f"📂 Chargement de {self.csv_file}...")
-        
+
         with open(self.csv_file, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 ml_numbers = row.get('ML Catalog Numbers') or ''
                 ml_numbers = ml_numbers.strip()
                 if ml_numbers:
+                    # Nettoyer les noms dès la lecture, une fois pour toutes : enlever tout
+                    # segment entre parenthèses du nom commun et entre crochets/parenthèses
+                    # du nom scientifique, ex. "Cormoran impérial (groupe atriceps)" ->
+                    # "Cormoran impérial". Tout le reste du code lit ensuite des noms déjà propres.
+                    if row.get('Common Name'):
+                        row['Common Name'] = normaliser_nom_commun(row['Common Name'])
+                    if row.get('Scientific Name'):
+                        row['Scientific Name'] = normaliser_nom_scientifique(row['Scientific Name'])
                     self.observations.append(row)
-        
+
         print(f"   ✓ {len(self.observations)} observations avec médias")
     
     def _load_media_cache(self):
@@ -823,6 +869,7 @@ class EBirdGalleryGenerator:
                     'date_raw': obs_date,
                     'date_fr': formater_date(obs_date, 'fr'),
                     'date_en': formater_date(obs_date, 'en'),
+                    'location': location,
                     'location_full_fr': lieu_complet_fr,
                     'location_full_en': lieu_complet_en,
                     'latitude': self._parse_coord(obs.get('Latitude')),
@@ -1436,8 +1483,35 @@ class EBirdGalleryGenerator:
         
         with open(output_en, 'w', encoding='utf-8') as f:
             f.write(html_en)
-        
+
         print(f"   ✓ {output_fr} / {output_en} ({len(photos)} photos)")
+
+        # Galerie plein écran "infinite scroll" associée : mêmes photos, un feed style
+        # Reels au lieu de la grille. La grille redirige vers ce feed au clic sur une espèce.
+        # Les données photo vont dans un JSON séparé (chargé en fetch() côté client) plutôt
+        # que dans le HTML : pour les grosses galeries, ça évite de bloquer le rendu initial
+        # le temps de parser un gros bloc JS en ligne.
+        feed_template = env.get_template('gallery_feed_template.html')
+        feed_fr = f"{output_base}_feed_fr.html"
+        feed_en = f"{output_base}_feed_en.html"
+        feed_data_file = f"{output_base}_feed_data.json"
+
+        ecrire_feed_json(photos, feed_data_file)
+
+        with open(feed_fr, 'w', encoding='utf-8') as f:
+            f.write(feed_template.render(
+                lang='fr', gallery_title=title_fr, photos=photos, back_url=output_fr,
+                data_url=feed_data_file
+            ))
+
+        with open(feed_en, 'w', encoding='utf-8') as f:
+            f.write(feed_template.render(
+                lang='en', gallery_title=title_en, photos=photos, back_url=output_en,
+                data_url=feed_data_file
+            ))
+
+        print(f"   ✓ {feed_fr} / {feed_en} (feed plein écran)")
+
         return output_fr, output_en
     
     def generate_species_list(self,
@@ -1516,14 +1590,15 @@ class EBirdGalleryGenerator:
             menu=menu or [],
             current_page=output_fr,
             other_lang_page=output_en,
+            output_base=output_base,
             update_date=True,
             update_date_fr=update_date_fr,
             update_date_en=update_date_en
         )
-        
+
         with open(output_fr, 'w', encoding='utf-8') as f:
             f.write(html_fr)
-        
+
         # Version anglaise
         html_en = template.render(
             lang='en',
@@ -1533,6 +1608,7 @@ class EBirdGalleryGenerator:
             menu=menu or [],
             current_page=output_en,
             other_lang_page=output_fr,
+            output_base=output_base,
             update_date=True,
             update_date_fr=update_date_fr,
             update_date_en=update_date_en
@@ -1540,8 +1616,54 @@ class EBirdGalleryGenerator:
         
         with open(output_en, 'w', encoding='utf-8') as f:
             f.write(html_en)
-        
+
         print(f"   ✓ {output_fr} / {output_en} ({len(species_list)} espèces, {len(sorted_families)} familles)")
+
+        # Feed plein écran couvrant TOUTES les espèces, dans l'ordre des familles (phylogénétique)
+        feed_photos = []
+        for fam_data in sorted_families:
+            for sp in fam_data['species']:
+                for photo in sp['all_photos']:
+                    feed_photos.append({
+                        'ml_catalog_number': photo['ml_catalog_number'],
+                        'common_name_fr': sp['common_name_fr'],
+                        'common_name_en': sp['common_name_en'],
+                        'scientific_name': sp['sci_name'],
+                        'location': photo.get('location', ''),
+                        'location_full_fr': photo['location_full_fr'],
+                        'location_full_en': photo['location_full_en'],
+                        'date_fr': photo['date_fr'],
+                        'date_en': photo['date_en'],
+                        'latitude': photo['latitude'],
+                        'longitude': photo['longitude'],
+                        'checklist_id': photo['checklist_id'],
+                        'iucn_status': sp.get('iucn_status', '')
+                    })
+
+        feed_template = env.get_template('gallery_feed_template.html')
+        feed_fr = f"{output_base}_feed_fr.html"
+        feed_en = f"{output_base}_feed_en.html"
+        feed_data_file = f"{output_base}_feed_data.json"
+
+        # Données dans un JSON séparé (fetch() côté client) : cette galerie couvre TOUTES
+        # les espèces du site (des milliers de photos), un bloc JS en ligne de cette taille
+        # bloquait le rendu initial le temps d'être parsé au complet.
+        ecrire_feed_json(feed_photos, feed_data_file)
+
+        with open(feed_fr, 'w', encoding='utf-8') as f:
+            f.write(feed_template.render(
+                lang='fr', gallery_title='Toutes les espèces', photos=feed_photos, back_url=output_fr,
+                data_url=feed_data_file
+            ))
+
+        with open(feed_en, 'w', encoding='utf-8') as f:
+            f.write(feed_template.render(
+                lang='en', gallery_title='All species', photos=feed_photos, back_url=output_en,
+                data_url=feed_data_file
+            ))
+
+        print(f"   ✓ {feed_fr} / {feed_en} (feed plein écran, {len(feed_photos)} photos)")
+
         return output_fr, output_en
 
 

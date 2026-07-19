@@ -1,0 +1,1158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recurvirostridae</title>
+    <meta name="description" content="Recurvirostridae — Stilts and Avocets · 5 species">
+    <meta property="og:title" content="Recurvirostridae">
+    <meta property="og:description" content="Bird photo gallery · Étienne Artigau · 5 species">
+    <meta property="og:image" content="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/621570147/480">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Recurvirostridae">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    
+    <link rel="stylesheet" href="gallery.css?v=2">
+    <style>
+        /* Cluster personnalisé avec icône caméra */
+        .cluster-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            color: #2d5a27;
+            border-radius: 50%;
+            border: 3px solid #2d5a27;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-weight: 700;
+            font-size: 13px;
+        }
+        .cluster-icon-small {
+            width: 40px;
+            height: 40px;
+        }
+        .cluster-icon-medium {
+            width: 50px;
+            height: 50px;
+            font-size: 14px;
+        }
+        .cluster-icon-large {
+            width: 60px;
+            height: 60px;
+            font-size: 15px;
+        }
+        /* Marqueur flamant rose individuel */
+        .flamingo-marker {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-radius: 50%;
+            border: 3px solid #2d5a27;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+            font-size: 20px;
+            cursor: pointer;
+        }
+        .flamingo-marker:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                
+                <li>
+                    <a href="https://eartigau.github.io/index_en.html"
+                       >
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="species_list_en.html"
+                       >
+                        Species
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_recent_en.html"
+                       >
+                        Recent Updates
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="gallery_best_en.html"
+                       >
+                        Best of
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="voyages_index_en.html"
+                       >
+                        Trips
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="pays_index_en.html"
+                       >
+                        Countries
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="menacees_en.html"
+                       >
+                        Endangered
+                    </a>
+                </li>
+                
+            </ul>
+
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch">
+                
+                <a href="gallery_recurvirostridae_fr.html" class="lang-btn" title="Français">FR</a>
+                <span class="lang-btn active">EN</span>
+                
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        
+        <a href="species_list_en.html" class="back-link">
+            ← Species list
+        </a>
+        
+        <h1>Recurvirostridae</h1>
+        
+        <div class="gallery-subtitle">Stilts and Avocets</div>
+        
+        <div class="stats">
+            39 photos
+            
+             · 5 species
+            
+        </div>
+    </div>
+
+    
+
+    <!-- GRILLE PHOTOS -->
+    <div class="gallery-container">
+        
+
+        <!-- Grille par espèce -->
+        <div class="species-list-container" style="max-width: 1800px; margin: 0 auto; padding: 0 20px 40px;">
+            <div class="species-grid" id="species-grid">
+                <!-- Cartes espèces chargées dynamiquement par JavaScript -->
+            </div>
+        </div>
+
+        <!-- Indicateur de chargement avec squelettes -->
+        <div id="loading-indicator" class="loading-indicator">
+            <div class="species-grid" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+                <div class="skeleton-card">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-info">
+                        <div class="skeleton skeleton-text"></div>
+                        <div class="skeleton skeleton-text-small"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+
+        <!-- Bouton charger plus -->
+        <div id="load-more-container" class="load-more-container" style="text-align: center; padding: 20px; display: none;">
+            <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
+                Show more species
+                <span id="remaining-count"></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Data <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Updated: July 18<sup>th</sup>, 2026 (20h40)</p>
+        <p>© Étienne Artigau · <a href="https://eartigau.github.io/index_en.html">eartigau.github.io</a></p>
+    </footer>
+
+    <!-- RETOUR EN HAUT -->
+    <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
+
+    <!-- SCRIPTS -->
+    
+    <script src="gallery-common.js"></script>
+    <script>
+        const currentLang = 'en';
+        const FEED_URL = 'gallery_recurvirostridae_feed_en.html';
+
+        // Calcule et fixe la taille exacte (en px) de l'image pour qu'elle tienne dans son
+        // conteneur en respectant son ratio, sans dépendre de l'algorithme du navigateur :
+        // Safari ne gère pas toujours bien width:auto/height:auto + max-width/max-height
+        // sur un enfant flex (il ignore parfois max-height), ce qui rognait certaines
+        // photos portrait.
+        function fitContain(img) {
+            const box = img.parentElement;
+            const cs = getComputedStyle(box);
+            const availW = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+            const availH = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+            const scale = Math.min(availW / img.naturalWidth, availH / img.naturalHeight);
+            img.style.width = Math.round(img.naturalWidth * scale) + 'px';
+            img.style.height = Math.round(img.naturalHeight * scale) + 'px';
+        }
+
+        const photosData = [
+            
+            {
+                ml: "621570147",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Ria de Alvor",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1475059,
+                lng: -8.5947418,
+                checklist_id: "S187357843",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "621754497",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Lagoa dos Salgados",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "621754696",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Lagoa dos Salgados",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "621755346",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Lagoa dos Salgados",
+                location_fr: "Lagoa dos Salgados, Portugal",
+                location_en: "Lagoa dos Salgados, Portugal",
+                date_fr: "22 juillet 2024",
+                date_en: "July 22<sup>nd</sup>, 2024",
+                lat: 37.09469,
+                lng: -8.3313704,
+                checklist_id: "S188264854",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "621704073",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Ria de Alvor",
+                location_fr: "Ria de Alvor, Portugal",
+                location_en: "Ria de Alvor, Portugal",
+                date_fr: "17 juillet 2024",
+                date_en: "July 17<sup>th</sup>, 2024",
+                lat: 37.1475059,
+                lng: -8.5947418,
+                checklist_id: "S187357843",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "466642901",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Le Domaine des Oiseaux",
+                location_fr: "Le Domaine des Oiseaux, Occitanie, France",
+                location_en: "Le Domaine des Oiseaux, Occitanie, France",
+                date_fr: "11 juillet 2022",
+                date_en: "July 11<sup>th</sup>, 2022",
+                lat: 43.2682219,
+                lng: 1.6609526,
+                checklist_id: "S114853632",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "466034941",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "1<sup>er</sup> juillet 2022",
+                date_en: "July 1<sup>st</sup>, 2022",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S114163850",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "466034951",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "1<sup>er</sup> juillet 2022",
+                date_en: "July 1<sup>st</sup>, 2022",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S114163850",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "466034961",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "1<sup>er</sup> juillet 2022",
+                date_en: "July 1<sup>st</sup>, 2022",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S114163850",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "109562361",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "109562371",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "109562411",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "31 juillet 2018",
+                date_en: "July 31<sup>st</sup>, 2018",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S47558748",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22361581",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "21 juin 2008",
+                date_en: "June 21<sup>st</sup>, 2008",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S18564329",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22396461",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "RNN des Marais de Séné (RNN131)",
+                location_fr: "RNN des Marais de Séné (RNN131), Bretagne, France",
+                location_en: "RNN des Marais de Séné (RNN131), Brittany, France",
+                date_fr: "18 juillet 2005",
+                date_en: "July 18<sup>th</sup>, 2005",
+                lat: 47.6168099,
+                lng: -2.7127004,
+                checklist_id: "S18563365",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22377061",
+                name_fr: "Échasse blanche",
+                name_en: "Black-winged Stilt",
+                scientific: "Himantopus himantopus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "مصب واد سوس | Embouchure du Oued Souss",
+                location_fr: "مصب واد سوس | Embouchure du Oued Souss, Maroc",
+                location_en: "مصب واد سوس | Embouchure du Oued Souss, Morocco",
+                date_fr: "19 juillet 2004",
+                date_en: "July 19<sup>th</sup>, 2004",
+                lat: 30.3623594,
+                lng: -9.5867729,
+                checklist_id: "S18565412",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "660234010",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Ramal a San Felipe, San Felipe MX-Yuc. 21.55372, -88.20950",
+                location_fr: "Ramal a San Felipe, San Felipe MX-Yuc. 21.55372, -88.20950, Mexique",
+                location_en: "Ramal a San Felipe, San Felipe MX-Yuc. 21.55372, -88.20950, Mexico",
+                date_fr: "23 juin 2026",
+                date_en: "June 23<sup>rd</sup>, 2026",
+                lat: 21.553718,
+                lng: -88.209505,
+                checklist_id: "S362245528",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "213069701",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon",
+                location_fr: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                location_en: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                date_fr: "24 février 2020",
+                date_en: "February 24<sup>th</sup>, 2020",
+                lat: 22.65235,
+                lng: -79.02832,
+                checklist_id: "S64944535",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "143869391",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon",
+                location_fr: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                location_en: "Pedraplen a Cayo Santa Maria, 50km freshwater lagoon, Cuba",
+                date_fr: "2 mars 2019",
+                date_en: "March 2<sup>nd</sup>, 2019",
+                lat: 22.65235,
+                lng: -79.02832,
+                checklist_id: "S53455205",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "105332561",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Hornsby Bend (HOTE 037)",
+                location_fr: "Hornsby Bend (HOTE 037), Texas, États-Unis",
+                location_en: "Hornsby Bend (HOTE 037), Texas, United States",
+                date_fr: "12 juin 2018",
+                date_en: "June 12<sup>th</sup>, 2018",
+                lat: 30.2181988,
+                lng: -97.6458054,
+                checklist_id: "S46503858",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "62726591",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Kailua Beach Park",
+                location_fr: "Kailua Beach Park, Hawaï, États-Unis",
+                location_en: "Kailua Beach Park, Hawaii, United States",
+                date_fr: "13 juillet 2015",
+                date_en: "July 13<sup>th</sup>, 2015",
+                lat: 21.3964198,
+                lng: -157.7246618,
+                checklist_id: "S24250403",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "62726601",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Kailua Beach Park",
+                location_fr: "Kailua Beach Park, Hawaï, États-Unis",
+                location_en: "Kailua Beach Park, Hawaii, United States",
+                date_fr: "13 juillet 2015",
+                date_en: "July 13<sup>th</sup>, 2015",
+                lat: 21.3964198,
+                lng: -157.7246618,
+                checklist_id: "S24250403",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "62726611",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Kailua Beach Park",
+                location_fr: "Kailua Beach Park, Hawaï, États-Unis",
+                location_en: "Kailua Beach Park, Hawaii, United States",
+                date_fr: "13 juillet 2015",
+                date_en: "July 13<sup>th</sup>, 2015",
+                lat: 21.3964198,
+                lng: -157.7246618,
+                checklist_id: "S24250403",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22527701",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "6 décembre 2008",
+                date_en: "December 6<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772594",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22527711",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "6 décembre 2008",
+                date_en: "December 6<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772594",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22503211",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "17 mars 2008",
+                date_en: "March 17<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772591",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22503241",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "17 mars 2008",
+                date_en: "March 17<sup>th</sup>, 2008",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772591",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22526131",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "SN Humedales de Tongoy",
+                location_fr: "SN Humedales de Tongoy, Coquimbo, Chili",
+                location_en: "SN Humedales de Tongoy, Coquimbo, Chile",
+                date_fr: "3 décembre 2006",
+                date_en: "December 3<sup>rd</sup>, 2006",
+                lat: -30.2828485,
+                lng: -71.5062434,
+                checklist_id: "S5772600",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22526141",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "SN Humedales de Tongoy",
+                location_fr: "SN Humedales de Tongoy, Coquimbo, Chili",
+                location_en: "SN Humedales de Tongoy, Coquimbo, Chile",
+                date_fr: "3 décembre 2006",
+                date_en: "December 3<sup>rd</sup>, 2006",
+                lat: -30.2828485,
+                lng: -71.5062434,
+                checklist_id: "S5772600",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22527461",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Punta Teatinos",
+                location_fr: "Punta Teatinos, Coquimbo, Chili",
+                location_en: "Punta Teatinos, Coquimbo, Chile",
+                date_fr: "1<sup>er</sup> octobre 2006",
+                date_en: "October 1<sup>st</sup>, 2006",
+                lat: -29.8220854,
+                lng: -71.2886524,
+                checklist_id: "S5772443",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22376261",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Avenida del Mar",
+                location_fr: "Avenida del Mar, Coquimbo, Chili",
+                location_en: "Avenida del Mar, Coquimbo, Chile",
+                date_fr: "28 janvier 2006",
+                date_en: "January 28<sup>th</sup>, 2006",
+                lat: -29.9252584,
+                lng: -71.2786746,
+                checklist_id: "S5772627",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "22401421",
+                name_fr: "Échasse d\'Amérique",
+                name_en: "Black-necked Stilt",
+                scientific: "Himantopus mexicanus",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Kaloko-Honokōhau NHP",
+                location_fr: "Kaloko-Honokōhau NHP, Hawaï, États-Unis",
+                location_en: "Kaloko-Honokōhau NHP, Hawaii, United States",
+                date_fr: "5 décembre 2003",
+                date_en: "December 5<sup>th</sup>, 2003",
+                lat: 19.6771833,
+                lng: -156.0259759,
+                checklist_id: "S18575198",
+                iucn_status: "NE"
+            },
+            
+            {
+                ml: "465042361",
+                name_fr: "Avocette élégante",
+                name_en: "Pied Avocet",
+                scientific: "Recurvirostra avosetta",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "1<sup>er</sup> juillet 2022",
+                date_en: "July 1<sup>st</sup>, 2022",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S114163850",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "465042371",
+                name_fr: "Avocette élégante",
+                name_en: "Pied Avocet",
+                scientific: "Recurvirostra avosetta",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "1<sup>er</sup> juillet 2022",
+                date_en: "July 1<sup>st</sup>, 2022",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S114163850",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22393991",
+                name_fr: "Avocette élégante",
+                name_en: "Pied Avocet",
+                scientific: "Recurvirostra avosetta",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "22 juin 2008",
+                date_en: "June 22<sup>nd</sup>, 2008",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S18565375",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22394001",
+                name_fr: "Avocette élégante",
+                name_en: "Pied Avocet",
+                scientific: "Recurvirostra avosetta",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Camargue",
+                location_fr: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                location_en: "Camargue, Provence-Alpes-Côte d\'Azur, France",
+                date_fr: "22 juin 2008",
+                date_en: "June 22<sup>nd</sup>, 2008",
+                lat: 43.4889737,
+                lng: 4.4041711,
+                checklist_id: "S18565375",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "22396861",
+                name_fr: "Avocette des Andes",
+                name_en: "Andean Avocet",
+                scientific: "Recurvirostra andina",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "RN Los Flamencos",
+                location_fr: "RN Los Flamencos, Antofagasta, Chili",
+                location_en: "RN Los Flamencos, Antofagasta, Chile",
+                date_fr: "29 décembre 2008",
+                date_en: "December 29<sup>th</sup>, 2008",
+                lat: -23.2878293,
+                lng: -68.1775689,
+                checklist_id: "S5772440",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "21101331",
+                name_fr: "Avocette des Andes",
+                name_en: "Andean Avocet",
+                scientific: "Recurvirostra andina",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "PN Nevado Tres Cruces",
+                location_fr: "PN Nevado Tres Cruces, Atacama, Chili",
+                location_en: "PN Nevado Tres Cruces, Atacama, Chile",
+                date_fr: "17 février 2007",
+                date_en: "February 17<sup>th</sup>, 2007",
+                lat: -26.9530768,
+                lng: -69.0900075,
+                checklist_id: "S5772436",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "551536761",
+                name_fr: "Avocette d\'Amérique",
+                name_en: "American Avocet",
+                scientific: "Recurvirostra americana",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Santa Barbara Harbor",
+                location_fr: "Santa Barbara Harbor, Californie, États-Unis",
+                location_en: "Santa Barbara Harbor, California, United States",
+                date_fr: "27 mars 2023",
+                date_en: "March 27<sup>th</sup>, 2023",
+                lat: 34.4098907,
+                lng: -119.6858793,
+                checklist_id: "S131967196",
+                iucn_status: "LC"
+            },
+            
+            {
+                ml: "552054281",
+                name_fr: "Avocette d\'Amérique",
+                name_en: "American Avocet",
+                scientific: "Recurvirostra americana",
+                family: "Recurvirostridae (Stilts and Avocets)",
+                location: "Santa Barbara Harbor",
+                location_fr: "Santa Barbara Harbor, Californie, États-Unis",
+                location_en: "Santa Barbara Harbor, California, United States",
+                date_fr: "27 mars 2023",
+                date_en: "March 27<sup>th</sup>, 2023",
+                lat: 34.4098907,
+                lng: -119.6858793,
+                checklist_id: "S131967196",
+                iucn_status: "LC"
+            }
+            
+        ];
+
+        // ========================================
+        // GROUPER PAR ESPÈCE (ordre phylogénétique)
+        // ========================================
+        const speciesMap = {};
+        const speciesOrder = []; // Pour garder l'ordre d'apparition (phylogénétique)
+
+        photosData.forEach((photo, index) => {
+            const sciName = photo.scientific;
+            if (!speciesMap[sciName]) {
+                speciesMap[sciName] = {
+                    scientific: sciName,
+                    name_fr: photo.name_fr,
+                    name_en: photo.name_en,
+                    iucn_status: photo.iucn_status,
+                    photos: []
+                };
+                speciesOrder.push(sciName); // Garder l'ordre d'apparition
+            }
+            speciesMap[sciName].photos.push({...photo, globalIndex: index});
+        });
+
+        // Convertir en tableau en gardant l'ordre phylogénétique
+        const speciesList = speciesOrder.map(sciName => speciesMap[sciName]);
+
+        // ========================================
+        // CHARGEMENT PROGRESSIF PAR ESPÈCE
+        // ========================================
+        const BATCH_SIZE = 24;  // Espèces par lot
+        let displayedCount = 0;
+        let activeLocationFilter = null;
+
+        function getFilteredSpeciesList() {
+            if (!activeLocationFilter) return speciesList;
+
+            // Filtrer et recréer la liste avec seulement les photos du lieu
+            // Garder l'ordre phylogénétique (pas de tri)
+            return speciesList
+                .map(sp => ({
+                    ...sp,
+                    photos: sp.photos.filter(p => p.location === activeLocationFilter)
+                }))
+                .filter(sp => sp.photos.length > 0);
+        }
+
+        function createSpeciesCard(species) {
+            const card = document.createElement('div');
+            card.className = 'species-card';
+            card.dataset.species = species.scientific;
+            card.title = species.scientific;
+            card.style.cursor = 'pointer';
+            card.onclick = () => openSpeciesLightbox(species.scientific);
+
+            const name = currentLang === 'fr' ? species.name_fr : species.name_en;
+            const firstPhoto = species.photos[0];
+            const photoCount = species.photos.length;
+            const badgeHtml = `<span class="photo-count-badge">${photoCount}</span>`;
+
+            card.innerHTML = `
+                <div class="card-image-wrapper">
+                    <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${firstPhoto.ml}/480"
+                         alt="${name}"
+                         loading="lazy"
+                         onload="fitContain(this)">
+                    ${badgeHtml}
+                </div>
+                <div class="species-info">
+                    <span class="species-common">${name}</span>
+                    <span class="species-sci">${species.scientific}</span>
+                </div>
+            `;
+
+            return card;
+        }
+
+        function renderNextBatch() {
+            const grid = document.getElementById('species-grid');
+            const loadingIndicator = document.getElementById('loading-indicator');
+
+            if (loadingIndicator) {
+                loadingIndicator.style.display = 'none';
+            }
+
+            const filteredList = getFilteredSpeciesList();
+            const endIndex = Math.min(displayedCount + BATCH_SIZE, filteredList.length);
+
+            for (let i = displayedCount; i < endIndex; i++) {
+                const species = filteredList[i];
+                const card = createSpeciesCard(species);
+                grid.appendChild(card);
+            }
+
+            displayedCount = endIndex;
+            updateLoadMoreButton();
+        }
+
+        function updateLoadMoreButton() {
+            const loadMoreContainer = document.getElementById('load-more-container');
+            const remainingCount = document.getElementById('remaining-count');
+            const filteredList = getFilteredSpeciesList();
+            const remaining = filteredList.length - displayedCount;
+
+            if (remaining > 0) {
+                loadMoreContainer.style.display = 'block';
+                const remainingText = currentLang === 'fr'
+                    ? ` (${remaining} restante${remaining > 1 ? 's' : ''})`
+                    : ` (${remaining} remaining)`;
+                remainingCount.textContent = remainingText;
+            } else {
+                loadMoreContainer.style.display = 'none';
+            }
+        }
+
+        function rebuildGrid() {
+            const grid = document.getElementById('species-grid');
+            grid.innerHTML = '';
+            displayedCount = 0;
+            renderNextBatch();
+        }
+
+        // Charger le premier lot au démarrage
+        document.addEventListener('DOMContentLoaded', () => {
+            rebuildGrid();
+        });
+
+        // Auto-charger au scroll + bouton retour en haut
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 800) {
+                const filteredList = getFilteredSpeciesList();
+                if (displayedCount < filteredList.length) {
+                    renderNextBatch();
+                }
+            }
+            if (backToTopBtn) {
+                backToTopBtn.classList.toggle('visible', window.scrollY > 400);
+            }
+        });
+
+        // Cliquer une espèce ouvre le feed plein écran (infinite scroll) sur cette espèce
+        function openSpeciesLightbox(sciName) {
+            const idx = speciesList.findIndex(sp => sp.scientific === sciName);
+            if (idx < 0) return;
+            window.location.href = `${FEED_URL}?s=${idx}`;
+        }
+
+        // Lien direct vers une photo précise (?photo=<ML>) : ouvre le feed sur l'espèce concernée.
+        // Retour du feed sur une espèce précise (?species=<nom scientifique>) : dérouler les
+        // lots nécessaires (chargement progressif) puis défiler jusqu'à la carte, même si elle
+        // n'était pas encore affichée.
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+
+            const ml = params.get('photo');
+            if (ml) {
+                const idx = speciesList.findIndex(sp => sp.photos.some(p => p.ml === ml));
+                if (idx >= 0) {
+                    window.location.href = `${FEED_URL}?s=${idx}`;
+                }
+                return;
+            }
+
+            const targetSci = params.get('species');
+            if (targetSci) {
+                const filteredList = getFilteredSpeciesList();
+                const idx = filteredList.findIndex(sp => sp.scientific === targetSci);
+                if (idx >= 0) {
+                    while (displayedCount <= idx) {
+                        renderNextBatch();
+                    }
+                    const card = document.querySelector(`.species-card[data-species="${CSS.escape(targetSci)}"]`);
+                    if (card) {
+                        card.scrollIntoView({ block: 'center' });
+                        card.classList.add('return-highlight');
+                        setTimeout(() => card.classList.remove('return-highlight'), 1600);
+                    }
+                }
+            }
+        });
+
+        
+    </script>
+</body>
+</html>

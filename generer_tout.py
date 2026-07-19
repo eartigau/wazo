@@ -31,13 +31,16 @@ except ImportError:
     openpyxl = None  # Optional - only for threatened species
 
 from generate_gallery import (
-    EBirdGalleryGenerator, 
-    verifier_tous_les_medias, 
-    generer_description_groupe_fr, 
-    mettre_au_pluriel, 
+    EBirdGalleryGenerator,
+    verifier_tous_les_medias,
+    generer_description_groupe_fr,
+    mettre_au_pluriel,
     formater_plage_dates,
     formater_date,
-    charger_cache
+    charger_cache,
+    ecrire_feed_json,
+    normaliser_nom_commun,
+    normaliser_nom_scientifique
 )
 
 
@@ -335,11 +338,12 @@ def construire_menu(config, generator, curation=None):
         desc_en = name_en_match.group(1) if name_en_match else ''
         
         file_id = f"gallery_{fam_code.lower()}"
-        
+
         familles_data.append({
             'family_code': fam_code,
             'desc_fr': desc_fr,
             'desc_en': desc_en,
+            'output_base': file_id,
             'file_fr': f"{file_id}_fr.html",
             'file_en': f"{file_id}_en.html"
         })
@@ -897,11 +901,55 @@ def generer_toutes_galeries():
             print(f"   ✓ pays_index_fr.html / pays_index_en.html ({len(pays_index_data)} pays)")
     
     # ========================================
-    # FAMILLES (désactivé - redondant avec liste des espèces)
+    # FAMILLES
     # ========================================
-    # La galerie par familles a été désactivée car elle est redondante
-    # avec la liste des espèces qui affiche déjà les espèces par famille.
-    
+    if familles_data:
+        print(f"\n🪶 Galeries par famille...")
+
+        noms_reserves = {'gallery_recent', 'gallery_best'}
+        noms_reserves.update(g['id'] for g in config.get('galeries_generales', []))
+        noms_reserves.update(v['id'] for v in config.get('voyages', []))
+
+        familles_generees = 0
+        for famille in familles_data:
+            if famille['output_base'] in noms_reserves:
+                print(f"   ⚠️  Ignoré {famille['family_code']}: collision de nom de fichier ({famille['output_base']})")
+                continue
+
+            photos = generator.filter_observations(
+                limit=LIMITE_FAMILLE,
+                family=famille['family_code'],
+                verifier_medias_en_ligne=VERIFIER_MEDIAS,
+                sort_by='taxonomy',
+                curation=curation
+            )
+
+            if photos:
+                species_set = set(p.get('scientific_name', '') for p in photos)
+                species_count = len(species_set)
+
+                generator.generate_gallery(
+                    output_base=famille['output_base'],
+                    title_fr=famille['family_code'],
+                    title_en=famille['family_code'],
+                    photos=photos,
+                    template_file=GALLERY_TEMPLATE,
+                    menu=menu,
+                    gallery_id=famille['output_base'],
+                    subtitle_fr=famille['desc_fr'],
+                    subtitle_en=famille['desc_en'],
+                    species_count=species_count,
+                    back_link_fr='species_list_fr.html',
+                    back_link_en='species_list_en.html',
+                    back_text_fr='Liste des espèces',
+                    back_text_en='Species list',
+                    iucn_statuts=iucn_statuts
+                )
+                familles_generees += 1
+                total_galeries += 1
+
+        print(f"   ✓ {familles_generees} galeries de famille générées")
+
     # ========================================
     # ESPÈCES MENACÉES
     # ========================================
@@ -1032,8 +1080,43 @@ def generer_toutes_galeries():
                     )
                     with open(f'menacees_{lang}.html', 'w', encoding='utf-8') as f:
                         f.write(html)
-                
+
                 print(f"   ✓ menacees_fr.html / menacees_en.html")
+
+                # Feed plein écran couvrant toutes les espèces menacées, par ordre de gravité de statut
+                feed_photos = []
+                for status in statuses_list:
+                    for sp in status['species']:
+                        for photo in sp['all_photos']:
+                            feed_photos.append({
+                                'ml_catalog_number': photo.get('ml_catalog_number', ''),
+                                'common_name_fr': sp['common_name_fr'],
+                                'common_name_en': sp['common_name_en'],
+                                'scientific_name': sp['sci_name'],
+                                'location': photo.get('location', ''),
+                                'location_full_fr': photo.get('location_full_fr', ''),
+                                'location_full_en': photo.get('location_full_en', ''),
+                                'date_fr': photo.get('date_fr', ''),
+                                'date_en': photo.get('date_en', ''),
+                                'latitude': photo.get('latitude'),
+                                'longitude': photo.get('longitude'),
+                                'checklist_id': photo.get('checklist_id', ''),
+                                'iucn_status': status['code']
+                            })
+
+                feed_template = env.get_template('gallery_feed_template.html')
+                ecrire_feed_json(feed_photos, 'menacees_feed_data.json')
+                with open('menacees_feed_fr.html', 'w', encoding='utf-8') as f:
+                    f.write(feed_template.render(
+                        lang='fr', gallery_title='Espèces menacées', photos=feed_photos, back_url='menacees_fr.html',
+                        data_url='menacees_feed_data.json'
+                    ))
+                with open('menacees_feed_en.html', 'w', encoding='utf-8') as f:
+                    f.write(feed_template.render(
+                        lang='en', gallery_title='Endangered species', photos=feed_photos, back_url='menacees_en.html',
+                        data_url='menacees_feed_data.json'
+                    ))
+                print(f"   ✓ menacees_feed_fr.html / menacees_feed_en.html (feed plein écran, {len(feed_photos)} photos)")
     
     # ========================================
     # PAGE ADMIN (numéros ML)
@@ -1096,12 +1179,12 @@ def generer_page_admin(config):
         with open(TAXONOMY_FILE, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                sci_name = row.get('SCI_NAME', '')
+                sci_name = normaliser_nom_scientifique(row.get('SCI_NAME', ''))
                 taxonomy[sci_name] = {
-                    'common_name_en': row.get('PRIMARY_COM_NAME', ''),
+                    'common_name_en': normaliser_nom_commun(row.get('PRIMARY_COM_NAME', '')),
                     'taxon_order': int(row.get('TAXON_ORDER', 999999))
                 }
-    
+
     # Lire toutes les observations avec photos
     all_photos = []
     with open(CSV_FILE, 'r', encoding='utf-8') as f:
@@ -1111,9 +1194,12 @@ def generer_page_admin(config):
             ml_string = ml_string.strip()
             if not ml_string:
                 continue
-            
-            scientific_name = row.get('Scientific Name', '')
-            common_name_fr = row.get('Common Name', '')
+
+            # Nettoyer les noms dès la lecture : enlever tout segment entre parenthèses
+            # (nom commun) ou crochets (nom scientifique), ex. "Cormoran impérial
+            # (groupe atriceps)" -> "Cormoran impérial"
+            scientific_name = normaliser_nom_scientifique(row.get('Scientific Name', ''))
+            common_name_fr = normaliser_nom_commun(row.get('Common Name', ''))
             common_name_en = taxonomy.get(scientific_name, {}).get('common_name_en', common_name_fr)
             date_raw = row.get('Date', '')
             

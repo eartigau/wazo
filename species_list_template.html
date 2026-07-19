@@ -5,23 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if lang == 'fr' %}Toutes les espèces{% else %}All species{% endif %}</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-    <link rel="stylesheet" href="gallery.css">
+    <link rel="stylesheet" href="gallery.css?v=2">
     <style>
-        /* Marqueur flamant rose */
-        .flamingo-marker {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
-            border-radius: 50%;
-            border: 3px solid #2d5a27;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.3);
-            font-size: 20px;
-        }
-        
         /* Compteur d'espèces par famille */
         .family-title {
             display: flex;
@@ -36,56 +21,51 @@
             color: var(--text-medium);
             margin-left: auto;
         }
-        
-        /* Wrapper image avec skeleton */
+        .family-title a.family-link {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .family-title a.family-link:hover {
+            border-bottom-color: currentColor;
+        }
+
+        /* Wrapper image avec skeleton : petite marge intérieure, fond = couleur de la carte
+           (pas de bande visible), et ce sont les coins de la photo elle-même (taille auto,
+           pas 100%) qui sont arrondis. Ratio fixe 3:2 pour toutes les cartes : une photo
+           portrait est encadrée avec de la marge horizontale plutôt que de faire varier la
+           hauteur de la case. */
         .card-image-wrapper {
             position: relative;
-            width: 100%;
-            aspect-ratio: 4/3;
+            aspect-ratio: 3/2;
             overflow: hidden;
-            background: linear-gradient(135deg, #f8f9f8 0%, #f0f2f0 100%);
+            border-radius: 10px;
+            background: var(--bg-white);
+            margin: 6px 6px 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .card-image-wrapper .skeleton-image {
             position: absolute;
             inset: 0;
         }
+        /* Taille de secours avant que le JS (onload) ne calcule les dimensions exactes :
+           Safari ne résout pas correctement width:auto/height:auto + max-width/max-height
+           sur un enfant flex (il ignore parfois max-height), ce qui rognait certaines
+           photos portrait. */
         .card-image-wrapper .lazy-image {
-            position: absolute;
-            inset: 0;
             width: 100%;
             height: 100%;
             object-fit: contain;
+            border-radius: 10px;
             opacity: 0;
             transition: opacity 0.4s ease-out;
         }
         .card-image-wrapper .lazy-image.loaded {
             opacity: 1;
         }
-        
-        /* Badge statut IUCN dans la lightbox */
-        .iucn-status-badge {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 13px;
-            color: #666;
-            margin-top: 8px;
-        }
-        .iucn-badge {
-            display: inline-block;
-            font-size: 11px;
-            font-weight: 700;
-            padding: 2px 6px;
-            border-radius: 3px;
-            text-transform: uppercase;
-        }
-        .iucn-CR { background: #d32f2f; color: white; }
-        .iucn-EN { background: #f57c00; color: white; }
-        .iucn-VU { background: #fbc02d; color: #333; }
-        .iucn-NT { background: #81c784; color: #333; }
-        .iucn-DD { background: #9e9e9e; color: white; }
-        .iucn-EW { background: #6a1b9a; color: white; }
-        .iucn-EX { background: #000000; color: white; }
     </style>
 </head>
 <body>
@@ -136,67 +116,20 @@
         <div class="search-results" id="search-results"></div>
     </div>
 
-    <!-- LISTE DES ESPÈCES - Rendu dynamique -->
+    <!-- LISTE DES ESPÈCES - Rendu dynamique (desktop/tablette) -->
     <div class="species-list-container" id="species-list-dynamic">
         <!-- Les cartes sont générées dynamiquement par JavaScript -->
         <div class="loading-indicator" id="loading-indicator">
             {% if lang == 'fr' %}Chargement...{% else %}Loading...{% endif %}
         </div>
     </div>
-    
+
     <!-- Bouton charger plus -->
     <div class="load-more-container" id="load-more-container" style="display: none;">
         <button class="load-more-btn" id="load-more-btn" onclick="renderNextBatch()">
             {% if lang == 'fr' %}Afficher plus d'espèces{% else %}Show more species{% endif %}
             <span id="remaining-count"></span>
         </button>
-    </div>
-
-    <!-- LIGHTBOX -->
-    <div class="lightbox" id="lightbox">
-        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-        <button class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1)">&#10094;</button>
-        <button class="lightbox-nav lightbox-next" onclick="navigateLightbox(1)">&#10095;</button>
-
-        <!-- En-tête espèce (au-dessus de la photo) -->
-        <div class="lightbox-species-header">
-            <div class="lightbox-family" id="lightbox-family" style="display: none;"></div>
-            <h2 id="lightbox-title"></h2>
-            <p class="scientific-name" id="lightbox-scientific"></p>
-            <div class="iucn-status-badge" id="lightbox-iucn" style="display: none;"></div>
-        </div>
-
-        <div class="lightbox-content">
-            <div class="lightbox-image-container">
-                <img id="lightbox-img" src="" alt="">
-            </div>
-            <div class="lightbox-sidebar">
-                
-                <!-- Compteur de photos -->
-                <div class="photo-counter" id="lightbox-counter"></div>
-                
-                <!-- Section Info -->
-                <div class="lightbox-info">
-                    <div class="info-row" id="lightbox-location-row">
-                        <span class="info-icon">🌍</span>
-                        <span id="lightbox-location"></span>
-                    </div>
-                    <div class="info-row" id="lightbox-date-row">
-                        <span class="info-icon">📅</span>
-                        <span id="lightbox-date"></span>
-                    </div>
-                </div>
-                
-                <!-- Carte -->
-                <div id="lightbox-map"></div>
-                
-                <!-- Lien eBird -->
-                <a id="lightbox-ebird" href="#" target="_blank" class="ebird-link">
-                    <img src="https://ebird.org/favicon.ico" alt="eBird" class="ebird-icon">
-                    {% if lang == 'fr' %}Liste eBird{% else %}eBird checklist{% endif %}
-                </a>
-            </div>
-        </div>
     </div>
 
     <!-- FOOTER -->
@@ -209,11 +142,27 @@
     <a href="#" class="back-to-top" id="backToTop">↑</a>
 
     <!-- SCRIPTS -->
-    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="gallery-common.js"></script>
     <script>
         const currentLang = '{{ lang }}';
         const BATCH_SIZE = 60;  // Nombre d'espèces chargées par batch
-        
+        const FEED_URL = '{{ output_base }}_feed_{{ lang }}.html';
+
+        // Calcule et fixe la taille exacte (en px) de l'image pour qu'elle tienne dans son
+        // conteneur en respectant son ratio, sans dépendre de l'algorithme du navigateur :
+        // Safari ne gère pas toujours bien width:auto/height:auto + max-width/max-height
+        // sur un enfant flex (il ignore parfois max-height), ce qui rognait certaines
+        // photos portrait.
+        function fitContain(img) {
+            const box = img.parentElement;
+            const cs = getComputedStyle(box);
+            const availW = box.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+            const availH = box.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+            const scale = Math.min(availW / img.naturalWidth, availH / img.naturalHeight);
+            img.style.width = Math.round(img.naturalWidth * scale) + 'px';
+            img.style.height = Math.round(img.naturalHeight * scale) + 'px';
+        }
+
         // ========================================
         // DONNÉES DES ESPÈCES (pour l'affichage)
         // ========================================
@@ -236,35 +185,6 @@
             {% endfor %}
         ];
         
-        // Données complètes pour le lightbox (toutes les photos par espèce)
-        const speciesData = {
-            {% for family in families %}
-            {% for sp in family.species %}
-            "{{ sp.sci_name|replace('\\', '\\\\')|replace('"', '\\"') }}": {
-                name_fr: "{{ sp.common_name_fr|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
-                name_en: "{{ sp.common_name_en|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
-                scientific: "{{ sp.sci_name }}",
-                family: "{{ family.code_display_fr if lang == 'fr' else family.code_display_en }}",
-                iucn_status: "{{ sp.iucn_status|default('', true) }}",
-                photos: [
-                    {% for photo in sp.all_photos %}
-                    {
-                        ml: "{{ photo.ml_catalog_number }}",
-                        date_fr: "{{ photo.date_fr }}",
-                        date_en: "{{ photo.date_en }}",
-                        location_fr: "{{ photo.location_full_fr|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
-                        location_en: "{{ photo.location_full_en|replace('\\', '\\\\')|replace('"', '\\"')|replace("'", "\\'") }}",
-                        lat: {{ photo.latitude if photo.latitude else 'null' }},
-                        lng: {{ photo.longitude if photo.longitude else 'null' }},
-                        checklist_id: "{{ photo.checklist_id }}"
-                    }{% if not loop.last %},{% endif %}
-                    {% endfor %}
-                ]
-            }{% if not loop.last %},{% endif %}
-            {% endfor %}{% if not loop.last %},{% endif %}
-            {% endfor %}
-        };
-
         // Compteur d'espèces par famille
         const familyCounts = {};
         speciesListData.forEach(sp => {
@@ -278,11 +198,6 @@
         let filteredSpecies = [...speciesListData];
         let currentSearchQuery = '';
         let renderedFamilies = new Set();
-        
-        let currentSpecies = null;
-        let currentPhotoIndex = 0;
-        let map = null;
-        let marker = null;
 
         // ========================================
         // RENDU DYNAMIQUE DES CARTES
@@ -299,29 +214,28 @@
             card.dataset.nameFr = sp.nameFr.toLowerCase();
             card.dataset.nameEn = sp.nameEn.toLowerCase();
             card.dataset.sciName = sp.sciName.toLowerCase();
+            card.title = sp.sciName;
             card.onclick = () => openSpeciesLightbox(sp.sciName);
-            
+
             const name = currentLang === 'fr' ? sp.nameFr : sp.nameEn;
-            const photoCountHtml = sp.photoCount > 1 
-                ? `<span class="photo-count">${sp.photoCount} photos</span>` 
-                : (sp.photoCount === 1 ? `<span class="photo-count">1 photo</span>` : '');
-            
+            const badgeHtml = `<span class="photo-count-badge">${sp.photoCount}</span>`;
+
             card.innerHTML = `
                 <div class="card-image-wrapper">
                     <div class="skeleton-image"></div>
-                    <img class="lazy-image" 
-                         src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${sp.ml}/480" 
+                    <img class="lazy-image"
+                         src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${sp.ml}/480"
                          alt="${name}"
                          loading="lazy"
-                         onload="this.classList.add('loaded'); this.previousElementSibling.style.display='none';">
+                         onload="this.classList.add('loaded'); this.previousElementSibling.style.display='none'; fitContain(this);">
+                    ${badgeHtml}
                 </div>
                 <div class="species-info">
                     <span class="species-common">${name}</span>
-                    <span class="species-scientific">${sp.sciName.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '')}</span>
-                    ${photoCountHtml}
+                    <span class="species-sci">${sp.sciName}</span>
                 </div>
             `;
-            
+
             return card;
         }
         
@@ -334,13 +248,16 @@
             const display = currentLang === 'fr' ? familyDisplayFr : familyDisplayEn;
             const name = currentLang === 'fr' ? familyNameFr : familyNameEn;
             const nameHtml = name ? ` (${name})` : '';
-            const countLabel = currentLang === 'fr' 
+            const countLabel = currentLang === 'fr'
                 ? `${count} espèce${count > 1 ? 's' : ''}`
                 : `${count} species`;
-            
+            const titleContent = familyCode !== 'Unknown'
+                ? `<a class="family-link" href="gallery_${familyCode.toLowerCase()}_${currentLang}.html">${display}${nameHtml}</a>`
+                : `${display}${nameHtml}`;
+
             section.innerHTML = `
                 <h2 class="family-title">
-                    <span>${display}${nameHtml}</span>
+                    <span>${titleContent}</span>
                     <span class="family-count">${countLabel}</span>
                 </h2>
                 <div class="species-grid"></div>
@@ -419,10 +336,11 @@
             // Supprimer toutes les sections famille
             const sections = container.querySelectorAll('.family-section');
             sections.forEach(s => s.remove());
-            
+
             displayedCount = 0;
             renderedFamilies.clear();
         }
+
 
         // ========================================
         // RECHERCHE D'ESPÈCES
@@ -466,149 +384,39 @@
             clearRenderedContent();
             renderNextBatch();
         }
-        
-        // ========================================
-        // LIGHTBOX
-        // ========================================
+
+        // Cliquer une espèce ouvre le feed plein écran (infinite scroll) sur cette espèce
 
         function openSpeciesLightbox(sciName) {
-            currentSpecies = speciesData[sciName];
-            if (!currentSpecies) return;
-            
-            currentPhotoIndex = 0;
-            showPhoto();
-            
-            document.getElementById('lightbox').classList.add('active');
-            document.body.style.overflow = 'hidden';
+            const idx = speciesListData.findIndex(sp => sp.sciName === sciName);
+            if (idx < 0) return;
+            window.location.href = `${FEED_URL}?s=${idx}`;
         }
 
-        function showPhoto() {
-            if (!currentSpecies) return;
-            
-            const photo = currentSpecies.photos[currentPhotoIndex];
-            if (!photo) return;
-            
-            document.getElementById('lightbox-img').src = 
-                `https://cdn.download.ams.birds.cornell.edu/api/v2/asset/${photo.ml}/2400`;
-            
-            document.getElementById('lightbox-family').textContent = currentSpecies.family;
-            document.getElementById('lightbox-title').textContent = 
-                currentLang === 'fr' ? currentSpecies.name_fr : currentSpecies.name_en;
-            document.getElementById('lightbox-scientific').textContent = currentSpecies.scientific.replace(/\s*\((?:forme domestique|Feral Pigeon)\)/g, '');
-            
-            // Afficher le statut IUCN si l'espèce est menacée
-            const iucnDiv = document.getElementById('lightbox-iucn');
-            if (currentSpecies.iucn_status && currentSpecies.iucn_status !== 'LC' && currentSpecies.iucn_status !== 'NE') {
-                const statusNames = {
-                    'CR': { fr: 'En danger critique', en: 'Critically Endangered' },
-                    'CR (PE)': { fr: 'En danger critique', en: 'Critically Endangered' },
-                    'CR (PEW)': { fr: 'En danger critique', en: 'Critically Endangered' },
-                    'EN': { fr: 'En danger', en: 'Endangered' },
-                    'VU': { fr: 'Vulnérable', en: 'Vulnerable' },
-                    'NT': { fr: 'Quasi menacé', en: 'Near Threatened' },
-                    'DD': { fr: 'Données insuffisantes', en: 'Data Deficient' },
-                    'EW': { fr: 'Éteint à l\'état sauvage', en: 'Extinct in the Wild' },
-                    'EX': { fr: 'Éteint', en: 'Extinct' }
-                };
-                const statusCode = currentSpecies.iucn_status.split(' ')[0];
-                const statusInfo = statusNames[currentSpecies.iucn_status] || statusNames[statusCode] || { fr: currentSpecies.iucn_status, en: currentSpecies.iucn_status };
-                const statusLabel = currentLang === 'fr' ? statusInfo.fr : statusInfo.en;
-                iucnDiv.innerHTML = `<span class="iucn-badge iucn-${statusCode}">${statusCode}</span> ${statusLabel}`;
-                iucnDiv.style.display = 'block';
-            } else {
-                iucnDiv.style.display = 'none';
+        // Retour du feed plein écran sur une espèce précise (?species=<nom scientifique>) :
+        // dérouler les lots nécessaires (chargement progressif) puis défiler jusqu'à la carte,
+        // même si elle n'était pas encore affichée — important pour cette liste de plusieurs
+        // centaines d'espèces où la cible peut être loin en bas.
+        window.addEventListener('load', () => {
+            const params = new URLSearchParams(window.location.search);
+            const targetSci = params.get('species');
+            if (!targetSci) return;
+            const idx = filteredSpecies.findIndex(sp => sp.sciName === targetSci);
+            if (idx < 0) return;
+            while (displayedCount <= idx) {
+                renderNextBatch();
             }
-            
-            const total = currentSpecies.photos.length;
-            if (total > 1) {
-                document.getElementById('lightbox-counter').textContent = 
-                    `Photo ${currentPhotoIndex + 1} / ${total}`;
-                document.getElementById('lightbox-counter').style.display = 'block';
-            } else {
-                document.getElementById('lightbox-counter').style.display = 'none';
+            const card = document.querySelector(`.species-card[data-species="${CSS.escape(targetSci)}"]`);
+            if (card) {
+                card.scrollIntoView({ block: 'center' });
+                card.classList.add('return-highlight');
+                setTimeout(() => card.classList.remove('return-highlight'), 1600);
             }
-            
-            document.getElementById('lightbox-location').textContent = 
-                currentLang === 'fr' ? photo.location_fr : photo.location_en;
-            document.getElementById('lightbox-date').innerHTML = 
-                currentLang === 'fr' ? photo.date_fr : photo.date_en;
-            
-            if (photo.checklist_id) {
-                document.getElementById('lightbox-ebird').href = 
-                    `https://ebird.org/checklist/${photo.checklist_id}`;
-                document.getElementById('lightbox-ebird').style.display = 'inline-flex';
-            } else {
-                document.getElementById('lightbox-ebird').style.display = 'none';
-            }
-            
-            const mapDiv = document.getElementById('lightbox-map');
-            const isMobile = window.innerWidth <= 768;
-            
-            if (photo.lat && photo.lng && !isMobile) {
-                mapDiv.style.display = 'block';
-                
-                if (!map) {
-                    map = L.map('lightbox-map', {
-                        zoomControl: false,
-                        attributionControl: false
-                    });
-                    
-                    // Carto Light tiles
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-                        maxZoom: 19
-                    }).addTo(map);
-                }
-                
-                map.setView([photo.lat, photo.lng], 4);
-                
-                const flamingoIcon = L.divIcon({
-                    className: '',
-                    html: '<div class="flamingo-marker">🦩</div>',
-                    iconSize: [36, 36],
-                    iconAnchor: [18, 18]
-                });
-                
-                if (marker) {
-                    marker.setLatLng([photo.lat, photo.lng]);
-                } else {
-                    marker = L.marker([photo.lat, photo.lng], { icon: flamingoIcon }).addTo(map);
-                }
-                
-                setTimeout(() => map.invalidateSize(), 100);
-            } else {
-                mapDiv.style.display = 'none';
-            }
-        }
-
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = '';
-        }
-
-        function navigateLightbox(direction) {
-            if (!currentSpecies) return;
-            
-            const total = currentSpecies.photos.length;
-            currentPhotoIndex = (currentPhotoIndex + direction + total) % total;
-            showPhoto();
-        }
+        });
 
         // ========================================
         // ÉVÉNEMENTS
         // ========================================
-        
-        // Clavier lightbox
-        document.addEventListener('keydown', (e) => {
-            if (!document.getElementById('lightbox').classList.contains('active')) return;
-            if (e.key === 'Escape') closeLightbox();
-            if (e.key === 'ArrowLeft') navigateLightbox(-1);
-            if (e.key === 'ArrowRight') navigateLightbox(1);
-        });
-
-        // Clic hors contenu pour fermer
-        document.getElementById('lightbox').addEventListener('click', (e) => {
-            if (e.target.id === 'lightbox') closeLightbox();
-        });
 
         // Bouton retour en haut
         const backToTop = document.getElementById('backToTop');
@@ -661,44 +469,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderNextBatch();
         });
-        
-        // Menu mobile hamburger
-        function toggleMobileMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
-        }
-        
-        // Fermer menu au clic ailleurs
-        document.addEventListener('click', (e) => {
-            const nav = document.querySelector('nav');
-            const menu = document.getElementById('navMenu');
-            if (menu && !nav.contains(e.target)) {
-                menu.classList.remove('active');
-            }
-        });
-        
-        // Swipe pour lightbox sur mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-        
-        document.getElementById('lightbox').addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        }, { passive: true });
-        
-        document.getElementById('lightbox').addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        }, { passive: true });
-        
-        function handleSwipe() {
-            const diff = touchStartX - touchEndX;
-            if (Math.abs(diff) > 50) {
-                if (diff > 0) {
-                    navigateLightbox(1);
-                } else {
-                    navigateLightbox(-1);
-                }
-            }
-        }
     </script>
 </body>
 </html>
