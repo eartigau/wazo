@@ -301,15 +301,15 @@ def construire_menu(config, generator, curation=None):
             'file_en': 'menacees_en.html'
         })
     
-    # Lien Sons (sera activé si des sons existent)
-    # On ajoute toujours au menu, sera filtré après si pas de sons
-    #menu.append({
-    #    'name_fr': 'Sons',
-    #    'name_en': 'Sounds',
-    #    'file_fr': 'sounds_gallery_fr.html',
-    #    'file_en': 'sounds_gallery_en.html',
-    #    '_conditional': 'sounds'  # Marqueur pour filtrage conditionnel
-    #})
+    # Lien Sons (seulement si le cache médias contient au moins un son)
+    has_sounds = any(v.get('status') == 'son' for v in generator.media_cache.values())
+    if has_sounds:
+        menu.append({
+            'name_fr': 'Sons',
+            'name_en': 'Sounds',
+            'file_fr': 'sounds_gallery_fr.html',
+            'file_en': 'sounds_gallery_en.html'
+        })
     
     # Construire les données des familles pour la génération
     species_list = generator.get_species_list()
@@ -1118,6 +1118,20 @@ def generer_toutes_galeries():
                     ))
                 print(f"   ✓ menacees_feed_fr.html / menacees_feed_en.html (feed plein écran, {len(feed_photos)} photos)")
     
+    # ========================================
+    # GALERIE DES SONS
+    # ========================================
+    has_sounds = any(v.get('status') == 'son' for v in generator.media_cache.values())
+    if has_sounds:
+        print(f"\n🎵 Galerie des sons...")
+        generator.generate_sounds_gallery(
+            output_base='sounds_gallery',
+            template_file='sounds_template.html',
+            menu=menu,
+            curation=curation
+        )
+        total_galeries += 1
+
     # ========================================
     # PAGE ADMIN (numéros ML)
     # ========================================

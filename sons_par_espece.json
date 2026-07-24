@@ -1,0 +1,3496 @@
+[
+  {
+    "sci_name": "Ortalis vetula",
+    "common_name_fr": "Ortalide chacamel",
+    "common_name_en": "Plain Chachalaca",
+    "taxon_order": 945,
+    "family": "Cracidae",
+    "family_full": "Cracidae (Guans, Chachalacas, and Curassows)",
+    "best_photo_ml": "661335314",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "661124815",
+        "date_raw": "2026-07-10",
+        "date_fr": "10 juillet 2026",
+        "date_en": "July 10<sup>th</sup>, 2026",
+        "location": "PN Tulum",
+        "location_full_fr": "PN Tulum, Mexique",
+        "location_full_en": "PN Tulum, Mexico",
+        "latitude": 20.2145325,
+        "longitude": -87.429142,
+        "checklist_id": "S370230824",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Colinus nigrogularis",
+    "common_name_fr": "Colin à gorge noire",
+    "common_name_en": "Black-throated Bobwhite",
+    "taxon_order": 1052,
+    "family": "Odontophoridae",
+    "family_full": "Odontophoridae (New World Quail)",
+    "best_photo_ml": "660638600",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660643696",
+        "date_raw": "2026-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2026",
+        "date_en": "July 1<sup>st</sup>, 2026",
+        "location": "Reserva de la Biosfera Ría Celestún",
+        "location_full_fr": "Reserva de la Biosfera Ría Celestún, Mexique",
+        "location_full_en": "Reserva de la Biosfera Ría Celestún, Mexico",
+        "latitude": 20.8940859,
+        "longitude": -90.3865782,
+        "checklist_id": "S366214835",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Patagioenas flavirostris",
+    "common_name_fr": "Pigeon à bec rouge",
+    "common_name_en": "Red-billed Pigeon",
+    "taxon_order": 1957,
+    "family": "Columbidae",
+    "family_full": "Columbidae (Pigeons and Doves)",
+    "best_photo_ml": "661280180",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "661071779",
+        "date_raw": "2026-07-09",
+        "date_fr": "9 juillet 2026",
+        "date_en": "July 9<sup>th</sup>, 2026",
+        "location": "Ecoparque Bacalar",
+        "location_full_fr": "Ecoparque Bacalar, Mexique",
+        "location_full_en": "Ecoparque Bacalar, Mexico",
+        "latitude": 18.68485,
+        "longitude": -88.3853316,
+        "checklist_id": "S369762124",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660921936",
+        "date_raw": "2026-07-05",
+        "date_fr": "5 juillet 2026",
+        "date_en": "July 5<sup>th</sup>, 2026",
+        "location": "Aldea Kinich Ahau",
+        "location_full_fr": "Aldea Kinich Ahau, Mexique",
+        "location_full_en": "Aldea Kinich Ahau, Mexico",
+        "latitude": 18.5207247,
+        "longitude": -89.3992656,
+        "checklist_id": "S368549385",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660408541",
+        "date_raw": "2026-06-27",
+        "date_fr": "27 juin 2026",
+        "date_en": "June 27<sup>th</sup>, 2026",
+        "location": "Camino cerca del cenote Noolhan",
+        "location_full_fr": "Camino cerca del cenote Noolhan, Mexique",
+        "location_full_en": "Camino cerca del cenote Noolhan, Mexico",
+        "latitude": 20.7150515,
+        "longitude": -88.2057051,
+        "checklist_id": "S364164243",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Leptotila jamaicensis",
+    "common_name_fr": "Colombe de Jamaïque",
+    "common_name_en": "Caribbean Dove",
+    "taxon_order": 2342,
+    "family": "Columbidae",
+    "family_full": "Columbidae (Pigeons and Doves)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660687972",
+        "date_raw": "2026-07-02",
+        "date_fr": "2 juillet 2026",
+        "date_en": "July 2<sup>nd</sup>, 2026",
+        "location": "Charcas Iss 1",
+        "location_full_fr": "Charcas Iss 1, Mexique",
+        "location_full_en": "Charcas Iss 1, Mexico",
+        "latitude": 20.8692074,
+        "longitude": -90.3890511,
+        "checklist_id": "S366614148",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660688020",
+        "date_raw": "2026-07-02",
+        "date_fr": "2 juillet 2026",
+        "date_en": "July 2<sup>nd</sup>, 2026",
+        "location": "Charcas Iss 1",
+        "location_full_fr": "Charcas Iss 1, Mexique",
+        "location_full_en": "Charcas Iss 1, Mexico",
+        "latitude": 20.8692074,
+        "longitude": -90.3890511,
+        "checklist_id": "S366614148",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Dromococcyx phasianellus",
+    "common_name_fr": "Géocoucou faisan",
+    "common_name_en": "Pheasant Cuckoo",
+    "taxon_order": 3032,
+    "family": "Cuculidae",
+    "family_full": "Cuculidae (Cuckoos)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660408672",
+        "date_raw": "2026-06-27",
+        "date_fr": "27 juin 2026",
+        "date_en": "June 27<sup>th</sup>, 2026",
+        "location": "Camino cerca del cenote Noolhan",
+        "location_full_fr": "Camino cerca del cenote Noolhan, Mexique",
+        "location_full_en": "Camino cerca del cenote Noolhan, Mexico",
+        "latitude": 20.7150515,
+        "longitude": -88.2057051,
+        "checklist_id": "S364164243",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Coccyzus minor",
+    "common_name_fr": "Coulicou manioc",
+    "common_name_en": "Mangrove Cuckoo",
+    "taxon_order": 3241,
+    "family": "Cuculidae",
+    "family_full": "Cuculidae (Cuckoos)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660660915",
+        "date_raw": "2026-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2026",
+        "date_en": "July 1<sup>st</sup>, 2026",
+        "location": "Reserva de la Biosfera Ría Celestún",
+        "location_full_fr": "Reserva de la Biosfera Ría Celestún, Mexique",
+        "location_full_en": "Reserva de la Biosfera Ría Celestún, Mexico",
+        "latitude": 20.8940859,
+        "longitude": -90.3865782,
+        "checklist_id": "S366405211",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Chaetura vauxi",
+    "common_name_fr": "Martinet de Vaux",
+    "common_name_en": "Vaux's Swift",
+    "taxon_order": 3897,
+    "family": "Apodidae",
+    "family_full": "Apodidae (Swifts)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660566392",
+        "date_raw": "2026-06-29",
+        "date_fr": "29 juin 2026",
+        "date_en": "June 29<sup>th</sup>, 2026",
+        "location": "Gran Parque \"La Plancha\"",
+        "location_full_fr": "Gran Parque \"La Plancha\", Mexique",
+        "location_full_en": "Gran Parque \"La Plancha\", Mexico",
+        "latitude": 20.9787511,
+        "longitude": -89.6099854,
+        "checklist_id": "S365566254",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Rallus aquaticus",
+    "common_name_fr": "Râle d'eau",
+    "common_name_en": "Water Rail",
+    "taxon_order": 5308,
+    "family": "Rallidae",
+    "family_full": "Rallidae (Rails, Gallinules, and Coots)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "639066739",
+        "date_raw": "2025-07-18",
+        "date_fr": "18 juillet 2025",
+        "date_en": "July 18<sup>th</sup>, 2025",
+        "location": "ENS de la Butte et du Marais de Paloux (St-Pierre-le-Chastel)",
+        "location_full_fr": "ENS de la Butte et du Marais de Paloux (St-Pierre-le-Chastel), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "ENS de la Butte et du Marais de Paloux (St-Pierre-le-Chastel), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.8043756,
+        "longitude": 2.8428679,
+        "checklist_id": "S260709046",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Himantopus himantopus",
+    "common_name_fr": "Échasse blanche",
+    "common_name_en": "Black-winged Stilt",
+    "taxon_order": 5763,
+    "family": "Recurvirostridae",
+    "family_full": "Recurvirostridae (Stilts and Avocets)",
+    "best_photo_ml": "621754497",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "621569008",
+        "date_raw": "2024-07-17",
+        "date_fr": "17 juillet 2024",
+        "date_en": "July 17<sup>th</sup>, 2024",
+        "location": "Ria de Alvor",
+        "location_full_fr": "Ria de Alvor, Portugal",
+        "location_full_en": "Ria de Alvor, Portugal",
+        "latitude": 37.1475059,
+        "longitude": -8.5947418,
+        "checklist_id": "S187357843",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Jacana spinosa",
+    "common_name_fr": "Jacana du Mexique",
+    "common_name_en": "Northern Jacana",
+    "taxon_order": 5988,
+    "family": "Jacanidae",
+    "family_full": "Jacanidae (Jacanas)",
+    "best_photo_ml": "660541585",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660541710",
+        "date_raw": "2026-06-29",
+        "date_fr": "29 juin 2026",
+        "date_en": "June 29<sup>th</sup>, 2026",
+        "location": "Parque Acuaparque",
+        "location_full_fr": "Parque Acuaparque, Mexique",
+        "location_full_en": "Parque Acuaparque, Mexico",
+        "latitude": 20.9477032,
+        "longitude": -89.5776299,
+        "checklist_id": "S365357969",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Chroicocephalus philadelphia",
+    "common_name_fr": "Mouette de Bonaparte",
+    "common_name_en": "Bonaparte's Gull",
+    "taxon_order": 6462,
+    "family": "Laridae",
+    "family_full": "Laridae (Gulls, Terns, and Skimmers)",
+    "best_photo_ml": "360394741",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "366597921",
+        "date_raw": "2021-08-05",
+        "date_fr": "5 août 2021",
+        "date_en": "August 5<sup>th</sup>, 2021",
+        "location": "Pointe à John (utilisez un site plus précis)",
+        "location_full_fr": "Pointe à John (utilisez un site plus précis), Québec, Canada",
+        "location_full_en": "Pointe à John (utilisez un site plus précis), Quebec, Canada",
+        "latitude": 48.23095,
+        "longitude": -69.55188,
+        "checklist_id": "S92805468",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Botaurus exilis",
+    "common_name_fr": "Petit Blongios",
+    "common_name_en": "Least Bittern",
+    "taxon_order": 7565,
+    "family": "Ardeidae",
+    "family_full": "Ardeidae (Herons, Egrets, and Bitterns)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "619291996",
+        "date_raw": "2024-05-19",
+        "date_fr": "19 mai 2024",
+        "date_en": "May 19<sup>th</sup>, 2024",
+        "location": "Domaine St-Paul",
+        "location_full_fr": "Domaine St-Paul, Québec, Canada",
+        "location_full_en": "Domaine St-Paul, Quebec, Canada",
+        "latitude": 45.4546332,
+        "longitude": -73.5529532,
+        "checklist_id": "S175611058",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "452600961",
+        "date_raw": "2022-05-23",
+        "date_fr": "23 mai 2022",
+        "date_en": "May 23<sup>rd</sup>, 2022",
+        "location": "RF Marguerite-D'Youville",
+        "location_full_fr": "RF Marguerite-D'Youville, Québec, Canada",
+        "location_full_en": "RF Marguerite-D'Youville, Quebec, Canada",
+        "latitude": 45.3914585,
+        "longitude": -73.7611771,
+        "checklist_id": "S111114391",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "452601171",
+        "date_raw": "2022-05-23",
+        "date_fr": "23 mai 2022",
+        "date_en": "May 23<sup>rd</sup>, 2022",
+        "location": "RF Marguerite-D'Youville",
+        "location_full_fr": "RF Marguerite-D'Youville, Québec, Canada",
+        "location_full_en": "RF Marguerite-D'Youville, Quebec, Canada",
+        "latitude": 45.3914585,
+        "longitude": -73.7611771,
+        "checklist_id": "S111114391",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Accipiter nisus",
+    "common_name_fr": "Épervier d'Europe",
+    "common_name_en": "Eurasian Sparrowhawk",
+    "taxon_order": 8245,
+    "family": "Accipitridae",
+    "family_full": "Accipitridae (Hawks, Eagles, and Kites)",
+    "best_photo_ml": "468713461",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "622196233",
+        "date_raw": "2024-08-05",
+        "date_fr": "5 août 2024",
+        "date_en": "August 5<sup>th</sup>, 2024",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S190293701",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Astur cooperii",
+    "common_name_fr": "Épervier de Cooper",
+    "common_name_en": "Cooper's Hawk",
+    "taxon_order": 8278,
+    "family": "Accipitridae",
+    "family_full": "Accipitridae (Hawks, Eagles, and Kites)",
+    "best_photo_ml": "656125609",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "548946461",
+        "date_raw": "2023-03-24",
+        "date_fr": "24 mars 2023",
+        "date_en": "March 24<sup>th</sup>, 2023",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S131663279",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Strix varia",
+    "common_name_fr": "Chouette rayée",
+    "common_name_en": "Barred Owl",
+    "taxon_order": 9219,
+    "family": "Strigidae",
+    "family_full": "Strigidae (Owls)",
+    "best_photo_ml": "634963168",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "634960470",
+        "date_raw": "2025-05-03",
+        "date_fr": "3 mai 2025",
+        "date_en": "May 3<sup>rd</sup>, 2025",
+        "location": "Parc du Mont-Royal",
+        "location_full_fr": "Parc du Mont-Royal, Québec, Canada",
+        "location_full_en": "Parc du Mont-Royal, Quebec, Canada",
+        "latitude": 45.5055593,
+        "longitude": -73.5882289,
+        "checklist_id": "S232669084",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Trogon melanocephalus",
+    "common_name_fr": "Trogon à tête noire",
+    "common_name_en": "Black-headed Trogon",
+    "taxon_order": 9534,
+    "family": "Trogonidae",
+    "family_full": "Trogonidae (Trogons)",
+    "best_photo_ml": "661281009",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660922106",
+        "date_raw": "2026-07-05",
+        "date_fr": "5 juillet 2026",
+        "date_en": "July 5<sup>th</sup>, 2026",
+        "location": "Aldea Kinich Ahau",
+        "location_full_fr": "Aldea Kinich Ahau, Mexique",
+        "location_full_en": "Aldea Kinich Ahau, Mexico",
+        "latitude": 18.5207247,
+        "longitude": -89.3992656,
+        "checklist_id": "S368273364",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Momotus lessonii",
+    "common_name_fr": "Motmot de Lesson",
+    "common_name_en": "Lesson's Motmot",
+    "taxon_order": 9857,
+    "family": "Momotidae",
+    "family_full": "Momotidae (Motmots)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660921825",
+        "date_raw": "2026-07-06",
+        "date_fr": "6 juillet 2026",
+        "date_en": "July 6<sup>th</sup>, 2026",
+        "location": "Aldea Kinich Ahau",
+        "location_full_fr": "Aldea Kinich Ahau, Mexique",
+        "location_full_en": "Aldea Kinich Ahau, Mexico",
+        "latitude": 18.5207247,
+        "longitude": -89.3992656,
+        "checklist_id": "S368549337",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Sphyrapicus varius",
+    "common_name_fr": "Pic maculé",
+    "common_name_en": "Yellow-bellied Sapsucker",
+    "taxon_order": 11126,
+    "family": "Picidae",
+    "family_full": "Picidae (Woodpeckers)",
+    "best_photo_ml": "628686776",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "393259391",
+        "date_raw": "2021-12-04",
+        "date_fr": "4 décembre 2021",
+        "date_en": "December 4<sup>th</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S98453083",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Leuconotopicus villosus",
+    "common_name_fr": "Pic chevelu",
+    "common_name_en": "Hairy Woodpecker",
+    "taxon_order": 11427,
+    "family": "Picidae",
+    "family_full": "Picidae (Woodpeckers)",
+    "best_photo_ml": "401588511",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "142444811",
+        "date_raw": "2019-02-24",
+        "date_fr": "24 février 2019",
+        "date_en": "February 24<sup>th</sup>, 2019",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S53091297",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Picus viridis",
+    "common_name_fr": "Pic vert",
+    "common_name_en": "Eurasian Green Woodpecker",
+    "taxon_order": 11673,
+    "family": "Picidae",
+    "family_full": "Picidae (Woodpeckers)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "468711661",
+        "date_raw": "2022-07-20",
+        "date_fr": "20 juillet 2022",
+        "date_en": "July 20<sup>th</sup>, 2022",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S115414612",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Dryocopus pileatus",
+    "common_name_fr": "Grand Pic",
+    "common_name_en": "Pileated Woodpecker",
+    "taxon_order": 11762,
+    "family": "Picidae",
+    "family_full": "Picidae (Woodpeckers)",
+    "best_photo_ml": "635778299",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "351672811",
+        "date_raw": "2021-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2021",
+        "date_en": "July 1<sup>st</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S91082564",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Falco columbarius",
+    "common_name_fr": "Faucon émerillon",
+    "common_name_en": "Merlin",
+    "taxon_order": 12062,
+    "family": "Falconidae",
+    "family_full": "Falconidae (Falcons and Caracaras)",
+    "best_photo_ml": "615415289",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "547556701",
+        "date_raw": "2023-03-20",
+        "date_fr": "20 mars 2023",
+        "date_en": "March 20<sup>th</sup>, 2023",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S131360910",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "547556711",
+        "date_raw": "2023-03-20",
+        "date_fr": "20 mars 2023",
+        "date_en": "March 20<sup>th</sup>, 2023",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S131360910",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Falco peregrinus",
+    "common_name_fr": "Faucon pèlerin",
+    "common_name_en": "Peregrine Falcon",
+    "taxon_order": 12114,
+    "family": "Falconidae",
+    "family_full": "Falconidae (Falcons and Caracaras)",
+    "best_photo_ml": "209876781",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "473123901",
+        "date_raw": "2022-08-06",
+        "date_fr": "6 août 2022",
+        "date_en": "August 6<sup>th</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S116420974",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Nymphicus hollandicus",
+    "common_name_fr": "Calopsitte élégante",
+    "common_name_en": "Cockatiel",
+    "taxon_order": 12168,
+    "family": "Cacatuidae",
+    "family_full": "Cacatuidae (Cockatoos)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "478821561",
+        "date_raw": "2022-08-27",
+        "date_fr": "27 août 2022",
+        "date_en": "August 27<sup>th</sup>, 2022",
+        "location": "Parc de l'Honorable-George-O'Reilly",
+        "location_full_fr": "Parc de l'Honorable-George-O'Reilly, Québec, Canada",
+        "location_full_en": "Parc de l'Honorable-George-O'Reilly, Quebec, Canada",
+        "latitude": 45.4365716,
+        "longitude": -73.583293,
+        "checklist_id": "S117662107",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Myiopsitta monachus",
+    "common_name_fr": "Conure veuve",
+    "common_name_en": "Monk Parakeet",
+    "taxon_order": 12819,
+    "family": "Psittacidae",
+    "family_full": "Psittacidae (New World and African Parrots)",
+    "best_photo_ml": "615370840",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "439461251",
+        "date_raw": "2022-04-23",
+        "date_fr": "23 avril 2022",
+        "date_en": "April 23<sup>rd</sup>, 2022",
+        "location": "Parque Bicentenario de Vitacura",
+        "location_full_fr": "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+        "location_full_en": "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
+        "latitude": -33.3980197,
+        "longitude": -70.6022,
+        "checklist_id": "S107795304",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Cyanoliseus patagonus",
+    "common_name_fr": "Conure de Patagonie",
+    "common_name_en": "Burrowing Parakeet",
+    "taxon_order": 13081,
+    "family": "Psittacidae",
+    "family_full": "Psittacidae (New World and African Parrots)",
+    "best_photo_ml": "214757311",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "214515041",
+        "date_raw": "2020-03-06",
+        "date_fr": "6 mars 2020",
+        "date_en": "March 6<sup>th</sup>, 2020",
+        "location": "Quebrada Pelícano",
+        "location_full_fr": "Quebrada Pelícano, Coquimbo, Chili",
+        "location_full_en": "Quebrada Pelícano, Coquimbo, Chile",
+        "latitude": -29.167514,
+        "longitude": -70.8184736,
+        "checklist_id": "S65500108",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Eupsittula nana",
+    "common_name_fr": "Conure naine",
+    "common_name_en": "Olive-throated Parakeet",
+    "taxon_order": 13092,
+    "family": "Psittacidae",
+    "family_full": "Psittacidae (New World and African Parrots)",
+    "best_photo_ml": "661274164",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660643738",
+        "date_raw": "2026-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2026",
+        "date_en": "July 1<sup>st</sup>, 2026",
+        "location": "Reserva de la Biosfera Ría Celestún",
+        "location_full_fr": "Reserva de la Biosfera Ría Celestún, Mexique",
+        "location_full_en": "Reserva de la Biosfera Ría Celestún, Mexico",
+        "latitude": 20.8940859,
+        "longitude": -90.3865782,
+        "checklist_id": "S366214835",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Thectocercus acuticaudatus",
+    "common_name_fr": "Conure à tête bleue",
+    "common_name_en": "Blue-crowned Parakeet",
+    "taxon_order": 13164,
+    "family": "Psittacidae",
+    "family_full": "Psittacidae (New World and African Parrots)",
+    "best_photo_ml": "621818506",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "621818391",
+        "date_raw": "2024-07-24",
+        "date_fr": "24 juillet 2024",
+        "date_en": "July 24<sup>th</sup>, 2024",
+        "location": "Parque Eduardo VII",
+        "location_full_fr": "Parque Eduardo VII, Portugal",
+        "location_full_en": "Parque Eduardo VII, Portugal",
+        "latitude": 38.72799,
+        "longitude": -9.1535,
+        "checklist_id": "S188604228",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Geositta rufipennis",
+    "common_name_fr": "Géositte à ailes rousses",
+    "common_name_en": "Rufous-banded Miner",
+    "taxon_order": 14596,
+    "family": "Furnariidae",
+    "family_full": "Furnariidae (Ovenbirds and Woodcreepers)",
+    "best_photo_ml": "437664041",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "437792601",
+        "date_raw": "2022-04-20",
+        "date_fr": "20 avril 2022",
+        "date_en": "April 20<sup>th</sup>, 2022",
+        "location": "Observatorio de La Silla",
+        "location_full_fr": "Observatorio de La Silla, Coquimbo, Chili",
+        "location_full_en": "Observatorio de La Silla, Coquimbo, Chile",
+        "latitude": -29.2562225,
+        "longitude": -70.7383406,
+        "checklist_id": "S107531483",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "436203321",
+        "date_raw": "2022-04-16",
+        "date_fr": "16 avril 2022",
+        "date_en": "April 16<sup>th</sup>, 2022",
+        "location": "Observatorio de La Silla",
+        "location_full_fr": "Observatorio de La Silla, Coquimbo, Chili",
+        "location_full_en": "Observatorio de La Silla, Coquimbo, Chile",
+        "latitude": -29.2562225,
+        "longitude": -70.7383406,
+        "checklist_id": "S107163090",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Tityra semifasciata",
+    "common_name_fr": "Tityre masqué",
+    "common_name_en": "Masked Tityra",
+    "taxon_order": 15969,
+    "family": "Tityridae",
+    "family_full": "Tityridae (Tityras and Allies)",
+    "best_photo_ml": "661342821",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "661072013",
+        "date_raw": "2026-07-07",
+        "date_fr": "7 juillet 2026",
+        "date_en": "July 7<sup>th</sup>, 2026",
+        "location": "Ecoparque Bacalar",
+        "location_full_fr": "Ecoparque Bacalar, Mexique",
+        "location_full_en": "Ecoparque Bacalar, Mexico",
+        "latitude": 18.68485,
+        "longitude": -88.3853316,
+        "checklist_id": "S369006744",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Pachyramphus aglaiae",
+    "common_name_fr": "Bécarde à gorge rose",
+    "common_name_en": "Rose-throated Becard",
+    "taxon_order": 16073,
+    "family": "Tityridae",
+    "family_full": "Tityridae (Tityras and Allies)",
+    "best_photo_ml": "661276100",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "661124872",
+        "date_raw": "2026-07-10",
+        "date_fr": "10 juillet 2026",
+        "date_en": "July 10<sup>th</sup>, 2026",
+        "location": "Aldea Zama",
+        "location_full_fr": "Aldea Zama, Mexique",
+        "location_full_en": "Aldea Zama, Mexico",
+        "latitude": 20.200624,
+        "longitude": -87.465354,
+        "checklist_id": "S370299928",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Contopus virens",
+    "common_name_fr": "Pioui de l'Est",
+    "common_name_en": "Eastern Wood-Pewee",
+    "taxon_order": 16924,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "482929491",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "351671761",
+        "date_raw": "2021-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2021",
+        "date_en": "July 1<sup>st</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S91082564",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Empidonax flaviventris",
+    "common_name_fr": "Moucherolle à ventre jaune",
+    "common_name_en": "Yellow-bellied Flycatcher",
+    "taxon_order": 16949,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "586881761",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "640513227",
+        "date_raw": "2025-08-19",
+        "date_fr": "19 août 2025",
+        "date_en": "August 19<sup>th</sup>, 2025",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S268220739",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Empidonax difficilis",
+    "common_name_fr": "Moucherolle obscur",
+    "common_name_en": "Western Flycatcher",
+    "taxon_order": 16975,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "165815141",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "552514411",
+        "date_raw": "2023-03-29",
+        "date_fr": "29 mars 2023",
+        "date_en": "March 29<sup>th</sup>, 2023",
+        "location": "Santa Barbara Botanic Garden",
+        "location_full_fr": "Santa Barbara Botanic Garden, Californie, États-Unis",
+        "location_full_en": "Santa Barbara Botanic Garden, California, United States",
+        "latitude": 34.4567922,
+        "longitude": -119.710266,
+        "checklist_id": "S132183670",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "393298891",
+        "date_raw": "2019-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2019",
+        "date_en": "July 1<sup>st</sup>, 2019",
+        "location": "Tofino",
+        "location_full_fr": "Tofino, Colombie-Britannique, Canada",
+        "location_full_en": "Tofino, British Columbia, Canada",
+        "latitude": 49.14675,
+        "longitude": -125.9131297,
+        "checklist_id": "S57848518",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Agriornis montanus",
+    "common_name_fr": "Gaucho à bec noir",
+    "common_name_en": "Black-billed Shrike-Tyrant",
+    "taxon_order": 17130,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "437271541",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "436100911",
+        "date_raw": "2022-04-16",
+        "date_fr": "16 avril 2022",
+        "date_en": "April 16<sup>th</sup>, 2022",
+        "location": "Observatorio de La Silla",
+        "location_full_fr": "Observatorio de La Silla, Coquimbo, Chili",
+        "location_full_en": "Observatorio de La Silla, Coquimbo, Chile",
+        "latitude": -29.2562225,
+        "longitude": -70.7383406,
+        "checklist_id": "S107163090",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Attila spadiceus",
+    "common_name_fr": "Attila à croupion jaune",
+    "common_name_en": "Bright-rumped Attila",
+    "taxon_order": 17246,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660280357",
+        "date_raw": "2026-06-24",
+        "date_fr": "24 juin 2026",
+        "date_en": "June 24<sup>th</sup>, 2026",
+        "location": "Sendero Peten Mac",
+        "location_full_fr": "Sendero Peten Mac, Mexique",
+        "location_full_en": "Sendero Peten Mac, Mexico",
+        "latitude": 21.5950732,
+        "longitude": -88.1457406,
+        "checklist_id": "S362891456",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660280370",
+        "date_raw": "2026-06-24",
+        "date_fr": "24 juin 2026",
+        "date_en": "June 24<sup>th</sup>, 2026",
+        "location": "Sendero Peten Mac",
+        "location_full_fr": "Sendero Peten Mac, Mexique",
+        "location_full_en": "Sendero Peten Mac, Mexico",
+        "latitude": 21.5950732,
+        "longitude": -88.1457406,
+        "checklist_id": "S362891456",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660280384",
+        "date_raw": "2026-06-24",
+        "date_fr": "24 juin 2026",
+        "date_en": "June 24<sup>th</sup>, 2026",
+        "location": "Sendero Peten Mac",
+        "location_full_fr": "Sendero Peten Mac, Mexique",
+        "location_full_en": "Sendero Peten Mac, Mexico",
+        "latitude": 21.5950732,
+        "longitude": -88.1457406,
+        "checklist_id": "S362891456",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Myiarchus crinitus",
+    "common_name_fr": "Tyran huppé",
+    "common_name_en": "Great Crested Flycatcher",
+    "taxon_order": 17334,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "635598737",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "635542607",
+        "date_raw": "2025-05-11",
+        "date_fr": "11 mai 2025",
+        "date_en": "May 11<sup>th</sup>, 2025",
+        "location": "Parc Angrignon",
+        "location_full_fr": "Parc Angrignon, Québec, Canada",
+        "location_full_en": "Parc Angrignon, Quebec, Canada",
+        "latitude": 45.4445136,
+        "longitude": -73.6017311,
+        "checklist_id": "S236421006",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Myiarchus tyrannulus",
+    "common_name_fr": "Tyran de Wied",
+    "common_name_en": "Brown-crested Flycatcher",
+    "taxon_order": 17335,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "660612178",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660611398",
+        "date_raw": "2026-06-30",
+        "date_fr": "30 juin 2026",
+        "date_en": "June 30<sup>th</sup>, 2026",
+        "location": "Playa Eco Hotel Flamingo",
+        "location_full_fr": "Playa Eco Hotel Flamingo, Mexique",
+        "location_full_en": "Playa Eco Hotel Flamingo, Mexico",
+        "latitude": 20.8661103,
+        "longitude": -90.3983831,
+        "checklist_id": "S365980932",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Pitangus sulphuratus",
+    "common_name_fr": "Tyran quiquivi",
+    "common_name_en": "Great Kiskadee",
+    "taxon_order": 17368,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "661342029",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660280342",
+        "date_raw": "2026-06-24",
+        "date_fr": "24 juin 2026",
+        "date_en": "June 24<sup>th</sup>, 2026",
+        "location": "Sendero Peten Mac",
+        "location_full_fr": "Sendero Peten Mac, Mexique",
+        "location_full_en": "Sendero Peten Mac, Mexico",
+        "latitude": 21.5950732,
+        "longitude": -88.1457406,
+        "checklist_id": "S362891456",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Tyrannus couchii",
+    "common_name_fr": "Tyran de Couch",
+    "common_name_en": "Couch's Kingbird",
+    "taxon_order": 17459,
+    "family": "Tyrannidae",
+    "family_full": "Tyrannidae (Tyrant Flycatchers)",
+    "best_photo_ml": "660281980",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "661152077",
+        "date_raw": "2026-07-11",
+        "date_fr": "11 juillet 2026",
+        "date_en": "July 11<sup>th</sup>, 2026",
+        "location": "Aldea Zama",
+        "location_full_fr": "Aldea Zama, Mexique",
+        "location_full_en": "Aldea Zama, Mexico",
+        "latitude": 20.200624,
+        "longitude": -87.465354,
+        "checklist_id": "S370691604",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660921714",
+        "date_raw": "2026-07-06",
+        "date_fr": "6 juillet 2026",
+        "date_en": "July 6<sup>th</sup>, 2026",
+        "location": "Aldea Kinich Ahau",
+        "location_full_fr": "Aldea Kinich Ahau, Mexique",
+        "location_full_en": "Aldea Kinich Ahau, Mexico",
+        "latitude": 18.5207247,
+        "longitude": -89.3992656,
+        "checklist_id": "S368591550",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660280304",
+        "date_raw": "2026-06-24",
+        "date_fr": "24 juin 2026",
+        "date_en": "June 24<sup>th</sup>, 2026",
+        "location": "Sendero Peten Mac",
+        "location_full_fr": "Sendero Peten Mac, Mexique",
+        "location_full_en": "Sendero Peten Mac, Mexico",
+        "latitude": 21.5950732,
+        "longitude": -88.1457406,
+        "checklist_id": "S362891456",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Vireo pallens",
+    "common_name_fr": "Viréo des mangroves",
+    "common_name_en": "Mangrove Vireo",
+    "taxon_order": 19180,
+    "family": "Vireonidae",
+    "family_full": "Vireonidae (Vireos, Shrike-Babblers, and Erpornis)",
+    "best_photo_ml": "660184500",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660306609",
+        "date_raw": "2026-06-25",
+        "date_fr": "25 juin 2026",
+        "date_en": "June 25<sup>th</sup>, 2026",
+        "location": "Malecón, Río Lagartos",
+        "location_full_fr": "Malecón, Río Lagartos, Mexique",
+        "location_full_en": "Malecón, Río Lagartos, Mexico",
+        "latitude": 21.595833,
+        "longitude": -88.154141,
+        "checklist_id": "S363131692",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660180301",
+        "date_raw": "2026-06-22",
+        "date_fr": "22 juin 2026",
+        "date_en": "June 22<sup>nd</sup>, 2026",
+        "location": "Playa Cancunito",
+        "location_full_fr": "Playa Cancunito, Mexique",
+        "location_full_en": "Playa Cancunito, Mexico",
+        "latitude": 21.6110734,
+        "longitude": -88.0504417,
+        "checklist_id": "S361896862",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Vireo cassinii",
+    "common_name_fr": "Viréo de Cassin",
+    "common_name_en": "Cassin's Vireo",
+    "taxon_order": 19223,
+    "family": "Vireonidae",
+    "family_full": "Vireonidae (Vireos, Shrike-Babblers, and Erpornis)",
+    "best_photo_ml": "598288891",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "598318091",
+        "date_raw": "2023-07-28",
+        "date_fr": "28 juillet 2023",
+        "date_en": "July 28<sup>th</sup>, 2023",
+        "location": "Yosemite Valley",
+        "location_full_fr": "Yosemite Valley, Californie, États-Unis",
+        "location_full_en": "Yosemite Valley, California, United States",
+        "latitude": 37.7454716,
+        "longitude": -119.5903015,
+        "checklist_id": "S145841071",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Vireo solitarius",
+    "common_name_fr": "Viréo à tête bleue",
+    "common_name_en": "Blue-headed Vireo",
+    "taxon_order": 19226,
+    "family": "Vireonidae",
+    "family_full": "Vireonidae (Vireos, Shrike-Babblers, and Erpornis)",
+    "best_photo_ml": "657179300",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "586982411",
+        "date_raw": "2023-06-21",
+        "date_fr": "21 juin 2023",
+        "date_en": "June 21<sup>st</sup>, 2023",
+        "location": "PN du Mont-Mégantic",
+        "location_full_fr": "PN du Mont-Mégantic, Québec, Canada",
+        "location_full_en": "PN du Mont-Mégantic, Quebec, Canada",
+        "latitude": 45.4556374,
+        "longitude": -71.153512,
+        "checklist_id": "S142249788",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Vireo olivaceus",
+    "common_name_fr": "Viréo aux yeux rouges",
+    "common_name_en": "Red-eyed Vireo",
+    "taxon_order": 19267,
+    "family": "Vireonidae",
+    "family_full": "Vireonidae (Vireos, Shrike-Babblers, and Erpornis)",
+    "best_photo_ml": "164012711",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "608220561",
+        "date_raw": "2023-08-29",
+        "date_fr": "29 août 2023",
+        "date_en": "August 29<sup>th</sup>, 2023",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S148365077",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Vireo flavoviridis",
+    "common_name_fr": "Viréo jaune-verdâtre",
+    "common_name_en": "Yellow-green Vireo",
+    "taxon_order": 19287,
+    "family": "Vireonidae",
+    "family_full": "Vireonidae (Vireos, Shrike-Babblers, and Erpornis)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "661147920",
+        "date_raw": "2026-07-11",
+        "date_fr": "11 juillet 2026",
+        "date_en": "July 11<sup>th</sup>, 2026",
+        "location": "Aldea Zama",
+        "location_full_fr": "Aldea Zama, Mexique",
+        "location_full_en": "Aldea Zama, Mexico",
+        "latitude": 20.200624,
+        "longitude": -87.465354,
+        "checklist_id": "S370636543",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "661152036",
+        "date_raw": "2026-07-11",
+        "date_fr": "11 juillet 2026",
+        "date_en": "July 11<sup>th</sup>, 2026",
+        "location": "Aldea Zama",
+        "location_full_fr": "Aldea Zama, Mexique",
+        "location_full_en": "Aldea Zama, Mexico",
+        "latitude": 20.200624,
+        "longitude": -87.465354,
+        "checklist_id": "S370691604",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660408465",
+        "date_raw": "2026-06-27",
+        "date_fr": "27 juin 2026",
+        "date_en": "June 27<sup>th</sup>, 2026",
+        "location": "Camino cerca del cenote Noolhan",
+        "location_full_fr": "Camino cerca del cenote Noolhan, Mexique",
+        "location_full_en": "Camino cerca del cenote Noolhan, Mexico",
+        "latitude": 20.7150515,
+        "longitude": -88.2057051,
+        "checklist_id": "S364164243",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660386282",
+        "date_raw": "2026-06-26",
+        "date_fr": "26 juin 2026",
+        "date_en": "June 26<sup>th</sup>, 2026",
+        "location": "Zona Arqueológica Chichén Itzá",
+        "location_full_fr": "Zona Arqueológica Chichén Itzá, Mexique",
+        "location_full_en": "Zona Arqueológica Chichén Itzá, Mexico",
+        "latitude": 20.6818391,
+        "longitude": -88.5692024,
+        "checklist_id": "S363734820",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 4
+  },
+  {
+    "sci_name": "Lanius borealis",
+    "common_name_fr": "Pie-grièche boréale",
+    "common_name_en": "Northern Shrike",
+    "taxon_order": 21103,
+    "family": "Laniidae",
+    "family_full": "Laniidae (Shrikes)",
+    "best_photo_ml": "429346631",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "429344771",
+        "date_raw": "2022-03-27",
+        "date_fr": "27 mars 2022",
+        "date_en": "March 27<sup>th</sup>, 2022",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S105721935",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Perisoreus canadensis",
+    "common_name_fr": "Mésangeai du Canada",
+    "common_name_en": "Canada Jay",
+    "taxon_order": 21181,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "625020442",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "494746091",
+        "date_raw": "2022-10-17",
+        "date_fr": "17 octobre 2022",
+        "date_en": "October 17<sup>th</sup>, 2022",
+        "location": "PN du Mont-Mégantic",
+        "location_full_fr": "PN du Mont-Mégantic, Québec, Canada",
+        "location_full_en": "PN du Mont-Mégantic, Quebec, Canada",
+        "latitude": 45.4556374,
+        "longitude": -71.153512,
+        "checklist_id": "S120834878",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Cyanocorax morio",
+    "common_name_fr": "Geai enfumé",
+    "common_name_en": "Brown Jay",
+    "taxon_order": 21222,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "661280120",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "661071966",
+        "date_raw": "2026-07-08",
+        "date_fr": "8 juillet 2026",
+        "date_en": "July 8<sup>th</sup>, 2026",
+        "location": "Ecoparque Bacalar",
+        "location_full_fr": "Ecoparque Bacalar, Mexique",
+        "location_full_en": "Ecoparque Bacalar, Mexico",
+        "latitude": 18.68485,
+        "longitude": -88.3853316,
+        "checklist_id": "S369422944",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Cyanocitta cristata",
+    "common_name_fr": "Geai bleu",
+    "common_name_en": "Blue Jay",
+    "taxon_order": 21294,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "34748961",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "616038955",
+        "date_raw": "2024-03-03",
+        "date_fr": "3 mars 2024",
+        "date_en": "March 3<sup>rd</sup>, 2024",
+        "location": "Frog Pond WMA",
+        "location_full_fr": "Frog Pond WMA, Floride, États-Unis",
+        "location_full_en": "Frog Pond WMA, Florida, United States",
+        "latitude": 25.396439,
+        "longitude": -80.566581,
+        "checklist_id": "S163563864",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Aphelocoma woodhouseii",
+    "common_name_fr": "Geai de Woodhouse",
+    "common_name_en": "Woodhouse's Scrub-Jay",
+    "taxon_order": 21309,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "540020891",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "538019431",
+        "date_raw": "2023-02-21",
+        "date_fr": "21 février 2023",
+        "date_en": "February 21<sup>st</sup>, 2023",
+        "location": "Catalina SP",
+        "location_full_fr": "Catalina SP, Arizona, États-Unis",
+        "location_full_en": "Catalina SP, Arizona, United States",
+        "latitude": 32.4244027,
+        "longitude": -110.9123905,
+        "checklist_id": "S129303210",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Garrulus glandarius",
+    "common_name_fr": "Geai des chênes",
+    "common_name_en": "Eurasian Jay",
+    "taxon_order": 21339,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "622062705",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "622158973",
+        "date_raw": "2024-08-04",
+        "date_fr": "4 août 2024",
+        "date_en": "August 4<sup>th</sup>, 2024",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S190144329",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Corvus brachyrhynchos",
+    "common_name_fr": "Corneille d'Amérique",
+    "common_name_en": "American Crow",
+    "taxon_order": 21557,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "615578145",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "351672111",
+        "date_raw": "2021-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2021",
+        "date_en": "July 1<sup>st</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S91082564",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Corvus ossifragus",
+    "common_name_fr": "Corneille de rivage",
+    "common_name_en": "Fish Crow",
+    "taxon_order": 21570,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "51320101",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "643131317",
+        "date_raw": "2025-10-08",
+        "date_fr": "8 octobre 2025",
+        "date_en": "October 8<sup>th</sup>, 2025",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S277960771",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "643131318",
+        "date_raw": "2025-10-08",
+        "date_fr": "8 octobre 2025",
+        "date_en": "October 8<sup>th</sup>, 2025",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S277960771",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "478164351",
+        "date_raw": "2022-08-25",
+        "date_fr": "25 août 2022",
+        "date_en": "August 25<sup>th</sup>, 2022",
+        "location": "Parc Mackenzie-King",
+        "location_full_fr": "Parc Mackenzie-King, Québec, Canada",
+        "location_full_en": "Parc Mackenzie-King, Quebec, Canada",
+        "latitude": 45.4899002,
+        "longitude": -73.6337292,
+        "checklist_id": "S117532218",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "478164361",
+        "date_raw": "2022-08-25",
+        "date_fr": "25 août 2022",
+        "date_en": "August 25<sup>th</sup>, 2022",
+        "location": "Parc Mackenzie-King",
+        "location_full_fr": "Parc Mackenzie-King, Québec, Canada",
+        "location_full_en": "Parc Mackenzie-King, Quebec, Canada",
+        "latitude": 45.4899002,
+        "longitude": -73.6337292,
+        "checklist_id": "S117532218",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 4
+  },
+  {
+    "sci_name": "Corvus corone",
+    "common_name_fr": "Corneille noire",
+    "common_name_en": "Carrion Crow",
+    "taxon_order": 21575,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "639815601",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "465526651",
+        "date_raw": "2022-07-07",
+        "date_fr": "7 juillet 2022",
+        "date_en": "July 7<sup>th</sup>, 2022",
+        "location": "Parc du Confluent Garonne-Ariège",
+        "location_full_fr": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "location_full_en": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "latitude": 43.5233709,
+        "longitude": 1.4176226,
+        "checklist_id": "S114570841",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Corvus corax",
+    "common_name_fr": "Grand Corbeau",
+    "common_name_en": "Common Raven",
+    "taxon_order": 21624,
+    "family": "Corvidae",
+    "family_full": "Corvidae (Crows, Jays, and Magpies)",
+    "best_photo_ml": "598310941",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "537687041",
+        "date_raw": "2023-02-20",
+        "date_fr": "20 février 2023",
+        "date_en": "February 20<sup>th</sup>, 2023",
+        "location": "Arizona-Sonora Desert Museum",
+        "location_full_fr": "Arizona-Sonora Desert Museum, Arizona, États-Unis",
+        "location_full_en": "Arizona-Sonora Desert Museum, Arizona, United States",
+        "latitude": 32.2437113,
+        "longitude": -111.168125,
+        "checklist_id": "S129232010",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "517107171",
+        "date_raw": "2022-12-27",
+        "date_fr": "27 décembre 2022",
+        "date_en": "December 27<sup>th</sup>, 2022",
+        "location": "Arboretum, Parcs de la Frayère et des Voiles",
+        "location_full_fr": "Arboretum, Parcs de la Frayère et des Voiles, Québec, Canada",
+        "location_full_en": "Arboretum, Parcs de la Frayère et des Voiles, Quebec, Canada",
+        "latitude": 45.6469012,
+        "longitude": -73.4426296,
+        "checklist_id": "S124693837",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Periparus ater",
+    "common_name_fr": "Mésange noire",
+    "common_name_en": "Coal Tit",
+    "taxon_order": 21950,
+    "family": "Paridae",
+    "family_full": "Paridae (Tits, Chickadees, and Titmice)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "621786548",
+        "date_raw": "2024-07-23",
+        "date_fr": "23 juillet 2024",
+        "date_en": "July 23<sup>rd</sup>, 2024",
+        "location": "Assafora",
+        "location_full_fr": "Assafora, Portugal",
+        "location_full_en": "Assafora, Portugal",
+        "latitude": 38.9100031,
+        "longitude": -9.4088459,
+        "checklist_id": "S188416729",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Poecile palustris",
+    "common_name_fr": "Mésange nonnette",
+    "common_name_en": "Marsh Tit",
+    "taxon_order": 22030,
+    "family": "Paridae",
+    "family_full": "Paridae (Tits, Chickadees, and Titmice)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "468549411",
+        "date_raw": "2022-07-19",
+        "date_fr": "19 juillet 2022",
+        "date_en": "July 19<sup>th</sup>, 2022",
+        "location": "Pierre-Châtel",
+        "location_full_fr": "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+        "latitude": 44.9651319,
+        "longitude": 5.7594538,
+        "checklist_id": "S115379484",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Baeolophus wollweberi",
+    "common_name_fr": "Mésange arlequin",
+    "common_name_en": "Bridled Titmouse",
+    "taxon_order": 22145,
+    "family": "Paridae",
+    "family_full": "Paridae (Tits, Chickadees, and Titmice)",
+    "best_photo_ml": "56261461",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "539519631",
+        "date_raw": "2023-02-25",
+        "date_fr": "25 février 2023",
+        "date_en": "February 25<sup>th</sup>, 2023",
+        "location": "Madera Canyon",
+        "location_full_fr": "Madera Canyon, Arizona, États-Unis",
+        "location_full_en": "Madera Canyon, Arizona, United States",
+        "latitude": 31.7194081,
+        "longitude": -110.8835989,
+        "checklist_id": "S129644243",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Auriparus flaviceps",
+    "common_name_fr": "Auripare verdin",
+    "common_name_en": "Verdin",
+    "taxon_order": 22269,
+    "family": "Remizidae",
+    "family_full": "Remizidae (Penduline-Tits)",
+    "best_photo_ml": "540369241",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "537686371",
+        "date_raw": "2023-02-20",
+        "date_fr": "20 février 2023",
+        "date_en": "February 20<sup>th</sup>, 2023",
+        "location": "Arizona-Sonora Desert Museum",
+        "location_full_fr": "Arizona-Sonora Desert Museum, Arizona, États-Unis",
+        "location_full_en": "Arizona-Sonora Desert Museum, Arizona, United States",
+        "latitude": 32.2437113,
+        "longitude": -111.168125,
+        "checklist_id": "S129232010",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Phylloscopus collybita",
+    "common_name_fr": "Pouillot véloce",
+    "common_name_en": "Common Chiffchaff",
+    "taxon_order": 24853,
+    "family": "Phylloscopidae",
+    "family_full": "Phylloscopidae (Leaf Warblers)",
+    "best_photo_ml": "639209792",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "465100651",
+        "date_raw": "2022-07-05",
+        "date_fr": "5 juillet 2022",
+        "date_en": "July 5<sup>th</sup>, 2022",
+        "location": "Parc du Confluent Garonne-Ariège",
+        "location_full_fr": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "location_full_en": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "latitude": 43.5233709,
+        "longitude": 1.4176226,
+        "checklist_id": "S114472195",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Cettia cetti",
+    "common_name_fr": "Bouscarle de Cetti",
+    "common_name_en": "Cetti's Warbler",
+    "taxon_order": 25107,
+    "family": "Cettiidae",
+    "family_full": "Cettiidae (Bush Warblers and Allies)",
+    "best_photo_ml": "608680063",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "465526581",
+        "date_raw": "2022-07-07",
+        "date_fr": "7 juillet 2022",
+        "date_en": "July 7<sup>th</sup>, 2022",
+        "location": "Parc du Confluent Garonne-Ariège",
+        "location_full_fr": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "location_full_en": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "latitude": 43.5233709,
+        "longitude": 1.4176226,
+        "checklist_id": "S114570841",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Sylvia atricapilla",
+    "common_name_fr": "Fauvette à tête noire",
+    "common_name_en": "Eurasian Blackcap",
+    "taxon_order": 25267,
+    "family": "Sylviidae",
+    "family_full": "Sylviidae (Sylviid Warblers and Allies)",
+    "best_photo_ml": "22482881",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "465101071",
+        "date_raw": "2022-07-05",
+        "date_fr": "5 juillet 2022",
+        "date_en": "July 5<sup>th</sup>, 2022",
+        "location": "Parc du Confluent Garonne-Ariège",
+        "location_full_fr": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "location_full_en": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "latitude": 43.5233709,
+        "longitude": 1.4176226,
+        "checklist_id": "S114472195",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Curruca melanocephala",
+    "common_name_fr": "Fauvette mélanocéphale",
+    "common_name_en": "Sardinian Warbler",
+    "taxon_order": 25351,
+    "family": "Sylviidae",
+    "family_full": "Sylviidae (Sylviid Warblers and Allies)",
+    "best_photo_ml": "622076838",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "621835143",
+        "date_raw": "2024-07-25",
+        "date_fr": "25 juillet 2024",
+        "date_en": "July 25<sup>th</sup>, 2024",
+        "location": "PN Sintra-Cascais",
+        "location_full_fr": "PN Sintra-Cascais, Portugal",
+        "location_full_en": "PN Sintra-Cascais, Portugal",
+        "latitude": 38.8969115,
+        "longitude": -9.4309473,
+        "checklist_id": "S188666482",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Chamaea fasciata",
+    "common_name_fr": "Cama brune",
+    "common_name_en": "Wrentit",
+    "taxon_order": 25431,
+    "family": "Paradoxornithidae",
+    "family_full": "Paradoxornithidae (Parrotbills)",
+    "best_photo_ml": "599886571",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "551449281",
+        "date_raw": "2023-03-30",
+        "date_fr": "30 mars 2023",
+        "date_en": "March 30<sup>th</sup>, 2023",
+        "location": "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails",
+        "location_full_fr": "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, Californie, États-Unis",
+        "location_full_en": "Coal Oil Point, Devereux Beach, Sands Beach, and bluff trails, California, United States",
+        "latitude": 34.4071359,
+        "longitude": -119.8783064,
+        "checklist_id": "S132213962",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Regulus satrapa",
+    "common_name_fr": "Roitelet à couronne dorée",
+    "common_name_en": "Golden-crowned Kinglet",
+    "taxon_order": 26848,
+    "family": "Regulidae",
+    "family_full": "Regulidae (Kinglets)",
+    "best_photo_ml": "222904191",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "484868951",
+        "date_raw": "2022-09-17",
+        "date_fr": "17 septembre 2022",
+        "date_en": "September 17<sup>th</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S118885436",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Sitta carolinensis",
+    "common_name_fr": "Sittelle à poitrine blanche",
+    "common_name_en": "White-breasted Nuthatch",
+    "taxon_order": 26889,
+    "family": "Sittidae",
+    "family_full": "Sittidae (Nuthatches)",
+    "best_photo_ml": "657858503",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "647020831",
+        "date_raw": "2025-12-16",
+        "date_fr": "16 décembre 2025",
+        "date_en": "December 16<sup>th</sup>, 2025",
+        "location": "Bois des Pères (Collège Jean-de-Brébeuf)",
+        "location_full_fr": "Bois des Pères (Collège Jean-de-Brébeuf), Québec, Canada",
+        "location_full_en": "Bois des Pères (Collège Jean-de-Brébeuf), Quebec, Canada",
+        "latitude": 45.5022564,
+        "longitude": -73.621316,
+        "checklist_id": "S288819030",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "142444801",
+        "date_raw": "2019-02-24",
+        "date_fr": "24 février 2019",
+        "date_en": "February 24<sup>th</sup>, 2019",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S53091297",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Certhia americana",
+    "common_name_fr": "Grimpereau brun",
+    "common_name_en": "Brown Creeper",
+    "taxon_order": 27026,
+    "family": "Certhiidae",
+    "family_full": "Certhiidae (Treecreepers)",
+    "best_photo_ml": "656125494",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "651508128",
+        "date_raw": "2026-02-22",
+        "date_fr": "22 février 2026",
+        "date_en": "February 22<sup>nd</sup>, 2026",
+        "location": "Parc Angrignon",
+        "location_full_fr": "Parc Angrignon, Québec, Canada",
+        "location_full_en": "Parc Angrignon, Quebec, Canada",
+        "latitude": 45.4445136,
+        "longitude": -73.6017311,
+        "checklist_id": "S303122244",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Certhia brachydactyla",
+    "common_name_fr": "Grimpereau des jardins",
+    "common_name_en": "Short-toed Treecreeper",
+    "taxon_order": 27044,
+    "family": "Certhiidae",
+    "family_full": "Certhiidae (Treecreepers)",
+    "best_photo_ml": "622239692",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "468711541",
+        "date_raw": "2022-07-20",
+        "date_fr": "20 juillet 2022",
+        "date_en": "July 20<sup>th</sup>, 2022",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S115414612",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "468711561",
+        "date_raw": "2022-07-20",
+        "date_fr": "20 juillet 2022",
+        "date_en": "July 20<sup>th</sup>, 2022",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S115414612",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "465101381",
+        "date_raw": "2022-07-05",
+        "date_fr": "5 juillet 2022",
+        "date_en": "July 5<sup>th</sup>, 2022",
+        "location": "Parc du Confluent Garonne-Ariège",
+        "location_full_fr": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "location_full_en": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "latitude": 43.5233709,
+        "longitude": 1.4176226,
+        "checklist_id": "S114472195",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Polioptila albiventris",
+    "common_name_fr": "Gobemoucheron du Yucatan",
+    "common_name_en": "Yucatan Gnatcatcher",
+    "taxon_order": 27116,
+    "family": "Polioptilidae",
+    "family_full": "Polioptilidae (Gnatcatchers)",
+    "best_photo_ml": "660662214",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660660895",
+        "date_raw": "2026-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2026",
+        "date_en": "July 1<sup>st</sup>, 2026",
+        "location": "Reserva de la Biosfera Ría Celestún",
+        "location_full_fr": "Reserva de la Biosfera Ría Celestún, Mexique",
+        "location_full_en": "Reserva de la Biosfera Ría Celestún, Mexico",
+        "latitude": 20.8940859,
+        "longitude": -90.3865782,
+        "checklist_id": "S366405211",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Polioptila melanura",
+    "common_name_fr": "Gobemoucheron à queue noire",
+    "common_name_en": "Black-tailed Gnatcatcher",
+    "taxon_order": 27133,
+    "family": "Polioptilidae",
+    "family_full": "Polioptilidae (Gnatcatchers)",
+    "best_photo_ml": "540020591",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "539933971",
+        "date_raw": "2023-02-26",
+        "date_fr": "26 février 2023",
+        "date_en": "February 26<sup>th</sup>, 2023",
+        "location": "Kartchner Caverns SP",
+        "location_full_fr": "Kartchner Caverns SP, Arizona, États-Unis",
+        "location_full_en": "Kartchner Caverns SP, Arizona, United States",
+        "latitude": 31.8360722,
+        "longitude": -110.3486592,
+        "checklist_id": "S129739094",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Polioptila californica",
+    "common_name_fr": "Gobemoucheron de Californie",
+    "common_name_en": "California Gnatcatcher",
+    "taxon_order": 27137,
+    "family": "Polioptilidae",
+    "family_full": "Polioptilidae (Gnatcatchers)",
+    "best_photo_ml": "620935893",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "620935935",
+        "date_raw": "2024-06-28",
+        "date_fr": "28 juin 2024",
+        "date_en": "June 28<sup>th</sup>, 2024",
+        "location": "UCSD Park",
+        "location_full_fr": "UCSD Park, Californie, États-Unis",
+        "location_full_en": "UCSD Park, California, United States",
+        "latitude": 32.8864337,
+        "longitude": -117.2361969,
+        "checklist_id": "S184179673",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Troglodytes aedon",
+    "common_name_fr": "Troglodyte familier",
+    "common_name_en": "Northern House Wren",
+    "taxon_order": 27191,
+    "family": "Troglodytidae",
+    "family_full": "Troglodytidae (Wrens)",
+    "best_photo_ml": "592886881",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "375796821",
+        "date_raw": "2021-09-04",
+        "date_fr": "4 septembre 2021",
+        "date_en": "September 4<sup>th</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S94184636",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Troglodytes musculus",
+    "common_name_fr": "Troglodyte austral",
+    "common_name_en": "Southern House Wren",
+    "taxon_order": 27209,
+    "family": "Troglodytidae",
+    "family_full": "Troglodytidae (Wrens)",
+    "best_photo_ml": "435253081",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660541664",
+        "date_raw": "2026-06-29",
+        "date_fr": "29 juin 2026",
+        "date_en": "June 29<sup>th</sup>, 2026",
+        "location": "Parque Acuaparque",
+        "location_full_fr": "Parque Acuaparque, Mexique",
+        "location_full_en": "Parque Acuaparque, Mexico",
+        "latitude": 20.9477032,
+        "longitude": -89.5776299,
+        "checklist_id": "S365357969",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Troglodytes troglodytes",
+    "common_name_fr": "Troglodyte mignon",
+    "common_name_en": "Eurasian Wren",
+    "taxon_order": 27258,
+    "family": "Troglodytidae",
+    "family_full": "Troglodytidae (Wrens)",
+    "best_photo_ml": "34749021",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "467443181",
+        "date_raw": "2022-07-15",
+        "date_fr": "15 juillet 2022",
+        "date_en": "July 15<sup>th</sup>, 2022",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S115090548",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "465526861",
+        "date_raw": "2022-07-07",
+        "date_fr": "7 juillet 2022",
+        "date_en": "July 7<sup>th</sup>, 2022",
+        "location": "Parc du Confluent Garonne-Ariège",
+        "location_full_fr": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "location_full_en": "Parc du Confluent Garonne-Ariège, Occitanie, France",
+        "latitude": 43.5233709,
+        "longitude": 1.4176226,
+        "checklist_id": "S114570841",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Troglodytes hiemalis",
+    "common_name_fr": "Troglodyte des forêts",
+    "common_name_en": "Winter Wren",
+    "taxon_order": 27295,
+    "family": "Troglodytidae",
+    "family_full": "Troglodytidae (Wrens)",
+    "best_photo_ml": "487486761",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "380495071",
+        "date_raw": "2021-10-16",
+        "date_fr": "16 octobre 2021",
+        "date_en": "October 16<sup>th</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S96228804",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Cistothorus palustris",
+    "common_name_fr": "Troglodyte des marais",
+    "common_name_en": "Marsh Wren",
+    "taxon_order": 27329,
+    "family": "Troglodytidae",
+    "family_full": "Troglodytidae (Wrens)",
+    "best_photo_ml": "34523661",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "452601141",
+        "date_raw": "2022-05-23",
+        "date_fr": "23 mai 2022",
+        "date_en": "May 23<sup>rd</sup>, 2022",
+        "location": "RF Marguerite-D'Youville",
+        "location_full_fr": "RF Marguerite-D'Youville, Québec, Canada",
+        "location_full_en": "RF Marguerite-D'Youville, Quebec, Canada",
+        "latitude": 45.3914585,
+        "longitude": -73.7611771,
+        "checklist_id": "S111114391",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Thryothorus ludovicianus",
+    "common_name_fr": "Troglodyte de Caroline",
+    "common_name_en": "Carolina Wren",
+    "taxon_order": 27348,
+    "family": "Troglodytidae",
+    "family_full": "Troglodytidae (Wrens)",
+    "best_photo_ml": "105332801",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "635542536",
+        "date_raw": "2025-05-11",
+        "date_fr": "11 mai 2025",
+        "date_en": "May 11<sup>th</sup>, 2025",
+        "location": "Parc Angrignon",
+        "location_full_fr": "Parc Angrignon, Québec, Canada",
+        "location_full_en": "Parc Angrignon, Quebec, Canada",
+        "latitude": 45.4445136,
+        "longitude": -73.6017311,
+        "checklist_id": "S236421006",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "634396281",
+        "date_raw": "2025-04-25",
+        "date_fr": "25 avril 2025",
+        "date_en": "April 25<sup>th</sup>, 2025",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S229138675",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Pheugopedius maculipectus",
+    "common_name_fr": "Troglodyte à poitrine tachetée",
+    "common_name_en": "Spot-breasted Wren",
+    "taxon_order": 27491,
+    "family": "Troglodytidae",
+    "family_full": "Troglodytidae (Wrens)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660408617",
+        "date_raw": "2026-06-27",
+        "date_fr": "27 juin 2026",
+        "date_en": "June 27<sup>th</sup>, 2026",
+        "location": "Camino cerca del cenote Noolhan",
+        "location_full_fr": "Camino cerca del cenote Noolhan, Mexique",
+        "location_full_en": "Camino cerca del cenote Noolhan, Mexico",
+        "latitude": 20.7150515,
+        "longitude": -88.2057051,
+        "checklist_id": "S364164243",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Sturnus vulgaris",
+    "common_name_fr": "Étourneau sansonnet",
+    "common_name_en": "European Starling",
+    "taxon_order": 27813,
+    "family": "Sturnidae",
+    "family_full": "Sturnidae (Starlings)",
+    "best_photo_ml": "627963894",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "402654911",
+        "date_raw": "2022-01-05",
+        "date_fr": "5 janvier 2022",
+        "date_en": "January 5<sup>th</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S100158188",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Mimus gilvus",
+    "common_name_fr": "Moqueur des savanes",
+    "common_name_en": "Tropical Mockingbird",
+    "taxon_order": 28101,
+    "family": "Mimidae",
+    "family_full": "Mimidae (Mockingbirds and Thrashers)",
+    "best_photo_ml": "660638678",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660687908",
+        "date_raw": "2026-07-02",
+        "date_fr": "2 juillet 2026",
+        "date_en": "July 2<sup>nd</sup>, 2026",
+        "location": "Charcas Iss 1",
+        "location_full_fr": "Charcas Iss 1, Mexique",
+        "location_full_en": "Charcas Iss 1, Mexico",
+        "latitude": 20.8692074,
+        "longitude": -90.3890511,
+        "checklist_id": "S366614148",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Sialia sialis",
+    "common_name_fr": "Merlebleu de l'Est",
+    "common_name_en": "Eastern Bluebird",
+    "taxon_order": 28126,
+    "family": "Turdidae",
+    "family_full": "Turdidae (Thrushes and Allies)",
+    "best_photo_ml": "648242828",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "351592191",
+        "date_raw": "2021-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2021",
+        "date_en": "July 1<sup>st</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S91082564",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Catharus minimus",
+    "common_name_fr": "Grive à joues grises",
+    "common_name_en": "Gray-cheeked Thrush",
+    "taxon_order": 28318,
+    "family": "Turdidae",
+    "family_full": "Turdidae (Thrushes and Allies)",
+    "best_photo_ml": "658304265",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "658276276",
+        "date_raw": "2026-05-24",
+        "date_fr": "24 mai 2026",
+        "date_en": "May 24<sup>th</sup>, 2026",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S345398225",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "658276278",
+        "date_raw": "2026-05-24",
+        "date_fr": "24 mai 2026",
+        "date_en": "May 24<sup>th</sup>, 2026",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S345398225",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Catharus bicknelli",
+    "common_name_fr": "Grive de Bicknell",
+    "common_name_en": "Bicknell's Thrush",
+    "taxon_order": 28321,
+    "family": "Turdidae",
+    "family_full": "Turdidae (Thrushes and Allies)",
+    "best_photo_ml": "22594111",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "586982281",
+        "date_raw": "2023-06-21",
+        "date_fr": "21 juin 2023",
+        "date_en": "June 21<sup>st</sup>, 2023",
+        "location": "PN du Mont-Mégantic",
+        "location_full_fr": "PN du Mont-Mégantic, Québec, Canada",
+        "location_full_en": "PN du Mont-Mégantic, Quebec, Canada",
+        "latitude": 45.4556374,
+        "longitude": -71.153512,
+        "checklist_id": "S142249788",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Catharus guttatus",
+    "common_name_fr": "Grive solitaire",
+    "common_name_en": "Hermit Thrush",
+    "taxon_order": 28333,
+    "family": "Turdidae",
+    "family_full": "Turdidae (Thrushes and Allies)",
+    "best_photo_ml": "646147892",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "634343176",
+        "date_raw": "2025-04-24",
+        "date_fr": "24 avril 2025",
+        "date_en": "April 24<sup>th</sup>, 2025",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S228802224",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "397461601",
+        "date_raw": "2021-12-20",
+        "date_fr": "20 décembre 2021",
+        "date_en": "December 20<sup>th</sup>, 2021",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S99170019",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Hylocichla mustelina",
+    "common_name_fr": "Grive des bois",
+    "common_name_en": "Wood Thrush",
+    "taxon_order": 28347,
+    "family": "Turdidae",
+    "family_full": "Turdidae (Thrushes and Allies)",
+    "best_photo_ml": "657857981",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "576031631",
+        "date_raw": "2023-05-22",
+        "date_fr": "22 mai 2023",
+        "date_en": "May 22<sup>nd</sup>, 2023",
+        "location": "PN du Bois-de-l'île-Bizard",
+        "location_full_fr": "PN du Bois-de-l'île-Bizard, Québec, Canada",
+        "location_full_en": "PN du Bois-de-l'île-Bizard, Quebec, Canada",
+        "latitude": 45.5100537,
+        "longitude": -73.8786578,
+        "checklist_id": "S138890174",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "576031641",
+        "date_raw": "2023-05-22",
+        "date_fr": "22 mai 2023",
+        "date_en": "May 22<sup>nd</sup>, 2023",
+        "location": "PN du Bois-de-l'île-Bizard",
+        "location_full_fr": "PN du Bois-de-l'île-Bizard, Québec, Canada",
+        "location_full_en": "PN du Bois-de-l'île-Bizard, Quebec, Canada",
+        "latitude": 45.5100537,
+        "longitude": -73.8786578,
+        "checklist_id": "S138890174",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Turdus grayi",
+    "common_name_fr": "Merle fauve",
+    "common_name_en": "Clay-colored Thrush",
+    "taxon_order": 28767,
+    "family": "Turdidae",
+    "family_full": "Turdidae (Thrushes and Allies)",
+    "best_photo_ml": "661280299",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660408497",
+        "date_raw": "2026-06-27",
+        "date_fr": "27 juin 2026",
+        "date_en": "June 27<sup>th</sup>, 2026",
+        "location": "Camino cerca del cenote Noolhan",
+        "location_full_fr": "Camino cerca del cenote Noolhan, Mexique",
+        "location_full_en": "Camino cerca del cenote Noolhan, Mexico",
+        "latitude": 20.7150515,
+        "longitude": -88.2057051,
+        "checklist_id": "S364164243",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660387875",
+        "date_raw": "2026-06-26",
+        "date_fr": "26 juin 2026",
+        "date_en": "June 26<sup>th</sup>, 2026",
+        "location": "Zona Arqueológica Chichén Itzá",
+        "location_full_fr": "Zona Arqueológica Chichén Itzá, Mexique",
+        "location_full_en": "Zona Arqueológica Chichén Itzá, Mexico",
+        "latitude": 20.6818391,
+        "longitude": -88.5692024,
+        "checklist_id": "S363734820",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Muscicapa striata",
+    "common_name_fr": "Gobemouche gris",
+    "common_name_en": "Spotted Flycatcher",
+    "taxon_order": 28818,
+    "family": "Muscicapidae",
+    "family_full": "Muscicapidae (Old World Flycatchers)",
+    "best_photo_ml": "467459241",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "464817851",
+        "date_raw": "2022-07-04",
+        "date_fr": "4 juillet 2022",
+        "date_en": "July 4<sup>th</sup>, 2022",
+        "location": "Cugnaux",
+        "location_full_fr": "Cugnaux, Occitanie, France",
+        "location_full_en": "Cugnaux, Occitanie, France",
+        "latitude": 43.5366388,
+        "longitude": 1.345137,
+        "checklist_id": "S114402677",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Phoenicurus phoenicurus",
+    "common_name_fr": "Rougequeue à front blanc",
+    "common_name_en": "Common Redstart",
+    "taxon_order": 29609,
+    "family": "Muscicapidae",
+    "family_full": "Muscicapidae (Old World Flycatchers)",
+    "best_photo_ml": "639035501",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "468549361",
+        "date_raw": "2022-07-19",
+        "date_fr": "19 juillet 2022",
+        "date_en": "July 19<sup>th</sup>, 2022",
+        "location": "Pierre-Châtel",
+        "location_full_fr": "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Pierre-Châtel, Auvergne-Rhône-Alpes, France",
+        "latitude": 44.9651319,
+        "longitude": 5.7594538,
+        "checklist_id": "S115379484",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Anthus trivialis",
+    "common_name_fr": "Pipit des arbres",
+    "common_name_en": "Tree Pipit",
+    "taxon_order": 31857,
+    "family": "Motacillidae",
+    "family_full": "Motacillidae (Wagtails and Pipits)",
+    "best_photo_ml": "621374884",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "621207441",
+        "date_raw": "2024-07-06",
+        "date_fr": "6 juillet 2024",
+        "date_en": "July 6<sup>th</sup>, 2024",
+        "location": "Forêt du Risoux",
+        "location_full_fr": "Forêt du Risoux, Bourgogne-Franche-Comté, France",
+        "location_full_en": "Forêt du Risoux, Bourgogne-Franche-Comté, France",
+        "latitude": 46.5455423,
+        "longitude": 6.0937643,
+        "checklist_id": "S185591742",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Anthus rubescens",
+    "common_name_fr": "Pipit d'Amérique",
+    "common_name_en": "American Pipit",
+    "taxon_order": 31883,
+    "family": "Motacillidae",
+    "family_full": "Motacillidae (Wagtails and Pipits)",
+    "best_photo_ml": "624479092",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "624499115",
+        "date_raw": "2024-10-03",
+        "date_fr": "3 octobre 2024",
+        "date_en": "October 3<sup>rd</sup>, 2024",
+        "location": "Champs agricoles Rg St-Simon",
+        "location_full_fr": "Champs agricoles Rg St-Simon, Québec, Canada",
+        "location_full_en": "Champs agricoles Rg St-Simon, Quebec, Canada",
+        "latitude": 45.3168453,
+        "longitude": -73.6550045,
+        "checklist_id": "S197359776",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Hesperiphona vespertina",
+    "common_name_fr": "Gros-bec errant",
+    "common_name_en": "Evening Grosbeak",
+    "taxon_order": 32085,
+    "family": "Fringillidae",
+    "family_full": "Fringillidae (Finches, Euphonias, and Allies)",
+    "best_photo_ml": "132014461",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "635604549",
+        "date_raw": "2025-05-12",
+        "date_fr": "12 mai 2025",
+        "date_en": "May 12<sup>th</sup>, 2025",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S236830581",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "498018661",
+        "date_raw": "2022-10-27",
+        "date_fr": "27 octobre 2022",
+        "date_en": "October 27<sup>th</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S121383365",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "419045721",
+        "date_raw": "2022-02-22",
+        "date_fr": "22 février 2022",
+        "date_en": "February 22<sup>nd</sup>, 2022",
+        "location": "Sentier Le Draveur",
+        "location_full_fr": "Sentier Le Draveur, Québec, Canada",
+        "location_full_en": "Sentier Le Draveur, Quebec, Canada",
+        "latitude": 48.4219156,
+        "longitude": -68.5497245,
+        "checklist_id": "S103516568",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Haemorhous mexicanus",
+    "common_name_fr": "Roselin familier",
+    "common_name_en": "House Finch",
+    "taxon_order": 32310,
+    "family": "Fringillidae",
+    "family_full": "Fringillidae (Finches, Euphonias, and Allies)",
+    "best_photo_ml": "630075692",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "416224651",
+        "date_raw": "2022-02-14",
+        "date_fr": "14 février 2022",
+        "date_en": "February 14<sup>th</sup>, 2022",
+        "location": "Rapides Deschênes",
+        "location_full_fr": "Rapides Deschênes, Québec, Canada",
+        "location_full_en": "Rapides Deschênes, Quebec, Canada",
+        "latitude": 45.37778,
+        "longitude": -75.79972,
+        "checklist_id": "S102627707",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Carduelis carduelis",
+    "common_name_fr": "Chardonneret élégant",
+    "common_name_en": "European Goldfinch",
+    "taxon_order": 32552,
+    "family": "Fringillidae",
+    "family_full": "Fringillidae (Finches, Euphonias, and Allies)",
+    "best_photo_ml": "111092651",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "465580561",
+        "date_raw": "2022-07-02",
+        "date_fr": "2 juillet 2022",
+        "date_en": "July 2<sup>nd</sup>, 2022",
+        "location": "RNN des Coussouls de Crau (RNN152)",
+        "location_full_fr": "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d'Azur, France",
+        "location_full_en": "RNN des Coussouls de Crau (RNN152), Provence-Alpes-Côte d'Azur, France",
+        "latitude": 43.5603842,
+        "longitude": 4.8294809,
+        "checklist_id": "S114205836",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Serinus serinus",
+    "common_name_fr": "Serin cini",
+    "common_name_en": "European Serin",
+    "taxon_order": 32572,
+    "family": "Fringillidae",
+    "family_full": "Fringillidae (Finches, Euphonias, and Allies)",
+    "best_photo_ml": "468714461",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "468714251",
+        "date_raw": "2022-07-20",
+        "date_fr": "20 juillet 2022",
+        "date_en": "July 20<sup>th</sup>, 2022",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S115414612",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Spinus pinus",
+    "common_name_fr": "Tarin des pins",
+    "common_name_en": "Pine Siskin",
+    "taxon_order": 32595,
+    "family": "Fringillidae",
+    "family_full": "Fringillidae (Finches, Euphonias, and Allies)",
+    "best_photo_ml": "166075251",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "642655878",
+        "date_raw": "2025-09-29",
+        "date_fr": "29 septembre 2025",
+        "date_en": "September 29<sup>th</sup>, 2025",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S276268998",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "529944431",
+        "date_raw": "2023-01-30",
+        "date_fr": "30 janvier 2023",
+        "date_en": "January 30<sup>th</sup>, 2023",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S127256739",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "382008241",
+        "date_raw": "2021-10-23",
+        "date_fr": "23 octobre 2021",
+        "date_en": "October 23<sup>rd</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S96595433",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Plectrophenax nivalis",
+    "common_name_fr": "Plectrophane des neiges",
+    "common_name_en": "Snow Bunting",
+    "taxon_order": 32674,
+    "family": "Calcariidae",
+    "family_full": "Calcariidae (Longspurs and Snow Buntings)",
+    "best_photo_ml": "419403411",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "629034237",
+        "date_raw": "2025-01-13",
+        "date_fr": "13 janvier 2025",
+        "date_en": "January 13<sup>th</sup>, 2025",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S209140705",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Emberiza cirlus",
+    "common_name_fr": "Bruant zizi",
+    "common_name_en": "Cirl Bunting",
+    "taxon_order": 32731,
+    "family": "Emberizidae",
+    "family_full": "Emberizidae (Old World Buntings)",
+    "best_photo_ml": "622237312",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "622236794",
+        "date_raw": "2024-08-06",
+        "date_fr": "6 août 2024",
+        "date_en": "August 6<sup>th</sup>, 2024",
+        "location": "Saint-Antoine l'Abbaye (commune)",
+        "location_full_fr": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "location_full_en": "Saint-Antoine l'Abbaye (commune), Auvergne-Rhône-Alpes, France",
+        "latitude": 45.1742263,
+        "longitude": 5.216454,
+        "checklist_id": "S190453617",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Peucaea carpalis",
+    "common_name_fr": "Bruant à épaulettes",
+    "common_name_en": "Rufous-winged Sparrow",
+    "taxon_order": 32910,
+    "family": "Passerellidae",
+    "family_full": "Passerellidae (New World Sparrows)",
+    "best_photo_ml": "538114091",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "538314401",
+        "date_raw": "2023-02-21",
+        "date_fr": "21 février 2023",
+        "date_en": "February 21<sup>st</sup>, 2023",
+        "location": "Catalina SP",
+        "location_full_fr": "Catalina SP, Arizona, États-Unis",
+        "location_full_en": "Catalina SP, Arizona, United States",
+        "latitude": 32.4244027,
+        "longitude": -110.9123905,
+        "checklist_id": "S129303210",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Arremonops rufivirgatus",
+    "common_name_fr": "Tohi olive",
+    "common_name_en": "Olive Sparrow",
+    "taxon_order": 32966,
+    "family": "Passerellidae",
+    "family_full": "Passerellidae (New World Sparrows)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660408699",
+        "date_raw": "2026-06-27",
+        "date_fr": "27 juin 2026",
+        "date_en": "June 27<sup>th</sup>, 2026",
+        "location": "Camino cerca del cenote Noolhan",
+        "location_full_fr": "Camino cerca del cenote Noolhan, Mexique",
+        "location_full_en": "Camino cerca del cenote Noolhan, Mexico",
+        "latitude": 20.7150515,
+        "longitude": -88.2057051,
+        "checklist_id": "S364164243",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Spizella pusilla",
+    "common_name_fr": "Bruant des champs",
+    "common_name_en": "Field Sparrow",
+    "taxon_order": 33002,
+    "family": "Passerellidae",
+    "family_full": "Passerellidae (New World Sparrows)",
+    "best_photo_ml": "635598738",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "562835501",
+        "date_raw": "2023-04-25",
+        "date_fr": "25 avril 2023",
+        "date_en": "April 25<sup>th</sup>, 2023",
+        "location": "Rapides Deschênes",
+        "location_full_fr": "Rapides Deschênes, Québec, Canada",
+        "location_full_en": "Rapides Deschênes, Quebec, Canada",
+        "latitude": 45.37778,
+        "longitude": -75.79972,
+        "checklist_id": "S135014400",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Melozone crissalis",
+    "common_name_fr": "Tohi de Californie",
+    "common_name_en": "California Towhee",
+    "taxon_order": 33350,
+    "family": "Passerellidae",
+    "family_full": "Passerellidae (New World Sparrows)",
+    "best_photo_ml": "620948255",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "551008011",
+        "date_raw": "2023-03-29",
+        "date_fr": "29 mars 2023",
+        "date_en": "March 29<sup>th</sup>, 2023",
+        "location": "Hilton Santa Barbara",
+        "location_full_fr": "Hilton Santa Barbara, Californie, États-Unis",
+        "location_full_en": "Hilton Santa Barbara, California, United States",
+        "latitude": 34.4161068,
+        "longitude": -119.6776592,
+        "checklist_id": "S132131567",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Agelaius phoeniceus",
+    "common_name_fr": "Carouge à épaulettes",
+    "common_name_en": "Red-winged Blackbird",
+    "taxon_order": 33779,
+    "family": "Icteridae",
+    "family_full": "Icteridae (Troupials and Allies)",
+    "best_photo_ml": "656125714",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "619391197",
+        "date_raw": "2024-05-21",
+        "date_fr": "21 mai 2024",
+        "date_en": "May 21<sup>st</sup>, 2024",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S176123573",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "375694501",
+        "date_raw": "2021-10-06",
+        "date_fr": "6 octobre 2021",
+        "date_en": "October 6<sup>th</sup>, 2021",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S95666816",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Dives dives",
+    "common_name_fr": "Quiscale chanteur",
+    "common_name_en": "Melodious Blackbird",
+    "taxon_order": 33843,
+    "family": "Icteridae",
+    "family_full": "Icteridae (Troupials and Allies)",
+    "best_photo_ml": "660930044",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660280323",
+        "date_raw": "2026-06-24",
+        "date_fr": "24 juin 2026",
+        "date_en": "June 24<sup>th</sup>, 2026",
+        "location": "Sendero Peten Mac",
+        "location_full_fr": "Sendero Peten Mac, Mexique",
+        "location_full_en": "Sendero Peten Mac, Mexico",
+        "latitude": 21.5950732,
+        "longitude": -88.1457406,
+        "checklist_id": "S362891456",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Agelasticus thilius",
+    "common_name_fr": "Carouge galonné",
+    "common_name_en": "Yellow-winged Blackbird",
+    "taxon_order": 33931,
+    "family": "Icteridae",
+    "family_full": "Icteridae (Troupials and Allies)",
+    "best_photo_ml": "439462321",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "435531621",
+        "date_raw": "2022-04-12",
+        "date_fr": "12 avril 2022",
+        "date_en": "April 12<sup>th</sup>, 2022",
+        "location": "Parque Bicentenario de Vitacura",
+        "location_full_fr": "Parque Bicentenario de Vitacura, Région Métropolitaine, Chili",
+        "location_full_en": "Parque Bicentenario de Vitacura, Metropolitan Region, Chile",
+        "latitude": -33.3980197,
+        "longitude": -70.6022,
+        "checklist_id": "S106897237",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Parkesia noveboracensis",
+    "common_name_fr": "Paruline des ruisseaux",
+    "common_name_en": "Northern Waterthrush",
+    "taxon_order": 33953,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "234518741",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "635360544",
+        "date_raw": "2025-05-08",
+        "date_fr": "8 mai 2025",
+        "date_en": "May 8<sup>th</sup>, 2025",
+        "location": "Sentiers, Auberge du Lac-à-l'Eau-Claire",
+        "location_full_fr": "Sentiers, Auberge du Lac-à-l'Eau-Claire, Québec, Canada",
+        "location_full_en": "Sentiers, Auberge du Lac-à-l'Eau-Claire, Quebec, Canada",
+        "latitude": 46.5429822,
+        "longitude": -73.0881786,
+        "checklist_id": "S234513244",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Leiothlypis peregrina",
+    "common_name_fr": "Paruline obscure",
+    "common_name_en": "Tennessee Warbler",
+    "taxon_order": 33972,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "450793781",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "636338802",
+        "date_raw": "2025-05-23",
+        "date_fr": "23 mai 2025",
+        "date_en": "May 23<sup>rd</sup>, 2025",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S241486402",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "451496501",
+        "date_raw": "2022-05-21",
+        "date_fr": "21 mai 2022",
+        "date_en": "May 21<sup>st</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S110826145",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Leiothlypis ruficapilla",
+    "common_name_fr": "Paruline à joues grises",
+    "common_name_en": "Nashville Warbler",
+    "taxon_order": 33981,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "22493731",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "621062273",
+        "date_raw": "2024-07-02",
+        "date_fr": "2 juillet 2024",
+        "date_en": "July 2<sup>nd</sup>, 2024",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S184904580",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Geothlypis trichas",
+    "common_name_fr": "Paruline masquée",
+    "common_name_en": "Common Yellowthroat",
+    "taxon_order": 34028,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "636161642",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "658042252",
+        "date_raw": "2026-05-21",
+        "date_fr": "21 mai 2026",
+        "date_en": "May 21<sup>st</sup>, 2026",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S343300074",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Setophaga citrina",
+    "common_name_fr": "Paruline à capuchon",
+    "common_name_en": "Hooded Warbler",
+    "taxon_order": 34057,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "657179114",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "348696581",
+        "date_raw": "2021-06-18",
+        "date_fr": "18 juin 2021",
+        "date_en": "June 18<sup>th</sup>, 2021",
+        "location": "Parc du Mont-Royal",
+        "location_full_fr": "Parc du Mont-Royal, Québec, Canada",
+        "location_full_en": "Parc du Mont-Royal, Quebec, Canada",
+        "latitude": 45.5055593,
+        "longitude": -73.5882289,
+        "checklist_id": "S90377765",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Setophaga ruticilla",
+    "common_name_fr": "Paruline flamboyante",
+    "common_name_en": "American Redstart",
+    "taxon_order": 34058,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "487486751",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "457378691",
+        "date_raw": "2022-06-07",
+        "date_fr": "7 juin 2022",
+        "date_en": "June 7<sup>th</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S112366894",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Setophaga fusca",
+    "common_name_fr": "Paruline à gorge orangée",
+    "common_name_en": "Blackburnian Warbler",
+    "taxon_order": 34084,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "447501141",
+        "date_raw": "2022-05-12",
+        "date_fr": "12 mai 2022",
+        "date_en": "May 12<sup>th</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S109752748",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Setophaga petechia",
+    "common_name_fr": "Paruline des mangroves",
+    "common_name_en": "Mangrove Yellow Warbler",
+    "taxon_order": 34097,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660306624",
+        "date_raw": "2026-06-25",
+        "date_fr": "25 juin 2026",
+        "date_en": "June 25<sup>th</sup>, 2026",
+        "location": "Malecón, Río Lagartos",
+        "location_full_fr": "Malecón, Río Lagartos, Mexique",
+        "location_full_en": "Malecón, Río Lagartos, Mexico",
+        "latitude": 21.595833,
+        "longitude": -88.154141,
+        "checklist_id": "S363131692",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "660306647",
+        "date_raw": "2026-06-25",
+        "date_fr": "25 juin 2026",
+        "date_en": "June 25<sup>th</sup>, 2026",
+        "location": "Malecón, Río Lagartos",
+        "location_full_fr": "Malecón, Río Lagartos, Mexique",
+        "location_full_en": "Malecón, Río Lagartos, Mexico",
+        "latitude": 21.595833,
+        "longitude": -88.154141,
+        "checklist_id": "S363131692",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 2
+  },
+  {
+    "sci_name": "Setophaga striata",
+    "common_name_fr": "Paruline rayée",
+    "common_name_en": "Blackpoll Warbler",
+    "taxon_order": 34138,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "586902591",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "619391215",
+        "date_raw": "2024-05-20",
+        "date_fr": "20 mai 2024",
+        "date_en": "May 20<sup>th</sup>, 2024",
+        "location": "Parc Maynard-Ferguson",
+        "location_full_fr": "Parc Maynard-Ferguson, Québec, Canada",
+        "location_full_en": "Parc Maynard-Ferguson, Quebec, Canada",
+        "latitude": 45.4464071,
+        "longitude": -73.556557,
+        "checklist_id": "S175994583",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Setophaga virens",
+    "common_name_fr": "Paruline à gorge noire",
+    "common_name_en": "Black-throated Green Warbler",
+    "taxon_order": 34218,
+    "family": "Parulidae",
+    "family_full": "Parulidae (New World Warblers)",
+    "best_photo_ml": "494732711",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "634655230",
+        "date_raw": "2025-04-29",
+        "date_fr": "29 avril 2025",
+        "date_en": "April 29<sup>th</sup>, 2025",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S230773500",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Piranga olivacea",
+    "common_name_fr": "Piranga écarlate",
+    "common_name_en": "Scarlet Tanager",
+    "taxon_order": 34436,
+    "family": "Cardinalidae",
+    "family_full": "Cardinalidae (Cardinals and Allies)",
+    "best_photo_ml": "641877501",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "658042215",
+        "date_raw": "2026-05-21",
+        "date_fr": "21 mai 2026",
+        "date_en": "May 21<sup>st</sup>, 2026",
+        "location": "Parc du 3e sommet",
+        "location_full_fr": "Parc du 3e sommet, Québec, Canada",
+        "location_full_en": "Parc du 3e sommet, Quebec, Canada",
+        "latitude": 45.5071289,
+        "longitude": -73.6078835,
+        "checklist_id": "S343300074",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Cardinalis cardinalis",
+    "common_name_fr": "Cardinal rouge",
+    "common_name_en": "Northern Cardinal",
+    "taxon_order": 34515,
+    "family": "Cardinalidae",
+    "family_full": "Cardinalidae (Cardinals and Allies)",
+    "best_photo_ml": "649626137",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660660911",
+        "date_raw": "2026-07-01",
+        "date_fr": "1<sup>er</sup> juillet 2026",
+        "date_en": "July 1<sup>st</sup>, 2026",
+        "location": "Reserva de la Biosfera Ría Celestún",
+        "location_full_fr": "Reserva de la Biosfera Ría Celestún, Mexique",
+        "location_full_en": "Reserva de la Biosfera Ría Celestún, Mexico",
+        "latitude": 20.8940859,
+        "longitude": -90.3865782,
+        "checklist_id": "S366405211",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "427883801",
+        "date_raw": "2022-03-23",
+        "date_fr": "23 mars 2022",
+        "date_en": "March 23<sup>rd</sup>, 2022",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S105414656",
+        "curation_status": "include"
+      },
+      {
+        "ml_catalog_number": "375694601",
+        "date_raw": "2021-09-30",
+        "date_fr": "30 septembre 2021",
+        "date_en": "September 30<sup>th</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S95379283",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 3
+  },
+  {
+    "sci_name": "Passerina cyanea",
+    "common_name_fr": "Passerin indigo",
+    "common_name_en": "Indigo Bunting",
+    "taxon_order": 34607,
+    "family": "Cardinalidae",
+    "family_full": "Cardinalidae (Cardinals and Allies)",
+    "best_photo_ml": "351793661",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "351761651",
+        "date_raw": "2021-07-02",
+        "date_fr": "2 juillet 2021",
+        "date_en": "July 2<sup>nd</sup>, 2021",
+        "location": "Cimetières Mont-Royal et Notre-Dame-des-Neiges",
+        "location_full_fr": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Québec, Canada",
+        "location_full_en": "Cimetières Mont-Royal et Notre-Dame-des-Neiges, Quebec, Canada",
+        "latitude": 45.5049279,
+        "longitude": -73.6039953,
+        "checklist_id": "S91131276",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Diuca diuca",
+    "common_name_fr": "Diuca gris",
+    "common_name_en": "Diuca Finch",
+    "taxon_order": 35354,
+    "family": "Thraupidae",
+    "family_full": "Thraupidae (Tanagers and Allies)",
+    "best_photo_ml": "437653441",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "436361121",
+        "date_raw": "2022-04-16",
+        "date_fr": "16 avril 2022",
+        "date_en": "April 16<sup>th</sup>, 2022",
+        "location": "Observatorio de La Silla",
+        "location_full_fr": "Observatorio de La Silla, Coquimbo, Chili",
+        "location_full_en": "Observatorio de La Silla, Coquimbo, Chile",
+        "latitude": -29.2562225,
+        "longitude": -70.7383406,
+        "checklist_id": "S107232521",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Sporophila morelleti",
+    "common_name_fr": "Sporophile de Morelet",
+    "common_name_en": "Morelet's Seedeater",
+    "taxon_order": 35574,
+    "family": "Thraupidae",
+    "family_full": "Thraupidae (Tanagers and Allies)",
+    "best_photo_ml": "660233987",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660220911",
+        "date_raw": "2026-06-23",
+        "date_fr": "23 juin 2026",
+        "date_en": "June 23<sup>rd</sup>, 2026",
+        "location": "Ramal a San Felipe, San Felipe MX-Yuc. 21.55372, -88.20950",
+        "location_full_fr": "Ramal a San Felipe, San Felipe MX-Yuc. 21.55372, -88.20950, Mexique",
+        "location_full_en": "Ramal a San Felipe, San Felipe MX-Yuc. 21.55372, -88.20950, Mexico",
+        "latitude": 21.553718,
+        "longitude": -88.209505,
+        "checklist_id": "S362245528",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Saltator grandis",
+    "common_name_fr": "Saltator du Mexique",
+    "common_name_en": "Cinnamon-bellied Saltator",
+    "taxon_order": 35806,
+    "family": "Thraupidae",
+    "family_full": "Thraupidae (Tanagers and Allies)",
+    "best_photo_ml": null,
+    "all_sounds": [
+      {
+        "ml_catalog_number": "660501966",
+        "date_raw": "2026-06-28",
+        "date_fr": "28 juin 2026",
+        "date_en": "June 28<sup>th</sup>, 2026",
+        "location": "Parque Plaza Grande",
+        "location_full_fr": "Parque Plaza Grande, Mexique",
+        "location_full_en": "Parque Plaza Grande, Mexico",
+        "latitude": 20.9670861,
+        "longitude": -89.6237826,
+        "checklist_id": "S364807160",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  }
+]

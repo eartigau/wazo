@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <title>{% if lang == 'fr' %}Sons{% else %}Sounds{% endif %}</title>
+    <link rel="stylesheet" href="gallery.css?v=2">
+    <style>
+        .sound-species {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--sage-light, #ddd);
+        }
+        .sound-species-photo-wrapper {
+            flex: 0 0 110px;
+            width: 110px;
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--bg-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sound-species-photo-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .sound-species-photo-wrapper .no-photo-icon {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            color: var(--sage-light, #b8c9b8);
+        }
+        .sound-species-body {
+            flex: 1;
+            min-width: 0;
+        }
+        .sound-species-name {
+            margin-bottom: 8px;
+        }
+        .sound-species-name .species-common {
+            font-family: 'Lora', Georgia, serif;
+            font-size: 19px;
+            font-weight: 600;
+            color: var(--forest-green, #2d5a27);
+            margin-right: 8px;
+        }
+        .sound-species-name .species-sci {
+            font-style: italic;
+            color: var(--text-medium, #777);
+            font-size: 14px;
+        }
+        .sound-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .sound-player {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            max-width: 520px;
+        }
+        .sono-wrap {
+            position: relative;
+            width: 100%;
+            height: 80px;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #f5f5f0;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        .sono-wrap .sono-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            max-width: none;
+        }
+        .sono-wrap .playhead {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: #e67e22;
+            box-shadow: 0 0 4px rgba(0,0,0,.6);
+            pointer-events: none;
+        }
+        .sound-player audio {
+            width: 100%;
+            height: 32px;
+        }
+        .sound-meta {
+            font-size: 12px;
+            color: var(--text-medium, #888);
+        }
+        @media (max-width: 600px) {
+            .sound-species { flex-direction: column; gap: 12px; }
+            .sound-species-photo-wrapper { width: 90px; height: 90px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- NAVIGATION CENTRÉE -->
+    <nav>
+        <div class="nav-container">
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Menu">☰</button>
+            <ul class="nav-menu" id="navMenu">
+                {% for item in menu %}
+                <li>
+                    <a href="{% if lang == 'fr' %}{{ item.file_fr }}{% else %}{{ item.file_en }}{% endif %}"
+                       {% if current_page == item.file_fr or current_page == item.file_en %}class="active"{% endif %}>
+                        {% if lang == 'fr' %}{{ item.name_fr }}{% else %}{{ item.name_en }}{% endif %}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+
+            <!-- Sélecteur de langue -->
+            <div class="lang-switch" style="display: flex; flex-direction: row; align-items: center; gap: 0; background: #f5f3f0; border-radius: 20px; padding: 4px;">
+                {% if lang == 'fr' %}
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">FR</span>
+                <a href="{{ other_lang_page }}" class="lang-btn" title="English" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">EN</a>
+                {% else %}
+                <a href="{{ other_lang_page }}" class="lang-btn" title="Français" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: transparent; color: #7a8a7a; text-decoration: none;">FR</a>
+                <span class="lang-btn active" style="display: inline-flex; align-items: center; justify-content: center; padding: 6px 14px; border-radius: 16px; font-size: 13px; font-weight: 600; background: #2d5a27; color: white;">EN</span>
+                {% endif %}
+            </div>
+        </div>
+    </nav>
+
+    <!-- EN-TÊTE -->
+    <div class="gallery-header">
+        <h1>{% if lang == 'fr' %}Sons enregistrés{% else %}Recorded sounds{% endif %}</h1>
+        <div class="stats">
+            {{ total_species }} {% if lang == 'fr' %}espèces{% else %}species{% endif %} •
+            {{ total_sounds }} {% if lang == 'fr' %}sons{% else %}sounds{% endif %}
+        </div>
+    </div>
+
+    <!-- LISTE DES ESPÈCES AVEC SONS -->
+    <div class="species-list-container" style="max-width: 900px; margin: 0 auto; padding: 0 20px;">
+        {% for sp in species_list %}
+        <div class="sound-species">
+            <div class="sound-species-photo-wrapper">
+                {% if sp.best_photo_ml %}
+                <img src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ sp.best_photo_ml }}/480"
+                     alt="" loading="lazy">
+                {% else %}
+                <span class="no-photo-icon">🎵</span>
+                {% endif %}
+            </div>
+            <div class="sound-species-body">
+                <div class="sound-species-name">
+                    <span class="species-common">{% if lang == 'fr' %}{{ sp.common_name_fr }}{% else %}{{ sp.common_name_en }}{% endif %}</span>
+                    <span class="species-sci">{{ sp.sci_name }}</span>
+                </div>
+                <div class="sound-list">
+                    {% for sound in sp.all_sounds %}
+                    <div class="sound-player" data-duration="{{ sound.duration or '' }}">
+                        {% if sound.sonogram_path %}
+                        <div class="sono-wrap">
+                            <img class="sono-img" src="{{ sound.sonogram_path }}" alt="" loading="lazy">
+                            <div class="playhead"></div>
+                        </div>
+                        {% endif %}
+                        <audio controls preload="none">
+                            <source src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{{ sound.ml_catalog_number }}/mp3" type="audio/mpeg">
+                        </audio>
+                        <div class="sound-meta">
+                            {% if lang == 'fr' %}{{ sound.date_fr }} · {{ sound.location_full_fr }}{% else %}{{ sound.date_en }} · {{ sound.location_full_en }}{% endif %}
+                            {% if sound.checklist_id %}
+                            · <a href="https://ebird.org/checklist/{{ sound.checklist_id }}" target="_blank" rel="noopener">eBird</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>{% if lang == 'fr' %}Données{% else %}Data{% endif %} <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a></p>
+        <p>© Étienne Artigau</p>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script src="gallery-common.js"></script>
+    <script>
+        // Sonogramme défilant synchronisé avec la lecture. Le sonogramme CDN de Cornell
+        // ne correspond pas dans le temps au fichier mp3 réel : les sonogrammes ici sont
+        // générés côté serveur avec ffmpeg à partir du mp3 exact (mêmes px/seconde que
+        // le calcul ci-dessous), et la durée exacte est passée via data-duration.
+        const PLAYHEAD_FRACTION = 0.35;
+        // Écart résiduel constaté entre la durée mesurée (ffprobe) et la fin réelle de la
+        // lecture dans le navigateur (décodeur mp3 différent) : le son se termine un peu
+        // avant la durée rapportée, donc on comprime légèrement l'échelle pour rester
+        // synchronisé jusqu'à la toute fin.
+        const END_TRIM_SECONDS = 0.3;
+
+        function initSoundPlayer(playerEl) {
+            const audio = playerEl.querySelector('audio');
+            const sonoImg = playerEl.querySelector('.sono-img');
+            const playhead = playerEl.querySelector('.playhead');
+            const wrap = playerEl.querySelector('.sono-wrap');
+            if (!audio) return;
+
+            const serverDuration = parseFloat(playerEl.dataset.duration) || 0;
+            let pxPerSec = 0;
+            let rafId = null;
+
+            function setupScale() {
+                if (!wrap || !sonoImg || !sonoImg.naturalWidth || !serverDuration) return;
+                const containerHeight = wrap.clientHeight;
+                const renderedWidth = sonoImg.naturalWidth * (containerHeight / sonoImg.naturalHeight);
+                sonoImg.style.width = renderedWidth + 'px';
+                sonoImg.style.height = containerHeight + 'px';
+                const effectiveDuration = Math.max(0.1, serverDuration - END_TRIM_SECONDS);
+                pxPerSec = renderedWidth / effectiveDuration;
+            }
+
+            function updateFrame() {
+                if (pxPerSec > 0 && wrap) {
+                    const containerWidth = wrap.clientWidth;
+                    const playheadX = containerWidth * PLAYHEAD_FRACTION;
+                    const offset = playheadX - audio.currentTime * pxPerSec;
+                    sonoImg.style.transform = `translateX(${offset}px)`;
+                    playhead.style.left = playheadX + 'px';
+                }
+                rafId = requestAnimationFrame(updateFrame);
+            }
+
+            if (sonoImg) {
+                if (sonoImg.complete && sonoImg.naturalWidth) setupScale();
+                sonoImg.addEventListener('load', setupScale);
+            }
+
+            audio.addEventListener('play', () => { if (!rafId) rafId = requestAnimationFrame(updateFrame); });
+            audio.addEventListener('pause', () => { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } });
+            audio.addEventListener('ended', () => { if (rafId) { cancelAnimationFrame(rafId); rafId = null; } });
+
+            if (wrap) {
+                wrap.addEventListener('click', (e) => {
+                    if (pxPerSec <= 0) return;
+                    const rect = wrap.getBoundingClientRect();
+                    const containerWidth = wrap.clientWidth;
+                    const clickX = e.clientX - rect.left;
+                    const currentOffset = containerWidth * PLAYHEAD_FRACTION - audio.currentTime * pxPerSec;
+                    const t = (clickX - currentOffset) / pxPerSec;
+                    audio.currentTime = Math.min(Math.max(t, 0), serverDuration);
+                    if (audio.paused) audio.play();
+                });
+            }
+        }
+
+        document.querySelectorAll('.sound-player').forEach(initSoundPlayer);
+    </script>
+</body>
+</html>

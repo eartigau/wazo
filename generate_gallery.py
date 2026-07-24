@@ -10,12 +10,12 @@ Générateur de galeries eBird v2.0
 import csv
 import json
 import os
+import subprocess
 import time
 import re
 from pathlib import Path
 from datetime import datetime
 from urllib.request import urlopen, Request
-from urllib.error import HTTPError, URLError
 from jinja2 import Environment, FileSystemLoader
 
 
@@ -26,6 +26,9 @@ from jinja2 import Environment, FileSystemLoader
 CACHE_FILE = "media_cache.csv"
 TAXONOMY_FILE = "eBird_taxonomy_v2025.csv"
 TRADUCTIONS_FILE = "traductions_lieux.csv"
+SOUNDS_COMPILATION_FILE = "sons_par_espece.json"
+SOUNDS_ASSETS_DIR = "sons_sonogrammes"
+SOUNDS_PXPS = 80  # pixels par seconde du sonogramme ; doit correspondre au JS de sounds_template.html
 REQUEST_TIMEOUT = 10
 DELAY_BETWEEN_REQUESTS = 0.2
 
@@ -526,26 +529,41 @@ class EBirdTaxonomy:
 # VÉRIFICATION DES MÉDIAS
 # ============================================================================
 
-def verifier_image_existe(ml_catalog_number: str) -> bool:
-    """Vérifie si une image existe en taille 480 sur Macaulay Library"""
-    url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{ml_catalog_number}/480"
-    
+def _content_type_cdn(ml_catalog_number: str, suffix: str) -> str:
+    """Retourne le Content-Type d'un suffixe d'asset Macaulay Library, ou '' si absent/erreur."""
+    url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{ml_catalog_number}/{suffix}"
     try:
         request = Request(url, method='HEAD')
         request.add_header('User-Agent', 'Mozilla/5.0 (compatible; eBird Gallery)')
-        
         with urlopen(request, timeout=REQUEST_TIMEOUT) as response:
-            content_type = response.headers.get('Content-Type', '')
-            if 'image' in content_type.lower():
-                return True
-            return response.status == 200
-            
-    except HTTPError as e:
-        if e.code == 404:
-            return False
-        return False
-    except:
-        return False
+            return response.headers.get('Content-Type', '').lower()
+    except Exception:
+        return ''
+
+
+def verifier_image_existe(ml_catalog_number: str) -> bool:
+    """Vérifie si une image existe en taille 480 sur Macaulay Library (conservé pour compatibilité)."""
+    return 'image' in _content_type_cdn(ml_catalog_number, '480')
+
+
+def verifier_type_media(ml_catalog_number: str) -> str:
+    """
+    Détermine le type d'un média Macaulay Library : 'image', 'son', 'video' ou 'inconnu'.
+    Essaie d'abord /480 (photos, cas le plus fréquent), puis /mp3 (sons), puis quelques
+    suffixes vidéo courants (pas encore rencontrés dans ce catalogue, mais prévus).
+    """
+    if 'image' in _content_type_cdn(ml_catalog_number, '480'):
+        return 'image'
+
+    if 'audio' in _content_type_cdn(ml_catalog_number, 'mp3'):
+        return 'son'
+
+    for suffix in ('720p', '1080p', '480p', 'mp4'):
+        content_type = _content_type_cdn(ml_catalog_number, suffix)
+        if 'video' in content_type:
+            return 'video'
+
+    return 'inconnu'
 
 
 def charger_cache(fichier_cache: str = CACHE_FILE) -> dict:
@@ -619,28 +637,30 @@ def verifier_medias(ml_numbers: list, fichier_cache: str = CACHE_FILE,
     
     if a_verifier:
         print(f"\n🔍 Vérification de {len(a_verifier)} médias...")
-        
+
+        raisons = {
+            'image': 'vérifié automatiquement',
+            'son': 'pas d\'image 480 disponible, audio détecté',
+            'video': 'vidéo détectée',
+            'inconnu': 'type non identifié (ni image, ni audio, ni vidéo)'
+        }
+
         for i, ml_number in enumerate(a_verifier, 1):
             if i % 50 == 0:
                 print(f"  ... {i}/{len(a_verifier)}")
-            
-            est_image = verifier_image_existe(ml_number)
-            
-            if est_image:
-                cache[ml_number] = {
-                    'status': 'image',
-                    'raison': 'vérifié automatiquement',
-                    'date_verification': date_now
-                }
+
+            type_media = verifier_type_media(ml_number)
+
+            cache[ml_number] = {
+                'status': type_media,
+                'raison': raisons[type_media],
+                'date_verification': date_now
+            }
+            if type_media == 'image':
                 images.append(ml_number)
             else:
-                cache[ml_number] = {
-                    'status': 'son',
-                    'raison': 'pas d\'image 480 disponible',
-                    'date_verification': date_now
-                }
                 exclus.append(ml_number)
-            
+
             time.sleep(DELAY_BETWEEN_REQUESTS)
         
         sauvegarder_cache(cache, fichier_cache)
@@ -1115,10 +1135,18 @@ class EBirdGalleryGenerator:
         output_en = f"{output_base}_en.html"
         
         sounds_list = self.get_sounds_list(curation=curation)
-        
+
         # Compter le total de sons
         total_sounds = sum(sp['sound_count'] for sp in sounds_list)
-        
+
+        # Générer (ou réutiliser depuis le cache disque) le sonogramme de chaque son
+        print(f"   🎙️ Sonogrammes ({total_sounds} sons)...")
+        for sp in sounds_list:
+            for sound in sp['all_sounds']:
+                resultat = generer_sonogramme(sound['ml_catalog_number'])
+                sound['sonogram_path'] = resultat['path'] if resultat else None
+                sound['duration'] = resultat['duration'] if resultat else None
+
         env = Environment(loader=FileSystemLoader('.'))
         template = env.get_template(template_file)
         
@@ -1667,12 +1695,15 @@ class EBirdGalleryGenerator:
         return output_fr, output_en
 
 
-def verifier_tous_les_medias(csv_file: str, cache_file: str = CACHE_FILE):
-    """Vérifie tous les médias du fichier CSV"""
+def verifier_tous_les_medias(csv_file: str, cache_file: str = CACHE_FILE,
+                              sounds_file: str = SOUNDS_COMPILATION_FILE,
+                              taxonomy_file: str = TAXONOMY_FILE):
+    """Vérifie tous les médias du fichier CSV. Les numéros ML qui ne sont pas des
+    images (donc des sons) sont compilés par espèce dans sounds_file."""
     print("=" * 60)
     print("🔍 VÉRIFICATION COMPLÈTE DES MÉDIAS")
     print("=" * 60)
-    
+
     all_ml_numbers = []
     with open(csv_file, 'r', encoding='utf-8') as f:
         reader = csv.DictReader(f)
@@ -1684,24 +1715,104 @@ def verifier_tous_les_medias(csv_file: str, cache_file: str = CACHE_FILE):
                     ml = ml.strip()
                     if ml:
                         all_ml_numbers.append(ml)
-    
+
     all_ml_numbers = list(set(all_ml_numbers))
     print(f"\nTotal de médias uniques: {len(all_ml_numbers)}")
-    
+
     resultats = verifier_medias(all_ml_numbers, cache_file)
-    
+
     # Afficher les statistiques
     cache = resultats['cache']
     images = sum(1 for v in cache.values() if v.get('status') == 'image')
     sons = sum(1 for v in cache.values() if v.get('status') == 'son')
-    
+    videos = sum(1 for v in cache.values() if v.get('status') == 'video')
+    inconnus = sum(1 for v in cache.values() if v.get('status') == 'inconnu')
+
     print("\n" + "=" * 60)
     print("✅ VÉRIFICATION TERMINÉE")
     print(f"   📷 {images} photos")
     print(f"   🎵 {sons} sons")
+    if videos:
+        print(f"   🎬 {videos} vidéos")
+    if inconnus:
+        print(f"   ❓ {inconnus} non identifiés")
     print("=" * 60)
-    
+
+    if sons:
+        generator = EBirdGalleryGenerator(csv_file, media_cache_file=cache_file,
+                                           taxonomy_file=taxonomy_file)
+        sounds_list = generator.get_sounds_list()
+        ecrire_sons_par_espece(sounds_list, sounds_file)
+        print(f"   🎶 Compilation sons/espèce : {len(sounds_list)} espèces -> {sounds_file}")
+
     return resultats
+
+
+def ecrire_sons_par_espece(sounds_list: list, chemin_fichier: str):
+    """Écrit la compilation des sons regroupés par espèce (issue de get_sounds_list)."""
+    with open(chemin_fichier, 'w', encoding='utf-8') as f:
+        json.dump(sounds_list, f, ensure_ascii=False, indent=2)
+
+
+def generer_sonogramme(ml_catalog_number: str, dest_dir: str = SOUNDS_ASSETS_DIR,
+                        pxps: int = SOUNDS_PXPS) -> dict:
+    """
+    Génère (et met en cache sur disque) le sonogramme en niveaux de gris d'un son,
+    à largeur exacte en pixels/seconde. Le sonogramme CDN de Cornell (/640) ne
+    correspond pas dans le temps au fichier mp3 téléchargeable (probablement généré
+    depuis un extrait différent) ; on génère donc le nôtre depuis le vrai fichier
+    joué, avec ffmpeg, pour garantir une synchronisation exacte à la lecture.
+
+    Retourne {'path': ..., 'duration': ...} ou None si échec (mp3 introuvable,
+    ffmpeg absent, etc.) : dans ce cas sounds_template.html doit pouvoir s'en passer.
+    """
+    os.makedirs(dest_dir, exist_ok=True)
+    image_path = os.path.join(dest_dir, f"{ml_catalog_number}.jpg")
+    meta_path = os.path.join(dest_dir, f"{ml_catalog_number}.json")
+
+    if os.path.exists(image_path) and os.path.exists(meta_path):
+        try:
+            with open(meta_path, 'r', encoding='utf-8') as f:
+                return {'path': image_path, 'duration': json.load(f)['duration']}
+        except Exception:
+            pass  # métadonnées corrompues : régénérer
+
+    mp3_url = f"https://cdn.download.ams.birds.cornell.edu/api/v2/asset/{ml_catalog_number}/mp3"
+    tmp_mp3 = os.path.join(dest_dir, f"_tmp_{ml_catalog_number}.mp3")
+
+    try:
+        request = Request(mp3_url)
+        request.add_header('User-Agent', 'Mozilla/5.0 (compatible; eBird Gallery)')
+        with urlopen(request, timeout=30) as response, open(tmp_mp3, 'wb') as out:
+            out.write(response.read())
+
+        probe = subprocess.run(
+            ['ffprobe', '-v', 'error', '-show_entries', 'format=duration',
+             '-of', 'default=noprint_wrappers=1:nokey=1', tmp_mp3],
+            capture_output=True, text=True, timeout=30, check=True
+        )
+        duration = float(probe.stdout.strip())
+        width = max(640, round(duration * pxps))
+
+        subprocess.run(
+            ['ffmpeg', '-y', '-i', tmp_mp3, '-lavfi',
+             f'showspectrumpic=s={width}x220:legend=0,hue=s=0,negate',
+             '-update', '1', '-frames:v', '1', image_path],
+            capture_output=True, timeout=60, check=True
+        )
+
+        with open(meta_path, 'w', encoding='utf-8') as f:
+            json.dump({'duration': duration}, f)
+
+        time.sleep(0.1)  # ne pas marteler le CDN
+        return {'path': image_path, 'duration': duration}
+
+    except Exception as e:
+        print(f"  ⚠ Sonogramme impossible pour ML{ml_catalog_number}: {e}")
+        return None
+    finally:
+        if os.path.exists(tmp_mp3):
+            os.remove(tmp_mp3)
 
 
 if __name__ == "__main__":
