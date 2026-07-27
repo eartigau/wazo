@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Test embed son Macaulay Library</title>
+<style>
+    body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+        background: #faf8f5;
+        color: #2c3e2d;
+        padding: 40px 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    h1 { font-size: 20px; }
+    .frame-wrap {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 30px rgba(0,0,0,.15);
+        background: #fff;
+    }
+</style>
+</head>
+<body>
+    <h1>Test : lecteur audio + sonogramme défilant (généré localement)</h1>
+    <div class="frame-wrap" style="padding: 20px; display:flex; flex-direction:column; align-items:center; gap:14px;">
+        <div id="sonoWrap" style="position:relative; width:500px; height:170px; overflow:hidden; border-radius:6px; background:#f5f5f0; border:1px solid #ddd; cursor:pointer;">
+            <img id="sonoImg" src="test_sono_full.jpg" alt="Sonogramme" style="position:absolute; top:0; left:0; height:100%; max-width:none;">
+            <div id="playhead" style="position:absolute; top:0; bottom:0; width:2px; background:#e67e22; box-shadow:0 0 4px rgba(0,0,0,.6);"></div>
+        </div>
+        <audio id="audioPlayer" controls preload="metadata" style="width: 500px;">
+            <source src="https://cdn.download.ams.birds.cornell.edu/api/v2/asset/661152036/mp3" type="audio/mpeg">
+        </audio>
+        <div id="debugInfo" style="font-family: monospace; font-size:12px; color:#999;"></div>
+    </div>
+    <p style="max-width:500px; text-align:center; color:#666; font-size:14px;">
+        Le sonogramme Cornell (<code>/640</code>) ne correspond pas dans le temps
+        au fichier <code>/mp3</code> téléchargeable (probablement généré depuis un
+        extrait différent). Ce test génère donc son propre sonogramme localement
+        avec ffmpeg à partir du <code>mp3</code> réel, ce qui garantit une
+        correspondance exacte avec la lecture.
+    </p>
+    <script>
+        const audio = document.getElementById('audioPlayer');
+        const sonoImg = document.getElementById('sonoImg');
+        const playhead = document.getElementById('playhead');
+        const wrap = document.getElementById('sonoWrap');
+        const debugInfo = document.getElementById('debugInfo');
+
+        const CONTAINER_WIDTH = 500;
+        const PLAYHEAD_FRACTION = 0.35;  // position du trait dans la fenêtre visible
+        // Le son réel se termine ~0.3s avant la durée rapportée par le navigateur
+        // (écart de décodage mp3 constaté empiriquement) ; on en tient compte pour
+        // que le sonogramme finisse de défiler exactement quand le son s'arrête.
+        const END_TRIM_SECONDS = 0.3;
+
+        let pxPerSec = 80;  // valeur par défaut, ajustée une fois l'image chargée + durée connue
+        let imgWidthPx = 0;
+        let lastOffset = 0;
+        let rafId = null;
+
+        function setupScale() {
+            const duration = audio.duration;
+            if (sonoImg.naturalWidth && sonoImg.naturalHeight && isFinite(duration) && duration > 0) {
+                const containerHeight = wrap.clientHeight;
+                const renderedWidth = sonoImg.naturalWidth * (containerHeight / sonoImg.naturalHeight);
+                sonoImg.style.width = renderedWidth + 'px';
+                sonoImg.style.height = containerHeight + 'px';
+                imgWidthPx = renderedWidth;
+                const effectiveDuration = Math.max(0.1, duration - END_TRIM_SECONDS);
+                pxPerSec = imgWidthPx / effectiveDuration;
+            }
+        }
+
+        function offsetForTime(t) {
+            return CONTAINER_WIDTH * PLAYHEAD_FRACTION - t * pxPerSec;
+        }
+
+        function updateLine() {
+            const duration = audio.duration;
+            if (isFinite(duration) && duration > 0 && imgWidthPx > 0) {
+                const t = audio.currentTime;
+                const offset = offsetForTime(t);
+                lastOffset = offset;
+                sonoImg.style.transform = `translateX(${offset}px)`;
+                playhead.style.left = (CONTAINER_WIDTH * PLAYHEAD_FRACTION) + 'px';
+                debugInfo.textContent = `t=${t.toFixed(2)}  dur=${duration.toFixed(2)}  pxPerSec=${pxPerSec.toFixed(1)}`;
+            }
+            rafId = requestAnimationFrame(updateLine);
+        }
+
+        sonoImg.addEventListener('load', setupScale);
+        audio.addEventListener('loadedmetadata', setupScale);
+        audio.addEventListener('durationchange', setupScale);
+
+        audio.addEventListener('play', () => {
+            if (!rafId) rafId = requestAnimationFrame(updateLine);
+        });
+        audio.addEventListener('pause', () => {
+            if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        });
+        audio.addEventListener('ended', () => {
+            if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
+        });
+
+        wrap.addEventListener('click', (e) => {
+            const duration = audio.duration;
+            if (!isFinite(duration) || duration <= 0 || imgWidthPx <= 0) return;
+            const rect = wrap.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const t = (clickX - lastOffset) / pxPerSec;
+            audio.currentTime = Math.min(Math.max(t, 0), duration);
+            if (audio.paused) audio.play();
+        });
+    </script>
+</body>
+</html>
