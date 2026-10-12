@@ -291,6 +291,7 @@
     </div>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="carto-key.js"></script>
     <script>
         const LANG = 'fr';
         const BACK_URL = 'gallery_cardinalidae_fr.html';
@@ -391,7 +392,7 @@
             // Attendre la fin de l'animation d'ouverture de la fiche pour que Leaflet mesure le bon conteneur
             setTimeout(() => {
                 const map = L.map(mapEl, { zoomControl: false, attributionControl: false });
-                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' + (window.CARTO_KEY ? '?key=' + window.CARTO_KEY : ''), {
                     maxZoom: 19
                 }).addTo(map);
                 // Portée d'environ 2000 km de large, peu importe la taille du conteneur ou la latitude

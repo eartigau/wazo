@@ -189,6 +189,7 @@
     {% if trip_locations and trip_locations|length > 0 %}
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="carto-key.js"></script>
     {% endif %}
     <script src="gallery-common.js"></script>
     <script>
@@ -481,7 +482,7 @@
             });
 
             // Carto Light tiles
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' + (window.CARTO_KEY ? '?key=' + window.CARTO_KEY : ''), {
                 attribution: '© OpenStreetMap © Carto',
                 maxZoom: 19
             }).addTo(tripMap);

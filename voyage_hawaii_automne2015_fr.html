@@ -306,7 +306,7 @@
 
     <!-- FOOTER -->
     <footer>
-        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 12 octobre 2026 (12h43)</p>
+        <p>Données <a href="https://ebird.org" target="_blank">eBird</a> / <a href="https://macaulaylibrary.org" target="_blank">Macaulay Library</a> · Mise à jour : 12 octobre 2026 (13h04)</p>
         <p>© Étienne Artigau · <a href="https://eartigau.github.io/index_fr.html">eartigau.github.io</a></p>
     </footer>
 
@@ -317,6 +317,7 @@
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster@1.4.1/dist/leaflet.markercluster.js"></script>
+    <script src="carto-key.js"></script>
     
     <script src="gallery-common.js"></script>
     <script>
@@ -783,7 +784,7 @@
             });
 
             // Carto Light tiles
-            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' + (window.CARTO_KEY ? '?key=' + window.CARTO_KEY : ''), {
                 attribution: '© OpenStreetMap © Carto',
                 maxZoom: 19
             }).addTo(tripMap);

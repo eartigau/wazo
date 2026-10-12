@@ -1,0 +1,7 @@
+# Cle API CARTO : ne jamais versionner
+apikey.MD
+apikey.md
+carto-key.js
+
+__pycache__/
+.DS_Store

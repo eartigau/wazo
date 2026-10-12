@@ -1,0 +1,46 @@
+# Publie le site sur GitHub Pages.
+# La cle CARTO n'est pas dans le depot : elle vient du secret CARTO_KEY et est
+# ecrite dans carto-key.js au moment du deploiement seulement.
+name: Publier le site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+
+      - name: Ecrire carto-key.js a partir du secret
+        env:
+          CARTO_KEY: ${{ secrets.CARTO_KEY }}
+        run: |
+          if [ -z "$CARTO_KEY" ]; then
+            echo "::error::Secret CARTO_KEY absent : les cartes afficheraient 'API KEY REQUIRED'."
+            exit 1
+          fi
+          printf "window.CARTO_KEY = '%s';\n" "$CARTO_KEY" > carto-key.js
+
+      - uses: actions/configure-pages@v6
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: .
+
+      - id: deployment
+        uses: actions/deploy-pages@v5

@@ -360,6 +360,7 @@
     <button class="back-to-top" id="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Retour en haut">↑</button>
 
     <!-- SCRIPTS -->
+    <script src="carto-key.js"></script>
     <script src="gallery-common.js"></script>
     <script>
         const currentLang = 'fr';
@@ -7726,7 +7727,7 @@
                     });
                     
                     // OpenStreetMap standard
-                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png' + (window.CARTO_KEY ? '?key=' + window.CARTO_KEY : ''), {
                         maxZoom: 19,
                         attribution: '© OpenStreetMap © Carto'
                     }).addTo(map);

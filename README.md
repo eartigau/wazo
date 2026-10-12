@@ -126,6 +126,18 @@ voyages:
 └── photo_curation.csv       # Curation (généré via admin)
 ```
 
+## Cartes (clé CARTO)
+
+Les fonds de carte CARTO exigent une clé API, sinon les tuiles affichent
+"API KEY REQUIRED". La clé n'est jamais versionnée :
+
+- Les pages chargent `carto-key.js` (`window.CARTO_KEY = '...';`), ignoré par git.
+- En local : créer ce fichier à la main pour voir les cartes.
+- En ligne : `.github/workflows/pages.yml` le génère au déploiement à partir du
+  secret `CARTO_KEY` du dépôt.
+- Changer de clé : mettre à jour `carto-key.js`, puis
+  `gh secret set CARTO_KEY --repo eartigau/wazo` et relancer le déploiement.
+
 ## Licence
 
 © Étienne Artigau
