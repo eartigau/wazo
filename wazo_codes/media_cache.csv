@@ -4702,6 +4702,12 @@ ml_number,status,raison,date_verification
 661961118,image,vérifié automatiquement,2026-07-27 16:29
 661961131,image,vérifié automatiquement,2026-07-27 16:29
 661963993,image,vérifié automatiquement,2026-07-27 16:29
+663150068,image,vérifié automatiquement,2026-10-12 12:42
+663150069,image,vérifié automatiquement,2026-10-12 12:42
+663150109,image,vérifié automatiquement,2026-10-12 12:42
+663150168,image,vérifié automatiquement,2026-10-12 12:42
+663153647,image,vérifié automatiquement,2026-10-12 12:42
+663153648,image,vérifié automatiquement,2026-10-12 12:42
 66386401,image,vérifié automatiquement,2025-12-04 15:50
 66386661,image,vérifié automatiquement,2025-12-04 15:50
 66386971,image,vérifié automatiquement,2025-12-04 15:50
@@ -4710,6 +4716,52 @@ ml_number,status,raison,date_verification
 66387101,image,vérifié automatiquement,2025-12-04 15:50
 66387111,image,vérifié automatiquement,2025-12-04 15:50
 66388331,image,vérifié automatiquement,2025-12-04 15:50
+663975637,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+664184907,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+664469596,image,vérifié automatiquement,2026-10-12 12:42
+664469629,image,vérifié automatiquement,2026-10-12 12:42
+664469637,image,vérifié automatiquement,2026-10-12 12:42
+665001260,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665173637,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665174183,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665283540,image,vérifié automatiquement,2026-10-12 12:42
+665454394,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665454395,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665454396,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665841601,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665906437,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+665963572,image,vérifié automatiquement,2026-10-12 12:42
+665963606,image,vérifié automatiquement,2026-10-12 12:42
+665963686,image,vérifié automatiquement,2026-10-12 12:42
+665963687,image,vérifié automatiquement,2026-10-12 12:42
+665963905,image,vérifié automatiquement,2026-10-12 12:42
+665963955,image,vérifié automatiquement,2026-10-12 12:42
+665964054,image,vérifié automatiquement,2026-10-12 12:42
+666234487,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+666234488,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+666245471,image,vérifié automatiquement,2026-10-12 12:42
+666245474,image,vérifié automatiquement,2026-10-12 12:42
+666245475,image,vérifié automatiquement,2026-10-12 12:42
+666245632,image,vérifié automatiquement,2026-10-12 12:42
+666245773,image,vérifié automatiquement,2026-10-12 12:42
+666283707,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+666283708,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+666284580,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+666284582,son,"pas d'image 480 disponible, audio détecté",2026-10-12 12:42
+666412717,image,vérifié automatiquement,2026-10-12 12:42
+666412727,image,vérifié automatiquement,2026-10-12 12:42
+666412757,image,vérifié automatiquement,2026-10-12 12:42
+666412759,image,vérifié automatiquement,2026-10-12 12:42
+666412760,image,vérifié automatiquement,2026-10-12 12:42
+666412763,image,vérifié automatiquement,2026-10-12 12:42
+666412777,image,vérifié automatiquement,2026-10-12 12:42
+666412828,image,vérifié automatiquement,2026-10-12 12:42
+666412855,image,vérifié automatiquement,2026-10-12 12:42
+666412872,image,vérifié automatiquement,2026-10-12 12:42
+666412898,image,vérifié automatiquement,2026-10-12 12:42
+666413073,image,vérifié automatiquement,2026-10-12 12:42
+666413271,image,vérifié automatiquement,2026-10-12 12:42
+666413375,image,vérifié automatiquement,2026-10-12 12:42
 71427171,image,vérifié automatiquement,2025-12-04 15:50
 71427181,image,vérifié automatiquement,2025-12-04 15:50
 71488381,image,vérifié automatiquement,2025-12-04 15:50
