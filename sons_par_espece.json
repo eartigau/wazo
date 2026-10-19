@@ -2425,6 +2425,19 @@
     "best_photo_ml": "487486761",
     "all_sounds": [
       {
+        "ml_catalog_number": "666791080",
+        "date_raw": "2026-10-13",
+        "date_fr": "13 octobre 2026",
+        "date_en": "October 13<sup>th</sup>, 2026",
+        "location": "Côte-des-Neiges",
+        "location_full_fr": "Côte-des-Neiges, Québec, Canada",
+        "location_full_en": "Côte-des-Neiges, Quebec, Canada",
+        "latitude": 45.4858176,
+        "longitude": -73.6294305,
+        "checklist_id": "S401956814",
+        "curation_status": "include"
+      },
+      {
         "ml_catalog_number": "380495071",
         "date_raw": "2021-10-16",
         "date_fr": "16 octobre 2021",
@@ -2438,7 +2451,7 @@
         "curation_status": "include"
       }
     ],
-    "sound_count": 1
+    "sound_count": 2
   },
   {
     "sci_name": "Cistothorus palustris",
@@ -3578,7 +3591,7 @@
     "taxon_order": 999999,
     "family": "",
     "family_full": "",
-    "best_photo_ml": "494732711",
+    "best_photo_ml": "666714490",
     "all_sounds": [
       {
         "ml_catalog_number": "634655230",
