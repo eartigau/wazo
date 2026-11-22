@@ -49,7 +49,7 @@ def convertir(texte_api: str, sortie: str) -> int:
     """Convertit le CSV de l'API au format eBird_taxonomy_vXXXX.csv."""
     n = 0
     with open(sortie, 'w', encoding='utf-8-sig', newline='') as f:
-        writer = csv.DictWriter(f, fieldnames=COLONNES)
+        writer = csv.DictWriter(f, fieldnames=COLONNES, lineterminator='\n')
         writer.writeheader()
         for row in csv.DictReader(io.StringIO(texte_api)):
             fam_sci = row['FAMILY_SCI_NAME'].strip()
