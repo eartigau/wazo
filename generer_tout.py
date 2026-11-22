@@ -66,10 +66,15 @@ def charger_config():
 # CHARGEMENT STATUTS IUCN
 # ============================================================================
 
-def charger_statuts_iucn(config_menacees: dict) -> dict:
+def charger_statuts_iucn(config_menacees: dict, taxonomy=None) -> dict:
     """
     Charge les statuts IUCN depuis un fichier Excel
-    
+
+    La correspondance se fait par nom scientifique. Si `taxonomy` (EBirdTaxonomy)
+    est fourni, les espèces eBird dont le nom ne figure pas dans le fichier
+    (nomenclature eBird plus récente que AviList, orthographe différente) sont
+    retrouvées par leur code d'espèce Cornell (colonne Species_code_Cornell_Lab).
+
     Returns:
         dict: {nom_scientifique: code_statut}
     """
@@ -86,8 +91,10 @@ def charger_statuts_iucn(config_menacees: dict) -> dict:
     colonne_statut = config_menacees.get('colonne_statut', 'IUCN_Red_List_Category')
     colonne_rang = config_menacees.get('colonne_rang_taxonomique', 'Taxon_rank')
     valeur_espece = config_menacees.get('valeur_rang_espece', 'species')
+    colonne_code = config_menacees.get('colonne_code_ebird', 'Species_code_Cornell_Lab')
     
     statuts = {}
+    statuts_par_code = {}
     
     try:
         wb = openpyxl.load_workbook(fichier, read_only=True)
@@ -100,6 +107,7 @@ def charger_statuts_iucn(config_menacees: dict) -> dict:
             idx_nom = headers.index(colonne_nom)
             idx_statut = headers.index(colonne_statut)
             idx_rang = headers.index(colonne_rang) if colonne_rang in headers else None
+            idx_code = headers.index(colonne_code) if colonne_code in headers else None
         except ValueError as e:
             print(f"   ⚠ Colonne non trouvée dans {fichier}: {e}")
             return {}
@@ -115,9 +123,26 @@ def charger_statuts_iucn(config_menacees: dict) -> dict:
             
             if nom_sci and statut:
                 statuts[nom_sci] = statut
+                if idx_code is not None and row[idx_code]:
+                    statuts_par_code[str(row[idx_code]).strip()] = statut
         
         wb.close()
         print(f"   ✓ Statuts IUCN chargés: {len(statuts)} espèces")
+        
+        # Repli par code d'espèce eBird pour les noms absents du fichier
+        if taxonomy is not None and statuts_par_code:
+            ajouts = 0
+            for nom_sci, info in taxonomy.species.items():
+                if info.get('category') != 'species' or nom_sci != info.get('sci_name'):
+                    continue
+                if nom_sci in statuts:
+                    continue
+                statut = statuts_par_code.get(info.get('species_code', ''))
+                if statut:
+                    statuts[nom_sci] = statut
+                    ajouts += 1
+            if ajouts:
+                print(f"   ✓ {ajouts} statuts retrouvés par code d'espèce eBird (noms différents)")
         
     except Exception as e:
         print(f"   ⚠ Erreur lecture {fichier}: {e}")
@@ -427,7 +452,7 @@ def generer_toutes_galeries():
     # Extraire les chemins des fichiers
     fichiers = config.get('fichiers', {})
     CSV_FILE = fichiers.get('donnees_ebird', 'MyEBirdData.csv')
-    TAXONOMY_FILE = fichiers.get('taxonomie', 'eBird_taxonomy_v2025.csv')
+    TAXONOMY_FILE = fichiers.get('taxonomie', 'eBird_taxonomy_v2026.csv')
     MEDIA_CACHE = fichiers.get('cache_medias', 'media_cache.csv')
     TRADUCTIONS_FILE = fichiers.get('traductions_lieux', 'traductions_lieux.csv')
     CURATION_FILE = fichiers.get('curation', 'photo_curation.csv')
@@ -477,7 +502,7 @@ def generer_toutes_galeries():
     config_menacees = config.get('especes_menacees', {})
     iucn_statuts = {}
     if config_menacees.get('activer', False):
-        iucn_statuts = charger_statuts_iucn(config_menacees)
+        iucn_statuts = charger_statuts_iucn(config_menacees, taxonomy=generator.taxonomy)
     
     # Construire le menu
     menu, familles_data = construire_menu(config, generator, curation)
@@ -957,8 +982,8 @@ def generer_toutes_galeries():
     if config_menacees.get('activer', False):
         print(f"\n🔴 Galerie des espèces menacées...")
         
-        # Charger les statuts IUCN
-        statuts_iucn = charger_statuts_iucn(config_menacees)
+        # Statuts IUCN (déjà chargés plus haut pour les lightbox)
+        statuts_iucn = iucn_statuts or charger_statuts_iucn(config_menacees, taxonomy=generator.taxonomy)
         
         if statuts_iucn:
             # Mapping des statuts configuré dans YAML
@@ -1176,7 +1201,7 @@ def generer_page_admin(config):
     fichiers = config.get('fichiers', {})
     CSV_FILE = fichiers.get('donnees_ebird', 'MyEBirdData.csv')
     CACHE_FILE = fichiers.get('cache_medias', 'media_cache.csv')
-    TAXONOMY_FILE = fichiers.get('taxonomie', 'eBird_taxonomy_v2025.csv')
+    TAXONOMY_FILE = fichiers.get('taxonomie', 'eBird_taxonomy_v2026.csv')
     CURATION_FILE = fichiers.get('curation', 'photo_curation.csv')
     
     # Charger le cache des médias
@@ -1190,7 +1215,7 @@ def generer_page_admin(config):
     # Charger la taxonomie pour les noms
     taxonomy = {}
     if Path(TAXONOMY_FILE).exists():
-        with open(TAXONOMY_FILE, 'r', encoding='utf-8') as f:
+        with open(TAXONOMY_FILE, 'r', encoding='utf-8-sig') as f:
             reader = csv.DictReader(f)
             for row in reader:
                 sci_name = normaliser_nom_scientifique(row.get('SCI_NAME', ''))
@@ -1297,7 +1322,7 @@ Configuration: config.yaml
 
 Fichiers requis:
   - MyEBirdData.csv (export eBird)
-  - eBird_taxonomy_v2025.csv (taxonomie)
+  - eBird_taxonomy_v2026.csv (taxonomie)
   - config.yaml (configuration)
 
 Étapes:

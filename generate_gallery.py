@@ -24,7 +24,7 @@ from jinja2 import Environment, FileSystemLoader
 # ============================================================================
 
 CACHE_FILE = "media_cache.csv"
-TAXONOMY_FILE = "eBird_taxonomy_v2025.csv"
+TAXONOMY_FILE = "eBird_taxonomy_v2026.csv"
 TRADUCTIONS_FILE = "traductions_lieux.csv"
 SOUNDS_COMPILATION_FILE = "sons_par_espece.json"
 SOUNDS_ASSETS_DIR = "sons_sonogrammes"

@@ -26,9 +26,11 @@ pip install jinja2 pyyaml
 1. **MyEBirdData.csv** - Vos données eBird
    - Télécharger depuis: https://ebird.org/downloadMyData
    
-2. **eBird_taxonomy_v2025.csv** - Taxonomie officielle
+2. **eBird_taxonomy_v2026.csv** - Taxonomie officielle
    - Télécharger depuis: https://ebird.org/science/use-ebird-data/the-ebird-taxonomy
-   - Mettre à jour annuellement
+   - Ou, plus simple : `python mettre_a_jour_taxonomie.py` (API eBird, version la plus récente)
+   - Mettre à jour chaque automne, dès que l'export eBird utilise la nouvelle nomenclature :
+     sinon les espèces renommées (splits, changements de genre) tombent dans « Autres »
 
 3. **config.yaml** - Configuration (inclus, à personnaliser)
 
@@ -75,7 +77,7 @@ Tous les paramètres sont dans `config.yaml`:
 # Fichiers source
 fichiers:
   donnees_ebird: "MyEBirdData.csv"
-  taxonomie: "eBird_taxonomy_v2025.csv"
+  taxonomie: "eBird_taxonomy_v2026.csv"
   curation: "photo_curation.csv"
 
 # Site web
@@ -121,7 +123,7 @@ voyages:
 ├── admin_template.html      # Template page admin
 ├── traductions_lieux.csv    # Traductions pays/régions
 ├── MyEBirdData.csv          # Vos données (à ajouter)
-├── eBird_taxonomy_v2025.csv # Taxonomie (à ajouter)
+├── eBird_taxonomy_v2026.csv # Taxonomie (à ajouter)
 ├── media_cache.csv          # Cache médias (généré)
 └── photo_curation.csv       # Curation (généré via admin)
 ```

@@ -14,8 +14,8 @@ fichiers:
   donnees_ebird: "wazo_codes/MyEBirdData.csv"
   
   # Taxonomie eBird (télécharger depuis https://ebird.org/science/use-ebird-data/the-ebird-taxonomy)
-  # Mettre à jour annuellement (ex: eBird_taxonomy_v2026.csv)
-  taxonomie: "wazo_codes/eBird_taxonomy_v2025.csv"
+  # Mettre à jour chaque automne avec: python mettre_a_jour_taxonomie.py
+  taxonomie: "wazo_codes/eBird_taxonomy_v2026.csv"
   
   # Cache des vérifications de médias (généré automatiquement)
   cache_medias: "wazo_codes/media_cache.csv"
