@@ -2378,7 +2378,7 @@
     "sound_count": 1
   },
   {
-    "sci_name": "Troglodytes troglodytes",
+    "sci_name": "Nannus troglodytes",
     "common_name_fr": "Troglodyte mignon",
     "common_name_en": "Troglodyte mignon",
     "taxon_order": 999999,
@@ -2416,7 +2416,7 @@
     "sound_count": 2
   },
   {
-    "sci_name": "Troglodytes hiemalis",
+    "sci_name": "Nannus hiemalis",
     "common_name_fr": "Troglodyte des forêts",
     "common_name_en": "Troglodyte des forêts",
     "taxon_order": 999999,
@@ -2561,6 +2561,31 @@
         "latitude": 45.4858176,
         "longitude": -73.6294305,
         "checklist_id": "S100158188",
+        "curation_status": "include"
+      }
+    ],
+    "sound_count": 1
+  },
+  {
+    "sci_name": "Sturnus unicolor",
+    "common_name_fr": "Étourneau unicolore",
+    "common_name_en": "Étourneau unicolore",
+    "taxon_order": 999999,
+    "family": "",
+    "family_full": "",
+    "best_photo_ml": "638391795",
+    "all_sounds": [
+      {
+        "ml_catalog_number": "669165751",
+        "date_raw": "2026-11-18",
+        "date_fr": "18 novembre 2026",
+        "date_en": "November 18<sup>th</sup>, 2026",
+        "location": "Estuário do Douro",
+        "location_full_fr": "Estuário do Douro, Portugal",
+        "location_full_en": "Estuário do Douro, Portugal",
+        "latitude": 41.147844,
+        "longitude": -8.65356,
+        "checklist_id": "S411312627",
         "curation_status": "include"
       }
     ],
